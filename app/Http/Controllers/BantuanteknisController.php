@@ -6747,5 +6747,52 @@ public function bebantekpembongkarandokumen($id)
 }
 
 
+public function validasiinformasipemilikbangunan(Request $request, $id)
+{
+    // ===============================
+    // VALIDASI INPUT
+    // ===============================
+    $request->validate([
+        'validasiberkas1' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas2' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas3' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas4' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas5' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas6' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas7' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas8' => 'required|in:sesuai,tidak_sesuai',
+        'catatan1'        => 'nullable|string',
+    ]);
+
+    // ===============================
+    // AMBIL DATA ANAK + INDUK
+    // ===============================
+    $item = bantekpembongkarannew1::with('induk')->findOrFail($id);
+
+    // ===============================
+    // UPDATE DATA VALIDASI
+    // ===============================
+    $item->update([
+        'validasiberkas1' => $request->validasiberkas1,
+        'validasiberkas2' => $request->validasiberkas2,
+        'validasiberkas3' => $request->validasiberkas3,
+        'validasiberkas4' => $request->validasiberkas4,
+        'validasiberkas5' => $request->validasiberkas5,
+        'validasiberkas6' => $request->validasiberkas6,
+        'validasiberkas7' => $request->validasiberkas7,
+        'validasiberkas8' => $request->validasiberkas8,
+        'catatan1'        => $request->catatan1,
+    ]);
+
+    // ===============================
+    // REDIRECT KE HALAMAN INDUK
+    // ===============================
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => $item->induk->namapemilik,
+        'id'          => $item->bantekpembongkaraninduk_id
+    ])->with('update', 'Data verifikasi berhasil disimpan');
+}
+
+
 
 }

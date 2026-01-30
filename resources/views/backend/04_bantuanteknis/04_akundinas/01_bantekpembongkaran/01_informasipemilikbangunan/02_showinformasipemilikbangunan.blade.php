@@ -818,7 +818,7 @@
 
 <hr>
 
-<form action="{{ route('validasikrksosbud', $data->id) }}" method="POST">
+<form action="{{ route('validasiinformasipemilikbangunan', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
                     <!-- /.card-header -->
@@ -1061,14 +1061,14 @@
             </style>
 
             <label class="custom-radio">
-                <input type="radio" name="verifikasiktp" value="sesuai"
+                <input type="radio" name="validasiberkas1" value="sesuai"
                     {{ $data->validasiberkas1 == 'sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Sesuai
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="verifikasiktp" value="tidak_sesuai"
+                <input type="radio" name="validasiberkas1" value="tidak_sesuai"
                     {{ $data->validasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Tidak Sesuai
@@ -1083,7 +1083,7 @@
 
                                     <tr>
                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-file-earmark-person-fill"></i> NPWP
+    <i class="bi bi-file-earmark-person-fill"></i> Surat Kelayakan Kajian Teknis Bangunan Gedung
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1102,15 +1102,15 @@
                                                         <div class="modal-header">
                                                             <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                             <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                            <h5 class="modal-title" id="modalFotoLbl{{ $data->id }}">NPWP dinas </h5>
+                                                            <h5 class="modal-title" id="modalFotoLbl{{ $data->id }}">Surat Kelayakan Kajian Teknis Bangunan Gedung </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
 <div class="modal-body text-left">
-    @if ($data->npwp)
+    @if ($data->suratkelayakan)
         @php
-            $filePath = public_path($data->npwp); // langsung cek di public/
-            $fileUrl = asset($data->npwp); // URL akses publik
-            $extension = strtolower(pathinfo($data->npwp, PATHINFO_EXTENSION));
+            $filePath = public_path($data->suratkelayakan); // langsung cek di public/
+            $fileUrl = asset($data->suratkelayakan); // URL akses publik
+            $extension = strtolower(pathinfo($data->suratkelayakan, PATHINFO_EXTENSION));
         @endphp
 
         @if (file_exists($filePath))
@@ -1217,7 +1217,7 @@
         </style>
 
         @php
-            $status = $data->verifikasinpwp;
+            $status = $data->validasiberkas2;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1239,15 +1239,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasinpwp" value="sesuai"
-                                                                {{ $data->verifikasinpwp == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas2" value="sesuai"
+                                                                {{ $data->validasiberkas2 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasinpwp" value="tidak_sesuai"
-                                                                {{ $data->verifikasinpwp == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas2" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas2 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -1260,7 +1260,7 @@
 
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-house-fill"></i> Sertifikat Tanah
+    <i class="bi bi-house-fill"></i> Surat Kesanggupan Pembongkaran Bangunan Gedung
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1284,14 +1284,14 @@
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->sertifikattanah && file_exists(public_path('storage/' . $data->sertifikattanah)))
+                                                                    @if($data->suratkesanggupan && file_exists(public_path('storage/' . $data->suratkesanggupan)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->sertifikattanah) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->sertifikattanah)
+                                                                    <iframe src="{{ asset('storage/' . $data->suratkesanggupan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->suratkesanggupan)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->sertifikattanah) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->suratkesanggupan) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
-                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <!-- Optional:  Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
                                                                 @endif
 
@@ -1384,7 +1384,7 @@
         </style>
 
         @php
-            $status = $data->verifikasisert;
+            $status = $data->validasiberkas3;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1405,15 +1405,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasisert" value="sesuai"
-                                                                {{ $data->verifikasisert == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas3" value="sesuai"
+                                                                {{ $data->validasiberkas3 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasisert" value="tidak_sesuai"
-                                                                {{ $data->verifikasisert == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas3" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas3 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -1608,7 +1608,7 @@
                                     {{-- BUKTI PBB --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-receipt-cutoff"></i> Bukti PBB
+    <i class="bi bi-receipt-cutoff"></i> KTP
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1627,17 +1627,17 @@
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalBuktipbbLbl{{ $data->id }}">Bukti PBB .pdf</h5>
+                                                                <h5 class="modal-title" id="modalBuktipbbLbl{{ $data->id }}">KTP.pdf</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->buktipbb && file_exists(public_path('storage/' . $data->buktipbb)))
+                                                                    @if($data->ktp && file_exists(public_path('storage/' . $data->ktp)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->buktipbb) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->buktipbb)
+                                                                    <iframe src="{{ asset('storage/' . $data->ktp) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->ktp)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->buktipbb) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->ktp) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -1732,7 +1732,7 @@
         </style>
 
         @php
-            $status = $data->verifikasipbb;
+            $status = $data->validasiberkas4;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1753,15 +1753,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasipbb" value="sesuai"
-                                                                {{ $data->verifikasipbb == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas4" value="sesuai"
+                                                                {{ $data->validasiberkas4 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasipbb" value="tidak_sesuai"
-                                                                {{ $data->verifikasipbb == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas4" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas4 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -1775,7 +1775,7 @@
                                     {{-- DOKUMEN Validasi Tata Ruang --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-check2-square"></i> Bukti Validasi Tata Ruang
+    <i class="bi bi-check2-square"></i> SK Bupati
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1794,17 +1794,17 @@
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">Bukti Validasi Tata Ruang .pdf</h5>
+                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">SK Bupati.pdf</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->dokvalidasi && file_exists(public_path('storage/' . $data->dokvalidasi)))
+                                                                    @if($data->sk && file_exists(public_path('storage/' . $data->sk)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->dokvalidasi) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->dokvalidasi)
+                                                                    <iframe src="{{ asset('storage/' . $data->sk) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->sk)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->dokvalidasi) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->sk) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -1899,7 +1899,7 @@
         </style>
 
         @php
-            $status = $data->verifikasidokval;
+            $status = $data->validasiberkas5;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1920,15 +1920,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasidokval" value="sesuai"
-                                                                {{ $data->verifikasidokval == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas5" value="sesuai"
+                                                                {{ $data->validasiberkas5 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasidokval" value="tidak_sesuai"
-                                                                {{ $data->verifikasidokval == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas5" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas5 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -1942,7 +1942,7 @@
                                     {{-- DOKUMEN SITEPLAN --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-map-fill"></i> Siteplan
+    <i class="bi bi-map-fill"></i> Sertifikat Tanah
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1961,17 +1961,17 @@
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalSiteplanLbl{{ $data->id }}">Siteplan .pdf</h5>
+                                                                <h5 class="modal-title" id="modalSiteplanLbl{{ $data->id }}">Sertifikat Tanah .pdf</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->siteplan && file_exists(public_path('storage/' . $data->siteplan)))
+                                                                    @if($data->sertifikattanah && file_exists(public_path('storage/' . $data->sertifikattanah)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->siteplan) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->siteplan)
+                                                                    <iframe src="{{ asset('storage/' . $data->sertifikattanah) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->sertifikattanah)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->siteplan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->sertifikattanah) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -2066,7 +2066,7 @@
         </style>
 
         @php
-            $status = $data->verifikasisiteplan;
+            $status = $data->validasiberkas6;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -2087,15 +2087,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasisiteplan" value="sesuai"
-                                                                {{ $data->verifikasisiteplan == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas6" value="sesuai"
+                                                                {{ $data->validasiberkas6 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasisiteplan" value="tidak_sesuai"
-                                                                {{ $data->verifikasisiteplan == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas6" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas6 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -2109,7 +2109,7 @@
                                     {{-- DOKUMEN TANDA TANGAN --}}
                                     <tr>
                                       <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-pencil-fill"></i> Surat Pernyataan KRK
+    <i class="bi bi-pencil-fill"></i> Kartu Inventaris Barang
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2128,17 +2128,17 @@
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Surat Pernyataan KRK</h5>
+                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Kartu Inventaris Barang</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->tandatangan && file_exists(public_path('storage/' . $data->tandatangan)))
+                                                                    @if($data->kib && file_exists(public_path('storage/' . $data->kib)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->tandatangan) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->tandatangan)
+                                                                    <iframe src="{{ asset('storage/' . $data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->kib)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->tandatangan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -2233,7 +2233,7 @@
         </style>
 
         @php
-            $status = $data->verifikasittd;
+            $status = $data->validasiberkas7;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -2254,15 +2254,182 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasittd" value="sesuai"
-                                                                {{ $data->verifikasittd == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas7" value="sesuai"
+                                                                {{ $data->validasiberkas7 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="verifikasittd" value="tidak_sesuai"
-                                                                {{ $data->verifikasittd == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas7" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas7 == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <span class="custom-box"></span>
+                                                            Tidak Sesuai
+                                                        </label>
+                                                    </div>
+                                                </th>
+                                            @endcanany
+
+                                    </tr>
+
+                                    {{-- -------------------------------- --}}
+                                    {{-- DOKUMEN TANDA TANGAN --}}
+                                    <tr>
+                                      <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
+    <i class="bi bi-pencil-fill"></i> PBG/ Surat Tidak Memiliki PBG
+</th>
+
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
+<div style="display: flex; justify-content: center;">
+    <button type="button" class="button-berkas"
+        data-bs-toggle="modal" data-bs-target="#modalPBG{{ $data->id }}">
+        <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+    </button>
+</div>
+
+
+                                                <!-- Modal Ijazah -->
+                                                <div class="modal fade" id="modalPBG{{ $data->id }}" tabindex="-1" aria-labelledby="modalPBGLbl{{ $data->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
+                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                                <h5 class="modal-title" id="modalPBGLbl{{ $data->id }}">PBG/ Surat Tidak Memiliki PBG</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <div style="margin-top: 10px;">
+                                                                    @if($data->kib && file_exists(public_path('storage/' . $data->kib)))
+                                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                                    <iframe src="{{ asset('storage/' . $data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->kib)
+                                                                    <!-- Display the iframe with the updated file -->
+                                                                    <iframe src="{{ asset($data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @else
+                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <p>Data Belum Di Lengkapi !!</p>
+                                                                @endif
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </th>
+
+                                             @canany(['dinas', 'pemohon'])
+<th class="text-center" style="background-color: #e2e8f0; color: rgb(100, 45, 45);">
+    <div style="display: flex; justify-content: center; padding: 10px 0;">
+        <style>
+            .custom-status {
+                position: relative;
+                padding-left: 35px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff;
+                border: 2px solid #cbd5e0;
+                border-radius: 12px;
+                font-weight: 600;
+                user-select: none;
+                display: inline-block;
+                min-width: 180px;
+                color: #555;
+                text-align: center;
+            }
+            .custom-status .custom-box {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                height: 18px;
+                width: 18px;
+                background-color: #fff;
+                border: 2px solid #cbd5e0;
+                border-radius: 4px;
+            }
+            .custom-status.sesuai {
+                border-color: #3b82f6;
+                background-color: #bfdbfe;
+                color: #1d4ed8;
+            }
+            .custom-status.sesuai .custom-box {
+                border-color: #3b82f6;
+                background-color: #bfdbfe;
+            }
+            .custom-status.sesuai .custom-box::after {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 1px;
+                width: 5px;
+                height: 10px;
+                border: solid #1d4ed8;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+            .custom-status.tidak_sesuai {
+                border-color: #ef4444;
+                background-color: #fecaca;
+                color: #b91c1c;
+            }
+            .custom-status.tidak_sesuai .custom-box {
+                border-color: #ef4444;
+                background-color: #fecaca;
+            }
+            .custom-status.tidak_sesuai .custom-box::after {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 1px;
+                width: 5px;
+                height: 10px;
+                border: solid #b91c1c;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+            .custom-status.pending {
+                border-color: #f59e0b;
+                background-color: #fef3c7;
+                color: #b45309;
+            }
+            .custom-status.pending .custom-box {
+                border-color: #f59e0b;
+                background-color: #fef3c7;
+            }
+        </style>
+
+        @php
+            $status = $data->validasiberkas8;
+        @endphp
+
+        <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
+            <span class="custom-box"></span>
+            @if ($status === 'tidak_sesuai')
+                Silahkan Lakukan Perbaikan
+            @elseif ($status === 'sesuai')
+                Berkas Anda Sudah Sesuai
+            @else
+                Sedang Di Verifikasi DPUPR
+            @endif
+        </div>
+    </div>
+</th>
+@endcanany
+
+                                            @canany(['superadmin', 'admin'])
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                                    <div style="display: flex; justify-content: center; gap: 20px;">
+                                                        <label class="custom-radio">
+                                                            <input type="radio" name="validasiberkas8" value="sesuai"
+                                                                {{ $data->validasiberkas8 == 'sesuai' ? 'checked' : '' }}>
+                                                            <span class="custom-box"></span>
+                                                            Sesuai
+                                                        </label>
+
+                                                        <label class="custom-radio">
+                                                            <input type="radio" name="validasiberkas8" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas8 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -2287,7 +2454,7 @@
         <span style="color: navy;">Catatan Keterangan Berkas</span>
     </label>
     <div class="form-control" style="min-height: 400px; white-space: pre-wrap; background-color: #f8f9fa; color: red;">
-        {{ $data->catatanvalidasi ?? '-' }}
+        {{ $data->catatan1 ?? '-' }}
     </div>
 </div>
 
@@ -2305,7 +2472,7 @@
     <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
         rows="10"
         style="resize: vertical; width: 100%; color: red;"
-        placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $data->catatanvalidasi ?? '') }}</textarea>
+        placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $data->catatan1 ?? '') }}</textarea>
 </div>
 
                     @endcanany
