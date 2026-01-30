@@ -786,123 +786,14 @@
              <!-- /.card -->
          </div>
          {{-- PEMBATAS DATA --}}
+<div class="row">
+    <div class="col-12">
+        <!-- isi konten di sini -->
 
-           <h5 style="color: navy; font-weight:800; font-size:16px;">KELENGKAPAN BERKAS PERSYARATAN</h4>
+         <h5 style="color: navy; font-weight:800; font-size:16px;">KELENGKAPAN BERKAS PERSYARATAN</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <br>
 
-
-    {{-- --------------------------------- --}}
-    <div class="table-responsive">
-    <table class="zebra-table table-striped">
-        <tr>
-{{-- <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-file-earmark-bar-graph" style="margin-right:6px;"></i> FKUB Kemenag Blora
-</td> --}}
-
-<td style="text-align: center; font-size:16px;">
-<button class="button-baru">
-    <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
-</button>
-</td>
-
-<td style="text-align: center; font-size:16px;">
-<button class="button-baru">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
-</button>
-</td>
-
-</tr>
-
-        <tr>
-            {{-- <td style="text-align: center;">
-                 <div style="margin-top: 10px;">
-    @if($data->lampiranoss && file_exists(public_path('storage/' . $data->lampiranoss)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->lampiranoss) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->lampiranoss)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->lampiranoss) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
-    @endif
-</div>
-
-            </td> --}}
-
-            <td style="text-align: center;">
-                    <div style="margin-top: 10px;">
-    @if($data->buktipbb && file_exists(public_path('storage/' . $data->buktipbb)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->buktipbb) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->buktipbb)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->buktipbb) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <button class="button-merah">Data Belum Di Lengkapi !!</button>
-    @endif
-</div>
-            </td>
-
-            <td style="text-align: center;">
-                        <div style="margin-top: 10px;">
-    @if($data->dokvalidasi && file_exists(public_path('storage/' . $data->dokvalidasi)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->dokvalidasi) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->dokvalidasi)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->dokvalidasi) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <button class="button-merah">Data Belum Di Lengkapi !!</button>
-    @endif
-</div>
-            </td>
-
-        </tr>
-
-
-
-    </table>
-    <br>
 
 </div>
 
@@ -2510,6 +2401,9 @@
                     @endcanany
 
                 </td>
+
+    </div>
+</div>
 
                 @canany(['superadmin', 'admin'])
 
