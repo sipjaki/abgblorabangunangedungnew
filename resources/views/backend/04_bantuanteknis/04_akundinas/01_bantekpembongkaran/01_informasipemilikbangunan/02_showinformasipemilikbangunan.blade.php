@@ -830,7 +830,7 @@
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-person-vcard-fill"></i> KTP/<span style="color: red;">KITAS**</span>
+    <i class="bi bi-person-vcard-fill"></i> SURAT PERMOHONAN IZIN PEMBONGKARAN</span>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -853,11 +853,11 @@
                                                         </div>
 
 <div class="modal-body text-left">
-    @if ($data->suratpernyataan)
+    @if ($data->suratpermohonan)
         @php
-            $filePath = public_path($data->suratpernyataan);
-            $fileUrl = asset($data->suratpernyataan);
-            $extension = strtolower(pathinfo($data->suratpernyataan, PATHINFO_EXTENSION));
+            $filePath = public_path($data->suratpermohonan);
+            $fileUrl = asset($data->suratpermohonan);
+            $extension = strtolower(pathinfo($data->suratpermohonan, PATHINFO_EXTENSION));
         @endphp
 
         @if (file_exists($filePath))
