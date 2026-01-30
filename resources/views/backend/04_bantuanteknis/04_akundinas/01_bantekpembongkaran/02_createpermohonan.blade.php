@@ -137,8 +137,11 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data"> --}}
-                  <form action="{{ route('bebantekpembongkarancreatenewbaru') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+                  {{-- <form action="{{ route('bantekpembongkarannew') }}" method="POST" enctype="multipart/form-data"> --}}
+          <form action="{{ route('bantekpembongkarannew') }}" method="POST">
+    @csrf
+
+                    @csrf
                             <!-- begin::Body -->
 
                             <input type="hidden" name="user_id" value="{{ $user->id }}">

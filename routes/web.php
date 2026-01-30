@@ -1545,7 +1545,13 @@ Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpem
 
 Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');
-Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenewbaru');
+// Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenewbaru');
+Route::post(
+    '/bebantekpembongkaran/createnew',
+    [BantuanteknisController::class, 'bebantekpembongkarancreatenew']
+)->middleware('auth', 'can:admindinas')
+ ->name('bantekpembongkarannew');
+
 Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::class, 'bebantekpembongkarandelete'])->middleware('auth', 'can:admindinas')->name('delete.pembongkaran');
 
 
