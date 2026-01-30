@@ -6812,7 +6812,7 @@ public function informasibangunangedung($namapemilik, $id)
         return view(
             'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.01_informasibangunangedung',
             [
-                'title' => 'Informasi Pemilik Bangunan',
+                'title' => 'Informasi Data Bangunan Gedung',
                 'data'  => $data,
                 'user'  => $user
             ]
