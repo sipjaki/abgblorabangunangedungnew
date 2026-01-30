@@ -790,7 +790,7 @@
     <div class="col-12">
         <!-- isi konten di sini -->
 
-         <h5 style="color: navy; font-weight:800; font-size:16px;">KELENGKAPAN BERKAS PERSYARATAN</h4>
+         <h5 style="color: navy; font-weight:800; font-size:16px;">VERIFIKASI BERKAS KELENGKAPAN</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <br>
     <hr>
@@ -848,16 +848,16 @@
                                                         <div class="modal-header">
                                                             <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                             <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                            <h5 class="modal-title" id="modalktpLbl{{ $data->id }}">KTP/<span>KITAS**</span>  </h5>
+                                                            <h5 class="modal-title" id="modalktpLbl{{ $data->id }}">SURAT PERMOHONAN IZIN PEMBONGKARAN</span>  </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
 
 <div class="modal-body text-left">
-    @if ($data->ktp)
+    @if ($data->suratpernyataan)
         @php
-            $filePath = public_path($data->ktp);
-            $fileUrl = asset($data->ktp);
-            $extension = strtolower(pathinfo($data->ktp, PATHINFO_EXTENSION));
+            $filePath = public_path($data->suratpernyataan);
+            $fileUrl = asset($data->suratpernyataan);
+            $extension = strtolower(pathinfo($data->suratpernyataan, PATHINFO_EXTENSION));
         @endphp
 
         @if (file_exists($filePath))
@@ -962,7 +962,7 @@
         </style>
 
         @php
-            $status = $data->verifikasiktp;
+            $status = $data->validasiberkas1;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1062,14 +1062,14 @@
 
             <label class="custom-radio">
                 <input type="radio" name="verifikasiktp" value="sesuai"
-                    {{ $data->verifikasiktp == 'sesuai' ? 'checked' : '' }}>
+                    {{ $data->validasiberkas1 == 'sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Sesuai
             </label>
 
             <label class="custom-radio">
                 <input type="radio" name="verifikasiktp" value="tidak_sesuai"
-                    {{ $data->verifikasiktp == 'tidak_sesuai' ? 'checked' : '' }}>
+                    {{ $data->validasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Tidak Sesuai
             </label>
