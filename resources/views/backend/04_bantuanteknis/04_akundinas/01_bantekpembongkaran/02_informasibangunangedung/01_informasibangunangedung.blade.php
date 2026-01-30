@@ -799,115 +799,109 @@
 
             <!-- 3. SURAT KESANGGUPAN -->
             <div class="section-header mt-4">
-                <i class="bi bi-file-earmark-check me-2"></i> As-built Drawing Bangunan Gedung
+                <i class="bi bi-file-earmark-check me-2"></i> Surat Kesanggupan Pembongkaran Bangunan Gedung
             </div>
 
             <div class="row">
                 <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="pilihansanggup">
+                            <i class="bi bi-check-circle me-2 text-primary"></i> Apakah Saudara Setuju Untuk Dilakukan Pembongkaran ?
+                        </label>
+                        <select class="form-select @error('pilihansanggup') is-invalid @enderror"
+                                id="pilihansanggup" name="pilihansanggup">
+                            <option value="">-- Pilih --</option>
+                            <option value="Ya" {{ old('pilihansanggup') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                            <option value="Tidak" {{ old('pilihansanggup') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                        </select>
+                        @error('pilihansanggup') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+       <div class="col-md-6">
     <div class="form-modern">
-        <label class="form-label-modern" for="keterangan">
-            <i class="bi bi-pencil-square me-2 text-primary"></i>
-            Keterangan
-        </label>
-
-        <textarea
-            class="form-control @error('keterangan') is-invalid @enderror"
-            id="keterangan"
-            name="keterangan"
-            rows="4"
-            placeholder="Tuliskan keterangan terkait persetujuan atau penjelasan lainnya...">{{ old('keterangan') }}</textarea>
-
-        @error('keterangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-
-    <div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="gambar_asd">
+        <label class="form-label-modern" for="suratkesanggupan">
             <i class="bi bi-upload me-2 text-primary"></i>
-            Upload As Built Drawing Bangunan Gedung
+            Upload Surat Pernyataan Kesanggupan Pembongkaran Bangunan Gedung
         </label>
 
-        <!-- INPUT FILE -->
         <input type="file"
-               class="form-control @error('gambar_asd') is-invalid @enderror"
-               id="gambar_asd"
-               name="gambar_asd"
-               accept=".pdf,.jpg,.jpeg,.png">
+               class="form-control @error('suratkesanggupan') is-invalid @enderror"
+               id="suratkesanggupan"
+               name="suratkesanggupan"
+               accept=".pdf,.docx">
 
-        @error('gambar_asd')
+        @error('suratkesanggupan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG (Maks. 15MB)
+            Format: PDF(Maks. 15MB)
         </small>
 
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD TEMPLATE -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+
         <!-- PREVIEW -->
-        <div id="previewGambarASDWrapper" class="mt-3 d-none">
+        <div id="previewSuratKesanggupan" class="mt-3 d-none">
             <label class="form-label-modern mb-2">
                 <i class="bi bi-eye me-2 text-success"></i>
                 Preview Berkas Yang Diupload
             </label>
 
             <div class="border rounded-3 p-2 bg-light"
-                 id="previewGambarASDBox"></div>
+                 id="previewSuratKesanggupanBox"></div>
         </div>
     </div>
 </div>
 
-</div>
 <script>
-(function () {
-    const input = document.getElementById('gambar_asd');
-    const wrapper = document.getElementById('previewGambarASDWrapper');
-    const box = document.getElementById('previewGambarASDBox');
+document.getElementById('suratkesanggupan').addEventListener('change', function () {
 
-    input.addEventListener('change', function () {
-        const file = this.files[0];
-        box.innerHTML = '';
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratKesanggupan');
+    const previewBox  = document.getElementById('previewSuratKesanggupanBox');
 
-        if (!file) {
-            wrapper.classList.add('d-none');
-            return;
-        }
+    previewBox.innerHTML = '';
 
-        const fileURL = URL.createObjectURL(file);
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
 
-        // PDF
-        if (file.type === 'application/pdf') {
-            box.innerHTML = `
-                <iframe src="${fileURL}"
-                        class="w-100 rounded"
-                        style="height:400px;"
-                        frameborder="0"></iframe>
-            `;
-        }
-        // IMAGE
-        else if (file.type.startsWith('image/')) {
-            box.innerHTML = `
-                <img src="${fileURL}"
-                     class="img-fluid rounded shadow-sm"
-                     alt="Preview As Built Drawing">
-            `;
-        }
-        // FILE LAIN
-        else {
-            box.innerHTML = `
-                <div class="alert alert-warning mb-0">
-                    <i class="bi bi-file-earmark me-2"></i>
-                    <strong>${file.name}</strong><br>
-                    File berhasil dipilih.
-                </div>
-            `;
-        }
+    const fileURL = URL.createObjectURL(file);
 
-        wrapper.classList.remove('d-none');
-    });
-})();
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // DOCX / lainnya
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark-word me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih (preview isi dokumen tidak tersedia).
+            </div>
+        `;
+    }
+
+    previewWrap.classList.remove('d-none');
+});
 </script>
 
 
@@ -915,83 +909,69 @@
 
             <!-- 4. DATA PEMILIK -->
             <div class="section-header mt-4">
-                <i class="bi bi-person-badge me-2"></i> Metode Pelaksanaan Pembongkaran Bangunan Gedung
+                <i class="bi bi-person-badge me-2"></i> Data Pemilik
             </div>
 
             <div class="row">
-            <div class="col-md-4">
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="namalengkap">
+                            <i class="bi bi-person me-2 text-primary"></i> Nama Lengkap
+                        </label>
+                        <input type="text" class="form-control @error('namalengkap') is-invalid @enderror"
+                               id="namalengkap" name="namalengkap" value="{{ old('namalengkap') }}">
+                        @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="jabatan">
+                            <i class="bi bi-briefcase me-2 text-primary"></i> Jabatan
+                        </label>
+                        <input type="text" class="form-control @error('jabatan') is-invalid @enderror"
+                               id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
+                        @error('jabatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="alamatpemilik">
+                            <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Pemilik
+                        </label>
+                        <textarea class="form-control @error('alamatpemilik') is-invalid @enderror"
+                                  id="alamatpemilik" name="alamatpemilik" rows="3">{{ old('alamatpemilik') }}</textarea>
+                        @error('alamatpemilik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="notelepon">
+                            <i class="bi bi-telephone me-2 text-primary"></i> No. Telepon
+                        </label>
+                        <input type="text" class="form-control @error('notelepon') is-invalid @enderror"
+                               id="notelepon" name="notelepon" value="{{ old('notelepon') }}">
+                        @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+          <div class="col-md-6">
     <div class="form-modern">
-        <label class="form-label-modern" for="pelaksana">
-            <i class="bi bi-building-gear me-2 text-primary"></i>
-            Pelaksana Pembongkaran
-        </label>
-
-        <input type="text"
-               class="form-control @error('pelaksana') is-invalid @enderror"
-               id="pelaksana"
-               name="pelaksana"
-               value="{{ old('pelaksana') }}">
-
-        @error('pelaksana')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-4">
-    <div class="form-modern">
-        <label class="form-label-modern" for="namapenanggungjawab">
-            <i class="bi bi-person-badge me-2 text-primary"></i>
-            Nama Penanggung Jawab
-        </label>
-
-        <input type="text"
-               class="form-control @error('namapenanggungjawab') is-invalid @enderror"
-               id="namapenanggungjawab"
-               name="namapenanggungjawab"
-               value="{{ old('namapenanggungjawab') }}">
-
-        @error('namapenanggungjawab')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-4">
-    <div class="form-modern">
-        <label class="form-label-modern" for="notelepon">
-            <i class="bi bi-telephone me-2 text-primary"></i>
-            Nomor Telepon
-        </label>
-
-        <input type="text"
-               class="form-control @error('notelepon') is-invalid @enderror"
-               id="notelepon"
-               name="notelepon"
-               value="{{ old('notelepon') }}"
-               placeholder="08xxxxxxxxxx">
-
-        @error('notelepon')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="berkaspembongkaran">
-            <i class="bi bi-file-earmark-zip me-2 text-primary"></i>
-            Upload Berkas Pembongkaran
+        <label class="form-label-modern" for="ktp">
+            <i class="bi bi-card-image me-2 text-primary"></i>
+            Upload KTP
         </label>
 
         <!-- INPUT FILE -->
         <input type="file"
-               class="form-control @error('berkaspembongkaran') is-invalid @enderror"
-               id="berkaspembongkaran"
-               name="berkaspembongkaran"
+               class="form-control @error('ktp') is-invalid @enderror"
+               id="ktp"
+               name="ktp"
                accept=".pdf,.jpg,.jpeg,.png">
 
-        @error('berkaspembongkaran')
+        @error('ktp')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
@@ -1003,42 +983,40 @@
         <button type="button"
                 class="btn btn-outline-primary btn-sm mt-2 me-2"
                 data-bs-toggle="modal"
-                data-bs-target="#modalContohBerkasPembongkaran">
-            <i class="bi bi-eye me-1"></i> Lihat Contoh Berkas
+                data-bs-target="#modalContohKTP">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh KTP
         </button>
 
         <!-- PREVIEW UPLOAD -->
-        <div id="previewBerkasPembongkaranWrapper" class="mt-3 d-none">
+        <div id="previewKTPWrapper" class="mt-3 d-none">
             <label class="form-label-modern mb-2">
                 <i class="bi bi-eye-fill me-2 text-success"></i>
-                Preview Berkas Pembongkaran
+                Preview KTP Yang Diupload
             </label>
 
             <div class="border rounded-3 p-2 bg-light"
-                 id="previewBerkasPembongkaranBox"></div>
+                 id="previewKTPBox"></div>
         </div>
     </div>
 </div>
 
-</div>
-
 <!-- MODAL CONTOH KTP -->
-<div class="modal fade" id="modalContohBerkasPembongkaran" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0 rounded-4 shadow">
 
             <div class="modal-header border-0">
                 <h5 class="modal-title">
-                    <i class="bi bi-file-earmark-zip me-2 text-primary"></i>
-                    Contoh Berkas Pembongkaran
+                    <i class="bi bi-card-image me-2 text-primary"></i>
+                    Contoh KTP
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <div class="modal-body text-center">
-                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_BERKAS_PEMBONGKARAN.png"
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KTP.jpg"
                      class="img-fluid rounded shadow-sm"
-                     alt="Contoh Berkas Pembongkaran">
+                     alt="Contoh KTP">
             </div>
 
             <div class="modal-footer border-0 justify-content-center">
@@ -1054,16 +1032,16 @@
 </div>
 
 <script>
-document.getElementById('berkaspembongkaran').addEventListener('change', function () {
+document.getElementById('ktp').addEventListener('change', function () {
 
     const file = this.files[0];
-    const wrapper = document.getElementById('previewBerkasPembongkaranWrapper');
-    const box     = document.getElementById('previewBerkasPembongkaranBox');
+    const previewWrapper = document.getElementById('previewKTPWrapper');
+    const previewBox     = document.getElementById('previewKTPBox');
 
-    box.innerHTML = '';
+    previewBox.innerHTML = '';
 
     if (!file) {
-        wrapper.classList.add('d-none');
+        previewWrapper.classList.add('d-none');
         return;
     }
 
@@ -1071,7 +1049,7 @@ document.getElementById('berkaspembongkaran').addEventListener('change', functio
 
     // PDF
     if (file.type === 'application/pdf') {
-        box.innerHTML = `
+        previewBox.innerHTML = `
             <iframe src="${fileURL}"
                     class="w-100 rounded"
                     style="height:400px;"
@@ -1080,15 +1058,15 @@ document.getElementById('berkaspembongkaran').addEventListener('change', functio
     }
     // IMAGE
     else if (file.type.startsWith('image/')) {
-        box.innerHTML = `
+        previewBox.innerHTML = `
             <img src="${fileURL}"
                  class="img-fluid rounded shadow-sm"
-                 alt="Preview Berkas Pembongkaran">
+                 alt="Preview KTP">
         `;
     }
     // FILE LAIN
     else {
-        box.innerHTML = `
+        previewBox.innerHTML = `
             <div class="alert alert-warning mb-0">
                 <i class="bi bi-file-earmark me-2"></i>
                 <strong>${file.name}</strong><br>
@@ -1097,9 +1075,196 @@ document.getElementById('berkaspembongkaran').addEventListener('change', functio
         `;
     }
 
-    wrapper.classList.remove('d-none');
+    previewWrapper.classList.remove('d-none');
 });
 </script>
+
+
+<div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-card-image me-2 text-primary"></i>
+                    Contoh KTP
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KTP.jpg"
+                     alt="Contoh KTP"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="sk">
+            <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+            Upload SK
+        </label>
+
+        <!-- INPUT UPLOAD -->
+        <input type="file"
+               class="form-control @error('sk') is-invalid @enderror"
+               id="sk"
+               name="sk"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('sk')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 15MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2 me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContohSK">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh SK
+        </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewSKWrapper" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye-fill me-2 text-success"></i>
+                Preview SK Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSKBox"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL CONTOH SK -->
+<div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh SK
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_SK.png"
+                     alt="Contoh SK"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('sk').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrapper = document.getElementById('previewSKWrapper');
+    const previewBox     = document.getElementById('previewSKBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview SK">
+        `;
+    }
+    // FILE LAIN
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih.
+            </div>
+        `;
+    }
+
+    previewWrapper.classList.remove('d-none');
+});
+</script>
+
+
+<div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh SK
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_SK.png"
+                     alt="Contoh SK"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 
             </div>
 
