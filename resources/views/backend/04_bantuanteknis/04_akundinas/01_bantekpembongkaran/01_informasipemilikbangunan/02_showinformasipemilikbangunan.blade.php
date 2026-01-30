@@ -793,6 +793,17 @@
          <h5 style="color: navy; font-weight:800; font-size:16px;">VERIFIKASI BERKAS KELENGKAPAN</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <br>
+<div class="d-flex gap-2 mt-3">
+    <!-- Kembali ke halaman sebelumnya -->
+    <a href="{{ url()->previous() }}" class="button-baru">
+        ← Kembali
+    </a>
+
+    <!-- Kembali ke Data Dasar -->
+    <a href="{{ url('/bebantekpembongkaran') }}" class="button-modern">
+        ← Kembali ke Data Dasar
+    </a>
+</div>
     <hr>
 
     @canany(['superadmin', 'admin', 'dinas', 'pemohon'])
