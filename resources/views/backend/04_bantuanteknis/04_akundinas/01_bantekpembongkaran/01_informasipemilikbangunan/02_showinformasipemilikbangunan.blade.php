@@ -793,99 +793,9 @@
          <h5 style="color: navy; font-weight:800; font-size:16px;">KELENGKAPAN BERKAS PERSYARATAN</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <br>
-
-
-</div>
-
-    {{-- --------------------------------- --}}
-    <div class="table-responsive">
-    <table class="zebra-table table-striped">
-        <tr>
-
-<td style="text-align: center; font-size:16px;">
-<button class="button-baru">
-    <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
-</button>
-</td>
-
-<td style="text-align: center; font-size:16px;">
-<button class="button-baru">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Surat Pernyataan KRK
-</button>
-</td>
-
-</tr>
-
-        <tr>
-            <td style="text-align: center;">
-                 <div style="margin-top: 10px;">
-    @if($data->siteplan && file_exists(public_path('storage/' . $data->siteplan)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->siteplan) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->siteplan)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->siteplan) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <button class="button-merah">Data Belum Di Lengkapi !!</button>
-    @endif
-</div>
-
-            </td>
-
-            <td style="text-align: center;">
-                    <div style="margin-top: 10px;">
-    @if($data->tandatangan && file_exists(public_path('storage/' . $data->tandatangan)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->tandatangan) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->tandatangan)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->tandatangan) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <button class="button-merah">Data Belum Di Lengkapi !!</button>
-    @endif
-</div>
-            </td>
-
-        </tr>
-
-
-
-    </table>
-    <br>
-
-</div>
-
-</div>
-
     <hr>
 
-    @canany(['superadmin', 'admin', 'dinas'])
+    @canany(['superadmin', 'admin', 'dinas', 'pemohon'])
 
     @if ($data->verifikasi1 === 'dikembalikan')
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
@@ -971,7 +881,7 @@
                                                 </div>
                                             </div>
                                         </th>
-@canany(['dinas'])
+@canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; gap: 20px; padding: 10px 0;">
         <style>
@@ -1069,7 +979,7 @@
 </th>
 @endcanany
 
-@canany(['superadmin', 'admin'])
+@canany(['superadmin', 'admin', 'pemohon'])
     <th class="text-center" style="background-color: #e2e8f0; color: black;">
         <div style="display: flex; justify-content: center; gap: 20px;">
             <style>
@@ -1226,7 +1136,7 @@
                                         </th>
 
 
-@canany(['dinas'])
+@canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; gap: 20px; padding: 10px 0;">
         <style>
@@ -1392,7 +1302,7 @@
                                                 </div>
                                         </th>
 
-                                             @canany(['dinas'])
+                                             @canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; padding: 10px 0;">
         <style>
@@ -1740,7 +1650,7 @@
                                                 </div>
                                         </th>
 
-                                             @canany(['dinas'])
+                                             @canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; padding: 10px 0;">
         <style>
@@ -1907,7 +1817,7 @@
                                                 </div>
                                         </th>
 
-                                             @canany(['dinas'])
+                                             @canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; padding: 10px 0;">
         <style>
@@ -2074,7 +1984,7 @@
                                                 </div>
                                         </th>
 
-                                             @canany(['dinas'])
+                                             @canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: black;">
     <div style="display: flex; justify-content: center; padding: 10px 0;">
         <style>
@@ -2241,7 +2151,7 @@
                                                 </div>
                                         </th>
 
-                                             @canany(['dinas'])
+                                             @canany(['dinas', 'pemohon'])
 <th class="text-center" style="background-color: #e2e8f0; color: rgb(100, 45, 45);">
     <div style="display: flex; justify-content: center; padding: 10px 0;">
         <style>
@@ -2369,7 +2279,7 @@
                         </div>
                     </div>
 
-                    @can('dinas')
+                    @canany(['dinas', 'pemohon'])
 
 <div class="mb-3" style="margin-top: -50px;">
     <label for="catatanvalidasi" class="form-label" style="color: navy">
