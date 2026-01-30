@@ -6405,9 +6405,7 @@ public function bebantekpembongkarancreatenew(Request $request)
         'keterangan'   => $request->keterangan,
     ]);
 
-    return redirect()
-        ->route('bebantekpembongkaran')
-        ->with('create', 'Data berhasil disimpan');
+    return redirect('/bebantekpembongkaran')->with('create', 'Data berhasil disimpan');
 }
 
 
