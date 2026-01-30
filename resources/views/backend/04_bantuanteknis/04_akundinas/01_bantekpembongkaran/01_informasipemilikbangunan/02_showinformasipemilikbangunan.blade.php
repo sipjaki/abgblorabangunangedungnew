@@ -63,50 +63,6 @@
             --shadow: rgba(30, 58, 138, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            color: #1e293b;
-            line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--putih);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px var(--shadow);
-            overflow: hidden;
-            border: 1px solid var(--abu);
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--biru-persib) 0%, var(--biru-tua) 100%);
-            color: var(--putih);
-            padding: 30px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
 
         .header h1 {
             margin: 0;
@@ -430,12 +386,8 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-</head>
-<body>
+
     <div class="container">
-        <div class="header">
-            <h1><i class="bi bi-building icon-title"></i> DETAIL DATA PERMOHONAN BANGUNAN</h1>
-        </div>
 
         <div class="content">
             <!-- INFORMASI SURAT -->
