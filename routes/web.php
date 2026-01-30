@@ -1574,6 +1574,17 @@ Route::get(
 )->middleware('auth', 'can:admindinas')
  ->name('bebantekpembongkarandokumen');
 
+
+
+// FORMULIR PENGISIAN INFORMASI BANGUNAN GEDUNG
+    Route::get(
+        '/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',
+    [BantuanteknisController::class, 'informasibangunangedung']
+    )->middleware('auth', 'can:admindinas')
+    ->name('informasibangunangedung');
+// MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
+    // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
+
     // validasi berkas pembongkaran bangunan gedung
 
  Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran1.update');

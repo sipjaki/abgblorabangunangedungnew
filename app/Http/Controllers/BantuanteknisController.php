@@ -6584,7 +6584,7 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     $namapemilik = urldecode($namapemilik);
 
     // Cari data HARUS cocok ID & nama + bawa relasi bantekbongkar1
-    $data = bantekpembongkaraninduk::with('bantekpembongkarannew1')
+    $data = bantekpembongkaraninduk::with('bantekpembongkarannew1', 'bantekpembongkarannew2')
         ->where('id', $id)
         ->where('namapemilik', $namapemilik)
         ->firstOrFail();
@@ -6793,6 +6793,31 @@ public function validasiinformasipemilikbangunan(Request $request, $id)
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
 
+
+// SHOW DATA BARU
+public function informasibangunangedung($namapemilik, $id)
+    {
+        // Decode nama pemilik dari URL
+        $namapemilik = urldecode($namapemilik);
+
+        // Ambil data induk + relasi
+        $data = bantekpembongkaraninduk::with('bantekpembongkarannew2')
+            ->where('id', $id)                     // kunci utama
+            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
+            ->firstOrFail();
+
+        // User login
+        $user = Auth::user();
+
+        return view(
+            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.01_informasibangunangedung',
+            [
+                'title' => 'Informasi Pemilik Bangunan',
+                'data'  => $data,
+                'user'  => $user
+            ]
+        );
+    }
 
 
 }

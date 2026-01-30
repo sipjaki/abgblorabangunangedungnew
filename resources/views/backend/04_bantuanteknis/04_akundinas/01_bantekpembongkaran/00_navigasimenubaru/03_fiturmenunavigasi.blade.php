@@ -158,14 +158,18 @@
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Upload Dokumen -->
-                        <a href="/upload-gedung" class="button-baru">
-                            <i class="bi bi-upload"></i> Upload Dokumen
-                        </a>
+                       @if($data->bantekpembongkarannew2->count() > 0)
+                                <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew2->first()->id) }}"
+                                class="button-berkas">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
+                                class="button-baru">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
 
-                        <!-- Lihat Dokumen -->
-                        <a href="/lihat-gedung" class="button-berkas">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </a>
 
                         <!-- Perbaikan Dokumen -->
                         <a href="/perbaikan-gedung" class="button-modern">
