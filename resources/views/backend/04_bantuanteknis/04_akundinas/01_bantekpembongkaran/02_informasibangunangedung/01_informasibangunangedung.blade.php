@@ -493,121 +493,161 @@
         <div class="card-body">
             <!-- 1. DATA SURAT PERMOHONAN -->
             <div class="section-header">
-                <i class="bi bi-file-earmark-text me-2"></i>Surat Permohonan Izin Pembongkaran
+                <i class="bi bi-file-earmark-text me-2"></i>Dokumen Analisa Kerusakan Bangunan Gedung
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="nosurat">
-                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
-                        </label>
-                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
-                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
-                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="tanggalsurat">
-                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
-                        </label>
-                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
-                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
-                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-
-                <div class="col-12">
+             <div class="col-md-6">
     <div class="form-modern">
-    <label class="form-label-modern" for="suratpermohonan">
-        <i class="bi bi-upload me-2 text-primary"></i>
-        Upload Surat Permohonan Izin Pembongkaran
-    </label>
-
-    <input type="file"
-           class="form-control @error('suratpermohonan') is-invalid @enderror"
-           id="suratpermohonan"
-           name="suratpermohonan"
-           accept=".pdf,.jpg,.jpeg,.png">
-
-    @error('suratpermohonan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <small class="text-muted d-block mt-1">
-        Format: PDF (Maks. 15MB)
-    </small>
-
-    <small class="text-muted d-block mb-2">
-        Keterangan: Silahkan download template surat ini, isi, lalu
-        <strong class="text-danger">Upload Kembali</strong>.
-    </small>
-
-    <!-- BUTTON DOWNLOAD -->
-    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
-       class="btn btn-outline-primary btn-sm mb-3"
-       download>
-        <i class="bi bi-download me-1"></i> Download Template Surat
-    </a>
-
-    <!-- PREVIEW FILE -->
-    <div id="previewSuratPermohonan" class="mt-3 d-none">
-        <label class="form-label-modern mb-2">
-            <i class="bi bi-eye me-2 text-success"></i>
-            Preview Berkas Yang Diupload
+        <label class="form-label-modern" for="tingkat_kerusakan">
+            <i class="bi bi-percent me-2 text-danger"></i>
+            Tingkat Kerusakan (%)
         </label>
 
-        <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
+        <div class="input-group">
+            <input type="number"
+                   step="0.01"
+                   min="0"
+                   max="100"
+                   class="form-control @error('tingkat_kerusakan') is-invalid @enderror"
+                   id="tingkat_kerusakan"
+                   name="tingkat_kerusakan"
+                   value="{{ old('tingkat_kerusakan') }}"
+                   placeholder="Contoh: 45.50">
+            <span class="input-group-text">%</span>
+        </div>
+
+        @error('tingkat_kerusakan')
+            <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted">
+            Isi dalam bentuk persen (0 – 100)
+        </small>
     </div>
 </div>
 
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="status_kerusakan">
+            <i class="bi bi-exclamation-triangle me-2 text-warning"></i>
+            Status Kerusakan
+        </label>
+
+        <select class="form-select @error('status_kerusakan') is-invalid @enderror"
+                id="status_kerusakan"
+                name="status_kerusakan">
+            <option value="">-- Pilih Status --</option>
+            <option value="Ringan" {{ old('status_kerusakan') == 'Ringan' ? 'selected' : '' }}>
+                Ringan
+            </option>
+            <option value="Sedang" {{ old('status_kerusakan') == 'Sedang' ? 'selected' : '' }}>
+                Sedang
+            </option>
+            <option value="Berat" {{ old('status_kerusakan') == 'Berat' ? 'selected' : '' }}>
+                Berat
+            </option>
+        </select>
+
+        @error('status_kerusakan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+
+          <div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="dok_kerusakan_bangunan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Dokumen Analisa Kerusakan Bangunan
+        </label>
+
+        <!-- INPUT FILE -->
+        <input type="file"
+               class="form-control @error('dok_kerusakan_bangunan') is-invalid @enderror"
+               id="dok_kerusakan_bangunan"
+               name="dok_kerusakan_bangunan"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('dok_kerusakan_bangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 15MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDokAnalisa">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh Dokumen
+        </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewSuratPermohonan" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Dokumen Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratPermohonanBox"></div>
+        </div>
+    </div>
+</div>
+
+
 <script>
-document.getElementById('suratpermohonan').addEventListener('change', function () {
+(function () {
+    const input = document.getElementById('dok_kerusakan_bangunan');
+    const wrapper = document.getElementById('previewDokKerusakan');
+    const box = document.getElementById('previewDokKerusakanBox');
 
-    const file = this.files[0];
-    const previewWrap = document.getElementById('previewSuratPermohonan');
-    const previewBox  = document.getElementById('previewSuratPermohonanBox');
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
 
-    previewBox.innerHTML = '';
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
 
-    if (!file) {
-        previewWrap.classList.add('d-none');
-        return;
-    }
+        const fileURL = URL.createObjectURL(file);
 
-    const fileURL = URL.createObjectURL(file);
+        // PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        }
+        // IMAGE
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `
+                <img src="${fileURL}"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Preview Dokumen Kerusakan Bangunan">
+            `;
+        }
+        // FILE LAIN
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih.
+                </div>
+            `;
+        }
 
-    // PDF
-    if (file.type === 'application/pdf') {
-        previewBox.innerHTML = `
-            <iframe src="${fileURL}"
-                    class="w-100 rounded"
-                    style="height:400px;"
-                    frameborder="0"></iframe>
-        `;
-    }
-    // IMAGE
-    else if (file.type.startsWith('image/')) {
-        previewBox.innerHTML = `
-            <img src="${fileURL}"
-                 class="img-fluid rounded shadow-sm"
-                 alt="Preview Surat Permohonan">
-        `;
-    }
-    // TIDAK DIDUKUNG
-    else {
-        previewBox.innerHTML = `
-            <p class="text-danger mb-0">
-                File tidak bisa dipreview.
-            </p>
-        `;
-    }
-
-    previewWrap.classList.remove('d-none');
-});
+        wrapper.classList.remove('d-none');
+    });
+})();
 </script>
 
 
