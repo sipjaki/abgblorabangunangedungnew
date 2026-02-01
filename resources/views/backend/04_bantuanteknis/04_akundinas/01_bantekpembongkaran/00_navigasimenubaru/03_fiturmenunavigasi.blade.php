@@ -104,37 +104,46 @@
             </div>
 <!-- Surat Pemberitahuan (2) -->
 @if($data->validasiberkas2 == 'sudah')
-    <button type="button"
-            class="button-lolos"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="background-color:#10B981;color:black;">
-        <i class="bi bi-patch-check-fill me-1"></i> Lolos
-    </button>
+
+    <div class="d-block">
+        <button type="button"
+                class="button-lolos"
+                onclick="openModalVerifikasi(2, {{ $data->id }})"
+                style="background-color:#10B981;color:black;">
+            <i class="bi bi-patch-check-fill me-1"></i> Lolos
+        </button>
+    </div>
 
 @elseif($data->validasiberkas2 == 'belum')
-    <button type="button"
-            class="button-dikembalikan"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="background-color:#0400ff;color:black;">
-        <i class="bi bi-x-circle me-1"></i> Dikembalikan
-    </button>
 
-    <!-- KETERANGAN TAMBAHAN -->
-    <div class="mt-1">
-        <small class="text-muted">
-            Keterangan : Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
-        </small>
+    <div class="d-block">
+        <button type="button"
+                class="button-dikembalikan"
+                onclick="openModalVerifikasi(2, {{ $data->id }})"
+                style="background-color:#0400ff;color:black;">
+            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        </button>
+
+        <!-- KETERANGAN DI BAWAH BUTTON -->
+        <div class="mt-1">
+            <small class="text-muted d-block">
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
+            </small>
+        </div>
     </div>
 
 @else
-    <button type="button"
-            class="button-modern"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="color:black;">
-        <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
-    </button>
-@endif
 
+    <div class="d-block">
+        <button type="button"
+                class="button-modern"
+                onclick="openModalVerifikasi(2, {{ $data->id }})"
+                style="color:black;">
+            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+        </button>
+    </div>
+
+@endif
 
 <script>
 function openModalVerifikasi(documentType, itemId) {
