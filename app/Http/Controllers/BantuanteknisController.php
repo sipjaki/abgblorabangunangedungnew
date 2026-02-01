@@ -7139,9 +7139,9 @@ public function bebantekpembongkaranbangunan($pelaksana, $id)
     $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
 
     return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinfobangunangedung',
         [
-            'title'     => 'Details Informasi Pemilik Bangunan Gedung',
+            'title'     => 'Details Informasi Data Bangunan Gedung',
             'data'      => $data,
             'pelaksana' => $pelaksana_slug
         ]
