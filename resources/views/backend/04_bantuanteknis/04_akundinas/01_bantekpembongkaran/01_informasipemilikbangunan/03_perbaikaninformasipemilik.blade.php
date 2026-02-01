@@ -532,25 +532,36 @@ function previewPdf(input) {
     <div class="row g-3">
 
         <!-- Pilihan Sanggup -->
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-check-square"></i> Pilihan Sanggup
-                </div>
+      <div class="col-md-6">
+    <div class="data-card">
 
-                <select name="pilihansanggup" class="form-select">
-                    <option value="">-- Pilih --</option>
-                    <option value="Sanggup"
-                        {{ $data->pilihansanggup == 'Sanggup' ? 'selected' : '' }}>
-                        Sanggup
-                    </option>
-                    <option value="Tidak Sanggup"
-                        {{ $data->pilihansanggup == 'Tidak Sanggup' ? 'selected' : '' }}>
-                        Tidak Sanggup
-                    </option>
-                </select>
-            </div>
+        <div class="data-label">
+            <i class="bi bi-check-square"></i> Pilihan Sanggup
         </div>
+
+        {{-- DATA LAMA --}}
+        <div class="mb-2">
+            <span class="badge bg-secondary">Data Lama</span><br>
+            <strong>
+                {{ $data->pilihansanggup ?? 'Data Tidak Ditemukan' }}
+            </strong>
+        </div>
+
+        {{-- PILIHAN PERUBAHAN --}}
+        <div class="mt-2">
+            <small class="text-muted d-block mb-1">
+                Perbaiki / Ubah Pilihan
+            </small>
+
+            <select name="pilihansanggup" class="form-select">
+                <option value="">-- Pilih --</option>
+                <option value="Sanggup">Sanggup</option>
+                <option value="Tidak Sanggup">Tidak Sanggup</option>
+            </select>
+        </div>
+
+    </div>
+</div>
 
     </div>
 
@@ -627,51 +638,91 @@ function previewSuratKesanggupan(input) {
                     <i class="bi bi-person-badge"></i> DATA PEMILIK
                 </div>
                 <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-person"></i> Nama Lengkap</div>
-                        <div class="data-value">{{$data->namalengkap ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-briefcase"></i> Jabatan</div>
-                        <div class="data-value">{{$data->jabatan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-geo-alt"></i> Alamat Pemilik</div>
-                        <div class="data-value">{{$data->alamatpemilik ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-telephone"></i> No Telepon</div>
-                        <div class="data-value">{{$data->notelepon ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-card-text"></i> KTP</div>
-                        <div class="data-value">
-                            @if($data->ktp)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->ktp) }}"
-                                        data-title="KTP">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-earmark"></i> SK</div>
-                        <div class="data-value">
-                            @if($data->sk)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->sk) }}"
-                                        data-title="SK">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
+
+    {{-- Nama Lengkap --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-person"></i> Nama Lengkap
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Data Lama</span><br>
+            <strong>{{ $data->namalengkap ?? 'Data Tidak Ditemukan' }}</strong>
+        </div>
+    </div>
+
+    {{-- Jabatan --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-briefcase"></i> Jabatan
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Data Lama</span><br>
+            <strong>{{ $data->jabatan ?? 'Data Tidak Ditemukan' }}</strong>
+        </div>
+    </div>
+
+    {{-- Alamat Pemilik --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-geo-alt"></i> Alamat Pemilik
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Data Lama</span><br>
+            <strong>{{ $data->alamatpemilik ?? 'Data Tidak Ditemukan' }}</strong>
+        </div>
+    </div>
+
+    {{-- No Telepon --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-telephone"></i> No Telepon
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Data Lama</span><br>
+            <strong>{{ $data->notelepon ?? 'Data Tidak Ditemukan' }}</strong>
+        </div>
+    </div>
+
+    {{-- KTP --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-card-text"></i> KTP
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Berkas Lama</span><br>
+            @if($data->ktp)
+                <button class="file-badge view-pdf"
+                        data-url="{{ asset('public/' . $data->ktp) }}"
+                        data-title="KTP">
+                    <i class="bi bi-eye"></i> Lihat PDF
+                </button>
+            @else
+                <strong>Data Tidak Ditemukan</strong>
+            @endif
+        </div>
+    </div>
+
+    {{-- SK --}}
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-file-earmark"></i> SK
+        </div>
+        <div class="data-value">
+            <span class="badge bg-secondary mb-1">Berkas Lama</span><br>
+            @if($data->sk)
+                <button class="file-badge view-pdf"
+                        data-url="{{ asset('public/' . $data->sk) }}"
+                        data-title="SK">
+                    <i class="bi bi-eye"></i> Lihat PDF
+                </button>
+            @else
+                <strong>Data Tidak Ditemukan</strong>
+            @endif
+        </div>
+    </div>
+
+</div>
+
             </div>
 
             <!-- DATA TANAH -->
