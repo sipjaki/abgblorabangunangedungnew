@@ -7185,9 +7185,9 @@ public function bebantekbangunanbongkarcrnew(Request $request)
         'berkaspemeriksaan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
         // Cadangan
-        'cadangan1' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan1' => 'nullable|string',
         'cadangan2' => 'nullable|string',
-        'cadangan3' => 'nullable|string',
+        'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
     ]);
 
     // ==============================
