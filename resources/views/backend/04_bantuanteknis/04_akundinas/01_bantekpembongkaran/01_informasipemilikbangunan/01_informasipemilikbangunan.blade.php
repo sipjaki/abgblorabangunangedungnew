@@ -618,11 +618,11 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
 
             <!-- 2. DATA BANGUNAN -->
-            {{-- <div class="section-header mt-4">
+            <div class="section-header mt-4">
                 <i class="bi bi-building me-2"></i> Data Surat Permohonan Kajian Teknis Bangunan Gedung
-            </div> --}}
+            </div>
 
-            {{-- <div class="row"> --}}
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="namabangunan">
