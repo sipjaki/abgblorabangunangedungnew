@@ -769,80 +769,6 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             </div>
 
             <!-- 3. SURAT KESANGGUPAN -->
-            <div class="section-header mt-4">
-                <i class="bi bi-file-earmark-check me-2"></i> Kesanggupan Pembongkaran Bangunan Gedung
-            </div>
-
-            <div class="row">
-<div class="col-md-12">
-    <div class="form-modern">
-        <label class="form-label-modern mb-3">
-            <i class="bi bi-check-circle me-2 text-primary"></i>
-            Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan: <br>
-
-        </label>
-<small class="text-muted">
-    Keterangan: Pemohon menyatakan persetujuan dengan memilih <strong style="color: red"> satu atau lebih pernyataan </strong> di bawah.
-</small>
-        <br>
-
-        @php
-            $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
-        @endphp
-
-        <!-- ITEM 1 -->
-        <div class="row align-items-start mb-2">
-            <div class="col-auto">
-                <input class="form-check-input mt-1"
-                       type="checkbox"
-                       name="pilihansanggup[]"
-                       value="Segala kerusakan yang timbul ditanggung oleh pemohon"
-                       {{ in_array('Segala kerusakan yang timbul ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
-            </div>
-            <div class="col">
-                <span>
-                    Segala kerusakan yang timbul ditanggung oleh pemohon
-                </span>
-            </div>
-        </div>
-
-        <!-- ITEM 2 -->
-        <div class="row align-items-start mb-2">
-            <div class="col-auto">
-                <input class="form-check-input mt-1"
-                       type="checkbox"
-                       name="pilihansanggup[]"
-                       value="Segala pembiayaan pembongkaran ditanggung oleh pemohon"
-                       {{ in_array('Segala pembiayaan pembongkaran ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
-            </div>
-            <div class="col">
-                <span>
-                    Segala pembiayaan pembongkaran ditanggung oleh pemohon
-                </span>
-            </div>
-        </div>
-
-        <!-- ITEM 3 -->
-        <div class="row align-items-start mb-2">
-            <div class="col-auto">
-                <input class="form-check-input mt-1"
-                       type="checkbox"
-                       name="pilihansanggup[]"
-                       value="Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan"
-                       {{ in_array('Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan', $oldCek) ? 'checked' : '' }}>
-            </div>
-            <div class="col">
-                <span>
-                    Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan
-                </span>
-            </div>
-        </div>
-
-        @error('pilihansanggup')
-            <div class="text-danger mt-1">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
 
 
        <div class="col-md-12">
@@ -1595,7 +1521,7 @@ document.getElementById('sk').addEventListener('change', function () {
     <div class="col-md-6">
         <div class="form-modern">
             <label class="form-label-modern" for="fungsibangunan">
-                <i class="bi bi-building me-2 text-primary"></i> Fungsi Bangunan
+                <i class="bi bi-building me-2 text-primary"></i> Pemanfataan Bangunan Gedung Sebagai ?
             </label>
             <select class="form-select @error('fungsibangunan') is-invalid @enderror"
                     id="fungsibangunan" name="fungsibangunan">
@@ -2053,7 +1979,7 @@ document.getElementById('kib').addEventListener('change', function () {
         </div>
 
         <small class="text-muted d-block mt-1">
-            Format: PDF(Maks. 5MB)
+            Format: PDF(Maks. 15 MB)
         </small>
 
         <!-- DOWNLOAD TEMPLATE SURAT -->
@@ -2067,6 +1993,82 @@ document.getElementById('kib').addEventListener('change', function () {
         </a>
     </div>
 </div>
+
+<div class="section-header mt-4">
+                <i class="bi bi-file-earmark-check me-2"></i> Kesanggupan Pembongkaran Bangunan Gedung
+            </div>
+
+            <div class="row">
+<div class="col-md-12">
+    <div class="form-modern">
+        <label class="form-label-modern mb-3">
+            <i class="bi bi-check-circle me-2 text-primary"></i>
+            Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan: <br>
+
+        </label>
+<small class="text-muted">
+    Keterangan: Pemohon menyatakan persetujuan dengan memilih <strong style="color: red"> satu atau lebih pernyataan </strong> di bawah.
+</small>
+        <br>
+
+        @php
+            $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
+        @endphp
+
+        <!-- ITEM 1 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Segala kerusakan yang timbul ditanggung oleh pemohon"
+                       {{ in_array('Segala kerusakan yang timbul ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Segala kerusakan yang timbul ditanggung oleh pemohon
+                </span>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Segala pembiayaan pembongkaran ditanggung oleh pemohon"
+                       {{ in_array('Segala pembiayaan pembongkaran ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Segala pembiayaan pembongkaran ditanggung oleh pemohon
+                </span>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan"
+                       {{ in_array('Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan
+                </span>
+            </div>
+        </div>
+
+        @error('pilihansanggup')
+            <div class="text-danger mt-1">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
 
 
 <script>
