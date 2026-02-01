@@ -411,13 +411,16 @@ function closeModalPemohon2() {
                     <div class="button-container">
                         <!-- Input Permohonan -->
                        @if($data->bantekpembongkarannew2->count() > 0)
-                               <a href="{{ route('bebantekpembongkaranbangunandetail', [
-    'pelaksana' => $data->bantekpembongkarannew2->first()->pelaksana,
-    'id' => $data->bantekpembongkarannew2->first()->id
-]) }}" class="button-berkas">
-    <i class="bi bi-eye"></i> Lihat Dokumen
-</a>
+                             @php
+                                        $item = $data->bantekpembongkarannew2->first();
+                                    @endphp
 
+                                    <a href="{{ route('bebantekpembongkaranbangunandetail', [
+                                        'pelaksana' => Str::slug($item->induk2->pelaksana ?? 'tidak-diketahui'),
+                                        'id' => $item->id
+                                    ]) }}" class="button-berkas">
+                                        <i class="bi bi-eye"></i> Lihat Dokumen
+                                    </a>
                             @else
                                 <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
                                 class="button-baru">

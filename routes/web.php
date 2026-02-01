@@ -1602,7 +1602,7 @@ Route::put('/bapersetujuanbupatibongkar/upload/{id}', [BantuanteknisController::
 Route::get('/bebantekpembongkaran/bangunan/{pelaksana}/{id}',[BantuanteknisController::class, 'bebantekpembongkaranbangunan'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranbangunandetail');
 
 // PERBAIKAN INFORMASI BANGUNAN
-    Route::get('/perbaikanpemilik/{pelaksana}/{id}',[BantuanteknisController::class, 'perbaikandetailbangunangedung'])->middleware('auth', 'can:admindinas')->name('perbaikan.informasibangunangedung');
+    // Route::get('/perbaikanpemilik/{pelaksana}/{id}',[BantuanteknisController::class, 'perbaikandetailbangunangedung'])->middleware('auth', 'can:admindinas')->name('perbaikan.informasibangunangedung');
 
     // validasi berkas pembongkaran bangunan gedung
 
