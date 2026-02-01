@@ -395,65 +395,71 @@
                 <div class="section-header">
                     <i class="bi bi-file-earmark-text"></i> INFORMASI SURAT
                 </div>
-                <div class="section-content">
-<!-- ROW ATAS -->
-    <!-- Nomor Surat -->
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-hash"></i> Nomor Surat
+            <div class="section-content">
+
+    <!-- ROW PERTAMA: Nomor Surat & Tanggal Surat -->
+    <div class="row g-3 mb-3">
+        <!-- Nomor Surat -->
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-hash"></i> Nomor Surat
+                </div>
+                <input type="text"
+                       name="nosurat"
+                       class="form-control"
+                       value="{{ $data->nosurat }}"
+                       placeholder="Masukkan Nomor Surat">
             </div>
-            <input type="text"
-                   name="nosurat"
-                   class="form-control"
-                   value="{{ $data->nosurat }}"
-                   placeholder="Masukkan Nomor Surat">
+        </div>
+
+        <!-- Tanggal Surat -->
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-calendar-date"></i> Tanggal Surat
+                </div>
+                <input type="date"
+                       name="tanggalsurat"
+                       class="form-control"
+                       value="{{ $data->tanggalsurat }}">
+            </div>
         </div>
     </div>
 
-    <!-- Tanggal Surat -->
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-calendar-date"></i> Tanggal Surat
+    <!-- ROW KEDUA: Surat Permohonan (Full Width) -->
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-pdf"></i> Surat Permohonan
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->suratpermohonan)
+                    <iframe id="frame-surat-lama"
+                            src="{{ asset('public/'.$data->suratpermohonan) }}"
+                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                    <iframe id="frame-surat-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @else
+                    <div class="text-muted mb-2">
+                        Data Tidak Ditemukan
+                    </div>
+                @endif
+
+                {{-- INPUT FILE BARU --}}
+                <input type="file"
+                       name="suratpermohonan"
+                       class="form-control mt-2"
+                       accept="application/pdf"
+                       onchange="previewSurat(this)">
             </div>
-            <input type="date"
-                   name="tanggalsurat"
-                   class="form-control"
-                   value="{{ $data->tanggalsurat }}">
         </div>
     </div>
 
-<!-- ROW BAWAH (FULL WIDTH) -->
-<div class="col-12">
-    <div class="data-card">
-
-        <div class="data-label">
-            <i class="bi bi-file-pdf"></i> Surat Permohonan
-        </div>
-
-        {{-- FILE LAMA --}}
-        @if($data->suratpermohonan)
-            <iframe id="frame-surat-lama"
-                    src="{{ asset('public/'.$data->suratpermohonan) }}"
-                    style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-            <iframe id="frame-surat-baru"
-                    style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-        @else
-            <div class="text-muted mb-2">
-                Data Tidak Ditemukan
-            </div>
-        @endif
-
-        {{-- INPUT FILE BARU --}}
-        <input type="file"
-               name="suratpermohonan"
-               class="form-control mt-2"
-               accept="application/pdf"
-               onchange="previewSurat(this)">
-
-    </div>
 </div>
+
 
 <script>
 function previewSurat(input) {
