@@ -770,96 +770,6 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
             <!-- 3. SURAT KESANGGUPAN -->
 
-
-       <div class="col-md-12">
-    <div class="form-modern">
-        <label class="form-label-modern" for="suratkesanggupan">
-            <i class="bi bi-upload me-2 text-primary"></i>
-            Upload Surat Pernyataan Kesanggupan Pembongkaran Bangunan Gedung
-        </label>
-
-        <input type="file"
-               class="form-control @error('suratkesanggupan') is-invalid @enderror"
-               id="suratkesanggupan"
-               name="suratkesanggupan"
-               accept=".pdf,.docx">
-
-        @error('suratkesanggupan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        <small class="text-muted d-block mt-1">
-            Format: PDF(Maks. 15MB)
-        </small>
-
-        <small class="text-muted d-block mb-2">
-            Keterangan: Silahkan download template surat ini, isi, lalu
-            <strong class="text-danger">Upload Kembali</strong>.
-        </small>
-
-        <!-- BUTTON DOWNLOAD TEMPLATE -->
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
-           class="btn btn-outline-primary btn-sm mb-3"
-           download>
-            <i class="bi bi-download me-1"></i> Download Template Surat
-        </a>
-
-        <!-- PREVIEW -->
-        <div id="previewSuratKesanggupan" class="mt-3 d-none">
-            <label class="form-label-modern mb-2">
-                <i class="bi bi-eye me-2 text-success"></i>
-                Preview Berkas Yang Diupload
-            </label>
-
-            <div class="border rounded-3 p-2 bg-light"
-                 id="previewSuratKesanggupanBox"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-document.getElementById('suratkesanggupan').addEventListener('change', function () {
-
-    const file = this.files[0];
-    const previewWrap = document.getElementById('previewSuratKesanggupan');
-    const previewBox  = document.getElementById('previewSuratKesanggupanBox');
-
-    previewBox.innerHTML = '';
-
-    if (!file) {
-        previewWrap.classList.add('d-none');
-        return;
-    }
-
-    const fileURL = URL.createObjectURL(file);
-
-    // PDF
-    if (file.type === 'application/pdf') {
-        previewBox.innerHTML = `
-            <iframe src="${fileURL}"
-                    class="w-100 rounded"
-                    style="height:400px;"
-                    frameborder="0"></iframe>
-        `;
-    }
-    // DOCX / lainnya
-    else {
-        previewBox.innerHTML = `
-            <div class="alert alert-warning mb-0">
-                <i class="bi bi-file-earmark-word me-2"></i>
-                <strong>${file.name}</strong><br>
-                File berhasil dipilih (preview isi dokumen tidak tersedia).
-            </div>
-        `;
-    }
-
-    previewWrap.classList.remove('d-none');
-});
-</script>
-
-
-            </div>
-
             <!-- 4. DATA PEMILIK -->
             <div class="section-header mt-4">
                 <i class="bi bi-person-badge me-2"></i> Data Pemilik
@@ -1994,6 +1904,82 @@ document.getElementById('kib').addEventListener('change', function () {
     </div>
 </div>
 
+
+<script>
+const pbgInput = document.getElementById('pbg');
+const previewWrapper = document.getElementById('previewPBGWrapper');
+const previewBox = document.getElementById('previewPBGBox');
+const downloadSurat = document.getElementById('downloadSuratPBG');
+
+// Preview file
+pbgInput.addEventListener('change', function () {
+    const file = this.files[0];
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
+    } else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Berkas PBG">`;
+    } else {
+        previewBox.innerHTML = `<div class="alert alert-warning mb-0"><i class="bi bi-file-earmark me-2"></i><strong>${file.name}</strong><br>File berhasil dipilih.</div>`;
+    }
+
+    previewWrapper.classList.remove('d-none');
+
+    // Jika ada file, sembunyikan download template
+    downloadSurat.style.display = 'none';
+});
+
+// Contoh: show template jika user tidak punya PBG (misal checkbox)
+function togglePBGField(adaPBG) {
+    if (adaPBG) {
+        document.getElementById('pbgField').style.display = 'block';
+        downloadSurat.style.display = 'none';
+    } else {
+        document.getElementById('pbgField').style.display = 'block';
+        previewWrapper.classList.add('d-none');
+        previewBox.innerHTML = '';
+        pbgInput.value = '';
+        downloadSurat.style.display = 'inline-block';
+    }
+}
+</script>
+
+</div>
+
+<script>
+function togglePBGField() {
+    const pilihan = document.getElementById('apakahadapbg').value;
+    const field   = document.getElementById('pbgField');
+    const label   = document.getElementById('pbgLabel');
+    const downloadBtn = document.getElementById('downloadSuratPBG');
+
+    if (pilihan === 'Ya') {
+        field.style.display = 'block';
+        label.innerHTML = '<i class="bi bi-upload me-2 text-primary"></i> Upload PBG';
+        downloadBtn.style.display = 'none';
+    }
+    else if (pilihan === 'Tidak') {
+        field.style.display = 'block';
+        label.innerHTML = '<i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload Surat Pernyataan Tidak Mempunyai PBG';
+        downloadBtn.style.display = 'inline-block';
+    }
+    else {
+        field.style.display = 'none';
+    }
+}
+
+// auto trigger kalau ada old value
+document.addEventListener('DOMContentLoaded', togglePBGField);
+</script>
+
 <div class="section-header mt-4">
                 <i class="bi bi-file-earmark-check me-2"></i> Kesanggupan Pembongkaran Bangunan Gedung
             </div>
@@ -2070,81 +2056,95 @@ document.getElementById('kib').addEventListener('change', function () {
 </div>
 
 
+       <div class="col-md-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="suratkesanggupan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Pernyataan Kesanggupan Pembongkaran Bangunan Gedung
+        </label>
+
+        <input type="file"
+               class="form-control @error('suratkesanggupan') is-invalid @enderror"
+               id="suratkesanggupan"
+               name="suratkesanggupan"
+               accept=".pdf,.docx">
+
+        @error('suratkesanggupan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF(Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD TEMPLATE -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+
+        <!-- PREVIEW -->
+        <div id="previewSuratKesanggupan" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratKesanggupanBox"></div>
+        </div>
+    </div>
+</div>
 
 <script>
-const pbgInput = document.getElementById('pbg');
-const previewWrapper = document.getElementById('previewPBGWrapper');
-const previewBox = document.getElementById('previewPBGBox');
-const downloadSurat = document.getElementById('downloadSuratPBG');
+document.getElementById('suratkesanggupan').addEventListener('change', function () {
 
-// Preview file
-pbgInput.addEventListener('change', function () {
     const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratKesanggupan');
+    const previewBox  = document.getElementById('previewSuratKesanggupanBox');
+
     previewBox.innerHTML = '';
 
     if (!file) {
-        previewWrapper.classList.add('d-none');
+        previewWrap.classList.add('d-none');
         return;
     }
 
     const fileURL = URL.createObjectURL(file);
 
+    // PDF
     if (file.type === 'application/pdf') {
-        previewBox.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
-    } else if (file.type.startsWith('image/')) {
-        previewBox.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Berkas PBG">`;
-    } else {
-        previewBox.innerHTML = `<div class="alert alert-warning mb-0"><i class="bi bi-file-earmark me-2"></i><strong>${file.name}</strong><br>File berhasil dipilih.</div>`;
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
     }
-
-    previewWrapper.classList.remove('d-none');
-
-    // Jika ada file, sembunyikan download template
-    downloadSurat.style.display = 'none';
-});
-
-// Contoh: show template jika user tidak punya PBG (misal checkbox)
-function togglePBGField(adaPBG) {
-    if (adaPBG) {
-        document.getElementById('pbgField').style.display = 'block';
-        downloadSurat.style.display = 'none';
-    } else {
-        document.getElementById('pbgField').style.display = 'block';
-        previewWrapper.classList.add('d-none');
-        previewBox.innerHTML = '';
-        pbgInput.value = '';
-        downloadSurat.style.display = 'inline-block';
-    }
-}
-</script>
-
-</div>
-
-<script>
-function togglePBGField() {
-    const pilihan = document.getElementById('apakahadapbg').value;
-    const field   = document.getElementById('pbgField');
-    const label   = document.getElementById('pbgLabel');
-    const downloadBtn = document.getElementById('downloadSuratPBG');
-
-    if (pilihan === 'Ya') {
-        field.style.display = 'block';
-        label.innerHTML = '<i class="bi bi-upload me-2 text-primary"></i> Upload PBG';
-        downloadBtn.style.display = 'none';
-    }
-    else if (pilihan === 'Tidak') {
-        field.style.display = 'block';
-        label.innerHTML = '<i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload Surat Pernyataan Tidak Mempunyai PBG';
-        downloadBtn.style.display = 'inline-block';
-    }
+    // DOCX / lainnya
     else {
-        field.style.display = 'none';
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark-word me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih (preview isi dokumen tidak tersedia).
+            </div>
+        `;
     }
-}
 
-// auto trigger kalau ada old value
-document.addEventListener('DOMContentLoaded', togglePBGField);
+    previewWrap.classList.remove('d-none');
+});
 </script>
+
+
+            </div>
+
             <!-- Tombol Submit -->
           <div class="mt-4 text-end">
 
