@@ -7026,7 +7026,8 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
         ]
     );
 }
-public function uploadBerkasKonsultasi(Request $request, $id)
+
+public function bakonsultasipembongkaran(Request $request, $id)
 {
     // Validasi file, max 15MB
     $request->validate([
