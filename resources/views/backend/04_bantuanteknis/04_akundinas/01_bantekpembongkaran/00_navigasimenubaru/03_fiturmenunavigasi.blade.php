@@ -107,7 +107,7 @@
 {{-- ===================== --}}
 {{-- STATUS : LOLOS (NULL) --}}
 {{-- ===================== --}}
-@if(is_null($data->validasiberkas2))
+@if(($data->validasiberkas2))
 
     <div class="d-block">
         <button type="button"
