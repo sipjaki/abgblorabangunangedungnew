@@ -637,109 +637,107 @@ function previewSuratKesanggupan(input) {
                 <div class="section-header">
                     <i class="bi bi-person-badge"></i> DATA PEMILIK
                 </div>
-                <div class="section-content row g-3">
+                <div class="section-content">
+    <div class="row g-4">
 
-    {{-- Nama Lengkap --}}
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-person"></i> Nama Lengkap
+        {{-- Nama Lengkap --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-person"></i> Nama Lengkap
+                </div>
+                <input type="text"
+                       name="namalengkap"
+                       class="form-control"
+                       value="{{ old('namalengkap', $data->namalengkap) }}">
             </div>
-            <input type="text"
-                   name="namalengkap"
-                   class="form-control"
-                   value="{{ old('namalengkap', $data->namalengkap) }}"
-                   placeholder="Masukkan Nama Lengkap">
         </div>
-    </div>
 
-    {{-- Jabatan --}}
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-briefcase"></i> Jabatan
+        {{-- Jabatan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-briefcase"></i> Jabatan
+                </div>
+                <input type="text"
+                       name="jabatan"
+                       class="form-control"
+                       value="{{ old('jabatan', $data->jabatan) }}">
             </div>
-            <input type="text"
-                   name="jabatan"
-                   class="form-control"
-                   value="{{ old('jabatan', $data->jabatan) }}"
-                   placeholder="Masukkan Jabatan">
         </div>
-    </div>
 
-    {{-- Alamat --}}
-    <div class="col-md-12">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-geo-alt"></i> Alamat Pemilik
+        {{-- Alamat --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-geo-alt"></i> Alamat Pemilik
+                </div>
+                <textarea name="alamatpemilik"
+                          class="form-control"
+                          rows="3">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
             </div>
-            <textarea name="alamatpemilik"
-                      class="form-control"
-                      rows="3"
-                      placeholder="Masukkan Alamat Pemilik">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
         </div>
-    </div>
 
-    {{-- No Telepon --}}
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-telephone"></i> No Telepon
+        {{-- No Telepon --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-telephone"></i> No Telepon
+                </div>
+                <input type="text"
+                       name="notelepon"
+                       class="form-control"
+                       value="{{ old('notelepon', $data->notelepon) }}">
             </div>
-            <input type="text"
-                   name="notelepon"
-                   class="form-control"
-                   value="{{ old('notelepon', $data->notelepon) }}"
-                   placeholder="Masukkan Nomor Telepon">
         </div>
-    </div>
 
-    {{-- KTP --}}
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-card-text"></i> KTP (PDF)
+        {{-- KTP --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-card-text"></i> KTP (PDF)
+                </div>
+
+                @if($data->ktp)
+                    <button type="button"
+                            class="file-badge view-pdf mb-2"
+                            data-url="{{ asset('public/' . $data->ktp) }}"
+                            data-title="KTP Lama">
+                        <i class="bi bi-eye"></i> Lihat KTP Lama
+                    </button>
+                @endif
+
+                <input type="file"
+                       name="ktp"
+                       class="form-control"
+                       accept="application/pdf">
             </div>
-
-            @if($data->ktp)
-                <button type="button"
-                        class="file-badge view-pdf mb-2"
-                        data-url="{{ asset('public/' . $data->ktp) }}"
-                        data-title="KTP Lama">
-                    <i class="bi bi-eye"></i> Lihat KTP Lama
-                </button>
-            @endif
-
-            <input type="file"
-                   name="ktp"
-                   class="form-control"
-                   accept="application/pdf">
         </div>
-    </div>
 
-    {{-- SK --}}
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-file-earmark"></i> SK (PDF)
+        {{-- SK --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-earmark"></i> SK (PDF)
+                </div>
+
+                @if($data->sk)
+                    <button type="button"
+                            class="file-badge view-pdf mb-2"
+                            data-url="{{ asset('public/' . $data->sk) }}"
+                            data-title="SK Lama">
+                        <i class="bi bi-eye"></i> Lihat SK Lama
+                    </button>
+                @endif
+
+                <input type="file"
+                       name="sk"
+                       class="form-control"
+                       accept="application/pdf">
             </div>
-
-            @if($data->sk)
-                <button type="button"
-                        class="file-badge view-pdf mb-2"
-                        data-url="{{ asset('public/' . $data->sk) }}"
-                        data-title="SK Lama">
-                    <i class="bi bi-eye"></i> Lihat SK Lama
-                </button>
-            @endif
-
-            <input type="file"
-                   name="sk"
-                   class="form-control"
-                   accept="application/pdf">
         </div>
-    </div>
 
+    </div>
 </div>
 
             </div>
