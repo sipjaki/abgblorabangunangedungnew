@@ -7127,10 +7127,10 @@ public function informasibangunangedung($namapemilik, $id)
         );
     }
 
-public function bebantekpembongkaranbangunan($nosurat, $id)
+public function bebantekpembongkaranbangunan($pelaksana, $id)
 {
     // Decode kalau ada spasi / strip
-    $nosurat = urldecode($nosurat);
+    $pelaksana = urldecode($pelaksana);
 
     $data = bantekpembongkarannew2::withTrashed()
         ->with('induk2')
@@ -7139,7 +7139,7 @@ public function bebantekpembongkaranbangunan($nosurat, $id)
 
     // (OPSIONAL TAPI DISARANKAN)
     // Validasi biar URL ga diubah sembarangan
-    if (Str::slug($data->induk->nosurat) !== $nosurat) {
+    if (Str::slug($data->induk2->pelaksana) !== $pelaksana) {
         abort(404);
     }
 
@@ -7148,7 +7148,7 @@ public function bebantekpembongkaranbangunan($nosurat, $id)
         [
             'title'         => 'Details Informasi Pemilik Bangunan Gedung',
             'data'          => $data,
-            'nosurat'  => $nosurat
+            'pelaksana'  => $pelaksana
         ]
     );
 }
