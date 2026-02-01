@@ -17,6 +17,7 @@ return new class extends Migration
     // RELASI KE INDUK
     $table->foreignId('bantekpembongkaraninduk_id')->nullable();
     /*
+
     |--------------------------------------------------------------------------
     | DOKUMEN ANALISA BANGUNAN GEDUNG
     |--------------------------------------------------------------------------
