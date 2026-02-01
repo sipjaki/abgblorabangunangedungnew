@@ -102,6 +102,108 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
+
+            <!-- Surat Pemberitahuan (2) -->
+@if($data->validasiberkas2 == 'sudah')
+    <button type="button"
+            class="button-lolos"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="background-color:#10B981;color:black;">
+        <i class="bi bi-patch-check-fill me-1"></i> Lolos
+    </button>
+
+@elseif($data->validasiberkas2 == 'belum')
+    <button type="button"
+            class="button-dikembalikan"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="background-color:#0400ff;color:black;">
+        <i class="bi bi-x-circle me-1"></i> Dikembalikan
+    </button>
+
+@else
+    <button type="button"
+            class="button-modern"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="color:black;">
+        <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+    </button>
+@endif
+
+
+<script>
+function openModalVerifikasi(documentType, itemId) {
+    const modal = document.getElementById('confirmModalVerifikasi');
+    const form  = document.getElementById('validasiForm');
+
+    form.action = `/validasipembongkaran${documentType}/${itemId}`;
+    document.getElementById('document_type').value = documentType;
+
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeModalVerifikasi() {
+    const modal = document.getElementById('confirmModalVerifikasi');
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+</script>
+
+<!-- Modal Verifikasi Berkas -->
+<div id="confirmModalVerifikasi"
+     style="display:none;position:fixed;inset:0;
+            background-color:rgba(0,0,0,0.5);
+            z-index:1000;justify-content:center;align-items:center;">
+
+    <div style="background:white;padding:24px;border-radius:12px;
+                width:90%;max-width:400px;text-align:center;">
+
+        <p style="font-size:16px;font-weight:600;">
+            Apakah berkas sudah sesuai?
+        </p>
+
+        <form id="validasiForm" method="POST">
+            @csrf
+            @method('PUT')
+
+            <input type="hidden" id="document_type" name="document_type">
+
+            <button type="submit"
+                    name="validasiberkas2"
+                    value="sudah"
+                    style="background:#10B981;color:white;
+                           padding:8px 16px;margin-right:10px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
+                <i class="bi bi-check2-circle me-1"></i> Sudah
+            </button>
+
+            <button type="submit"
+                    name="validasiberkas2"
+                    value="belum"
+                    style="background:#0400ff;color:white;
+                           padding:8px 16px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
+                <i class="bi bi-x-circle me-1"></i> Belum
+            </button>
+        </form>
+
+        <br>
+
+        <button type="button"
+                onclick="closeModalVerifikasi()"
+                style="background:#D1D5DB;padding:8px 16px;
+                       border-radius:8px;border:none;color:black;cursor:pointer;"
+                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
+            <i class="bi bi-x-circle me-1"></i> Batal
+        </button>
+    </div>
+</div>
+
         </div>
 
         <!-- Baris: 2 Kartu Utama -->
