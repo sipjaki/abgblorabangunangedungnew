@@ -7026,10 +7026,9 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
         ]
     );
 }
-
 public function uploadBerkasKonsultasi(Request $request, $id)
 {
-    // Validasi file
+    // Validasi file, max 15MB
     $request->validate([
         'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
     ]);
@@ -7042,18 +7041,21 @@ public function uploadBerkasKonsultasi(Request $request, $id)
         $file = $request->file('cadangan1');
         $filename = time().'_'.$file->getClientOriginalName();
         $file->move(public_path('bantekpembongkaran'), $filename);
+
+        // Simpan path file ke database
         $data->cadangan1 = 'bantekpembongkaran/'.$filename;
         $data->save();
     }
 
-    // **Ambil namapemilik dari data database, bukan dari form**
+    // Ambil nama pemilik dari database (sesuai schema)
     $namapemilik = $data->namapemilik;
 
-return redirect()->route('bebantekpembongkaranshow', [
-    'namapemilik' => urlencode($namapemilik), // ambil dari database
-    'id'          => $data->id
-])->with('create', 'Berkas Berhasil Di Upload !');
+    // Redirect ke halaman show dengan parameter lengkap
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'id'          => $data->id
+    ])->with('create', 'Berkas Berhasil Di Upload !');
+}
 
-    }
 
 }
