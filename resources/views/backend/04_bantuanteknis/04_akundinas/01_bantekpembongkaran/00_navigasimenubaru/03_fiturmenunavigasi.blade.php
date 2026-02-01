@@ -220,9 +220,14 @@ function closeModalPemohon2() {
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-
 @if($data->bantekpembongkarannew1->count() > 0)
-    <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew1->first()->id) }}"
+    <a href="{{ route(
+            'bebantekpembongkarandokumen',
+            [
+                'namabangunan' => Str::slug($data->namabangunan),
+                'id' => $data->bantekpembongkarannew1->first()->id
+            ]
+        ) }}"
        class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
@@ -232,6 +237,7 @@ function closeModalPemohon2() {
         <i class="bi bi-upload"></i> Input Permohonan
     </a>
 @endif
+
 
 
 

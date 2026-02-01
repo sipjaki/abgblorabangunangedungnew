@@ -1574,20 +1574,12 @@ Route::get(
 
     // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG
 // LIHAT SHOW DOKUMEN BERDASARKAN ID
-Route::get(
-    '/bebantekpembongkaran/dokumen/{id}',
-    [BantuanteknisController::class, 'bebantekpembongkarandokumen']
-)->middleware('auth', 'can:admindinas')
- ->name('bebantekpembongkarandokumen');
+// Route::get('/bebantekpembongkaran/dokumen/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
 
-
+Route::get('/bebantekpembongkaran/dokumen/{namabangunan}/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
 
 // FORMULIR PENGISIAN INFORMASI BANGUNAN GEDUNG
-    Route::get(
-        '/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',
-    [BantuanteknisController::class, 'informasibangunangedung']
-    )->middleware('auth', 'can:admindinas')
-    ->name('informasibangunangedung');
+    Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[BantuanteknisController::class, 'informasibangunangedung'])->middleware('auth', 'can:admindinas')->name('informasibangunangedung');
 // MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
     // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 
@@ -1601,7 +1593,7 @@ Route::get(
  Route::put('/validasipembongkaran6/{id}', [BantuanteknisController::class, 'validasipembongkaran6'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran6.update');
 
  Route::put('/validasipembongkaranpemohon/{id}', [BantuanteknisController::class, 'validasipembongkaranpemohon'])->middleware('auth', 'can:admindinas')->name('validasipembongkaranpemohon.update');
- 
+
  // VALIDASI BERKAS INFORMASI PEMILIK BANGUNAN
  Route::put('/validasiinformasipemilikbangunan/{id}', [BantuanteknisController::class, 'validasiinformasipemilikbangunan'])->middleware('auth')->name('validasiinformasipemilikbangunan');
 
