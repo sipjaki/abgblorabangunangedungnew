@@ -410,23 +410,24 @@ function closeModalPemohon2() {
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-                    @if($data->bantekpembongkarannew2->count() > 0)
-                            @php
-                                $item = $data->bantekpembongkarannew2->first(); // ambil item pertama dari collection
-                            @endphp
+                  @if($data->bantekpembongkarannew2->count() > 0)
+                        <a href="{{ route(
+                                'bebantekpembongkaranbangunandetail',
+                                [
+                                    'pelaksana' => Str::slug($data->bantekpembongkarannew2->first()->pelaksana ?? 'tidak-diketahui'),
+                                    'id' => $data->bantekpembongkarannew2->first()->id
+                                ]
+                            ) }}"
+                        class="button-berkas">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </a>
+                    @else
+                        <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
+                        class="button-baru">
+                            <i class="bi bi-upload"></i> Input Permohonan
+                        </a>
+                    @endif
 
-                            <a href="{{ route('bebantekpembongkaranbangunandetail', [
-                                    'pelaksana' => Str::slug($item->induk2->pelaksana ?? 'tidak-diketahui'),
-                                    'id' => $item->id
-                                ]) }}" class="button-berkas">
-                                <i class="bi bi-eye"></i> Lihat Dokumen
-                            </a>
-                        @else
-                            <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
-                            class="button-baru">
-                                <i class="bi bi-upload"></i> Input Permohonan
-                            </a>
-                        @endif
 
 <!-- Perbaikan Dokumen -->
 @if($data->bantekpembongkarannew2->count() > 0)
