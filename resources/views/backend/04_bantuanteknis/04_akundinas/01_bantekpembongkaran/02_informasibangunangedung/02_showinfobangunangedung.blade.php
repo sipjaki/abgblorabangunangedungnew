@@ -390,70 +390,7 @@
     <div class="container">
 
         <div class="content">
-            <!-- INFORMASI SURAT -->
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> INFORMASI SURAT
-                </div>
-                <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-hash"></i> Nomor Surat</div>
-                        <div class="data-value">{{$data->nosurat ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-calendar-date"></i> Tanggal Surat</div>
-                        <div class="data-value">{{$data->tanggalsurat ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-pdf"></i> Surat Permohonan</div>
-                        <div class="data-value">
-                            @if($data->suratpermohonan)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->suratpermohonan) }}"
-                                        data-title="Surat Permohonan">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DATA BANGUNAN -->
-            {{-- <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-buildings"></i> DATA BANGUNAN
-                </div>
-                <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-tag"></i> Nama Bangunan</div>
-                        <div class="data-value">{{$data->namabangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-check-circle"></i> Pilihan Bangunan</div>
-                        <div class="data-value">{{$data->pilihanbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-check"></i> Surat Kelayakan</div>
-                        <div class="data-value">
-                            @if($data->suratkelayakan)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->suratkelayakan) }}"
-                                        data-title="Surat Kelayakan">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!-- SURAT KESANGGUPAN -->
-          <!-- SURAT KELAYAKAN KAJIAN BANGUNAN GEDUNG -->
+            <!-- SURAT KELAYAKAN KAJIAN BANGUNAN GEDUNG -->
 <div class="section">
     <div class="section-header">
         <i class="bi bi-clipboard-check"></i> SURAT KELAYAKAN KAJIAN BANGUNAN GEDUNG
@@ -473,7 +410,8 @@
                 @if($data->cadangan3)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->cadangan3) }}"
-                            data-title="Surat Kelayakan Kajian Bangunan Gedung">
+                            data-title="Surat Kelayakan Kajian Bangunan Gedung"
+                            data-filename="surat_kelayakan_kajian.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -504,7 +442,8 @@
                 @if($data->dok_kerusakan_bangunan)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->dok_kerusakan_bangunan) }}"
-                            data-title="Dokumen Analisa Kerusakan Bangunan">
+                            data-title="Dokumen Analisa Kerusakan Bangunan"
+                            data-filename="dokumen_analisa_kerusakan.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -545,7 +484,8 @@
                 @if($data->suratpernyataankelaikan)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->suratpernyataankelaikan) }}"
-                            data-title="Surat Pernyataan Kelaikan">
+                            data-title="Surat Pernyataan Kelaikan"
+                            data-filename="surat_pernyataan_kelaikan.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -568,7 +508,8 @@
                 @if($data->gambar_asd)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->gambar_asd) }}"
-                            data-title="Gambar As Built Drawing">
+                            data-title="Gambar As Built Drawing"
+                            data-filename="gambar_as_built_drawing.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -607,7 +548,8 @@
                 @if($data->berkaspembongkaran)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->berkaspembongkaran) }}"
-                            data-title="Dokumen Metode Pembongkaran">
+                            data-title="Dokumen Metode Pembongkaran"
+                            data-filename="dokumen_metode_pembongkaran.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -634,7 +576,8 @@
                 @if($data->berkaspemeriksaan)
                     <button class="file-badge view-pdf"
                             data-url="{{ asset('public/' . $data->berkaspemeriksaan) }}"
-                            data-title="Laporan Pemeriksaan Bangunan Gedung">
+                            data-title="Laporan Pemeriksaan Bangunan Gedung"
+                            data-filename="laporan_pemeriksaan.pdf">
                         <i class="bi bi-eye"></i> Lihat PDF
                     </button>
                 @else
@@ -645,171 +588,100 @@
     </div>
 </div>
 
-<!-- Modal untuk Preview PDF -->
-<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="pdfModalLabel">Preview Dokumen</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Full Screen PDF Modal -->
+<div id="pdfModal" class="modal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <div class="modal-title">
+                <i class="bi bi-file-earmark-pdf"></i>
+                <span id="modalTitle">Preview Dokumen</span>
             </div>
-            <div class="modal-body">
-                <iframe id="pdfViewer" src="" style="width: 100%; height: 80vh; border: none;"></iframe>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="pdf-container">
+                <iframe id="pdfViewer" class="pdf-viewer" src=""></iframe>
             </div>
-            <div class="modal-footer">
-                <a href="#" id="downloadPdf" class="btn btn-primary" download>
-                    <i class="bi bi-download"></i> Download
-                </a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    <i class="bi bi-x-circle"></i> Tutup
-                </button>
+        </div>
+        <div class="modal-footer">
+            <div class="filename">
+                <i class="bi bi-file-text"></i>
+                <span id="fileName">Nama file akan muncul di sini</span>
             </div>
+            <a href="#" id="downloadBtn" class="download-btn">
+                <i class="bi bi-download"></i> Download PDF
+            </a>
         </div>
     </div>
 </div>
 
-<!-- JavaScript untuk Modal Preview -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Inisialisasi modal
-    const pdfModal = new bootstrap.Modal(document.getElementById('pdfModal'));
+    const modal = document.getElementById('pdfModal');
     const pdfViewer = document.getElementById('pdfViewer');
-    const pdfModalLabel = document.getElementById('pdfModalLabel');
-    const downloadPdf = document.getElementById('downloadPdf');
+    const modalTitle = document.getElementById('modalTitle');
+    const fileName = document.getElementById('fileName');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const modalClose = document.getElementById('modalClose');
 
-    // Event listener untuk semua tombol view PDF
+    // Open modal function
+    function openModal(pdfUrl, title, filename) {
+        modalTitle.textContent = title;
+        pdfViewer.src = pdfUrl + '#view=FitH';
+        fileName.textContent = filename;
+        downloadBtn.href = pdfUrl;
+        downloadBtn.download = filename;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal.classList.remove('active');
+        pdfViewer.src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Add event listeners to all PDF view buttons
     document.querySelectorAll('.view-pdf').forEach(button => {
         button.addEventListener('click', function() {
-            const url = this.getAttribute('data-url');
+            const pdfUrl = this.getAttribute('data-url');
             const title = this.getAttribute('data-title');
-
-            // Set URL untuk viewer
-            pdfViewer.src = url;
-            pdfModalLabel.textContent = title;
-            downloadPdf.href = url;
-
-            // Tampilkan modal
-            pdfModal.show();
+            const filename = this.getAttribute('data-filename');
+            openModal(pdfUrl, title, filename);
         });
     });
 
-    // Reset iframe saat modal ditutup
-    document.getElementById('pdfModal').addEventListener('hidden.bs.modal', function () {
-        pdfViewer.src = '';
+    // Close modal when clicking close button
+    modalClose.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside the modal card
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
     });
 
-    // Tambahkan tooltip untuk tombol lihat PDF
-    document.querySelectorAll('.view-pdf').forEach(button => {
-        new bootstrap.Tooltip(button, {
-            title: 'Klik untuk melihat dokumen',
-            placement: 'top'
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Add hover effect to data cards
+    const dataCards = document.querySelectorAll('.data-card');
+    dataCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
         });
     });
 });
 </script>
-
-<!-- CSS tambahan untuk tampilan -->
-<style>
-.section {
-    margin-bottom: 2rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.section-header {
-    background-color: #f8f9fa;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.section-header i {
-    color: #0d6efd;
-}
-
-.section-content {
-    padding: 1.5rem;
-}
-
-.data-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 1rem 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.data-card:last-child {
-    border-bottom: none;
-}
-
-.data-label {
-    flex: 1;
-    font-weight: 500;
-    color: #555;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.data-label i {
-    color: #666;
-    width: 20px;
-}
-
-.data-value {
-    flex: 2;
-    color: #333;
-    word-break: break-word;
-}
-
-.file-badge {
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.file-badge:hover {
-    background-color: #0b5ed7;
-    transform: translateY(-2px);
-    color: white;
-}
-
-.modal-header {
-    background-color: #f8f9fa;
-}
-
-.modal-title {
-    color: #333;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .data-card {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .data-label, .data-value {
-        width: 100%;
-    }
-}
-</style>
-
-            <!-- DOKUMEN PENDUKUNG -->
 
         </div>
     </div>
