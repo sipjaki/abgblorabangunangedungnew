@@ -102,38 +102,63 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
-
 <!-- Surat Pemberitahuan (2) -->
-@if($data->validasiberkas2 == 'sudah')
-    <button type="button"
-            class="button-lolos"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="background-color:#10B981;color:black;">
-        <i class="bi bi-patch-check-fill me-1"></i> Lolos
-    </button>
 
-@elseif($data->validasiberkas2 == 'belum')
-    <button type="button"
-            class="button-dikembalikan"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="background-color:#0400ff;color:black;">
-        <i class="bi bi-x-circle me-1"></i> Dikembalikan
-    </button>
+{{-- ===================== --}}
+{{-- STATUS : LOLOS (NULL) --}}
+{{-- ===================== --}}
+@if(is_null($data->validasiberkas2))
 
-    <!-- KETERANGAN TAMBAHAN -->
-    <div class="mt-1">
-        <small class="text-muted">
-            Keterangan : Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
-        </small>
+    <div class="d-block">
+        <button type="button"
+                class="button-lolos"
+                disabled
+                style="background-color:#10B981;
+                       color:black;
+                       cursor:not-allowed;
+                       opacity:0.7;">
+            <i class="bi bi-patch-check-fill me-1"></i> Lolos
+        </button>
     </div>
 
+
+{{-- ========================= --}}
+{{-- STATUS : DIKEMBALIKAN --}}
+{{-- ========================= --}}
+@elseif($data->validasiberkas2 === 'belum')
+
+    <div class="d-block">
+        <button type="button"
+                class="button-dikembalikan"
+                onclick="openModalVerifikasi(2, {{ $data->id }})"
+                style="background-color:#0400ff;color:black;">
+            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        </button>
+
+        <div class="mt-1">
+            <small class="text-muted">
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
+            </small>
+        </div>
+    </div>
+
+
+{{-- ========================= --}}
+{{-- STATUS : BELUM DIVERIFIKASI --}}
+{{-- ========================= --}}
 @else
-    <button type="button"
-            class="button-modern"
-            onclick="openModalVerifikasi(2, {{ $data->id }})"
-            style="color:black;">
-        <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
-    </button>
+
+    <div class="d-block">
+        <button type="button"
+                class="button-modern"
+                disabled
+                style="color:black;
+                       cursor:not-allowed;
+                       opacity:0.6;">
+            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+        </button>
+    </div>
+
 @endif
 
 
@@ -166,48 +191,38 @@ function closeModalVerifikasi() {
                 width:90%;max-width:400px;text-align:center;">
 
         <p style="font-size:16px;font-weight:600;">
-            Apakah berkas sudah sesuai dan anda ingin mengajukan perubahan berkas?
+            Apakah berkas sudah sesuai?
         </p>
+<form id="validasiForm" method="POST">
+    @csrf
+    @method('PUT')
 
-        <form id="validasiForm" method="POST">
-            @csrf
-            @method('PUT')
+    <input type="hidden" id="document_type" name="document_type">
 
-            <input type="hidden" id="document_type" name="document_type">
+    <!-- FIELD YANG DIKIRIM: NULL -->
+    <input type="hidden" name="validasiberkas2" value="">
 
-            <button type="submit"
-                    name="validasiberkas2"
-                    value="sudah"
-                    style="background:#10B981;color:white;
-                           padding:8px 16px;margin-right:10px;
-                           border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
+    <button type="submit"
+            style="background:#10B981;color:white;
+                   padding:8px 16px;margin-right:10px;
+                   border-radius:8px;border:none;cursor:pointer;"
+            onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
+        <i class="bi bi-check2-circle me-1"></i> Sudah
+    </button>
+</form>
 
-            <button type="submit"
-                    name="validasiberkas2"
-                    value="belum"
-                    style="background:#0400ff;color:white;
-                           padding:8px 16px;
-                           border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
+<br>
 
-        <br>
+<button type="button"
+        onclick="closeModalVerifikasi()"
+        style="background:#D1D5DB;padding:8px 16px;
+               border-radius:8px;border:none;color:black;cursor:pointer;"
+        onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+        onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
+    <i class="bi bi-x-circle me-1"></i> Batal
+</button>
 
-        <button type="button"
-                onclick="closeModalVerifikasi()"
-                style="background:#D1D5DB;padding:8px 16px;
-                       border-radius:8px;border:none;color:black;cursor:pointer;"
-                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
     </div>
 </div>
 
