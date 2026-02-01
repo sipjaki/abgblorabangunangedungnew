@@ -430,7 +430,7 @@ function closeModalPemohon2() {
 @if($data->bantekpembongkarannew2->count() > 0)
     <!-- DATA ADA → BISA DIKLIK -->
     <a href="{{ route(
-            'perbaikan.pemilik',
+            'perbaikan.informasibangunangedung',
             [
                 'nosurat' => Str::slug($data->nosurat),
                 'id' => $data->bantekpembongkarannew2->first()->id

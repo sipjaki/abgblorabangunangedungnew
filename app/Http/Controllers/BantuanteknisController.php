@@ -7226,5 +7226,36 @@ public function bebantekbangunanbongkarcrnew(Request $request)
     ])->with('create', 'Data berhasil disimpan!');
 }
 
+
+public function perbaikandetailbangunangedung($pelaksana, $id)
+{
+    // Decode URL (antisipasi spasi / karakter khusus)
+    $pelaksana = urldecode($pelaksana);
+
+    // Ambil data + relasi induk (termasuk soft delete)
+    $data = bantekpembongkarannew2::withTrashed()
+        ->with('induk2')
+        ->where('id', $id)
+        ->firstOrFail();
+
+    /**
+     * VALIDASI URL
+     * Cegah manipulasi URL:
+     * - namabangunan di URL HARUS cocok dengan data di database
+     */
+    if (!$data->induk2 || Str::slug($data->induk2->pelaksana) !== $pelaksana) {
+        abort(404);
+    }
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
+        [
+            'title'        => 'Perbaikan Berkas Informasi Detail Bangunan Gedung',
+            'data'         => $data,
+            'pelaksana' => $pelaksana
+        ]
+    );
+}
+
 }
 

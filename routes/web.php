@@ -1567,6 +1567,7 @@ Route::get('/bebantekpembongkaran/show/{namapemilik}/{id}',[BantuanteknisControl
     // Route::get('/bebantekpembongkaran/dokumen/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
     Route::get('/bebantekpembongkaran/dokumen/{namabangunan}/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
 // PERBAIKAN DATA INFORMASI PEMILIK BANGUNAN GEDUNG
+
     Route::get('/perbaikanpemilik/{namabangunan}/{id}',[BantuanteknisController::class, 'perbaikaninformasipemilik'])->middleware('auth', 'can:admindinas')->name('perbaikan.pemilik');
 // PERBAIAKN UPDATE DATA INFORMASI PEMILIK BANGUNAN
 Route::put('/perbaikanpemilik/{id}', [BantuanteknisController::class, 'perbaikanBerkasInformasiPemilik'])->middleware('auth', 'can:admindinas')->name('perbaikanberkasinformasi.pemilik');
@@ -1599,6 +1600,9 @@ Route::put('/bapersetujuanbupatibongkar/upload/{id}', [BantuanteknisController::
 
     // BUAT INFORMASI DATA DETAIL BANGUNAN GEDUNG
 Route::get('/bebantekpembongkaran/bangunan/{pelaksana}/{id}',[BantuanteknisController::class, 'bebantekpembongkaranbangunan'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranbangunandetail');
+
+// PERBAIKAN INFORMASI BANGUNAN
+    Route::get('/perbaikanpemilik/{pelaksana}/{id}',[BantuanteknisController::class, 'perbaikandetailbangunangedung'])->middleware('auth', 'can:admindinas')->name('perbaikan.informasibangunangedung');
 
     // validasi berkas pembongkaran bangunan gedung
 
