@@ -7129,26 +7129,21 @@ public function informasibangunangedung($namapemilik, $id)
 
 public function bebantekpembongkaranbangunan($pelaksana, $id)
 {
-    // Decode kalau ada spasi / strip
-    $pelaksana = urldecode($pelaksana);
+    // Ambil data new2 beserta relasi induk2
+    $data = bantekpembongkarannew2::withTrashed()
+        ->with('induk2')
+        ->where('id', $id)
+        ->firstOrFail();
 
- $data = bantekpembongkarannew2::withTrashed()
-    ->with('induk2')
-    ->where('id', $id)
-    ->firstOrFail();
-
-// validasi relasi
-if (!$data->induk2 || Str::slug($data->induk2->pelaksana) !== $pelaksana) {
-    abort(404);
-}
-
+    // Kalau relasi induk2 null, tetap lanjut tapi kasih info di view
+    $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
-            'title'         => 'Details Informasi Pemilik Bangunan Gedung',
-            'data'          => $data,
-            'pelaksana'  => $pelaksana
+            'title'     => 'Details Informasi Pemilik Bangunan Gedung',
+            'data'      => $data,
+            'pelaksana' => $pelaksana_slug
         ]
     );
 }
