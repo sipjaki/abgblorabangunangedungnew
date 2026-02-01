@@ -774,10 +774,9 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             </div>
 
             <div class="row">
-
 <div class="col-md-12">
     <div class="form-modern">
-        <label class="form-label-modern">
+        <label class="form-label-modern mb-3">
             <i class="bi bi-check-circle me-2 text-primary"></i>
             Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan:
         </label>
@@ -786,37 +785,52 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
         @endphp
 
-        <div class="form-check">
-            <input class="form-check-input"
-                   type="checkbox"
-                   name="pilihansanggup[]"
-                   value="Segala kerusakan yang timbul ditanggung oleh pemohon"
-                   {{ in_array('Segala kerusakan yang timbul ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
-            <label class="form-check-label">
-                Segala kerusakan yang timbul ditanggung oleh pemohon
-            </label>
+        <!-- ITEM 1 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Segala kerusakan yang timbul ditanggung oleh pemohon"
+                       {{ in_array('Segala kerusakan yang timbul ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Segala kerusakan yang timbul ditanggung oleh pemohon
+                </span>
+            </div>
         </div>
 
-        <div class="form-check">
-            <input class="form-check-input"
-                   type="checkbox"
-                   name="pilihansanggup[]"
-                   value="Segala pembiayaan pembongkaran ditanggung oleh pemohon"
-                   {{ in_array('Segala pembiayaan pembongkaran ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
-            <label class="form-check-label">
-                Segala pembiayaan pembongkaran ditanggung oleh pemohon
-            </label>
+        <!-- ITEM 2 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Segala pembiayaan pembongkaran ditanggung oleh pemohon"
+                       {{ in_array('Segala pembiayaan pembongkaran ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Segala pembiayaan pembongkaran ditanggung oleh pemohon
+                </span>
+            </div>
         </div>
 
-        <div class="form-check">
-            <input class="form-check-input"
-                   type="checkbox"
-                   name="pilihansanggup[]"
-                   value="Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan"
-                   {{ in_array('Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan', $oldCek) ? 'checked' : '' }}>
-            <label class="form-check-label">
-                Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan
-            </label>
+        <!-- ITEM 3 -->
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="pilihansanggup[]"
+                       value="Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan"
+                       {{ in_array('Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan', $oldCek) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <span>
+                    Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan
+                </span>
+            </div>
         </div>
 
         @error('pilihansanggup')
@@ -824,6 +838,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         @enderror
     </div>
 </div>
+
 
        <div class="col-md-12">
     <div class="form-modern">
