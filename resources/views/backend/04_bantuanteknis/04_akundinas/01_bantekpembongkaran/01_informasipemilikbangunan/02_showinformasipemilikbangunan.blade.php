@@ -797,12 +797,12 @@
     <br>
 <div class="d-flex gap-2 mt-3">
     <!-- Kembali ke halaman sebelumnya -->
-    <a href="{{ url()->previous() }}" class="button-baru">
+    <a href="{{ url()->previous() }}" class="button-modern">
         ← Kembali
     </a>
 
     <!-- Kembali ke Data Dasar -->
-    <a href="{{ url('/bebantekpembongkaran') }}" class="button-modern">
+    <a href="{{ url('/bebantekpembongkaran') }}" class="button-berkas">
         ← Kembali ke Data Dasar
     </a>
 </div>

@@ -1250,7 +1250,7 @@ function submitFormPermohonan() {
     </a> --}}
 
     <!-- Kembali ke Data Dasar -->
-    <a href="{{ url('/bebantekpembongkaran') }}" class="button-modern">
+    <a href="{{ url('/bebantekpembongkaran') }}" class="button-berkas">
         ← Kembali ke Data Dasar
     </a>
 </div>

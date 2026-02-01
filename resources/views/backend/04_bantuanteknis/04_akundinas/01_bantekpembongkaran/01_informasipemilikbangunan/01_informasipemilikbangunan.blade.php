@@ -458,7 +458,7 @@
 
         <!-- KEMBALI KE DATA DASAR -->
         <a href="{{ route('bebantekpembongkaran') }}"
-           class="button-baru">
+           class="button-berkas">
             <i class="bi bi-folder2-open me-1"></i> Data Dasar
         </a>
     </div>
