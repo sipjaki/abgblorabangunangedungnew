@@ -779,11 +779,11 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         <label class="form-label-modern mb-3">
             <i class="bi bi-check-circle me-2 text-primary"></i>
             Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan: <br>
-              <small class="text-muted">
+
+        </label>
+<small class="text-muted">
     Keterangan: Pemohon menyatakan persetujuan dengan memilih <strong style="color: red"> satu atau lebih pernyataan </strong> di bawah.
 </small>
-        </label>
-
         <br>
 
         @php
@@ -1307,7 +1307,7 @@ document.getElementById('sk').addEventListener('change', function () {
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="luastanah">
                             <i class="bi bi-rulers me-2 text-primary"></i> Luas Tanah (m²)
@@ -1318,7 +1318,7 @@ document.getElementById('sk').addEventListener('change', function () {
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="statustanah">
                             <i class="bi bi-file-earmark-lock me-2 text-primary"></i> Status Tanah
@@ -1335,7 +1335,7 @@ document.getElementById('sk').addEventListener('change', function () {
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="namapemeganghak">
                             <i class="bi bi-person-badge me-2 text-primary"></i> Nama Pemegang Hak
@@ -1346,7 +1346,7 @@ document.getElementById('sk').addEventListener('change', function () {
                     </div>
                 </div>
 
-               <div class="col-md-6">
+               <div class="col-md-12">
     <div class="form-modern">
         <label class="form-label-modern" for="sertifikattanah">
             <i class="bi bi-file-earmark-text me-2 text-primary"></i>
