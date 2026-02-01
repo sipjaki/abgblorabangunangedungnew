@@ -387,9 +387,10 @@
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <form action="{{ route('perbaikanberkasinformasi.pemilik', ['namabangunan' => $data->namabangunan, 'id' => $data->id]) }}"
+    <form action="{{ route('perbaikanberkasinformasi.pemilik', $data->id ) }}"
       method="POST"
       enctype="multipart/form-data">
+
 
     @csrf
     @method('PUT') <!-- kalau mau update -->

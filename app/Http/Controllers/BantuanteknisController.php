@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\bantekpembongkaraninduk;
 use App\Models\bantekpembongkarannew1;
+use App\Models\bantekpembongkarannew2;
 use App\Models\bantuanteknis;
 use App\Models\bglapangan;
 use App\Models\bujkkonsultan;
@@ -6904,7 +6905,7 @@ public function perbaikaninformasipemilik($namabangunan, $id)
 }
 
 
-public function perbaikanBerkasInformasiPemilik(Request $request, $namabangunan, $id)
+public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 {
     // Ambil record lama
     $data = bantekpembongkarannew1::findOrFail($id);

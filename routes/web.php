@@ -1568,7 +1568,7 @@ Route::get('/bebantekpembongkaran/show/{namapemilik}/{id}',[BantuanteknisControl
 // PERBAIKAN DATA INFORMASI PEMILIK BANGUNAN GEDUNG
     Route::get('/perbaikanpemilik/{namabangunan}/{id}',[BantuanteknisController::class, 'perbaikaninformasipemilik'])->middleware('auth', 'can:admindinas')->name('perbaikan.pemilik');
 // PERBAIAKN UPDATE DATA INFORMASI PEMILIK BANGUNAN
-Route::put('/perbaikanpemilik/{namabangunan}/{id}', [BantuanteknisController::class, 'perbaikanBerkasInformasiPemilik'])->middleware('auth', 'can:admindinas')->name('perbaikanberkasinformasi.pemilik');
+Route::put('/perbaikanpemilik/{id}', [BantuanteknisController::class, 'perbaikanBerkasInformasiPemilik'])->middleware('auth', 'can:admindinas')->name('perbaikanberkasinformasi.pemilik');
 
 
 // FORMULIR PENGISIAN INFORMASI BANGUNAN GEDUNG
