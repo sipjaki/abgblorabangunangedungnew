@@ -7049,11 +7049,11 @@ public function uploadBerkasKonsultasi(Request $request, $id)
     // **Ambil namapemilik dari data database, bukan dari form**
     $namapemilik = $data->namapemilik;
 
-    // Redirect ke route dengan parameter lengkap
-    return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => urlencode($namapemilik),
-        'id'          => $data->id
-    ])->with('create', 'Berkas Berhasil Di Upload !');
-}
+return redirect()->route('bebantekpembongkaranshow', [
+    'namapemilik' => urlencode($namapemilik), // ambil dari database
+    'id'          => $data->id
+])->with('create', 'Berkas Berhasil Di Upload !');
+
+    }
 
 }
