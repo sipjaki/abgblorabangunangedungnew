@@ -6998,20 +6998,6 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
 }
 
 
-    public function berkaspersetujuanBupati($id)
-{
-    // Ambil data dari database berdasarkan ID
-    $data = bantekpembongkaraninduk::findOrFail($id);
-
-    // Kirim data ke view untuk ditampilkan
-    return view(
-        'backend.04_bantuanteknis.upload_konsultasi',
-        [
-            'title' => 'Upload BA Konsultasi Pembongkaran',
-            'data'  => $data
-        ]
-    );
-}
 
 public function bakonsultasipembongkaran(Request $request, $id)
 {
@@ -7092,4 +7078,19 @@ public function barekomtekberkas(Request $request, $id)
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
 
+
+    public function berkaspersetujuanBupati($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.06_uploadpersetujuanbupati',
+        [
+            'title' => 'Upload BA Konsultasi Pembongkaran',
+            'data'  => $data
+        ]
+    );
+}
 }
