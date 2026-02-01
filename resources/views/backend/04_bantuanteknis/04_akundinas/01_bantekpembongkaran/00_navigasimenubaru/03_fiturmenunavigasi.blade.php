@@ -104,7 +104,7 @@
             </div>
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
-    @if($data->validasiberkas2 === null)
+    @if($data->validasiberkas2 === 'sudah')
         <!-- LOLOS (TIDAK BISA DIKLIK) -->
         <button class="button-lolos"
                 type="button"
@@ -129,16 +129,15 @@
         </div>
 
     @else
-        <!-- VERIFIKASI (TIDAK BISA DIKLIK) -->
+        <!-- VERIFIKASI DPUPR (NULL) -->
         <button class="button-modern"
                 type="button"
                 disabled
                 style="color:black;cursor:not-allowed;">
-            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+            <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
         </button>
     @endif
 </div>
-
 <script>
 function openModalPemohon2(itemId) {
     const modal = document.getElementById('confirmModalPemohon2');
