@@ -58,7 +58,7 @@
         },
         {
             id: 6,
-            name: 'Keputusan Bupati',
+            name: 'Persetujuan Bupati',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
             message: 'Surat Belum Terbit'

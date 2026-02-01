@@ -116,38 +116,117 @@
                 </a>
                 <a href="{{ route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
-                    Upload Per Bupati
+                    Upload Persetujuan Bupati
                     </a>
                 </div>
 
                 @endcan
-@canany(['pemohon', 'dinas'])
+
+                @canany(['pemohon', 'dinas'])
 <div class="d-block">
 
     <!-- Berkas Konsultasi (cadangan1) -->
-    <a href="{{ $data->cadangan1 ? route('berkaskonsultasipembongkaran', ['id' => $data->id]) : '#' }}"
-       class="button-modern {{ $data->cadangan1 ? '' : 'disabled' }}"
-       style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
-       Berkas Konsultasi
-    </a>
+    <button type="button"
+        class="button-modern {{ $data->cadangan1 ? '' : 'disabled' }}"
+        style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+        data-bs-toggle="modal" data-bs-target="#modalKonsultasi">
+        Berkas Konsultasi
+    </button>
 
     <!-- Berkas Rekomtek (cadangan2) -->
-    <a href="{{ $data->cadangan2 ? route('berkasbarekomtekpembongkaran', ['id' => $data->id]) : '#' }}"
-       class="button-modern {{ $data->cadangan2 ? '' : 'disabled' }}"
-       style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
-       Berkas Rekomtek
-    </a>
+    <button type="button"
+        class="button-modern {{ $data->cadangan2 ? '' : 'disabled' }}"
+        style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+        data-bs-toggle="modal" data-bs-target="#modalRekomtek">
+        Berkas Rekomtek
+    </button>
 
     <!-- Berkas Per Bupati (cadangan3) -->
-    <a href="{{ $data->cadangan3 ? route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) : '#' }}"
-       class="button-modern {{ $data->cadangan3 ? '' : 'disabled' }}"
-       style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
-       Berkas Per Bupati
-    </a>
+    <button type="button"
+        class="button-modern {{ $data->cadangan3 ? '' : 'disabled' }}"
+        style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+        data-bs-toggle="modal" data-bs-target="#modalPerBupati">
+        Berkas Per Bupati
+    </button>
 
 </div>
-@endcanany
 
+<!-- Modal Berkas Konsultasi -->
+<div class="modal fade" id="modalKonsultasi" tabindex="-1" aria-labelledby="modalKonsultasiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalKonsultasiLabel">Berkas Konsultasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if($data->cadangan1)
+          <iframe src="{{ asset($data->cadangan1) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+        @else
+          <p class="text-muted">Berkas belum tersedia.</p>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if($data->cadangan1)
+          <a href="{{ asset($data->cadangan1) }}" download class="btn btn-success">Download</a>
+        @endif
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Berkas Rekomtek -->
+<div class="modal fade" id="modalRekomtek" tabindex="-1" aria-labelledby="modalRekomtekLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRekomtekLabel">Berkas Rekomtek</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if($data->cadangan2)
+          <iframe src="{{ asset($data->cadangan2) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+        @else
+          <p class="text-muted">Berkas belum tersedia.</p>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if($data->cadangan2)
+          <a href="{{ asset($data->cadangan2) }}" download class="btn btn-success">Download</a>
+        @endif
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Berkas Per Bupati -->
+<div class="modal fade" id="modalPerBupati" tabindex="-1" aria-labelledby="modalPerBupatiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalPerBupatiLabel">Berkas Per Bupati</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if($data->cadangan3)
+          <iframe src="{{ asset($data->cadangan3) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+        @else
+          <p class="text-muted">Berkas belum tersedia.</p>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if($data->cadangan3)
+          <a href="{{ asset($data->cadangan3) }}" download class="btn btn-success">Download</a>
+        @endif
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endcanany
 
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
