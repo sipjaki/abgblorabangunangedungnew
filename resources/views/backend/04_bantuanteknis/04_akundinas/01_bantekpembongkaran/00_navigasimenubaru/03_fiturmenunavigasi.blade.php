@@ -143,7 +143,7 @@
 <script>
     function openModal2(itemId) {
         const modal = document.getElementById('confirmModal2');
-        const form  = document.getElementById('validasiForm2');
+        const form  = document.getElementById('validasiForm12');
 
         form.action = `/validasipembongkaranpemohon/${itemId}`;
         modal.style.display = "flex";
@@ -169,7 +169,7 @@
             Apakah berkas sudah sesuai?
         </p>
 
-        <form id="validasiForm2" method="POST">
+        <form id="validasiForm12" method="POST">
             @csrf
             @method('PUT')
 
