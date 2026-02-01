@@ -6977,10 +6977,11 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     $data->update($validated);
 
     // Redirect kembali
-    return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => $data->pemilikbangunan,
-        'id' => $data->id
-    ])->with('success', 'Data pemilik berhasil diperbarui!');
-}
+return redirect()->route('bebantekpembongkaranshow', [
+    'namapemilik' => urlencode($data->pemilikbangunan),
+    'id' => $data->id
+])->with('success', 'Data pemilik berhasil diperbarui!');
+
+    }
 
 }
