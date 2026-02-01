@@ -491,8 +491,274 @@
         <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
         <div class="card-body">
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis nam ipsum delectus accusamus ut, alias suscipit deserunt. Dolor temporibus voluptatum nam voluptatem aliquam laudantium nostrum! Temporibus, vel cumque minima culpa sunt repellat quam dolore placeat, eligendi nostrum delectus eius quibusdam nulla officia maxime aspernatur totam, dolorum ea recusandae. Explicabo velit animi cumque reiciendis aut error eligendi ducimus libero adipisci consectetur illum a alias itaque consequuntur iste omnis ad, sapiente doloremque est! Quam eos possimus, suscipit porro harum ipsam vero, nam esse ullam quidem totam unde nulla incidunt aut numquam fuga officia similique beatae deserunt tempora labore? Asperiores consequatur consequuntur esse! Officia a ipsam sit porro mollitia quas, eveniet odio, repudiandae dolorem blanditiis autem, minima nulla quibusdam modi numquam harum commodi at ea ut eum tempora nam. Suscipit, quod necessitatibus inventore amet tenetur rem ratione consequuntur, accusantium ex itaque porro aut. Nihil consequatur corporis perspiciatis autem aliquam praesentium dicta nemo blanditiis aut natus maxime quidem, voluptas cum sequi ad asperiores architecto repellat laborum. Excepturi eveniet dicta distinctio nostrum. Debitis, fugiat voluptatibus? Corporis, praesentium voluptatem itaque excepturi qui expedita nisi voluptatibus necessitatibus est vitae quia fugit possimus nihil quasi quaerat nesciunt non totam dignissimos, officia consequuntur, dolorum beatae mollitia enim architecto? Libero consectetur nisi natus voluptas eligendi nam minus, recusandae corporis officia tempore quo, reprehenderit veniam ratione, quisquam totam architecto sequi? Eaque, quas eius, adipisci porro sequi deleniti dicta at ipsum dolor fugit repellat, assumenda molestias. Cum voluptatibus minus iusto sed qui explicabo quia unde quaerat consequuntur inventore nobis eligendi, optio ipsum minima. Eaque temporibus, commodi autem libero dicta accusantium? Iusto officia exercitationem reprehenderit perferendis, provident eum soluta suscipit nostrum, hic laboriosam laudantium quas dicta, voluptatum necessitatibus a facere et. Maiores fugit aut vitae iusto repudiandae corrupti atque consequatur voluptate nostrum neque! Totam reprehenderit saepe possimus omnis, non voluptatem accusamus in, mollitia quibusdam atque nostrum fuga aperiam veniam nulla fugiat voluptas unde! Impedit consectetur ea nobis facilis corrupti molestias velit ratione recusandae, at nostrum illo nesciunt corporis provident cumque neque iste deleniti tempora itaque ad quod necessitatibus eos. Libero voluptates animi voluptatem nemo sit, blanditiis ad fugit, a molestiae architecto sed consequuntur doloribus, facilis eos iure possimus voluptas in iste sequi aperiam quia maxime ducimus. At, laborum laboriosam rem blanditiis quis obcaecati, iusto consequatur corrupti, minima voluptatibus consectetur facilis. Natus a vitae quaerat! Doloribus nostrum magni quaerat beatae pariatur sapiente similique, sunt voluptates, ipsum sequi, perferendis rem fugit reprehenderit illum repudiandae amet neque quo alias modi laborum! Velit molestiae deserunt error laborum quis repellendus beatae adipisci, non, provident tempora quidem nostrum quod ipsa. Beatae hic nostrum et amet voluptas voluptate molestiae illo maxime nemo perspiciatis? Facilis nobis dolorem, ullam sequi inventore beatae sint itaque nemo, porro excepturi voluptatem culpa, ad nulla et delectus consequuntur dolores pariatur? Placeat vitae natus odit, expedita nam modi distinctio architecto, laboriosam possimus quam veniam inventore fuga dolorum mollitia animi eius? Eaque omnis nemo vero dolore nulla maiores accusantium! Illum, earum mollitia? Iusto asperiores totam et vero voluptatum illo minus, eius soluta? Dolore est illo voluptates odit vel magni possimus molestias, nobis inventore doloremque perferendis culpa eum alias autem labore molestiae blanditiis maxime nulla quidem quas expedita veniam esse iste. Aliquam, soluta consequatur. Illum sunt id aspernatur quasi hic nobis rem doloribus eius architecto recusandae sapiente maiores tempora incidunt quia sequi ex similique, saepe maxime ipsa, ut nihil. Laborum libero deserunt animi fugit assumenda doloremque, aliquid iste veniam molestiae ab. Sequi eaque sint id ad exercitationem necessitatibus debitis aut illo ab inventore soluta repellendus a error hic provident tempore, pariatur enim porro animi sit cum. Cumque eveniet minus vel, autem laudantium facere numquam sit iste est repellat aspernatur sequi fugit doloremque perspiciatis. Sint voluptate minus minima porro. Veniam, dolorum debitis ipsam similique aut commodi doloremque fugit natus neque molestias optio tempora iure eius nihil iste asperiores quo minus reiciendis ad nesciunt obcaecati, eveniet error! Voluptatem quam natus nobis deserunt quo molestiae perspiciatis modi veritatis. Iure cum ducimus, odit at quo architecto saepe exercitationem ratione iste culpa similique. Similique sapiente ratione ea porro hic tempora consectetur nulla dignissimos eum et! Alias iste nulla laboriosam sed possimus labore soluta asperiores numquam in sit cum commodi, incidunt quisquam aut consequatur perferendis aspernatur rem quo pariatur recusandae maxime distinctio voluptate. Libero repudiandae iusto quidem quod, commodi beatae nobis ducimus illum molestiae nisi nulla reiciendis! Nulla, consequuntur rem ut aut accusamus optio assumenda tempore natus, impedit a neque sapiente quod reiciendis hic odio aperiam dolore omnis voluptas pariatur exercitationem suscipit? Libero voluptas numquam nulla velit consequatur, dolorum quaerat architecto atque doloremque maxime explicabo ex eos ratione fugit magni inventore! Veritatis aliquid id voluptatum sunt, repudiandae iste rerum ducimus. Repellat incidunt laudantium inventore cum quod deleniti voluptas illo fugit iste labore magnam alias impedit sapiente unde enim, totam beatae quam qui accusamus praesentium distinctio odio laborum quaerat. Veniam excepturi quisquam porro, nisi, voluptatibus dolore debitis ducimus atque aliquam commodi ipsam distinctio nostrum cumque dolorum aperiam fugiat sint animi? Labore harum laboriosam excepturi aliquam ex amet, quos, illo corporis quaerat, rem voluptates consectetur iure laborum possimus repudiandae. Nobis, eos. Animi perferendis itaque quos nostrum debitis minus fugit! Veniam praesentium unde consectetur recusandae, architecto nesciunt itaque. Pariatur magni neque accusantium, ipsum impedit quos fugiat laudantium nam! Assumenda rem numquam corporis velit aspernatur exercitationem nam sequi tempora voluptatem ducimus quasi reiciendis voluptatibus quae rerum nisi cupiditate et deleniti, id tenetur laboriosam molestias ipsam! Iste maxime exercitationem facere quisquam eligendi officiis a fugiat quia debitis sequi cumque neque facilis quibusdam, amet perferendis ipsa aliquam soluta porro natus saepe optio! Officiis iusto aliquid nostrum mollitia! Atque, amet illo. Nobis unde consequuntur laboriosam doloribus commodi possimus quod, animi libero repellat aut error voluptatem, sequi impedit atque quibusdam non? Sunt, architecto. Pariatur asperiores numquam necessitatibus dolore officiis consectetur atque at consequuntur praesentium ratione minima facere laudantium, quidem consequatur, sint eveniet amet deleniti? Pariatur ad, sunt, eveniet obcaecati ipsam dolores dolor consequuntur laborum nihil explicabo, totam aspernatur corporis magnam repellendus hic nostrum fugit expedita similique distinctio provident quis iste illum. Dolore porro aspernatur atque esse pariatur molestiae commodi aut vitae facere temporibus.</p>
+
+            <div class="card-body">
+    <!-- 1. DOKUMEN ANALISA BANGUNAN GEDUNG -->
+    <div class="section-header">
+        <i class="bi bi-clipboard-data me-2"></i>Dokumen Analisa Bangunan Gedung
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-modern">
+                <label class="form-label-modern" for="tingkat_kerusakan">
+                    <i class="bi bi-percent me-2 text-primary"></i> Tingkat Kerusakan (%)
+                </label>
+                <input type="number" class="form-control @error('tingkat_kerusakan') is-invalid @enderror"
+                       id="tingkat_kerusakan" name="tingkat_kerusakan"
+                       value="{{ old('tingkat_kerusakan') }}" step="0.01" min="0" max="100">
+                @error('tingkat_kerusakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-modern">
+                <label class="form-label-modern" for="status_kerusakan">
+                    <i class="bi bi-exclamation-triangle me-2 text-primary"></i> Status Kerusakan
+                </label>
+                <select class="form-control @error('status_kerusakan') is-invalid @enderror"
+                        id="status_kerusakan" name="status_kerusakan">
+                    <option value="">Pilih Status Kerusakan</option>
+                    <option value="ringan" {{ old('status_kerusakan') == 'ringan' ? 'selected' : '' }}>Ringan</option>
+                    <option value="sedang" {{ old('status_kerusakan') == 'sedang' ? 'selected' : '' }}>Sedang</option>
+                    <option value="berat" {{ old('status_kerusakan') == 'berat' ? 'selected' : '' }}>Berat</option>
+                    <option value="sangat_berat" {{ old('status_kerusakan') == 'sangat_berat' ? 'selected' : '' }}>Sangat Berat</option>
+                </select>
+                @error('status_kerusakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-modern">
+                <label class="form-label-modern" for="dok_kerusakan_bangunan">
+                    <i class="bi bi-upload me-2 text-primary"></i>
+                    Upload Dokumen Analisa Kerusakan Bangunan
+                </label>
+                <input type="file"
+                       class="form-control @error('dok_kerusakan_bangunan') is-invalid @enderror"
+                       id="dok_kerusakan_bangunan"
+                       name="dok_kerusakan_bangunan"
+                       accept=".pdf">
+                @error('dok_kerusakan_bangunan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <small class="text-muted d-block mt-1">
+                    Format: PDF (Maks. 15MB)
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SURAT KAJIAN TEKNIS BANGUNAN GEDUNG -->
+    <div class="section-header mt-4">
+        <i class="bi bi-file-text me-2"></i>Surat Kajian Teknis Bangunan Gedung
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="nosurat">
+                    <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat
+                </label>
+                <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
+                       id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
+                @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="tanggalsurat">
+                    <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat
+                </label>
+                <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
+                       id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
+                @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="status_penilaian_teknis">
+                    <i class="bi bi-check-circle me-2 text-primary"></i> Status Penilaian Teknis
+                </label>
+                <select class="form-control @error('status_penilaian_teknis') is-invalid @enderror"
+                        id="status_penilaian_teknis" name="status_penilaian_teknis">
+                    <option value="">Pilih Status</option>
+                    <option value="layak" {{ old('status_penilaian_teknis') == 'layak' ? 'selected' : '' }}>Layak</option>
+                    <option value="tidak_layak" {{ old('status_penilaian_teknis') == 'tidak_layak' ? 'selected' : '' }}>Tidak Layak</option>
+                    <option value="perlu_perbaikan" {{ old('status_penilaian_teknis') == 'perlu_perbaikan' ? 'selected' : '' }}>Perlu Perbaikan</option>
+                </select>
+                @error('status_penilaian_teknis') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-modern">
+                <label class="form-label-modern" for="suratpernyataankelaikan">
+                    <i class="bi bi-upload me-2 text-primary"></i>
+                    Upload Surat Pernyataan Kelaikan
+                </label>
+                <input type="file"
+                       class="form-control @error('suratpernyataankelaikan') is-invalid @enderror"
+                       id="suratpernyataankelaikan"
+                       name="suratpernyataankelaikan"
+                       accept=".pdf">
+                @error('suratpernyataankelaikan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <small class="text-muted d-block mt-1">
+                    Format: PDF (Maks. 15MB)
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. AS BUILT DRAWING -->
+    <div class="section-header mt-4">
+        <i class="bi bi-building me-2"></i>As Built Drawing
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-modern">
+                <label class="form-label-modern" for="gambar_asd">
+                    <i class="bi bi-upload me-2 text-primary"></i>
+                    Upload Gambar As Built Drawing
+                </label>
+                <input type="file"
+                       class="form-control @error('gambar_asd') is-invalid @enderror"
+                       id="gambar_asd"
+                       name="gambar_asd"
+                       accept=".pdf">
+                @error('gambar_asd')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <small class="text-muted d-block mt-1">
+                    Format: PDF (Maks. 20MB)
+                </small>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-modern">
+                <label class="form-label-modern" for="keterangan">
+                    <i class="bi bi-card-text me-2 text-primary"></i>
+                    Keterangan Tambahan
+                </label>
+                <textarea class="form-control @error('keterangan') is-invalid @enderror"
+                          id="keterangan" name="keterangan" rows="3">{{ old('keterangan') }}</textarea>
+                @error('keterangan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. METODE PEMBONGKARAN -->
+    <div class="section-header mt-4">
+        <i class="bi bi-tools me-2"></i>Metode Pembongkaran
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="pelaksana">
+                    <i class="bi bi-person-badge me-2 text-primary"></i> Pelaksana
+                </label>
+                <input type="text" class="form-control @error('pelaksana') is-invalid @enderror"
+                       id="pelaksana" name="pelaksana" value="{{ old('pelaksana') }}">
+                @error('pelaksana') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="namapenanggungjawab">
+                    <i class="bi bi-person me-2 text-primary"></i> Nama Penanggung Jawab
+                </label>
+                <input type="text" class="form-control @error('namapenanggungjawab') is-invalid @enderror"
+                       id="namapenanggungjawab" name="namapenanggungjawab" value="{{ old('namapenanggungjawab') }}">
+                @error('namapenanggungjawab') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-modern">
+                <label class="form-label-modern" for="notelepon">
+                    <i class="bi bi-telephone me-2 text-primary"></i> No. Telepon
+                </label>
+                <input type="text" class="form-control @error('notelepon') is-invalid @enderror"
+                       id="notelepon" name="notelepon" value="{{ old('notelepon') }}">
+                @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-modern">
+                <label class="form-label-modern" for="berkaspembongkaran">
+                    <i class="bi bi-upload me-2 text-primary"></i>
+                    Upload Dokumen Metode Pembongkaran
+                </label>
+                <input type="file"
+                       class="form-control @error('berkaspembongkaran') is-invalid @enderror"
+                       id="berkaspembongkaran"
+                       name="berkaspembongkaran"
+                       accept=".pdf">
+                @error('berkaspembongkaran')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <small class="text-muted d-block mt-1">
+                    Format: PDF (Maks. 15MB)
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. LAPORAN PEMERIKSAAN BANGUNAN GEDUNG -->
+    <div class="section-header mt-4">
+        <i class="bi bi-clipboard-check me-2"></i>Laporan Pemeriksaan Bangunan Gedung
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-modern">
+                <label class="form-label-modern" for="ketersediaan">
+                    <i class="bi bi-check2-circle me-2 text-primary"></i> Ketersediaan Dokumen
+                </label>
+                <select class="form-control @error('ketersediaan') is-invalid @enderror"
+                        id="ketersediaan" name="ketersediaan">
+                    <option value="">Pilih Status</option>
+                    <option value="lengkap" {{ old('ketersediaan') == 'lengkap' ? 'selected' : '' }}>Lengkap</option>
+                    <option value="tidak_lengkap" {{ old('ketersediaan') == 'tidak_lengkap' ? 'selected' : '' }}>Tidak Lengkap</option>
+                    <option value="sebagian" {{ old('ketersediaan') == 'sebagian' ? 'selected' : '' }}>Sebagian</option>
+                </select>
+                @error('ketersediaan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-modern">
+                <label class="form-label-modern" for="berkaspemeriksaan">
+                    <i class="bi bi-upload me-2 text-primary"></i>
+                    Upload Laporan Pemeriksaan
+                </label>
+                <input type="file"
+                       class="form-control @error('berkaspemeriksaan') is-invalid @enderror"
+                       id="berkaspemeriksaan"
+                       name="berkaspemeriksaan"
+                       accept=".pdf">
+                @error('berkaspemeriksaan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <small class="text-muted d-block mt-1">
+                    Format: PDF (Maks. 15MB)
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
 
             <!-- 3. SURAT KESANGGUPAN -->
 
