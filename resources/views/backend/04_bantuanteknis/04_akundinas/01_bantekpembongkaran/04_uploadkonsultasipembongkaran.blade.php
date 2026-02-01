@@ -136,8 +136,9 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+                 <form action="{{ route('bakonsultasipembongkaran.upload', $data->id) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">

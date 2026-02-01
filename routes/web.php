@@ -16,6 +16,7 @@ use App\Http\Controllers\PbgslfController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\PenilikbangunanController;
 use App\Http\Controllers\PerjalanandinasController;
+use App\Models\bantuanteknis;
 use App\Models\gambarbantuan;
 use App\Models\pbgslfbangunan;
 use App\Models\perjalanandinas;
@@ -1590,6 +1591,9 @@ Route::get('/berkaspersetujuanbupembongkaran/{id}', [BantuanteknisController::cl
     ->middleware('auth', 'can:admindinas')
     ->name('berkaspersetujuanbupembongkaran');
 
+    Route::put('/bakonsultasipembongkaran/upload/{id}', [BantuanteknisController::class, 'bakonsultasipembongkaran'])
+    ->middleware('auth', 'can:admindinas')
+    ->name('bakonsultasipembongkaran.upload');
 // MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
     // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 

@@ -7027,5 +7027,38 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
     );
 }
 
+public function bakonsultasipembongkaran(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi file
+    $validated = $request->validate([
+        'cadangan1' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360', // 15MB
+    ]);
+
+    // Upload file jika ada
+    if ($request->hasFile('cadangan1')) {
+        if (!empty($data->cadangan1) && file_exists(public_path($data->cadangan1))) {
+            unlink(public_path($data->cadangan1));
+        }
+
+        $file = $request->file('cadangan1');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('bantekpembongkaran'), $filename);
+        $validated['cadangan1'] = 'bantekpembongkaran/' . $filename;
+    }
+
+    // Update database
+    $data->update($validated);
+
+    // Ambil parameter untuk redirect
+    $namapemilik = urlencode($data->pemilikbangunan);
+    $idInduk     = $data->id; // id dari record induk (bantekpembongkaraninduk)
+
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => $namapemilik,
+        'id'          => $idInduk
+    ])->with('create', 'Berkas Berhasil Di Upload !');
+}
 
 }
