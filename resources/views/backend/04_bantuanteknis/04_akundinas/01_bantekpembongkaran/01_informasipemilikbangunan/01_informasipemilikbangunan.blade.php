@@ -618,12 +618,12 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
 
             <!-- 2. DATA BANGUNAN -->
-            <div class="section-header mt-4">
+            {{-- <div class="section-header mt-4">
                 <i class="bi bi-building me-2"></i> Data Surat Permohonan Kajian Teknis Bangunan Gedung
-            </div>
+            </div> --}}
 
             <div class="row">
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="namabangunan">
                             <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
@@ -632,9 +632,9 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                                id="namabangunan" name="namabangunan" value="{{ old('namabangunan') }}">
                         @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
-                </div>
+                </div> --}}
 
-<div class="col-md-6">
+{{-- <div class="col-md-6">
     <div class="form-modern">
         <label class="form-label-modern" for="pilihanbangunan">
             <i class="bi bi-list-check me-2 text-primary"></i>
@@ -671,7 +671,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="suratkelayakan">
