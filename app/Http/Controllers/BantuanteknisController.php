@@ -7027,37 +7027,32 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
     );
 }
 
-public function bakonsultasipembongkaran(Request $request, $id)
+public function uploadBerkasKonsultasi(Request $request, $id)
 {
-    $data = bantekpembongkaraninduk::findOrFail($id);
-
     // Validasi file
-    $validated = $request->validate([
-        'cadangan1' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360', // 15MB
+    $request->validate([
+        'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
     ]);
 
-    // Upload file jika ada
-    if ($request->hasFile('cadangan1')) {
-        if (!empty($data->cadangan1) && file_exists(public_path($data->cadangan1))) {
-            unlink(public_path($data->cadangan1));
-        }
+    // Ambil data dari database
+    $data = bantekpembongkaraninduk::findOrFail($id);
 
+    // Upload file
+    if ($request->hasFile('cadangan1')) {
         $file = $request->file('cadangan1');
-        $filename = time() . '_' . $file->getClientOriginalName();
+        $filename = time().'_'.$file->getClientOriginalName();
         $file->move(public_path('bantekpembongkaran'), $filename);
-        $validated['cadangan1'] = 'bantekpembongkaran/' . $filename;
+        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
+        $data->save();
     }
 
-    // Update database
-    $data->update($validated);
+    // **Ambil namapemilik dari data database, bukan dari form**
+    $namapemilik = $data->namapemilik;
 
-    // Ambil parameter untuk redirect
-    $namapemilik = urlencode($data->pemilikbangunan);
-    $idInduk     = $data->id; // id dari record induk (bantekpembongkaraninduk)
-
+    // Redirect ke route dengan parameter lengkap
     return redirect()->route('bebantekpembongkaranshow', [
-    'namapemilik' => urlencode($namapemilik),
-    'id'          => $idInduk
+        'namapemilik' => urlencode($namapemilik),
+        'id'          => $data->id
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
 
