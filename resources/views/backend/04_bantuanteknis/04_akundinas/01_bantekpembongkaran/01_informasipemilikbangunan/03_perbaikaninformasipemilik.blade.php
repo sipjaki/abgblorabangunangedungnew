@@ -1073,10 +1073,6 @@ function previewPBG(input) {
 }
 </script>
 
-            </div>
-        </div>
-    </div>
-
 
     <br><br>
 <!-- Tombol Trigger -->
@@ -1131,6 +1127,11 @@ function submitFormPermohonan() {
     document.querySelector('form').submit();
 }
 </script>
+            </div>
+        </div>
+    </div>
+
+
 
 </form>
 
