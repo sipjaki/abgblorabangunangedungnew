@@ -142,7 +142,7 @@
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-                                    <!-- Left Column (6/12) -->
+<input type="hidden" name="namapemilik" value="{{ $data->pemilikbangunan }}">                                    <!-- Left Column (6/12) -->
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
@@ -218,7 +218,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin membuat pengajuan hibah bangunan ?
+                                        Apakah Anda ingin upload BA Konsultasi ?
                                     </p>
 
                                       <!-- Tombol -->
