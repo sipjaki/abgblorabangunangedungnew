@@ -432,7 +432,7 @@ function closeModalPemohon2() {
     <a href="{{ route(
             'perbaikan.informasibangunangedung',
             [
-                'pelaksana' => Str::slug($data->pelaksana),
+                'pelaksana' => Str::slug($data->bantekpembongkarannew2->pelaksana),
                 'id' => $data->bantekpembongkarannew2->first()->id
             ]
         ) }}"
