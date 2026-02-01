@@ -84,10 +84,10 @@
                      </div> --}}
                  </div>
                  <!-- /.card-header -->
-                 <div class="card-header">
+                <div class="card-header">
                     <div>
                     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-                </div>
+            </div>
 
 
 
@@ -134,632 +134,141 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="col-md-12" style="margin-top: -20px;">
+                    <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
+                  <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-           @include('backend.01_pbgslf.00_fiturtambahannav')
-
-
-<div class="card shadow-sm border-0">
-    <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
-        <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
-    </div>
-</div>
-
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
-
-       <!-- Left Column (6/12) -->
-<div class="row g-4">
-
-    @php
-        $infoItems = [
-         [
-                'icon' => 'bi-person-fill-check',
-                'title' => 'Nama Pemilik',
-                'value' => $data->namapemohon ?? '-',
-            ],
-[
-    'icon' => 'bi-ui-checks-grid',
-    'title' => 'Jenis Permohonan',
-    'value' =>
-        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
-        ' - ' .
-        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
-],
-
-        [
-                    'icon' => 'bi-file-earmark-text-fill',
-                'title' => 'Nomor Registrasi SIMBG',
-                'value' => $data->noregissimbg ?? '-',
-            ],
-            [
-                'icon' => 'bi-calendar-date-fill',
-                'title' => 'Tanggal Permohonan',
-                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
-            ],
-
-        ];
-    @endphp
-
-
-    @foreach ($infoItems as $item)
-        <div class="col-md-6">
-            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-                    <div class="d-flex align-items-start">
-                        <div class="me-3">
-                            <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
-                            <p class="mb-0 text-muted">{{ $item['value'] }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-</div>
-
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-<br><hr>
-
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
-
-</div>
-
-
-    <style>
-            .custom-radio {
-                position: relative;
-                padding-left: 35px;
-                padding-right: 15px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                background-color: #fff; /* netral */
-                border: 2px solid #cbd5e0; /* netral */
-                border-radius: 12px;
-                font-weight: 600;
-                cursor: pointer;
-                user-select: none;
-                transition: border-color 0.3s, background-color 0.3s;
-                display: inline-block;
-                margin-right: 10px;
-            }
-
-            .custom-radio input[type="radio"] {
-                position: absolute;
-                opacity: 0;
-        cursor: pointer;
-    }
-
-    .custom-box {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        height: 18px;
-        width: 18px;
-        background-color: #fff; /* netral */
-        border: 2px solid #cbd5e0; /* netral */
-        border-radius: 4px;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* efek checklist muncul saat ter-check */
-    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
-        content: '';
-        position: absolute;
-        left: 5px;
-        top: 1px;
-        width: 5px;
-        height: 10px;
-        border: solid;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-        animation: checkmarkFade 0.3s ease forwards;
-    }
-
-    /* Warna khusus untuk value 'sesuai' */
-    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
-        border-color: #3b82f6;
-        background-color: #bfdbfe;
-    }
-
-    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
-        border-color: #1d4ed8;
-    }
-
-    /* Warna khusus untuk value 'tidak_sesuai' */
-    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
-        border-color: #ef4444;
-        background-color: #fecaca;
-    }
-
-    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
-        border-color: #b91c1c;
-    }
-
-    /* Animasi checklist */
-    @keyframes checkmarkFade {
-        0% {
-            opacity: 0;
-            transform: scale(0.5) rotate(45deg);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1) rotate(45deg);
-        }
-    }
-</style>
-
+                                    <!-- Left Column (6/12) -->
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
-    <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Bangunan Gedung
-</h5>
-</h5>
+    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Upload Berita Acara Konsultasi Pembongkaran Bangunan Gedung
+    </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bepbgdatabangunancreatenew') }}" method="POST">
-    @csrf
-    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
-    <input type="hidden" name="id" value="{{ $data->id }}">
-
-
-    <div class="row g-3 mt-2">
-        {{-- Nama Pemilik --}}
-<div class="form-modern col-md-6">
-    <label class="form-label-modern">
-        <i class="bi bi-diagram-3-fill me-1 text-primary"></i> Jenis Permohonan Konsultasi
+<div class="col-md-6">
+<div class="mb-3">
+    <label class="form-label" for="cadangan1">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
     </label>
-    <select name="jenisperkonsultasi_id" class="form-select @error('jenisperkonsultasi_id') is-invalid @enderror">
-        <option value="">-- Pilih Jenis --</option>
-        @foreach ($datajenisperkons as $item)
-            <option value="{{ $item->id }}" {{ old('jenisperkonsultasi_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->jenis }}
-            </option>
-        @endforeach
-    </select>
-    @error('jenisperkonsultasi_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="form-modern col-md-6">
-    <label class="form-label-mdoern"><i class="bi bi-house-fill text-primary me-1"></i> Nama Bangunan Gedung</label>
-    <input type="text" name="namabangunan" class="form-control @error('namabangunan') is-invalid @enderror" value="{{ old('namabangunan') }}">
-    @error('namabangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="form-modern col-md-6">
-    <label class="form-label-modern"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Lokasi Bangunan</label>
-    <input type="text" name="lokasibangunan" class="form-control @error('lokasibangunan') is-invalid @enderror" value="{{ old('lokasibangunan') }}">
-    @error('lokasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-<div class="form-modern col-md-6">
-    <label class="form-label-modern">
-        <i class="bi bi-tags-fill text-primary me-1"></i> Klasifikasi Bangunan
-    </label>
-    <select name="klasifikasibangunan" class="form-select @error('klasifikasibangunan') is-invalid @enderror">
-        <option value="">-- Pilih Klasifikasi --</option>
-        <option value="Sederhana" {{ old('klasifikasibangunan') == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
-        <option value="Tidak Sederhana" {{ old('klasifikasibangunan') == 'Tidak Sederhana' ? 'selected' : '' }}>Tidak Sederhana</option>
-    </select>
-    @error('klasifikasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="form-modern col-md-6">
-    <label class="form-label-modern">
-        <i class="bi bi-building text-primary me-1"></i> Fungsi Bangunan (PBG)
-    </label>
-    <select name="fungsibangunanpbg_id" class="form-select @error('fungsibangunanpbg_id') is-invalid @enderror">
-        <option value="">-- Pilih Fungsi --</option>
-        @foreach ($datafungsibgpbg as $item)
-            <option value="{{ $item->id }}" {{ old('fungsibangunanpbg_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->fungsi }}
-            </option>
-        @endforeach
-    </select>
-    @error('fungsibangunanpbg_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="form-modern col-md-6">
-    <label class="form-label-modern"><i class="bi bi-house-fill text-primary me-1"></i> Sub Fungsi Bangunan</label>
-    <input type="text" name="cadangan1" class="form-control @error('cadangan1') is-invalid @enderror" value="{{ old('cadangan1') }}">
+    <input type="file" id="cadangan1" name="cadangan1" accept="application/pdf"
+        class="form-control @error('cadangan1') is-invalid @enderror"
+        onchange="previewPDF(event, 'previewContainerProposal', 'iframeProposal', 'msgProposal')" />
     @error('cadangan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
 
-<div class="form-modern col-md-6">
-    <label class="form-label-modern"><i class="bi bi-aspect-ratio text-primary me-1"></i> Luas Bangunan (m²)</label>
-    <input type="number" name="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ old('luasbangunan') }}">
-    @error('luasbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-<h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
-    <i class="bi bi-building-check me-2" style="color: navy;"></i> Kesesuaian Data Bangunan Gedung
-</h5>
-
-<div class="row">
-    {{-- Jenis Permohonan --}}
-    <div class="form-modern col-md-6 mb-3">
-        <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-pencil-square me-1" style="color: blue;"></i> Jenis Permohonan
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="jenispermohonan" value="Lengkap" {{ old('jenispermohonan') == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="jenispermohonan" value="Tidak Lengkap" {{ old('jenispermohonan') == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-
-        @error('jenispermohonan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+    <div class="mt-3" id="previewContainerProposal" style="{{ isset($data->cadangan1) ? '' : 'display: none;' }}">
+        <label class="fw-bold">Berita Acara Konsultasi </label>
+        <iframe id="iframeProposal" src="{{ isset($data->cadangan1) ? asset($data->cadangan1) : '' }}"
+            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
-
-    {{-- Fungsi Bangunan --}}
-    <div class="form-modern col-md-6 mb-3">
-        <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
-            <i class="bi bi-layers-fill me-1" style="color: blue;"></i> Fungsi Bangunan
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="fungsibangunan" value="Lengkap" {{ old('fungsibangunan') == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="fungsibangunan" value="Tidak Lengkap" {{ old('fungsibangunan') == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-
-        @error('fungsibangunan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+    <div id="msgProposal" class="mt-3"
+        style="color: grey; font-style: italic; {{ isset($data->cadangan1) ? 'display:none;' : '' }}">
+        Belum Upload Berkas. Silahkan upload berkas Berita Acara Konsultasi.
     </div>
 </div>
 
 
-<div class="form-modern col-md-6">
-    <label class="form-label-modern"><i class="bi bi-arrow-up-short text-primary me-1"></i> Tinggi Bangunan (meter)</label>
-    <input type="number" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
-    @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-<div class="form-modern col-md-6">
-    <label class="form-label-modern">
-        <i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai
-    </label>
-    <select name="jumlahlantai" class="form-select @error('jumlahlantai') is-invalid @enderror">
-        <option value="">-- Pilih Jumlah Lantai --</option>
-        @for ($i = 1; $i <= 10; $i++)
-            <option value="{{ $i }}" {{ old('jumlahlantai') == $i ? 'selected' : '' }}>
-                {{ $i }} Lantai
-            </option>
-        @endfor
-    </select>
-    @error('jumlahlantai')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
 </div>
 
 
-<div class="form-modern col-md-6 mb-3">
-    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-box-seam me-1" style="color: blue;"></i>Kelengkapan Data Intensitas Bangunan
-    </label>
-
-    <label class="custom-radio">
-        <input type="radio" name="internsitasbangunan" value="Ada" {{ old('internsitasbangunan') == 'Ada' ? 'checked' : '' }}>
-        <span class="custom-box"></span> Ada
-    </label>
-
-    <label class="custom-radio">
-        <input type="radio" name="internsitasbangunan" value="Tidak Ada" {{ old('internsitasbangunan') == 'Tidak Ada' ? 'checked' : '' }}>
-        <span class="custom-box"></span> Tidak Ada
-    </label>
-
-    @error('internsitasbangunan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
 </div>
+    <script>
+function previewPDF(event, containerId, iframeId, messageId) {
+    const file = event.target.files[0];
+    const container = document.getElementById(containerId);
+    const iframe = document.getElementById(iframeId);
+    const message = document.getElementById(messageId);
 
-<h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
-    <i class="bi bi-building-up me-2" style="color: navy;"></i> Intensitas Bangunan Gedung
-</h5>
-
-<div class="row">
-    <div class="form-modern col-md-6 mb-3">
-        <label class="form-label-modern"><i class="bi bi-hash text-primary me-1"></i> Nomor PKKPR</label>
-        <input type="text" name="nomorpkkpr" class="form-control @error('nomorpkkpr') is-invalid @enderror" value="{{ old('nomorpkkpr') }}">
-        @error('nomorpkkpr')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-{{-- GSB --}}
-<div class="form-modern col-md-6 mb-3">
-    <label class="form-label-modern">
-        <i class="bi bi-aspect-ratio text-primary me-1"></i> GSB (Garis Sempadan Bangunan)
-    </label>
-    <div class="input-group">
-        <input type="number" step="0.01" id="gsb_value" class="form-control" placeholder="Masukkan nilai">
-        <select id="gsb_unit" class="form-select">
-            <option value="%">Persen (%)</option>
-            <option value="Rasio">Rasio</option>
-            <option value="Lantai">Lantai</option>
-            <option value="Meter">Meter</option>
-
-        </select>
-    </div>
-    <input type="hidden" name="gsb" id="gsb" value="{{ old('gsb') }}">
-    @error('gsb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-{{-- KDB --}}
-<div class="form-modern col-md-6 mb-3">
-    <label class="form-label-modern">
-        <i class="bi bi-box text-primary me-1"></i> KDB (Koefisien Dasar Bangunan)
-    </label>
-    <div class="input-group">
-        <input type="number" step="0.01" id="kdb_value" class="form-control" placeholder="Masukkan nilai">
-        <select id="kdb_unit" class="form-select">
-            <option value="%">Persen (%)</option>
-            <option value="Rasio">Rasio</option>
-            <option value="Lantai">Lantai</option>
-            <option value="Meter">Meter</option>
-
-        </select>
-
-    </div>
-    <input type="hidden" name="kdb" id="kdb" value="{{ old('kdb') }}">
-    @error('kdb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-{{-- KLB --}}
-<div class="form-modern col-md-6 mb-3">
-    <label class="form-label-modern">
-        <i class="bi bi-bar-chart-steps text-primary me-1"></i> KLB (Koefisien Lantai Bangunan)
-    </label>
-    <div class="input-group">
-        <input type="number" step="0.01" id="klb_value" class="form-control" placeholder="Masukkan nilai">
-        <select id="klb_unit" class="form-select">
-            <option value="%">Persen (%)</option>
-            <option value="Rasio">Rasio</option>
-            <option value="Lantai">Lantai</option>
-            <option value="Meter">Meter</option>
-
-        </select>
-    </div>
-    <input type="hidden" name="klb" id="klb" value="{{ old('klb') }}">
-    @error('klb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-{{-- KDH --}}
-<div class="form-modern col-md-6 mb-3">
-    <label class="form-label-modern">
-        <i class="bi bi-graph-up text-primary me-1"></i> KDH (Koefisien Daerah Hijau)
-    </label>
-    <div class="input-group">
-        <input type="number" step="0.01" id="kdh_value" class="form-control" placeholder="Masukkan nilai">
-        <select id="kdh_unit" class="form-select">
-            <option value="%">Persen (%)</option>
-            <option value="Rasio">Rasio</option>
-            <option value="Lantai">Lantai</option>
-            <option value="Meter">Meter</option>
-
-        </select>
-    </div>
-    <input type="hidden" name="kdh" id="kdh" value="{{ old('kdh') }}">
-    @error('kdh')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-<script>
-    function updateCombinedValue(field) {
-        const value = document.getElementById(`${field}_value`).value;
-        const unit = document.getElementById(`${field}_unit`).value;
-        document.getElementById(field).value = value ? `${value} ${unit}` : '';
+    if (file && file.type === "application/pdf") {
+        const fileURL = URL.createObjectURL(file);
+        iframe.src = fileURL;
+        container.style.display = 'block';
+        message.style.display = 'none';
+    } else {
+        iframe.src = '';
+        container.style.display = 'none';
+        message.style.display = 'block';
+        message.textContent = 'File harus berupa format PDF.';
     }
-
-    ['gsb', 'kdb', 'klb', 'kdh'].forEach(field => {
-        document.getElementById(`${field}_value`).addEventListener('input', () => updateCombinedValue(field));
-        document.getElementById(`${field}_unit`).addEventListener('change', () => updateCombinedValue(field));
-    });
-</script>
-
-</div>
-
-<div class="row g-3">
-
-    {{-- Provinsi --}}
-    <div class="form-modern col-md-4">
-        <label class="form-label-modern">
-            <i class="bi bi-geo-alt-fill text-danger me-1"></i> Provinsi
-        </label>
-        <input type="text" name="provinsi" readonly class="form-control bg-light" value="Jawa Tengah">
-    </div>
-
-    {{-- Kabupaten --}}
-    <div class="form-modern col-md-4">
-        <label class="form-label-modern">
-            <i class="bi bi-geo-alt text-danger me-1"></i> Kabupaten/Kota
-        </label>
-        <input type="text" name="kabupaten" readonly class="form-control bg-light" value="Kabupaten Blora">
-    </div>
-
-    {{-- Kecamatan --}}
-    <div class="form-modern col-md-4">
-        <label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
-            <i class="fas fa-map-pin me-1" style="color: navy;"></i> Kecamatan
-        </label>
-        <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
-            <option value="">Pilih Kecamatan</option>
-            @foreach($datakecamatan as $kecamatan)
-                <option value="{{ $kecamatan->id }}" {{ old('kecamatanblora_id') == $kecamatan->id ? 'selected' : '' }}>
-                    {{ $kecamatan->kecamatanblora }}
-                </option>
-            @endforeach
-        </select>
-        @error('kecamatanblora_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- Kelurahan/Desa --}}
-    <div class="form-modern col-md-4">
-        <label for="kelurahandesa_id" class="form-label-modern d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
-                <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
-            </svg>
-            Kelurahan/Desa
-        </label>
-        <select id="kelurahandesa_id" name="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror">
-            <option value="">Pilih Kelurahan/Desa</option>
-        </select>
-        @error('kelurahandesa_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- Alamat Lengkap --}}
-    <div class="form-modern col-md-8">
-        <label class="form-label-modern">
-            <i class="bi bi-geo text-primary me-1"></i> Alamat Lengkap
-        </label>
-        <input type="text" name="alamatlengkap" class="form-control @error('alamatlengkap') is-invalid @enderror" value="{{ old('alamatlengkap') }}">
-        @error('alamatlengkap')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- Koordinat --}}
-    <div class="form-modern col-md-6">
-        <label class="form-label-modern">
-            <i class="bi bi-crosshair text-success me-1"></i> Koordinat (Latitude, Longitude)
-        </label>
-        <input type="text" name="koordinat" class="form-control @error('koordinat') is-invalid @enderror" placeholder="-6.969xxx, 111.403xxx" value="{{ old('koordinat') }}">
-        @error('koordinat')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-</div>
-
-<!-- AJAX Untuk Kelurahan/Desa -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#kecamatanblora_id').on('change', function () {
-        var kecamatanID = $(this).val();
-        if (kecamatanID) {
-            $.ajax({
-                url: '{{ route("permohonan.krkhunian") }}', // Ganti sesuai route controller
-                type: 'GET',
-                data: { kecamatan_id: kecamatanID },
-                success: function (data) {
-                    $('#kelurahandesa_id').empty().append('<option value="">Pilih Kelurahan/Desa</option>');
-                    $.each(data, function (key, value) {
-                        $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-                    });
-                }
-            });
-        } else {
-            $('#kelurahandesa_id').empty().append('<option value="">Pilih Kelurahan/Desa</option>');
-        }
-    });
+}
 </script>
 
 
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end::Body -->
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                               <button class="button-baru" type="button" onclick="openModal()">
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    </button>
+
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin membuat pengajuan hibah bangunan ?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
+                            </div>
 
 
+                        </form>
 
-        {{-- Pilihan Catatan --}}
-        <div class="form-modern col-md-6">
-            <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
-                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Sesuai
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="tidak lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'tidak lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Sesuai
-            </label>
-
-            @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Catatan --}}
-        <div class="form-modern col-12" id="catatan-field" style="display: none;">
-            <label class="form-label-modern"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
-            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
-            @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Tombol Submit --}}
-        <div class="col-12 text-end mt-3">
-            <button type="button" class="button-modern" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Data Bangunan
-            </button>
-        </div>
-    </div>
-</form>
-
-{{-- Modal Konfirmasi --}}
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menambahkan data bangunan untuk permohonan ini?</p>
-        <div style="display: flex; justify-content: center; gap: 12px;">
-            <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
-                <i class="bi bi-check-circle me-1"></i> Ya
-            </button>
-            <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-    function toggleCatatan(radio) {
-        const catatanField = document.getElementById('catatan-field');
-        catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
-    }
-
-    function openModal() {
-        document.getElementById("confirmModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("confirmModal").style.display = "none";
-    }
-
-    function submitForm() {
-        document.getElementById('formPemilik').submit();
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
-        if (selected) toggleCatatan(selected);
-    });
-</script>
                     </div>
                  </div>
 
@@ -767,7 +276,47 @@
 
                  <br><br>
 
+
                  <!-- Modal Konfirmasi Hapus -->
+                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
+                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                 <form id="deleteForm" method="POST" action="">
+                                     @csrf
+                                     @method('DELETE')
+                                     <button type="submit" class="btn btn-danger">Hapus</button>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <script>
+                 function setDeleteUrl(button) {
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     document.getElementById('deleteForm').action = deleteUrl;
+                 }
+                 </script>
+
+                 <style>
+                     .table-responsive {
+                         max-width: 100%;
+                         overflow-x: auto;
+                     }
+                 </style>
+
              </div>
              <!-- /.card -->
          </div>
