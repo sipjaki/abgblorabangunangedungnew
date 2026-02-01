@@ -493,6 +493,152 @@
         <div class="card-body">
 
             <div class="card-body">
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="cadangan1">
+                            <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
+                        </label>
+
+                        <input type="text" class="form-control @error('cadangan1') is-invalid @enderror"
+                               id="cadangan1" name="cadangan1" value="{{ old('cadangan1') }}">
+                        @error('cadangan1') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="cadangan2">
+            <i class="bi bi-list-check me-2 text-primary"></i>
+            Jenis Kajian Teknis Bangunan Gedung
+        </label>
+
+        <select class="form-select @error('cadangan2') is-invalid @enderror"
+                id="cadangan2"
+                name="cadangan2">
+            <option value="">-- Pilih --</option>
+
+            <option value="Kajian Analisa Kerusakan Bangunan Gedung"
+                {{ old('cadangan2') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Analisa Kerusakan Bangunan Gedung
+            </option>
+
+            <option value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
+                {{ old('cadangan2') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Rencana Teknis Pembongkaran Bangunan Gedung
+            </option>
+
+            <option value="Kajian Kelayakan Bangunan Gedung"
+                {{ old('cadangan2') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Kelayakan Bangunan Gedung
+            </option>
+
+            <option value="Bantuan Gambar Teknis"
+                {{ old('cadangan2') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
+                Bantuan Gambar Teknis
+            </option>
+        </select>
+
+        @error('cadangan2')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="cadangan3">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Permohonan Kajian Teknis Bangunan Gedung
+        </label>
+
+        <input type="file"
+               class="form-control @error('cadangan3') is-invalid @enderror"
+               id="cadangan3"
+               name="cadangan3"
+               accept=".pdf,.jpg,.jpeg,.png,.docx">
+
+        @error('cadangan3')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF(Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+
+        <!-- PREVIEW -->
+        <div id="previewSuratKajianTeknis" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratKajianTeknisBox"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+(function() {
+    // Semua variabel lokal, aman untuk preview lain
+    const input = document.getElementById('cadangan3');
+    const wrapper = document.getElementById('previewSuratKajianTeknis');
+    const box = document.getElementById('previewSuratKajianTeknisBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // Preview PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
+        }
+        // Preview Image
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Kajian Teknis">`;
+        }
+        // DOCX atau file lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark-word me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        // Tampilkan wrapper preview
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
+
+
+
+            </div>
+
     <!-- 1. DOKUMEN ANALISA BANGUNAN GEDUNG -->
     <div class="section-header">
         <i class="bi bi-clipboard-data me-2"></i>Dokumen Analisa Bangunan Gedung
