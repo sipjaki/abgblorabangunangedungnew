@@ -468,6 +468,7 @@ function previewSurat(input) {
 }
 </script>
 
+            </div>
 
             <!-- DATA BANGUNAN -->
             {{-- <div class="section">
@@ -508,8 +509,10 @@ function previewSurat(input) {
                <div class="section-content">
 
     <!-- ROW ATAS -->
+    <div class="row g-3">
+
         <!-- Pilihan Sanggup -->
-      <div class="col-md-12">
+      <div class="col-md-6">
     <div class="data-card">
 
         <div class="data-label">
@@ -538,9 +541,11 @@ function previewSurat(input) {
         </div>
 
     </div>
+</div>
 
     </div>
 <!-- ROW BAWAH -->
+<div class="row mt-3">
     <div class="col-12">
         <div class="data-card">
 
@@ -570,6 +575,7 @@ function previewSurat(input) {
 
         </div>
     </div>
+</div>
 
 <script>
 function previewSuratKesanggupan(input) {
