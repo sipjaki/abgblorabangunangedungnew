@@ -54,51 +54,11 @@
          <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-                 {{-- <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 10px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                    ⚙️ Setting Database
-                </div> --}}
-
-                     {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                         <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
-                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-database" style="margin-right: 8px;"></i>
-                             Asosiasi
-                         </button>
-                         </a>
-
-                     </div> --}}
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -106,51 +66,6 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-@canany(['pemohon'])
-<button
-type="button"
-onclick="window.location.href='{{ url('/bekrksosbudpemohon') }}';"
-class="button-newvalidasi"
->
-<i class="bi bi-arrow-left mr-2"></i> Kembali
-</button>
-@endcanany
-
-@canany(['superadmin', 'admin'])
-<button
-type="button"
-onclick="window.location.href='{{ url('/bekrksosbud') }}';"
-class="button-newvalidasi"
->
-<i class="bi bi-arrow-left mr-2"></i> Kembali
-</button>
-@endcanany
-
-
-
-                                <!-- Tombol Create -->
-                                {{-- <a href="/settingssekolah/create">
-                                    <button
-                                        onmouseover="this.style.background='white'; this.style.color='black';"
-                                        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
-                                        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-                                        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
-                                    </button>
-                                </a> --}}
-
-
-
-                        {{-- <a href="/bekrkindex">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                             style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-
-                         </button>
-                         </a> --}}
 
                      </div>
                  </div>
