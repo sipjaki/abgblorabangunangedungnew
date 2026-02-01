@@ -637,87 +637,106 @@ function previewSuratKesanggupan(input) {
                 <div class="section-header">
                     <i class="bi bi-person-badge"></i> DATA PEMILIK
                 </div>
-                <div class="section-content">
+                <div class="section-content row g-3">
 
     {{-- Nama Lengkap --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-person"></i> Nama Lengkap
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Data Lama</span><br>
-            <strong>{{ $data->namalengkap ?? 'Data Tidak Ditemukan' }}</strong>
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-person"></i> Nama Lengkap
+            </div>
+            <input type="text"
+                   name="namalengkap"
+                   class="form-control"
+                   value="{{ old('namalengkap', $data->namalengkap) }}"
+                   placeholder="Masukkan Nama Lengkap">
         </div>
     </div>
 
     {{-- Jabatan --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-briefcase"></i> Jabatan
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Data Lama</span><br>
-            <strong>{{ $data->jabatan ?? 'Data Tidak Ditemukan' }}</strong>
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-briefcase"></i> Jabatan
+            </div>
+            <input type="text"
+                   name="jabatan"
+                   class="form-control"
+                   value="{{ old('jabatan', $data->jabatan) }}"
+                   placeholder="Masukkan Jabatan">
         </div>
     </div>
 
-    {{-- Alamat Pemilik --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-geo-alt"></i> Alamat Pemilik
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Data Lama</span><br>
-            <strong>{{ $data->alamatpemilik ?? 'Data Tidak Ditemukan' }}</strong>
+    {{-- Alamat --}}
+    <div class="col-md-12">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-geo-alt"></i> Alamat Pemilik
+            </div>
+            <textarea name="alamatpemilik"
+                      class="form-control"
+                      rows="3"
+                      placeholder="Masukkan Alamat Pemilik">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
         </div>
     </div>
 
     {{-- No Telepon --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-telephone"></i> No Telepon
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Data Lama</span><br>
-            <strong>{{ $data->notelepon ?? 'Data Tidak Ditemukan' }}</strong>
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-telephone"></i> No Telepon
+            </div>
+            <input type="text"
+                   name="notelepon"
+                   class="form-control"
+                   value="{{ old('notelepon', $data->notelepon) }}"
+                   placeholder="Masukkan Nomor Telepon">
         </div>
     </div>
 
     {{-- KTP --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-card-text"></i> KTP
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Berkas Lama</span><br>
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-card-text"></i> KTP (PDF)
+            </div>
+
             @if($data->ktp)
-                <button class="file-badge view-pdf"
+                <button type="button"
+                        class="file-badge view-pdf mb-2"
                         data-url="{{ asset('public/' . $data->ktp) }}"
-                        data-title="KTP">
-                    <i class="bi bi-eye"></i> Lihat PDF
+                        data-title="KTP Lama">
+                    <i class="bi bi-eye"></i> Lihat KTP Lama
                 </button>
-            @else
-                <strong>Data Tidak Ditemukan</strong>
             @endif
+
+            <input type="file"
+                   name="ktp"
+                   class="form-control"
+                   accept="application/pdf">
         </div>
     </div>
 
     {{-- SK --}}
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-file-earmark"></i> SK
-        </div>
-        <div class="data-value">
-            <span class="badge bg-secondary mb-1">Berkas Lama</span><br>
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-file-earmark"></i> SK (PDF)
+            </div>
+
             @if($data->sk)
-                <button class="file-badge view-pdf"
+                <button type="button"
+                        class="file-badge view-pdf mb-2"
                         data-url="{{ asset('public/' . $data->sk) }}"
-                        data-title="SK">
-                    <i class="bi bi-eye"></i> Lihat PDF
+                        data-title="SK Lama">
+                    <i class="bi bi-eye"></i> Lihat SK Lama
                 </button>
-            @else
-                <strong>Data Tidak Ditemukan</strong>
             @endif
+
+            <input type="file"
+                   name="sk"
+                   class="form-control"
+                   accept="application/pdf">
         </div>
     </div>
 
