@@ -770,26 +770,62 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
             <!-- 3. SURAT KESANGGUPAN -->
             <div class="section-header mt-4">
-                <i class="bi bi-file-earmark-check me-2"></i> Surat Kesanggupan Pembongkaran Bangunan Gedung
+                <i class="bi bi-file-earmark-check me-2"></i> Kesanggupan Pembongkaran Bangunan Gedung
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="pilihansanggup">
-                            <i class="bi bi-check-circle me-2 text-primary"></i> Apakah Saudara Setuju Untuk Dilakukan Pembongkaran ?
-                        </label>
-                        <select class="form-select @error('pilihansanggup') is-invalid @enderror"
-                                id="pilihansanggup" name="pilihansanggup">
-                            <option value="">-- Pilih --</option>
-                            <option value="Ya" {{ old('pilihansanggup') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                            <option value="Tidak" {{ old('pilihansanggup') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                        </select>
-                        @error('pilihansanggup') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
 
-       <div class="col-md-6">
+<div class="col-md-12">
+    <div class="form-modern">
+        <label class="form-label-modern">
+            <i class="bi bi-check-circle me-2 text-primary"></i>
+            Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan:
+        </label>
+
+        @php
+            $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
+        @endphp
+
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="pilihansanggup[]"
+                   value="Segala kerusakan yang timbul ditanggung oleh pemohon"
+                   {{ in_array('Segala kerusakan yang timbul ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            <label class="form-check-label">
+                Segala kerusakan yang timbul ditanggung oleh pemohon
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="pilihansanggup[]"
+                   value="Segala pembiayaan pembongkaran ditanggung oleh pemohon"
+                   {{ in_array('Segala pembiayaan pembongkaran ditanggung oleh pemohon', $oldCek) ? 'checked' : '' }}>
+            <label class="form-check-label">
+                Segala pembiayaan pembongkaran ditanggung oleh pemohon
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="pilihansanggup[]"
+                   value="Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan"
+                   {{ in_array('Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan', $oldCek) ? 'checked' : '' }}>
+            <label class="form-check-label">
+                Pelaksanaan pembongkaran memperhatikan aspek keselamatan dan keamanan lingkungan
+            </label>
+        </div>
+
+        @error('pilihansanggup')
+            <div class="text-danger mt-1">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+       <div class="col-md-12">
     <div class="form-modern">
         <label class="form-label-modern" for="suratkesanggupan">
             <i class="bi bi-upload me-2 text-primary"></i>
