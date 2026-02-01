@@ -6771,6 +6771,7 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         'id' => $request->input('id_awal')
     ])->with('create', 'Data berhasil disimpan!');
 }
+
 public function bebantekpembongkarandokumen($namabangunan, $id)
 {
     // Decode kalau ada spasi / strip
@@ -6871,4 +6872,34 @@ public function informasibangunangedung($namapemilik, $id)
     }
 
 
+
+public function perbaikaninformasipemilik($namabangunan, $id)
+{
+    // Decode URL (antisipasi spasi / karakter khusus)
+    $namabangunan = urldecode($namabangunan);
+
+    // Ambil data + relasi induk (termasuk soft delete)
+    $data = bantekpembongkarannew1::withTrashed()
+        ->with('induk')
+        ->where('id', $id)
+        ->firstOrFail();
+
+    /**
+     * VALIDASI URL
+     * Cegah manipulasi URL:
+     * - namabangunan di URL HARUS cocok dengan data di database
+     */
+    if (!$data->induk || Str::slug($data->induk->namabangunan) !== $namabangunan) {
+        abort(404);
+    }
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
+        [
+            'title'        => 'Detail Informasi Pemilik Bangunan Gedung',
+            'data'         => $data,
+            'namabangunan' => $namabangunan
+        ]
+    );
+}
 }

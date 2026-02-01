@@ -1556,30 +1556,21 @@ Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::clas
 
 
 /// DATA PERTAMA KALI DATA DASAR
-Route::get(
-    '/bebantekpembongkaran/show/{namapemilik}/{id}',
-    [BantuanteknisController::class, 'bebantekpembongkaranshowdata']
-    )->middleware('auth', 'can:admindinas')
-    ->name('bebantekpembongkaranshow');
+Route::get('/bebantekpembongkaran/show/{namapemilik}/{id}',[BantuanteknisController::class, 'bebantekpembongkaranshowdata'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranshow');
 
 // FORMULIR PENGISIAN INFORMASI PEMILIK BANGUNAN GEDUNG
-    Route::get(
-        '/bebantekpembongkaran/informasipemilikbangunan/{namapemilik}/{id}',
-    [BantuanteknisController::class, 'informasipemilikbangunan']
-    )->middleware('auth', 'can:admindinas')
-    ->name('informasipemilikbangunan');
-// MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
+    Route::get('/bebantekpembongkaran/informasipemilikbangunan/{namapemilik}/{id}',[BantuanteknisController::class, 'informasipemilikbangunan'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunan');
+    // MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
     Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
+    // LIHAT SHOW DOKUMEN BERDASARKAN ID
+    // Route::get('/bebantekpembongkaran/dokumen/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
+    Route::get('/bebantekpembongkaran/dokumen/{namabangunan}/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
+// PERBAIKAN DATA INFORMASI PEMILIK BANGUNAN GEDUNG
+    Route::get('/perbaikanpemilik/{namabangunan}/{id}',[BantuanteknisController::class, 'perbaikaninformasipemilik'])->name('perbaikan.pemilik');
 
-
-    // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG
-// LIHAT SHOW DOKUMEN BERDASARKAN ID
-// Route::get('/bebantekpembongkaran/dokumen/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
-
-Route::get('/bebantekpembongkaran/dokumen/{namabangunan}/{id}',[BantuanteknisController::class, 'bebantekpembongkarandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarandokumen');
 
 // FORMULIR PENGISIAN INFORMASI BANGUNAN GEDUNG
-    Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[BantuanteknisController::class, 'informasibangunangedung'])->middleware('auth', 'can:admindinas')->name('informasibangunangedung');
+Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[BantuanteknisController::class, 'informasibangunangedung'])->middleware('auth', 'can:admindinas')->name('informasibangunangedung');
 // MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
     // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 

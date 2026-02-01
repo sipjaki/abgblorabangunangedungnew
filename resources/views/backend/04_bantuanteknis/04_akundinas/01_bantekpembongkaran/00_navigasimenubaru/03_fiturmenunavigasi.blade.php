@@ -239,13 +239,33 @@ function closeModalPemohon2() {
 @endif
 
 
+<!-- Perbaikan Dokumen -->
+@if($data->bantekpembongkarannew1->count() > 0)
+    <!-- DATA ADA → BISA DIKLIK -->
+    <a href="{{ route(
+            'perbaikan.pemilik',
+            [
+                'namabangunan' => Str::slug($data->namabangunan),
+                'id' => $data->bantekpembongkarannew1->first()->id
+            ]
+        ) }}"
+       class="button-baru">
+        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+    </a>
+@else
+    <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
+    <button type="button"
+            class="button-baru"
+            disabled
+            style="opacity:0.6;cursor:not-allowed;">
+        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+    </button>
 
+    <small class="text-muted d-block mt-1">
+        Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
+    </small>
+@endif
 
-
-                        <!-- Perbaikan Dokumen -->
-                        <a href="/perbaikan-pemilik" class="button-baru">
-                            <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
-                        </a>
                     </div>
                 </div>
             </div>
