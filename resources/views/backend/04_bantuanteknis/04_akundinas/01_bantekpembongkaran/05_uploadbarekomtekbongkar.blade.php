@@ -155,7 +155,7 @@
 <div class="col-md-6">
 <div class="mb-3">
     <label class="form-label" for="cadangan2">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Rekomtek Pembongkaran Bangunan Gedung
     </label>
     <input type="file" id="cadangan2" name="cadangan2" accept="application/pdf"
         class="form-control @error('cadangan2') is-invalid @enderror"

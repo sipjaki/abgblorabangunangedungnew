@@ -7078,7 +7078,7 @@ public function barekomtekberkas(Request $request, $id)
         $file->move(public_path('bantekpembongkaran'), $filename);
 
         // Simpan path file ke database
-        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
+        $data->cadangan2 = 'bantekpembongkaran/'.$filename;
         $data->save();
     }
 
