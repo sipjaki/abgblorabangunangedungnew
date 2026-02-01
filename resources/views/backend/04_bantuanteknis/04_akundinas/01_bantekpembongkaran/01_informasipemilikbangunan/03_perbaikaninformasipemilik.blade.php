@@ -637,18 +637,14 @@ function previewSuratKesanggupan(input) {
                 <div class="section-header">
                     <i class="bi bi-person-badge"></i> DATA PEMILIK
                 </div>
-                <div class="section-content">
+<div class="section-content">
     <div class="row g-4">
 
         {{-- Nama Lengkap --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-person"></i> Nama Lengkap
-                </div>
-                <input type="text"
-                       name="namalengkap"
-                       class="form-control"
+                <div class="data-label">Nama Lengkap</div>
+                <input type="text" name="namalengkap" class="form-control"
                        value="{{ old('namalengkap', $data->namalengkap) }}">
             </div>
         </div>
@@ -656,12 +652,8 @@ function previewSuratKesanggupan(input) {
         {{-- Jabatan --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-briefcase"></i> Jabatan
-                </div>
-                <input type="text"
-                       name="jabatan"
-                       class="form-control"
+                <div class="data-label">Jabatan</div>
+                <input type="text" name="jabatan" class="form-control"
                        value="{{ old('jabatan', $data->jabatan) }}">
             </div>
         </div>
@@ -669,24 +661,16 @@ function previewSuratKesanggupan(input) {
         {{-- Alamat --}}
         <div class="col-12">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-geo-alt"></i> Alamat Pemilik
-                </div>
-                <textarea name="alamatpemilik"
-                          class="form-control"
-                          rows="3">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
+                <div class="data-label">Alamat Pemilik</div>
+                <textarea name="alamatpemilik" class="form-control" rows="3">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
             </div>
         </div>
 
         {{-- No Telepon --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-telephone"></i> No Telepon
-                </div>
-                <input type="text"
-                       name="notelepon"
-                       class="form-control"
+                <div class="data-label">No Telepon</div>
+                <input type="text" name="notelepon" class="form-control"
                        value="{{ old('notelepon', $data->notelepon) }}">
             </div>
         </div>
@@ -694,67 +678,67 @@ function previewSuratKesanggupan(input) {
         {{-- KTP --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-card-text"></i> KTP (PDF)
-                </div>
+                <div class="data-label">KTP (PDF)</div>
 
+                {{-- Preview Lama --}}
                 @if($data->ktp)
-                    <button type="button"
-                            class="file-badge view-pdf mb-2"
-                            data-url="{{ asset('public/' . $data->ktp) }}"
-                            data-title="KTP Lama">
-                        <i class="bi bi-eye"></i> Lihat KTP Lama
-                    </button>
+                    <iframe id="frame-ktp-lama" src="{{ asset('public/' . $data->ktp) }}" width="100%" height="200px"></iframe>
                 @endif
 
-                <input type="file"
-                       name="ktp"
-                       class="form-control"
-                       accept="application/pdf">
+                {{-- Preview Baru --}}
+                <iframe id="frame-ktp-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="ktp" class="form-control" accept="application/pdf"
+                       onchange="previewKTP(this)">
             </div>
         </div>
 
         {{-- SK --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-file-earmark"></i> SK (PDF)
-                </div>
+                <div class="data-label">SK (PDF)</div>
 
+                {{-- Preview Lama --}}
                 @if($data->sk)
-                    <button type="button"
-                            class="file-badge view-pdf mb-2"
-                            data-url="{{ asset('public/' . $data->sk) }}"
-                            data-title="SK Lama">
-                        <i class="bi bi-eye"></i> Lihat SK Lama
-                    </button>
+                    <iframe id="frame-sk-lama" src="{{ asset('public/' . $data->sk) }}" width="100%" height="200px"></iframe>
                 @endif
 
-                <input type="file"
-                       name="sk"
-                       class="form-control"
-                       accept="application/pdf">
+                {{-- Preview Baru --}}
+                <iframe id="frame-sk-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sk" class="form-control" accept="application/pdf"
+                       onchange="previewSK(this)">
             </div>
         </div>
 
     </div>
 </div>
+
 <script>
-function previewPDF(input, previewNewId, previewOldId) {
-    const file = input.files[0];
-    if (!file || file.type !== 'application/pdf') return;
+function previewKTP(input) {
+    const frameBaru = document.getElementById('frame-ktp-baru');
+    const frameLama = document.getElementById('frame-ktp-lama');
 
-    const previewNew = document.getElementById(previewNewId);
-    const previewOld = document.getElementById(previewOldId);
-
-    if (previewOld) {
-        previewOld.style.display = 'none';
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
     }
+}
 
-    previewNew.src = URL.createObjectURL(file);
-    previewNew.classList.remove('d-none');
+function previewSK(input) {
+    const frameBaru = document.getElementById('frame-sk-baru');
+    const frameLama = document.getElementById('frame-sk-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
 }
 </script>
+
+
 
             </div>
 
