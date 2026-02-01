@@ -102,8 +102,7 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
-
-            <!-- Surat Pemberitahuan (2) -->
+<!-- Surat Pemberitahuan (2) -->
 @if($data->validasiberkas2 == 'sudah')
     <button type="button"
             class="button-lolos"
@@ -119,6 +118,13 @@
             style="background-color:#0400ff;color:black;">
         <i class="bi bi-x-circle me-1"></i> Dikembalikan
     </button>
+
+    <!-- KETERANGAN TAMBAHAN -->
+    <div class="mt-1">
+        <small class="text-muted">
+            Keterangan : Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
+        </small>
+    </div>
 
 @else
     <button type="button"
@@ -159,7 +165,7 @@ function closeModalVerifikasi() {
                 width:90%;max-width:400px;text-align:center;">
 
         <p style="font-size:16px;font-weight:600;">
-            Apakah berkas sudah sesuai?
+            Apakah berkas sudah sesuai dan anda ingin mengajukan perubahan berkas?
         </p>
 
         <form id="validasiForm" method="POST">
@@ -203,6 +209,8 @@ function closeModalVerifikasi() {
         </button>
     </div>
 </div>
+
+
 
         </div>
 
