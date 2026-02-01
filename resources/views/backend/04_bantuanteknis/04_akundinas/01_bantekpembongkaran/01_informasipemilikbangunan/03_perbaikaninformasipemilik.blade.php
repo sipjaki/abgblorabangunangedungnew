@@ -430,7 +430,6 @@
     </div>
 
     <!-- ROW BAWAH (FULL WIDTH) -->
-    <div class="row mt-3">
         <div class="col-12">
             <div class="data-card">
 
@@ -472,7 +471,6 @@
                 </div>
 
             </div>
-        </div>
     </div>
 
 </div>
@@ -524,7 +522,11 @@ function previewPdf(input) {
             </div> --}}
 
             <!-- SURAT KESANGGUPAN -->
-            <div class="section-content">
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-hand-thumbs-up"></i> SURAT KESANGGUPAN
+                </div>
+               <div class="section-content">
 
     <!-- ROW ATAS -->
     <div class="row g-3">
@@ -616,6 +618,8 @@ function previewSuratKesanggupan(input) {
     }
 }
 </script>
+
+            </div>
 
             <!-- DATA PEMILIK -->
             <div class="section">
