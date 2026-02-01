@@ -188,7 +188,7 @@ function closeModalVerifikasi() {
 
             <button type="submit"
                     name="validasiberkas2"
-                    value="sudah"
+                    value=""
                     style="background:#10B981;color:white;
                            padding:8px 16px;margin-right:10px;
                            border-radius:8px;border:none;cursor:pointer;"
@@ -197,19 +197,6 @@ function closeModalVerifikasi() {
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
 
-            <button type="submit"
-                    name="validasiberkas2"
-                    value="belum"
-                    style="background:#0400ff;color:white;
-                           padding:8px 16px;
-                           border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
-
-        <br>
 
         <button type="button"
                 onclick="closeModalVerifikasi()"
@@ -219,6 +206,21 @@ function closeModalVerifikasi() {
                 onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
+
+            {{-- <button type="submit"
+                    name="validasiberkas2"
+                    value="belum"
+                    style="background:#0400ff;color:white;
+                           padding:8px 16px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
+                <i class="bi bi-x-circle me-1"></i> Belum
+            </button> --}}
+        </form>
+
+        <br>
+
     </div>
 </div>
 
