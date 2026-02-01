@@ -102,51 +102,40 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
-{{-- ================= VERIFIKASI BERKAS (2) ================= --}}
+
+<!-- Surat Pemberitahuan (2) -->
 @if($data->validasiberkas2 == 'sudah')
-    {{-- STATUS : LOLOS (NON AKTIF) --}}
-    <div class="d-block">
-        <button type="button"
-                class="button-lolos"
-                disabled
-                style="background-color:#10B981;
-                       color:black;
-                       cursor:not-allowed;
-                       opacity:0.7;">
-            <i class="bi bi-patch-check-fill me-1"></i> Lolos
-        </button>
-    </div>
+    <button type="button"
+            class="button-lolos"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="background-color:#10B981;color:black;">
+        <i class="bi bi-patch-check-fill me-1"></i> Lolos
+    </button>
 
 @elseif($data->validasiberkas2 == 'belum')
-    {{-- STATUS : DIKEMBALIKAN (AKTIF) --}}
-    <div class="d-block">
-        <button type="button"
-                class="button-dikembalikan"
-                onclick="openModalVerifikasi(2, {{ $data->id }})"
-                style="background-color:#0400ff;
-                       color:black;">
-            <i class="bi bi-x-circle me-1"></i> Dikembalikan
-        </button>
+    <button type="button"
+            class="button-dikembalikan"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="background-color:#0400ff;color:black;">
+        <i class="bi bi-x-circle me-1"></i> Dikembalikan
+    </button>
 
-        <small class="d-block mt-1 text-muted">
-            Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
+    <!-- KETERANGAN TAMBAHAN -->
+    <div class="mt-1">
+        <small class="text-muted">
+            Keterangan : Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
         </small>
     </div>
 
 @else
-    {{-- STATUS : BELUM DIVERIFIKASI (NON AKTIF) --}}
-    <div class="d-block">
-        <button type="button"
-                class="button-modern"
-                disabled
-                style="color:black;
-                       cursor:not-allowed;
-                       opacity:0.6;">
-            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
-        </button>
-    </div>
+    <button type="button"
+            class="button-modern"
+            onclick="openModalVerifikasi(2, {{ $data->id }})"
+            style="color:black;">
+        <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+    </button>
 @endif
-{{-- ========================================================= --}}
+
 
 <script>
 function openModalVerifikasi(documentType, itemId) {
@@ -188,7 +177,7 @@ function closeModalVerifikasi() {
 
             <button type="submit"
                     name="validasiberkas2"
-                    value=""
+                    value="sudah"
                     style="background:#10B981;color:white;
                            padding:8px 16px;margin-right:10px;
                            border-radius:8px;border:none;cursor:pointer;"
@@ -197,6 +186,19 @@ function closeModalVerifikasi() {
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
 
+            <button type="submit"
+                    name="validasiberkas2"
+                    value="belum"
+                    style="background:#0400ff;color:white;
+                           padding:8px 16px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
+                <i class="bi bi-x-circle me-1"></i> Belum
+            </button>
+        </form>
+
+        <br>
 
         <button type="button"
                 onclick="closeModalVerifikasi()"
@@ -206,21 +208,6 @@ function closeModalVerifikasi() {
                 onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
-
-            {{-- <button type="submit"
-                    name="validasiberkas2"
-                    value="belum"
-                    style="background:#0400ff;color:white;
-                           padding:8px 16px;
-                           border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#0400ff';this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button> --}}
-        </form>
-
-        <br>
-
     </div>
 </div>
 
