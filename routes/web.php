@@ -1601,6 +1601,7 @@ Route::get(
  Route::put('/validasipembongkaran6/{id}', [BantuanteknisController::class, 'validasipembongkaran6'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran6.update');
 
  Route::put('/validasipembongkaranpemohon/{id}', [BantuanteknisController::class, 'validasipembongkaranpemohon'])->middleware('auth', 'can:admindinas')->name('validasipembongkaranpemohon.update');
+ 
  // VALIDASI BERKAS INFORMASI PEMILIK BANGUNAN
  Route::put('/validasiinformasipemilikbangunan/{id}', [BantuanteknisController::class, 'validasiinformasipemilikbangunan'])->middleware('auth')->name('validasiinformasipemilikbangunan');
 

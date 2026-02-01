@@ -102,6 +102,7 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
+
             <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 == 'sudah')
@@ -142,7 +143,7 @@
 
 <script>
     function openModal2(itemId) {
-        const modal = document.getElementById('confirmModal2');
+        const modal = document.getElementById('confirmModal12');
         const form  = document.getElementById('validasiForm12');
 
         form.action = `/validasipembongkaranpemohon/${itemId}`;
@@ -151,13 +152,13 @@
     }
 
     function closeModal2() {
-        const modal = document.getElementById('confirmModal2');
+        const modal = document.getElementById('confirmModal12');
         modal.style.display = "none";
         document.body.style.overflow = 'auto';
     }
 </script>
 <!-- Modal Surat Pemberitahuan (2) -->
-<div id="confirmModal2"
+<div id="confirmModal12"
      style="display:none;position:fixed;inset:0;
             background-color:rgba(0,0,0,0.5);
             z-index:1000;justify-content:center;align-items:center;">
