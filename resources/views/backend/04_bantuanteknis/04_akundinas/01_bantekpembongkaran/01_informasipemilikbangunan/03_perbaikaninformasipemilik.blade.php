@@ -387,6 +387,13 @@
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    <form action="{{ route('perbaikanberkasinformasi.pemilik', ['namabangunan' => $data->namabangunan, 'id' => $data->id]) }}"
+      method="POST"
+      enctype="multipart/form-data">
+
+    @csrf
+    @method('PUT') <!-- kalau mau update -->
+
     <div class="container">
 
         <div class="content">
@@ -607,7 +614,7 @@ function previewSuratKesanggupan(input) {
     <div class="row g-4">
 
         {{-- Nama Lengkap --}}
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="data-card">
                 <div class="data-label">Nama Lengkap</div>
                 <input type="text" name="namalengkap" class="form-control"
@@ -616,11 +623,20 @@ function previewSuratKesanggupan(input) {
         </div>
 
         {{-- Jabatan --}}
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="data-card">
                 <div class="data-label">Jabatan</div>
                 <input type="text" name="jabatan" class="form-control"
                        value="{{ old('jabatan', $data->jabatan) }}">
+            </div>
+        </div>
+
+        {{-- No Telepon --}}
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">No Telepon</div>
+                <input type="text" name="notelepon" class="form-control"
+                       value="{{ old('notelepon', $data->notelepon) }}">
             </div>
         </div>
 
@@ -632,14 +648,6 @@ function previewSuratKesanggupan(input) {
             </div>
         </div>
 
-        {{-- No Telepon --}}
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">No Telepon</div>
-                <input type="text" name="notelepon" class="form-control"
-                       value="{{ old('notelepon', $data->notelepon) }}">
-            </div>
-        </div>
 
         {{-- KTP --}}
         <div class="col-md-6">
@@ -1068,6 +1076,8 @@ function previewPBG(input) {
             </div>
         </div>
     </div>
+</form>
+
 
     <!-- Modal PDF Viewer - Full Screen -->
     <div class="modal" id="pdfModal">
@@ -1174,7 +1184,7 @@ function previewPBG(input) {
     <div class="col-12">
         <!-- isi konten di sini -->
 
-         <h5 style="color: navy; font-weight:800; font-size:16px;">VERIFIKASI BERKAS KELENGKAPAN</h4>
+         <h5 style="color: navy; font-weight:800; font-size:16px;">KETERANGAN VERIFIKASI BERKAS KELENGKAPAN</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <br>
 <div class="d-flex gap-2 mt-3">
