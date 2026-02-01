@@ -152,8 +152,6 @@
           @csrf
                             <!-- begin::Body -->
 
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
-
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
