@@ -1577,23 +1577,15 @@ Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[B
 // berkas uplkoad
 
 // Upload BA Konsultasi
-Route::get('/berkaskonsultasipembongkaran/{id}', [BantuanteknisController::class, 'berkaskonsultasiPembongkaran'])
-    ->middleware('auth', 'can:admindinas')
-    ->name('berkaskonsultasipembongkaran');
+Route::get('/berkaskonsultasipembongkaran/{id}', [BantuanteknisController::class, 'berkaskonsultasiPembongkaran'])->middleware('auth', 'can:admindinas')->name('berkaskonsultasipembongkaran');
+Route::put('/bakonsultasipembongkaran/upload/{id}', [BantuanteknisController::class, 'bakonsultasipembongkaran'])->middleware('auth', 'can:admindinas')->name('bakonsultasipembongkaran.upload');
 
 // Upload BA Rekomtek
-Route::get('/berkasbarekomtekpembongkaran/{id}', [BantuanteknisController::class, 'berkasrekomtekPembongkaran'])
-    ->middleware('auth', 'can:admindinas')
-    ->name('berkasbarekomtekpembongkaran');
+Route::get('/berkasbarekomtekpembongkaran/{id}', [BantuanteknisController::class, 'berkasrekomtekPembongkaran'])->middleware('auth', 'can:admindinas')->name('berkasbarekomtekpembongkaran');
+Route::put('/barekomtekberkas/upload/{id}', [BantuanteknisController::class, 'barekomtekberkas'])->middleware('auth', 'can:admindinas')->name('barekomtekberkas.upload');
 
 // Upload Per Bupati
-Route::get('/berkaspersetujuanbupembongkaran/{id}', [BantuanteknisController::class, 'berkaspersetujuanBupati'])
-    ->middleware('auth', 'can:admindinas')
-    ->name('berkaspersetujuanbupembongkaran');
-
-    Route::put('/bakonsultasipembongkaran/upload/{id}', [BantuanteknisController::class, 'bakonsultasipembongkaran'])
-    ->middleware('auth', 'can:admindinas')
-    ->name('bakonsultasipembongkaran.upload');
+Route::get('/berkaspersetujuanbupembongkaran/{id}', [BantuanteknisController::class, 'berkaspersetujuanBupati'])->middleware('auth', 'can:admindinas')->name('berkaspersetujuanbupembongkaran');
 // MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
     // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 

@@ -6997,20 +6997,6 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
     );
 }
 
-    public function berkasrekomtekPembongkaran($id)
-{
-    // Ambil data dari database berdasarkan ID
-    $data = bantekpembongkaraninduk::findOrFail($id);
-
-    // Kirim data ke view untuk ditampilkan
-    return view(
-        'backend.04_bantuanteknis.upload_konsultasi',
-        [
-            'title' => 'Upload BA Konsultasi Pembongkaran',
-            'data'  => $data
-        ]
-    );
-}
 
     public function berkaspersetujuanBupati($id)
 {
@@ -7058,5 +7044,52 @@ public function bakonsultasipembongkaran(Request $request, $id)
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
 
+
+    public function berkasrekomtekPembongkaran($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.05_uploadbarekomtekbongkar',
+        [
+            'title' => 'Upload BA Rekom Teknis Pembongkaran',
+            'data'  => $data
+        ]
+    );
+}
+
+
+public function barekomtekberkas(Request $request, $id)
+{
+    // Validasi file, max 15MB
+    $request->validate([
+        'cadangan2' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+    ]);
+
+    // Ambil data dari database
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Upload file
+    if ($request->hasFile('cadangan2')) {
+        $file = $request->file('cadangan2');
+        $filename = time().'_'.$file->getClientOriginalName();
+        $file->move(public_path('bantekpembongkaran'), $filename);
+
+        // Simpan path file ke database
+        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
+        $data->save();
+    }
+
+    // Ambil nama pemilik dari database (sesuai schema)
+    $namapemilik = $data->namapemilik;
+
+    // Redirect ke halaman show dengan parameter lengkap
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'id'          => $data->id
+    ])->with('create', 'Berkas Berhasil Di Upload !');
+}
 
 }
