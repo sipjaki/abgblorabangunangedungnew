@@ -1554,30 +1554,111 @@ document.getElementById('sk').addEventListener('change', function () {
             @error('kepadatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
+<div class="col-md-4">
+    <div class="form-modern">
+        <label class="form-label-modern">
+            <i class="bi bi-calendar-date me-2 text-primary"></i> Waktu Dibangun
+        </label>
 
-    <!-- Tanggal Dibangun -->
-    <div class="col-md-4">
-        <div class="form-modern">
-            <label class="form-label-modern" for="tanggaldibangun">
-                <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Dibangun
-            </label>
-            <input type="date" class="form-control @error('tanggaldibangun') is-invalid @enderror"
-                   id="tanggaldibangun" name="tanggaldibangun" value="{{ old('tanggaldibangun') }}">
-            @error('tanggaldibangun') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+        <select class="form-select mb-2" id="mode_tanggal">
+            <option value="tanggal">Tanggal Lengkap</option>
+            <option value="tahun">Tahun Saja</option>
+        </select>
+
+        <!-- INPUT TANGGAL -->
+        <input type="date"
+               class="form-control"
+               id="tanggal_input"
+               name="tanggaldibangun"
+               value="{{ old('tanggaldibangun') }}">
+
+        <!-- INPUT TAHUN -->
+        <input type="number"
+               class="form-control d-none"
+               id="tahun_input"
+               min="1900"
+               max="{{ date('Y') }}"
+               placeholder="Masukkan tahun, contoh: 2018">
+
     </div>
+</div>
+
+<script>
+document.getElementById('mode_tanggal').addEventListener('change', function () {
+    let mode = this.value;
+    let tanggal = document.getElementById('tanggal_input');
+    let tahun = document.getElementById('tahun_input');
+
+    if (mode === 'tahun') {
+        tanggal.classList.add('d-none');
+        tanggal.removeAttribute('name');
+
+        tahun.classList.remove('d-none');
+        tahun.setAttribute('name', 'tanggaldibangun');
+    } else {
+        tahun.classList.add('d-none');
+        tahun.removeAttribute('name');
+
+        tanggal.classList.remove('d-none');
+        tanggal.setAttribute('name', 'tanggaldibangun');
+    }
+});
+</script>
+
 
     <!-- Tanggal Renovasi -->
-    <div class="col-md-4">
-        <div class="form-modern">
-            <label class="form-label-modern" for="tanggalrevovasi">
-                <i class="bi bi-tools me-2 text-primary"></i> Tanggal Renovasi
-            </label>
-            <input type="date" class="form-control @error('tanggalrevovasi') is-invalid @enderror"
-                   id="tanggalrevovasi" name="tanggalrevovasi" value="{{ old('tanggalrevovasi') }}">
-            @error('tanggalrevovasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+<div class="col-md-4">
+    <div class="form-modern">
+        <label class="form-label-modern">
+            <i class="bi bi-calendar-date me-2 text-primary"></i> Waktu Renovasi
+        </label>
+
+        <select class="form-select mb-2" id="mode_tanggal_renovasi">
+            <option value="tanggal">Tanggal Lengkap</option>
+            <option value="tahun">Tahun Saja</option>
+        </select>
+
+        <!-- INPUT TANGGAL -->
+        <input type="date"
+               class="form-control"
+               id="tanggal_renovasi_input"
+               name="tanggalrevovasi"
+               value="{{ old('tanggalrevovasi') }}">
+
+        <!-- INPUT TAHUN -->
+        <input type="number"
+               class="form-control d-none"
+               id="tahun_renovasi_input"
+               min="1900"
+               max="{{ date('Y') }}"
+               placeholder="Masukkan tahun, contoh: 2018">
     </div>
+</div>
+
+<script>
+document.getElementById('mode_tanggal_renovasi').addEventListener('change', function () {
+    let mode = this.value;
+
+    let tanggal = document.getElementById('tanggal_renovasi_input');
+    let tahun = document.getElementById('tahun_renovasi_input');
+
+    if (mode === 'tahun') {
+        tanggal.classList.add('d-none');
+        tanggal.removeAttribute('name');
+
+        tahun.classList.remove('d-none');
+        tahun.setAttribute('name', 'tanggalrevovasi');
+    } else {
+        tahun.classList.add('d-none');
+        tahun.removeAttribute('name');
+
+        tanggal.classList.remove('d-none');
+        tanggal.setAttribute('name', 'tanggalrevovasi');
+    }
+});
+</script>
+
+
 <div class="col-md-4">
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanbaru_display">
