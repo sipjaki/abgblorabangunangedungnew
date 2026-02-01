@@ -390,17 +390,10 @@
     <form action="{{ route('perbaikanberkasinformasi.pemilik', $data->id ) }}"
       method="POST"
       enctype="multipart/form-data">
-
-
     @csrf
     @method('PUT') <!-- kalau mau update -->
 
-
-    <input type="hidden" name="induk_id" value="{{ $idInduk }}">
-    <input type="hidden" name="namapemilik" value="{{ $namapemilik }}">
-
-
-    <div class="container">
+   <div class="container">
 
         <div class="content">
             <!-- INFORMASI SURAT -->
