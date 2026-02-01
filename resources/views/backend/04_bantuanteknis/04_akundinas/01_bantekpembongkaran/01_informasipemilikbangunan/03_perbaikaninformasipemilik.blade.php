@@ -396,97 +396,81 @@
                     <i class="bi bi-file-earmark-text"></i> INFORMASI SURAT
                 </div>
                 <div class="section-content">
+<!-- ROW ATAS -->
+<div class="row g-3">
 
-    <!-- ROW ATAS -->
-    <div class="row g-3">
-
-        <!-- Nomor Surat -->
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-hash"></i> Nomor Surat
-                </div>
-                <input type="text"
-                       name="nosurat"
-                       class="form-control"
-                       value="{{ $data->nosurat }}"
-                       placeholder="Masukkan Nomor Surat">
+    <!-- Nomor Surat -->
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-hash"></i> Nomor Surat
             </div>
+            <input type="text"
+                   name="nosurat"
+                   class="form-control"
+                   value="{{ $data->nosurat }}"
+                   placeholder="Masukkan Nomor Surat">
         </div>
-
-        <!-- Tanggal Surat -->
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-calendar-date"></i> Tanggal Surat
-                </div>
-                <input type="date"
-                       name="tanggalsurat"
-                       class="form-control"
-                       value="{{ $data->tanggalsurat }}">
-            </div>
-        </div>
-
     </div>
 
-    <!-- ROW BAWAH (FULL WIDTH) -->
-        <div class="col-12">
-            <div class="data-card">
-
-                <div class="data-label">
-                    <i class="bi bi-file-pdf"></i> Surat Permohonan
-                </div>
-
-                {{-- FILE LAMA --}}
-                @if($data->suratpermohonan)
-                    <div class="mb-2">
-                        <span class="badge bg-secondary">Berkas Lama</span><br>
-                        <button type="button"
-                                class="file-badge view-pdf"
-                                data-url="{{ asset('public/'.$data->suratpermohonan) }}"
-                                data-title="Surat Permohonan Lama">
-                            <i class="bi bi-eye"></i> Lihat PDF Lama
-                        </button>
-                    </div>
-                @else
-                    <div class="text-muted mb-2">
-                        Data Tidak Ditemukan
-                    </div>
-                @endif
-
-                {{-- INPUT FILE BARU --}}
-                <input type="file"
-                       name="suratpermohonan"
-                       class="form-control"
-                       accept="application/pdf"
-                       onchange="previewPdf(this)">
-
-                {{-- PREVIEW FILE BARU --}}
-                <div id="preview-pdf" class="mt-3" style="display:none;">
-                    <span class="badge bg-warning text-dark">Preview Berkas Baru</span>
-                    <iframe id="pdf-frame"
-                            width="100%"
-                            height="420"
-                            style="border:1px solid #ddd;border-radius:8px;"></iframe>
-                </div>
-
+    <!-- Tanggal Surat -->
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-label">
+                <i class="bi bi-calendar-date"></i> Tanggal Surat
             </div>
+            <input type="date"
+                   name="tanggalsurat"
+                   class="form-control"
+                   value="{{ $data->tanggalsurat }}">
+        </div>
     </div>
 
 </div>
 
-<script>
-function previewPdf(input) {
-    const preview = document.getElementById('preview-pdf');
-    const frame = document.getElementById('pdf-frame');
+<!-- ROW BAWAH (FULL WIDTH) -->
+<div class="col-12">
+    <div class="data-card">
 
-    if (input.files && input.files[0]) {
-        frame.src = URL.createObjectURL(input.files[0]);
-        preview.style.display = 'block';
+        <div class="data-label">
+            <i class="bi bi-file-pdf"></i> Surat Permohonan
+        </div>
+
+        {{-- FILE LAMA --}}
+        @if($data->suratpermohonan)
+            <iframe id="frame-surat-lama"
+                    src="{{ asset('public/'.$data->suratpermohonan) }}"
+                    style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+            <iframe id="frame-surat-baru"
+                    style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+        @else
+            <div class="text-muted mb-2">
+                Data Tidak Ditemukan
+            </div>
+        @endif
+
+        {{-- INPUT FILE BARU --}}
+        <input type="file"
+               name="suratpermohonan"
+               class="form-control mt-2"
+               accept="application/pdf"
+               onchange="previewSurat(this)">
+
+    </div>
+</div>
+
+<script>
+function previewSurat(input) {
+    const frameBaru = document.getElementById('frame-surat-baru');
+    const frameLama = document.getElementById('frame-surat-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
     }
 }
 </script>
-
 
             </div>
 
@@ -564,68 +548,48 @@ function previewPdf(input) {
 </div>
 
     </div>
+<!-- ROW BAWAH -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="data-card">
 
-    <!-- ROW BAWAH -->
-    <div class="row mt-3">
-        <div class="col-12">
-            <div class="data-card">
-
-                <div class="data-label">
-                    <i class="bi bi-file-earmark-text"></i> Surat Kesanggupan
-                </div>
-
-                {{-- FILE LAMA --}}
-                @if($data->suratkesanggupan)
-                    <div class="mb-2">
-                        <span class="badge bg-secondary">Berkas Lama</span><br>
-                        <button type="button"
-                                class="file-badge view-pdf"
-                                data-url="{{ asset('public/'.$data->suratkesanggupan) }}"
-                                data-title="Surat Kesanggupan Lama">
-                            <i class="bi bi-eye"></i> Lihat PDF Lama
-                        </button>
-                    </div>
-                @else
-                    <div class="text-muted mb-2">
-                        Data Tidak Ditemukan
-                    </div>
-                @endif
-
-                {{-- INPUT FILE BARU --}}
-                <input type="file"
-                       name="suratkesanggupan"
-                       class="form-control"
-                       accept="application/pdf"
-                       onchange="previewSuratKesanggupan(this)">
-
-                {{-- PREVIEW FILE BARU --}}
-                <div id="preview-surat-kesanggupan"
-                     class="mt-3"
-                     style="display:none;">
-                    <span class="badge bg-warning text-dark">
-                        Preview Berkas Baru
-                    </span>
-                    <iframe id="frame-surat-kesanggupan"
-                            width="100%"
-                            height="420"
-                            style="border:1px solid #ddd;border-radius:8px;">
-                    </iframe>
-                </div>
-
+            <div class="data-label">
+                <i class="bi bi-file-earmark-text"></i> Surat Kesanggupan
             </div>
+
+            {{-- FILE LAMA --}}
+            @if($data->suratkesanggupan)
+                <iframe id="frame-suratkesanggupan-lama"
+                        src="{{ asset('public/'.$data->suratkesanggupan) }}"
+                        style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                <iframe id="frame-suratkesanggupan-baru"
+                        style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+            @else
+                <div class="text-muted mb-2">
+                    Data Tidak Ditemukan
+                </div>
+            @endif
+
+            {{-- INPUT FILE BARU --}}
+            <input type="file"
+                   name="suratkesanggupan"
+                   class="form-control mt-2"
+                   accept="application/pdf"
+                   onchange="previewSuratKesanggupan(this)">
+
         </div>
     </div>
-
 </div>
 
 <script>
 function previewSuratKesanggupan(input) {
-    const preview = document.getElementById('preview-surat-kesanggupan');
-    const frame   = document.getElementById('frame-surat-kesanggupan');
+    const frameBaru = document.getElementById('frame-suratkesanggupan-baru');
+    const frameLama = document.getElementById('frame-suratkesanggupan-lama');
 
-    if (input.files && input.files[0]) {
-        frame.src = URL.createObjectURL(input.files[0]);
-        preview.style.display = 'block';
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
     }
 }
 </script>
@@ -1030,18 +994,15 @@ function previewSK(input) {
                 <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
 
                 @if($data->kib)
-                    <button type="button"
-                            class="file-badge view-pdf mb-2"
-                            data-url="{{ asset('public/' . $data->kib) }}"
-                            data-title="KIB Lama">
-                        <i class="bi bi-eye"></i> Lihat KIB Lama
-                    </button>
+                    <iframe id="frame-kib-lama" src="{{ asset('public/' . $data->kib) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-kib-baru" style="display:none;width:100%;height:300px;"></iframe>
                 @endif
 
                 <input type="file"
                        name="kib"
                        class="form-control"
-                       accept="application/pdf">
+                       accept="application/pdf"
+                       onchange="previewKIB(this)">
             </div>
         </div>
 
@@ -1063,18 +1024,15 @@ function previewSK(input) {
                 <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
 
                 @if($data->pbg)
-                    <button type="button"
-                            class="file-badge view-pdf mb-2"
-                            data-url="{{ asset('public/' . $data->pbg) }}"
-                            data-title="PBG Lama">
-                        <i class="bi bi-eye"></i> Lihat PBG Lama
-                    </button>
+                    <iframe id="frame-pbg-lama" src="{{ asset('public/' . $data->pbg) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-pbg-baru" style="display:none;width:100%;height:300px;"></iframe>
                 @endif
 
                 <input type="file"
                        name="pbg"
                        class="form-control"
-                       accept="application/pdf">
+                       accept="application/pdf"
+                       onchange="previewPBG(this)">
             </div>
         </div>
 
@@ -1082,15 +1040,27 @@ function previewSK(input) {
 </div>
 
 <script>
-document.querySelectorAll('.view-pdf').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const url = this.getAttribute('data-url');
-        const title = this.getAttribute('data-title');
-        const previewWindow = window.open("", "_blank");
-        previewWindow.document.write('<title>'+title+'</title>');
-        previewWindow.document.write('<embed src="'+url+'" width="100%" height="100%" type="application/pdf">');
-    });
-});
+function previewKIB(input) {
+    const frameBaru = document.getElementById('frame-kib-baru');
+    const frameLama = document.getElementById('frame-kib-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+
+function previewPBG(input) {
+    const frameBaru = document.getElementById('frame-pbg-baru');
+    const frameLama = document.getElementById('frame-pbg-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
 </script>
 
             </div>
