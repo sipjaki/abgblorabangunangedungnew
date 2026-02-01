@@ -748,33 +748,107 @@ function previewSK(input) {
                     <i class="bi bi-globe-asia-australia"></i> DATA TANAH
                 </div>
                 <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah</div>
-                        <div class="data-value">{{$data->luastanah ?? 'Data Tidak Ditemukan'}} m²</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
-                        <div class="data-value">{{$data->statustanah ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
-                        <div class="data-value">{{$data->namapemeganghak ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah</div>
-                        <div class="data-value">
-                            @if($data->sertifikattanah)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->sertifikattanah) }}"
-                                        data-title="Sertifikat Tanah">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
+    <div class="row g-4">
+
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
+                <input type="text" name="luastanah" class="form-control"
+                       value="{{ old('luastanah', $data->luastanah) }}">
+            </div>
+        </div>
+
+        {{-- Status Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
+                <input type="text" name="statustanah" class="form-control"
+                       value="{{ old('statustanah', $data->statustanah) }}">
+            </div>
+        </div>
+
+        {{-- Nama Pemegang Hak --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
+                <input type="text" name="namapemeganghak" class="form-control"
+                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
+            </div>
+        </div>
+
+        {{-- Sertifikat Tanah --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sertifikattanah)
+                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
+                       onchange="previewSertifikat(this)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
+                <input type="text" name="luastanah" class="form-control"
+                       value="{{ old('luastanah', $data->luastanah) }}">
+            </div>
+        </div>
+
+        {{-- Status Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
+                <input type="text" name="statustanah" class="form-control"
+                       value="{{ old('statustanah', $data->statustanah) }}">
+            </div>
+        </div>
+
+        {{-- Nama Pemegang Hak --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
+                <input type="text" name="namapemeganghak" class="form-control"
+                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
+            </div>
+        </div>
+
+        {{-- Sertifikat Tanah --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sertifikattanah)
+                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
+                       onchange="previewSertifikat(this)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
             </div>
 
             <!-- DATA TEKNIS BANGUNAN -->
@@ -782,76 +856,164 @@ function previewSK(input) {
                 <div class="section-header">
                     <i class="bi bi-tools"></i> DATA TEKNIS BANGUNAN
                 </div>
-                <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-shield-check"></i> Legalitas Bangunan</div>
-                        <div class="data-value">{{$data->legalitasbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-hash"></i> Nomor PBG</div>
-                        <div class="data-value">{{$data->nomorpbg ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-person-gear"></i> Pemilik Bangunan</div>
-                        <div class="data-value">{{$data->pemilikbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-upc-scan"></i> Kode Barang</div>
-                        <div class="data-value">{{$data->kodebarang ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-geo-alt-fill"></i> Alamat Bangunan</div>
-                        <div class="data-value">{{$data->alamatbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-geo"></i> Koordinat Bangunan</div>
-                        <div class="data-value">{{$data->koordinatbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-building"></i> Fungsi Bangunan</div>
-                        <div class="data-value">{{$data->fungsibangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-layers"></i> Jumlah Lantai</div>
-                        <div class="data-value">{{$data->jumlahlantai ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-arrows-vertical"></i> Ketinggian Bangunan</div>
-                        <div class="data-value">{{$data->ketinggianbangunan ?? 'Data Tidak Ditemukan'}} m</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-aspect-ratio"></i> Luas Bangunan</div>
-                        <div class="data-value">{{$data->luasbangunan ?? 'Data Tidak Ditemukan'}} m²</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-diagram-3"></i> Kompleksitas Bangunan</div>
-                        <div class="data-value">{{$data->kompleksitasbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-shield"></i> Tingkat Permanensi</div>
-                        <div class="data-value">{{$data->tingkatpermanensi ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-people"></i> Kepadatan</div>
-                        <div class="data-value">{{$data->kepadatan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-calendar-plus"></i> Tanggal Dibangun</div>
-                        <div class="data-value">{{$data->tanggaldibangun ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-calendar-check"></i> Tanggal Renovasi</div>
-                        <div class="data-value">{{$data->tanggalrevovasi ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-cash-stack"></i> Nilai Bangunan Baru</div>
-                        <div class="data-value">Rp {{ number_format($data->nilaibangunanbaru ?? 0, 2, ',', '.') }}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-cash"></i> Nilai Bangunan Lama</div>
-                        <div class="data-value">Rp {{ number_format($data->nilaibangunanlama ?? 0, 2, ',', '.') }}</div>
-                    </div>
-                </div>
+              <div class="section-content">
+    <div class="row g-4">
+
+        {{-- Legalitas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-shield-check"></i> Legalitas Bangunan</div>
+                <input type="text" name="legalitasbangunan" class="form-control"
+                       value="{{ old('legalitasbangunan', $data->legalitasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Nomor PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-hash"></i> Nomor PBG</div>
+                <input type="text" name="nomorpbg" class="form-control"
+                       value="{{ old('nomorpbg', $data->nomorpbg) }}">
+            </div>
+        </div>
+
+        {{-- Pemilik Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-gear"></i> Pemilik Bangunan</div>
+                <input type="text" name="pemilikbangunan" class="form-control"
+                       value="{{ old('pemilikbangunan', $data->pemilikbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Kode Barang --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-upc-scan"></i> Kode Barang</div>
+                <input type="text" name="kodebarang" class="form-control"
+                       value="{{ old('kodebarang', $data->kodebarang) }}">
+            </div>
+        </div>
+
+        {{-- Alamat Bangunan --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-geo-alt-fill"></i> Alamat Bangunan</div>
+                <textarea name="alamatbangunan" class="form-control" rows="2">{{ old('alamatbangunan', $data->alamatbangunan) }}</textarea>
+            </div>
+        </div>
+
+        {{-- Koordinat Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-geo"></i> Koordinat Bangunan</div>
+                <input type="text" name="koordinatbangunan" class="form-control"
+                       value="{{ old('koordinatbangunan', $data->koordinatbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Fungsi Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-building"></i> Fungsi Bangunan</div>
+                <input type="text" name="fungsibangunan" class="form-control"
+                       value="{{ old('fungsibangunan', $data->fungsibangunan) }}">
+            </div>
+        </div>
+
+        {{-- Jumlah Lantai --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-layers"></i> Jumlah Lantai</div>
+                <input type="number" name="jumlahlantai" class="form-control"
+                       value="{{ old('jumlahlantai', $data->jumlahlantai) }}">
+            </div>
+        </div>
+
+        {{-- Ketinggian Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-arrows-vertical"></i> Ketinggian Bangunan (m)</div>
+                <input type="number" name="ketinggianbangunan" class="form-control"
+                       value="{{ old('ketinggianbangunan', $data->ketinggianbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Luas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-aspect-ratio"></i> Luas Bangunan (m²)</div>
+                <input type="number" name="luasbangunan" class="form-control"
+                       value="{{ old('luasbangunan', $data->luasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Kompleksitas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-diagram-3"></i> Kompleksitas Bangunan</div>
+                <input type="text" name="kompleksitasbangunan" class="form-control"
+                       value="{{ old('kompleksitasbangunan', $data->kompleksitasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Tingkat Permanensi --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-shield"></i> Tingkat Permanensi</div>
+                <input type="text" name="tingkatpermanensi" class="form-control"
+                       value="{{ old('tingkatpermanensi', $data->tingkatpermanensi) }}">
+            </div>
+        </div>
+
+        {{-- Kepadatan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-people"></i> Kepadatan</div>
+                <input type="text" name="kepadatan" class="form-control"
+                       value="{{ old('kepadatan', $data->kepadatan) }}">
+            </div>
+        </div>
+
+        {{-- Tanggal Dibangun --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-calendar-plus"></i> Tanggal Dibangun</div>
+                <input type="date" name="tanggaldibangun" class="form-control"
+                       value="{{ old('tanggaldibangun', $data->tanggaldibangun) }}">
+            </div>
+        </div>
+
+        {{-- Tanggal Renovasi --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-calendar-check"></i> Tanggal Renovasi</div>
+                <input type="date" name="tanggalrenovasi" class="form-control"
+                       value="{{ old('tanggalrenovasi', $data->tanggalrenovasi) }}">
+            </div>
+        </div>
+
+        {{-- Nilai Bangunan Baru --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-cash-stack"></i> Nilai Bangunan Baru</div>
+                <input type="text" name="nilaibangunanbaru" class="form-control"
+                       value="{{ old('nilaibangunanbaru', $data->nilaibangunanbaru) }}">
+            </div>
+        </div>
+
+        {{-- Nilai Bangunan Lama --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-cash"></i> Nilai Bangunan Lama</div>
+                <input type="text" name="nilaibangunanlama" class="form-control"
+                       value="{{ old('nilaibangunanlama', $data->nilaibangunanlama) }}">
+            </div>
+        </div>
+
+    </div>
+</div>
+
             </div>
 
             <!-- DOKUMEN PENDUKUNG -->
@@ -859,40 +1021,78 @@ function previewSK(input) {
                 <div class="section-header">
                     <i class="bi bi-folder2-open"></i> DOKUMEN PENDUKUNG
                 </div>
-                <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-zip"></i> KIB</div>
-                        <div class="data-value">
-                            @if($data->kib)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->kib) }}"
-                                        data-title="KIB">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
-                        <div class="data-value">{{$data->apakahadapbg ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG</div>
-                        <div class="data-value">
-                            @if($data->pbg)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->pbg) }}"
-                                        data-title="PBG">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- KIB --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
+
+                @if($data->kib)
+                    <button type="button"
+                            class="file-badge view-pdf mb-2"
+                            data-url="{{ asset('public/' . $data->kib) }}"
+                            data-title="KIB Lama">
+                        <i class="bi bi-eye"></i> Lihat KIB Lama
+                    </button>
+                @endif
+
+                <input type="file"
+                       name="kib"
+                       class="form-control"
+                       accept="application/pdf">
+            </div>
+        </div>
+
+        {{-- Apakah Ada PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
+                <select name="apakahadapbg" class="form-select">
+                    <option value="">-- Pilih --</option>
+                    <option value="Ya" {{ $data->apakahadapbg == 'Ya' ? 'selected' : '' }}>Ya</option>
+                    <option value="Tidak" {{ $data->apakahadapbg == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                </select>
+            </div>
+        </div>
+
+        {{-- PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
+
+                @if($data->pbg)
+                    <button type="button"
+                            class="file-badge view-pdf mb-2"
+                            data-url="{{ asset('public/' . $data->pbg) }}"
+                            data-title="PBG Lama">
+                        <i class="bi bi-eye"></i> Lihat PBG Lama
+                    </button>
+                @endif
+
+                <input type="file"
+                       name="pbg"
+                       class="form-control"
+                       accept="application/pdf">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.view-pdf').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
+        const title = this.getAttribute('data-title');
+        const previewWindow = window.open("", "_blank");
+        previewWindow.document.write('<title>'+title+'</title>');
+        previewWindow.document.write('<embed src="'+url+'" width="100%" height="100%" type="application/pdf">');
+    });
+});
+</script>
+
             </div>
         </div>
     </div>
