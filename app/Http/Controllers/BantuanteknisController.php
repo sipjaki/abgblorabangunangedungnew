@@ -6981,4 +6981,51 @@ return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
 
     }
 
+
+    public function berkaskonsultasiPembongkaran($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.04_uploadkonsultasipembongkaran',
+        [
+            'title' => 'Upload BA Konsultasi Pembongkaran',
+            'data'  => $data
+        ]
+    );
+}
+
+    public function berkasrekomtekPembongkaran($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.upload_konsultasi',
+        [
+            'title' => 'Upload BA Konsultasi Pembongkaran',
+            'data'  => $data
+        ]
+    );
+}
+
+    public function berkaspersetujuanBupati($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.upload_konsultasi',
+        [
+            'title' => 'Upload BA Konsultasi Pembongkaran',
+            'data'  => $data
+        ]
+    );
+}
+
+
 }

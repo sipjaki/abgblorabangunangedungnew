@@ -102,6 +102,22 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
+
+            <div class="d-block">
+                    <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
+                    class="button-modern">
+                    Upload BA Konsultasi
+                    </a>
+                    <a href="{{ route('berkasbarekomtekpembongkaran', ['id' => $data->id]) }}"
+                    class="button-modern">
+                    Upload BA Rekomtek
+                    </a>
+                    <a href="{{ route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) }}"
+                    class="button-modern">
+                    Upload Per Bupati
+                    </a>
+            </div>
+
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
