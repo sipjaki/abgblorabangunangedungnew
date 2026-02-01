@@ -113,13 +113,13 @@
                         <i class="bi bi-person-vcard-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI PEMILIK BANGUNAN</h4>
+                        <h4>INFORMASI PERMOHONAN PEMBONGKARAN BANGUNAN GEDUNG</h4>
                         <p>Data lengkap pemilik bangunan gedung</p>
                     </div>
 
                     <!-- Button Container -->
                     <div class="button-container">
-                        <!-- Upload Dokumen -->
+                        <!-- Input Permohonan -->
 
 @if($data->bantekpembongkarannew1->count() > 0)
     <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew1->first()->id) }}"
@@ -129,7 +129,7 @@
 @else
     <a href="{{ route('informasipemilikbangunan', [$data->namapemilik, $data->id]) }}"
        class="button-baru">
-        <i class="bi bi-upload"></i> Upload Dokumen
+        <i class="bi bi-upload"></i> Input Permohonan
     </a>
 @endif
 
@@ -157,7 +157,7 @@
 
                     <!-- Button Container -->
                     <div class="button-container">
-                        <!-- Upload Dokumen -->
+                        <!-- Input Permohonan -->
                        @if($data->bantekpembongkarannew2->count() > 0)
                                 <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew2->first()->id) }}"
                                 class="button-berkas">
@@ -166,7 +166,7 @@
                             @else
                                 <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
                                 class="button-baru">
-                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                    <i class="bi bi-upload"></i> Input Permohonan
                                 </a>
                             @endif
 
