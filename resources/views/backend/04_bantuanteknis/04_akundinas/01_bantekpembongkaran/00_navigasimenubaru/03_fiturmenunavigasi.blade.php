@@ -102,10 +102,9 @@
                     <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
                 </div>
             </div>
-
-            <!-- Surat Pemberitahuan (2) -->
+<!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
-    @if($data->validasiberkas2 == 'sudah')
+    @if($data->validasiberkas2 === null)
         <!-- LOLOS (TIDAK BISA DIKLIK) -->
         <button class="button-lolos"
                 type="button"
@@ -114,11 +113,11 @@
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
-    @elseif($data->validasiberkas2 == 'belum')
+    @elseif($data->validasiberkas2 === 'belum')
         <!-- DIKEMBALIKAN (MASIH BISA DIKLIK) -->
         <button class="button-dikembalikan"
                 type="button"
-                onclick="openModal2({{ $data->id }})"
+                onclick="openModalPemohon2({{ $data->id }})"
                 style="background-color:#0400ff;color:black;">
             <i class="bi bi-x-circle me-1"></i> Dikembalikan
         </button>
@@ -140,25 +139,26 @@
     @endif
 </div>
 
-
 <script>
-    function openModal2(itemId) {
-        const modal = document.getElementById('confirmModal12');
-        const form  = document.getElementById('validasiForm12');
+function openModalPemohon2(itemId) {
+    const modal = document.getElementById('confirmModalPemohon2');
+    const form  = document.getElementById('validasiFormPemohon2');
 
-        form.action = `/validasipembongkaranpemohon/${itemId}`;
-        modal.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
+    form.action = "{{ route('validasipembongkaranpemohon.update', ':id') }}"
+                    .replace(':id', itemId);
 
-    function closeModal2() {
-        const modal = document.getElementById('confirmModal12');
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
-    }
+    modal.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalPemohon2() {
+    document.getElementById('confirmModalPemohon2').style.display = "none";
+    document.body.style.overflow = 'auto';
+}
 </script>
+
 <!-- Modal Surat Pemberitahuan (2) -->
-<div id="confirmModal12"
+<div id="confirmModalPemohon2"
      style="display:none;position:fixed;inset:0;
             background-color:rgba(0,0,0,0.5);
             z-index:1000;justify-content:center;align-items:center;">
@@ -170,13 +170,13 @@
             Apakah berkas sudah sesuai?
         </p>
 
-        <form id="validasiForm12" method="POST">
+        <form id="validasiFormPemohon2" method="POST">
             @csrf
             @method('PUT')
 
             <input type="hidden" name="document_type" value="2">
 
-            <!-- KIRIM NULL -->
+            <!-- KIRIM NULL (LOLOS) -->
             <input type="hidden" name="validasiberkas2" value="">
 
             <button type="submit"
@@ -192,7 +192,7 @@
         <br><br>
 
         <button type="button"
-                onclick="closeModal2()"
+                onclick="closeModalPemohon2()"
                 style="background:#D1D5DB;padding:8px 16px;
                        border-radius:8px;border:none;color:black;cursor:pointer;"
                 onmouseover="this.style.backgroundColor='white';this.style.color='black';"
@@ -201,6 +201,7 @@
         </button>
     </div>
 </div>
+
 
         </div>
 
