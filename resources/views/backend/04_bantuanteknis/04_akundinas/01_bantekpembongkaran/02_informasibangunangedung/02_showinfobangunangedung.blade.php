@@ -747,7 +747,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-person-vcard-fill"></i> Surat Permohonan Izin Pembongkaran</span>
+    <i class="bi bi-person-vcard-fill"></i> Surat Kelayakan Bangunan Gedung</span>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -765,16 +765,16 @@ document.addEventListener('DOMContentLoaded', function() {
                                                         <div class="modal-header">
                                                             <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                             <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                            <h5 class="modal-title" id="modalktpLbl{{ $data->id }}">SURAT PERMOHONAN IZIN PEMBONGKARAN</span>  </h5>
+                                                            <h5 class="modal-title" id="modalktpLbl{{ $data->id }}">Surat Kelayakan Bangunan Gedung </span>  </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
 
 <div class="modal-body text-left">
-    @if ($data->suratpermohonan)
+    @if ($data->cadangan3)
         @php
-            $filePath = public_path($data->suratpermohonan);
-            $fileUrl = asset($data->suratpermohonan);
-            $extension = strtolower(pathinfo($data->suratpermohonan, PATHINFO_EXTENSION));
+            $filePath = public_path($data->cadangan3);
+            $fileUrl = asset($data->cadangan3);
+            $extension = strtolower(pathinfo($data->cadangan3, PATHINFO_EXTENSION));
         @endphp
 
         @if (file_exists($filePath))
@@ -784,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="{{ $fileUrl }}" alt="Surat Permohonan" style="max-width:100%; max-height:600px;">
             @endif
             <div class="text-center">
-                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download Surat Permohonan</a>
+                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download Surat Kelayakan</a>
             </div>
         @else
             <p style="color: red; font-weight: bold;">File tidak ditemukan di server.</p>
@@ -879,7 +879,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </style>
 
         @php
-            $status = $data->validasiberkas1;
+            $status = $data->cadangan4;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -978,15 +978,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </style>
 
             <label class="custom-radio">
-                <input type="radio" name="validasiberkas1" value="sesuai"
-                    {{ $data->validasiberkas1 == 'sesuai' ? 'checked' : '' }}>
+                <input type="radio" name="cadangan4" value="sesuai"
+                    {{ $data->cadangan4 == 'sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Sesuai
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="validasiberkas1" value="tidak_sesuai"
-                    {{ $data->validasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
+                <input type="radio" name="cadangan4" value="tidak_sesuai"
+                    {{ $data->cadangan4 == 'tidak_sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Tidak Sesuai
             </label>
@@ -1177,7 +1177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-house-fill"></i> Surat Kesanggupan Pembongkaran Bangunan Gedung
+    <i class="bi bi-house-fill"></i> Berkas Analisa Tingkat Kerusakan Bangunan
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1196,17 +1196,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalsertifikattanahLbl{{ $data->id }}">Sertifikat Tanah .pdf</h5>
+                                                                <h5 class="modal-title" id="modalsertifikattanahLbl{{ $data->id }}">Berkas Analisa Tingkat Kerusakan Bangunan</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->suratkesanggupan && file_exists(public_path('storage/' . $data->suratkesanggupan)))
+                                                                    @if($data->dok_kerusakan_bangunan && file_exists(public_path('storage/' . $data->dok_kerusakan_bangunan)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->suratkesanggupan) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->suratkesanggupan)
+                                                                    <iframe src="{{ asset('storage/' . $data->dok_kerusakan_bangunan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->dok_kerusakan_bangunan)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->suratkesanggupan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->dok_kerusakan_bangunan) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional:  Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -1301,7 +1301,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </style>
 
         @php
-            $status = $data->validasiberkas3;
+            $status = $data->validasiberkas1;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1322,15 +1322,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas3" value="sesuai"
-                                                                {{ $data->validasiberkas3 == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas1" value="sesuai"
+                                                                {{ $data->validasiberkas1 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas3" value="tidak_sesuai"
-                                                                {{ $data->validasiberkas3 == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas1" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
@@ -1525,8 +1525,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                     {{-- BUKTI PBB --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-receipt-cutoff"></i> KTP
-</th>
+                                            <i class="bi bi-receipt-cutoff"></i> Surat Pernyataan Kalayakan Bangunan Bagian
+                                        </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
@@ -1544,17 +1544,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalBuktipbbLbl{{ $data->id }}">KTP.pdf</h5>
+                                                                <h5 class="modal-title" id="modalBuktipbbLbl{{ $data->id }}">Surat Kelayakan</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->ktp && file_exists(public_path('storage/' . $data->ktp)))
+                                                                    @if($data->suratpernyataankelaikan && file_exists(public_path('storage/' . $data->suratpernyataankelaikan)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->ktp) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->ktp)
+                                                                    <iframe src="{{ asset('storage/' . $data->suratpernyataankelaikan) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->suratpernyataankelaikan)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->ktp) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->suratpernyataankelaikan) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
@@ -1649,7 +1649,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </style>
 
         @php
-            $status = $data->validasiberkas4;
+            $status = $data->validasiberkas2;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1670,15 +1670,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas4" value="sesuai"
-                                                                {{ $data->validasiberkas4 == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas2" value="sesuai"
+                                                                {{ $data->validasiberkas2 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas4" value="tidak_sesuai"
-                                                                {{ $data->validasiberkas4 == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="validasiberkas2" value="tidak_sesuai"
+                                                                {{ $data->validasiberkas2 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>
