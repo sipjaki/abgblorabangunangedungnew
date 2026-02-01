@@ -778,12 +778,13 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
     <div class="form-modern">
         <label class="form-label-modern mb-3">
             <i class="bi bi-check-circle me-2 text-primary"></i>
-            Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan:
-        </label>
-
-      <small class="text-muted">
+            Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan: <br>
+              <small class="text-muted">
     Keterangan: Pemohon menyatakan persetujuan dengan memilih <strong style="color: red"> satu atau lebih pernyataan </strong> di bawah.
 </small>
+        </label>
+
+        <br>
 
         @php
             $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
@@ -962,7 +963,7 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="notelepon">
                             <i class="bi bi-telephone me-2 text-primary"></i> No. Telepon
