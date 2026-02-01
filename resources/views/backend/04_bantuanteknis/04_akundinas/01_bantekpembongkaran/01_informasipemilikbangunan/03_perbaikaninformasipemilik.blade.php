@@ -739,6 +739,22 @@ function previewSuratKesanggupan(input) {
 
     </div>
 </div>
+<script>
+function previewPDF(input, previewNewId, previewOldId) {
+    const file = input.files[0];
+    if (!file || file.type !== 'application/pdf') return;
+
+    const previewNew = document.getElementById(previewNewId);
+    const previewOld = document.getElementById(previewOldId);
+
+    if (previewOld) {
+        previewOld.style.display = 'none';
+    }
+
+    previewNew.src = URL.createObjectURL(file);
+    previewNew.classList.remove('d-none');
+}
+</script>
 
             </div>
 
