@@ -6847,31 +6847,6 @@ public function validasiinformasipemilikbangunan(Request $request, $id)
 }
 
 
-// SHOW DATA BARU
-public function informasibangunangedung($namapemilik, $id)
-    {
-        // Decode nama pemilik dari URL
-        $namapemilik = urldecode($namapemilik);
-
-        // Ambil data induk + relasi
-        $data = bantekpembongkaraninduk::with('bantekpembongkarannew2')
-            ->where('id', $id)                     // kunci utama
-            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
-            ->firstOrFail();
-
-        // User login
-        $user = Auth::user();
-
-        return view(
-            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.01_informasibangunangedung',
-            [
-                'title' => 'Informasi Data Bangunan Gedung',
-                'data'  => $data,
-                'user'  => $user
-            ]
-        );
-    }
-
 
 
 public function perbaikaninformasipemilik($namabangunan, $id)
@@ -7125,4 +7100,57 @@ public function bapersetujuanbupatibongkar(Request $request, $id)
         'id'          => $data->id
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
+
+
+
+public function informasibangunangedung($namapemilik, $id)
+    {
+        // Decode nama pemilik dari URL
+        $namapemilik = urldecode($namapemilik);
+
+        // Ambil data induk + relasi
+        $data = bantekpembongkaraninduk::with('bantekpembongkarannew2')
+            ->where('id', $id)                     // kunci utama
+            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
+            ->firstOrFail();
+
+        // User login
+        $user = Auth::user();
+
+        return view(
+            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.01_informasibangunangedung',
+            [
+                'title' => 'Informasi Data Bangunan Gedung',
+                'data'  => $data,
+                'user'  => $user
+            ]
+        );
+    }
+
+public function bebantekpembongkaranbangunan($nosurat, $id)
+{
+    // Decode kalau ada spasi / strip
+    $nosurat = urldecode($nosurat);
+
+    $data = bantekpembongkarannew2::withTrashed()
+        ->with('induk2')
+        ->where('id', $id)
+        ->firstOrFail();
+
+    // (OPSIONAL TAPI DISARANKAN)
+    // Validasi biar URL ga diubah sembarangan
+    if (Str::slug($data->induk->nosurat) !== $nosurat) {
+        abort(404);
+    }
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
+        [
+            'title'         => 'Details Informasi Pemilik Bangunan Gedung',
+            'data'          => $data,
+            'nosurat'  => $nosurat
+        ]
+    );
+}
+
 }

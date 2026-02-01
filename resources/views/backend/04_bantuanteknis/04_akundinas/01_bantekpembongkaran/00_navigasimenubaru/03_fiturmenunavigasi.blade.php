@@ -168,9 +168,9 @@
       </div>
       <div class="modal-footer">
         @if($data->cadangan1)
-          <a href="{{ asset($data->cadangan1) }}" download class="btn btn-success">Download</a>
+          <a href="{{ asset($data->cadangan1) }}" download class="button-berkas">Download</a>
         @endif
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
@@ -193,9 +193,9 @@
       </div>
       <div class="modal-footer">
         @if($data->cadangan2)
-          <a href="{{ asset($data->cadangan2) }}" download class="btn btn-success">Download</a>
+          <a href="{{ asset($data->cadangan2) }}" download class="button-berkas">Download</a>
         @endif
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
@@ -218,9 +218,9 @@
       </div>
       <div class="modal-footer">
         @if($data->cadangan3)
-          <a href="{{ asset($data->cadangan3) }}" download class="btn btn-success">Download</a>
+          <a href="{{ asset($data->cadangan3) }}" download class="button-berkas">Download</a>
         @endif
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
@@ -411,7 +411,7 @@ function closeModalPemohon2() {
                     <div class="button-container">
                         <!-- Input Permohonan -->
                        @if($data->bantekpembongkarannew2->count() > 0)
-                                <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew2->first()->id) }}"
+                                <a href="{{ route('bebantekpembongkaranbangunandetail', $data->bantekpembongkarannew2->first()->id) }}"
                                 class="button-berkas">
                                     <i class="bi bi-eye"></i> Lihat Dokumen
                                 </a>
@@ -423,10 +423,33 @@ function closeModalPemohon2() {
                             @endif
 
 
-                        <!-- Perbaikan Dokumen -->
-                        <a href="/perbaikan-gedung" class="button-modern">
-                            <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
-                        </a>
+<!-- Perbaikan Dokumen -->
+@if($data->bantekpembongkarannew2->count() > 0)
+    <!-- DATA ADA → BISA DIKLIK -->
+    <a href="{{ route(
+            'perbaikan.pemilik',
+            [
+                'nosurat' => Str::slug($data->nosurat),
+                'id' => $data->bantekpembongkarannew2->first()->id
+            ]
+        ) }}"
+       class="button-baru">
+        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+    </a>
+@else
+    <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
+    <button type="button"
+            class="button-baru"
+            disabled
+            style="opacity:0.6;cursor:not-allowed;">
+        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+    </button>
+
+    <small class="text-muted d-block mt-1">
+        Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
+    </small>
+@endif
+
                     </div>
                 </div>
             </div>
