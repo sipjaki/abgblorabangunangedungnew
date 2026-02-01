@@ -7204,7 +7204,7 @@ public function bebantekbangunanbongkarcrnew(Request $request)
         'gambar_asd',
         'berkaspembongkaran',
         'berkaspemeriksaan',
-        'cadangan1'
+        'cadangan3'
     ];
 
     foreach ($fileFields as $field) {
