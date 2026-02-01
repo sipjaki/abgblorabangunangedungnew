@@ -781,6 +781,10 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             Siap Bertanggung Jawab Terhadap Pelaksanaan Pembongkaran Dengan Memperhatikan:
         </label>
 
+      <small class="text-muted">
+    Keterangan: Pemohon menyatakan persetujuan dengan memilih <strong style="color: red"> satu atau lebih pernyataan </strong> di bawah.
+</small>
+
         @php
             $oldCek = old('pilihansanggup') ? explode('|', old('pilihansanggup')) : [];
         @endphp
@@ -935,7 +939,7 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="namalengkap">
                             <i class="bi bi-person me-2 text-primary"></i> Nama Lengkap
@@ -946,7 +950,7 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-modern">
                         <label class="form-label-modern" for="jabatan">
                             <i class="bi bi-briefcase me-2 text-primary"></i> Jabatan
@@ -957,16 +961,6 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
                     </div>
                 </div>
 
-                <div class="col-12">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="alamatpemilik">
-                            <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Pemilik
-                        </label>
-                        <textarea class="form-control @error('alamatpemilik') is-invalid @enderror"
-                                  id="alamatpemilik" name="alamatpemilik" rows="3">{{ old('alamatpemilik') }}</textarea>
-                        @error('alamatpemilik') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
 
                 <div class="col-md-6">
                     <div class="form-modern">
@@ -979,7 +973,7 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
                     </div>
                 </div>
 
-          <div class="col-md-6">
+                <div class="col-md-6">
     <div class="form-modern">
         <label class="form-label-modern" for="ktp">
             <i class="bi bi-card-image me-2 text-primary"></i>
@@ -1021,6 +1015,63 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
         </div>
     </div>
 </div>
+
+<div class="col-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="sk">
+            <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+            Upload SK
+        </label>
+
+        <!-- INPUT UPLOAD -->
+        <input type="file"
+               class="form-control @error('sk') is-invalid @enderror"
+               id="sk"
+               name="sk"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('sk')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 15MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2 me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContohSK">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh SK
+        </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewSKWrapper" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye-fill me-2 text-success"></i>
+                Preview SK Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSKBox"></div>
+        </div>
+    </div>
+</div>
+
+
+
+                <div class="col-12">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="alamatpemilik">
+                            <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Pemilik
+                        </label>
+                        <textarea class="form-control @error('alamatpemilik') is-invalid @enderror"
+                                  id="alamatpemilik" name="alamatpemilik" rows="3">{{ old('alamatpemilik') }}</textarea>
+                        @error('alamatpemilik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
 
 <!-- MODAL CONTOH KTP -->
 <div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
@@ -1131,48 +1182,7 @@ document.getElementById('ktp').addEventListener('change', function () {
         </div>
     </div>
 </div>
-<div class="col-12">
-    <div class="form-modern">
-        <label class="form-label-modern" for="sk">
-            <i class="bi bi-file-earmark-text me-2 text-primary"></i>
-            Upload SK
-        </label>
 
-        <!-- INPUT UPLOAD -->
-        <input type="file"
-               class="form-control @error('sk') is-invalid @enderror"
-               id="sk"
-               name="sk"
-               accept=".pdf,.jpg,.jpeg,.png">
-
-        @error('sk')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG (Maks. 15MB)
-        </small>
-
-        <!-- BUTTON LIHAT CONTOH -->
-        <button type="button"
-                class="btn btn-outline-primary btn-sm mt-2 me-2"
-                data-bs-toggle="modal"
-                data-bs-target="#modalContohSK">
-            <i class="bi bi-eye me-1"></i> Lihat Contoh SK
-        </button>
-
-        <!-- PREVIEW UPLOAD -->
-        <div id="previewSKWrapper" class="mt-3 d-none">
-            <label class="form-label-modern mb-2">
-                <i class="bi bi-eye-fill me-2 text-success"></i>
-                Preview SK Yang Diupload
-            </label>
-
-            <div class="border rounded-3 p-2 bg-light"
-                 id="previewSKBox"></div>
-        </div>
-    </div>
-</div>
 
 <!-- MODAL CONTOH SK -->
 <div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
