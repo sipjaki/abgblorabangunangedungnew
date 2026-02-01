@@ -1594,6 +1594,9 @@ Route::put('/bapersetujuanbupatibongkar/upload/{id}', [BantuanteknisController::
 // BUAT BARU INFORMASI BANGUNAN GEDUN
     Route::get('/bebantekpembongkaran/bangunancreate/{namapemilik}/{id}',[BantuanteknisController::class, 'bebantekbongkarbangunancreate'])->middleware('auth', 'can:admindinas')->name('infobanguanandetails');
 
+    // MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
+    Route::post('/bebantekbangunanbongkar/createnew', [BantuanteknisController::class, 'bebantekbangunanbongkarcrnew'])->middleware('auth', 'can:admindinas')->name('informasidetailsbangunan.create');
+
     // BUAT INFORMASI DATA DETAIL BANGUNAN GEDUNG
 Route::get('/bebantekpembongkaran/bangunan/{nosurat}/{id}',[BantuanteknisController::class, 'bebantekpembongkaranbangunan'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranbangunandetail');
 

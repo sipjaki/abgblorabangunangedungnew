@@ -476,7 +476,7 @@
     </div>
 
     <!-- FORM UPLOAD (Awalnya disembunyikan) -->
-    <form action="{{ route('informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none; background: #f8fafc; padding: 25px; border-radius: 12px; border: 2px solid #e2e8f0;">
+    <form action="{{ route('informasidetailsbangunan.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none; background: #f8fafc; padding: 25px; border-radius: 12px; border: 2px solid #e2e8f0;">
         @csrf
 
         <!-- Hidden Input untuk ID Data Awal -->
@@ -491,6 +491,11 @@
         <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
         <div class="card-body">
+
+    <div class="section-header">
+        <i class="bi bi-clipboard-data me-2"></i>Surat Kelayakan Bangunan Gedung
+    </div>
+
 
             <div class="card-body">
                 <div class="row">

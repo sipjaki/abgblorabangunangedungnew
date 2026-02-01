@@ -7153,4 +7153,78 @@ public function bebantekpembongkaranbangunan($nosurat, $id)
     );
 }
 
+public function bebantekbangunanbongkarcrnew(Request $request)
+{
+    // VALIDASI
+    $validated = $request->validate([
+        'bantekpembongkaraninduk_id' => 'nullable|integer',
+
+        // Dokumen Analisa Bangunan Gedung
+        'tingkat_kerusakan' => 'nullable|numeric',
+        'status_kerusakan' => 'nullable|string|max:255',
+        'dok_kerusakan_bangunan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+        // Surat Kajian Teknis Bangunan Gedung
+        'nosurat' => 'nullable|string|max:255',
+        'tanggalsurat' => 'nullable|date',
+        'status_penilaian_teknis' => 'nullable|string|max:255',
+        'suratpernyataankelaikan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+        // As Built Drawing
+        'gambar_asd' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'keterangan' => 'nullable|string',
+
+        // Metode Pembongkaran
+        'pelaksana' => 'nullable|string|max:255',
+        'namapenanggungjawab' => 'nullable|string|max:255',
+        'notelepon' => 'nullable|string|max:50',
+        'berkaspembongkaran' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+        // Laporan Pemeriksaan Bangunan Gedung
+        'ketersediaan' => 'nullable|string|max:255',
+        'berkaspemeriksaan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+        // Cadangan
+        'cadangan1' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan2' => 'nullable|string',
+        'cadangan3' => 'nullable|string',
+    ]);
+
+    // ==============================
+    // UPLOAD FILE
+    // ==============================
+    $publicPath = public_path('bantekpembongkaran');
+    if (!file_exists($publicPath)) {
+        mkdir($publicPath, 0777, true);
+    }
+
+    $fileFields = [
+        'dok_kerusakan_bangunan',
+        'suratpernyataankelaikan',
+        'gambar_asd',
+        'berkaspembongkaran',
+        'berkaspemeriksaan',
+        'cadangan1'
+    ];
+
+    foreach ($fileFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move($publicPath, $filename);
+            $validated[$field] = 'bantekpembongkaran/' . $filename;
+        }
+    }
+
+    // SIMPAN KE DATABASE
+    $record = bantekpembongkarannew2::create($validated);
+
+    // REDIRECT
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => $request->input('namapemilik_awal'),
+        'id' => $request->input('id_awal')
+    ])->with('create', 'Data berhasil disimpan!');
 }
+
+}
+
