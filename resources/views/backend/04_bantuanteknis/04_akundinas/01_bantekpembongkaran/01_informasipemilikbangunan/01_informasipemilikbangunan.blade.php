@@ -628,6 +628,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                         <label class="form-label-modern" for="namabangunan">
                             <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
                         </label>
+
                         <input type="text" class="form-control @error('namabangunan') is-invalid @enderror"
                                id="namabangunan" name="namabangunan" value="{{ old('namabangunan') }}">
                         @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -672,7 +673,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         @enderror
     </div>
 </div> --}}
-<div class="col-12">
+{{-- <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="suratkelayakan">
             <i class="bi bi-upload me-2 text-primary"></i>
@@ -716,7 +717,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                  id="previewSuratKajianTeknisBox"></div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <script>
