@@ -618,12 +618,11 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
 
             <!-- 2. DATA BANGUNAN -->
-            {{-- ======================================================================================== --}}
-            {{-- <div class="section-header mt-4">
+            <div class="section-header mt-4">
                 <i class="bi bi-building me-2"></i> Data Surat Permohonan Kajian Teknis Bangunan Gedung
-            </div> --}}
+            </div>
 
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="namabangunan">
@@ -635,9 +634,9 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="pilihanbangunan">
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="pilihanbangunan">
             <i class="bi bi-list-check me-2 text-primary"></i>
             Jenis Kajian Teknis Bangunan Gedung
         </label>
@@ -648,32 +647,31 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             <option value="">-- Pilih --</option>
 
             <option value="Kajian Analisa Kerusakan Bangunan Gedung"
-            {{ old('pilihanbangunan') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
-            Kajian Analisa Kerusakan Bangunan Gedung
-        </option>
+                {{ old('pilihanbangunan') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Analisa Kerusakan Bangunan Gedung
+            </option>
 
             <option value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
-            {{ old('pilihanbangunan') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
-            Kajian Rencana Teknis Pembongkaran Bangunan Gedung
+                {{ old('pilihanbangunan') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Rencana Teknis Pembongkaran Bangunan Gedung
             </option>
 
             <option value="Kajian Kelayakan Bangunan Gedung"
-            {{ old('pilihanbangunan') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
-            Kajian Kelayakan Bangunan Gedung
+                {{ old('pilihanbangunan') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Kelayakan Bangunan Gedung
             </option>
 
             <option value="Bantuan Gambar Teknis"
-            {{ old('pilihanbangunan') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
-            Bantuan Gambar Teknis
-        </option>
+                {{ old('pilihanbangunan') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
+                Bantuan Gambar Teknis
+            </option>
         </select>
 
         @error('pilihanbangunan')
             <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-    </div> --}}
+        @enderror
+    </div>
 </div>
-{{-- ======================================================================================== --}}
 <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="suratkelayakan">
