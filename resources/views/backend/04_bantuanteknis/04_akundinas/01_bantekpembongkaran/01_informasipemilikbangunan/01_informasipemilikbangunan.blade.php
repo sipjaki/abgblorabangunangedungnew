@@ -1614,7 +1614,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Jumlah Lantai -->
-    <div class="col-md-4">
+    <div class="col-md-3">
     <div class="form-modern">
         <label class="form-label-modern" for="jumlahlantai">
             <i class="bi bi-layers me-2 text-primary"></i> Jumlah Lantai
@@ -1641,7 +1641,7 @@ document.getElementById('sk').addEventListener('change', function () {
 
 
     <!-- Ketinggian Bangunan -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-modern">
             <label class="form-label-modern" for="ketinggianbangunan">
                 <i class="bi bi-arrows-vertical me-2 text-primary"></i> Ketinggian Bangunan (m)
@@ -1654,7 +1654,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Luas Bangunan -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-modern">
             <label class="form-label-modern" for="luasbangunan">
                 <i class="bi bi-rulers me-2 text-primary"></i> Luas Bangunan (m²)
@@ -1667,7 +1667,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Kompleksitas Bangunan -->
-    <div class="col-md-6">
+    <div class="col-md-3">
         <div class="form-modern">
             <label class="form-label-modern" for="kompleksitasbangunan">
                 <i class="bi bi-diagram-3 me-2 text-primary"></i> Kompleksitas Bangunan
@@ -1685,7 +1685,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Tingkat Permanensi -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="tingkatpermanensi">
                 <i class="bi bi-shield-check me-2 text-primary"></i> Tingkat Permanensi
@@ -1702,7 +1702,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Kepadatan -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="kepadatan">
                 <i class="bi bi-people-fill me-2 text-primary"></i> Kepadatan
@@ -1720,7 +1720,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Tanggal Dibangun -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="tanggaldibangun">
                 <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Dibangun
@@ -1732,7 +1732,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Tanggal Renovasi -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="tanggalrevovasi">
                 <i class="bi bi-tools me-2 text-primary"></i> Tanggal Renovasi
@@ -1742,7 +1742,7 @@ document.getElementById('sk').addEventListener('change', function () {
             @error('tanggalrevovasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
-<div class="col-md-6">
+<div class="col-md-4">
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanbaru_display">
             <i class="bi bi-cash-coin me-2 text-primary"></i>
@@ -1770,7 +1770,7 @@ document.getElementById('sk').addEventListener('change', function () {
 </div>
 
 
-<div class="col-md-6">
+<div class="col-md-4">
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanlama_display">
             <i class="bi bi-cash-stack me-2 text-primary"></i>
