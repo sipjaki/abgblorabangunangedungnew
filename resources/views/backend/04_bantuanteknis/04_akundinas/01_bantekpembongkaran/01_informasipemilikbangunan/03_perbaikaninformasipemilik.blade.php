@@ -53,9 +53,9 @@
 
 <style>
         :root {
-            --biru-persib: #ffffff;
-            --biru-tua: #ffffff;
-            --biru-muda: #ffffff;
+            --biru-persib: #1e3a8a;
+            --biru-tua: black;
+            --biru-muda: black;
             --biru-cerah: #ffffff;
             --putih: #ffffff;
             --abu-muda: #f8fafc;
