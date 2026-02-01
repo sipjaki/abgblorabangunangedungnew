@@ -1691,7 +1691,7 @@ document.getElementById('mode_tanggal_renovasi').addEventListener('change', func
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanlama_display">
             <i class="bi bi-cash-stack me-2 text-primary"></i>
-            Nilai Bangunan Pada Saat Dibangun (Rp)
+            Nilai Bangunan Sesuai Dengan KIB (Rp)
         </label>
 
         <!-- INPUT TAMPILAN (FORMAT RUPIAH) -->

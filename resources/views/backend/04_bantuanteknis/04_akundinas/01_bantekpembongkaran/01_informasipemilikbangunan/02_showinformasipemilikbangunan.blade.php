@@ -101,7 +101,7 @@
             color: var(--putih);
             padding: 20px 30px;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 14px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -422,7 +422,7 @@
             </div>
 
             <!-- DATA BANGUNAN -->
-            <div class="section">
+            {{-- <div class="section">
                 <div class="section-header">
                     <i class="bi bi-buildings"></i> DATA BANGUNAN
                 </div>
@@ -450,7 +450,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- SURAT KESANGGUPAN -->
             <div class="section">
@@ -843,7 +843,7 @@
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-person-vcard-fill"></i> SURAT PERMOHONAN IZIN PEMBONGKARAN</span>
+    <i class="bi bi-person-vcard-fill"></i> Surat Permohonan Izin Pembongkaran</span>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1094,7 +1094,7 @@
 
 
 
-                                    <tr>
+                                    {{-- <tr>
                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
     <i class="bi bi-file-earmark-person-fill"></i> Surat Kelayakan Kajian Teknis Bangunan Gedung
 </th>
@@ -1268,7 +1268,7 @@
                                                 </th>
                                             @endcanany
 
-                                    </tr>
+                                    </tr> --}}
 
 
                                     <tr>
