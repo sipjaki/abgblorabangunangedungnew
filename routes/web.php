@@ -1586,6 +1586,7 @@ Route::put('/barekomtekberkas/upload/{id}', [BantuanteknisController::class, 'ba
 
 // Upload Per Bupati
 Route::get('/berkaspersetujuanbupembongkaran/{id}', [BantuanteknisController::class, 'berkaspersetujuanBupati'])->middleware('auth', 'can:admindinas')->name('berkaspersetujuanbupembongkaran');
+Route::put('/bapersetujuanbupatibongkar/upload/{id}', [BantuanteknisController::class, 'bapersetujuanbupatibongkar'])->middleware('auth', 'can:admindinas')->name('bapersetujuanbupatibongkar.upload');
 // MEMBUAT ISIAN DATA DARI INFORMASI BANGUNAN GEDUNG
     // Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 

@@ -7093,4 +7093,36 @@ public function barekomtekberkas(Request $request, $id)
         ]
     );
 }
+
+
+public function bapersetujuanbupatibongkar(Request $request, $id)
+{
+    // Validasi file, max 15MB
+    $request->validate([
+        'cadangan3' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+    ]);
+
+    // Ambil data dari database
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Upload file
+    if ($request->hasFile('cadangan3')) {
+        $file = $request->file('cadangan3');
+        $filename = time().'_'.$file->getClientOriginalName();
+        $file->move(public_path('bantekpembongkaran'), $filename);
+
+        // Simpan path file ke database
+        $data->cadangan3 = 'bantekpembongkaran/'.$filename;
+        $data->save();
+    }
+
+    // Ambil nama pemilik dari database (sesuai schema)
+    $namapemilik = $data->namapemilik;
+
+    // Redirect ke halaman show dengan parameter lengkap
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'id'          => $data->id
+    ])->with('create', 'Berkas Berhasil Di Upload !');
+}
 }
