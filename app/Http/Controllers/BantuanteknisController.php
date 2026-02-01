@@ -6846,71 +6846,30 @@ public function validasiinformasipemilikbangunan(Request $request, $id)
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
 
-
-// SHOW DATA BARU
-public function informasibangunangedung($namapemilik, $id)
-    {
-        // Decode nama pemilik dari URL
-        $namapemilik = urldecode($namapemilik);
-
-        // Ambil data induk + relasi
-        $data = bantekpembongkaraninduk::with('bantekpembongkarannew2')
-            ->where('id', $id)                     // kunci utama
-            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
-            ->firstOrFail();
-
-        // User login
-        $user = Auth::user();
-
-        return view(
-            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.01_informasibangunangedung',
-            [
-                'title' => 'Informasi Data Bangunan Gedung',
-                'data'  => $data,
-                'user'  => $user
-            ]
-        );
-    }
-
-
-
 public function perbaikaninformasipemilik($namabangunan, $id)
 {
-    // Decode URL (antisipasi spasi / karakter khusus)
+    // Decode URL untuk antisipasi spasi / karakter khusus
     $namabangunan = urldecode($namabangunan);
 
-    // Ambil data + relasi induk (termasuk soft delete)
-    $data = bantekpembongkarannew1::withTrashed()
-        ->with('induk')
-        ->where('id', $id)
-        ->firstOrFail();
+    // Ambil data record sesuai ID
+    $data = bantekpembongkarannew1::withTrashed()->findOrFail($id);
 
-    // Cek apakah relasi induk ada
-    if (!$data->induk) {
-        abort(404, "Data induk tidak ditemukan");
+    // Opsional: cek apakah nama bangunan sesuai dengan field di data
+    if (Str::slug($data->namabangunan) !== Str::slug($namabangunan)) {
+        abort(404, "Nama bangunan tidak sesuai dengan record.");
     }
 
-    // VALIDASI URL: nama bangunan di URL harus cocok dengan data di induk
-    if (Str::slug($data->induk->namabangunan) !== Str::slug($namabangunan)) {
-        abort(404, "Nama bangunan tidak sesuai");
-    }
-
-    // Ambil ID induk & nama pemilik dari relasi induk
-    $idInduk       = $data->induk->id;
-    $namapemilik   = $data->induk->pemilikbangunan;
-
-    // Kirim ke view
+    // Kirim data ke view
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
         [
             'title'        => 'Perbaikan Berkas Informasi Pemilik Bangunan Gedung',
             'data'         => $data,
-            'namabangunan' => $namabangunan,
-            'idInduk'      => $idInduk,       // bisa dipakai di form hidden
-            'namapemilik'  => $namapemilik,   // bisa dipakai di redirect & validasi
+            'namabangunan' => $namabangunan
         ]
     );
 }
+
 
 public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 {
@@ -6983,11 +6942,7 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     // ==========================
     $data->update($validated);
 
-
-    return redirect()->route('bebantekpembongkaranshow', [
-    'namapemilik' => urlencode($request->input('namapemilik')),
-    'id' => $request->input('induk_id')
-])->with('success', 'Data pemilik berhasil diperbarui!');
+return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
 
     }
 
