@@ -53,10 +53,10 @@
 
 <style>
         :root {
-            --biru-persib: #1e3a8a;
-            --biru-tua: #1e40af;
-            --biru-muda: #3b82f6;
-            --biru-cerah: #60a5fa;
+            --biru-persib: #ffffff;
+            --biru-tua: #ffffff;
+            --biru-muda: #ffffff;
+            --biru-cerah: #ffffff;
             --putih: #ffffff;
             --abu-muda: #f8fafc;
             --abu: #e2e8f0;
