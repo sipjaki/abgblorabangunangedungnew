@@ -1245,9 +1245,9 @@ function submitFormPermohonan() {
     <br>
 <div class="d-flex gap-2 mt-3">
     <!-- Kembali ke halaman sebelumnya -->
-    <a href="{{ url()->previous() }}" class="button-baru">
+    {{-- <a href="{{ url()->previous() }}" class="button-baru">
         ← Kembali
-    </a>
+    </a> --}}
 
     <!-- Kembali ke Data Dasar -->
     <a href="{{ url('/bebantekpembongkaran') }}" class="button-modern">

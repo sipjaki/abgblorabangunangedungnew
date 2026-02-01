@@ -6951,7 +6951,7 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     // UPLOAD FILE
     // ==========================
     $fileFields = [
-        'ktp', 'sk', 'sertifikattanah', 'kib', 'pbg', 'suratpermohonan'
+        'ktp', 'sk', 'sertifikattanah', 'kib', 'pbg', 'suratpermohonan', 'suratkesanggupan'
     ];
 
     $publicPath = public_path('bantekpembongkaran');

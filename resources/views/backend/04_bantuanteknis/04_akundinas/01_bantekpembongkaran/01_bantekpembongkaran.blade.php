@@ -155,12 +155,12 @@
 
 <div style="display: flex; justify-content: flex-end;">
 
-    @canany(['superadmin', 'admin', 'dinas'])
+    {{-- @canany(['superadmin', 'admin', 'dinas'])
 
     <a href="/datapermohonandinas" class="button-berkas" style="color: black; margin-right:5px; text-decoration: none; display: inline-flex; align-items: center;">
         <i class="bi bi-bar-chart-line" style="margin-right: 5px;"></i> Statistika
     </a>
-    @endcanany
+    @endcanany --}}
 
                                <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
                                     class="button-baru" style="color: black;">

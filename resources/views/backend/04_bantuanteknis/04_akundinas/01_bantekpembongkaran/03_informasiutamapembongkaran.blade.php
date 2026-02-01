@@ -265,7 +265,7 @@
 </div>
 
 
-    <a href="/bebantekpembongkaran" class="button-modern">
+    <a href="/bebantekpembongkaran" class="button-berkas">
     <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
     Kembali Ke Data Awal</strong>
 </a>
