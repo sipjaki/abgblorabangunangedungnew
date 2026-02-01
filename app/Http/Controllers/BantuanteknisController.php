@@ -6885,25 +6885,32 @@ public function perbaikaninformasipemilik($namabangunan, $id)
         ->where('id', $id)
         ->firstOrFail();
 
-    /**
-     * VALIDASI URL
-     * Cegah manipulasi URL:
-     * - namabangunan di URL HARUS cocok dengan data di database
-     */
-    if (!$data->induk || Str::slug($data->induk->namabangunan) !== $namabangunan) {
-        abort(404);
+    // Cek apakah relasi induk ada
+    if (!$data->induk) {
+        abort(404, "Data induk tidak ditemukan");
     }
 
+    // VALIDASI URL: nama bangunan di URL harus cocok dengan data di induk
+    if (Str::slug($data->induk->namabangunan) !== Str::slug($namabangunan)) {
+        abort(404, "Nama bangunan tidak sesuai");
+    }
+
+    // Ambil ID induk & nama pemilik dari relasi induk
+    $idInduk       = $data->induk->id;
+    $namapemilik   = $data->induk->pemilikbangunan;
+
+    // Kirim ke view
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
         [
             'title'        => 'Perbaikan Berkas Informasi Pemilik Bangunan Gedung',
             'data'         => $data,
-            'namabangunan' => $namabangunan
+            'namabangunan' => $namabangunan,
+            'idInduk'      => $idInduk,       // bisa dipakai di form hidden
+            'namapemilik'  => $namapemilik,   // bisa dipakai di redirect & validasi
         ]
     );
 }
-
 
 public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 {
@@ -6976,10 +6983,10 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     // ==========================
     $data->update($validated);
 
-    // Redirect kembali
-return redirect()->route('bebantekpembongkaranshow', [
-    'namapemilik' => urlencode($data->pemilikbangunan),
-    'id' => $data->id
+
+    return redirect()->route('bebantekpembongkaranshow', [
+    'namapemilik' => urlencode($request->input('namapemilik')),
+    'id' => $request->input('induk_id')
 ])->with('success', 'Data pemilik berhasil diperbarui!');
 
     }
