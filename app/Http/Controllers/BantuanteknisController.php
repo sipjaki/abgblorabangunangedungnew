@@ -6896,7 +6896,7 @@ public function perbaikaninformasipemilik($namabangunan, $id)
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
         [
-            'title'        => 'Detail Informasi Pemilik Bangunan Gedung',
+            'title'        => 'Perbaikan Berkas Informasi Pemilik Bangunan Gedung',
             'data'         => $data,
             'namabangunan' => $namabangunan
         ]

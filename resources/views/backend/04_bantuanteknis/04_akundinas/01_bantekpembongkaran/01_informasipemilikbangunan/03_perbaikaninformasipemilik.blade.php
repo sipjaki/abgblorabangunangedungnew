@@ -397,66 +397,81 @@
                 </div>
                 <div class="section-content">
 
-    <!-- Nomor Surat -->
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-hash"></i> Nomor Surat
+    <!-- ROW ATAS -->
+    <div class="row g-3">
+
+        <!-- Nomor Surat -->
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-hash"></i> Nomor Surat
+                </div>
+                <input type="text"
+                       name="nosurat"
+                       class="form-control"
+                       value="{{ $data->nosurat }}"
+                       placeholder="Masukkan Nomor Surat">
+            </div>
         </div>
-        <input type="text"
-               name="nosurat"
-               class="form-control"
-               value="{{ $data->nosurat }}"
-               placeholder="Masukkan Nomor Surat">
+
+        <!-- Tanggal Surat -->
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-calendar-date"></i> Tanggal Surat
+                </div>
+                <input type="date"
+                       name="tanggalsurat"
+                       class="form-control"
+                       value="{{ $data->tanggalsurat }}">
+            </div>
+        </div>
+
     </div>
 
-    <!-- Tanggal Surat -->
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-calendar-date"></i> Tanggal Surat
-        </div>
-        <input type="date"
-               name="tanggalsurat"
-               class="form-control"
-               value="{{ $data->tanggalsurat }}">
-    </div>
+    <!-- ROW BAWAH (FULL WIDTH) -->
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="data-card">
 
-    <!-- Surat Permohonan -->
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-file-pdf"></i> Surat Permohonan
-        </div>
+                <div class="data-label">
+                    <i class="bi bi-file-pdf"></i> Surat Permohonan
+                </div>
 
-        {{-- FILE LAMA --}}
-        @if($data->suratpermohonan)
-            <div class="mb-2">
-                <span class="badge bg-secondary">Berkas Lama</span><br>
-                <button type="button"
-                        class="file-badge view-pdf"
-                        data-url="{{ asset('public/'.$data->suratpermohonan) }}"
-                        data-title="Surat Permohonan Lama">
-                    <i class="bi bi-eye"></i> Lihat PDF Lama
-                </button>
+                {{-- FILE LAMA --}}
+                @if($data->suratpermohonan)
+                    <div class="mb-2">
+                        <span class="badge bg-secondary">Berkas Lama</span><br>
+                        <button type="button"
+                                class="file-badge view-pdf"
+                                data-url="{{ asset('public/'.$data->suratpermohonan) }}"
+                                data-title="Surat Permohonan Lama">
+                            <i class="bi bi-eye"></i> Lihat PDF Lama
+                        </button>
+                    </div>
+                @else
+                    <div class="text-muted mb-2">
+                        Data Tidak Ditemukan
+                    </div>
+                @endif
+
+                {{-- INPUT FILE BARU --}}
+                <input type="file"
+                       name="suratpermohonan"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewPdf(this)">
+
+                {{-- PREVIEW FILE BARU --}}
+                <div id="preview-pdf" class="mt-3" style="display:none;">
+                    <span class="badge bg-warning text-dark">Preview Berkas Baru</span>
+                    <iframe id="pdf-frame"
+                            width="100%"
+                            height="420"
+                            style="border:1px solid #ddd;border-radius:8px;"></iframe>
+                </div>
+
             </div>
-        @else
-            <div class="text-muted mb-2">
-                Data Tidak Ditemukan
-            </div>
-        @endif
-
-        {{-- INPUT FILE BARU --}}
-        <input type="file"
-               name="suratpermohonan"
-               class="form-control"
-               accept="application/pdf"
-               onchange="previewPdf(this)">
-
-        {{-- PREVIEW FILE BARU --}}
-        <div id="preview-pdf" class="mt-2" style="display:none;">
-            <span class="badge bg-warning text-dark">Preview Berkas Baru</span>
-            <iframe id="pdf-frame"
-                    width="100%"
-                    height="400"
-                    style="border:1px solid #ddd;border-radius:6px;"></iframe>
         </div>
     </div>
 
@@ -468,12 +483,12 @@ function previewPdf(input) {
     const frame = document.getElementById('pdf-frame');
 
     if (input.files && input.files[0]) {
-        const fileURL = URL.createObjectURL(input.files[0]);
-        frame.src = fileURL;
+        frame.src = URL.createObjectURL(input.files[0]);
         preview.style.display = 'block';
     }
 }
 </script>
+
 
             </div>
 
@@ -509,31 +524,98 @@ function previewPdf(input) {
             </div> --}}
 
             <!-- SURAT KESANGGUPAN -->
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-hand-thumbs-up"></i> SURAT KESANGGUPAN
+            <div class="section-content">
+
+    <!-- ROW ATAS -->
+    <div class="row g-3">
+
+        <!-- Pilihan Sanggup -->
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-check-square"></i> Pilihan Sanggup
                 </div>
-                <div class="section-content">
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-check-square"></i> Pilihan Sanggup</div>
-                        <div class="data-value">{{$data->pilihansanggup ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-file-earmark-text"></i> Surat Kesanggupan</div>
-                        <div class="data-value">
-                            @if($data->suratkesanggupan)
-                                <button class="file-badge view-pdf"
-                                        data-url="{{ asset('public/' . $data->suratkesanggupan) }}"
-                                        data-title="Surat Kesanggupan">
-                                    <i class="bi bi-eye"></i> Lihat PDF
-                                </button>
-                            @else
-                                Data Tidak Ditemukan
-                            @endif
-                        </div>
-                    </div>
-                </div>
+
+                <select name="pilihansanggup" class="form-select">
+                    <option value="">-- Pilih --</option>
+                    <option value="Sanggup"
+                        {{ $data->pilihansanggup == 'Sanggup' ? 'selected' : '' }}>
+                        Sanggup
+                    </option>
+                    <option value="Tidak Sanggup"
+                        {{ $data->pilihansanggup == 'Tidak Sanggup' ? 'selected' : '' }}>
+                        Tidak Sanggup
+                    </option>
+                </select>
             </div>
+        </div>
+
+    </div>
+
+    <!-- ROW BAWAH -->
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="data-card">
+
+                <div class="data-label">
+                    <i class="bi bi-file-earmark-text"></i> Surat Kesanggupan
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->suratkesanggupan)
+                    <div class="mb-2">
+                        <span class="badge bg-secondary">Berkas Lama</span><br>
+                        <button type="button"
+                                class="file-badge view-pdf"
+                                data-url="{{ asset('public/'.$data->suratkesanggupan) }}"
+                                data-title="Surat Kesanggupan Lama">
+                            <i class="bi bi-eye"></i> Lihat PDF Lama
+                        </button>
+                    </div>
+                @else
+                    <div class="text-muted mb-2">
+                        Data Tidak Ditemukan
+                    </div>
+                @endif
+
+                {{-- INPUT FILE BARU --}}
+                <input type="file"
+                       name="suratkesanggupan"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewSuratKesanggupan(this)">
+
+                {{-- PREVIEW FILE BARU --}}
+                <div id="preview-surat-kesanggupan"
+                     class="mt-3"
+                     style="display:none;">
+                    <span class="badge bg-warning text-dark">
+                        Preview Berkas Baru
+                    </span>
+                    <iframe id="frame-surat-kesanggupan"
+                            width="100%"
+                            height="420"
+                            style="border:1px solid #ddd;border-radius:8px;">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function previewSuratKesanggupan(input) {
+    const preview = document.getElementById('preview-surat-kesanggupan');
+    const frame   = document.getElementById('frame-surat-kesanggupan');
+
+    if (input.files && input.files[0]) {
+        frame.src = URL.createObjectURL(input.files[0]);
+        preview.style.display = 'block';
+    }
+}
+</script>
 
             <!-- DATA PEMILIK -->
             <div class="section">
