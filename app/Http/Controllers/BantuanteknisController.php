@@ -7056,8 +7056,8 @@ public function bakonsultasipembongkaran(Request $request, $id)
     $idInduk     = $data->id; // id dari record induk (bantekpembongkaraninduk)
 
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => $namapemilik,
-        'id'          => $idInduk
+    'namapemilik' => urlencode($namapemilik),
+    'id'          => $idInduk
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
 
