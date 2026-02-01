@@ -145,7 +145,7 @@
         const modal = document.getElementById('confirmModal2');
         const form  = document.getElementById('validasiForm2');
 
-        form.action = `/validasipembongkaran2/${itemId}`;
+        form.action = `/validasipembongkaranpemohon/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
