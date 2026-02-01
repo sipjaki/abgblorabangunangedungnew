@@ -103,20 +103,51 @@
                 </div>
             </div>
 
+            @can('admindpupr')
+
             <div class="d-block">
-                    <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
+                <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
                     Upload BA Konsultasi
-                    </a>
-                    <a href="{{ route('berkasbarekomtekpembongkaran', ['id' => $data->id]) }}"
+                </a>
+                <a href="{{ route('berkasbarekomtekpembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
                     Upload BA Rekomtek
-                    </a>
-                    <a href="{{ route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) }}"
+                </a>
+                <a href="{{ route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
                     Upload Per Bupati
                     </a>
-            </div>
+                </div>
+
+                @endcan
+@canany(['pemohon', 'dinas'])
+<div class="d-block">
+
+    <!-- Berkas Konsultasi (cadangan1) -->
+    <a href="{{ $data->cadangan1 ? route('berkaskonsultasipembongkaran', ['id' => $data->id]) : '#' }}"
+       class="button-modern {{ $data->cadangan1 ? '' : 'disabled' }}"
+       style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
+       Berkas Konsultasi
+    </a>
+
+    <!-- Berkas Rekomtek (cadangan2) -->
+    <a href="{{ $data->cadangan2 ? route('berkasbarekomtekpembongkaran', ['id' => $data->id]) : '#' }}"
+       class="button-modern {{ $data->cadangan2 ? '' : 'disabled' }}"
+       style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
+       Berkas Rekomtek
+    </a>
+
+    <!-- Berkas Per Bupati (cadangan3) -->
+    <a href="{{ $data->cadangan3 ? route('berkaspersetujuanbupembongkaran', ['id' => $data->id]) : '#' }}"
+       class="button-modern {{ $data->cadangan3 ? '' : 'disabled' }}"
+       style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}">
+       Berkas Per Bupati
+    </a>
+
+</div>
+@endcanany
+
 
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">

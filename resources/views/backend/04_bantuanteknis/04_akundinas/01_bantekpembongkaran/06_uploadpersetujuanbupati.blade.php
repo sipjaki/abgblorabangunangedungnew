@@ -218,7 +218,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin upload BA Rekomtek?
+                                        Apakah Anda ingin upload Surat Persetujuan Bupati?
                                     </p>
 
                                       <!-- Tombol -->
