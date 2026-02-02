@@ -678,8 +678,7 @@
                 @error('status_kerusakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
         </div>
-
-       <div class="col-12">
+<div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="dok_kerusakan_bangunan">
             <i class="bi bi-upload me-2 text-primary"></i>
@@ -701,61 +700,78 @@
         </small>
 
         <small class="text-muted d-block mb-2">
-            Klik kartu di bawah untuk melihat <strong>contoh dokumen analisa kerusakan</strong>.
+            Keterangan: Silahkan download contoh dokumen ini, pelajari, lalu
+            <strong class="text-danger">Upload Dokumen Analisa</strong>.
         </small>
 
-        <!-- CARD PREVIEW CONTOH -->
-        <div class="card border-0 shadow-sm mt-3"
-             style="cursor:pointer"
-             data-bs-toggle="modal"
-             data-bs-target="#modalDokAnalisa">
-            <div class="row g-0 align-items-center">
-                <div class="col-4 text-center p-3">
-                    <i class="bi bi-file-earmark-image text-primary" style="font-size:48px;"></i>
-                </div>
-                <div class="col-8">
-                    <div class="card-body py-3">
-                        <h6 class="mb-1 fw-semibold">
-                            Contoh Dokumen Analisa Kerusakan
-                        </h6>
-                        <small class="text-muted">
-                            Klik untuk melihat contoh format dokumen
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- BUTTON DOWNLOAD -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/DOK_ANALISA.png"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Contoh Dokumen Analisa
+        </a>
 
-    </div>
-</div>
+        <!-- PREVIEW -->
+        <div id="previewDokAnalisa" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
 
-<!-- MODAL PREVIEW DOK ANALISA -->
-<div class="modal fade" id="modalDokAnalisa" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content rounded-4">
-
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="bi bi-eye me-2 text-success"></i>
-                    Contoh Dokumen Analisa Kerusakan Bangunan
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body text-center bg-light">
-                <img src="/DOK_ANALISA.png"
-                     alt="Contoh Dokumen Analisa Kerusakan"
-                     class="img-fluid rounded shadow-sm">
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
-                    <i class="bi bi-x-circle me-1"></i> Tutup
-                </button>
-            </div>
-
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewDokAnalisaBox"></div>
         </div>
     </div>
+    <script>
+(function() {
+    const input = document.getElementById('dok_kerusakan_bangunan');
+    const wrapper = document.getElementById('previewDokAnalisa');
+    const box = document.getElementById('previewDokAnalisaBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // Preview PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        }
+        // Preview Image (kalau salah upload)
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `
+                <img src="${fileURL}"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Preview Dokumen Analisa">
+            `;
+        }
+        // File lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
+
 </div>
 
     </div>
