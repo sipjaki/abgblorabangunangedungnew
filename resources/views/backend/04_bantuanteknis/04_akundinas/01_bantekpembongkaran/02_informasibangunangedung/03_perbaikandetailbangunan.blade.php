@@ -399,7 +399,7 @@
             <!-- INFORMASI SURAT -->
             <div class="section">
                 <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> INFORMASI SURAT
+                    <i class="bi bi-file-earmark-text"></i> Informasi Surat Kelayakan Kajian Bangunan Gedung
                 </div>
             <div class="section-content">
 
@@ -409,12 +409,12 @@
         <div class="col-md-6">
             <div class="data-card">
                 <div class="data-label">
-                    <i class="bi bi-hash"></i> Nomor Surat
+                    <i class="bi bi-hash"></i> Nama Bangunan
                 </div>
                 <input type="text"
-                       name="nosurat"
+                       name="cadangan1"
                        class="form-control"
-                       value="{{ $data->nosurat }}"
+                       value="{{ $data->cadangan1 }}"
                        placeholder="Masukkan Nomor Surat">
             </div>
         </div>
@@ -423,12 +423,12 @@
         <div class="col-md-6">
             <div class="data-card">
                 <div class="data-label">
-                    <i class="bi bi-calendar-date"></i> Tanggal Surat
+                    <i class="bi bi-calendar-date"></i> Jenis Kajian Bangunan
                 </div>
-                <input type="date"
-                       name="tanggalsurat"
+                <input type="text"
+                       name="cadangan2"
                        class="form-control"
-                       value="{{ $data->tanggalsurat }}">
+                       value="{{ $data->cadangan2 }}">
             </div>
         </div>
     </div>
@@ -438,13 +438,13 @@
         <div class="col-12">
             <div class="data-card">
                 <div class="data-label">
-                    <i class="bi bi-file-pdf"></i> Surat Permohonan
+                    <i class="bi bi-file-pdf"></i> Surat Kelayakan Kajian Bangunan Gedung
                 </div>
 
                 {{-- FILE LAMA --}}
-                @if($data->suratpermohonan)
+                @if($data->cadangan3)
                     <iframe id="frame-surat-lama"
-                            src="{{ asset('public/'.$data->suratpermohonan) }}"
+                            src="{{ asset('public/'.$data->cadangan3) }}"
                             style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
                     <iframe id="frame-surat-baru"
                             style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
