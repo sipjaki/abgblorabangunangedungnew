@@ -433,20 +433,35 @@ function closeModalPemohon2() {
                 @endif
 
 
-
-<!-- Perbaikan Dokumen -->
 @if($data->bantekpembongkarannew2->count() > 0)
-    <!-- DATA ADA → BISA DIKLIK -->
-    <a href="{{ route(
+    @php
+        $item = $data->bantekpembongkarannew2->first();
+        $induk = $item->induk2; // pastikan relasi induk ada
+    @endphp
+
+    @if($induk)
+        <!-- DATA ADA → BISA DIKLIK -->
+        <a href="{{ route(
             'perbaikan.informasibangunangedung',
             [
-                'pelaksana' => Str::slug($data->pelaksana),
-                'id' => $data->bantekpembongkarannew2->first()->id
+                'pelaksana' => Str::slug($induk->pelaksana),
+                'id' => $item->id
             ]
-        ) }}"
-       class="button-baru">
-        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
-    </a>
+        ) }}" class="button-baru">
+            <i class="bi bi-eye"></i> Perbaikan Dokumen
+        </a>
+    @else
+        <!-- RELASI INDUK KOSONG -->
+        <button type="button"
+                class="button-baru"
+                disabled
+                style="opacity:0.6;cursor:not-allowed;">
+            <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+        </button>
+        <small class="text-muted d-block mt-1">
+            Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
+        </small>
+    @endif
 @else
     <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
     <button type="button"
@@ -455,7 +470,6 @@ function closeModalPemohon2() {
             style="opacity:0.6;cursor:not-allowed;">
         <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
     </button>
-
     <small class="text-muted d-block mt-1">
         Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
     </small>
