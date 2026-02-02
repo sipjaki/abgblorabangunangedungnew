@@ -432,42 +432,20 @@ function closeModalPemohon2() {
                     </a>
                 @endif
 
+@php
+    $item = $data->bantekpembongkarannew2->first();
+    $induk = $item->induk2;
+@endphp
 
-@if($data->bantekpembongkarannew2->count() > 0)
-    @php
-        $item = $data->bantekpembongkarannew2->first();
-        $induk = $item->induk2; // pastikan relasi induk ada
-    @endphp
-
-    @if($induk)
-        <!-- DATA ADA → BISA DIKLIK -->
-        <a href="{{ route(
-            'perbaikan.informasibangunangedung',
-            [
-                'pelaksana' => Str::slug($item->pelaksana),
-                'id' => $item->id
-            ]
-        ) }}" class="button-baru">
-            <i class="bi bi-eye"></i> Perbaikan Dokumen
-        </a>
-    @else
-        <!-- RELASI INDUK KOSONG -->
-        <button type="button"
-                class="button-baru"
-                disabled
-                style="opacity:0.6;cursor:not-allowed;">
-            <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
-        </button>
-        <small class="text-muted d-block mt-1">
-            Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
-        </small>
-    @endif
+@if($induk)
+    <a href="{{ route(
+        'perbaikan.informasibangunangedung',
+        ['pelaksana' => Str::slug($item->pelaksana), 'id' => $item->id]
+    ) }}" class="button-baru">
+        <i class="bi bi-eye"></i> Perbaikan Dokumen
+    </a>
 @else
-    <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
-    <button type="button"
-            class="button-baru"
-            disabled
-            style="opacity:0.6;cursor:not-allowed;">
+    <button type="button" class="button-baru" disabled style="opacity:0.6; cursor:not-allowed;">
         <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
     </button>
     <small class="text-muted d-block mt-1">
