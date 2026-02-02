@@ -261,13 +261,6 @@
 @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi')
 </div>
 
-
-</div>
-    <a href="/bebantekpembongkaran" class="button-berkas">
-    <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
-    Kembali Ke Data Awal</strong>
-</a>
-
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
@@ -277,12 +270,11 @@
                 style="background-color:#10B981;color:black;cursor:not-allowed;padding:8px 16px;border-radius:8px;border:none;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
-
     @else
         <!-- BISA DIKLIK (belum atau NULL) -->
         <button type="button"
                 onclick="openModalPemohon2({{ $data->id }})"
-                style="background-color:#0400ff;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;"
+                style="background-color:#0400ff;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;position:relative;z-index:1100;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='#0400ff';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
             <i class="bi bi-x-circle me-1"></i> Ajukan Kembali
@@ -299,8 +291,8 @@
 <!-- Modal Konfirmasi -->
 <div id="confirmModalPemohon2"
      style="display:none;position:fixed;inset:0;background-color:rgba(0,0,0,0.5);
-            z-index:1000;justify-content:center;align-items:center;">
-    <div style="background:white;padding:24px;border-radius:12px;width:90%;max-width:400px;text-align:center;">
+            z-index:1200;justify-content:center;align-items:center;display:flex;flex-direction:column;">
+    <div style="background:white;padding:24px;border-radius:12px;width:90%;max-width:400px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
         <p style="font-size:16px;font-weight:600;">Apakah berkas sudah sesuai?</p>
 
         <form id="validasiFormPemohon2" method="POST">
@@ -315,7 +307,7 @@
             </button>
         </form>
 
-        <br><br>
+        <br>
 
         <button type="button"
                 onclick="closeModalPemohon2()"
@@ -332,7 +324,7 @@ function openModalPemohon2(itemId) {
     const modal = document.getElementById('confirmModalPemohon2');
     const form  = document.getElementById('validasiFormPemohon2');
 
-    // Set action form sesuai route POST
+    // Set action form sesuai route POST Laravel
     form.action = "/validasipembongkaranpemohon/" + itemId;
 
     modal.style.display = "flex";
@@ -345,6 +337,12 @@ function closeModalPemohon2() {
     document.body.style.overflow = 'auto';
 }
 </script>
+
+</div>
+    <a href="/bebantekpembongkaran" class="button-berkas">
+    <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
+    Kembali Ke Data Awal</strong>
+</a>
 
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
