@@ -244,7 +244,9 @@
            style="text-decoration: none; display: inline-block;">
             <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
         </a>
-
+            <small>
+                Klik tombol ini untuk mengajukan ulang setelah berkas persyaratan diperbaiki.
+            </small>
     @else
         <!-- 3. NULL/KOSONG (TIDAK BISA DIKLIK) -->
         <button class="button-modern" type="button" disabled>
