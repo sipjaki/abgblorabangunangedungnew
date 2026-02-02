@@ -395,83 +395,119 @@
 
    <div class="container">
 
-        <div class="content">
-            <!-- INFORMASI SURAT -->
+            </div>
+
+            <!-- DATA BANGUNAN -->
+            {{-- <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-buildings"></i> DATA BANGUNAN
+                </div>
+                <div class="section-content">
+                    <div class="data-card">
+                        <div class="data-label"><i class="bi bi-tag"></i> Nama Bangunan</div>
+                        <div class="data-value">{{$data->namabangunan ?? 'Data Tidak Ditemukan'}}</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-label"><i class="bi bi-check-circle"></i> Pilihan Bangunan</div>
+                        <div class="data-value">{{$data->pilihanbangunan ?? 'Data Tidak Ditemukan'}}</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-label"><i class="bi bi-file-check"></i> Surat Kelayakan</div>
+                        <div class="data-value">
+                            @if($data->suratkelayakan)
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->suratkelayakan) }}"
+                                        data-title="Surat Kelayakan">
+                                    <i class="bi bi-eye"></i> Lihat PDF
+                                </button>
+                            @else
+                                Data Tidak Ditemukan
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+            <!-- SURAT KESANGGUPAN -->
             <div class="section">
                 <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> Surat Kelayakan Bangunan Gedung
+                    <i class="bi bi-hand-thumbs-up"></i> Surat Kelayakan Kajian Bangunan Gedung
                 </div>
-            <div class="section-content">
+               <div class="section-content">
 
-    <!-- ROW PERTAMA: Nomor Surat & Tanggal Surat -->
-    <div class="row g-3 mb-3">
-        <!-- Nomor Surat -->
-       <div class="col-md-6">
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-building"></i> Nama Bangunan
-        </div>
-        <input type="text"
-               name="cadangan1"
-               class="form-control"
-               value="{{ $data->cadangan1 }}"
-               placeholder="Masukkan Nama Bangunan">
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-diagram-3"></i> Jenis Kajian Bangunan
-        </div>
-        <input type="text"
-               name="cadangan2"
-               class="form-control"
-               value="{{ $data->cadangan2 }}"
-               placeholder="Masukkan Jenis Kajian Bangunan">
-    </div>
-</div>
-
-    </div>
-
-    <!-- ROW KEDUA: Surat Permohonan (Full Width) -->
+    <!-- ROW ATAS -->
     <div class="row g-3">
-        <div class="col-12">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-file-pdf"></i> Surat Kelayakan Kajian Bangunan Gedung
-                </div>
 
-                {{-- FILE LAMA --}}
-                @if($data->cadangan3)
-                    <iframe id="frame-surat-lama"
-                            src="{{ asset('public/'.$data->cadangan3) }}"
-                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-                    <iframe id="frame-surat-baru"
-                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-                @else
-                    <div class="text-muted mb-2">
-                        Data Tidak Ditemukan
-                    </div>
-                @endif
+        <!-- Pilihan Sanggup -->
+      <div class="col-md-6">
+    <div class="data-card">
 
-                {{-- INPUT FILE BARU --}}
-                <input type="file"
-                       name="cadangan3"
-                       class="form-control mt-2"
-                       accept="application/pdf"
-                       onchange="previewSurat(this)">
-            </div>
+        <div class="data-label">
+            <i class="bi bi-check-square"></i> Pilihan Sanggup
         </div>
-    </div>
 
+        {{-- DATA LAMA --}}
+        <div class="mb-2">
+            <span class="badge bg-secondary">Data Lama</span><br>
+            <strong>
+                {{ $data->pilihansanggup ?? 'Data Tidak Ditemukan' }}
+            </strong>
+        </div>
+
+        {{-- PILIHAN PERUBAHAN --}}
+        <div class="mt-2">
+            <small class="text-muted d-block mb-1">
+                Perbaiki / Ubah Pilihan
+            </small>
+
+            <select name="pilihansanggup" class="form-select">
+                <option value="">-- Pilih --</option>
+                <option value="Sanggup">Sanggup</option>
+                <option value="Tidak Sanggup">Tidak Sanggup</option>
+            </select>
+        </div>
+
+    </div>
 </div>
 
+    </div>
+<!-- ROW BAWAH -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="data-card">
+
+            <div class="data-label">
+                <i class="bi bi-file-earmark-text"></i> Surat Kesanggupan
+            </div>
+
+            {{-- FILE LAMA --}}
+            @if($data->suratkesanggupan)
+                <iframe id="frame-suratkesanggupan-lama"
+                        src="{{ asset('public/'.$data->suratkesanggupan) }}"
+                        style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                <iframe id="frame-suratkesanggupan-baru"
+                        style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+            @else
+                <div class="text-muted mb-2">
+                    Data Tidak Ditemukan
+                </div>
+            @endif
+
+            {{-- INPUT FILE BARU --}}
+            <input type="file"
+                   name="suratkesanggupan"
+                   class="form-control mt-2"
+                   accept="application/pdf"
+                   onchange="previewSuratKesanggupan(this)">
+
+        </div>
+    </div>
+</div>
 
 <script>
-function previewSurat(input) {
-    const frameBaru = document.getElementById('frame-surat-baru');
-    const frameLama = document.getElementById('frame-surat-lama');
+function previewSuratKesanggupan(input) {
+    const frameBaru = document.getElementById('frame-suratkesanggupan-baru');
+    const frameLama = document.getElementById('frame-suratkesanggupan-lama');
 
     if(input.files && input.files[0]) {
         if(frameLama) frameLama.style.display = 'none';
@@ -482,257 +518,477 @@ function previewSurat(input) {
 </script>
 
             </div>
-{{-- ================================================= --}}
-{{-- BERKAS 2 : DOKUMEN ANALISA BANGUNAN GEDUNG --}}
-{{-- ================================================= --}}
-<div class="section">
-    <div class="section-header">
-        <i class="bi bi-clipboard-data"></i> Dokumen Analisa Bangunan Gedung
-    </div>
-    <div class="section-content">
 
-        <div class="row g-3 mb-3">
-            <div class="col-md-6">
-                <div class="data-card">
-                    <div class="data-label">Tingkat Kerusakan (%)</div>
-                    <input type="number"
-                           name="tingkat_kerusakan"
-                           class="form-control"
-                           step="0.01"
-                           min="0" max="100"
-                           value="{{ $data->tingkat_kerusakan }}"
-                           placeholder="Contoh: 10.50">
+            <!-- DATA PEMILIK -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-person-badge"></i> DATA PEMILIK
                 </div>
-            </div>
+<div class="section-content">
+    <div class="row g-4">
 
-            <div class="col-md-6">
-                <div class="data-card">
-                    <div class="data-label">Status Kerusakan</div>
-                    <input type="text"
-                           name="status_kerusakan"
-                           class="form-control"
-                           value="{{ $data->status_kerusakan }}"
-                           placeholder="Ringan / Sedang / Berat">
-                </div>
+        {{-- Nama Lengkap --}}
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">Nama Lengkap</div>
+                <input type="text" name="namalengkap" class="form-control"
+                       value="{{ old('namalengkap', $data->namalengkap) }}">
             </div>
         </div>
 
-        <div class="data-card">
-            <div class="data-label">Dokumen Analisa Kerusakan Bangunan (PDF)</div>
+        {{-- Jabatan --}}
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">Jabatan</div>
+                <input type="text" name="jabatan" class="form-control"
+                       value="{{ old('jabatan', $data->jabatan) }}">
+            </div>
+        </div>
 
-            @if($data->dok_kerusakan_bangunan)
-                <iframe id="frame-analisa-lama"
-                        src="{{ asset('public/'.$data->dok_kerusakan_bangunan) }}"
-                        style="width:100%;height:400px;border-radius:8px;"></iframe>
-            @endif
+        {{-- No Telepon --}}
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">No Telepon</div>
+                <input type="text" name="notelepon" class="form-control"
+                       value="{{ old('notelepon', $data->notelepon) }}">
+            </div>
+        </div>
 
-            <iframe id="frame-analisa-baru"
-                    style="display:none;width:100%;height:400px;border-radius:8px;"></iframe>
+        {{-- Alamat --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">Alamat Pemilik</div>
+                <textarea name="alamatpemilik" class="form-control" rows="3">{{ old('alamatpemilik', $data->alamatpemilik) }}</textarea>
+            </div>
+        </div>
 
-            <input type="file"
-                   name="dok_kerusakan_bangunan"
-                   class="form-control mt-2"
-                   accept="application/pdf"
-                   onchange="previewAnalisa(this)">
+
+        {{-- KTP --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">KTP (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->ktp)
+                    <iframe id="frame-ktp-lama" src="{{ asset('public/' . $data->ktp) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-ktp-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="ktp" class="form-control" accept="application/pdf"
+                       onchange="previewKTP(this)">
+            </div>
+        </div>
+
+        {{-- SK --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">SK (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sk)
+                    <iframe id="frame-sk-lama" src="{{ asset('public/' . $data->sk) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sk-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sk" class="form-control" accept="application/pdf"
+                       onchange="previewSK(this)">
+            </div>
         </div>
 
     </div>
 </div>
 
-{{-- ================================================= --}}
-{{-- BERKAS 3 : SURAT KAJIAN TEKNIS BANGUNAN --}}
-{{-- ================================================= --}}
-<div class="section">
-    <div class="section-header">
-        <i class="bi bi-file-earmark-text"></i> Surat Kajian Teknis Bangunan Gedung
-    </div>
-    <div class="section-content">
-
-        <div class="row g-3 mb-3">
-            <div class="col-md-4">
-                <div class="data-card">
-                    <div class="data-label">Nomor Surat</div>
-                    <input type="text"
-                           name="nosurat"
-                           class="form-control"
-                           value="{{ $data->nosurat }}">
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="data-card">
-                    <div class="data-label">Tanggal Surat</div>
-                    <input type="date"
-                           name="tanggalsurat"
-                           class="form-control"
-                           value="{{ $data->tanggalsurat }}">
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="data-card">
-                    <div class="data-label">Status Penilaian Teknis</div>
-                    <input type="text"
-                           name="status_penilaian_teknis"
-                           class="form-control"
-                           value="{{ $data->status_penilaian_teknis }}">
-                </div>
-            </div>
-        </div>
-
-        <div class="data-card">
-            <div class="data-label">Surat Pernyataan Kelaikan (PDF)</div>
-
-            @if($data->suratpernyataankelaikan)
-                <iframe id="frame-kelaikan-lama"
-                        src="{{ asset('public/'.$data->suratpernyataankelaikan) }}"
-                        style="width:100%;height:400px;border-radius:8px;"></iframe>
-            @endif
-
-            <iframe id="frame-kelaikan-baru"
-                    style="display:none;width:100%;height:400px;border-radius:8px;"></iframe>
-
-            <input type="file"
-                   name="suratpernyataankelaikan"
-                   class="form-control mt-2"
-                   accept="application/pdf"
-                   onchange="previewKelaikan(this)">
-        </div>
-
-    </div>
-</div>
-
-{{-- ================================================= --}}
-{{-- BERKAS 4 : AS BUILT DRAWING --}}
-{{-- ================================================= --}}
-<div class="section">
-    <div class="section-header">
-        <i class="bi bi-pencil-square"></i> As Built Drawing
-    </div>
-    <div class="section-content">
-
-        <div class="data-card mb-3">
-            <div class="data-label">Keterangan</div>
-            <textarea name="keterangan"
-                      class="form-control"
-                      rows="3">{{ $data->keterangan }}</textarea>
-        </div>
-
-        <div class="data-card">
-            <div class="data-label">Gambar As Built Drawing (PDF)</div>
-
-            @if($data->gambar_asd)
-                <iframe id="frame-asd-lama"
-                        src="{{ asset('public/'.$data->gambar_asd) }}"
-                        style="width:100%;height:400px;border-radius:8px;"></iframe>
-            @endif
-
-            <iframe id="frame-asd-baru"
-                    style="display:none;width:100%;height:400px;border-radius:8px;"></iframe>
-
-            <input type="file"
-                   name="gambar_asd"
-                   class="form-control mt-2"
-                   accept="application/pdf"
-                   onchange="previewASD(this)">
-        </div>
-
-    </div>
-</div>
-
-{{-- ================================================= --}}
-{{-- BERKAS 5 : METODE PEMBONGKARAN --}}
-{{-- ================================================= --}}
-<div class="section">
-    <div class="section-header">
-        <i class="bi bi-tools"></i> Metode Pembongkaran
-    </div>
-    <div class="section-content">
-
-        <div class="row g-3 mb-3">
-            <div class="col-md-4">
-                <input type="text"
-                       name="pelaksana"
-                       class="form-control"
-                       value="{{ $data->pelaksana }}"
-                       placeholder="Pelaksana">
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       name="namapenanggungjawab"
-                       class="form-control"
-                       value="{{ $data->namapenanggungjawab }}"
-                       placeholder="Penanggung Jawab">
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       name="notelepon"
-                       class="form-control"
-                       value="{{ $data->notelepon }}"
-                       placeholder="No Telepon">
-            </div>
-        </div>
-
-        <input type="file"
-               name="berkaspembongkaran"
-               class="form-control"
-               accept="application/pdf">
-    </div>
-</div>
-
-{{-- ================================================= --}}
-{{-- BERKAS 6 : LAPORAN PEMERIKSAAN --}}
-{{-- ================================================= --}}
-<div class="section">
-    <div class="section-header">
-        <i class="bi bi-search"></i> Laporan Pemeriksaan Bangunan Gedung
-    </div>
-    <div class="section-content">
-
-        <div class="data-card mb-3">
-            <div class="data-label">Ketersediaan</div>
-            <select name="ketersediaan" class="form-select">
-                <option value="">-- Pilih --</option>
-                <option value="Ada" {{ $data->ketersediaan == 'Ada' ? 'selected' : '' }}>Ada</option>
-                <option value="Tidak Ada" {{ $data->ketersediaan == 'Tidak Ada' ? 'selected' : '' }}>Tidak Ada</option>
-            </select>
-        </div>
-
-        <input type="file"
-               name="berkaspemeriksaan"
-               class="form-control"
-               accept="application/pdf">
-    </div>
-</div>
-
-{{-- ================================================= --}}
-{{-- SCRIPT PREVIEW (TERPISAH, AMAN) --}}
-{{-- ================================================= --}}
 <script>
-function previewAnalisa(input){
-    document.getElementById('frame-analisa-lama')?.style.display='none';
-    const f = document.getElementById('frame-analisa-baru');
-    f.src = URL.createObjectURL(input.files[0]);
-    f.style.display='block';
+function previewKTP(input) {
+    const frameBaru = document.getElementById('frame-ktp-baru');
+    const frameLama = document.getElementById('frame-ktp-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
 }
 
-function previewKelaikan(input){
-    document.getElementById('frame-kelaikan-lama')?.style.display='none';
-    const f = document.getElementById('frame-kelaikan-baru');
-    f.src = URL.createObjectURL(input.files[0]);
-    f.style.display='block';
-}
+function previewSK(input) {
+    const frameBaru = document.getElementById('frame-sk-baru');
+    const frameLama = document.getElementById('frame-sk-lama');
 
-function previewASD(input){
-    document.getElementById('frame-asd-lama')?.style.display='none';
-    const f = document.getElementById('frame-asd-baru');
-    f.src = URL.createObjectURL(input.files[0]);
-    f.style.display='block';
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
 }
 </script>
-    <br><br>
+
+
+
+            </div>
+
+            <!-- DATA TANAH -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-globe-asia-australia"></i> DATA TANAH
+                </div>
+                <div class="section-content">
+    <div class="row g-4">
+
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
+                <input type="text" name="luastanah" class="form-control"
+                       value="{{ old('luastanah', $data->luastanah) }}">
+            </div>
+        </div>
+
+        {{-- Status Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
+                <input type="text" name="statustanah" class="form-control"
+                       value="{{ old('statustanah', $data->statustanah) }}">
+            </div>
+        </div>
+
+        {{-- Nama Pemegang Hak --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
+                <input type="text" name="namapemeganghak" class="form-control"
+                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
+            </div>
+        </div>
+
+        {{-- Sertifikat Tanah --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sertifikattanah)
+                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
+                       onchange="previewSertifikat(this)">
+            </div>
+        </div>
+
+    </div>
 </div>
 
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
+                <input type="text" name="luastanah" class="form-control"
+                       value="{{ old('luastanah', $data->luastanah) }}">
+            </div>
+        </div>
+
+        {{-- Status Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
+                <input type="text" name="statustanah" class="form-control"
+                       value="{{ old('statustanah', $data->statustanah) }}">
+            </div>
+        </div>
+
+        {{-- Nama Pemegang Hak --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
+                <input type="text" name="namapemeganghak" class="form-control"
+                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
+            </div>
+        </div>
+
+        {{-- Sertifikat Tanah --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sertifikattanah)
+                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
+                       onchange="previewSertifikat(this)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+            </div>
+
+            <!-- DATA TEKNIS BANGUNAN -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-tools"></i> DATA TEKNIS BANGUNAN
+                </div>
+              <div class="section-content">
+    <div class="row g-4">
+
+        {{-- Legalitas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-shield-check"></i> Legalitas Bangunan</div>
+                <input type="text" name="legalitasbangunan" class="form-control"
+                       value="{{ old('legalitasbangunan', $data->legalitasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Nomor PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-hash"></i> Nomor PBG</div>
+                <input type="text" name="nomorpbg" class="form-control"
+                       value="{{ old('nomorpbg', $data->nomorpbg) }}">
+            </div>
+        </div>
+
+        {{-- Pemilik Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-gear"></i> Pemilik Bangunan</div>
+                <input type="text" name="pemilikbangunan" class="form-control"
+                       value="{{ old('pemilikbangunan', $data->pemilikbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Kode Barang --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-upc-scan"></i> Kode Barang</div>
+                <input type="text" name="kodebarang" class="form-control"
+                       value="{{ old('kodebarang', $data->kodebarang) }}">
+            </div>
+        </div>
+
+        {{-- Alamat Bangunan --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-geo-alt-fill"></i> Alamat Bangunan</div>
+                <textarea name="alamatbangunan" class="form-control" rows="2">{{ old('alamatbangunan', $data->alamatbangunan) }}</textarea>
+            </div>
+        </div>
+
+        {{-- Koordinat Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-geo"></i> Koordinat Bangunan</div>
+                <input type="text" name="koordinatbangunan" class="form-control"
+                       value="{{ old('koordinatbangunan', $data->koordinatbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Fungsi Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-building"></i> Fungsi Bangunan</div>
+                <input type="text" name="fungsibangunan" class="form-control"
+                       value="{{ old('fungsibangunan', $data->fungsibangunan) }}">
+            </div>
+        </div>
+
+        {{-- Jumlah Lantai --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-layers"></i> Jumlah Lantai</div>
+                <input type="number" name="jumlahlantai" class="form-control"
+                       value="{{ old('jumlahlantai', $data->jumlahlantai) }}">
+            </div>
+        </div>
+
+        {{-- Ketinggian Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-arrows-vertical"></i> Ketinggian Bangunan (m)</div>
+                <input type="number" name="ketinggianbangunan" class="form-control"
+                       value="{{ old('ketinggianbangunan', $data->ketinggianbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Luas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-aspect-ratio"></i> Luas Bangunan (m²)</div>
+                <input type="number" name="luasbangunan" class="form-control"
+                       value="{{ old('luasbangunan', $data->luasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Kompleksitas Bangunan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-diagram-3"></i> Kompleksitas Bangunan</div>
+                <input type="text" name="kompleksitasbangunan" class="form-control"
+                       value="{{ old('kompleksitasbangunan', $data->kompleksitasbangunan) }}">
+            </div>
+        </div>
+
+        {{-- Tingkat Permanensi --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-shield"></i> Tingkat Permanensi</div>
+                <input type="text" name="tingkatpermanensi" class="form-control"
+                       value="{{ old('tingkatpermanensi', $data->tingkatpermanensi) }}">
+            </div>
+        </div>
+
+        {{-- Kepadatan --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-people"></i> Kepadatan</div>
+                <input type="text" name="kepadatan" class="form-control"
+                       value="{{ old('kepadatan', $data->kepadatan) }}">
+            </div>
+        </div>
+
+        {{-- Tanggal Dibangun --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-calendar-plus"></i> Tanggal Dibangun</div>
+                <input type="date" name="tanggaldibangun" class="form-control"
+                       value="{{ old('tanggaldibangun', $data->tanggaldibangun) }}">
+            </div>
+        </div>
+
+        {{-- Tanggal Renovasi --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-calendar-check"></i> Tanggal Renovasi</div>
+                <input type="date" name="tanggalrenovasi" class="form-control"
+                       value="{{ old('tanggalrenovasi', $data->tanggalrenovasi) }}">
+            </div>
+        </div>
+
+        {{-- Nilai Bangunan Baru --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-cash-stack"></i> Nilai Bangunan Baru</div>
+                <input type="text" name="nilaibangunanbaru" class="form-control"
+                       value="{{ old('nilaibangunanbaru', $data->nilaibangunanbaru) }}">
+            </div>
+        </div>
+
+        {{-- Nilai Bangunan Lama --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-cash"></i> Nilai Bangunan Lama</div>
+                <input type="text" name="nilaibangunanlama" class="form-control"
+                       value="{{ old('nilaibangunanlama', $data->nilaibangunanlama) }}">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+            </div>
+
+            <!-- DOKUMEN PENDUKUNG -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-folder2-open"></i> DOKUMEN PENDUKUNG
+                </div>
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- KIB --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
+
+                @if($data->kib)
+                    <iframe id="frame-kib-lama" src="{{ asset('public/' . $data->kib) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-kib-baru" style="display:none;width:100%;height:300px;"></iframe>
+                @endif
+
+                <input type="file"
+                       name="kib"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewKIB(this)">
+            </div>
+        </div>
+
+        {{-- Apakah Ada PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
+                <select name="apakahadapbg" class="form-select">
+                    <option value="">-- Pilih --</option>
+                    <option value="Ya" {{ $data->apakahadapbg == 'Ya' ? 'selected' : '' }}>Ya</option>
+                    <option value="Tidak" {{ $data->apakahadapbg == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                </select>
+            </div>
+        </div>
+
+        {{-- PBG --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
+
+                @if($data->pbg)
+                    <iframe id="frame-pbg-lama" src="{{ asset('public/' . $data->pbg) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-pbg-baru" style="display:none;width:100%;height:300px;"></iframe>
+                @endif
+
+                <input type="file"
+                       name="pbg"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewPBG(this)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function previewKIB(input) {
+    const frameBaru = document.getElementById('frame-kib-baru');
+    const frameLama = document.getElementById('frame-kib-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+
+function previewPBG(input) {
+    const frameBaru = document.getElementById('frame-pbg-baru');
+    const frameLama = document.getElementById('frame-pbg-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+</script>
+
+
+    <br><br>
 <!-- Tombol Trigger -->
 <div class="flex justify-end mb-3">
     <button class="button-berkas" type="button" onclick="openModalPermohonan()">
