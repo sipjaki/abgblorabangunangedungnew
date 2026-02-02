@@ -232,14 +232,14 @@
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
         <!-- LOLOS (TIDAK BISA DIKLIK) -->
-        <button class="button-lolos" type="button" disabled
+        <button class="button-hijau" type="button" disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- DIKEMBALIKAN (BISA DIKLIK) -->
-        <button class="button-dikembalikan" type="button"
+        <button class="button-merah" type="button"
                 data-bs-toggle="modal" data-bs-target="#confirmModalPemohon2"
                 style="background-color:#0400ff;color:black;">
             <i class="bi bi-x-circle me-1"></i> Dikembalikan
