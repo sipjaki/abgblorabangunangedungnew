@@ -77,7 +77,7 @@ return new class extends Migration
     | CADANGAN
     |--------------------------------------------------------------------------
     */
-    $table->string('cadangan1')->nullable();
+    $table->string('cadangan1')->nullable(); // SUDAH TERPAKAI
     $table->string('cadangan2')->nullable();
     $table->string('cadangan3')->nullable();
     $table->string('cadangan4')->nullable();
