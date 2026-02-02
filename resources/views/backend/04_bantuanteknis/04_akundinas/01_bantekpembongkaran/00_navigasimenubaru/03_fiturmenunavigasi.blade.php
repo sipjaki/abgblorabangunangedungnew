@@ -229,6 +229,56 @@
 @endcanany
 
 
+<!-- Surat Pemberitahuan (2) - VERSI PASTI BISA -->
+<div class="d-block">
+    @if($data->validasiberkas2 === 'sudah')
+        <button class="button-hijau" disabled>Lolos Administrasi</button>
+
+    @elseif($data->validasiberkas2 === 'belum')
+        <!-- TAMPILKAN URL DI CONSOLE UNTUK DEBUG -->
+        <button class="button-merah"
+                onclick="console.log('URL:', '{{ route('validasipembongkaranpemohon.update', $data->id) }}'); console.log('ID:', {{ $data->id }}); doSubmit({{ $data->id }})">
+            Berkas Dikembalikan
+        </button>
+        <small>
+            Silahkan Klik Disini Untuk Pengajuan Ulang <br> Jika Berkas Persyataran Seluruhnya Sudah Di Perbaiki !
+        </small>
+
+    @else
+        <button class="button-modern" disabled>Menunggu DPUPR Kab Blora</button>
+    @endif
+</div>
+
+<script>
+function doSubmit(id) {
+    // Tampilkan alert dulu untuk tes
+    alert('Tombol diklik! ID: ' + id);
+
+    // Buat form
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/validasibongkarkembali/' + id;
+
+    // CSRF
+    const token = document.createElement('input');
+    token.name = '_token';
+    token.value = '{{ csrf_token() }}';
+
+    // Field
+    const field = document.createElement('input');
+    field.name = 'validasiberkas2';
+    field.value = '';
+
+    form.appendChild(token);
+    form.appendChild(field);
+    document.body.appendChild(form);
+
+    console.log('Form akan submit ke:', form.action);
+    form.submit();
+}
+</script>
+
+
         </div>
 
         <!-- Baris: 2 Kartu Utama -->
