@@ -820,25 +820,93 @@
             </div>
         </div>
 
-        <div class="col-12">
-            <div class="form-modern">
-                <label class="form-label-modern" for="suratpernyataankelaikan">
-                    <i class="bi bi-upload me-2 text-primary"></i>
-                    Upload Surat Pernyataan Kelaikan
-                </label>
-                <input type="file"
-                       class="form-control @error('suratpernyataankelaikan') is-invalid @enderror"
-                       id="suratpernyataankelaikan"
-                       name="suratpernyataankelaikan"
-                       accept=".pdf">
-                @error('suratpernyataankelaikan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-                <small class="text-muted d-block mt-1">
-                    Format: PDF (Maks. 15MB)
-                </small>
+       <div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="suratpernyataankelaikan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Pernyataan Kelaikan
+        </label>
+
+        <input type="file"
+               class="form-control @error('suratpernyataankelaikan') is-invalid @enderror"
+               id="suratpernyataankelaikan"
+               name="suratpernyataankelaikan"
+               accept=".pdf">
+
+        @error('suratpernyataankelaikan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF (Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Klik kartu di bawah untuk melihat <strong>contoh surat pernyataan kelaikan</strong>.
+        </small>
+
+        <!-- CARD LIHAT CONTOH -->
+        <div class="card border-0 shadow-sm mt-3"
+             style="cursor:pointer"
+             data-bs-toggle="modal"
+             data-bs-target="#modalSuratPernyataanKelaikan">
+            <div class="row g-0 align-items-center">
+                <div class="col-4 text-center p-3">
+                    <i class="bi bi-file-earmark-text text-primary" style="font-size:48px;"></i>
+                </div>
+                <div class="col-8">
+                    <div class="card-body py-3">
+                        <h6 class="mb-1 fw-semibold">
+                            Contoh Surat Pernyataan Kelaikan
+                        </h6>
+                        <small class="text-muted">
+                            Klik untuk melihat contoh dokumen
+                        </small>
+                    </div>
+                </div>
             </div>
         </div>
+
+    </div>
+</div>
+
+
+<div class="modal fade"
+     id="modalSuratPernyataanKelaikan"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content rounded-4">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-eye me-2 text-success"></i>
+                    Contoh Surat Pernyataan Kelaikan
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center bg-light">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/Contoh_Surat_pernyataan_Kelaikan.png"
+                     alt="Contoh Surat Pernyataan Kelaikan"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
     </div>
 
     <!-- 3. AS BUILT DRAWING -->
@@ -964,25 +1032,92 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="form-modern">
-                <label class="form-label-modern" for="berkaspemeriksaan">
-                    <i class="bi bi-upload me-2 text-primary"></i>
-                    Upload Laporan Pemeriksaan
-                </label>
-                <input type="file"
-                       class="form-control @error('berkaspemeriksaan') is-invalid @enderror"
-                       id="berkaspemeriksaan"
-                       name="berkaspemeriksaan"
-                       accept=".pdf">
-                @error('berkaspemeriksaan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-                <small class="text-muted d-block mt-1">
-                    Format: PDF (Maks. 15MB)
-                </small>
-            </div>
+       <div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="berkaspemeriksaan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Laporan Pemeriksaan
+        </label>
+
+        <input type="file"
+               class="form-control @error('berkaspemeriksaan') is-invalid @enderror"
+               id="berkaspemeriksaan"
+               name="berkaspemeriksaan"
+               accept=".pdf">
+
+        @error('berkaspemeriksaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF (Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download contoh laporan, pelajari, lalu
+            <strong class="text-danger">Upload Laporan Pemeriksaan</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD CONTOH -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_LAPORAN_BERKALA.pdf" abgbaru
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i>
+            Download Contoh Laporan Pemeriksaan
+        </a>
+
+        <!-- PREVIEW -->
+        <div id="previewBerkasPemeriksaan" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewBerkasPemeriksaanBox"></div>
         </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const input   = document.getElementById('berkaspemeriksaan');
+    const wrapper = document.getElementById('previewBerkasPemeriksaan');
+    const box     = document.getElementById('previewBerkasPemeriksaanBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        } else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
+
     </div>
 </div>
         </div>
