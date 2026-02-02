@@ -550,6 +550,7 @@ function previewSurat(input) {
         </div> --}}
 
     </div>
+</div>
 
     <div class="col-12">
         <div class="data-card">
