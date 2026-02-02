@@ -431,10 +431,7 @@
                        value="{{ $data->tanggalsurat }}">
             </div>
         </div>
-    </div>
 
-    <!-- ROW KEDUA: Surat Permohonan (Full Width) -->
-    <div class="row g-3">
         <div class="col-12">
             <div class="data-card">
                 <div class="data-label">
@@ -524,7 +521,7 @@ function previewSurat(input) {
     <div class="row g-3">
 
         <!-- Pilihan Sanggup -->
-      <div class="col-md-6">
+      <div class="col-md-12">
     <div class="data-card">
 
         <div class="data-label">
@@ -540,7 +537,7 @@ function previewSurat(input) {
         </div>
 
         {{-- PILIHAN PERUBAHAN --}}
-        <div class="mt-2">
+        {{-- <div class="mt-2">
             <small class="text-muted d-block mb-1">
                 Perbaiki / Ubah Pilihan
             </small>
@@ -550,14 +547,10 @@ function previewSurat(input) {
                 <option value="Sanggup">Sanggup</option>
                 <option value="Tidak Sanggup">Tidak Sanggup</option>
             </select>
-        </div>
+        </div> --}}
 
     </div>
-</div>
 
-    </div>
-<!-- ROW BAWAH -->
-<div class="row mt-3">
     <div class="col-12">
         <div class="data-card">
 
@@ -721,57 +714,6 @@ function previewSK(input) {
                     <i class="bi bi-globe-asia-australia"></i> DATA TANAH
                 </div>
                 <div class="section-content">
-    <div class="row g-4">
-
-        {{-- Luas Tanah --}}
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
-                <input type="text" name="luastanah" class="form-control"
-                       value="{{ old('luastanah', $data->luastanah) }}">
-            </div>
-        </div>
-
-        {{-- Status Tanah --}}
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
-                <input type="text" name="statustanah" class="form-control"
-                       value="{{ old('statustanah', $data->statustanah) }}">
-            </div>
-        </div>
-
-        {{-- Nama Pemegang Hak --}}
-        <div class="col-12">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
-                <input type="text" name="namapemeganghak" class="form-control"
-                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
-            </div>
-        </div>
-
-        {{-- Sertifikat Tanah --}}
-        <div class="col-12">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
-
-                {{-- Preview Lama --}}
-                @if($data->sertifikattanah)
-                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
-                @endif
-
-                {{-- Preview Baru --}}
-                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
-
-                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
-                       onchange="previewSertifikat(this)">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="section-content">
     <div class="row g-4">
 
         {{-- Luas Tanah --}}
