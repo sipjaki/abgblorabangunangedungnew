@@ -452,7 +452,7 @@
                     style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
 
             <input type="file"
-                   name="suratpermohonan"
+                   name="cadangan3"
                    class="form-control mt-3"
                    accept="application/pdf"
                    onchange="previewSurat(this)">
