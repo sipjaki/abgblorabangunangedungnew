@@ -7290,7 +7290,7 @@ public function validasidetailbangunangedung(Request $request, $id)
     // REDIRECT KE HALAMAN INDUK
     // ===============================
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => $item->induk->namapemilik,
+        'namapemilik' => $item->induk2->namapemilik,
         'id'          => $item->bantekpembongkaraninduk_id
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
