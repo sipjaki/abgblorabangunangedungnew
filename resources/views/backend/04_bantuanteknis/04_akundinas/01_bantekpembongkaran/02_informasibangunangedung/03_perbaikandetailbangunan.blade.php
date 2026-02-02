@@ -568,9 +568,356 @@ function previewAnalisa(input) {
 }
 </script>
 
+</div>
+
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-file-earmark-text"></i> Surat Kajian Teknis Bangunan Gedung
+    </div>
+
+    <!-- ROW PERTAMA: 3 INPUT DATA -->
+    <div class="row g-3 mb-3">
+
+        <!-- Nomor Surat -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-hash"></i> Nomor Surat
+                </div>
+                <input type="text"
+                       name="nosurat"
+                       class="form-control"
+                       value="{{ old('nosurat', $data->nosurat) }}"
+                       placeholder="Masukkan Nomor Surat">
             </div>
+        </div>
+
+        <!-- Tanggal Surat -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-calendar-date"></i> Tanggal Surat
+                </div>
+                <input type="date"
+                       name="tanggalsurat"
+                       class="form-control"
+                       value="{{ old('tanggalsurat', $data->tanggalsurat) }}">
+            </div>
+        </div>
+
+        <!-- Status Penilaian Teknis -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-clipboard-check"></i> Status Penilaian Teknis
+                </div>
+                <input type="text"
+                       name="status_penilaian_teknis"
+                       class="form-control"
+                       value="{{ old('status_penilaian_teknis', $data->status_penilaian_teknis) }}"
+                       placeholder="Layak / Tidak Layak">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ROW KEDUA: BERKAS (FULL WIDTH) -->
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-pdf"></i> Surat Pernyataan Kelaikan
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->suratpernyataankelaikan)
+                    <iframe id="frame-file-lama"
+                            src="{{ asset('public/'.$data->suratpernyataankelaikan) }}"
+                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+
+                    <iframe id="frame-file-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @else
+                    <div class="text-muted mb-2">
+                        Data belum di-upload
+                    </div>
+
+                    <iframe id="frame-file-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @endif
+
+                {{-- INPUT FILE BARU --}}
+                <input type="file"
+                       name="suratpernyataankelaikan"
+                       class="form-control mt-2"
+                       accept="application/pdf"
+                       onchange="previewAnalisakerusakan(this)">
+            </div>
+        </div>
+    </div>
+
+<script>
+function previewAnalisakerusakan(input) {
+    const frameBaru = document.getElementById('frame-surat-baru');
+    const frameLama = document.getElementById('frame-surat-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+</script>
+
+</div>
+
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-building"></i> As Built Drawing Bangunan Gedung
+    </div>
+
+    <!-- ROW PERTAMA: FILE AS BUILT DRAWING -->
+    <div class="row g-3 mb-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-earmark-image"></i> Gambar As Built Drawing
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->gambar_asd)
+                    <iframe id="frame-asd-lama"
+                            src="{{ asset('public/'.$data->gambar_asd) }}"
+                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+
+                    <iframe id="frame-asd-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @else
+                    <div class="text-muted mb-2">
+                        Data belum di-upload
+                    </div>
+
+                    <iframe id="frame-asd-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @endif
+
+                {{-- INPUT FILE --}}
+                <input type="file"
+                       name="gambar_asd"
+                       class="form-control mt-2"
+                       accept="application/pdf,image/*"
+                       onchange="previewGambarbangunan(this)">
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW KEDUA: KETERANGAN -->
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-card-text"></i> Keterangan
+                </div>
+                <textarea name="keterangan"
+                          class="form-control"
+                          rows="4"
+                          placeholder="Masukkan keterangan tambahan">{{ old('keterangan', $data->keterangan) }}</textarea>
+            </div>
+        </div>
+    </div>
+<script>
+function previewGambarbangunan(input) {
+    const frameBaru = document.getElementById('frame-surat-baru');
+    const frameLama = document.getElementById('frame-surat-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+</script>
+
+</div>
+
+
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-tools"></i> Informasi Metode Pembongkaran
+    </div>
+
+    <!-- ROW PERTAMA: 3 INPUT -->
+    <div class="row g-3 mb-3">
+
+        <!-- Pelaksana -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-building-gear"></i> Pelaksana
+                </div>
+                <input type="text"
+                       name="pelaksana"
+                       class="form-control"
+                       value="{{ old('pelaksana', $data->pelaksana) }}"
+                       placeholder="Masukkan Nama Pelaksana">
+            </div>
+        </div>
+
+        <!-- Penanggung Jawab -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-person-badge"></i> Penanggung Jawab
+                </div>
+                <input type="text"
+                       name="namapenanggungjawab"
+                       class="form-control"
+                       value="{{ old('namapenanggungjawab', $data->namapenanggungjawab) }}"
+                       placeholder="Masukkan Nama Penanggung Jawab">
+            </div>
+        </div>
+
+        <!-- Nomor Telepon -->
+        <div class="col-md-4">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-telephone"></i> Nomor Telepon
+                </div>
+                <input type="text"
+                       name="notelepon"
+                       class="form-control"
+                       value="{{ old('notelepon', $data->notelepon) }}"
+                       placeholder="Contoh: 08xxxxxxxxxx">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ROW KEDUA: BERKAS PEMBONGKARAN -->
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-earmark-pdf"></i> Berkas Metode Pembongkaran
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->berkaspembongkaran)
+                    <iframe id="frame-pembongkaran-lama"
+                            src="{{ asset('public/'.$data->berkaspembongkaran) }}"
+                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+
+                    <iframe id="frame-pembongkaran-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @else
+                    <div class="text-muted mb-2">
+                        Berkas belum di-upload
+                    </div>
+
+                    <iframe id="frame-pembongkaran-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @endif
+
+                {{-- INPUT FILE --}}
+                <input type="file"
+                       name="berkaspembongkaran"
+                       class="form-control mt-2"
+                       accept="application/pdf"
+                       onchange="previewPembongkaran(this)">
+            </div>
+        </div>
+    </div>
+
+
+<script>
+function previewPembongkaran(input) {
+    const frameBaru = document.getElementById('frame-surat-baru');
+    const frameLama = document.getElementById('frame-surat-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+</script>
+
+</div>
+
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-clipboard-check"></i> Informasi Pemeliharaan Berkala Bangunan Gedung
+    </div>
+
+    <!-- ROW PERTAMA: KETERSEDIAAN -->
+    <div class="row g-3 mb-3">
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-check-circle"></i> Ketersediaan Pemeliharaan Berkala
+                </div>
+                <input type="text"
+                       name="ketersediaan"
+                       class="form-control"
+                       value="{{ old('ketersediaan', $data->ketersediaan) }}"
+                       placeholder="Contoh: Tersedia / Tidak Tersedia">
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW KEDUA: BERKAS PEMERIKSAAN -->
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label">
+                    <i class="bi bi-file-earmark-pdf"></i> Berkas Pemeriksaan Bangunan Gedung
+                </div>
+
+                {{-- FILE LAMA --}}
+                @if($data->berkaspemeriksaan)
+                    <iframe id="frame-pemeriksaan-lama"
+                            src="{{ asset('public/'.$data->berkaspemeriksaan) }}"
+                            style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+
+                    <iframe id="frame-pemeriksaan-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @else
+                    <div class="text-muted mb-2">
+                        Berkas belum di-upload
+                    </div>
+
+                    <iframe id="frame-pemeriksaan-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
+                @endif
+
+                {{-- INPUT FILE --}}
+                <input type="file"
+                       name="berkaspemeriksaan"
+                       class="form-control mt-2"
+                       accept="application/pdf"
+                       onchange="previewPemeriksaan(this)">
+            </div>
+        </div>
+    </div>
+
+<script>
+function previewPemeriksaan(input) {
+    const frameBaru = document.getElementById('frame-surat-baru');
+    const frameLama = document.getElementById('frame-surat-lama');
+
+    if(input.files && input.files[0]) {
+        if(frameLama) frameLama.style.display = 'none';
+        frameBaru.src = URL.createObjectURL(input.files[0]);
+        frameBaru.style.display = 'block';
+    }
+}
+</script>
+
+</div>
+
 
         </div>
+
     </div>
 
 
