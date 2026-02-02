@@ -399,38 +399,39 @@
             <!-- INFORMASI SURAT -->
             <div class="section">
                 <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> INFORMASI SURAT
+                    <i class="bi bi-file-earmark-text"></i> Surat Kelayakan Bangunan Gedung
                 </div>
             <div class="section-content">
 
     <!-- ROW PERTAMA: Nomor Surat & Tanggal Surat -->
     <div class="row g-3 mb-3">
         <!-- Nomor Surat -->
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-hash"></i> Nomor Surat
-                </div>
-                <input type="text"
-                       name="nosurat"
-                       class="form-control"
-                       value="{{ $data->nosurat }}"
-                       placeholder="Masukkan Nomor Surat">
-            </div>
+       <div class="col-md-6">
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-building"></i> Nama Bangunan
         </div>
+        <input type="text"
+               name="cadangan1"
+               class="form-control"
+               value="{{ $data->cadangan1 }}"
+               placeholder="Masukkan Nama Bangunan">
+    </div>
+</div>
 
-        <!-- Tanggal Surat -->
-        <div class="col-md-6">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-calendar-date"></i> Tanggal Surat
-                </div>
-                <input type="date"
-                       name="tanggalsurat"
-                       class="form-control"
-                       value="{{ $data->tanggalsurat }}">
-            </div>
+<div class="col-md-6">
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-diagram-3"></i> Jenis Kajian Bangunan
         </div>
+        <input type="text"
+               name="cadangan2"
+               class="form-control"
+               value="{{ $data->cadangan2 }}"
+               placeholder="Masukkan Jenis Kajian Bangunan">
+    </div>
+</div>
+
     </div>
 
     <!-- ROW KEDUA: Surat Permohonan (Full Width) -->
@@ -438,13 +439,13 @@
         <div class="col-12">
             <div class="data-card">
                 <div class="data-label">
-                    <i class="bi bi-file-pdf"></i> Surat Permohonan
+                    <i class="bi bi-file-pdf"></i> Surat Kelayakan Kajian Bangunan Gedung
                 </div>
 
                 {{-- FILE LAMA --}}
-                @if($data->suratpermohonan)
+                @if($data->cadangan3)
                     <iframe id="frame-surat-lama"
-                            src="{{ asset('public/'.$data->suratpermohonan) }}"
+                            src="{{ asset('public/'.$data->cadangan3) }}"
                             style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
                     <iframe id="frame-surat-baru"
                             style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
@@ -456,7 +457,7 @@
 
                 {{-- INPUT FILE BARU --}}
                 <input type="file"
-                       name="suratpermohonan"
+                       name="cadangan3"
                        class="form-control mt-2"
                        accept="application/pdf"
                        onchange="previewSurat(this)">
@@ -516,7 +517,7 @@ function previewSurat(input) {
             <!-- SURAT KESANGGUPAN -->
             <div class="section">
                 <div class="section-header">
-                    <i class="bi bi-hand-thumbs-up"></i> SURAT KESANGGUPAN
+                    <i class="bi bi-hand-thumbs-up"></i> Surat Kelayakan Kajian Bangunan Gedung
                 </div>
                <div class="section-content">
 
@@ -1314,11 +1315,11 @@ function submitFormPermohonan() {
                                                         </div>
 
 <div class="modal-body text-left">
-    @if ($data->suratpermohonan)
+    @if ($data->cadangan3)
         @php
-            $filePath = public_path($data->suratpermohonan);
-            $fileUrl = asset($data->suratpermohonan);
-            $extension = strtolower(pathinfo($data->suratpermohonan, PATHINFO_EXTENSION));
+            $filePath = public_path($data->cadangan3);
+            $fileUrl = asset($data->cadangan3);
+            $extension = strtolower(pathinfo($data->cadangan3, PATHINFO_EXTENSION));
         @endphp
 
         @if (file_exists($filePath))
