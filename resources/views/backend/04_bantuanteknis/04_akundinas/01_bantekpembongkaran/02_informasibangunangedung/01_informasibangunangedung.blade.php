@@ -493,7 +493,7 @@
         <div class="card-body">
 
     <div class="section-header">
-        <i class="bi bi-clipboard-data me-2"></i>Surat Kelayakan Bangunan Gedung
+        <i class="bi bi-clipboard-data me-2"></i>Surat Kajian Kelayakan Bangunan Gedung
     </div>
 
 
@@ -973,7 +973,7 @@
 
     <!-- 3. AS BUILT DRAWING -->
     <div class="section-header mt-4">
-        <i class="bi bi-building me-2"></i>As Built Drawing
+        <i class="bi bi-building me-2"></i>As Built Drawing Bangunan Gedung
     </div>
 
     <div class="row">
@@ -981,7 +981,7 @@
             <div class="form-modern">
                 <label class="form-label-modern" for="gambar_asd">
                     <i class="bi bi-upload me-2 text-primary"></i>
-                    Upload Gambar As Built Drawing
+                    Upload Gambar As Built Drawing Bangunan Gedung
                 </label>
                 <input type="file"
                        class="form-control @error('gambar_asd') is-invalid @enderror"
@@ -1075,7 +1075,7 @@
 
     <!-- 4. METODE PEMBONGKARAN -->
     <div class="section-header mt-4">
-        <i class="bi bi-tools me-2"></i>Metode Pembongkaran
+        <i class="bi bi-tools me-2"></i>Metode Pembongkaran Bangunan Gedung
     </div>
 
     <div class="row">
@@ -1116,7 +1116,7 @@
             <div class="form-modern">
                 <label class="form-label-modern" for="berkaspembongkaran">
                     <i class="bi bi-upload me-2 text-primary"></i>
-                    Upload Dokumen Metode Pembongkaran
+                    Upload Dokumen Metode Pembongkaran Bangunan Gedung
                 </label>
                 <input type="file"
                        class="form-control @error('berkaspembongkaran') is-invalid @enderror"
@@ -1197,7 +1197,7 @@
 
     <!-- 5. LAPORAN PEMERIKSAAN BANGUNAN GEDUNG -->
     <div class="section-header mt-4">
-        <i class="bi bi-clipboard-check me-2"></i>Laporan Pemeriksaan Bangunan Gedung
+        <i class="bi bi-clipboard-check me-2"></i>Laporan Pemeriksaan Bangunan Gedung Berkala
     </div>
 
     <div class="row">

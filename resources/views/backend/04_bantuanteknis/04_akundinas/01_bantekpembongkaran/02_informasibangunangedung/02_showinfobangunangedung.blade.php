@@ -393,7 +393,7 @@
             <!-- SURAT KELAYAKAN KAJIAN BANGUNAN GEDUNG -->
 <div class="section">
     <div class="section-header">
-        <i class="bi bi-clipboard-check"></i> SURAT KELAYAKAN KAJIAN BANGUNAN GEDUNG
+        <i class="bi bi-clipboard-check"></i> SURAT KAJIAN KELAYAKAN BANGUNAN GEDUNG
     </div>
     <div class="section-content">
         <div class="data-card">
@@ -405,7 +405,7 @@
             <div class="data-value">{{ $data->cadangan2 ?? 'Data Tidak Ditemukan' }}</div>
         </div>
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Surat Kelayakan Kajian Bangunan Gedung</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Surat Kajian Kelayakan Bangunan Gedung</div>
             <div class="data-value">
                 @if($data->cadangan3)
                     <button class="file-badge view-pdf"
@@ -437,7 +437,7 @@
             <div class="data-value">{{ $data->status_kerusakan ?? 'Data Tidak Ditemukan' }}</div>
         </div>
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Dokumen Analisa Kerusakan Bangunan</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Dokumen Analisa Bangunan Gedung </div>
             <div class="data-value">
                 @if($data->dok_kerusakan_bangunan)
                     <button class="file-badge view-pdf"
@@ -479,7 +479,7 @@
             <div class="data-value">{{ $data->status_penilaian_teknis ?? 'Data Tidak Ditemukan' }}</div>
         </div>
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Surat Pernyataan Kelaikan</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Surat Kajian Teknis Bangunan Gedung</div>
             <div class="data-value">
                 @if($data->suratpernyataankelaikan)
                     <button class="file-badge view-pdf"
@@ -499,11 +499,11 @@
 <!-- AS BUILT DRAWING -->
 <div class="section">
     <div class="section-header">
-        <i class="bi bi-building"></i> AS BUILT DRAWING
+        <i class="bi bi-building"></i> AS BUILT DRAWING BANGUNAN GEDUNG
     </div>
     <div class="section-content">
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Gambar As Built Drawing</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Gambar As Built Drawing Bangunan Gedung </div>
             <div class="data-value">
                 @if($data->gambar_asd)
                     <button class="file-badge view-pdf"
@@ -527,7 +527,7 @@
 <!-- METODE PEMBONGKARAN -->
 <div class="section">
     <div class="section-header">
-        <i class="bi bi-tools"></i> METODE PEMBONGKARAN
+        <i class="bi bi-tools"></i> METODE PEMBONGKARAN BANGUNAN GEDUNG
     </div>
     <div class="section-content">
         <div class="data-card">
@@ -543,7 +543,7 @@
             <div class="data-value">{{ $data->notelepon ?? 'Data Tidak Ditemukan' }}</div>
         </div>
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Dokumen Metode Pembongkaran</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Dokumen Metode Pembongkaran Bangunan Gedung</div>
             <div class="data-value">
                 @if($data->berkaspembongkaran)
                     <button class="file-badge view-pdf"
@@ -563,7 +563,7 @@
 <!-- LAPORAN PEMERIKSAAN BANGUNAN GEDUNG -->
 <div class="section">
     <div class="section-header">
-        <i class="bi bi-clipboard-check"></i> LAPORAN PEMERIKSAAN BANGUNAN GEDUNG
+        <i class="bi bi-clipboard-check"></i> LAPORAN PEMERIKSAAN BANGUNAN GEDUNG BERKALA
     </div>
     <div class="section-content">
         <div class="data-card">
@@ -571,7 +571,7 @@
             <div class="data-value">{{ $data->ketersediaan ?? 'Data Tidak Ditemukan' }}</div>
         </div>
         <div class="data-card">
-            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Laporan Pemeriksaan</div>
+            <div class="data-label"><i class="bi bi-file-earmark-text"></i> Laporan Pemeriksaan Bangunan Gedung Berkala</div>
             <div class="data-value">
                 @if($data->berkaspemeriksaan)
                     <button class="file-badge view-pdf"

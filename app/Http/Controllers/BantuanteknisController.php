@@ -7429,5 +7429,48 @@ public function perbaikanbangunandetail(Request $request, $id)
 }
 
 
+public function validasiberkasfilebangunan(Request $request, $id)
+{
+    // ===============================
+    // VALIDASI INPUT
+    // ===============================
+    $request->validate([
+        'validasiberkas1' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas2' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas3' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas4' => 'required|in:sesuai,tidak_sesuai',
+        'validasiberkas5' => 'required|in:sesuai,tidak_sesuai',
+        'cadangan4' => 'required|in:sesuai,tidak_sesuai',
+        'catatan1'        => 'nullable|string',
+    ]);
+
+    // ===============================
+    // AMBIL DATA ANAK + INDUK
+    // ===============================
+    $item = bantekpembongkarannew2::with('induk2')->findOrFail($id);
+
+    // ===============================
+    // UPDATE DATA VALIDASI
+    // ===============================
+    $item->update([
+        'validasiberkas1' => $request->validasiberkas1,
+        'validasiberkas2' => $request->validasiberkas2,
+        'validasiberkas3' => $request->validasiberkas3,
+        'validasiberkas4' => $request->validasiberkas4,
+        'validasiberkas5' => $request->validasiberkas5,
+        'cadangan4'         => $request->cadangan4,
+        'catatan1'        => $request->catatan1,
+    ]);
+
+    // ===============================
+    // REDIRECT KE HALAMAN INDUK
+    // ===============================
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => $item->induk->namapemilik,
+        'id'          => $item->bantekpembongkaraninduk_id
+    ])->with('update', 'Data verifikasi berhasil disimpan');
+}
+
+
 }
 

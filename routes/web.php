@@ -1620,6 +1620,7 @@ Route::get('/bebantekpembongkaran/bangunan/{pelaksana}/{id}',[BantuanteknisContr
  // VALIDASI BERKAS INFORMASI PEMILIK BANGUNAN
  Route::put('/validasiinformasipemilikbangunan/{id}', [BantuanteknisController::class, 'validasiinformasipemilikbangunan'])->middleware('auth')->name('validasiinformasipemilikbangunan');
  Route::put('/validasidetailbangunangedung/{id}', [BantuanteknisController::class, 'validasidetailbangunangedung'])->middleware('auth')->name('validasidetailbangunangedung');
+ Route::put('/validasiberkasfilebangunan/{id}', [BantuanteknisController::class, 'validasiberkasfilebangunan'])->middleware('auth')->name('validasiberkasfilebangunan');
 
 // Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
 // Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');
