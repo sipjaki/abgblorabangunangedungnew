@@ -403,7 +403,7 @@ function closeModalPemohon2() {
                         <i class="bi bi-building-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI BANGUNAN GEDUNG</h4>
+                        <h4>INFORMASI PERMOHONAN KELAYAKAN BANGUNAN GEDUNG</h4>
                         <p>Detail dan spesifikasi bangunan yang akan dibongkar</p>
                     </div>
 

@@ -1574,6 +1574,8 @@ Route::put('/perbaikanpemilik/{id}', [BantuanteknisController::class, 'perbaikan
 // FORMULIR PENGISIAN INFORMASI BANGUNAN GEDUNG
 Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[BantuanteknisController::class, 'informasibangunangedung'])->middleware('auth', 'can:admindinas')->name('informasibangunangedung');
 
+// UPDATE INFORMASI DETAIL BANGUNAN GEDUNG
+Route::put('/perbaikanbangunandetail/{id}', [BantuanteknisController::class, 'perbaikanbangunandetail'])->middleware('auth', 'can:admindinas')->name('perbaikanbangunandetail');
 
 // berkas uplkoad
 

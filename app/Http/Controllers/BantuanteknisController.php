@@ -7322,6 +7322,111 @@ public function validasidetailbangunangedung(Request $request, $id)
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
 
+public function perbaikanbangunandetail(Request $request, $id)
+{
+    // ==========================
+    // AMBIL DATA + RELASI INDUK
+    // ==========================
+    $data = bantekpembongkarannew2::with('induk2')->findOrFail($id);
+
+    // ==========================
+    // VALIDASI
+    // ==========================
+    $validated = $request->validate([
+        // BERKAS 2 - ANALISA BANGUNAN
+        'tingkat_kerusakan'        => 'nullable|numeric',
+        'status_kerusakan'         => 'nullable|string|max:255',
+        'dok_kerusakan_bangunan'   => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:20480',
+        'validasiberkas1'          => 'nullable|string|max:50',
+        'catatan1'                 => 'nullable|string',
+
+        // BERKAS 3 - SURAT KAJIAN TEKNIS
+        'nosurat'                  => 'nullable|string|max:255',
+        'tanggalsurat'             => 'nullable|date',
+        'status_penilaian_teknis'  => 'nullable|string|max:255',
+        'suratpernyataankelaikan'  => 'nullable|file|mimes:pdf|max:20480',
+        'validasiberkas2'          => 'nullable|string|max:50',
+
+        // BERKAS 4 - AS BUILT DRAWING
+        'gambar_asd'               => 'nullable|file|mimes:pdf|max:20480',
+        'keterangan'               => 'nullable|string',
+        'validasiberkas3'          => 'nullable|string|max:50',
+
+        // BERKAS 5 - METODE PEMBONGKARAN
+        'pelaksana'                => 'nullable|string|max:255',
+        'namapenanggungjawab'      => 'nullable|string|max:255',
+        'notelepon'                => 'nullable|string|max:50',
+        'berkaspembongkaran'       => 'nullable|file|mimes:pdf|max:20480',
+        'validasiberkas4'          => 'nullable|string|max:50',
+
+        // BERKAS 6 - PEMERIKSAAN
+        'ketersediaan'             => 'nullable|string|max:255',
+        'berkaspemeriksaan'        => 'nullable|file|mimes:pdf|max:20480',
+        'validasiberkas5'          => 'nullable|string|max:50',
+
+        // BERKAS 1 - PEMERIKSAAN
+        'cadangan1'             => 'nullable|string|max:255',
+        'cadangan2'             => 'nullable|string|max:255',
+        'cadangan3'             => 'nullable|file|mimes:pdf|max:20480',
+
+        ]);
+
+    // ==========================
+    // HANDLE UPLOAD FILE
+    // ==========================
+    $fileFields = [
+        'dok_kerusakan_bangunan',
+        'suratpernyataankelaikan',
+        'gambar_asd',
+        'berkaspembongkaran',
+        'berkaspemeriksaan',
+        'cadangan3',
+    ];
+
+    $publicPath = public_path('bantekpembongkaran');
+
+    if (!file_exists($publicPath)) {
+        mkdir($publicPath, 0777, true);
+    }
+
+    foreach ($fileFields as $field) {
+        if ($request->hasFile($field)) {
+
+            // HAPUS FILE LAMA
+            if (!empty($data->$field) && file_exists(public_path($data->$field))) {
+                unlink(public_path($data->$field));
+            }
+
+            $file = $request->file($field);
+            $filename = time().'_'.$field.'.'.$file->getClientOriginalExtension();
+            $file->move($publicPath, $filename);
+
+            $validated[$field] = 'bantekpembongkaran/'.$filename;
+        }
+    }
+
+    // ==========================
+    // UPDATE DATA
+    // ==========================
+    $data->update($validated);
+
+    // ==========================
+    // REDIRECT KE SHOW INDUK
+    // ==========================
+    $induk = $data->induk2;
+
+    if (!$induk) {
+        return back()->with('error', 'Data induk tidak ditemukan');
+    }
+
+    return redirect()->route(
+        'bebantekpembongkaranshow',
+        [
+            'namapemilik' => urlencode($induk->namapemilik),
+            'id'          => $induk->id,
+        ]
+    )->with('update', 'Perbaikan Berkas Informasi Bangunan Berhasil!');
+}
 
 
 }

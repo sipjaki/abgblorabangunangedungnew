@@ -387,7 +387,7 @@
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <form action="{{ route('perbaikanberkasinformasi.pemilik', $data->id ) }}"
+    <form action="{{ route('perbaikanbangunandetail', $data->id ) }}"
       method="POST"
       enctype="multipart/form-data">
     @csrf
