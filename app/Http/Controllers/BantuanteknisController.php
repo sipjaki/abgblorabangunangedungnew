@@ -7252,9 +7252,10 @@ public function bebantekbangunanbongkarcrnew(Request $request)
     ])->with('create', 'Data berhasil disimpan!');
 }
 
+
 public function perbaikandetailbangunangedung($pelaksana, $id)
 {
-    // Decode dari URL (Sekolah+Mba+fanina -> Sekolah Mba fanina)
+    // Decode URL
     $pelaksana = urldecode($pelaksana);
 
     $data = bantekpembongkarannew2::withTrashed()
@@ -7262,11 +7263,8 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
         ->where('id', $id)
         ->firstOrFail();
 
-    // VALIDASI RELASI + NAMA ASLI (BUKAN SLUG)
-    if (
-        !$data->induk2 ||
-        trim($data->induk2->pelaksana) !== trim($pelaksana)
-    ) {
+    // ❗ VALIDASI AMAN: CEK RELASI SAJA
+    if (!$data->induk2) {
         abort(404);
     }
 
@@ -7279,6 +7277,7 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
         ]
     );
 }
+
 
 
 public function validasidetailbangunangedung(Request $request, $id)
