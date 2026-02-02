@@ -232,13 +232,13 @@
 <!-- ================= BUTTON VALIDASI ================= -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
-        <button type="button" class="btn btn-success" disabled>
+        <button type="button" class="button-hijau" disabled>
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
         <button type="button"
-                class="btn btn-primary"
+                class="button-merah"
                 data-bs-toggle="modal"
                 data-bs-target="#confirmModalPemohon2">
             <i class="bi bi-x-circle me-1"></i> Dikembalikan
@@ -246,12 +246,12 @@
 
         <div class="mt-1">
             <small class="text-muted">
-                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki lagi.
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
             </small>
         </div>
 
     @else
-        <button type="button" class="btn btn-secondary" disabled>
+        <button type="button" class="button-modern" disabled>
             <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
         </button>
     @endif
