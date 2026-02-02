@@ -657,7 +657,7 @@
                 </label>
                 <input type="number" class="form-control @error('tingkat_kerusakan') is-invalid @enderror"
                        id="tingkat_kerusakan" name="tingkat_kerusakan"
-                       placeholder="10"
+                       placeholder="Contoh : 10"
                        value="{{ old('tingkat_kerusakan') }}" step="0.01" min="0" max="100">
                 @error('tingkat_kerusakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
@@ -871,6 +871,67 @@
     </div>
 </div>
 
+<!-- PREVIEW FILE YANG DIUPLOAD -->
+<div id="previewSuratPernyataanKelaikan" class="mt-3 d-none">
+    <label class="form-label-modern mb-2">
+        <i class="bi bi-eye me-2 text-success"></i>
+        Preview Berkas Yang Diupload
+    </label>
+
+    <div class="border rounded-3 p-2 bg-light"
+         id="previewSuratPernyataanKelaikanBox"></div>
+</div>
+
+<script>
+(function () {
+    const input = document.getElementById('suratpernyataankelaikan');
+    const wrapper = document.getElementById('previewSuratPernyataanKelaikan');
+    const box = document.getElementById('previewSuratPernyataanKelaikanBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // Preview PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        }
+        // Kalau salah upload image
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `
+                <img src="${fileURL}"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Preview Surat Pernyataan Kelaikan">
+            `;
+        }
+        // File lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
+
 
 <div class="modal fade"
      id="modalSuratPernyataanKelaikan"
@@ -935,6 +996,67 @@
                 </small>
             </div>
         </div>
+
+        <!-- PREVIEW FILE YANG DIUPLOAD -->
+<div id="previewGambarASD" class="mt-3 d-none">
+    <label class="form-label-modern mb-2">
+        <i class="bi bi-eye me-2 text-success"></i>
+        Preview Berkas Yang Diupload
+    </label>
+
+    <div class="border rounded-3 p-2 bg-light"
+         id="previewGambarASDBox"></div>
+</div>
+
+<script>
+(function () {
+    const input = document.getElementById('gambar_asd');
+    const wrapper = document.getElementById('previewGambarASD');
+    const box = document.getElementById('previewGambarASDBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // Preview PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        }
+        // Kalau ternyata gambar
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `
+                <img src="${fileURL}"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Preview As Built Drawing">
+            `;
+        }
+        // File lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
 
         <div class="col-12">
             <div class="form-modern">
@@ -1009,6 +1131,68 @@
                 </small>
             </div>
         </div>
+        <!-- PREVIEW DOKUMEN METODE PEMBONGKARAN -->
+<div id="previewBerkasPembongkaran" class="mt-3 d-none">
+    <label class="form-label-modern mb-2">
+        <i class="bi bi-eye me-2 text-success"></i>
+        Preview Berkas Yang Diupload
+    </label>
+
+    <div class="border rounded-3 p-2 bg-light"
+         id="previewBerkasPembongkaranBox"></div>
+</div>
+
+<script>
+(function () {
+    const input = document.getElementById('berkaspembongkaran');
+    const wrapper = document.getElementById('previewBerkasPembongkaran');
+    const box = document.getElementById('previewBerkasPembongkaranBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // Preview PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `
+                <iframe src="${fileURL}"
+                        class="w-100 rounded"
+                        style="height:400px;"
+                        frameborder="0"></iframe>
+            `;
+        }
+        // Kalau ternyata gambar
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `
+                <img src="${fileURL}"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Preview Metode Pembongkaran">
+            `;
+        }
+        // File lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
+
+
     </div>
 
     <!-- 5. LAPORAN PEMERIKSAAN BANGUNAN GEDUNG -->
