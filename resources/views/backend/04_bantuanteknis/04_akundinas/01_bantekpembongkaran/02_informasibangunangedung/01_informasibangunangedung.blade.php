@@ -657,6 +657,7 @@
                 </label>
                 <input type="number" class="form-control @error('tingkat_kerusakan') is-invalid @enderror"
                        id="tingkat_kerusakan" name="tingkat_kerusakan"
+                       placeholder="10"
                        value="{{ old('tingkat_kerusakan') }}" step="0.01" min="0" max="100">
                 @error('tingkat_kerusakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
@@ -939,7 +940,7 @@
             <div class="form-modern">
                 <label class="form-label-modern" for="keterangan">
                     <i class="bi bi-card-text me-2 text-primary"></i>
-                    Keterangan Tambahan
+                    Keterangan : Sebutkan Denah Letak Bangunan Contoh : Tampak Depan Bangunan Gedung
                 </label>
                 <textarea class="form-control @error('keterangan') is-invalid @enderror"
                           id="keterangan" name="keterangan" rows="3">{{ old('keterangan') }}</textarea>
@@ -959,7 +960,7 @@
         <div class="col-md-4">
             <div class="form-modern">
                 <label class="form-label-modern" for="pelaksana">
-                    <i class="bi bi-person-badge me-2 text-primary"></i> Pelaksana
+                    <i class="bi bi-person-badge me-2 text-primary"></i> Pelaksana | Contoh : PT/CV/Perorangan Misal PT. Abadi Jaya Blora atau lainnya
                 </label>
                 <input type="text" class="form-control @error('pelaksana') is-invalid @enderror"
                        id="pelaksana" name="pelaksana" value="{{ old('pelaksana') }}">
@@ -1022,12 +1023,17 @@
                     <i class="bi bi-check2-circle me-2 text-primary"></i> Ketersediaan Dokumen
                 </label>
                 <select class="form-control @error('ketersediaan') is-invalid @enderror"
-                        id="ketersediaan" name="ketersediaan">
-                    <option value="">Pilih Status</option>
-                    <option value="lengkap" {{ old('ketersediaan') == 'lengkap' ? 'selected' : '' }}>Lengkap</option>
-                    <option value="tidak_lengkap" {{ old('ketersediaan') == 'tidak_lengkap' ? 'selected' : '' }}>Tidak Lengkap</option>
-                    <option value="sebagian" {{ old('ketersediaan') == 'sebagian' ? 'selected' : '' }}>Sebagian</option>
-                </select>
+        id="ketersediaan"
+        name="ketersediaan">
+    <option value="">Pilih Ketersediaan</option>
+    <option value="ada" {{ old('ketersediaan') == 'ada' ? 'selected' : '' }}>
+        Ada
+    </option>
+    <option value="tidak_ada" {{ old('ketersediaan') == 'tidak_ada' ? 'selected' : '' }}>
+        Tidak Ada
+    </option>
+</select>
+
                 @error('ketersediaan') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
         </div>
