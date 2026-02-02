@@ -231,7 +231,7 @@
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
-        <button class="button-hijau" type="button" disabled
+        <button class="button-lolos" type="button" disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
@@ -257,28 +257,24 @@
     @endif
 </div>
 
-<!-- ================= MODAL ================= -->
+<!-- Modal Bootstrap -->
 <div class="modal fade" id="confirmModalPemohon2" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-3">
+    <div class="modal-content p-4">
         <h5 class="modal-title mb-3">Apakah berkas sudah sesuai?</h5>
 
         <form method="POST" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
             @csrf
-            <!-- Hapus @method('PUT'), karena route lo pake POST -->
-
+            <!-- HAPUS @method('PUT') karena route POST -->
             <input type="hidden" name="document_type" value="2">
             <input type="hidden" name="validasiberkas2" value="">
 
             <div class="d-flex justify-content-center gap-2">
-                <button type="submit"
-                        class="btn btn-success">
+                <button type="submit" class="btn btn-success">
                     <i class="bi bi-check2-circle me-1"></i> Sudah
                 </button>
 
-                <button type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     <i class="bi bi-x-circle me-1"></i> Batal
                 </button>
             </div>
