@@ -241,14 +241,17 @@
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- DIKEMBALIKAN (BISA DIKLIK) -->
-        <button type="button"
-                class="button-dikembalikan"
-                onclick="openModalPemohon2({{ $data->id }})"
-                style="background-color:#0400ff;color:black;
-                       position:relative;z-index:10;">
-            <i class="bi bi-x-circle me-1"></i> Dikembalikan
-        </button>
-
+        <div class="d-block" style="position:relative; z-index:9999;">
+    <button type="button"
+        class="button-dikembalikan"
+        onclick="openModalPemohon2({{ $data->id }})"
+        style="background-color:#0400ff;color:black;
+               position:relative;
+               z-index:9999;
+               pointer-events:auto;">
+        <i class="bi bi-x-circle me-1"></i> Dikembalikan
+    </button>
+</div>
         <div class="mt-1">
             <small class="text-muted">
                 Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
