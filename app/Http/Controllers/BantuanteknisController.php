@@ -6980,12 +6980,13 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     // REDIRECT KE SHOW
     // ==========================
     return redirect()->route(
-        'bebantekpembongkaranshow',
-        [
-            'namapemilik' => Str::slug($induk->namapemilik),
-            'id' => $induk->id
-        ]
-    )->with('update', 'Perbaikan Berkas Berhasil!');
+    'bebantekpembongkaranshow',
+    [
+        'namapemilik' => Str::slug($induk->namapemilik),
+        'id' => $induk->id
+    ]
+)->with('update', 'Perbaikan Berkas Berhasil!');
+
 }
 
     public function berkaskonsultasiPembongkaran($id)
