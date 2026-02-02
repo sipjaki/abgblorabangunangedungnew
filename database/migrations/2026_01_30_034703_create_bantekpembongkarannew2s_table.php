@@ -19,7 +19,7 @@ return new class extends Migration
     /*
 
     |--------------------------------------------------------------------------
-    | DOKUMEN ANALISA BANGUNAN GEDUNG
+    | DOKUMEN ANALISA BANGUNAN GEDUNG BERKAS 2
     |--------------------------------------------------------------------------
     */
     $table->decimal('tingkat_kerusakan', 5, 2)->nullable(); // persen
@@ -30,7 +30,7 @@ return new class extends Migration
 
     /*
     |--------------------------------------------------------------------------
-    | SURAT KAJIAN TEKNIS BANGUNAN GEDUNG
+    | SURAT KAJIAN TEKNIS BANGUNAN GEDUNG BERKAS 3
     |--------------------------------------------------------------------------
     */
     $table->string('nosurat')->nullable();
@@ -42,7 +42,7 @@ return new class extends Migration
 
     /*
     |--------------------------------------------------------------------------
-    | AS BUILT DRAWING
+    | AS BUILT DRAWING BERKAS 4
     |--------------------------------------------------------------------------
     */
     $table->string('gambar_asd')->nullable();
@@ -52,7 +52,7 @@ return new class extends Migration
 
     /*
     |--------------------------------------------------------------------------
-    | METODE PEMBONGKARAN
+    | METODE PEMBONGKARAN BERKAS 5
     |--------------------------------------------------------------------------
     */
     $table->string('pelaksana')->nullable();
@@ -64,7 +64,7 @@ return new class extends Migration
 
     /*
     |--------------------------------------------------------------------------
-    | LAPORAN PEMERIKSAAN BANGUNAN GEDUNG
+    | LAPORAN PEMERIKSAAN BANGUNAN GEDUNG BERKAS 6
     |--------------------------------------------------------------------------
     */
     $table->string('ketersediaan')->nullable();
