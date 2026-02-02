@@ -232,7 +232,7 @@
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
         <!-- LOLOS (TIDAK BISA DIKLIK) -->
-        <button class="button-lolos"
+        <button class="button-hijau"
                 type="button"
                 disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
@@ -241,7 +241,7 @@
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- DIKEMBALIKAN (MASIH BISA DIKLIK) -->
-        <button class="button-dikembalikan"
+        <button class="button-merah"
                 type="button"
                 onclick="openModalPemohon2({{ $data->id }})"
                 style="background-color:#0400ff;color:black;">

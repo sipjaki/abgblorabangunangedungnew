@@ -1,4 +1,4 @@
-@canany(['superadmin', 'admin', 'dinas', 'pemohon'])
+@canany(['superadmin', 'admin'])
 {{-- @canany(['admindinas']) --}}
 
 
