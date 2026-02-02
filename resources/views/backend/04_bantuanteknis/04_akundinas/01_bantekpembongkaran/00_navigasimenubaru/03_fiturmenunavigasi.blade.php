@@ -238,11 +238,12 @@
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- 2. DIKEMBALIKAN (BISA DIKLIK) -->
-        <button type="button"
-                class="button-merah"
-                onclick="showModalCard({{ $data->id }})">
+        <a href="javascript:void(0)"
+           class="button-merah"
+           onclick="showModalCard({{ $data->id }})"
+           style="text-decoration: none; display: inline-block;">
             <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
-        </button>
+        </a>
 
     @else
         <!-- 3. NULL/KOSONG (TIDAK BISA DIKLIK) -->
@@ -259,80 +260,56 @@
 
         <!-- HEADER MODAL -->
         <div style="background: #f8f9fa; padding: 20px; border-bottom: 1px solid #e9ecef;">
-            <div style="display: flex; align-items: center;">
-                <div style="background: #007bff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                    <i class="bi bi-question-circle-fill" style="color: white; font-size: 20px;"></i>
-                </div>
-                <div>
-                    <h5 style="margin: 0; font-weight: 600; color: #333;">Konfirmasi Pengajuan Ulang</h5>
-                    <small style="color: #6c757d;">Surat Pemberitahuan (2)</small>
-                </div>
-            </div>
+            <h5 style="margin: 0; font-weight: 600; color: #333; display: flex; align-items: center;">
+                <i class="bi bi-question-circle-fill me-2" style="color: #007bff;"></i>
+                Konfirmasi Pengajuan Ulang
+            </h5>
         </div>
 
         <!-- BODY MODAL -->
         <div style="padding: 25px;">
-            <p style="margin-bottom: 15px; color: #333; line-height: 1.5;">
-                Apakah Anda yakin ingin mengajukan ulang berkas <strong>Surat Pemberitahuan (2)</strong>?
-            </p>
-
-            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                    <i class="bi bi-arrow-left-right" style="color: #007bff; margin-right: 10px;"></i>
-                    <span style="font-weight: 500; color: #333;">Perubahan Status:</span>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: space-between; padding-left: 30px;">
-                    <span style="color: #dc3545; font-weight: 500;">"Berkas Dikembalikan"</span>
-                    <i class="bi bi-arrow-right" style="color: #6c757d; margin: 0 10px;"></i>
-                    <span style="color: #28a745; font-weight: 500;">"Menunggu DPUPR Kab Blora"</span>
-                </div>
-            </div>
-
-            <p style="font-size: 14px; color: #6c757d; margin-bottom: 0;">
-                <i class="bi bi-info-circle me-1"></i>
-                Status akan dikembalikan ke proses verifikasi DPUPR
+            <p style="margin-bottom: 15px; color: #333;">
+                Apakah Anda yakin ingin mengajukan ulang berkas ini?
             </p>
         </div>
 
         <!-- FOOTER MODAL -->
         <div style="padding: 20px; background: #f8f9fa; border-top: 1px solid #e9ecef; display: flex; justify-content: flex-end; gap: 10px;">
 
-            <!-- FORM UNTUK SUBMIT -->
-            <form id="submitForm" method="POST" style="display: flex; gap: 10px;">
-                @csrf
-                <input type="hidden" name="validasiberkas2" value="">
+            <!-- TOMBOL BATAL -->
+            <button type="button"
+                    onclick="closeModalCard()"
+                    style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center;">
+                <i class="bi bi-x-circle me-2"></i>
+                Batal
+            </button>
 
-                <!-- TOMBOL BATAL -->
-                <button type="button"
-                        onclick="closeModalCard()"
-                        style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center;">
-                    <i class="bi bi-x-circle me-2"></i>
-                    Batal
-                </button>
-
-                <!-- TOMBOL YA, AJUKAN -->
-                <button type="submit"
-                        style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center;">
-                    <i class="bi bi-check-circle me-2"></i>
-                    Ya, Ajukan Ulang
-                </button>
-            </form>
+            <!-- TOMBOL YA, AJUKAN -->
+            <button type="button"
+                    onclick="submitForm()"
+                    style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center;">
+                <i class="bi bi-check-circle me-2"></i>
+                Ya, Ajukan Ulang
+            </button>
 
         </div>
     </div>
 </div>
 
+<!-- HIDDEN FORM -->
+<form id="hiddenForm" method="POST" style="display: none;">
+    @csrf
+    <input type="hidden" name="validasiberkas2" value="">
+</form>
+
 <script>
-// Variabel untuk menyimpan ID
+// Variabel global untuk menyimpan ID
 let currentItemId = null;
 
 // Fungsi untuk menampilkan modal card
 function showModalCard(itemId) {
+    console.log('Tombol diklik! ID:', itemId);
     currentItemId = itemId;
-
-    // Set action form dengan route yang benar
-    const form = document.getElementById('submitForm');
-    form.action = "/validasibongkarkembali/" + itemId;
 
     // Tampilkan modal
     document.getElementById('modalCard').style.display = 'flex';
@@ -344,6 +321,42 @@ function closeModalCard() {
     document.getElementById('modalCard').style.display = 'none';
     document.body.style.overflow = 'auto';
     currentItemId = null;
+}
+
+// Fungsi untuk submit form
+function submitForm() {
+    if (!currentItemId) {
+        alert('Error: ID tidak ditemukan');
+        return;
+    }
+
+    console.log('Submit form untuk ID:', currentItemId);
+
+    // Buat form baru
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/validasibongkarkembali/' + currentItemId;
+
+    // CSRF Token
+    const csrf = document.createElement('input');
+    csrf.type = 'hidden';
+    csrf.name = '_token';
+    csrf.value = '{{ csrf_token() }}';
+
+    // Field validasiberkas2 dengan value kosong
+    const field = document.createElement('input');
+    field.type = 'hidden';
+    field.name = 'validasiberkas2';
+    field.value = '';
+
+    // Tambahkan ke form
+    form.appendChild(csrf);
+    form.appendChild(field);
+
+    // Tambahkan ke body dan submit
+    document.body.appendChild(form);
+    console.log('Form akan disubmit ke:', form.action);
+    form.submit();
 }
 
 // Tutup modal jika klik di luar area card
@@ -360,47 +373,9 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Handle form submit
-document.getElementById('submitForm').addEventListener('submit', function(e) {
-    // Optional: Tambahkan loading state
-    const submitBtn = this.querySelector('button[type="submit"]');
-    submitBtn.innerHTML = '<i class="bi bi-hourglass me-2"></i>Memproses...';
-    submitBtn.disabled = true;
-});
+// Debug: Cek apakah script berjalan
+console.log('Script Surat Pemberitahuan (2) loaded');
 </script>
-
-<style>
-
-/* Efek hover untuk tombol di modal */
-#submitForm button[type="submit"]:hover {
-    background-color: #218838;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
-}
-
-#submitForm button[type="button"]:hover {
-    background-color: #5a6268;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.2);
-}
-
-/* Animasi untuk modal */
-#modalCard > div {
-    animation: modalSlideIn 0.3s ease-out;
-}
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>
-
 
         </div>
 
