@@ -7233,11 +7233,7 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
         ->where('id', $id)
         ->firstOrFail();
 
-    /**
-     * VALIDASI URL
-     * Cegah manipulasi URL:
-     * - namabangunan di URL HARUS cocok dengan data di database
-     */
+    // VALIDASI URL: pastikan slug sama dengan induk
     if (!$data->induk2 || Str::slug($data->induk2->pelaksana) !== $pelaksana) {
         abort(404);
     }
@@ -7245,8 +7241,8 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
         [
-            'title'        => 'Perbaikan Berkas Informasi Detail Bangunan Gedung',
-            'data'         => $data,
+            'title'     => 'Perbaikan Berkas Informasi Detail Bangunan Gedung',
+            'data'      => $data,
             'pelaksana' => $pelaksana
         ]
     );

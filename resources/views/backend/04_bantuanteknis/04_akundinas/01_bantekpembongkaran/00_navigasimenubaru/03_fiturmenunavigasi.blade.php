@@ -446,10 +446,9 @@ function closeModalPemohon2() {
                                 'id' => $item->id
                             ]
                         ) }}"
-                    class="button-berkas">
+                    class="button-baru">
                         <i class="bi bi-eye"></i> Perbaikan Dokumen
                     </a>
-
 @else
     <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
     <button type="button"
