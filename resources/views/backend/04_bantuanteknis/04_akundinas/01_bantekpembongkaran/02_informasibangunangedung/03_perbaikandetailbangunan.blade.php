@@ -730,19 +730,8 @@ function previewASD(input){
     f.style.display='block';
 }
 </script>
-</div>
-
-<script>
-function previewPembongkaran(input){
-    document.getElementById('frame-asd-lama')?.style.display='none';
-    const f = document.getElementById('frame-asd-baru');
-    f.src = URL.createObjectURL(input.files[0]);
-    f.style.display='block';
-}
-</script>
-
-
     <br><br>
+</div>
 
 <!-- Tombol Trigger -->
 <div class="flex justify-end mb-3">
