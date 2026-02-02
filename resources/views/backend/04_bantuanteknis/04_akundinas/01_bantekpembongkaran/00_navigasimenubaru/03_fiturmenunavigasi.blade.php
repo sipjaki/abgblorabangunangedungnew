@@ -439,16 +439,17 @@ function closeModalPemohon2() {
     @endphp
 
     <!-- DATA ADA → BISA DIKLIK -->
-    <a href="{{ route(
-            'perbaikan.informasibangunangedung',
-            [
-                Str::slug($item->pelaksana ?? 'tidak-diketahui'),
-                $item->id
-            ]
-        ) }}"
-       class="button-baru">
-        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
-    </a>
+       <a href="{{ route(
+                            'perbaikan.informasibangunangedung',
+                            [
+                                'pelaksana' => Str::slug($item->pelaksana ?? 'tidak-diketahui'),
+                                'id' => $item->id
+                            ]
+                        ) }}"
+                    class="button-berkas">
+                        <i class="bi bi-eye"></i> Perbaikan Dokumen
+                    </a>
+
 @else
     <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
     <button type="button"
