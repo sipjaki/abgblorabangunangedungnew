@@ -127,7 +127,7 @@
 
     <!-- Berkas Konsultasi (cadangan1) -->
     <button type="button"
-        class="button-modern {{ $data->cadangan1 ? '' : 'disabled' }}"
+        class="button-baru {{ $data->cadangan1 ? '' : 'disabled' }}"
         style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
         data-bs-toggle="modal" data-bs-target="#modalKonsultasi">
         Berkas Konsultasi
@@ -135,7 +135,7 @@
 
     <!-- Berkas Rekomtek (cadangan2) -->
     <button type="button"
-        class="button-modern {{ $data->cadangan2 ? '' : 'disabled' }}"
+        class="button-baru {{ $data->cadangan2 ? '' : 'disabled' }}"
         style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
         data-bs-toggle="modal" data-bs-target="#modalRekomtek">
         Berkas Rekomtek
@@ -143,7 +143,7 @@
 
     <!-- Berkas Per Bupati (cadangan3) -->
     <button type="button"
-        class="button-modern {{ $data->cadangan3 ? '' : 'disabled' }}"
+        class="button-baru {{ $data->cadangan3 ? '' : 'disabled' }}"
         style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
         data-bs-toggle="modal" data-bs-target="#modalPerBupati">
         Berkas Per Bupati
