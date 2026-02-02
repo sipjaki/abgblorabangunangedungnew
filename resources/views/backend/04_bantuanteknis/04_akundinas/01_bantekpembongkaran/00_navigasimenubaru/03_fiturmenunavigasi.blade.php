@@ -432,23 +432,21 @@ function closeModalPemohon2() {
                     </a>
                 @endif
 
+
+
 <!-- Perbaikan Dokumen -->
 @if($data->bantekpembongkarannew2->count() > 0)
-    @php
-        $item = $data->bantekpembongkarannew2->first();
-    @endphp
-
     <!-- DATA ADA → BISA DIKLIK -->
-       <a href="{{ route(
-                            'perbaikan.informasibangunangedung',
-                            [
-                                'pelaksana' => Str::slug($item->pelaksana ?? 'tidak-diketahui'),
-                                'id' => $item->id
-                            ]
-                        ) }}"
-                    class="button-baru">
-                        <i class="bi bi-eye"></i> Perbaikan Dokumen
-                    </a>
+    <a href="{{ route(
+            'perbaikan.informasibangunangedung',
+            [
+                'pelaksana' => Str::slug($data->bantekpembongkarannew2->pelaksana),
+                'id' => $data->bantekpembongkarannew2->first()->id
+            ]
+        ) }}"
+       class="button-baru">
+        <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
+    </a>
 @else
     <!-- DATA KOSONG → TIDAK BISA DIKLIK -->
     <button type="button"
@@ -462,6 +460,7 @@ function closeModalPemohon2() {
         Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
     </small>
 @endif
+
                     </div>
                 </div>
             </div>
