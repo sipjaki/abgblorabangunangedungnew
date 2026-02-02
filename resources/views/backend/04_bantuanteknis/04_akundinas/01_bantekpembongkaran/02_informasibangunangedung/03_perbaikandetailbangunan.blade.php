@@ -916,11 +916,6 @@ function previewPemeriksaan(input) {
 </div>
 
 
-        </div>
-
-    </div>
-
-
 
 <!-- Tombol Trigger -->
 <div class="flex justify-end mb-3">
@@ -928,6 +923,12 @@ function previewPemeriksaan(input) {
         <i class="bi bi-save me-1"></i> Simpan Permohonan
     </button>
 </div>
+
+        </div>
+
+    </div>
+
+
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModalPermohonan" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
