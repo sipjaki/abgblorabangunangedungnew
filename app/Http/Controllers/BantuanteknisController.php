@@ -6479,29 +6479,14 @@ public function validasipembongkaran2(Request $request, $id)
     return redirect()->back();
 }
 
-// KONFIRMASI BERKAS PERMOHONAN DARI PEMOHON UNTUK BERKAS PERBAIKAN
 public function validasipembongkaranpemohon(Request $request, $id)
 {
     $data = bantekpembongkaraninduk::findOrFail($id);
-
-    /*
-     |-------------------------------------------------
-     | Karena frontend mengirim NULL (kosong),
-     | kita TIDAK pakai validasi in:sudah,belum
-     |-------------------------------------------------
-     */
-
-    $request->validate([
-        'validasiberkas2' => 'nullable',
-    ]);
-
-    // SIMPAN NULL (LOLOS)
-    $data->validasiberkas2 = null;
+    $request->validate(['validasiberkas2' => 'nullable']);
+    $data->validasiberkas2 = null; // Ini yang akan di-set
     $data->save();
 
-    // Flash message
     session()->flash('update', '✅ Permohonan Sudah Diajukan Kembali, Silahkan Menunggu Verifikasi DPUPR Kab Blora');
-
     return redirect()->back();
 }
 
