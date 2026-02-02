@@ -299,18 +299,33 @@ function previewPDF(event, containerId, iframeId, messageId) {
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
-    @else
-        <!-- BISA DIKLIK (belum atau NULL) -->
+    @elseif($data->validasiberkas2 === 'belum')
+        <!-- DIKEMBALIKAN (BISA DIKLIK UNTUK RESET KE NULL) -->
         <button class="button-merah"
                 type="button"
                 onclick="openModalPemohon2({{ $data->id }})"
-                style="background-color:#0400ff;color:black;">
-            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+                style="background-color:#0400ff;color:white;cursor:pointer;padding:8px 16px;border-radius:6px;border:none;">
+            <i class="bi bi-arrow-clockwise me-1"></i> Permohonan Ulang
         </button>
 
         <div class="mt-1">
             <small class="text-muted">
-                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan.
+                Status : Dikembalikan, Silahkan Klik Kembali Jika Semua Persyaratan Sudah Di Perbaiki !.
+            </small>
+        </div>
+
+    @else
+        <!-- VERIFIKASI DPUPR (NULL - TIDAK BISA DIKLIK KARENA SUDAH NULL) -->
+        <button class="button-modern"
+                type="button"
+                disabled
+                style="background-color:#f0f0f0;color:#999;cursor:not-allowed;padding:8px 16px;border-radius:6px;border:1px solid #ddd;">
+            <i class="bi bi-hourglass-split me-1"></i> Menunggu Verifikasi DPUPR
+        </button>
+
+        <div class="mt-1">
+            <small class="text-muted">
+                Status: Sedang menunggu verifikasi dari DPUPR
             </small>
         </div>
     @endif
@@ -319,18 +334,18 @@ function previewPDF(event, containerId, iframeId, messageId) {
 <script>
 function openModalPemohon2(itemId) {
     const modal = document.getElementById('confirmModalPemohon2');
-    const form  = document.getElementById('validasiFormPemohon2');
+    const form = document.getElementById('validasiFormPemohon2');
 
-    // set action form langsung ke route POST sesuai id
-    form.action = "/validasipembongkaranpemohon/" + itemId;
+    // Set action URL dengan method POST
+    form.action = "{{ route('validasipembongkaranpemohon.update', ':id') }}"
+                    .replace(':id', itemId);
 
     modal.style.display = "flex";
     document.body.style.overflow = 'hidden';
 }
 
 function closeModalPemohon2() {
-    const modal = document.getElementById('confirmModalPemohon2');
-    modal.style.display = "none";
+    document.getElementById('confirmModalPemohon2').style.display = "none";
     document.body.style.overflow = 'auto';
 }
 </script>
@@ -345,24 +360,30 @@ function closeModalPemohon2() {
                 width:90%;max-width:400px;text-align:center;">
 
         <p style="font-size:16px;font-weight:600;">
-            Apakah berkas sudah sesuai?
+            Ajukan ulang verifikasi berkas?
+        </p>
+
+        <p style="font-size:14px;color:#666;">
+            Status akan dikembalikan ke "Menunggu Verifikasi DPUPR"
         </p>
 
         <form id="validasiFormPemohon2" method="POST">
             @csrf
-            <!-- HAPUS @method('PUT') karena route POST -->
+            <!-- TIDAK PERLU @method('PUT') KARENA ROUTENYA POST -->
 
-            <input type="hidden" name="document_type" value="2">
-            <!-- KIRIM NULL (LOLOS) -->
+            <!-- Hapus document_type jika tidak diperlukan di controller -->
+            <!-- <input type="hidden" name="document_type" value="2"> -->
+
+            <!-- Kirim nilai null untuk validasiberkas2 -->
             <input type="hidden" name="validasiberkas2" value="">
 
             <button type="submit"
                     style="background:#10B981;color:white;
                            padding:8px 16px;margin-right:10px;
                            border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseover="this.style.backgroundColor='#059669';this.style.color='white';"
                     onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
+                <i class="bi bi-check2-circle me-1"></i> Ya, Ajukan Ulang
             </button>
         </form>
 
@@ -372,13 +393,12 @@ function closeModalPemohon2() {
                 onclick="closeModalPemohon2()"
                 style="background:#D1D5DB;padding:8px 16px;
                        border-radius:8px;border:none;color:black;cursor:pointer;"
-                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                onmouseover="this.style.backgroundColor='#9CA3AF';this.style.color='white';"
                 onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
 </div>
-
 
 
 {{-- <div class="card shadow-sm border-0 mt-5">
