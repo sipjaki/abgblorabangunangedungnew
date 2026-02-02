@@ -229,9 +229,9 @@
 @endcanany
 
 <!-- Surat Pemberitahuan (2) -->
-<div class="d-block position-relative" style="z-index:1;">
+<div class="d-block" style="position:relative; z-index:9999; pointer-events:auto;">
     @if($data->validasiberkas2 === 'sudah')
-        <!-- LOLOS (TIDAK BISA DIKLIK) -->
+        <!-- LOLOS -->
         <button type="button"
                 class="button-lolos"
                 disabled
@@ -241,17 +241,19 @@
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- DIKEMBALIKAN (BISA DIKLIK) -->
-        <div class="d-block" style="position:relative; z-index:9999;">
-    <button type="button"
-        class="button-dikembalikan"
-        onclick="openModalPemohon2({{ $data->id }})"
-        style="background-color:#0400ff;color:black;
-               position:relative;
-               z-index:9999;
-               pointer-events:auto;">
-        <i class="bi bi-x-circle me-1"></i> Dikembalikan
-    </button>
-</div>
+        <button type="button"
+                class="button-dikembalikan"
+                onclick="openModalPemohon2({{ $data->id }})"
+                style="
+                    background-color:#0400ff;
+                    color:black;
+                    position:relative;
+                    z-index:9999;
+                    pointer-events:auto;
+                ">
+            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        </button>
+
         <div class="mt-1">
             <small class="text-muted">
                 Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan diperbaiki.
@@ -259,7 +261,7 @@
         </div>
 
     @else
-        <!-- VERIFIKASI DPUPR (NULL) -->
+        <!-- VERIFIKASI -->
         <button type="button"
                 class="button-modern"
                 disabled
@@ -269,7 +271,6 @@
     @endif
 </div>
 
-<!-- ===================== JAVASCRIPT ===================== -->
 <script>
 function openModalPemohon2(itemId) {
     const modal = document.getElementById('confirmModalPemohon2');
@@ -291,23 +292,21 @@ function closeModalPemohon2() {
 }
 </script>
 
-<!-- ===================== MODAL ===================== -->
-<div id="confirmModalPemohon2"
-     style="display:none;
-            pointer-events:none;
-            position:fixed;
-            inset:0;
-            background-color:rgba(0,0,0,0.5);
-            z-index:1000;
-            justify-content:center;
-            align-items:center;">
 
-    <div style="background:white;
-                padding:24px;
-                border-radius:12px;
-                width:90%;
-                max-width:400px;
-                text-align:center;">
+<div id="confirmModalPemohon2"
+     style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background-color:rgba(0,0,0,0.5);
+        z-index:100000;
+        justify-content:center;
+        align-items:center;
+        pointer-events:none;
+     ">
+
+    <div style="background:white;padding:24px;border-radius:12px;
+                width:90%;max-width:400px;text-align:center;">
 
         <p style="font-size:16px;font-weight:600;">
             Apakah berkas sudah sesuai?
@@ -322,33 +321,24 @@ function closeModalPemohon2() {
 
             <button type="submit"
                     style="background:#10B981;color:white;
-                           padding:8px 16px;
-                           margin-right:10px;
-                           border-radius:8px;
-                           border:none;
-                           cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
+                           padding:8px 16px;border-radius:8px;
+                           border:none;cursor:pointer;">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
         </form>
 
-        <br><br>
+        <br>
 
         <button type="button"
                 onclick="closeModalPemohon2()"
-                style="background:#D1D5DB;
-                       padding:8px 16px;
-                       border-radius:8px;
-                       border:none;
-                       color:black;
-                       cursor:pointer;"
-                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
+                style="background:#D1D5DB;padding:8px 16px;
+                       border-radius:8px;border:none;cursor:pointer;">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
 </div>
+
+
         </div>
 
         <!-- Baris: 2 Kartu Utama -->
