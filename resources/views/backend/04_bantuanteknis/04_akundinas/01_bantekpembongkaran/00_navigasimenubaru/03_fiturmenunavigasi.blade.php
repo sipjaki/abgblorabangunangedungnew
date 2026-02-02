@@ -229,28 +229,22 @@
 @endcanany
 
 <!-- Surat Pemberitahuan (2) -->
-<div class="d-block" style="position:relative; z-index:9999; pointer-events:auto;">
+<div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
-        <!-- LOLOS -->
-        <button type="button"
-                class="button-lolos"
+        <!-- LOLOS (TIDAK BISA DIKLIK) -->
+        <button class="button-lolos"
+                type="button"
                 disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
-        <!-- DIKEMBALIKAN (BISA DIKLIK) -->
-        <button type="button"
-                class="button-dikembalikan"
+        <!-- DIKEMBALIKAN (MASIH BISA DIKLIK) -->
+        <button class="button-dikembalikan"
+                type="button"
                 onclick="openModalPemohon2({{ $data->id }})"
-                style="
-                    background-color:#0400ff;
-                    color:black;
-                    position:relative;
-                    z-index:9999;
-                    pointer-events:auto;
-                ">
+                style="background-color:#0400ff;color:black;">
             <i class="bi bi-x-circle me-1"></i> Dikembalikan
         </button>
 
@@ -261,16 +255,15 @@
         </div>
 
     @else
-        <!-- VERIFIKASI -->
-        <button type="button"
-                class="button-modern"
+        <!-- VERIFIKASI DPUPR (NULL) -->
+        <button class="button-modern"
+                type="button"
                 disabled
                 style="color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
         </button>
     @endif
 </div>
-
 <script>
 function openModalPemohon2(itemId) {
     const modal = document.getElementById('confirmModalPemohon2');
@@ -280,30 +273,20 @@ function openModalPemohon2(itemId) {
                     .replace(':id', itemId);
 
     modal.style.display = "flex";
-    modal.style.pointerEvents = "auto";
     document.body.style.overflow = 'hidden';
 }
 
 function closeModalPemohon2() {
-    const modal = document.getElementById('confirmModalPemohon2');
-    modal.style.display = "none";
-    modal.style.pointerEvents = "none";
+    document.getElementById('confirmModalPemohon2').style.display = "none";
     document.body.style.overflow = 'auto';
 }
 </script>
 
-
+<!-- Modal Surat Pemberitahuan (2) -->
 <div id="confirmModalPemohon2"
-     style="
-        display:none;
-        position:fixed;
-        inset:0;
-        background-color:rgba(0,0,0,0.5);
-        z-index:100000;
-        justify-content:center;
-        align-items:center;
-        pointer-events:none;
-     ">
+     style="display:none;position:fixed;inset:0;
+            background-color:rgba(0,0,0,0.5);
+            z-index:1000;justify-content:center;align-items:center;">
 
     <div style="background:white;padding:24px;border-radius:12px;
                 width:90%;max-width:400px;text-align:center;">
@@ -317,22 +300,28 @@ function closeModalPemohon2() {
             @method('PUT')
 
             <input type="hidden" name="document_type" value="2">
+
+            <!-- KIRIM NULL (LOLOS) -->
             <input type="hidden" name="validasiberkas2" value="">
 
             <button type="submit"
                     style="background:#10B981;color:white;
-                           padding:8px 16px;border-radius:8px;
-                           border:none;cursor:pointer;">
+                           padding:8px 16px;margin-right:10px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
         </form>
 
-        <br>
+        <br><br>
 
         <button type="button"
                 onclick="closeModalPemohon2()"
                 style="background:#D1D5DB;padding:8px 16px;
-                       border-radius:8px;border:none;cursor:pointer;">
+                       border-radius:8px;border:none;color:black;cursor:pointer;"
+                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
