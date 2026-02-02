@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <hr>
 
-<form action="{{ route('validasiinformasipemilikbangunan', $data->id) }}" method="POST">
+<form action="{{ route('validasidetailbangunangedung', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
                     <!-- /.card-header -->
