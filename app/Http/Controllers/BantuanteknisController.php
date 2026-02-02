@@ -6879,24 +6879,32 @@ public function perbaikaninformasipemilik($namabangunan, $id)
     );
 }
 
-
 public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 {
-    // Ambil record lama
-    $data = bantekpembongkarannew1::findOrFail($id);
+    // ==========================
+    // AMBIL DATA ANAK + RELASI INDUK
+    // ==========================
+    $data = bantekpembongkarannew1::with('induk')->findOrFail($id);
 
-    // Validasi
+    // ==========================
+    // VALIDASI
+    // ==========================
     $validated = $request->validate([
         'namalengkap' => 'nullable|string|max:255',
         'jabatan' => 'nullable|string|max:255',
         'alamatpemilik' => 'nullable|string',
         'notelepon' => 'nullable|string|max:50',
+
         'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'kib' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
         'luastanah' => 'nullable|numeric',
         'statustanah' => 'nullable|string|max:255',
         'namapemeganghak' => 'nullable|string|max:255',
-        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'legalitasbangunan' => 'nullable|string|max:255',
         'nomorpbg' => 'nullable|string|max:255',
         'pemilikbangunan' => 'nullable|string|max:255',
@@ -6914,27 +6922,34 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'tanggalrenovasi' => 'nullable|date',
         'nilaibangunanbaru' => 'nullable|numeric',
         'nilaibangunanlama' => 'nullable|numeric',
-        'kib' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
         'apakahadapbg' => 'nullable|string|max:255',
-        'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'nosurat' => 'nullable|string|max:255',
         'tanggalsurat' => 'nullable|date',
-        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
     ]);
 
     // ==========================
     // UPLOAD FILE
     // ==========================
     $fileFields = [
-        'ktp', 'sk', 'sertifikattanah', 'kib', 'pbg', 'suratpermohonan', 'suratkesanggupan'
+        'ktp',
+        'sk',
+        'sertifikattanah',
+        'kib',
+        'pbg',
+        'suratpermohonan',
+        'suratkesanggupan'
     ];
 
     $publicPath = public_path('bantekpembongkaran');
-    if (!file_exists($publicPath)) mkdir($publicPath, 0777, true);
+    if (!file_exists($publicPath)) {
+        mkdir($publicPath, 0777, true);
+    }
 
     foreach ($fileFields as $field) {
         if ($request->hasFile($field)) {
-            // Hapus file lama jika ada
+
+            // hapus file lama
             if (!empty($data->$field) && file_exists(public_path($data->$field))) {
                 unlink(public_path($data->$field));
             }
@@ -6942,20 +6957,36 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
             $file = $request->file($field);
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move($publicPath, $filename);
+
             $validated[$field] = 'bantekpembongkaran/' . $filename;
         }
     }
 
     // ==========================
-    // UPDATE RECORD
+    // UPDATE DATA
     // ==========================
     $data->update($validated);
 
-    // Redirect kembali
-return redirect()->back()->with('update', 'Perbaikan Berkas Berhasil!');
+    // ==========================
+    // AMBIL DATA INDUK (BUKAN DARI FORM)
+    // ==========================
+    $induk = $data->induk;
 
+    if (!$induk) {
+        return redirect()->back()->with('error', 'Data induk tidak ditemukan');
     }
 
+    // ==========================
+    // REDIRECT KE SHOW
+    // ==========================
+    return redirect()->route(
+        'bebantekpembongkaranshow',
+        [
+            'namapemilik' => Str::slug($induk->namapemilik),
+            'id' => $induk->id
+        ]
+    )->with('update', 'Perbaikan Berkas Berhasil!');
+}
 
     public function berkaskonsultasiPembongkaran($id)
 {
