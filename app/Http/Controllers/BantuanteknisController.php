@@ -6982,11 +6982,10 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     return redirect()->route(
     'bebantekpembongkaranshow',
     [
-        'namapemilik' => Str::slug($induk->namapemilik),
+        'namapemilik' => urlencode($induk->namapemilik),
         'id' => $induk->id
     ]
 )->with('update', 'Perbaikan Berkas Berhasil!');
-
 }
 
     public function berkaskonsultasiPembongkaran($id)
