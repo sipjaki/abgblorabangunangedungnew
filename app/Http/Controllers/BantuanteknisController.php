@@ -7254,6 +7254,7 @@ public function bebantekbangunanbongkarcrnew(Request $request)
 
 public function perbaikandetailbangunangedung($pelaksana, $id)
 {
+    // Decode dari URL (Sekolah+Mba+fanina -> Sekolah Mba fanina)
     $pelaksana = urldecode($pelaksana);
 
     $data = bantekpembongkarannew2::withTrashed()
@@ -7261,7 +7262,11 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
         ->where('id', $id)
         ->firstOrFail();
 
-    if (!$data->induk2 || Str::slug($data->induk2->pelaksana) !== $pelaksana) {
+    // VALIDASI RELASI + NAMA ASLI (BUKAN SLUG)
+    if (
+        !$data->induk2 ||
+        trim($data->induk2->pelaksana) !== trim($pelaksana)
+    ) {
         abort(404);
     }
 
