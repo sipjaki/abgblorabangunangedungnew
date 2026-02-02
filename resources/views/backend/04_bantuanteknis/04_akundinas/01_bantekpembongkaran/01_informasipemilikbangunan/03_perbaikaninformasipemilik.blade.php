@@ -529,18 +529,12 @@ function previewSurat(input) {
         </div>
 
         {{-- DATA LAMA --}}
-        <div class="mb-3">
-    <label class="form-label">
-        <i class="bi bi-chat-square-text"></i> Pernyataan
-    </label>
-
-    <textarea name="pilihansanggup"
-              class="form-control"
-              rows="4"
-              placeholder="Masukkan pernyataan..."
-    >{{ old('pilihansanggup', $data->pilihansanggup ?? '') }}</textarea>
-</div>
-
+        <div class="mb-2">
+            <span class="badge bg-secondary">Data Lama</span><br>
+            <strong>
+                {{ $data->pilihansanggup ?? 'Data Tidak Ditemukan' }}
+            </strong>
+        </div>
 
     </div>
 
@@ -700,6 +694,59 @@ function previewSK(input) {
 
 
             </div>
+
+            <!-- DATA TANAH -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-globe-asia-australia"></i> DATA TANAH
+                </div>
+                <div class="section-content">
+    <div class="row g-4">
+
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-rulers"></i> Luas Tanah (m²)</div>
+                <input type="text" name="luastanah" class="form-control"
+                       value="{{ old('luastanah', $data->luastanah) }}">
+            </div>
+        </div>
+
+        {{-- Status Tanah --}}
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-tags"></i> Status Tanah</div>
+                <input type="text" name="statustanah" class="form-control"
+                       value="{{ old('statustanah', $data->statustanah) }}">
+            </div>
+        </div>
+
+        {{-- Nama Pemegang Hak --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-person-check"></i> Nama Pemegang Hak</div>
+                <input type="text" name="namapemeganghak" class="form-control"
+                       value="{{ old('namapemeganghak', $data->namapemeganghak) }}">
+            </div>
+        </div>
+
+        {{-- Sertifikat Tanah --}}
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-break"></i> Sertifikat Tanah (PDF)</div>
+
+                {{-- Preview Lama --}}
+                @if($data->sertifikattanah)
+                    <iframe id="frame-sertifikat-lama" src="{{ asset('public/' . $data->sertifikattanah) }}" width="100%" height="200px"></iframe>
+                @endif
+
+                {{-- Preview Baru --}}
+                <iframe id="frame-sertifikat-baru" style="display:none;" width="100%" height="200px"></iframe>
+
+                <input type="file" name="sertifikattanah" class="form-control" accept="application/pdf"
+                       onchange="previewSertifikat(this)">
+            </div>
+        </div>
 
     </div>
 </div>
@@ -931,9 +978,9 @@ function previewSK(input) {
     <div class="row g-4">
 
         {{-- KIB --}}
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label"><i class="bi bi-file-zip"></i> Kartu Inventaris Barang (KIB)</div>
+                <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
 
                 @if($data->kib)
                     <iframe id="frame-kib-lama" src="{{ asset('public/' . $data->kib) }}" style="width:100%;height:300px;"></iframe>
@@ -949,7 +996,7 @@ function previewSK(input) {
         </div>
 
         {{-- Apakah Ada PBG --}}
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="data-card">
                 <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
                 <select name="apakahadapbg" class="form-select">
@@ -961,7 +1008,7 @@ function previewSK(input) {
         </div>
 
         {{-- PBG --}}
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="data-card">
                 <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
 
