@@ -265,7 +265,7 @@
 
         <form method="POST" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
             @csrf
-            <!-- HAPUS @method('PUT') karena route POST -->
+            <!-- HAPUS @method('POST') karena route POST -->
             <input type="hidden" name="document_type" value="2">
             <input type="hidden" name="validasiberkas2" value="">
 
