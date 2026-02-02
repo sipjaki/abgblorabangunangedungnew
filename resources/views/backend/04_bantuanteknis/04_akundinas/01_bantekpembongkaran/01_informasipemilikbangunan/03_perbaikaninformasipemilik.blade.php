@@ -530,7 +530,7 @@ function previewSurat(input) {
 
         {{-- DATA LAMA --}}
         <div class="mb-2">
-            <span class="badge bg-secondary">Data Lama</span><br>
+            <span class="badge bg-secondary">Isi Pernyataan</span><br>
             <strong>
                 {{ $data->pilihansanggup ?? 'Data Tidak Ditemukan' }}
             </strong>
@@ -941,7 +941,7 @@ function previewSK(input) {
     <div class="row g-4">
 
         {{-- KIB --}}
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="data-card">
                 <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
 
@@ -959,7 +959,7 @@ function previewSK(input) {
         </div>
 
         {{-- Apakah Ada PBG --}}
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="data-card">
                 <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
                 <select name="apakahadapbg" class="form-select">
@@ -971,7 +971,7 @@ function previewSK(input) {
         </div>
 
         {{-- PBG --}}
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="data-card">
                 <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
 
