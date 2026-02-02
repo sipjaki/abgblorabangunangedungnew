@@ -271,7 +271,7 @@
     <div style="background:white; padding:24px; border-radius:12px; width:90%; max-width:400px; text-align:center;">
         <p style="font-size:16px;font-weight:600;">Apakah berkas sudah sesuai?</p>
 
-        <form id="validasiFormPemohon2" method="POST" action="{{ route('validasipembongkaranpemohon.store') }}">
+        <form id="validasiFormPemohon2" method="POST" action="{{ route('validasipembongkaranpemohon.update') }}">
             @csrf
             <input type="hidden" name="document_type" value="2">
             <input type="hidden" name="validasiberkas2" value="sudah">
