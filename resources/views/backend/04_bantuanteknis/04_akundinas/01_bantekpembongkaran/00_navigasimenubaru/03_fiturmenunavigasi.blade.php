@@ -263,9 +263,9 @@
     <div class="modal-content p-4">
         <h5 class="modal-title mb-3">Apakah berkas sudah sesuai?</h5>
 
-        <form method="POST" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
+        <form method="PUT" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
             @csrf
-            <!-- HAPUS @method('POST') karena route POST -->
+            @method('PUT')
             <input type="hidden" name="document_type" value="2">
             <input type="hidden" name="validasiberkas2" value="">
 
