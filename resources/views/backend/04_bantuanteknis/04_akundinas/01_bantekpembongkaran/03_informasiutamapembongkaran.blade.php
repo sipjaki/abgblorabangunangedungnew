@@ -269,99 +269,6 @@
 </a>
 
 
-<!-- Surat Pemberitahuan (2) -->
-<div class="d-block">
-    @if($data->validasiberkas2 === 'sudah')
-        <!-- 1. SUDAH LOLOS (TIDAK BISA DIKLIK) -->
-        <button class="button-hijau" type="button" disabled style="cursor: not-allowed;">
-            <i class="bi bi-patch-check-fill me-1"></i> Lolos Administrasi
-        </button>
-
-    @elseif($data->validasiberkas2 === 'belum')
-        <!-- 2. DIKEMBALIKAN (BISA DIKLIK) -->
-        <form id="formAjukanUlang-{{ $data->id }}"
-              method="POST"
-              action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
-            @csrf
-            <input type="hidden" name="validasiberkas2" value="">
-
-            <button type="button"
-                    class="button-merah"
-                    onclick="submitFormAjukanUlang({{ $data->id }})">
-                <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
-            </button>
-        </form>
-
-    @else
-        <!-- 3. NULL/KOSONG (TIDAK BISA DIKLIK) -->
-        <button class="button-modern" type="button" disabled style="cursor: not-allowed;">
-            <i class="bi bi-hourglass-split me-1"></i> Menunggu DPUPR Kab Blora
-        </button>
-    @endif
-</div>
-
-<!-- Modal Konfirmasi (SIMPLE) -->
-<div id="modalKonfirmasi" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">
-            Konfirmasi Pengajuan Ulang
-        </p>
-        <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
-            Apakah Anda yakin ingin mengajukan ulang berkas ini?
-        </p>
-
-        <div>
-            <button type="button"
-                    onclick="konfirmasiAjukanUlang()"
-                    style="background: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; margin-right: 10px;">
-                <i class="bi bi-check2-circle me-1"></i> Ya, Ajukan Ulang
-            </button>
-
-            <button type="button"
-                    onclick="batalAjukanUlang()"
-                    style="background: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-// Variabel global untuk menyimpan ID yang akan disubmit
-let currentFormId = null;
-
-// Fungsi untuk menampilkan modal konfirmasi
-function submitFormAjukanUlang(itemId) {
-    currentFormId = itemId;
-    document.getElementById('modalKonfirmasi').style.display = 'flex';
-}
-
-// Fungsi konfirmasi - submit form
-function konfirmasiAjukanUlang() {
-    if (currentFormId) {
-        document.getElementById('formAjukanUlang-' + currentFormId).submit();
-    }
-    tutupModal();
-}
-
-// Fungsi batal - tutup modal
-function batalAjukanUlang() {
-    tutupModal();
-}
-
-// Fungsi tutup modal
-function tutupModal() {
-    document.getElementById('modalKonfirmasi').style.display = 'none';
-    currentFormId = null;
-}
-
-// Optional: Tambahkan event listener untuk tutup modal dengan ESC
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        tutupModal();
-    }
-});
-</script>
 <script>
 function previewPDF(event, containerId, iframeId, messageId) {
     const file = event.target.files[0];
@@ -384,6 +291,101 @@ function previewPDF(event, containerId, iframeId, messageId) {
 </script>
 
 
+
+<!-- Surat Pemberitahuan (2) -->
+<div class="d-block">
+    @if($data->validasiberkas2 === 'sudah')
+        <!-- 1. SUDAH LOLOS (TIDAK BISA DIKLIK) -->
+        <button class="button-hijau" type="button" disabled>
+            <i class="bi bi-patch-check-fill me-1"></i> Lolos Administrasi
+        </button>
+
+    @elseif($data->validasiberkas2 === 'belum')
+        <!-- 2. DIKEMBALIKAN (BISA DIKLIK UNTUK RESET KE NULL) -->
+        <form method="POST" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}" id="formReset-{{ $data->id }}">
+            @csrf
+            <input type="hidden" name="validasiberkas2" value="">
+
+            <button type="button"
+                    class="button-merah"
+                    onclick="konfirmasiReset({{ $data->id }})">
+                <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
+            </button>
+        </form>
+
+    @else
+        <!-- 3. NULL/KOSONG (TIDAK BISA DIKLIK) -->
+        <button class="button-modern" type="button" disabled>
+            <i class="bi bi-hourglass-split me-1"></i> Menunggu DPUPR Kab Blora
+        </button>
+    @endif
+</div>
+
+<!-- Modal Konfirmasi -->
+<div id="modalKonfirmasiReset" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:24px; border-radius:12px; width:90%; max-width:400px; box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+        <p style="font-size:18px; font-weight:600; margin-bottom:8px; color:#333;">
+            Konfirmasi Pengajuan Ulang
+        </p>
+        <p style="font-size:14px; color:#666; margin-bottom:20px;">
+            Apakah Anda yakin ingin mengajukan ulang berkas ini?
+        </p>
+
+        <div style="text-align:right;">
+            <button type="button"
+                    onclick="prosesReset()"
+                    style="background:#28a745; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500; margin-right:10px;">
+                <i class="bi bi-check-circle me-1"></i> Ya, Ajukan Ulang
+            </button>
+
+            <button type="button"
+                    onclick="tutupModalReset()"
+                    style="background:#6c757d; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500;">
+                <i class="bi bi-x-circle me-1"></i> Batal
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Variabel untuk menyimpan ID yang akan direset
+let idUntukReset = null;
+
+// Fungsi untuk tampilkan modal konfirmasi
+function konfirmasiReset(id) {
+    idUntukReset = id;
+    document.getElementById('modalKonfirmasiReset').style.display = 'flex';
+}
+
+// Fungsi untuk proses reset
+function prosesReset() {
+    if (idUntukReset) {
+        // Submit form dengan ID yang sesuai
+        document.getElementById('formReset-' + idUntukReset).submit();
+    }
+    tutupModalReset();
+}
+
+// Fungsi untuk tutup modal
+function tutupModalReset() {
+    document.getElementById('modalKonfirmasiReset').style.display = 'none';
+    idUntukReset = null;
+}
+
+// Tutup modal jika klik di luar area konten
+document.getElementById('modalKonfirmasiReset').addEventListener('click', function(event) {
+    if (event.target === this) {
+        tutupModalReset();
+    }
+});
+
+// Tutup modal dengan tombol ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        tutupModalReset();
+    }
+});
+</script>
 
 
 {{-- <div class="card shadow-sm border-0 mt-5">
