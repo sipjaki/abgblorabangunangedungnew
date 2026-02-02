@@ -537,6 +537,7 @@ function previewSurat(input) {
     <textarea name="pilihansanggup"
               class="form-control"
               rows="4"
+              placeholder="Masukkan pernyataan..."
     >{{ old('pilihansanggup', $data->pilihansanggup ?? '') }}</textarea>
 </div>
 
@@ -700,12 +701,10 @@ function previewSK(input) {
 
             </div>
 
-            <!-- DATA TANAH -->
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-globe-asia-australia"></i> DATA TANAH
-                </div>
-                <div class="section-content">
+    </div>
+</div>
+
+<div class="section-content">
     <div class="row g-4">
 
         {{-- Luas Tanah --}}
@@ -755,7 +754,6 @@ function previewSK(input) {
 
     </div>
 </div>
-
 
             </div>
 
