@@ -229,15 +229,16 @@
 @endcanany
 
 <!-- Surat Pemberitahuan (2) -->
-
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
+        <!-- LOLOS (TIDAK BISA DIKLIK) -->
         <button class="button-lolos" type="button" disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
+        <!-- DIKEMBALIKAN (BISA DIKLIK) -->
         <button class="button-dikembalikan" type="button"
                 data-bs-toggle="modal" data-bs-target="#confirmModalPemohon2"
                 style="background-color:#0400ff;color:black;">
@@ -251,6 +252,7 @@
         </div>
 
     @else
+        <!-- VERIFIKASI DPUPR (NULL) -->
         <button class="button-modern" type="button" disabled
                 style="color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
@@ -258,6 +260,7 @@
     @endif
 </div>
 
+<!-- ================= MODAL ================= -->
 <div class="modal fade" id="confirmModalPemohon2" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content p-3">
@@ -286,7 +289,6 @@
     </div>
   </div>
 </div>
-
 
 
         </div>
