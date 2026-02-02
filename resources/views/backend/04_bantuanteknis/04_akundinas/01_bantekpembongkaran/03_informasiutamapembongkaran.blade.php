@@ -295,7 +295,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
         <button class="button-hijau"
                 type="button"
                 disabled
-                style="background-color:#10B981;color:black;cursor:not-allowed;">
+                style="background-color:#10B981;color:black;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
