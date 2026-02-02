@@ -250,7 +250,7 @@
 
         <div class="mt-1">
             <small class="text-muted">
-                Keterangan: Silakan klik tombol ini jika sudah memperbaiki berkas persyaratan.
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan.
             </small>
         </div>
 

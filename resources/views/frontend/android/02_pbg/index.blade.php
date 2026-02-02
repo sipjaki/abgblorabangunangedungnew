@@ -3,51 +3,42 @@
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
 <div class="w-full h-[190] absolute top-0 overflow-hidden">
-  <img src="/assets/android/iconmenu/halamanabg.jpg" alt="Bangunan Blora" class="w-full h-full object-cover" />
+  <img src="/assets/android/iconmenu/temabaru.png" alt="Bangunan Blora" class="w-full h-full object-cover" />
 </div>
 
-     <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
-
-<div style="
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  padding: 20px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-">
+      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
+<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
-  <div style="width: 42px; height: 42px; flex-shrink: 0;">
-    <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" style="width: 100%; height: 100%; object-fit: contain;">
-  </div>
+  <a href="signup.html" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
+    </div>
+  </a>
 
   <!-- Teks Tengah -->
-  <p style="
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 22px;
-    color: #000;
-    text-align: center;
-    margin: 0;
-    flex: 1;
-  ">
-    Dinas Pekerjaan Umum <br>
-    Dan Penataan Ruang <br>
-    Kabupaten Blora
-  </p>
+  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
+        ABG Blora Bangunan Gedung
+      </p> --}}
+      <div class="flex items-center justify-center sm:justify-start">
+        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
+          Dinas Pekerjaan Umum Dan
+          <br> Penataan Ruang <br> Kabupaten Blora
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Logo Kanan -->
-  <div style="width: 42px; height: 42px; flex-shrink: 0;">
-    <img src="/assets/abgblora/logo/pupr.png" alt="icon" style="width: 100%; height: 100%; object-fit: contain;">
-  </div>
-</div>
+  <a href="" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
+    </div>
+  </a>
+</nav>
+
+      </div>
 
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
         {{-- <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]"> --}}
