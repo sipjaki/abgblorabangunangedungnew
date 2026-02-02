@@ -288,7 +288,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
 }
 </script>
 
-
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
@@ -311,7 +310,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
         <div class="mt-1">
             <small class="text-muted">
-                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan.
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan lengkap.
             </small>
         </div>
 
@@ -325,44 +324,21 @@ function previewPDF(event, containerId, iframeId, messageId) {
         </button>
     @endif
 </div>
-<script>
-function openModalPemohon2(itemId) {
-    const modal = document.getElementById('confirmModalPemohon2');
-    const form  = document.getElementById('validasiFormPemohon2');
-
-    form.action = "{{ route('validasipembongkaranpemohon.update', ':id') }}"
-                    .replace(':id', itemId);
-
-    modal.style.display = "flex";
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModalPemohon2() {
-    document.getElementById('confirmModalPemohon2').style.display = "none";
-    document.body.style.overflow = 'auto';
-}
-</script>
 
 <!-- Modal Surat Pemberitahuan (2) -->
 <div id="confirmModalPemohon2"
      style="display:none;position:fixed;inset:0;
             background-color:rgba(0,0,0,0.5);
             z-index:1000;justify-content:center;align-items:center;">
-
     <div style="background:white;padding:24px;border-radius:12px;
                 width:90%;max-width:400px;text-align:center;">
-
         <p style="font-size:16px;font-weight:600;">
             Apakah berkas sudah sesuai?
         </p>
 
         <form id="validasiFormPemohon2" method="POST">
             @csrf
-            @method('PUT')
-
             <input type="hidden" name="document_type" value="2">
-
-            <!-- KIRIM NULL (LOLOS) -->
             <input type="hidden" name="validasiberkas2" value="">
 
             <button type="submit"
@@ -387,6 +363,26 @@ function closeModalPemohon2() {
         </button>
     </div>
 </div>
+
+<script>
+function openModalPemohon2(itemId) {
+    const modal = document.getElementById('confirmModalPemohon2');
+    const form  = document.getElementById('validasiFormPemohon2');
+
+    // Set action form ke route POST Laravel
+    form.action = "/validasipembongkaranpemohon/" + itemId;
+
+    modal.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalPemohon2() {
+    const modal = document.getElementById('confirmModalPemohon2');
+    modal.style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+</script>
+
 
 
 {{-- <div class="card shadow-sm border-0 mt-5">
