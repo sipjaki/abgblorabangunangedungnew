@@ -1,4 +1,5 @@
-@canany(['superadmin', 'admin'])
+{{-- @canany(['superadmin', 'admin']) --}}
+@canany(['admindinas'])
 
 
 {{-- <table class="table table-bordered" style="font-size: 13px; text-align: center;">
