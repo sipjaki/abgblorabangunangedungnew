@@ -229,18 +229,22 @@
 @endcanany
 
 <!-- Surat Pemberitahuan (2) -->
-<!-- ================= BUTTON VALIDASI ================= -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
-        <button type="button" class="button-hijau" disabled>
+        <!-- LOLOS (TIDAK BISA DIKLIK) -->
+        <button class="button-hijau"
+                type="button"
+                disabled
+                style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
-        <button type="button"
-                class="button-merah"
-                data-bs-toggle="modal"
-                data-bs-target="#confirmModalPemohon2">
+        <!-- DIKEMBALIKAN (MASIH BISA DIKLIK) -->
+        <button class="button-merah"
+                type="button"
+                onclick="openModalPemohon2({{ $data->id }})"
+                style="background-color:#0400ff;color:black;">
             <i class="bi bi-x-circle me-1"></i> Dikembalikan
         </button>
 
@@ -251,52 +255,77 @@
         </div>
 
     @else
-        <button type="button" class="button-modern" disabled>
+        <!-- VERIFIKASI DPUPR (NULL) -->
+        <button class="button-modern"
+                type="button"
+                disabled
+                style="color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
         </button>
     @endif
 </div>
+<script>
+function openModalPemohon2(itemId) {
+    const modal = document.getElementById('confirmModalPemohon2');
+    const form  = document.getElementById('validasiFormPemohon2');
 
-<!-- ================== MODAL BOOTSTRAP ================== -->
-<div class="modal fade" id="confirmModalPemohon2" tabindex="-1" aria-labelledby="confirmModalPemohon2Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmModalPemohon2Label">Apakah berkas sudah sesuai?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
+    form.action = "{{ route('validasipembongkaranpemohon.update', ':id') }}"
+                    .replace(':id', itemId);
+
+    modal.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalPemohon2() {
+    document.getElementById('confirmModalPemohon2').style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+</script>
+
+<!-- Modal Surat Pemberitahuan (2) -->
+<div id="confirmModalPemohon2"
+     style="display:none;position:fixed;inset:0;
+            background-color:rgba(0,0,0,0.5);
+            z-index:1000;justify-content:center;align-items:center;">
+
+    <div style="background:white;padding:24px;border-radius:12px;
+                width:90%;max-width:400px;text-align:center;">
+
+        <p style="font-size:16px;font-weight:600;">
+            Apakah berkas sudah sesuai?
+        </p>
+
         <form id="validasiFormPemohon2" method="POST">
             @csrf
             @method('PUT')
+
             <input type="hidden" name="document_type" value="2">
+
+            <!-- KIRIM NULL (LOLOS) -->
             <input type="hidden" name="validasiberkas2" value="">
-            <button type="submit" class="btn btn-success">
+
+            <button type="submit"
+                    style="background:#10B981;color:white;
+                           padding:8px 16px;margin-right:10px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+        <br><br>
+
+        <button type="button"
+                onclick="closeModalPemohon2()"
+                style="background:#D1D5DB;padding:8px 16px;
+                       border-radius:8px;border:none;color:black;cursor:pointer;"
+                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
-      </div>
     </div>
-  </div>
 </div>
-
-<!-- ================= SCRIPT UPDATE FORM ACTION ================= -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var modal = document.getElementById('confirmModalPemohon2');
-    modal.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget;
-        var itemId = {{ $data->id }}; // bisa diganti kalau modal untuk banyak item
-        var form = document.getElementById('validasiFormPemohon2');
-        form.action = "{{ route('validasipembongkaranpemohon.update', ':id') }}".replace(':id', itemId);
-    });
-});
-</script>
 
 
         </div>
