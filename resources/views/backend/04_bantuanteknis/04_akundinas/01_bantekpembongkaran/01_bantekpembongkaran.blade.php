@@ -126,7 +126,7 @@
                 @can('admindpupr')
                 <div style="position: relative; display: inline-block; margin-right:10px;">
                     <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                    <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                    <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                 </div>
                 @endcan
                         <script>
@@ -162,7 +162,7 @@
     </a>
     @endcanany --}}
 
-                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
+                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_bantuanteknispembongkaran')"
                                     class="button-baru" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
