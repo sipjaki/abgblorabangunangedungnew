@@ -261,89 +261,12 @@
 @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi')
 </div>
 
-<!-- Surat Pemberitahuan (2) -->
-<div class="d-block">
-    @if($data->validasiberkas2 === 'sudah')
-        <!-- LOLOS (TIDAK BISA DIKLIK) -->
-        <button type="button"
-                disabled
-                style="background-color:#10B981;color:black;cursor:not-allowed;padding:8px 16px;border-radius:8px;border:none;">
-            <i class="bi bi-patch-check-fill me-1"></i> Lolos
-        </button>
-    @else
-        <!-- BISA DIKLIK (belum atau NULL) -->
-        <button type="button"
-                onclick="openModalPemohon2({{ $data->id }})"
-                style="background-color:#0400ff;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;position:relative;z-index:1100;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='#0400ff';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-            <i class="bi bi-x-circle me-1"></i> Ajukan Kembali
-        </button>
-
-        <div class="mt-1">
-            <small class="text-muted">
-                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan lengkap.
-            </small>
-        </div>
-    @endif
-</div>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmModalPemohon2"
-     style="display:none;position:fixed;inset:0;background-color:rgba(0,0,0,0.5);
-            z-index:1200;justify-content:center;align-items:center;display:flex;flex-direction:column;">
-    <div style="background:white;padding:24px;border-radius:12px;width:90%;max-width:400px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
-        <p style="font-size:16px;font-weight:600;">Apakah berkas sudah sesuai?</p>
-
-        <form id="validasiFormPemohon2" method="POST">
-            @csrf
-            <input type="hidden" name="validasiberkas2" value="">
-
-            <button type="submit"
-                    style="background:#10B981;color:white;padding:8px 16px;margin-right:10px;border-radius:8px;border:none;cursor:pointer;"
-                    onmouseover="this.style.backgroundColor='white';this.style.color='#10B981';"
-                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
-        </form>
-
-        <br>
-
-        <button type="button"
-                onclick="closeModalPemohon2()"
-                style="background:#D1D5DB;padding:8px 16px;border-radius:8px;border:none;color:black;cursor:pointer;"
-                onmouseover="this.style.backgroundColor='white';this.style.color='#6B7280';"
-                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
-    </div>
-</div>
-
-<script>
-function openModalPemohon2(itemId) {
-    const modal = document.getElementById('confirmModalPemohon2');
-    const form  = document.getElementById('validasiFormPemohon2');
-
-    // Set action form sesuai route POST Laravel
-    form.action = "/validasipembongkaranpemohon/" + itemId;
-
-    modal.style.display = "flex";
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModalPemohon2() {
-    const modal = document.getElementById('confirmModalPemohon2');
-    modal.style.display = "none";
-    document.body.style.overflow = 'auto';
-}
-</script>
 
 </div>
     <a href="/bebantekpembongkaran" class="button-berkas">
     <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
     Kembali Ke Data Awal</strong>
 </a>
-
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
     const file = event.target.files[0];
@@ -365,6 +288,96 @@ function previewPDF(event, containerId, iframeId, messageId) {
 }
 </script>
 
+<!-- Surat Pemberitahuan (2) -->
+<div class="d-block">
+    @if($data->validasiberkas2 === 'sudah')
+        <!-- LOLOS (TIDAK BISA DIKLIK) -->
+        <button class="button-hijau"
+                type="button"
+                disabled
+                style="background-color:#10B981;color:black;cursor:not-allowed;">
+            <i class="bi bi-patch-check-fill me-1"></i> Lolos
+        </button>
+
+    @else
+        <!-- BISA DIKLIK (belum atau NULL) -->
+        <button class="button-merah"
+                type="button"
+                onclick="openModalPemohon2({{ $data->id }})"
+                style="background-color:#0400ff;color:black;">
+            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        </button>
+
+        <div class="mt-1">
+            <small class="text-muted">
+                Keterangan: Silakan klik tombol ini setelah seluruh berkas persyaratan.
+            </small>
+        </div>
+    @endif
+</div>
+
+<script>
+function openModalPemohon2(itemId) {
+    const modal = document.getElementById('confirmModalPemohon2');
+    const form  = document.getElementById('validasiFormPemohon2');
+
+    // set action form langsung ke route POST sesuai id
+    form.action = "/validasipembongkaranpemohon/" + itemId;
+
+    modal.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalPemohon2() {
+    const modal = document.getElementById('confirmModalPemohon2');
+    modal.style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+</script>
+
+<!-- Modal Surat Pemberitahuan (2) -->
+<div id="confirmModalPemohon2"
+     style="display:none;position:fixed;inset:0;
+            background-color:rgba(0,0,0,0.5);
+            z-index:1000;justify-content:center;align-items:center;">
+
+    <div style="background:white;padding:24px;border-radius:12px;
+                width:90%;max-width:400px;text-align:center;">
+
+        <p style="font-size:16px;font-weight:600;">
+            Apakah berkas sudah sesuai?
+        </p>
+
+        <form id="validasiFormPemohon2" method="POST">
+            @csrf
+            <!-- HAPUS @method('PUT') karena route POST -->
+
+            <input type="hidden" name="document_type" value="2">
+            <!-- KIRIM NULL (LOLOS) -->
+            <input type="hidden" name="validasiberkas2" value="">
+
+            <button type="submit"
+                    style="background:#10B981;color:white;
+                           padding:8px 16px;margin-right:10px;
+                           border-radius:8px;border:none;cursor:pointer;"
+                    onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#10B981';this.style.color='white';">
+                <i class="bi bi-check2-circle me-1"></i> Sudah
+            </button>
+        </form>
+
+        <br><br>
+
+        <button type="button"
+                onclick="closeModalPemohon2()"
+                style="background:#D1D5DB;padding:8px 16px;
+                       border-radius:8px;border:none;color:black;cursor:pointer;"
+                onmouseover="this.style.backgroundColor='white';this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#D1D5DB';this.style.color='black';">
+            <i class="bi bi-x-circle me-1"></i> Batal
+        </button>
+    </div>
+</div>
 
 
 
