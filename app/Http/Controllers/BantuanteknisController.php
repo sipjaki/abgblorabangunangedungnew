@@ -7266,7 +7266,7 @@ public function perbaikandetailbangunangedung($pelaksana, $id)
     }
 
     return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.03_perbaikaninformasipemilik',
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.03_perbaikandetailbangunan',
         [
             'title'     => 'Perbaikan Berkas Informasi Detail Bangunan Gedung',
             'data'      => $data,

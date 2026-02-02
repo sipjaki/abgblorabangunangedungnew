@@ -434,13 +434,16 @@ function closeModalPemohon2() {
 
 @php
     $item = $data->bantekpembongkarannew2->first();
-    $induk = $item ;
+    $induk = $item;
 @endphp
 
 @if($induk)
 <a href="{{ route(
     'perbaikan.informasibangunangedung',
-    ['pelaksana' => Str::slug($item->pelaksana), 'id' => $item->id]
+    [
+        'pelaksana' => urlencode($item->pelaksana),
+        'id' => $item->id
+    ]
 ) }}" class="button-baru">
     <i class="bi bi-eye"></i> Perbaikan Dokumen
 </a>
