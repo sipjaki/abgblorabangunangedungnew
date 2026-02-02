@@ -238,15 +238,19 @@
 
     @elseif($data->validasiberkas2 === 'belum')
         <!-- 2. DIKEMBALIKAN (BISA DIKLIK) -->
-        <a href="javascript:void(0)"
-           class="button-merah"
-           onclick="showModalCard({{ $data->id }})"
-           style="text-decoration: none; display: inline-block;">
-            <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
-            <small>
-                Klik tombol ini untuk mengajukan ulang setelah berkas persyaratan diperbaiki.
-            </small>
-        </a>
+        <div style="text-align:right; display:inline-block;">
+    <a href="javascript:void(0)"
+       class="button-merah"
+       onclick="showModalCard({{ $data->id }})"
+       style="text-decoration: none; display:inline-block; padding:8px 16px; border-radius:8px;">
+        <i class="bi bi-arrow-clockwise me-1"></i> Berkas Dikembalikan
+    </a>
+    <br>
+    <small style="display:block; margin-top:4px; color:#6B7280;">
+        Klik tombol ini untuk mengajukan ulang setelah berkas persyaratan diperbaiki.
+    </small>
+</div>
+
     @else
         <!-- 3. NULL/KOSONG (TIDAK BISA DIKLIK) -->
         <button class="button-modern" type="button" disabled>
