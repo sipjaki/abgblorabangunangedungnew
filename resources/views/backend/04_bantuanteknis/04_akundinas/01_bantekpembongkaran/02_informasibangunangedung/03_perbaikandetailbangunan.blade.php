@@ -398,72 +398,79 @@
         <div class="content">
             <!-- INFORMASI SURAT -->
             <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> Informasi Surat Kelayakan Kajian Bangunan Gedung
+    <div class="section-header">
+        <i class="bi bi-file-earmark-text"></i>
+        Informasi Surat Kelayakan Kajian Bangunan Gedung
+    </div>
+
+    <div class="section-content">
+
+        {{-- ROW ATAS : 2 KOLOM --}}
+        <div class="row g-3 mb-4">
+            <div class="col-md-6">
+                <div class="data-card h-100">
+                    <div class="data-label">
+                        <i class="bi bi-building"></i> Nama Bangunan
+                    </div>
+                    <input type="text"
+                           name="cadangan1"
+                           class="form-control"
+                           value="{{ $data->cadangan1 }}"
+                           placeholder="Masukkan Nama Bangunan">
                 </div>
-            <div class="section-content">
-<!-- ROW ATAS: NAMA BANGUNAN & JENIS KAJIAN -->
-<div class="row g-3 mb-4">
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-building"></i> Nama Bangunan
-            </div>
-            <input type="text"
-                   name="cadangan1"
-                   class="form-control"
-                   value="{{ $data->cadangan1 }}"
-                   placeholder="Masukkan Nama Bangunan">
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-diagram-3"></i> Jenis Kajian Bangunan
-            </div>
-            <input type="text"
-                   name="cadangan2"
-                   class="form-control"
-                   value="{{ $data->cadangan2 }}"
-                   placeholder="Masukkan Jenis Kajian Bangunan">
-        </div>
-    </div>
-</div>
-
-<!-- ROW BAWAH: BERKAS SURAT (FULL WIDTH) -->
-<div class="row g-3">
-    <div class="col-12">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-file-pdf"></i> Surat Kelayakan Kajian Bangunan Gedung
             </div>
 
-            {{-- FILE LAMA --}}
-            @if($data->cadangan3)
-                <iframe id="frame-surat-lama"
-                        src="{{ asset('public/'.$data->cadangan3) }}"
-                        style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-            @else
-                <div class="text-muted mb-2">
-                    Data Tidak Ditemukan
+            <div class="col-md-6">
+                <div class="data-card h-100">
+                    <div class="data-label">
+                        <i class="bi bi-diagram-3"></i> Jenis Kajian Bangunan
+                    </div>
+                    <input type="text"
+                           name="cadangan2"
+                           class="form-control"
+                           value="{{ $data->cadangan2 }}"
+                           placeholder="Masukkan Jenis Kajian Bangunan">
                 </div>
-            @endif
-
-            {{-- FILE BARU --}}
-            <iframe id="frame-surat-baru"
-                    style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-
-            <input type="file"
-                   name="suratpermohonan"
-                   class="form-control mt-3"
-                   accept="application/pdf"
-                   onchange="previewSurat(this)">
+            </div>
         </div>
+
+        {{-- ROW BAWAH : 1 KOLOM FULL --}}
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="data-card">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-file-pdf"></i>
+                        Surat Kelayakan Kajian Bangunan Gedung
+                    </div>
+
+                    {{-- FILE LAMA --}}
+                    @if($data->cadangan3)
+                        <iframe id="frame-surat-lama"
+                                src="{{ asset('public/'.$data->cadangan3) }}"
+                                style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;">
+                        </iframe>
+                    @else
+                        <div class="text-muted mb-2">
+                            Data Tidak Ditemukan
+                        </div>
+                    @endif
+
+                    {{-- PREVIEW FILE BARU --}}
+                    <iframe id="frame-surat-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;">
+                    </iframe>
+
+                    {{-- INPUT FILE --}}
+                    <input type="file"
+                           name="suratpermohonan"
+                           class="form-control mt-3"
+                           accept="application/pdf"
+                           onchange="previewSurat(this)">
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
-
-
 </div>
 
 
@@ -483,77 +490,84 @@ function previewSurat(input) {
             </div>
 
 
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-file-earmark-text"></i> Informasi Analisa Bangunan Gedung
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-file-earmark-text"></i>
+        Informasi Analisa Bangunan Gedung
+    </div>
+
+    <div class="section-content">
+
+        {{-- ROW ATAS : 2 KOLOM --}}
+        <div class="row g-3 mb-4">
+            <div class="col-md-6">
+                <div class="data-card h-100">
+                    <div class="data-label">
+                        <i class="bi bi-percent"></i> Tingkat Kerusakan (%)
+                    </div>
+                    <input type="number"
+                           name="tingkat_kerusakan"
+                           class="form-control"
+                           value="{{ $data->tingkat_kerusakan }}"
+                           placeholder="Contoh: 10"
+                           step="0.01"
+                           min="0"
+                           max="100">
                 </div>
-            <div class="section-content">
-<!-- ROW ATAS: TINGKAT & STATUS KERUSAKAN -->
-<div class="row g-3 mb-4">
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-percent"></i> Tingkat Kerusakan (%)
-            </div>
-            <input type="number"
-                   name="tingkat_kerusakan"
-                   class="form-control"
-                   value="{{ $data->tingkat_kerusakan }}"
-                   placeholder="Contoh: 10"
-                   step="0.01"
-                   min="0"
-                   max="100">
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-exclamation-triangle"></i> Status Kerusakan
-            </div>
-            <input type="text"
-                   name="status_kerusakan"
-                   class="form-control"
-                   value="{{ $data->status_kerusakan }}"
-                   placeholder="Contoh: Rusak Ringan / Sedang / Berat">
-        </div>
-    </div>
-</div>
-
-<!-- ROW BAWAH: BERKAS DOKUMEN ANALISA -->
-<div class="row g-3">
-    <div class="col-12">
-        <div class="data-card">
-            <div class="data-label">
-                <i class="bi bi-file-pdf"></i> Dokumen Analisa Kerusakan Bangunan
             </div>
 
-            {{-- FILE LAMA --}}
-            @if($data->dok_kerusakan_bangunan)
-                <iframe id="frame-analisa-lama"
-                        src="{{ asset('public/'.$data->dok_kerusakan_bangunan) }}"
-                        style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-            @else
-                <div class="text-muted mb-2">
-                    Data Tidak Ditemukan
+            <div class="col-md-6">
+                <div class="data-card h-100">
+                    <div class="data-label">
+                        <i class="bi bi-exclamation-triangle"></i> Status Kerusakan
+                    </div>
+                    <input type="text"
+                           name="status_kerusakan"
+                           class="form-control"
+                           value="{{ $data->status_kerusakan }}"
+                           placeholder="Rusak Ringan / Sedang / Berat">
                 </div>
-            @endif
-
-            {{-- FILE BARU --}}
-            <iframe id="frame-analisa-baru"
-                    style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;"></iframe>
-
-            <input type="file"
-                   name="dok_kerusakan_bangunan"
-                   class="form-control mt-3"
-                   accept="application/pdf"
-                   onchange="previewAnalisa(this)">
+            </div>
         </div>
+
+        {{-- ROW BAWAH : 1 KOLOM FULL --}}
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="data-card">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-file-pdf"></i>
+                        Dokumen Analisa Kerusakan Bangunan
+                    </div>
+
+                    {{-- FILE LAMA --}}
+                    @if($data->dok_kerusakan_bangunan)
+                        <iframe id="frame-analisa-lama"
+                                src="{{ asset('public/'.$data->dok_kerusakan_bangunan) }}"
+                                style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px;">
+                        </iframe>
+                    @else
+                        <div class="text-muted mb-2">
+                            Data Tidak Ditemukan
+                        </div>
+                    @endif
+
+                    {{-- PREVIEW FILE BARU --}}
+                    <iframe id="frame-analisa-baru"
+                            style="display:none;width:100%;height:420px;border:1px solid #ddd;border-radius:8px;">
+                    </iframe>
+
+                    {{-- INPUT FILE --}}
+                    <input type="file"
+                           name="dok_kerusakan_bangunan"
+                           class="form-control mt-3"
+                           accept="application/pdf"
+                           onchange="previewAnalisa(this)">
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
-</div>
-
 
 <script>
 function previewAnalisa(input) {
