@@ -231,14 +231,12 @@
 <!-- Surat Pemberitahuan (2) -->
 <div class="d-block">
     @if($data->validasiberkas2 === 'sudah')
-        <!-- LOLOS (TIDAK BISA DIKLIK) -->
         <button class="button-hijau" type="button" disabled
                 style="background-color:#10B981;color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check-fill me-1"></i> Lolos
         </button>
 
     @elseif($data->validasiberkas2 === 'belum')
-        <!-- DIKEMBALIKAN (BISA DIKLIK) -->
         <button class="button-merah" type="button"
                 data-bs-toggle="modal" data-bs-target="#confirmModalPemohon2"
                 style="background-color:#0400ff;color:black;">
@@ -252,7 +250,6 @@
         </div>
 
     @else
-        <!-- VERIFIKASI DPUPR (NULL) -->
         <button class="button-modern" type="button" disabled
                 style="color:black;cursor:not-allowed;">
             <i class="bi bi-patch-check me-1"></i> Verifikasi DPUPR
@@ -268,10 +265,10 @@
 
         <form method="POST" action="{{ route('validasipembongkaranpemohon.update', $data->id) }}">
             @csrf
-            @method('POST')
+            <!-- Hapus @method('PUT'), karena route lo pake POST -->
 
             <input type="hidden" name="document_type" value="2">
-            <input type="hidden" name="validasiberkas2" value="sudah">
+            <input type="hidden" name="validasiberkas2" value="">
 
             <div class="d-flex justify-content-center gap-2">
                 <button type="submit"
