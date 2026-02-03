@@ -6,7 +6,6 @@
   <img src="/assets/android/iconmenu/temabaru.png" alt="Bangunan Blora" class="w-full h-full object-cover" />
 </div>
 
-      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
 <nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
   <a href="signup.html" class="shrink-0">
@@ -37,8 +36,6 @@
     </div>
   </a>
 </nav>
-
-      </div>
 
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
         {{-- <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]"> --}}
@@ -72,8 +69,8 @@
                             {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
               </div>
             </button>
+        </a>
         </div>
-    </a>
 
         </div>
 
