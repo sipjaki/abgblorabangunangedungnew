@@ -237,11 +237,11 @@
         <div class="section-header">
             <i class="bi bi-clipboard-check"></i> JADWAL PEMBONGKARAN BANGUNAN
         </div>
-        <div class="section-content">
+        <div class="surat-kajian-isi">
             <!-- Card Nama Bangunan (dari contoh sebelumnya) -->
             <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
                 <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">
-                    <i class="bi bi-building"></i> NAMA BANGUNAN
+                    <i class="bi bi-building"></i> <span style="font-size: 16px;">Nama Bangunan </span>
                 </div>
                 <div style="font-size: 1.3rem; color: #2c3e50;">
                     {{ $data->cadangan1 ?? 'Data Tidak Ditemukan' }}
