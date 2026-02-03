@@ -80,14 +80,14 @@
     <!-- Judul & info -->
     <div class="flex flex-col flex-1 gap-1">
         <p class="font-semibold text-gray-800 text-base">Konsultan Sertifikat Laik Fungsi</p>
-        <span class="text-sm text-gray-500">PDF Document • 2.4 MB</span>
     </div>
 
     <!-- Tombol download -->
     <div class="flex-shrink-0">
         <a href="/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf"
            download
-           class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2 transition duration-300">
+           class="button-baru"
+           >
             <i class="bi bi-download"></i>
             <span class="font-medium text-sm">Download</span>
         </a>
