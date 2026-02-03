@@ -540,7 +540,6 @@
 
         <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
     </div>
-</div>
 
  <div class="col-md-6">
                     <div class="form-modern">
@@ -567,6 +566,8 @@
 
 
 </div>
+</div>
+
 
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
