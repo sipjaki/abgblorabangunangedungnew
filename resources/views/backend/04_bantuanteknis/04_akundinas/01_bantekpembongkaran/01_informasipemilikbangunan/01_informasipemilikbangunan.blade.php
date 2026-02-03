@@ -542,6 +542,7 @@
     </div>
 </div>
 
+
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="nosurat">
@@ -562,6 +563,7 @@
                                id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
                         @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
+                </div>
                 </div>
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
@@ -608,10 +610,6 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
     previewWrap.classList.remove('d-none');
 });
 </script>
-
-
-
-            </div>
             </div>
 
 
@@ -1486,11 +1484,11 @@ document.getElementById('sk').addEventListener('change', function () {
                 <option value="Tidak Sederhana" {{ old('kompleksitasbangunan') == 'Sedang' ? 'selected' : '' }}>Tidak Sederhana</option>
             </select>
             @error('kompleksitasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small class="text-muted d-block mt-1">
+                Keterangan : <br> <em> - <strong style="color: red">Sederhana </strong> < Luas Lahan/Tanah 500M2 Dan < 2 Lantai</em> <br>
+                <em> - <strong style="color: red">Tidak Sederhana </strong> > Luas Lahan/Tanah 500M2 Dan > 2 Lantai</em>
+            </small>
         </div>
-        <small class="text-muted d-block mt-1">
-            Keterangan : <br> <em> - <strong style="color: red">Sederhana </strong> < Luas Lahan/Tanah 500M2 Dan < 2 Lantai</em> <br>
-            <em> - <strong style="color: red">Tidak Sederhana </strong> > Luas Lahan/Tanah 500M2 Dan > 2 Lantai</em>
-        </small>
     </div>
 
     <!-- Tingkat Permanensi -->
@@ -1507,12 +1505,12 @@ document.getElementById('sk').addEventListener('change', function () {
                 <option value="Non Permanen" {{ old('tingkatpermanensi') == 'Non Permanen' ? 'selected' : '' }}>Non Permanen</option>
             </select>
             @error('tingkatpermanensi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
 
-        <small class="text-muted d-block mt-1">
-            Keterangan : <br> <em> - <strong style="color: red">Permanen </strong> : Umur Bangunan > 10 Tahun </em> <br>
-            <em> - <strong style="color: red">Non Permanen </strong> : Umur Bangunan < 10 Tahun</em>
-        </small>
+            <small class="text-muted d-block mt-1">
+                Keterangan : <br> <em> - <strong style="color: red">Permanen </strong> : Umur Bangunan > 10 Tahun </em> <br>
+                <em> - <strong style="color: red">Non Permanen </strong> : Umur Bangunan < 10 Tahun</em>
+            </small>
+        </div>
     </div>
 
     <!-- Kepadatan -->
@@ -1528,14 +1526,14 @@ document.getElementById('sk').addEventListener('change', function () {
                 <option value="Tinggi" {{ old('kepadatan') == 'Tinggi' ? 'selected' : '' }}>Tinggi</option>
             </select>
             @error('kepadatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
 
-        <small class="text-muted d-block mt-1">
-            Keterangan : <br> <em> - <strong style="color: red">Tinggi </strong> : Jika Berkedudukan di Wilayah Kecamatan Cepu</em> <br>
-            <em> - <strong style="color: red">Sedang</strong> : Jika Berkedudukan di <strong style="color: red">Luar</strong> Kecamatan Cepu</em>
-        </small>
+            <small class="text-muted d-block mt-1">
+                Keterangan : <br> <em> - <strong style="color: red">Tinggi </strong> : Jika Berkedudukan di Wilayah Kecamatan Cepu</em> <br>
+                <em> - <strong style="color: red">Sedang</strong> : Jika Berkedudukan di <strong style="color: red">Luar</strong> Kecamatan Cepu</em>
+            </small>
+        </div>
     </div>
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="form-modern">
         <label class="form-label-modern">
             <i class="bi bi-calendar-date me-2 text-primary"></i> Waktu Dibangun
@@ -1588,7 +1586,7 @@ document.getElementById('mode_tanggal').addEventListener('change', function () {
 
 
     <!-- Tanggal Renovasi -->
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="form-modern">
         <label class="form-label-modern">
             <i class="bi bi-calendar-date me-2 text-primary"></i> Waktu Renovasi
@@ -1640,7 +1638,7 @@ document.getElementById('mode_tanggal_renovasi').addEventListener('change', func
 </script>
 
 
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanbaru_display">
             <i class="bi bi-cash-coin me-2 text-primary"></i>
@@ -1668,7 +1666,7 @@ document.getElementById('mode_tanggal_renovasi').addEventListener('change', func
 </div>
 
 
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="form-modern">
         <label class="form-label-modern" for="nilaibangunanlama_display">
             <i class="bi bi-cash-stack me-2 text-primary"></i>
@@ -1974,7 +1972,7 @@ document.getElementById('kib').addEventListener('change', function () {
     <div class="form-modern">
         <label class="form-label-modern" id="pbgLabel">
             <i class="bi bi-upload me-2 text-primary"></i>
-            Upload PBG
+            Upload PBG (Persetujuan Bangunan Gedung)/ IMB (Izin Mendirikan Bangunan)
         </label>
 
         <input type="file"
