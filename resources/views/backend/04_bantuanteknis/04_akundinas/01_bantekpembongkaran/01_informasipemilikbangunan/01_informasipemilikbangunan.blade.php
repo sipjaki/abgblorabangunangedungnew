@@ -1502,13 +1502,12 @@ document.getElementById('sk').addEventListener('change', function () {
                 <option value="">-- Pilih Tingkat Permanensi --</option>
                 <option value="Permanen" {{ old('tingkatpermanensi') == 'Permanen' ? 'selected' : '' }}>Permanen</option>
                 <option value="Semi Permanen" {{ old('tingkatpermanensi') == 'Semi Permanen' ? 'selected' : '' }}>Semi Permanen</option>
-                <option value="Non Permanen" {{ old('tingkatpermanensi') == 'Non Permanen' ? 'selected' : '' }}>Non Permanen</option>
             </select>
             @error('tingkatpermanensi') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
             <small class="text-muted d-block mt-1">
                 Keterangan : <br> <em> - <strong style="color: red">Permanen </strong> : Umur Bangunan > 10 Tahun </em> <br>
-                <em> - <strong style="color: red">Non Permanen </strong> : Umur Bangunan < 10 Tahun</em>
+                <em> - <strong style="color: red">Semi Permanen </strong> : Umur Bangunan < 10 Tahun</em>
             </small>
         </div>
     </div>
@@ -1740,16 +1739,16 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="pemilikbangunan">
-                <i class="bi bi-person-badge me-2 text-primary"></i> Jenis/Nama Barang
+                <i class="bi bi-person-badge me-2 text-primary"></i> Jenis/Nama Barang (Lihat KIB)
             </label>
             <input type="text" class="form-control @error('pemilikbangunan') is-invalid @enderror"
                    id="pemilikbangunan" name="pemilikbangunan" value="{{ old('pemilikbangunan') }}"
                    placeholder="Jenis/Nama Barang Lihat KIB">
             @error('pemilikbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small class="text-muted d-block mt-1">
+                Contoh : <em> Bangunan Gedung Pendidikan Permanen (Lihat KIB) </em>
+            </small>
         </div>
-                <small class="text-muted d-block mt-1">
-            Contoh : <em> Bangunan Gedung Pendidikan Permanen (Lihat KIB) </em>
-        </small>
     </div>
     <!-- Kode Barang -->
     <div class="col-md-4">

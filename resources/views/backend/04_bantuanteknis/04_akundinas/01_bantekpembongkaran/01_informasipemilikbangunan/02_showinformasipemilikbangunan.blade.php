@@ -494,7 +494,7 @@
                         <div class="data-value">{{$data->jabatan ?? 'Data Tidak Ditemukan'}}</div>
                     </div>
                     <div class="data-card">
-                        <div class="data-label"><i class="bi bi-geo-alt"></i> Alamat Pemilik</div>
+                        <div class="data-label"><i class="bi bi-geo-alt"></i> Alamat Instansi Pemilik Bangunan </div>
                         <div class="data-value">{{$data->alamatpemilik ?? 'Data Tidak Ditemukan'}}</div>
                     </div>
                     <div class="data-card">
@@ -574,6 +574,10 @@
                 </div>
                 <div class="section-content">
                     <div class="data-card">
+                        <div class="data-label"><i class="bi bi-shield-check"></i> Nama Pemilik Bangunan</div>
+                        <div class="data-value">{{$data->cadangan1 ?? 'Data Tidak Ditemukan'}}</div>
+                    </div>
+                    <div class="data-card">
                         <div class="data-label"><i class="bi bi-shield-check"></i> Legalitas Bangunan</div>
                         <div class="data-value">{{$data->legalitasbangunan ?? 'Data Tidak Ditemukan'}}</div>
                     </div>
@@ -581,14 +585,7 @@
                         <div class="data-label"><i class="bi bi-hash"></i> Nomor PBG</div>
                         <div class="data-value">{{$data->nomorpbg ?? 'Data Tidak Ditemukan'}}</div>
                     </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-person-gear"></i> Pemilik Bangunan</div>
-                        <div class="data-value">{{$data->pemilikbangunan ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-label"><i class="bi bi-upc-scan"></i> Kode Barang</div>
-                        <div class="data-value">{{$data->kodebarang ?? 'Data Tidak Ditemukan'}}</div>
-                    </div>
+
                     <div class="data-card">
                         <div class="data-label"><i class="bi bi-geo-alt-fill"></i> Alamat Bangunan</div>
                         <div class="data-value">{{$data->alamatbangunan ?? 'Data Tidak Ditemukan'}}</div>
@@ -664,6 +661,16 @@
                             @endif
                         </div>
                     </div>
+                    <div class="data-card">
+                        <div class="data-label"><i class="bi bi-person-gear"></i> Jenis/Nama Barang</div>
+                        <div class="data-value">{{$data->pemilikbangunan ?? 'Data Tidak Ditemukan'}}</div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-label"><i class="bi bi-upc-scan"></i> Kode Barang</div>
+                        <div class="data-value">{{$data->kodebarang ?? 'Data Tidak Ditemukan'}}</div>
+                    </div>
+
                     <div class="data-card">
                         <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
                         <div class="data-value">{{$data->apakahadapbg ?? 'Data Tidak Ditemukan'}}</div>
