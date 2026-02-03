@@ -499,7 +499,7 @@
 
             <div class="card-body">
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-modern">
                         <label class="form-label-modern" for="cadangan1">
                             <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
@@ -679,7 +679,7 @@
 
     <!-- 1. DOKUMEN ANALISA BANGUNAN GEDUNG -->
     <div class="section-header">
-        <i class="bi bi-clipboard-data me-2"></i>Dokumen Analisa Bangunan Gedung
+        <i class="bi bi-clipboard-data me-2"></i>Dokumen Analisa Kerusakan Bangunan Gedung
     </div>
 
     <div class="row">
@@ -739,7 +739,7 @@
         </small>
 
         <!-- BUTTON DOWNLOAD -->
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/DOK_ANALISA.png"
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/ANALISAKER.jpg"
            class="btn btn-outline-primary btn-sm mb-3"
            download>
             <i class="bi bi-download me-1"></i> Download Contoh Dokumen Analisa
@@ -812,7 +812,7 @@
 
     <!-- 2. SURAT KAJIAN TEKNIS BANGUNAN GEDUNG -->
     <div class="section-header mt-4">
-        <i class="bi bi-file-text me-2"></i>Surat Kajian Teknis Bangunan Gedung
+        <i class="bi bi-file-text me-2"></i>Surat Kajian Kelayakan Bangunan Gedung
     </div>
 
     <div class="row">
@@ -858,7 +858,7 @@
     <div class="form-modern">
         <label class="form-label-modern" for="suratpernyataankelaikan">
             <i class="bi bi-upload me-2 text-primary"></i>
-            Upload Surat Pernyataan Kelaikan
+            Upload Surat Pernyataan Kelayakan
         </label>
 
         <input type="file"
@@ -985,7 +985,7 @@
             </div>
 
             <div class="modal-body text-center bg-light">
-                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/Contoh_Surat_pernyataan_Kelaikan.png"
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURATKELAYAKAN.docx"
                      alt="Contoh Surat Pernyataan Kelaikan"
                      class="img-fluid rounded shadow-sm">
             </div>
@@ -1108,18 +1108,20 @@
 
     <!-- 4. METODE PEMBONGKARAN -->
     <div class="section-header mt-4">
-        <i class="bi bi-tools me-2"></i>Metode Pembongkaran Bangunan Gedung
+        <i class="bi bi-tools me-2"></i>Rencana Teknis Pembongkaran Bangunan Gedung
     </div>
 
     <div class="row">
         <div class="col-md-4">
             <div class="form-modern">
                 <label class="form-label-modern" for="pelaksana">
-                    <i class="bi bi-person-badge me-2 text-primary"></i> Pelaksana | Contoh : PT/CV/Perorangan Misal PT. Abadi Jaya Blora atau lainnya
+                    <i class="bi bi-person-badge me-2 text-primary"></i> Pelaksana Pembongkaran
                 </label>
                 <input type="text" class="form-control @error('pelaksana') is-invalid @enderror"
                        id="pelaksana" name="pelaksana" value="{{ old('pelaksana') }}">
                 @error('pelaksana') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small> Contoh : <em>: PT/CV/Perorangan Misal PT. Abadi Jaya Blora atau lainnya </em>
+            </small>
             </div>
         </div>
 
@@ -1144,6 +1146,40 @@
                 @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
         </div>
+
+        <div class="row">
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="cadangan5">
+                <i class="bi bi-calendar-check me-2 text-primary"></i> Tanggal Mulai
+            </label>
+            <input type="date"
+                   class="form-control @error('cadangan5') is-invalid @enderror"
+                   id="cadangan5"
+                   name="cadangan5"
+                   value="{{ old('cadangan5') }}">
+            @error('cadangan5')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="catatan5">
+                <i class="bi bi-calendar-x me-2 text-primary"></i> Tanggal Selesai
+            </label>
+            <input type="date"
+                   class="form-control @error('catatan5') is-invalid @enderror"
+                   id="catatan5"
+                   name="catatan5"
+                   value="{{ old('catatan5') }}">
+            @error('catatan5')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+</div>
 
         <div class="col-12">
             <div class="form-modern">

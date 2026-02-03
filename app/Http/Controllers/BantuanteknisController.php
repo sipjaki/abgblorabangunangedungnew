@@ -7201,6 +7201,9 @@ public function bebantekbangunanbongkarcrnew(Request $request)
         'cadangan1' => 'nullable|string',
         'cadangan2' => 'nullable|string',
         'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+        'cadangan5' => 'required|date',
+        'catatan5'  => 'required|date|after_or_equal:cadangan5', // Selesai harus setelah atau sama dengan mulai
     ]);
 
     // ==============================
