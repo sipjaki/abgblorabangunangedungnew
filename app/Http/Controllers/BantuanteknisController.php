@@ -6812,7 +6812,7 @@ public function validasiinformasipemilikbangunan(Request $request, $id)
     // ===============================
     $item->update([
         'validasiberkas1' => $request->validasiberkas1,
-        'validasiberkas2' => $request->validasiberkas2,
+        // 'validasiberkas2' => $request->validasiberkas2,
         'validasiberkas3' => $request->validasiberkas3,
         'validasiberkas4' => $request->validasiberkas4,
         'validasiberkas5' => $request->validasiberkas5,
