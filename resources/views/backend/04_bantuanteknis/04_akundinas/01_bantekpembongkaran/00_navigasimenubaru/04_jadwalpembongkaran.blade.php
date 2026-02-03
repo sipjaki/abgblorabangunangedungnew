@@ -237,7 +237,7 @@
         <div class="section-header">
             <i class="bi bi-clipboard-check"></i> JADWAL PEMBONGKARAN BANGUNAN
         </div>
-        <div class="surat-kajian-isi">
+        <div class="section-content">
             <!-- Card Nama Bangunan (dari contoh sebelumnya) -->
             <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
                 <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">
