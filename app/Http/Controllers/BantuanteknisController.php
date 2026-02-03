@@ -7143,7 +7143,7 @@ public function informasibangunangedung($namapemilik, $id)
         );
     }
 
-public function bebantekpembongkaranbangunan($pelaksana, $id)
+public function bebantekpembongkaranbangunan($id)
 {
     // Ambil data new2 beserta relasi induk2
     $data = bantekpembongkarannew2::withTrashed()
@@ -7152,14 +7152,14 @@ public function bebantekpembongkaranbangunan($pelaksana, $id)
         ->firstOrFail();
 
     // Kalau relasi induk2 null, tetap lanjut tapi kasih info di view
-    $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
+    // $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.02_showinfobangunangedung',
         [
             'title'     => 'Details Informasi Data Bangunan Gedung',
             'data'      => $data,
-            'pelaksana' => $pelaksana_slug
+            // 'pelaksana' => $pelaksana_slug
         ]
     );
 }
