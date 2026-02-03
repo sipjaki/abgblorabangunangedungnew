@@ -6792,7 +6792,7 @@ public function validasiinformasipemilikbangunan(Request $request, $id)
     // ===============================
     $request->validate([
         'validasiberkas1' => 'required|in:sesuai,tidak_sesuai',
-        'validasiberkas2' => 'required|in:sesuai,tidak_sesuai',
+        // 'validasiberkas2' => 'required|in:sesuai,tidak_sesuai',
         'validasiberkas3' => 'required|in:sesuai,tidak_sesuai',
         'validasiberkas4' => 'required|in:sesuai,tidak_sesuai',
         'validasiberkas5' => 'required|in:sesuai,tidak_sesuai',
