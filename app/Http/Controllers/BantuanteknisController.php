@@ -6693,7 +6693,9 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
 
         'apakahadapbg' => 'nullable|string|max:255',
         'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-    ]);
+
+        'cadangan1' => 'nullable|string|max:255',
+        ]);
 
     // ==============================
     // NORMALISASI TANGGAL / TAHUN

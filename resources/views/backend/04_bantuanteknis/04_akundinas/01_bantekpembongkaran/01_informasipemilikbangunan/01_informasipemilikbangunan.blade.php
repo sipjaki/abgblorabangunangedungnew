@@ -497,28 +497,6 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="nosurat">
-                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
-                        </label>
-                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
-                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
-                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="tanggalsurat">
-                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
-                        </label>
-                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
-                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
-                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
 
                 <div class="col-12">
     <div class="form-modern">
@@ -609,6 +587,29 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
     previewWrap.classList.remove('d-none');
 });
 </script>
+
+ <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="nosurat">
+                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
+                        </label>
+                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
+                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
+                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="tanggalsurat">
+                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
+                        </label>
+                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
+                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
+                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
 
 
 </div>
@@ -901,7 +902,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                 <div class="col-12">
                     <div class="form-modern">
                         <label class="form-label-modern" for="alamatpemilik">
-                            <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Pemilik
+                            <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Instansi Pemilik Bangunan Gedung
                         </label>
                         <textarea class="form-control @error('alamatpemilik') is-invalid @enderror"
                                   id="alamatpemilik" name="alamatpemilik" rows="3">{{ old('alamatpemilik') }}</textarea>
@@ -1340,7 +1341,7 @@ document.getElementById('sk').addEventListener('change', function () {
    <div class="col-md-6">
     <div class="form-modern">
         <label class="form-label-modern" for="nomorpbg">
-            <i class="bi bi-hash me-2 text-primary"></i> Nomor PBG
+            <i class="bi bi-hash me-2 text-primary"></i> Nomor PBG (Persetujuan Bangunan Gedung)/ IMB (Izin Mendirikan Bangunan)
         </label>
 
         <input type="text"
@@ -1355,24 +1356,11 @@ document.getElementById('sk').addEventListener('change', function () {
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Keterangan: <em>Lewati kolom ini apabila bangunan belum memiliki PBG.</em>
+            Keterangan: <em>Lewati kolom ini apabila bangunan belum memiliki PBG/IMB</em>
         </small>
     </div>
 </div>
 
-
-    <!-- Pemilik Bangunan -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="pemilikbangunan">
-                <i class="bi bi-person-badge me-2 text-primary"></i> Pemilik Bangunan
-            </label>
-            <input type="text" class="form-control @error('pemilikbangunan') is-invalid @enderror"
-                   id="pemilikbangunan" name="pemilikbangunan" value="{{ old('pemilikbangunan') }}"
-                   placeholder="Nama pemilik bangunan">
-            @error('pemilikbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
 
     <!-- Kode Barang -->
     <div class="col-md-6">
@@ -1435,7 +1423,7 @@ document.getElementById('sk').addEventListener('change', function () {
             </label>
             <select class="form-select @error('fungsibangunan') is-invalid @enderror"
                     id="fungsibangunan" name="fungsibangunan">
-                <option value="">-- Pilih Fungsi Bangunan --</option>
+                <option value="">-- Pilih Pemanfaaatan Bangunan Gedung --</option>
                 <option value="Perkantoran" {{ old('fungsibangunan') == 'Perkantoran' ? 'selected' : '' }}>Perkantoran</option>
                 <option value="Pendidikan" {{ old('fungsibangunan') == 'Pendidikan' ? 'selected' : '' }}>Pendidikan</option>
                 <option value="Kesehatan" {{ old('fungsibangunan') == 'Kesehatan' ? 'selected' : '' }}>Kesehatan</option>
@@ -1512,12 +1500,14 @@ document.getElementById('sk').addEventListener('change', function () {
                     id="kompleksitasbangunan" name="kompleksitasbangunan">
                 <option value="">-- Pilih Kompleksitas --</option>
                 <option value="Sederhana" {{ old('kompleksitasbangunan') == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
-                <option value="Sedang" {{ old('kompleksitasbangunan') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-                <option value="Kompleks" {{ old('kompleksitasbangunan') == 'Kompleks' ? 'selected' : '' }}>Kompleks</option>
-                <option value="Sangat Kompleks" {{ old('kompleksitasbangunan') == 'Sangat Kompleks' ? 'selected' : '' }}>Sangat Kompleks</option>
+                <option value="Tidak Sederhana" {{ old('kompleksitasbangunan') == 'Sedang' ? 'selected' : '' }}>Tidak Sederhana</option>
             </select>
             @error('kompleksitasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
+        <small class="text-muted d-block mt-1">
+            Keterangan : <br> <em> - <strong style="color: red">Sederhana </strong> < Luas Lahan/Tanah 500M2 Dan < 2 Lantai</em> <br>
+            <em> - <strong style="color: red">Tidak Sederhana </strong> > Luas Lahan/Tanah 500M2 Dan > 2 Lantai</em>
+        </small>
     </div>
 
     <!-- Tingkat Permanensi -->
@@ -1535,6 +1525,11 @@ document.getElementById('sk').addEventListener('change', function () {
             </select>
             @error('tingkatpermanensi') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
+
+        <small class="text-muted d-block mt-1">
+            Keterangan : <br> <em> - <strong style="color: red">Permanen </strong> : Umur Bangunan > 10 Tahun </em> <br>
+            <em> - <strong style="color: red">Non Permanen </strong> : Umur Bangunan < 10 Tahun</em>
+        </small>
     </div>
 
     <!-- Kepadatan -->
@@ -1546,13 +1541,16 @@ document.getElementById('sk').addEventListener('change', function () {
             <select class="form-select @error('kepadatan') is-invalid @enderror"
                     id="kepadatan" name="kepadatan">
                 <option value="">-- Pilih Kepadatan --</option>
-                <option value="Rendah" {{ old('kepadatan') == 'Rendah' ? 'selected' : '' }}>Rendah</option>
                 <option value="Sedang" {{ old('kepadatan') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
                 <option value="Tinggi" {{ old('kepadatan') == 'Tinggi' ? 'selected' : '' }}>Tinggi</option>
-                <option value="Sangat Tinggi" {{ old('kepadatan') == 'Sangat Tinggi' ? 'selected' : '' }}>Sangat Tinggi</option>
             </select>
             @error('kepadatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
+
+        <small class="text-muted d-block mt-1">
+            Keterangan : <br> <em> - <strong style="color: red">Tinggi </strong> : Jika Berkedudukan di Wilayah Kecamatan Cepu</em> <br>
+            <em> - <strong style="color: red">Sedang</strong> : Jika Berkedudukan di <strong style="color: red">Luar</strong> Kecamatan Cepu</em>
+        </small>
     </div>
 <div class="col-md-4">
     <div class="form-modern">
@@ -1755,6 +1753,38 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <div class="row">
+
+
+    <!-- Pemilik Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="pemilikbangunan">
+                <i class="bi bi-person-badge me-2 text-primary"></i> Jenis/Nama Barang
+            </label>
+            <input type="text" class="form-control @error('pemilikbangunan') is-invalid @enderror"
+                   id="pemilikbangunan" name="pemilikbangunan" value="{{ old('pemilikbangunan') }}"
+                   placeholder="Jenis/Nama Barang Lihat KIB">
+            @error('pemilikbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+                <small class="text-muted d-block mt-1">
+            Contoh : <em> Bangunan Gedung Pendidikan Permanen (Lihat KIB) </em>
+        </small>
+    </div>
+
+
+    <!-- Pemilik Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="cadangan1">
+                <i class="bi bi-person-badge me-2 text-primary"></i> Nama Pemilik Bangunan
+            </label>
+            <input type="text" class="form-control @error('cadangan1') is-invalid @enderror"
+                   id="cadangan1" name="cadangan1" value="{{ old('cadangan1') }}"
+                   placeholder="Nama pemilik bangunan">
+            @error('cadangan1') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+
+    </div>
 
 <div class="col-12">
     <div class="form-modern">
@@ -2164,7 +2194,7 @@ document.addEventListener('DOMContentLoaded', togglePBGField);
         </small>
 
         <!-- BUTTON DOWNLOAD TEMPLATE -->
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PER_KESANGGUPAN.docx"
            class="btn btn-outline-primary btn-sm mb-3"
            download>
             <i class="bi bi-download me-1"></i> Download Template Surat
