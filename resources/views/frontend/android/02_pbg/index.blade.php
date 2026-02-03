@@ -96,6 +96,31 @@
 
 </div>
 
+<div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
+
+    <!-- Icon kiri -->
+    <div class="w-12 h-12 flex-shrink-0 rounded-full overflow-hidden bg-blue-50 flex items-center justify-center">
+        <img src="/assets/android/menunavigasi/NEW01.png"
+             alt="Icon Berkas"
+             class="object-cover w-10 h-10">
+    </div>
+
+    <!-- Judul & info -->
+    <div class="flex flex-col flex-1 gap-1">
+        <p class="font-semibold text-gray-800 text-base">Konsultan Perencana PBG</p>
+    </div>
+
+    <!-- Tombol download -->
+    <div class="flex-shrink-0">
+        <a href="/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_PERENCANA_PBG.pdf"
+           download
+           class="button-modern flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
+            <i class="bi bi-download"></i>
+            <span class="font-medium text-sm">Download</span>
+        </a>
+    </div>
+
+</div>
 
         </div>
 
