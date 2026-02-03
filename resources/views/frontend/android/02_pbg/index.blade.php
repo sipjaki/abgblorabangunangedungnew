@@ -85,12 +85,12 @@
 
     <!-- Tombol download -->
     <div class="flex-shrink-0">
-        <button type="button"
-                onclick="window.open('/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf','_blank')"
-                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2 transition duration-300">
+        <a href="/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf"
+           download
+           class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2 transition duration-300">
             <i class="bi bi-download"></i>
             <span class="font-medium text-sm">Download</span>
-        </button>
+        </a>
     </div>
 
 </div>
