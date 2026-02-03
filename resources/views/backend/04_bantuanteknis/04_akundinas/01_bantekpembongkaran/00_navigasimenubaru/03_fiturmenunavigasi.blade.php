@@ -124,30 +124,29 @@
 
                 @canany(['pemohon', 'dinas'])
 <div class="d-block">
+<!-- Berkas Konsultasi (cadangan1) -->
+<button type="button"
+    class="button-baru {{ $data->cadangan1 ? '' : 'disabled' }}"
+    style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+    data-bs-toggle="modal" data-bs-target="#modalKonsultasi">
+    <i class="bi bi-chat-left-text me-1"></i> Berkas Konsultasi
+</button>
 
-    <!-- Berkas Konsultasi (cadangan1) -->
-    <button type="button"
-        class="button-baru {{ $data->cadangan1 ? '' : 'disabled' }}"
-        style="{{ $data->cadangan1 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
-        data-bs-toggle="modal" data-bs-target="#modalKonsultasi">
-        Berkas Konsultasi
-    </button>
+<!-- Berkas Rekomtek (cadangan2) -->
+<button type="button"
+    class="button-baru {{ $data->cadangan2 ? '' : 'disabled' }}"
+    style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+    data-bs-toggle="modal" data-bs-target="#modalRekomtek">
+    <i class="bi bi-file-earmark-check me-1"></i> Berkas Rekomtek
+</button>
 
-    <!-- Berkas Rekomtek (cadangan2) -->
-    <button type="button"
-        class="button-baru {{ $data->cadangan2 ? '' : 'disabled' }}"
-        style="{{ $data->cadangan2 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
-        data-bs-toggle="modal" data-bs-target="#modalRekomtek">
-        Berkas Rekomtek
-    </button>
-
-    <!-- Berkas Per Bupati (cadangan3) -->
-    <button type="button"
-        class="button-baru {{ $data->cadangan3 ? '' : 'disabled' }}"
-        style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
-        data-bs-toggle="modal" data-bs-target="#modalPerBupati">
-        Berkas Per Bupati
-    </button>
+<!-- Berkas Per Bupati (cadangan3) -->
+<button type="button"
+    class="button-baru {{ $data->cadangan3 ? '' : 'disabled' }}"
+    style="{{ $data->cadangan3 ? '' : 'pointer-events: none; opacity: 0.5;' }}"
+    data-bs-toggle="modal" data-bs-target="#modalPerBupati">
+    <i class="bi bi-person-badge me-1"></i> Berkas Per Bupati
+</button>
 
 </div>
 
