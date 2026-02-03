@@ -496,75 +496,90 @@
                 <i class="bi bi-file-earmark-text me-2"></i>Surat Permohonan Izin Pembongkaran
             </div>
 
-            <div class="row">
+        <div class="row">
 
-<div class="col-12">
-    <div class="form-modern">
-    <label class="form-label-modern" for="suratpermohonan">
-        <i class="bi bi-upload me-2 text-primary"></i>
-        Upload Surat Permohonan Izin Pembongkaran
-    </label>
+    <!-- UPLOAD (FULL WIDTH) -->
+    <div class="col-12">
+        <div class="form-modern">
+            <label class="form-label-modern" for="suratpermohonan">
+                <i class="bi bi-upload me-2 text-primary"></i>
+                Upload Surat Permohonan Izin Pembongkaran
+            </label>
 
-    <input type="file"
-           class="form-control @error('suratpermohonan') is-invalid @enderror"
-           id="suratpermohonan"
-           name="suratpermohonan"
-           accept=".pdf,.jpg,.jpeg,.png">
+            <input type="file"
+                   class="form-control @error('suratpermohonan') is-invalid @enderror"
+                   id="suratpermohonan"
+                   name="suratpermohonan"
+                   accept=".pdf,.jpg,.jpeg,.png">
 
-    @error('suratpermohonan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+            @error('suratpermohonan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
 
-    <small class="text-muted d-block mt-1">
-        Format: PDF (Maks. 15MB)
-    </small>
+            <small class="text-muted d-block mt-1">
+                Format: PDF (Maks. 15MB)
+            </small>
 
-    <small class="text-muted d-block mb-2">
-        Keterangan: Silahkan download template surat ini, isi, lalu
-        <strong class="text-danger">Upload Kembali</strong>.
-    </small>
+            <small class="text-muted d-block mb-2">
+                Keterangan: Silahkan download template surat ini, isi, lalu
+                <strong class="text-danger">Upload Kembali</strong>.
+            </small>
 
-    <!-- BUTTON DOWNLOAD -->
-    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
-       class="btn btn-outline-primary btn-sm mb-3"
-       download>
-        <i class="bi bi-download me-1"></i> Download Template Surat
-    </a>
+            <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
+               class="btn btn-outline-primary btn-sm mb-3"
+               download>
+                <i class="bi bi-download me-1"></i> Download Template Surat
+            </a>
 
-    <!-- PREVIEW FILE -->
-    <div id="previewSuratPermohonan" class="mt-3 d-none">
-        <label class="form-label-modern mb-2">
-            <i class="bi bi-eye me-2 text-success"></i>
-            Preview Berkas Yang Diupload
-        </label>
-
-        <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
+            <div id="previewSuratPermohonan" class="mt-3 d-none">
+                <label class="form-label-modern mb-2">
+                    <i class="bi bi-eye me-2 text-success"></i>
+                    Preview Berkas Yang Diupload
+                </label>
+                <div class="border rounded-3 p-2 bg-light"
+                     id="previewSuratPermohonanBox"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- NOMOR SURAT -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="nosurat">
+                <i class="bi bi-hash me-2 text-primary"></i>
+                Nomor Surat Permohonan Izin Pembongkaran
+            </label>
+            <input type="text"
+                   class="form-control @error('nosurat') is-invalid @enderror"
+                   id="nosurat"
+                   name="nosurat"
+                   value="{{ old('nosurat') }}">
+            @error('nosurat')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- TANGGAL SURAT -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="tanggalsurat">
+                <i class="bi bi-calendar-date me-2 text-primary"></i>
+                Tanggal Surat Permohonan
+            </label>
+            <input type="date"
+                   class="form-control @error('tanggalsurat') is-invalid @enderror"
+                   id="tanggalsurat"
+                   name="tanggalsurat"
+                   value="{{ old('tanggalsurat') }}">
+            @error('tanggalsurat')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
 </div>
 
-
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="nosurat">
-                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
-                        </label>
-                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
-                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
-                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="tanggalsurat">
-                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
-                        </label>
-                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
-                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
-                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-                </div>
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
 
