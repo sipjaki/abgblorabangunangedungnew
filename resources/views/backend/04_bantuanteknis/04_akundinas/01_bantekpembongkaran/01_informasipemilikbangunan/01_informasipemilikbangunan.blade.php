@@ -542,6 +542,32 @@
     </div>
 </div>
 
+ <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="nosurat">
+                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
+                        </label>
+                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
+                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
+                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="tanggalsurat">
+                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
+                        </label>
+                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
+                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
+                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+
+
+</div>
+
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
 
@@ -588,31 +614,6 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 });
 </script>
 
- <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="nosurat">
-                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
-                        </label>
-                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
-                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
-                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="tanggalsurat">
-                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
-                        </label>
-                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
-                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
-                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
-
-
-
-</div>
 
 
             </div>
