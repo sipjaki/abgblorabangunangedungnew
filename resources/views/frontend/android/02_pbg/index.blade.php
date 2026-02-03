@@ -82,16 +82,24 @@
             </div>
         </div>
 
-        <!-- Judul & tombol download -->
+        <!-- Judul & info berkas -->
         <div class="flex flex-col flex-1 gap-[2px] text-left">
             <p class="font-semibold text-gray-800 text-base group-hover:text-blue-700 transition-colors duration-300">Konsultan Sertifikat Laik Fungsi</p>
-            <p class="text-sm text-gray-500">PDF Document • 2.4 MB</p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span>PDF Document</span>
+                <span class="text-gray-400">•</span>
+                <span>2.4 MB</span>
+            </div>
         </div>
 
-        <!-- Tombol download di kanan -->
+        <!-- Tombol download di kanan dengan path yang benar -->
         <div class="flex-shrink-0">
             <button type="button"
-                    class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg hover:from-blue-600 hover:to-blue-700 flex items-center gap-2 shadow-sm hover:shadow transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50">
+                    onclick="window.open('assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf','_blank')"
+                    class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg hover:from-blue-600 hover:to-blue-700 flex items-center gap-2 shadow-sm hover:shadow transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 active:scale-95">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 0L8 7m4-4l4 4m5 4a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -102,20 +110,82 @@
     </button>
 </div>
 
+<!-- Tambahan: Jika ingin ada efek loading saat download -->
+<div id="download-toast" class="hidden fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2">
+    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+    <span>Mengunduh berkas...</span>
+</div>
+
+<script>
+// Optional: Tambahan efek untuk download
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.querySelector('button[onclick*="KONSULTAN_SERTIFIKAT_LAIK_FUNGSI"]');
+    const toast = document.getElementById('download-toast');
+
+    if (downloadBtn) {
+        // Ganti event onclick dengan fungsi yang lebih terkontrol
+        const originalOnClick = downloadBtn.getAttribute('onclick');
+        downloadBtn.removeAttribute('onclick');
+
+        downloadBtn.addEventListener('click', function() {
+            // Tampilkan toast loading
+            if (toast) {
+                toast.classList.remove('hidden');
+
+                // Simulasi loading
+                setTimeout(() => {
+                    // Eksekusi download asli
+                    eval(originalOnClick);
+
+                    // Sembunyikan toast setelah 2 detik
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                    }, 2000);
+                }, 500);
+            } else {
+                // Jika toast tidak ada, langsung download
+                eval(originalOnClick);
+            }
+        });
+    }
+});
+</script>
+
 <style>
-/* Tambahkan animasi untuk icon download */
+/* Animasi untuk icon download */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-2px); }
 }
 
-.group:hover .bi-download {
+.group:hover button svg {
     animation: bounce 0.5s ease-in-out;
 }
 
-/* Tambahkan style untuk accordion jika diperlukan */
+/* Efek untuk seluruh card */
+.contact-name {
+    transition: all 0.3s ease;
+}
+
+.contact-name:hover {
+    transform: translateX(2px);
+}
+
+/* Efek untuk tombol aktif */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Style untuk accordion jika diperlukan */
 .accordion-button[aria-expanded="true"] .font-semibold {
     color: #1d4ed8;
+}
+
+.accordion-button[aria-expanded="true"] .flex.items-center {
+    background: linear-gradient(to bottom right, #eff6ff, #dbeafe);
 }
 </style>
 
