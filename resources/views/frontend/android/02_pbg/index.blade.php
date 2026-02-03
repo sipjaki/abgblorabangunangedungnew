@@ -87,7 +87,7 @@
     <div class="flex-shrink-0">
         <a href="/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf"
            download
-           class="button-baru"
+           class="button-modern"
            >
             <i class="bi bi-download"></i>
             <span class="font-medium text-sm">Download</span>
