@@ -1372,7 +1372,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Koordinat Bangunan -->
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="form-modern">
         <label class="form-label-modern" for="koordinatbangunan">
             <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
@@ -1399,7 +1399,7 @@ document.getElementById('sk').addEventListener('change', function () {
 
 
     <!-- Fungsi Bangunan -->
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="form-modern">
             <label class="form-label-modern" for="fungsibangunan">
                 <i class="bi bi-building me-2 text-primary"></i> Pemanfataan Bangunan Gedung Sebagai ?
@@ -1421,7 +1421,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Jumlah Lantai -->
-    <div class="col-md-3">
+    <div class="col-md-4">
     <div class="form-modern">
         <label class="form-label-modern" for="jumlahlantai">
             <i class="bi bi-layers me-2 text-primary"></i> Jumlah Lantai
@@ -1448,7 +1448,7 @@ document.getElementById('sk').addEventListener('change', function () {
 
 
     <!-- Ketinggian Bangunan -->
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="ketinggianbangunan">
                 <i class="bi bi-arrows-vertical me-2 text-primary"></i> Ketinggian Bangunan (m)
@@ -1461,7 +1461,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Luas Bangunan -->
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="luasbangunan">
                 <i class="bi bi-rulers me-2 text-primary"></i> Luas Bangunan (m²)
@@ -1474,7 +1474,7 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 
     <!-- Kompleksitas Bangunan -->
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="kompleksitasbangunan">
                 <i class="bi bi-diagram-3 me-2 text-primary"></i> Kompleksitas Bangunan
