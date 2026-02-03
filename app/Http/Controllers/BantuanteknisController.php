@@ -7240,27 +7240,21 @@ public function bebantekbangunanbongkarcrnew(Request $request)
 }
 
 
-public function perbaikandetailbangunangedung($pelaksana, $id)
+public function perbaikandetailbangunangedung($id)
 {
     // Decode URL
-    $pelaksana = urldecode($pelaksana);
 
     $data = bantekpembongkarannew2::withTrashed()
         ->with('induk2')
         ->where('id', $id)
         ->firstOrFail();
 
-    // ❗ VALIDASI AMAN: CEK RELASI SAJA
-    if (!$data->induk2) {
-        abort(404);
-    }
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_informasibangunangedung.03_perbaikandetailbangunan',
         [
             'title'     => 'Perbaikan Berkas Informasi Detail Bangunan Gedung',
             'data'      => $data,
-            'pelaksana' => $pelaksana
         ]
     );
 }
