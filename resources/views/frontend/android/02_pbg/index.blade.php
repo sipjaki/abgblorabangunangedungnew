@@ -1,4 +1,5 @@
 @include('frontend.android.00_fiturmenu.01_header')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
