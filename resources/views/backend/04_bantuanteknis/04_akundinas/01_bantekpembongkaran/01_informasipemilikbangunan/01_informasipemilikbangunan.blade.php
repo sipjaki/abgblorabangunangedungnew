@@ -542,7 +542,7 @@
     </div>
 </div>
 
-                <div class="col-5">
+                <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="nosurat">
                             <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
@@ -553,7 +553,7 @@
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="tanggalsurat">
                             <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
