@@ -7209,6 +7209,11 @@ public function bebantekbangunanbongkarcrnew(Request $request)
     // ==============================
     // UPLOAD FILE
     // ==============================
+
+        if ($request->has('cadangan2')) {
+        $validated['cadangan2'] = implode('|', $request->cadangan2);
+    }
+
     $publicPath = public_path('bantekpembongkaran');
     if (!file_exists($publicPath)) {
         mkdir($publicPath, 0777, true);
