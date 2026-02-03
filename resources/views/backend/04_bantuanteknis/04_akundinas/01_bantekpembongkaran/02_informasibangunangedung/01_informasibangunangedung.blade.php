@@ -965,7 +965,6 @@
 })();
 </script>
 
-
 <div class="modal fade"
      id="modalSuratPernyataanKelaikan"
      tabindex="-1"
@@ -976,26 +975,41 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">
-                    <i class="bi bi-eye me-2 text-success"></i>
-                    Contoh Surat Pernyataan Kelaikan
+                    <i class="bi bi-file-earmark-word me-2 text-primary"></i>
+                    Pratinjau Surat Pernyataan Kelaikan
                 </h5>
                 <button type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"></button>
             </div>
 
-            <div class="modal-body text-center bg-light">
-                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURATKELAYAKAN.docx"
-                     alt="Contoh Surat Pernyataan Kelaikan"
-                     class="img-fluid rounded shadow-sm">
+            <div class="modal-body p-0 bg-dark" style="height: 70vh;">
+                @php
+                    $filePath = asset('assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURATKELAYAKAN.docx');
+                @endphp
+
+                <iframe src="https://docs.google.com/gview?url={{ $filePath }}&embedded=true"
+                        style="width:100%; height:100%;"
+                        frameborder="0">
+                </iframe>
             </div>
 
-            <div class="modal-footer">
-                <button type="button"
-                        class="btn btn-secondary btn-sm"
-                        data-bs-dismiss="modal">
-                    <i class="bi bi-x-circle me-1"></i> Tutup
-                </button>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <span class="text-muted small italic text-start">*Jika dokumen tidak muncul, silakan klik tombol download.</span>
+                </div>
+                <div>
+                    <button type="button"
+                            class="btn btn-secondary btn-sm"
+                            data-bs-dismiss="modal">
+                        Tutup
+                    </button>
+                    <a href="{{ $filePath }}"
+                       class="btn btn-success btn-sm"
+                       download>
+                        <i class="bi bi-download me-1"></i> Download Berkas
+                    </a>
+                </div>
             </div>
 
         </div>
