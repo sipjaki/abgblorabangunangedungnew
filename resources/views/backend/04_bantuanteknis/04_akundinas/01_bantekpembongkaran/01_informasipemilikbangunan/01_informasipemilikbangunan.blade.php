@@ -498,7 +498,7 @@
 
             <div class="row">
 
-                <div class="col-12">
+<div class="col-12">
     <div class="form-modern">
     <label class="form-label-modern" for="suratpermohonan">
         <i class="bi bi-upload me-2 text-primary"></i>
@@ -542,7 +542,7 @@
     </div>
 </div>
 
- <div class="col-6">
+                <div class="col-5">
                     <div class="form-modern">
                         <label class="form-label-modern" for="nosurat">
                             <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
@@ -563,11 +563,6 @@
                         @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                 </div>
-
-
-
-</div>
-
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
 
@@ -616,6 +611,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
 
 
+            </div>
             </div>
 
 
