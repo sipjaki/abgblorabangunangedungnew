@@ -472,7 +472,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                     <a href="{{ route(
                             'bebantekpembongkaranbangunandetail',
                             [
-                              'pelaksana' => urlencode($item->pelaksana),
+                            //   'pelaksana' => urlencode($item->pelaksana),
                          'id' => $item->id
                             ]
                         ) }}"
@@ -495,7 +495,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
 <a href="{{ route(
     'perbaikan.informasibangunangedung',
     [
-        'pelaksana' => urlencode($item->pelaksana),
+        // 'pelaksana' => urlencode($item->pelaksana),
         'id' => $item->id
     ]
 ) }}" class="button-baru">
