@@ -233,8 +233,8 @@
         }
     </style>
 
-<div class="surat-kajian-section">
-        <div class="surat-kajian-header">
+<div class="section">
+        <div class="section-header">
             <i class="bi bi-clipboard-check"></i> JADWAL PEMBONGKARAN BANGUNAN
         </div>
         <div class="surat-kajian-isi">
