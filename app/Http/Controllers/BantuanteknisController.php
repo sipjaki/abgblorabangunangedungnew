@@ -7231,10 +7231,12 @@ public function bebantekbangunanbongkarcrnew(Request $request)
     $record = bantekpembongkarannew2::create($validated);
 
     // REDIRECT
-    return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => $request->input('namapemilik_awal'),
-        'id' => $request->input('id_awal')
-    ])->with('create', 'Data berhasil disimpan!');
+    // return redirect()->route('bebantekpembongkaranshow', [
+    //     'namapemilik' => $request->input('namapemilik_awal'),
+    //     'id' => $request->input('id_awal')
+    // ])->with('create', 'Data berhasil disimpan!');
+
+    return redirect('/bebantekpembongkaran')->with('create', 'Data berhasil disimpan!');
 }
 
 

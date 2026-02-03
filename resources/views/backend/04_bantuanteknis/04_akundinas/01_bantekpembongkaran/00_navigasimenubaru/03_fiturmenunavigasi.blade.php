@@ -472,7 +472,6 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                     <a href="{{ route(
                             'bebantekpembongkaranbangunandetail',
                             [
-                                'pelaksana' => Str::slug($item->pelaksana ?? 'tidak-diketahui'),
                                 'id' => $item->id
                             ]
                         ) }}"
