@@ -540,8 +540,9 @@
 
         <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
     </div>
+</div>
 
- <div class="col-md-6">
+ <div class="col-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="nosurat">
                             <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
@@ -552,7 +553,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="tanggalsurat">
                             <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
@@ -566,8 +567,6 @@
 
 
 </div>
-</div>
-
 
 <script>
 document.getElementById('suratpermohonan').addEventListener('change', function () {
@@ -1363,20 +1362,6 @@ document.getElementById('sk').addEventListener('change', function () {
     </div>
 </div>
 
-
-    <!-- Kode Barang -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="kodebarang">
-                <i class="bi bi-tag me-2 text-primary"></i> Kode Inventaris Barang
-            </label>
-            <input type="text" class="form-control @error('kodebarang') is-invalid @enderror"
-                   id="kodebarang" name="kodebarang" value="{{ old('kodebarang') }}"
-                   placeholder="Kode barang inventaris">
-            @error('kodebarang') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
-
     <!-- Alamat Bangunan -->
     <div class="col-12">
         <div class="form-modern">
@@ -1758,7 +1743,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     <!-- Pemilik Bangunan -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="pemilikbangunan">
                 <i class="bi bi-person-badge me-2 text-primary"></i> Jenis/Nama Barang
@@ -1772,10 +1757,20 @@ document.addEventListener('DOMContentLoaded', function () {
             Contoh : <em> Bangunan Gedung Pendidikan Permanen (Lihat KIB) </em>
         </small>
     </div>
-
-
+    <!-- Kode Barang -->
+    <div class="col-md-4">
+        <div class="form-modern">
+            <label class="form-label-modern" for="kodebarang">
+                <i class="bi bi-tag me-2 text-primary"></i> Kode Inventaris Barang
+            </label>
+            <input type="text" class="form-control @error('kodebarang') is-invalid @enderror"
+                   id="kodebarang" name="kodebarang" value="{{ old('kodebarang') }}"
+                   placeholder="Kode barang inventaris">
+            @error('kodebarang') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
     <!-- Pemilik Bangunan -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-modern">
             <label class="form-label-modern" for="cadangan1">
                 <i class="bi bi-person-badge me-2 text-primary"></i> Nama Pemilik Bangunan
