@@ -38,41 +38,32 @@
 </nav>
 
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
-        {{-- <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]"> --}}
-          {{-- <div class="flex p-4 items-center gap-4">
-            <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
-              <div class="flex items-center">
-                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
-                </div>
-              </div>
-              <div class="flex flex-col flex-1 gap-[2px] text-left">
-                <p class="font-semibold">{{$title}}</p>
-                <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p>
-              </div>
-            </button>
-          </div> --}}
 
-        {{-- </div> --}}
+        <div class="bg-white rounded-xl flex items-center p-4 hover:shadow-md transition border border-[#DCDFE6]">
+
+    <!-- Icon kiri -->
+    <div class="w-[60px] h-[60px] flex-shrink-0 mr-4">
+        <img src="/assets/android/menunavigasi/NEW01.png"
+             alt="Icon Berkas"
+             class="w-full h-full object-cover rounded-lg">
+    </div>
+
+    <!-- Judul & tombol download -->
+    <div class="flex flex-col justify-center gap-2">
+        <p class="font-semibold text-sm text-[#4041DA] leading-[21px]">
+            Konsultan Sertifikat Laik Fungsi
+        </p>
+        <button type="button"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center gap-2"
+                onclick="window.open('/assets/abgblora/00_dokumen/02_pbgslf/KONSULTAN_SERTIFIKAT_LAIK_FUNGSI_(SLF)_.pdf','_blank')">
+            <i class="bi bi-download"></i> Download Berkas
+        </button>
+    </div>
+
+</div>
 
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
-          <a href="">
-              <div class="flex p-4 items-center gap-4">
-                  <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
-                      <div class="flex items-center">
-                          <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                              <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
-                            </div>
-                        </div>
-                        <div class="flex flex-col flex-1 gap-[2px] text-left">
-                            <p class="font-semibold">Informasi Konsultan Pengkaji Teknis</p>
-                            {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
-              </div>
-            </button>
-        </a>
-        </div>
 
-        </div>
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
