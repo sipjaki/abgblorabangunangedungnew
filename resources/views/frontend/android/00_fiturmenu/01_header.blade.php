@@ -10,6 +10,7 @@
   <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
 
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <title>{{$title}}</title>
 
