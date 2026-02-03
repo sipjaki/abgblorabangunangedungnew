@@ -68,21 +68,56 @@
         {{-- </div> --}}
 
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
-          <a href="">
-              <div class="flex p-4 items-center gap-4">
-                  <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
-                      <div class="flex items-center">
-                          <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                              <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
-                            </div>
-                        </div>
-                        <div class="flex flex-col flex-1 gap-[2px] text-left">
-                            <p class="font-semibold">Informasi Konsultan Pengkaji Teknis</p>
-                            {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
-              </div>
+        <div class="flex p-4 items-center gap-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+    <button type="button"
+            class="contact-name accordion-button flex items-center gap-2 w-full group"
+            data-accordion="accordion-1">
+
+        <!-- Icon kiri dengan efek hover -->
+        <div class="flex items-center">
+            <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-100 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
+                <img src="/assets/android/menunavigasi/NEW01.png"
+                     class="object-cover w-full h-full p-1.5"
+                     alt="Icon Berkas">
+            </div>
+        </div>
+
+        <!-- Judul & tombol download -->
+        <div class="flex flex-col flex-1 gap-[2px] text-left">
+            <p class="font-semibold text-gray-800 text-base group-hover:text-blue-700 transition-colors duration-300">Konsultan Sertifikat Laik Fungsi</p>
+            <p class="text-sm text-gray-500">PDF Document • 2.4 MB</p>
+        </div>
+
+        <!-- Tombol download di kanan -->
+        <div class="flex-shrink-0">
+            <button type="button"
+                    class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg hover:from-blue-600 hover:to-blue-700 flex items-center gap-2 shadow-sm hover:shadow transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 0L8 7m4-4l4 4m5 4a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-medium text-sm">Download</span>
             </button>
         </div>
-    </a>
+
+    </button>
+</div>
+
+<style>
+/* Tambahkan animasi untuk icon download */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.group:hover .bi-download {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Tambahkan style untuk accordion jika diperlukan */
+.accordion-button[aria-expanded="true"] .font-semibold {
+    color: #1d4ed8;
+}
+</style>
 
         </div>
 
