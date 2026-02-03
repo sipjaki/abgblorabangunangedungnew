@@ -510,6 +510,7 @@
                         @error('cadangan1') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                 </div>
+                
 <div class="col-md-12"> <div class="form-modern">
         <label class="form-label-modern mb-3">
             <i class="bi bi-list-check me-2 text-primary"></i>
@@ -876,7 +877,7 @@
         </small>
 
         <small class="text-muted d-block mb-2">
-            Klik kartu di bawah untuk melihat <strong>contoh surat pernyataan kelaikan</strong>.
+            Klik kartu di bawah untuk melihat <strong>contoh surat pernyataan kelayakan bangunan </strong>.
         </small>
 
         <!-- CARD LIHAT CONTOH -->
@@ -976,7 +977,7 @@
             <div class="modal-header">
                 <h5 class="modal-title">
                     <i class="bi bi-file-earmark-word me-2 text-primary"></i>
-                    Pratinjau Surat Pernyataan Kelaikan
+                    Surat Pernyataan Kelayakan Bangunan Gedung
                 </h5>
                 <button type="button"
                         class="btn-close"
@@ -1165,7 +1166,7 @@
     <div class="col-md-6">
         <div class="form-modern mb-3">
             <label class="form-label-modern" for="cadangan5">
-                <i class="bi bi-calendar-check me-2 text-primary"></i> Tanggal Mulai
+                <i class="bi bi-calendar-check me-2 text-primary"></i> Tanggal Mulai Pembongkaran
             </label>
             <input type="date"
                    class="form-control @error('cadangan5') is-invalid @enderror"
@@ -1181,7 +1182,7 @@
     <div class="col-md-6">
         <div class="form-modern mb-3">
             <label class="form-label-modern" for="catatan5">
-                <i class="bi bi-calendar-x me-2 text-primary"></i> Tanggal Selesai
+                <i class="bi bi-calendar-x me-2 text-primary"></i> Tanggal Selesai Pembongkaran
             </label>
             <input type="date"
                    class="form-control @error('catatan5') is-invalid @enderror"

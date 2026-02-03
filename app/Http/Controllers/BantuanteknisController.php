@@ -7199,7 +7199,7 @@ public function bebantekbangunanbongkarcrnew(Request $request)
 
         // Cadangan
         'cadangan1' => 'nullable|string',
-        'cadangan2' => 'nullable|string',
+        'cadangan2' => 'nullable|array',
         'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
         'cadangan5' => 'required|date',
