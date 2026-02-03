@@ -510,42 +510,75 @@
                         @error('cadangan1') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                 </div>
-
-<div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="cadangan2">
+<div class="col-md-12"> <div class="form-modern">
+        <label class="form-label-modern mb-3">
             <i class="bi bi-list-check me-2 text-primary"></i>
             Jenis Kajian Teknis Bangunan Gedung
         </label>
 
-        <select class="form-select @error('cadangan2') is-invalid @enderror"
-                id="cadangan2"
-                name="cadangan2">
-            <option value="">-- Pilih --</option>
+        @php
+            // Mengambil data lama jika validasi gagal, defaultnya array kosong
+            $oldKajian = old('cadangan2') ?? [];
+        @endphp
 
-            <option value="Kajian Analisa Kerusakan Bangunan Gedung"
-                {{ old('cadangan2') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
-                Kajian Analisa Kerusakan Bangunan Gedung
-            </option>
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="cadangan2[]"
+                       id="kajian1"
+                       value="Kajian Analisa Kerusakan Bangunan Gedung"
+                       {{ in_array('Kajian Analisa Kerusakan Bangunan Gedung', $oldKajian) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <label for="kajian1" style="cursor: pointer;">Kajian Analisa Kerusakan Bangunan Gedung</label>
+            </div>
+        </div>
 
-            <option value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
-                {{ old('cadangan2') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
-                Kajian Rencana Teknis Pembongkaran Bangunan Gedung
-            </option>
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="cadangan2[]"
+                       id="kajian2"
+                       value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
+                       {{ in_array('Kajian Rencana Teknis Pembongkaran Bangunan Gedung', $oldKajian) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <label for="kajian2" style="cursor: pointer;">Kajian Rencana Teknis Pembongkaran Bangunan Gedung</label>
+            </div>
+        </div>
 
-            <option value="Kajian Kelayakan Bangunan Gedung"
-                {{ old('cadangan2') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
-                Kajian Kelayakan Bangunan Gedung
-            </option>
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="cadangan2[]"
+                       id="kajian3"
+                       value="Kajian Kelayakan Bangunan Gedung"
+                       {{ in_array('Kajian Kelayakan Bangunan Gedung', $oldKajian) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <label for="kajian3" style="cursor: pointer;">Kajian Kelayakan Bangunan Gedung</label>
+            </div>
+        </div>
 
-            <option value="Bantuan Gambar Teknis"
-                {{ old('cadangan2') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
-                Bantuan Gambar Teknis
-            </option>
-        </select>
+        <div class="row align-items-start mb-2">
+            <div class="col-auto">
+                <input class="form-check-input mt-1"
+                       type="checkbox"
+                       name="cadangan2[]"
+                       id="kajian4"
+                       value="Bantuan Gambar Teknis"
+                       {{ in_array('Bantuan Gambar Teknis', $oldKajian) ? 'checked' : '' }}>
+            </div>
+            <div class="col">
+                <label for="kajian4" style="cursor: pointer;">Bantuan Gambar Teknis</label>
+            </div>
+        </div>
 
         @error('cadangan2')
-            <div class="invalid-feedback">{{ $message }}</div>
+            <div class="text-danger mt-1 small">{{ $message }}</div>
         @enderror
     </div>
 </div>

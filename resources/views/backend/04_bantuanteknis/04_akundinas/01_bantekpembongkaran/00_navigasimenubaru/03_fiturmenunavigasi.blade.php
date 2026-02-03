@@ -393,7 +393,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                         <i class="bi bi-person-vcard-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI PERMOHONAN PEMBONGKARAN BANGUNAN GEDUNG</h4>
+                        <h4>INFORMASI PERMOHONAN IZIN PEMBONGKARAN</h4>
                         <p>Data lengkap pemilik bangunan gedung</p>
                     </div>
 
@@ -457,7 +457,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                         <i class="bi bi-building-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI PERMOHONAN KELAYAKAN BANGUNAN GEDUNG</h4>
+                        <h4>INFORMASI PERMOHONAN KAJIAN BANGUNAN GEDUNG</h4>
                         <p>Detail dan spesifikasi bangunan yang akan dibongkar</p>
                     </div>
 

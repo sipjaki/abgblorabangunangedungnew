@@ -78,10 +78,12 @@ return new class extends Migration
     |--------------------------------------------------------------------------
     */
     $table->string('cadangan1')->nullable(); // SUDAH TERPAKAI
-    $table->string('cadangan2')->nullable();
-    $table->string('cadangan3')->nullable();
-    $table->string('cadangan4')->nullable();
-    $table->string('cadangan5')->nullable();
+    $table->string('cadangan2')->nullable(); // SUDAH TERPAKAI
+    $table->string('cadangan3')->nullable(); // SUDAH TERPAKAI
+    $table->string('cadangan4')->nullable(); // SUDAH TERPAKAI
+    $table->string('cadangan5')->nullable(); // DIGANTIU JADI TANGGAL MULAI
+
+    // CATATAN 5 DI GANTI JADI TANGGAL SELESAI 
 
     $table->softDeletes();
     $table->timestamps();
