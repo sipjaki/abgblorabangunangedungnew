@@ -146,20 +146,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -188,9 +176,9 @@ th {
 
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari Kecamatan ...." onkeyup="searchTable()"
+      <input type="search" id="searchInput" placeholder="Cari Desa ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -200,18 +188,18 @@ th {
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftardesakecamatan')"
-      class="button-baru"
+      class="button-berkas"
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
     </button>
 
-
+{{--
     <a href="/404" style="text-decoration: none;">
       <button class="button-baru"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
         <i class="bi bi-plus-circle"></i> Create
       </button>
-    </a>
+    </a> --}}
 
   </div>
 
@@ -244,7 +232,7 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
      <th style="background-color: #ADD8E6;">No</th>
@@ -274,7 +262,7 @@ th {
                                         {{-- <a href="/datagsbbloraupdate/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">

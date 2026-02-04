@@ -118,7 +118,7 @@
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Kecamatan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -180,7 +180,7 @@
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Desa</th> --}}
 <th><i class="bi bi-map-fill"></i> Kecamatan</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
-<th><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
