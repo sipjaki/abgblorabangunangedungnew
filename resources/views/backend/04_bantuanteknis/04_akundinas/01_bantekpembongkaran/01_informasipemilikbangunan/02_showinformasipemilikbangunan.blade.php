@@ -791,9 +791,11 @@
 
              </div>
 
-            </div>
 
-            <!-- DATA TANAH -->
+             <!-- /.card -->
+         </div>
+         {{-- PEMBATAS DATA --}}
+                <!-- DATA TANAH -->
             <div class="section">
                 <div class="section-header">
                     <i class="bi bi-globe-asia-australia"></i> Alasan Pembongkaran Bangunan Gedung
@@ -812,11 +814,6 @@
         </div>
     </div>
 </div>
-
-
-             <!-- /.card -->
-         </div>
-         {{-- PEMBATAS DATA --}}
 
      <div class="container-fluid">
          <div class="row">
