@@ -2247,7 +2247,7 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
             </div>
 
             <div class="section-header mt-4">
-    <i class="bi bi-building-gear me-2"></i> Data Teknis Bangunan
+    <i class="bi bi-building-gear me-2"></i> Alasan Pembongkaran Bangunan Gedung
 </div>
 <div class="row">
     <!-- Alasan Pembongkaran Bangunan Gedung -->
