@@ -791,6 +791,7 @@
 
              </div>
 
+            </div>
 
             <!-- DATA TANAH -->
             <div class="section">
@@ -812,7 +813,6 @@
     </div>
 </div>
 
-            </div>
 
              <!-- /.card -->
          </div>
