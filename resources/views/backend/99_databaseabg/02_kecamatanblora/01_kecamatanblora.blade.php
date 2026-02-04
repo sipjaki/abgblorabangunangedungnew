@@ -174,13 +174,13 @@
                         <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
+     <th>No</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Desa</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-map-fill"></i> Kecamatan</th>
+<th><i class="bi bi-map-fill"></i> Kecamatan</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
