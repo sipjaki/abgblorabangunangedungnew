@@ -1388,7 +1388,7 @@
   {{-- <i class="bi bi-person-search nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i> --}}
   <i class="bi bi-clipboard-check nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
 
-  <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
+  <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
   <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
