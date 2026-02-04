@@ -796,7 +796,7 @@ function previewSK(input) {
         {{-- Pemilik Bangunan --}}
         <div class="col-md-6">
             <div class="data-card">
-                <div class="data-label"><i class="bi bi-person-gear"></i> Pemilik Bangunan</div>
+                <div class="data-label"><i class="bi bi-person-gear"></i> Nama Bangunan</div>
                 <input type="text" name="pemilikbangunan" class="form-control"
                        value="{{ old('pemilikbangunan', $data->pemilikbangunan) }}">
             </div>
@@ -1014,6 +1014,33 @@ function previewPBG(input) {
     }
 }
 </script>
+
+
+
+            <!-- DOKUMEN PENDUKUNG -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-folder2-open"></i> ALASAN PEMBONGKARAN BANGUNAN GEDUNG
+                </div>
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- KIB --}}
+<div class="col-md-12">
+    <div class="data-card">
+        <div class="data-label">
+            <i class="bi bi-file-earmark-text"></i> Alasan Pembongkaran
+        </div>
+        <div class="data-value">
+            {{ $data->cadangan2 ?? 'Data Tidak Ditemukan' }}
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
 
 
     <br><br>

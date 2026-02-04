@@ -6914,6 +6914,8 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'apakahadapbg' => 'nullable|string|max:255',
         'nosurat' => 'nullable|string|max:255',
         'tanggalsurat' => 'nullable|date',
+
+        'cadangan2' => 'nullable|string',
     ]);
 
     // ==========================
