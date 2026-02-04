@@ -189,7 +189,7 @@ th {
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftardesakecamatan')"
       class="button-berkas"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
@@ -235,13 +235,13 @@ th {
                         <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Desa</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-map-fill"></i> Kecamatan</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
+     <th >No</th>
+{{-- <th ><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
+{{-- <th ><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
+<th ><i class="bi bi-geo-fill"></i> Desa</th>
+<th ><i class="bi bi-map-fill"></i> Kecamatan</th>
+{{-- <th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
+<th ><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
