@@ -83,21 +83,9 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+                                <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            </div>
 
 
 
@@ -192,7 +180,7 @@
 <th ><i class="bi bi-signpost-split"></i> Ruas Jalan</th>
 <th ><i class="bi bi-diagram-3"></i> Jenis Jalan</th>
 <th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th>
-<th ><i class="bi bi-tools"></i> Aksi</th>
+<th style="text-align: right;" ><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
