@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -59,27 +13,10 @@ th {
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-<style>
-
-    body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        </style>
-
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -200,9 +137,9 @@ th {
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
-      class="button-baru"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_GSBKabupatenBlora')"
+      class="button-berkas"
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
@@ -249,13 +186,13 @@ th {
 >
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-signpost-split"></i> Ruas Jalan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3"></i> Jenis Jalan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
+     <th >No</th>
+{{-- <th ><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
+{{-- <th ><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
+<th ><i class="bi bi-signpost-split"></i> Ruas Jalan</th>
+<th ><i class="bi bi-diagram-3"></i> Jenis Jalan</th>
+<th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th>
+<th ><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
@@ -273,10 +210,10 @@ th {
                 {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
                 </a> --}}
-                                        <a href="/datagsbbloraupdate/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        <a href="/datagsbbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">

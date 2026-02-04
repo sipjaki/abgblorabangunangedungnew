@@ -178,7 +178,7 @@
 <th ><i class="bi bi-geo-fill"></i> Desa</th>
 <th ><i class="bi bi-map-fill"></i> Kecamatan</th>
 {{-- <th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
-<th ><i class="fas fa-tools"></i> Aksi</th>
+<th ><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
@@ -187,7 +187,7 @@
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-<td style="text-align: center; text-transform:uppercase;">{{ $item->desa ?? '-' }}</td>
+<td style="text-align: left; text-transform:uppercase;">{{ $item->desa ?? '-' }}</td>
 <td>{{ $item->kecamatanblora->kecamatanblora ?? '-' }}</td>
 {{-- <td>{{ $item->gsb ?? '-' }} Meter </td> --}}
             @can('superadmin')
