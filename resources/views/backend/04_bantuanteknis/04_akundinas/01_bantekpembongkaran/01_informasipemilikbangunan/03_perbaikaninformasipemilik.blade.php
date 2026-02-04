@@ -989,6 +989,7 @@ function previewSK(input) {
         </div>
 
     </div>
+
 </div>
 
 <script>
@@ -1016,6 +1017,9 @@ function previewPBG(input) {
 </script>
 
 
+    </div>
+</div>
+
 
             <!-- DOKUMEN PENDUKUNG -->
             <div class="section">
@@ -1034,11 +1038,6 @@ function previewPBG(input) {
         <div class="data-value">
             {{ $data->cadangan2 ?? 'Data Tidak Ditemukan' }}
         </div>
-    </div>
-</div>
-
-
-
     </div>
 </div>
 
