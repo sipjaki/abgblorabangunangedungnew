@@ -18,7 +18,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -86,20 +86,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
@@ -161,7 +149,7 @@
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-modern" style="color: black;">
+    <button class="button-berkas" style="color: black;">
         <!-- Ikon Kembali -->
 <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i>
  Menu Utama
@@ -190,7 +178,7 @@
 <th><i class="bi bi-calendar-event"></i> Tanggal Permohonan</th>
 <th><i class="bi bi-telephone-fill"></i> Whatsapp</th>
 <th><i class="bi bi-bounding-box"></i> Luas Tanah</th>
-<th><i class="bi bi-geo-alt-fill"></i> Lokasi Bangunan</th>
+{{-- <th><i class="bi bi-geo-alt-fill"></i> Lokasi Bangunan</th> --}}
 
 <th><i class="bi bi-eye-fill"></i> Lihat Permohonan</th>
 
@@ -238,7 +226,7 @@
                                     <td style="text-align: left;">
                                         {{ strtoupper($item->kelurahandesa->desa) }}
                                     </td> --}}
-                                    <td style="text-align: left;">{{$item->lokasibangunan}}</td>
+                                    {{-- <td style="text-align: left;">{{$item->lokasibangunan}}</td> --}}
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
