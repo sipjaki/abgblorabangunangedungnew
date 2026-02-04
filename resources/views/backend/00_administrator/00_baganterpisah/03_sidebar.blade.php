@@ -1348,21 +1348,21 @@
     </p>
 <li class="nav-item">
     <a href="/datakecblora" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-geo-alt-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <i class="bi bi-geo-alt-fill nav-icon" style="color: orange; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datadesablora" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-house-door-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <i class="bi bi-house-door-fill nav-icon" style="color: orange; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datagsbblora" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <i class="bi bi-building nav-icon" style="color: orange; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">GSB Kab Blora</p>
     </a>
 </li>
