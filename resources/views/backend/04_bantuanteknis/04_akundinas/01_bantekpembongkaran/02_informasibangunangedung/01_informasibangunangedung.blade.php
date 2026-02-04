@@ -493,7 +493,7 @@
         <div class="card-body">
 
     <div class="section-header">
-        <i class="bi bi-clipboard-data me-2"></i>Surat Kajian Kelayakan Bangunan Gedung
+        <i class="bi bi-clipboard-data me-2"></i>Dokumen Kajian Bangunan Gedung
     </div>
 
 
@@ -510,7 +510,7 @@
                         @error('cadangan1') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                 </div>
-                
+
 <div class="col-md-12"> <div class="form-modern">
         <label class="form-label-modern mb-3">
             <i class="bi bi-list-check me-2 text-primary"></i>
@@ -892,7 +892,7 @@
                 <div class="col-8">
                     <div class="card-body py-3">
                         <h6 class="mb-1 fw-semibold">
-                            Contoh Surat Pernyataan Kelaikan
+                            Contoh Surat Pernyataan Kelayakan
                         </h6>
                         <small class="text-muted">
                             Klik untuk melihat contoh dokumen

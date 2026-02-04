@@ -1,43 +1,3 @@
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        border: 1px solid #e5e7eb;
-    }
-    .zebra-table th {
-        background-color: #ADD8E6; /* biru muda */
-        color: black;
-        text-align: center;
-        padding: 8px 12px;
-        border: 1px solid #e5e7eb;
-        white-space: nowrap;
-    }
-    .zebra-table td {
-        text-align: center;
-        padding: 8px 12px;
-        border: 1px solid #e5e7eb;
-        white-space: nowrap;
-    }
-    .zebra-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-    .zebra-table tbody tr:nth-child(even) {
-        background-color: #f1f1f1;
-    }
-    .zebra-table tbody tr:hover {
-        background-color: #ffd100 !important;
-    }
-    th {
-        background-color: #ADD8E6;
-    }
-</style>
-
-<!-- Your existing header includes -->
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -50,7 +10,7 @@
         @include('frontend.android.00_fiturmenu.06_alert')
 
         <!--begin::App Main-->
-        <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
+        <main class="app-main" style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
             <!-- Your existing content header -->
             <div class="app-content-header">
                 <div class="container-fluid">
@@ -113,7 +73,7 @@
 
                                     <!-- PDF Download Button -->
                                     <div style="text-align: center; margin: 20px;">
-                                        <button class="button-modern" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+                                        <button class="button-modern" onclick="downloadPDF()">
                                             📄 Download Berkas Final KRK (PDF)
                                         </button>
                                     </div>
@@ -306,20 +266,58 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">2</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Jumlah Lantai</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? '-' }} Lantai</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? '-' }} </td>
 </tr>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">3</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Bangunan Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+    @php
+    $luasB = $item->luasbangunan ?? null;
+    $luasBFormatted = is_numeric($luasB) ? number_format($luasB, 0, ',', '.') . ' M²' : '-';
+@endphp
+
+{{ $luasBFormatted }}
+
+    </td>
 </tr>
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">4</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Lantai Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+@php
+    // Ambil nilai luas bangunan
+    $luasBangunan = $item->luasbangunan ?? null;
+
+    // Ambil text lantai
+    $lantaiText = $item->luaslantaimaksimal ?? null;
+
+    // Tentukan nilai lantai sesuai aturan
+    $lantai = match($lantaiText) {
+        '2 Lantai' => 2,
+        '4 Lantai' => 4,
+        '2 - 8 Lantai' => 8,
+        default => null
+    };
+
+    // Hitung hasil kali
+    $hasil = (is_numeric($luasBangunan) && $lantai)
+        ? $luasBangunan * $lantai
+        : null;
+
+    // Format ribuan
+    $hasilFormatted = $hasil ? number_format($hasil, 0, ',', '.') . ' M²' : '-';
+@endphp
+
+{{ $hasilFormatted }}
+
+</td>
 </tr>
+
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">5</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Fungsi Utama Bangunan</td>
@@ -414,7 +412,7 @@
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
     <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
         {{-- Kabupaten Blora<br> --}}
-        Plt. KEPALA DINAS<br>
+        Plh. KEPALA DINAS<br>
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
@@ -430,10 +428,10 @@
         <br>
 <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
     <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIDZAMUDIN AL HUDDA, S.T
+        MOHAMAD ARIF HIDAYAT, ST
     </span>
     <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIP. 19720326 200604 1 005
+        NIP. 19710506 199403 1 011
     </span>
 </div>
     </div>

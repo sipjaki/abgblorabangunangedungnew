@@ -1,43 +1,3 @@
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        border: 1px solid #e5e7eb;
-    }
-    .zebra-table th {
-        background-color: #ADD8E6; /* biru muda */
-        color: black;
-        text-align: center;
-        padding: 8px 12px;
-        border: 1px solid #e5e7eb;
-        white-space: nowrap;
-    }
-    .zebra-table td {
-        text-align: center;
-        padding: 8px 12px;
-        border: 1px solid #e5e7eb;
-        white-space: nowrap;
-    }
-    .zebra-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-    .zebra-table tbody tr:nth-child(even) {
-        background-color: #f1f1f1;
-    }
-    .zebra-table tbody tr:hover {
-        background-color: #ffd100 !important;
-    }
-    th {
-        background-color: #ADD8E6;
-    }
-</style>
-
-<!-- Your existing header includes -->
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -330,6 +290,7 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? '-' }}</td>
 </tr>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">3</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Bangunan Maksimal</td>
@@ -377,6 +338,7 @@
 
 </td>
 </tr>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">5</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Fungsi Utama Bangunan</td>
