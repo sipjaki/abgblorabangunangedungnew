@@ -157,7 +157,7 @@
 </a>
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-modern" style="color: black;">
+    <button class="button-baru" style="color: black;">
         <!-- Ikon Kembali -->
 <i class="bi bi-arrow-left" style="margin-right: 8px; color: navy;"></i> Kembali
     </button>
@@ -230,7 +230,7 @@
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
-                    class="button-modern">
+                    class="button-baru">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
@@ -257,7 +257,7 @@
     @else
         <button
             type="button"
-            class="button-modern"
+            class="button-baru"
             onclick="openModal({{ $item->id }})"
         >
             <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
@@ -330,7 +330,7 @@
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
-                    class="button-modern">
+                    class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -358,7 +358,7 @@
   @else
     <button
         type="button"
-        class="button-modern"
+        class="button-baru"
         onclick="openModalVerifikasi2({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Verifikasi
@@ -658,7 +658,7 @@
   @else
     <button
         type="button"
-        class="button-modern"
+        class="button-baru"
         onclick="openModal3({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
@@ -759,7 +759,7 @@
 @endif
 
                 <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
-                    class="button-modern">
+                    class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
                 </a>
@@ -791,7 +791,7 @@
   @else
     <button
         type="button"
-        class="button-modern"
+        class="button-baru"
         onclick="openModal4({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi

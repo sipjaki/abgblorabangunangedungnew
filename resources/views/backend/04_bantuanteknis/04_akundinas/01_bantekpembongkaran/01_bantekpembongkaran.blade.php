@@ -349,9 +349,16 @@
                                  <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                              </div>
-                             <div class="modal-body">
-                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                             </div>
+<div class="modal-body">
+    <p>
+        <strong>Apakah Anda yakin ingin menghapus data ini:</strong>
+        <span id="itemName"></span>?
+    </p>
+    <p class="text-muted">
+        Jika data dihapus, maka seluruh berkas permohonan yang telah diunggah
+        akan ikut terhapus secara permanen dan tidak dapat dikembalikan.
+    </p>
+</div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                  <form id="deleteForm" method="POST" action="">
