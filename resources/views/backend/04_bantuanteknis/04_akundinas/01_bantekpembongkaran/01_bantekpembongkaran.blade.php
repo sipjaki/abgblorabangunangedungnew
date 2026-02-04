@@ -163,7 +163,7 @@
     @endcanany --}}
 
                                <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_bantuanteknispembongkaran')"
-                                    class="button-baru" style="color: black;">
+                                    class="button-berkas" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
@@ -351,8 +351,7 @@
                              </div>
 <div class="modal-body">
     <p>
-        <strong>Apakah Anda yakin ingin menghapus data ini:</strong>
-        <span id="itemName"></span>?
+        <strong>Apakah Anda yakin ingin menghapus data ini:</strong>?
     </p>
     <p class="text-muted">
         Jika data dihapus, maka seluruh berkas permohonan yang telah diunggah
