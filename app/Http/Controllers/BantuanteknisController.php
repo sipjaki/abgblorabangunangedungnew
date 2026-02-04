@@ -6695,6 +6695,7 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
         'cadangan1' => 'nullable|string|max:255',
+        'cadangan2' => 'nullable|string|max:255',
         ]);
 
     // ==============================

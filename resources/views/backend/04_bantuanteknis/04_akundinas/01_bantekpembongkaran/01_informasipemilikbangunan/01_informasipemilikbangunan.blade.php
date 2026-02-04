@@ -2246,6 +2246,36 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
 
             </div>
 
+            <div class="section-header mt-4">
+    <i class="bi bi-building-gear me-2"></i> Data Teknis Bangunan
+</div>
+<div class="row">
+    <!-- Alasan Pembongkaran Bangunan Gedung -->
+    <div class="col-md-12">
+        <div class="form-modern">
+            <label class="form-label-modern" for="cadangan2">
+                <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                Alasan Pembongkaran Bangunan Gedung
+            </label>
+
+            <textarea
+                class="form-control @error('cadangan2') is-invalid @enderror"
+                id="cadangan2"
+                name="cadangan2"
+                rows="4"
+                placeholder="Tuliskan alasan pembongkaran bangunan gedung">{{ old('cadangan2') }}</textarea>
+
+            @error('cadangan2')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan: Jelaskan alasan pembongkaran bangunan gedung sesuai kondisi di lapangan.
+            </small>
+        </div>
+    </div>
+</div>
+
             <!-- Tombol Submit -->
           <div class="mt-4 text-end">
 
