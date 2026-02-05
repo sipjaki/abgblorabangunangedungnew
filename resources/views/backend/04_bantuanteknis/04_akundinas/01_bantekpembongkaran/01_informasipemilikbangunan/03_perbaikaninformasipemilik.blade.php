@@ -1145,7 +1145,6 @@ function previewPBG(input) {
 
 
     </div>
-</div>
 
 
 
