@@ -6897,11 +6897,6 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'cadangan4' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'cadangan5' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'catatan8' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-
         'luastanah' => 'nullable|numeric',
         'statustanah' => 'nullable|string|max:255',
         'namapemeganghak' => 'nullable|string|max:255',
@@ -6928,6 +6923,12 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'tanggalsurat' => 'nullable|date',
 
         'cadangan2' => 'nullable|string',
+
+        'cadangan3' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'cadangan4' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'cadangan5' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'catatan8'  => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+
     ]);
 
     // ==========================
@@ -6993,6 +6994,7 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
     ]
 )->with('update', 'Perbaikan Berkas Berhasil!');
 }
+
 
     public function berkaskonsultasiPembongkaran($id)
 {
