@@ -409,16 +409,16 @@ th {
                                         <!-- Second Page -->
                                         <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black;">
                                             <!-- Letterhead (same as first page) -->
-                                            {{-- <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
-                                                <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
+                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
+                                                {{-- <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
                                                 <div style="display: inline-block;">
                                                     <h3 style="margin: 2px 0; font-size: 16px;">PEMERINTAH KABUPATEN BLORA</h3>
                                                     <h3 style="margin: 2px 0; font-size: 16px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
                                                     <p style="margin: 4px 0; font-size: 13px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
                                                     <h3 style="margin: 2px 0; font-size: 16px;">BLORA 58214</h3>
                                                 </div>
-                                                <div style="clear: both;"></div>
-                                            </div> --}}
+                                                <div style="clear: both;"></div> --}}
+                                            </div>
 
                                             <!-- Content for second page -->
 <div class="content" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify; font-weight: normal;">
@@ -450,6 +450,7 @@ th {
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Wajib menyediakan tempat/area parkir.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
     </ol>
 </div>
 

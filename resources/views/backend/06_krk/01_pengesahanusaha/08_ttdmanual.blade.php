@@ -451,6 +451,8 @@ th {
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Wajib menyediakan tempat/area parkir.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
+
     </ol>
 </div>
 
