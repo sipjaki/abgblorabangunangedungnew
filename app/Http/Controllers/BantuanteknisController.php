@@ -20,7 +20,8 @@ use Carbon\Carbon;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class BantuanteknisController extends Controller
 {
@@ -6641,136 +6642,130 @@ public function informasipemilikbangunan($namapemilik, $id)
 
 public function bebantekpembongkaraninformasipemiliknew(Request $request)
 {
-    // VALIDASI
+    // 1. VALIDASI
+    // Tips: Tambahkan 'required' pada field yang memang wajib diisi
     $validated = $request->validate([
         'bantekpembongkaraninduk_id' => 'nullable|integer',
-        'nosurat' => 'nullable|string|max:255',
-        'tanggalsurat' => 'nullable|date',
-        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-
-        'namabangunan' => 'nullable|string|max:255',
-        'pilihanbangunan' => 'nullable|string|max:255',
-        'suratkelayakan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'nosurat'                    => 'nullable|string|max:255',
+        'tanggalsurat'               => 'nullable|date',
+        'suratpermohonan'            => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'namabangunan'               => 'nullable|string|max:255',
+        'pilihanbangunan'            => 'nullable|string|max:255',
+        'suratkelayakan'             => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
         // SURAT KESANGGUPAN
-        'pilihansanggup' => 'nullable|array',
-        'suratkesanggupan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'pilihansanggup'             => 'nullable|array',
+        'suratkesanggupan'           => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'namalengkap' => 'nullable|string|max:255',
-        'jabatan' => 'nullable|string|max:255',
-        'alamatpemilik' => 'nullable|string',
-        'notelepon' => 'nullable|string|max:50',
-        'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'namalengkap'                => 'nullable|string|max:255',
+        'jabatan'                    => 'nullable|string|max:255',
+        'alamatpemilik'              => 'nullable|string',
+        'notelepon'                  => 'nullable|string|max:50',
+        'ktp'                        => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'sk'                         => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'luastanah' => 'nullable|numeric',
-        'statustanah' => 'nullable|string|max:255',
-        'namapemeganghak' => 'nullable|string|max:255',
-        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'luastanah'                  => 'nullable|numeric',
+        'statustanah'                => 'nullable|string|max:255',
+        'namapemeganghak'            => 'nullable|string|max:255',
+        'sertifikattanah'            => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'legalitasbangunan' => 'nullable|string|max:255',
-        'nomorpbg' => 'nullable|string|max:255',
-        'pemilikbangunan' => 'nullable|string|max:255',
-        'kodebarang' => 'nullable|string|max:255',
-        'alamatbangunan' => 'nullable|string',
-        'koordinatbangunan' => 'nullable|string|max:255',
-        'fungsibangunan' => 'nullable|string|max:255',
-        'jumlahlantai' => 'nullable|integer',
-        'ketinggianbangunan' => 'nullable|string',
-        'luasbangunan' => 'nullable|numeric',
-        'kompleksitasbangunan' => 'nullable|string|max:255',
-        'tingkatpermanensi' => 'nullable|string|max:255',
-        'kepadatan' => 'nullable|string|max:255',
+        'legalitasbangunan'          => 'nullable|string|max:255',
+        'nomorpbg'                   => 'nullable|string|max:255',
+        'pemilikbangunan'            => 'nullable|string|max:255',
+        'kodebarang'                 => 'nullable|string|max:255',
+        'alamatbangunan'             => 'nullable|string',
+        'koordinatbangunan'          => 'nullable|string|max:255',
+        'fungsibangunan'             => 'nullable|string|max:255',
+        'jumlahlantai'               => 'nullable|integer',
+        'ketinggianbangunan'         => 'nullable|string',
+        'luasbangunan'               => 'nullable|numeric',
+        'kompleksitasbangunan'       => 'nullable|string|max:255',
+        'tingkatpermanensi'          => 'nullable|string|max:255',
+        'kepadatan'                  => 'nullable|string|max:255',
 
-        // ⬇️ DIUBAH
-        'tanggaldibangun' => 'nullable',
-        'tanggalrevovasi' => 'nullable',
+        'tanggaldibangun'            => 'nullable|string',
+        'tanggalrevovasi'            => 'nullable|string',
 
-        'nilaibangunanbaru' => 'nullable|numeric',
-        'nilaibangunanlama' => 'nullable|numeric',
+        'nilaibangunanbaru'          => 'nullable|numeric',
+        'nilaibangunanlama'          => 'nullable|numeric',
+        'kib'                        => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'apakahadapbg'               => 'nullable|string|max:255',
+        'pbg'                        => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'kib' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan1'                  => 'nullable|string|max:255',
+        'cadangan2'                  => 'nullable|string|max:255',
 
-        'apakahadapbg' => 'nullable|string|max:255',
-        'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        // FOTO
+        'cadangan3'                  => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'cadangan4'                  => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'cadangan5'                  => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'catatan8'                   => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+    ]);
 
-        'cadangan1' => 'nullable|string|max:255',
-        'cadangan2' => 'nullable|string|max:255',
+    // DB Transaction untuk keamanan data
+    DB::beginTransaction();
 
-
-        // DOKUMENTASI FOTO
-        'cadangan3' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
-        'cadangan4' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
-        'cadangan5' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
-        'catatan8' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
-
-        ]);
-
-    // ==============================
-    // NORMALISASI TANGGAL / TAHUN
-    // ==============================
-
-    if (!empty($request->tanggaldibangun)) {
-        $tanggal = $request->tanggaldibangun;
-        if (preg_match('/^\d{4}$/', $tanggal)) {
-            $validated['tanggaldibangun'] = $tanggal . '-01-01';
+    try {
+        // 2. NORMALISASI TANGGAL (Jika input hanya tahun 2024 -> 2024-01-01)
+        foreach (['tanggaldibangun', 'tanggalrevovasi'] as $dateField) {
+            if ($request->filled($dateField)) {
+                $value = $request->$dateField;
+                if (preg_match('/^\d{4}$/', $value)) {
+                    $validated[$dateField] = $value . '-01-01';
+                }
+            }
         }
-    }
 
-    if (!empty($request->tanggalrevovasi)) {
-        $tanggal = $request->tanggalrevovasi;
-        if (preg_match('/^\d{4}$/', $tanggal)) {
-            $validated['tanggalrevovasi'] = $tanggal . '-01-01';
+        // 3. GABUNG CHECKBOX
+        if ($request->has('pilihansanggup')) {
+            $validated['pilihansanggup'] = implode('|', $request->pilihansanggup);
         }
-    }
 
-    // ==============================
-    // GABUNG CHECKBOX KE 1 KOLOM
-    // ==============================
-    if ($request->has('pilihansanggup')) {
-        $validated['pilihansanggup'] = implode('|', $request->pilihansanggup);
-    }
+        // 4. PROSES UPLOAD FILE
+        $fileFields = [
+            'suratpermohonan', 'suratkelayakan', 'suratkesanggupan',
+            'ktp', 'sk', 'sertifikattanah', 'kib', 'pbg',
+            'cadangan3', 'cadangan4', 'cadangan5', 'catatan8'
+        ];
 
-    // ==============================
-    // UPLOAD FILE
-    // ==============================
-    $publicPath = public_path('bantekpembongkaran');
-    if (!file_exists($publicPath)) {
-        mkdir($publicPath, 0777, true);
-    }
-
-    $fileFields = [
-        'suratpermohonan',
-        'suratkelayakan',
-        'suratkesanggupan',
-        'ktp',
-        'sk',
-        'sertifikattanah',
-        'kib',
-        'pbg',
-        'cadangan3',
-        'cadangan4',
-        'cadangan5',
-        'catatan8',
-    ];
-
-    foreach ($fileFields as $field) {
-        if ($request->hasFile($field)) {
-            $file = $request->file($field);
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move($publicPath, $filename);
-            $validated[$field] = 'bantekpembongkaran/' . $filename;
+        $publicPath = public_path('bantekpembongkaran');
+        if (!file_exists($publicPath)) {
+            mkdir($publicPath, 0777, true);
         }
+
+        foreach ($fileFields as $field) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+
+                // Gunakan nama file yang lebih aman (Timestamp + Random String + Extension)
+                $extension = $file->getClientOriginalExtension();
+                $safeName = time() . '_' . Str::random(10) . '.' . $extension;
+
+                $file->move($publicPath, $safeName);
+                $validated[$field] = 'bantekpembongkaran/' . $safeName;
+            }
+        }
+
+        // 5. SIMPAN KE DATABASE
+        bantekpembongkarannew1::create($validated);
+
+        DB::commit();
+
+        return redirect()->route('bebantekpembongkaranshow', [
+            'namapemilik' => $request->input('namapemilik_awal'),
+            'id' => $request->input('id_awal')
+        ])->with('create', 'Data berhasil disimpan!');
+
+    } catch (\Exception $e) {
+        DB::rollBack();
+
+        // Log error untuk debug developer
+        Log::error('Error Simpan Bantek: ' . $e->getMessage());
+
+        return redirect()->back()
+            ->withInput()
+            ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
     }
-
-    // SIMPAN
-    $record = bantekpembongkarannew1::create($validated);
-
-    // REDIRECT
-    return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => $request->input('namapemilik_awal'),
-        'id' => $request->input('id_awal')
-    ])->with('create', 'Data berhasil disimpan!');
 }
 
 public function bebantekpembongkarandokumen($namabangunan, $id)

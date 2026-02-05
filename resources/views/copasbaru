@@ -1,146 +1,183 @@
+public function bebantekpembongkaraninformasipemiliknew(Request $request)
+{
+    // ==============================
+    // 1. VALIDASI DATA
+    // ==============================
+    $validated = $request->validate([
+        'bantekpembongkaraninduk_id' => 'nullable|integer',
+        'nosurat' => 'nullable|string|max:255',
+        'tanggalsurat' => 'nullable|date',
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-<div class="row">
+        'namabangunan' => 'nullable|string|max:255',
+        'pilihanbangunan' => 'nullable|string|max:255',
+        'suratkelayakan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-    <div class="col-md-12">
-        <div class="form-modern">
+        // SURAT KESANGGUPAN
+        'pilihansanggup' => 'nullable|array',
+        'suratkesanggupan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-            <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Depan
-            </label>
+        'namalengkap' => 'nullable|string|max:255',
+        'jabatan' => 'nullable|string|max:255',
+        'alamatpemilik' => 'nullable|string',
+        'notelepon' => 'nullable|string|max:20',
+        'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-            {{-- PREVIEW --}}
-            <div class="mb-2">
-                @if($data->cadangan3)
-                    <img src="{{ asset('storage/'.$data->cadangan3) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
-            </div>
+        'luastanah' => 'nullable|numeric',
+        'statustanah' => 'nullable|string|max:255',
+        'namapemeganghak' => 'nullable|string|max:255',
+        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan3"
-                   class="form-control @error('cadangan3') is-invalid @enderror"
-                   accept="image/*">
+        'legalitasbangunan' => 'nullable|string|max:255',
+        'nomorpbg' => 'nullable|string|max:255',
+        'pemilikbangunan' => 'nullable|string|max:255',
+        'kodebarang' => 'nullable|string|max:255',
+        'alamatbangunan' => 'nullable|string',
+        'koordinatbangunan' => 'nullable|string|max:255',
+        'fungsibangunan' => 'nullable|string|max:255',
+        'jumlahlantai' => 'nullable|integer',
+        'ketinggianbangunan' => 'nullable|numeric',
+        'luasbangunan' => 'nullable|numeric',
+        'kompleksitasbangunan' => 'nullable|string|max:255',
+        'tingkatpermanensi' => 'nullable|string|max:255',
+        'kepadatan' => 'nullable|string|max:255',
 
-            @error('cadangan3')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+        // TANGGAL
+        'tanggaldibangun' => 'nullable',
+        'tanggalrevovasi' => 'nullable',
 
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
-        </div>
-    </div>
+        'nilaibangunanbaru' => 'nullable|numeric',
+        'nilaibangunanlama' => 'nullable|numeric',
 
-        <div class="col-md-12">
-        <div class="form-modern">
+        'kib' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'apakahadapbg' => 'nullable|string|max:255',
+        'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-            <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Belakang
-            </label>
+        'cadangan1' => 'nullable|string|max:255',
+        'cadangan2' => 'nullable|string',
 
-            {{-- PREVIEW --}}
-            <div class="mb-2">
-                @if($data->cadangan4)
-                    <img src="{{ asset('storage/'.$data->cadangan4) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
-            </div>
+        // DOKUMENTASI FOTO - PERHATIKAN: 'catatan8' BUKAN FILE FOTO
+        'cadangan3' => 'nullable|image|mimes:jpg,jpeg,png|max:5120', // 5MB
+        'cadangan4' => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
+        'cadangan5' => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
+        'catatan8' => 'nullable|string|max:255', // INI SEHARUSNYA STRING BUKAN FILE
+    ]);
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan4"
-                   class="form-control @error('cadangan4') is-invalid @enderror"
-                   accept="image/*">
+    // ==============================
+    // 2. TAMBAHKAN HIDDEN FIELD DARI FORM
+    // ==============================
+    $validated['id_awal'] = $request->input('id_awal');
+    $validated['namapemilik_awal'] = $request->input('namapemilik_awal');
+    $validated['user_id'] = $request->input('user_id');
 
-            @error('cadangan4')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    // ==============================
+    // 3. NORMALISASI TANGGAL / TAHUN
+    // ==============================
+    if (!empty($request->tanggaldibangun)) {
+        $tanggal = $request->tanggaldibangun;
+        if (preg_match('/^\d{4}$/', $tanggal)) {
+            $validated['tanggaldibangun'] = $tanggal . '-01-01';
+        } elseif (preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal)) {
+            // Sudah format YYYY-MM-DD
+            $validated['tanggaldibangun'] = $tanggal;
+        }
+    }
 
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
-        </div>
-    </div>
+    if (!empty($request->tanggalrevovasi)) {
+        $tanggal = $request->tanggalrevovasi;
+        if (preg_match('/^\d{4}$/', $tanggal)) {
+            $validated['tanggalrevovasi'] = $tanggal . '-01-01';
+        } elseif (preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal)) {
+            $validated['tanggalrevovasi'] = $tanggal;
+        }
+    }
 
+    // ==============================
+    // 4. KONVERSI NILAI RUPIAH
+    // ==============================
+    // Hapus titik dari format Rupiah
+    if (!empty($validated['nilaibangunanbaru'])) {
+        $validated['nilaibangunanbaru'] = str_replace('.', '', $validated['nilaibangunanbaru']);
+    }
 
-        <div class="col-md-12">
-        <div class="form-modern">
+    if (!empty($validated['nilaibangunanlama'])) {
+        $validated['nilaibangunanlama'] = str_replace('.', '', $validated['nilaibangunanlama']);
+    }
 
-            <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Samping Kanan
-            </label>
+    // ==============================
+    // 5. GABUNG CHECKBOX KE 1 KOLOM
+    // ==============================
+    if ($request->has('pilihansanggup') && is_array($request->pilihansanggup)) {
+        $validated['pilihansanggup'] = implode('|', $request->pilihansanggup);
+    } else {
+        $validated['pilihansanggup'] = null;
+    }
 
-            {{-- PREVIEW --}}
-            <div class="mb-2">
-                @if($data->cadangan5)
-                    <img src="{{ asset('storage/'.$data->cadangan5) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
-            </div>
+    // ==============================
+    // 6. UPLOAD FILE
+    // ==============================
+    $publicPath = public_path('bantekpembongkaran');
+    if (!file_exists($publicPath)) {
+        mkdir($publicPath, 0777, true);
+    }
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan5"
-                   class="form-control @error('cadangan5') is-invalid @enderror"
-                   accept="image/*">
+    $fileFields = [
+        'suratpermohonan',
+        'suratkelayakan',
+        'suratkesanggupan',
+        'ktp',
+        'sk',
+        'sertifikattanah',
+        'kib',
+        'pbg',
+        'cadangan3',
+        'cadangan4',
+        'cadangan5',
+        // 'catatan8' DIHAPUS KARENA BUKAN FILE
+    ];
 
-            @error('cadangan5')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    foreach ($fileFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
 
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
-        </div>
-    </div>
+            // Generate nama file yang unik
+            $filename = time() . '_' . uniqid() . '_' . preg_replace('/[^A-Za-z0-9.\-]/', '_', $file->getClientOriginalName());
 
-        <div class="col-md-12">
-        <div class="form-modern">
+            // Pindahkan file
+            $file->move($publicPath, $filename);
 
-            <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Samping Kiri
-            </label>
+            // Simpan path relatif (tanpa 'storage/')
+            $validated[$field] = 'bantekpembongkaran/' . $filename;
 
-            {{-- PREVIEW --}}
-            <div class="mb-2">
-                @if($data->catatan8)
-                    <img src="{{ asset('storage/'.$data->catatan8) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
-            </div>
+            \Log::info("File {$field} berhasil diupload: {$validated[$field]}");
+        } elseif (isset($validated[$field]) && $validated[$field] === null) {
+            // Pastikan field yang tidak diupload di-set null
+            $validated[$field] = null;
+        }
+    }
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="catatan8"
-                   class="form-control @error('catatan8') is-invalid @enderror"
-                   accept="image/*">
+    // ==============================
+    // 7. SIMPAN KE DATABASE
+    // ==============================
+    try {
+        $record = bantekpembongkarannew1::create($validated);
 
-            @error('catatan8')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+        \Log::info('Data berhasil disimpan dengan ID: ' . $record->id);
 
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
-        </div>
-    </div>
+    } catch (\Exception $e) {
+        \Log::error('Gagal menyimpan data: ' . $e->getMessage());
 
+        return redirect()->back()
+            ->withInput()
+            ->withErrors(['error' => 'Gagal menyimpan data: ' . $e->getMessage()]);
+    }
 
-</div>
+    // ==============================
+    // 8. REDIRECT DENGAN PESAN SUKSES
+    // ==============================
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($request->input('namapemilik_awal')),
+        'id' => $request->input('id_awal')
+    ])->with('success', 'Data berhasil disimpan!');
+}
