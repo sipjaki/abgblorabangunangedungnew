@@ -839,26 +839,93 @@
 </div>
     <hr>
 
-    @canany(['superadmin', 'admin', 'dinas', 'pemohon'])
+<div class="section">
+    <div class="section-header">
+        <i class="bi bi-camera"></i> Dokumentasi Tampak Bangunan Gedung
+    </div>
 
-    @if ($data->verifikasi1 === 'dikembalikan')
-    <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
-        <div style="display: flex; align-items: center; gap: 15px;">
-                <p style="margin: 0;">
-                    <strong>
-                    Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
-                    </strong>
-                </p>
+    <div class="section-content">
+        <div class="row g-3">
 
-                <a href="/bekrksosbudperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-baru">
-                        <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
-                    </button>
-                </a>
+            <!-- FOTO TAMPAK DEPAN -->
+            <div class="col-md-3">
+                <div class="data-card text-center">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-image"></i> Tampak Depan
+                    </div>
+
+                    @if($data->cadangan3)
+                        <img src="{{ asset('storage/'.$data->cadangan3) }}"
+                             class="img-fluid rounded"
+                             alt="Foto Tampak Depan">
+                    @else
+                        <div class="text-muted small">
+                            Data belum diperbarui
+                        </div>
+                    @endif
+                </div>
             </div>
+
+            <!-- FOTO TAMPAK BELAKANG -->
+            <div class="col-md-3">
+                <div class="data-card text-center">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-image"></i> Tampak Belakang
+                    </div>
+
+                    @if($data->cadangan4)
+                        <img src="{{ asset('storage/'.$data->cadangan4) }}"
+                             class="img-fluid rounded"
+                             alt="Foto Tampak Belakang">
+                    @else
+                        <div class="text-muted small">
+                            Data belum diperbarui
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- FOTO TAMPAK SAMPING KANAN -->
+            <div class="col-md-3">
+                <div class="data-card text-center">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-image"></i> Tampak Samping Kanan
+                    </div>
+
+                    @if($data->cadangan5)
+                        <img src="{{ asset('storage/'.$data->cadangan5) }}"
+                             class="img-fluid rounded"
+                             alt="Foto Tampak Samping Kanan">
+                    @else
+                        <div class="text-muted small">
+                            Data belum diperbarui
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- FOTO TAMPAK SAMPING KIRI -->
+            <div class="col-md-3">
+                <div class="data-card text-center">
+                    <div class="data-label mb-2">
+                        <i class="bi bi-image"></i> Tampak Samping Kiri
+                    </div>
+
+                    @if($data->catatan8)
+                        <img src="{{ asset('storage/'.$data->catatan8) }}"
+                             class="img-fluid rounded"
+                             alt="Foto Tampak Samping Kiri">
+                    @else
+                        <div class="text-muted small">
+                            Data belum diperbarui
+                        </div>
+                    @endif
+                </div>
+            </div>
+
         </div>
-        @endif
-        @endcanany
+    </div>
+</div>
 
 <hr>
 
