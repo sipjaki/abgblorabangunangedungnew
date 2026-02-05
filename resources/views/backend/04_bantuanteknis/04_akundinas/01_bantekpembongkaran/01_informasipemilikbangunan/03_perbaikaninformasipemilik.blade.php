@@ -1033,6 +1033,8 @@ function previewSK(input) {
 
     </div>
 
+    </div>
+
 
     <div class="section">
     <div class="section-header">
@@ -1118,8 +1120,6 @@ function previewImage(event, index) {
 }
 </script>
 
-
-</div>
 
 <script>
 function previewKIB(input) {
