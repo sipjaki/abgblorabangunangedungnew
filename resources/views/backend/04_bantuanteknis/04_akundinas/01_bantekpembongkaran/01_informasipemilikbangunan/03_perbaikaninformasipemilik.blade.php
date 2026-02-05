@@ -974,67 +974,6 @@ function previewSK(input) {
     </div>
 
 
-
-            <!-- DOKUMEN PENDUKUNG -->
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-folder2-open"></i> DOKUMEN PENDUKUNG
-                </div>
-<div class="section-content">
-    <div class="row g-4">
-
-        {{-- KIB --}}
-        <div class="col-md-12">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
-
-                @if($data->kib)
-                    <iframe id="frame-kib-lama" src="{{ asset('public/' . $data->kib) }}" style="width:100%;height:300px;"></iframe>
-                    <iframe id="frame-kib-baru" style="display:none;width:100%;height:300px;"></iframe>
-                @endif
-
-                <input type="file"
-                       name="kib"
-                       class="form-control"
-                       accept="application/pdf"
-                       onchange="previewKIB(this)">
-            </div>
-        </div>
-
-        {{-- Apakah Ada PBG --}}
-        <div class="col-md-12">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
-                <select name="apakahadapbg" class="form-select">
-                    <option value="">-- Pilih --</option>
-                    <option value="Ya" {{ $data->apakahadapbg == 'Ya' ? 'selected' : '' }}>Ya</option>
-                    <option value="Tidak" {{ $data->apakahadapbg == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                </select>
-            </div>
-        </div>
-
-        {{-- PBG --}}
-        <div class="col-md-12">
-            <div class="data-card">
-                <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
-
-                @if($data->pbg)
-                    <iframe id="frame-pbg-lama" src="{{ asset('public/' . $data->pbg) }}" style="width:100%;height:300px;"></iframe>
-                    <iframe id="frame-pbg-baru" style="display:none;width:100%;height:300px;"></iframe>
-                @endif
-
-                <input type="file"
-                       name="pbg"
-                       class="form-control"
-                       accept="application/pdf"
-                       onchange="previewPBG(this)">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
     <div class="section">
     <div class="section-header">
         <i class="bi bi-camera"></i> Dokumentasi Tampak Bangunan Gedung
@@ -1100,6 +1039,66 @@ function previewSK(input) {
         </div>
     </div>
 </div>
+
+            <!-- DOKUMEN PENDUKUNG -->
+            <div class="section">
+                <div class="section-header">
+                    <i class="bi bi-folder2-open"></i> DOKUMEN PENDUKUNG
+                </div>
+<div class="section-content">
+    <div class="row g-4">
+
+        {{-- KIB --}}
+        <div class="col-md-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-zip"></i> KIB (PDF)</div>
+
+                @if($data->kib)
+                    <iframe id="frame-kib-lama" src="{{ asset('public/' . $data->kib) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-kib-baru" style="display:none;width:100%;height:300px;"></iframe>
+                @endif
+
+                <input type="file"
+                       name="kib"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewKIB(this)">
+            </div>
+        </div>
+
+        {{-- Apakah Ada PBG --}}
+        <div class="col-md-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-question-circle"></i> Apakah Ada PBG</div>
+                <select name="apakahadapbg" class="form-select">
+                    <option value="">-- Pilih --</option>
+                    <option value="Ya" {{ $data->apakahadapbg == 'Ya' ? 'selected' : '' }}>Ya</option>
+                    <option value="Tidak" {{ $data->apakahadapbg == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                </select>
+            </div>
+        </div>
+
+        {{-- PBG --}}
+        <div class="col-md-12">
+            <div class="data-card">
+                <div class="data-label"><i class="bi bi-file-earmark-medical"></i> PBG (PDF)</div>
+
+                @if($data->pbg)
+                    <iframe id="frame-pbg-lama" src="{{ asset('public/' . $data->pbg) }}" style="width:100%;height:300px;"></iframe>
+                    <iframe id="frame-pbg-baru" style="display:none;width:100%;height:300px;"></iframe>
+                @endif
+
+                <input type="file"
+                       name="pbg"
+                       class="form-control"
+                       accept="application/pdf"
+                       onchange="previewPBG(this)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <script>
 function previewImage(event, index) {
