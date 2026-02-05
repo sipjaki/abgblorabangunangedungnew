@@ -839,7 +839,7 @@
 </div>
     <hr>
 
-<div class="section">
+              <div class="section">
     <div class="section-header">
         <i class="bi bi-camera"></i> Dokumentasi Tampak Bangunan Gedung
     </div>
@@ -847,81 +847,44 @@
     <div class="section-content">
         <div class="row g-3">
 
-            <!-- FOTO TAMPAK DEPAN -->
-            <div class="col-md-3">
-                <div class="data-card text-center">
-                    <div class="data-label mb-2">
-                        <i class="bi bi-image"></i> Tampak Depan
-                    </div>
+            @php
+                $fotos = [
+                    ['label' => 'Tampak Depan', 'file' => $data->cadangan3],
+                    ['label' => 'Tampak Belakang', 'file' => $data->cadangan4],
+                    ['label' => 'Tampak Samping Kanan', 'file' => $data->cadangan5],
+                    ['label' => 'Tampak Samping Kiri', 'file' => $data->catatan8],
+                ];
+            @endphp
 
-                    @if($data->cadangan3)
-                        <img src="{{ asset('storage/'.$data->cadangan3) }}"
-                             class="img-fluid rounded"
-                             alt="Foto Tampak Depan">
-                    @else
-                        <div class="text-muted small">
-                            Data belum diperbarui
+            @foreach($fotos as $foto)
+                <div class="col-md-3">
+                    <div class="data-card text-center h-100">
+                        <div class="data-label mb-2">
+                            <i class="bi bi-image"></i> {{ $foto['label'] }}
                         </div>
-                    @endif
-                </div>
-            </div>
 
-            <!-- FOTO TAMPAK BELAKANG -->
-            <div class="col-md-3">
-                <div class="data-card text-center">
-                    <div class="data-label mb-2">
-                        <i class="bi bi-image"></i> Tampak Belakang
+                        @if(!empty($foto['file']) && file_exists(public_path($foto['file'])))
+                            <a href="{{ asset($foto['file']) }}" target="_blank">
+                                <img src="{{ asset($foto['file']) }}"
+                                     class="img-fluid rounded border"
+                                     style="height:180px;object-fit:cover;width:100%;"
+                                     alt="Foto {{ $foto['label'] }}">
+                            </a>
+                            <div class="small text-muted mt-1">
+                                Klik foto untuk memperbesar
+                            </div>
+                        @else
+                            <div class="d-flex flex-column justify-content-center align-items-center border rounded"
+                                 style="height:180px;">
+                                <i class="bi bi-camera text-muted fs-2"></i>
+                                <span class="text-muted small mt-1">
+                                    Data belum diperbarui
+                                </span>
+                            </div>
+                        @endif
                     </div>
-
-                    @if($data->cadangan4)
-                        <img src="{{ asset('storage/'.$data->cadangan4) }}"
-                             class="img-fluid rounded"
-                             alt="Foto Tampak Belakang">
-                    @else
-                        <div class="text-muted small">
-                            Data belum diperbarui
-                        </div>
-                    @endif
                 </div>
-            </div>
-
-            <!-- FOTO TAMPAK SAMPING KANAN -->
-            <div class="col-md-3">
-                <div class="data-card text-center">
-                    <div class="data-label mb-2">
-                        <i class="bi bi-image"></i> Tampak Samping Kanan
-                    </div>
-
-                    @if($data->cadangan5)
-                        <img src="{{ asset('storage/'.$data->cadangan5) }}"
-                             class="img-fluid rounded"
-                             alt="Foto Tampak Samping Kanan">
-                    @else
-                        <div class="text-muted small">
-                            Data belum diperbarui
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-            <!-- FOTO TAMPAK SAMPING KIRI -->
-            <div class="col-md-3">
-                <div class="data-card text-center">
-                    <div class="data-label mb-2">
-                        <i class="bi bi-image"></i> Tampak Samping Kiri
-                    </div>
-
-                    @if($data->catatan8)
-                        <img src="{{ asset('storage/'.$data->catatan8) }}"
-                             class="img-fluid rounded"
-                             alt="Foto Tampak Samping Kiri">
-                    @else
-                        <div class="text-muted small">
-                            Data belum diperbarui
-                        </div>
-                    @endif
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>
