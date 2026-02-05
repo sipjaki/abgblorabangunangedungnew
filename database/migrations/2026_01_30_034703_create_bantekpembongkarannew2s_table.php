@@ -83,7 +83,12 @@ return new class extends Migration
     $table->string('cadangan4')->nullable(); // SUDAH TERPAKAI
     $table->string('cadangan5')->nullable(); // DIGANTIU JADI TANGGAL MULAI
 
-    // CATATAN 5 DI GANTI JADI TANGGAL SELESAI 
+    // CATATAN 5 DI GANTI JADI TANGGAL SELESAI
+
+    // TANGGAL MULAI PEMBONGKARAN cadanga5
+    // TANGGAL SELESAI JADI cadangan5
+
+    
 
     $table->softDeletes();
     $table->timestamps();

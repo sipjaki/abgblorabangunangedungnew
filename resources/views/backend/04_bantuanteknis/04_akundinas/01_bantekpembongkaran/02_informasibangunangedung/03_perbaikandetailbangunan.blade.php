@@ -396,6 +396,10 @@
    <div class="container">
 
         <div class="content">
+
+
+            @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.05_jadwalpembongkaranedit')
+
             <!-- INFORMASI SURAT -->
             <div class="section">
                 <div class="section-header">

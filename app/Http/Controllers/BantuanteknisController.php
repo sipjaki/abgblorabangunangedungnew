@@ -7363,6 +7363,9 @@ public function perbaikanbangunandetail(Request $request, $id)
         'cadangan2'             => 'nullable|string|max:255',
         'cadangan3'             => 'nullable|file|mimes:pdf|max:20480',
 
+        // WAKTU PEMBONGKARAN
+        'catatan5'             => 'nullable|string|max:255',
+        'cadangan5'             => 'nullable|string|max:255',
         ]);
 
     // ==========================
