@@ -653,7 +653,7 @@
                                     <i class="bi bi-rulers"></i> Alasan Pembongkaran
                                 </div>
                                 <div class="data-value">
-                                    {{ $data->cadangan2 ?? 'Data Belum Di Perbarui, Silahkan Lakukan Perbaikan' }} m²
+                                    {{ $data->cadangan2 ?? 'Data Belum Di Perbarui, Silahkan Lakukan Perbaikan' }}
                                 </div>
                             </div>
                         </div>

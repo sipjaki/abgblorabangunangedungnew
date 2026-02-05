@@ -1021,25 +1021,47 @@ function previewPBG(input) {
 </div>
 
 
-            <!-- DOKUMEN PENDUKUNG -->
-            <div class="section">
-                <div class="section-header">
-                    <i class="bi bi-folder2-open"></i> ALASAN PEMBONGKARAN BANGUNAN GEDUNG
-                </div>
-<div class="section-content">
-    <div class="row g-4">
-
-        {{-- KIB --}}
-<div class="col-md-12">
-    <div class="data-card">
-        <div class="data-label">
-            <i class="bi bi-file-earmark-text"></i> Alasan Pembongkaran
+    <div class="section">
+        <div class="section-header">
+            <i class="bi bi-globe-asia-australia"></i> Alasan Pembongkaran Bangunan Gedung
         </div>
-        <div class="data-value">
-            {{ $data->cadangan2 ?? 'Data Tidak Ditemukan' }}
+
+        <div class="section-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="data-card">
+
+                        <label class="data-label" for="cadangan2">
+                            <i class="bi bi-rulers"></i> Alasan Pembongkaran
+                        </label>
+
+                        <!-- TEXTAREA EDIT -->
+                        <textarea name="cadangan2"
+                                  id="cadangan2"
+                                  rows="5"
+                                  class="form-control @error('cadangan2') is-invalid @enderror"
+                                  placeholder="Tuliskan alasan pembongkaran bangunan secara jelas dan lengkap...">{{ old('cadangan2', $data->cadangan2) }}</textarea>
+
+                        @error('cadangan2')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                        <!-- INFO DATA LAMA -->
+                        @if($data->cadangan2)
+                            <small class="text-muted d-block mt-2">
+                                Data sebelumnya: <strong>{{ $data->cadangan2 }}</strong>
+                            </small>
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+
 
 
     <br><br>
