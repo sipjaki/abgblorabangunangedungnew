@@ -932,6 +932,49 @@ function previewSK(input) {
 
             </div>
 
+                <div class="section">
+        <div class="section-header">
+            <i class="bi bi-globe-asia-australia"></i> Alasan Pembongkaran Bangunan Gedung
+        </div>
+
+        <div class="section-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="data-card">
+
+                        <label class="data-label" for="cadangan2">
+                            <i class="bi bi-rulers"></i> Alasan Pembongkaran
+                        </label>
+
+                        <!-- TEXTAREA EDIT -->
+                        <textarea name="cadangan2"
+                                  id="cadangan2"
+                                  rows="5"
+                                  class="form-control @error('cadangan2') is-invalid @enderror"
+                                  placeholder="Tuliskan alasan pembongkaran bangunan secara jelas dan lengkap...">{{ old('cadangan2', $data->cadangan2) }}</textarea>
+
+                        @error('cadangan2')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                        <!-- INFO DATA LAMA -->
+                        @if($data->cadangan2)
+                            <small class="text-muted d-block mt-2">
+                                Data sebelumnya: <strong>{{ $data->cadangan2 }}</strong>
+                            </small>
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
             <!-- DOKUMEN PENDUKUNG -->
             <div class="section">
                 <div class="section-header">
@@ -990,6 +1033,92 @@ function previewSK(input) {
 
     </div>
 
+
+    <div class="section">
+    <div class="section-header">
+        <i class="bi bi-camera"></i> Dokumentasi Tampak Bangunan Gedung
+    </div>
+
+    <div class="section-content">
+        <div class="row g-3">
+
+            @php
+                $fotos = [
+                    ['label' => 'Tampak Depan', 'name' => 'cadangan3', 'file' => $data->cadangan3],
+                    ['label' => 'Tampak Belakang', 'name' => 'cadangan4', 'file' => $data->cadangan4],
+                    ['label' => 'Tampak Samping Kanan', 'name' => 'cadangan5', 'file' => $data->cadangan5],
+                    ['label' => 'Tampak Samping Kiri', 'name' => 'catatan8',  'file' => $data->catatan8],
+                ];
+            @endphp
+
+            @foreach($fotos as $index => $foto)
+                <div class="col-md-3">
+                    <div class="data-card h-100">
+
+                        <div class="data-label mb-2 text-center">
+                            <i class="bi bi-image"></i> {{ $foto['label'] }}
+                        </div>
+
+                        {{-- PREVIEW FOTO --}}
+                        <div class="mb-2">
+                            @if(!empty($foto['file']) && file_exists(public_path($foto['file'])))
+                                <img src="{{ asset($foto['file']) }}"
+                                     id="preview-old-{{ $index }}"
+                                     class="img-fluid rounded border"
+                                     style="height:160px;object-fit:cover;width:100%;">
+                            @else
+                                <div id="preview-old-{{ $index }}"
+                                     class="d-flex flex-column justify-content-center align-items-center border rounded"
+                                     style="height:160px;">
+                                    <i class="bi bi-camera text-muted fs-2"></i>
+                                    <span class="text-muted small">Belum ada foto</span>
+                                </div>
+                            @endif
+
+                            {{-- PREVIEW FOTO BARU --}}
+                            <img id="preview-new-{{ $index }}"
+                                 class="img-fluid rounded border mt-2 d-none"
+                                 style="height:160px;object-fit:cover;width:100%;">
+                        </div>
+
+                        {{-- INPUT FILE --}}
+                        <input type="file"
+                               name="{{ $foto['name'] }}"
+                               class="form-control form-control-sm"
+                               accept="image/*"
+                               onchange="previewImage(event, {{ $index }})">
+
+                        <small class="text-muted">
+                            Upload foto baru untuk mengganti
+                        </small>
+
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+</div>
+
+<script>
+function previewImage(event, index) {
+    const input = event.target;
+    const previewNew = document.getElementById('preview-new-' + index);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            previewNew.src = e.target.result;
+            previewNew.classList.remove('d-none');
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+
+
 </div>
 
 <script>
@@ -1020,47 +1149,6 @@ function previewPBG(input) {
     </div>
 </div>
 
-
-    <div class="section">
-        <div class="section-header">
-            <i class="bi bi-globe-asia-australia"></i> Alasan Pembongkaran Bangunan Gedung
-        </div>
-
-        <div class="section-content">
-            <div class="row">
-                <div class="col-12">
-                    <div class="data-card">
-
-                        <label class="data-label" for="cadangan2">
-                            <i class="bi bi-rulers"></i> Alasan Pembongkaran
-                        </label>
-
-                        <!-- TEXTAREA EDIT -->
-                        <textarea name="cadangan2"
-                                  id="cadangan2"
-                                  rows="5"
-                                  class="form-control @error('cadangan2') is-invalid @enderror"
-                                  placeholder="Tuliskan alasan pembongkaran bangunan secara jelas dan lengkap...">{{ old('cadangan2', $data->cadangan2) }}</textarea>
-
-                        @error('cadangan2')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-
-                        <!-- INFO DATA LAMA -->
-                        @if($data->cadangan2)
-                            <small class="text-muted d-block mt-2">
-                                Data sebelumnya: <strong>{{ $data->cadangan2 }}</strong>
-                            </small>
-                        @endif
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 
 

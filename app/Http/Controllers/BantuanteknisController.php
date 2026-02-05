@@ -6897,6 +6897,11 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
+        'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan4' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan5' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'catatan8' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
         'luastanah' => 'nullable|numeric',
         'statustanah' => 'nullable|string|max:255',
         'namapemeganghak' => 'nullable|string|max:255',
@@ -6935,7 +6940,11 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
         'kib',
         'pbg',
         'suratpermohonan',
-        'suratkesanggupan'
+        'suratkesanggupan',
+        'cadangan3',
+        'cadangan4',
+        'cadangan5',
+        'catatan8'
     ];
 
     $publicPath = public_path('bantekpembongkaran');
