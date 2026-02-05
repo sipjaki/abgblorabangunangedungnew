@@ -1099,8 +1099,6 @@ function previewSK(input) {
             @endforeach
 
         </div>
-    </div>
-</div>
 
 <script>
 function previewImage(event, index) {
