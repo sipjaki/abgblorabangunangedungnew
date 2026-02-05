@@ -800,20 +800,21 @@
                 <div class="section-header">
                     <i class="bi bi-globe-asia-australia"></i> Alasan Pembongkaran Bangunan Gedung
                 </div>
-            <div class="section-content">
-    <div class="row">
-        <div class="col-12">
-            <div class="data-card">
-                <div class="data-label">
-                    <i class="bi bi-rulers"></i> Alasan Pembongkaran
+                 <div class="section-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="data-card">
+                                <div class="data-label">
+                                    <i class="bi bi-rulers"></i> Alasan Pembongkaran
+                                </div>
+                                <div class="data-value">
+                                    {{ $data->cadangan2 ?? 'Data Belum Di Perbarui, Silahkan Lakukan Perbaikan' }} m²
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="data-value">
-                    {{ $data->cadangan2 ?? 'Data Belum Di Perbarui, Silahkan Lakukan Perbaikan' }} m²
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
      <div class="container-fluid">
          <div class="row">
