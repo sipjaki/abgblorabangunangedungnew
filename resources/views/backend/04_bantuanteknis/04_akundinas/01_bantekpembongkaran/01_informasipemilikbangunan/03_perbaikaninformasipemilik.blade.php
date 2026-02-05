@@ -1032,8 +1032,7 @@ function previewSK(input) {
         </div>
 
     </div>
-
-    </div>
+</div>
 
 
     <div class="section">
@@ -1099,6 +1098,8 @@ function previewSK(input) {
             @endforeach
 
         </div>
+    </div>
+</div>
 
 <script>
 function previewImage(event, index) {
@@ -1118,6 +1119,8 @@ function previewImage(event, index) {
 }
 </script>
 
+
+</div>
 
 <script>
 function previewKIB(input) {
@@ -1143,8 +1146,6 @@ function previewPBG(input) {
 }
 </script>
 
-
-    </div>
 
 
 
