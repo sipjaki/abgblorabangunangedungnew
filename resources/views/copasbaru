@@ -1,4 +1,113 @@
+
+<div class="row">
+
     <div class="col-md-12">
+        <div class="form-modern">
+
+            <label class="form-label-modern">
+                <i class="bi bi-image me-2 text-primary"></i>
+                Foto Tampak Depan
+            </label>
+
+            {{-- PREVIEW --}}
+            <div class="mb-2">
+                @if($data->cadangan3)
+                    <img src="{{ asset('storage/'.$data->cadangan3) }}"
+                         class="img-thumbnail"
+                         style="max-height:200px;">
+                @else
+                    <div class="text-muted">Belum ada foto tampak depan</div>
+                @endif
+            </div>
+
+            {{-- INPUT --}}
+            <input type="file"
+                   name="cadangan3"
+                   class="form-control @error('cadangan3') is-invalid @enderror"
+                   accept="image/*">
+
+            @error('cadangan3')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan: Unggah foto kondisi bangunan dari arah depan.
+            </small>
+        </div>
+    </div>
+
+        <div class="col-md-12">
+        <div class="form-modern">
+
+            <label class="form-label-modern">
+                <i class="bi bi-image me-2 text-primary"></i>
+                Foto Tampak Belakang
+            </label>
+
+            {{-- PREVIEW --}}
+            <div class="mb-2">
+                @if($data->cadangan4)
+                    <img src="{{ asset('storage/'.$data->cadangan4) }}"
+                         class="img-thumbnail"
+                         style="max-height:200px;">
+                @else
+                    <div class="text-muted">Belum ada foto tampak depan</div>
+                @endif
+            </div>
+
+            {{-- INPUT --}}
+            <input type="file"
+                   name="cadangan4"
+                   class="form-control @error('cadangan4') is-invalid @enderror"
+                   accept="image/*">
+
+            @error('cadangan4')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan: Unggah foto kondisi bangunan dari arah depan.
+            </small>
+        </div>
+    </div>
+
+
+        <div class="col-md-12">
+        <div class="form-modern">
+
+            <label class="form-label-modern">
+                <i class="bi bi-image me-2 text-primary"></i>
+                Foto Tampak Samping Kanan
+            </label>
+
+            {{-- PREVIEW --}}
+            <div class="mb-2">
+                @if($data->cadangan5)
+                    <img src="{{ asset('storage/'.$data->cadangan5) }}"
+                         class="img-thumbnail"
+                         style="max-height:200px;">
+                @else
+                    <div class="text-muted">Belum ada foto tampak depan</div>
+                @endif
+            </div>
+
+            {{-- INPUT --}}
+            <input type="file"
+                   name="cadangan5"
+                   class="form-control @error('cadangan5') is-invalid @enderror"
+                   accept="image/*">
+
+            @error('cadangan5')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan: Unggah foto kondisi bangunan dari arah depan.
+            </small>
+        </div>
+    </div>
+
+        <div class="col-md-12">
         <div class="form-modern">
 
             <label class="form-label-modern">
@@ -32,3 +141,6 @@
             </small>
         </div>
     </div>
+
+
+</div>

@@ -2277,154 +2277,141 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
 </div>
 
 <div class="section-header mt-4">
-    <i class="bi bi-camera me-2"></i> Foto Tampak Depan Bangunan Gedung
+    <i class="bi bi-camera me-2"></i> Foto Dokumentasi Pemilik Bangunan
+</div>
+<div class="section-header mt-4">
+    <i class="bi bi-building-gear me-2"></i> Foto Kondisi Bangunan Gedung
 </div>
 
 <div class="row">
 
-    <div class="col-md-12">
+    {{-- FOTO TAMPAK DEPAN --}}
+    <div class="col-md-6">
         <div class="form-modern">
-
             <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Depan
+                <i class="bi bi-image me-2 text-primary"></i> Foto Tampak Depan
             </label>
 
-            {{-- PREVIEW --}}
             <div class="mb-2">
-                @if($data->cadangan3)
-                    <img src="{{ asset('storage/'.$data->cadangan3) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
+                <img id="preview-cadangan3"
+                     src="{{ $data->cadangan3 ? asset('storage/'.$data->cadangan3) : '' }}"
+                     class="img-thumbnail"
+                     style="max-height:200px; {{ $data->cadangan3 ? '' : 'display:none;' }}">
+                <div id="text-cadangan3" class="text-muted"
+                     style="{{ $data->cadangan3 ? 'display:none;' : '' }}">
+                    Belum ada foto tampak depan
+                </div>
             </div>
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan3"
-                   class="form-control @error('cadangan3') is-invalid @enderror"
-                   accept="image/*">
+            <input type="file" name="cadangan3" class="form-control"
+                   accept="image/*"
+                   onchange="previewImage(this,'preview-cadangan3','text-cadangan3')">
 
-            @error('cadangan3')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
+            <small class="text-muted">Unggah foto bangunan dari arah depan.</small>
         </div>
     </div>
 
-        <div class="col-md-12">
+    {{-- FOTO TAMPAK BELAKANG --}}
+    <div class="col-md-6">
         <div class="form-modern">
-
             <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Belakang
+                <i class="bi bi-image me-2 text-primary"></i> Foto Tampak Belakang
             </label>
 
-            {{-- PREVIEW --}}
             <div class="mb-2">
-                @if($data->cadangan4)
-                    <img src="{{ asset('storage/'.$data->cadangan4) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
+                <img id="preview-cadangan4"
+                     src="{{ $data->cadangan4 ? asset('storage/'.$data->cadangan4) : '' }}"
+                     class="img-thumbnail"
+                     style="max-height:200px; {{ $data->cadangan4 ? '' : 'display:none;' }}">
+                <div id="text-cadangan4" class="text-muted"
+                     style="{{ $data->cadangan4 ? 'display:none;' : '' }}">
+                    Belum ada foto tampak belakang
+                </div>
             </div>
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan4"
-                   class="form-control @error('cadangan4') is-invalid @enderror"
-                   accept="image/*">
+            <input type="file" name="cadangan4" class="form-control"
+                   accept="image/*"
+                   onchange="previewImage(this,'preview-cadangan4','text-cadangan4')">
 
-            @error('cadangan4')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
+            <small class="text-muted">Unggah foto bangunan dari arah belakang.</small>
         </div>
     </div>
 
-
-        <div class="col-md-12">
+    {{-- FOTO TAMPAK SAMPING KANAN --}}
+    <div class="col-md-6">
         <div class="form-modern">
-
             <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Samping Kanan
+                <i class="bi bi-image me-2 text-primary"></i> Foto Tampak Samping Kanan
             </label>
 
-            {{-- PREVIEW --}}
             <div class="mb-2">
-                @if($data->cadangan5)
-                    <img src="{{ asset('storage/'.$data->cadangan5) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
+                <img id="preview-cadangan5"
+                     src="{{ $data->cadangan5 ? asset('storage/'.$data->cadangan5) : '' }}"
+                     class="img-thumbnail"
+                     style="max-height:200px; {{ $data->cadangan5 ? '' : 'display:none;' }}">
+                <div id="text-cadangan5" class="text-muted"
+                     style="{{ $data->cadangan5 ? 'display:none;' : '' }}">
+                    Belum ada foto tampak samping kanan
+                </div>
             </div>
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="cadangan5"
-                   class="form-control @error('cadangan5') is-invalid @enderror"
-                   accept="image/*">
+            <input type="file" name="cadangan5" class="form-control"
+                   accept="image/*"
+                   onchange="previewImage(this,'preview-cadangan5','text-cadangan5')">
 
-            @error('cadangan5')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
+            <small class="text-muted">Unggah foto bangunan dari sisi kanan.</small>
         </div>
     </div>
 
-        <div class="col-md-12">
+    {{-- FOTO TAMPAK SAMPING KIRI --}}
+    <div class="col-md-6">
         <div class="form-modern">
-
             <label class="form-label-modern">
-                <i class="bi bi-image me-2 text-primary"></i>
-                Foto Tampak Samping Kiri
+                <i class="bi bi-image me-2 text-primary"></i> Foto Tampak Samping Kiri
             </label>
 
-            {{-- PREVIEW --}}
             <div class="mb-2">
-                @if($data->catatan8)
-                    <img src="{{ asset('storage/'.$data->catatan8) }}"
-                         class="img-thumbnail"
-                         style="max-height:200px;">
-                @else
-                    <div class="text-muted">Belum ada foto tampak depan</div>
-                @endif
+                <img id="preview-catatan8"
+                     src="{{ $data->catatan8 ? asset('storage/'.$data->catatan8) : '' }}"
+                     class="img-thumbnail"
+                     style="max-height:200px; {{ $data->catatan8 ? '' : 'display:none;' }}">
+                <div id="text-catatan8" class="text-muted"
+                     style="{{ $data->catatan8 ? 'display:none;' : '' }}">
+                    Belum ada foto tampak samping kiri
+                </div>
             </div>
 
-            {{-- INPUT --}}
-            <input type="file"
-                   name="catatan8"
-                   class="form-control @error('catatan8') is-invalid @enderror"
-                   accept="image/*">
+            <input type="file" name="catatan8" class="form-control"
+                   accept="image/*"
+                   onchange="previewImage(this,'preview-catatan8','text-catatan8')">
 
-            @error('catatan8')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-
-            <small class="text-muted d-block mt-1">
-                Keterangan: Unggah foto kondisi bangunan dari arah depan.
-            </small>
+            <small class="text-muted">Unggah foto bangunan dari sisi kiri.</small>
         </div>
     </div>
-
 
 </div>
+
+<script>
+function previewImage(input, previewId, textId) {
+    const preview = document.getElementById(previewId);
+    const text    = document.getElementById(textId);
+
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+
+        if (!file.type.startsWith('image/')) {
+            alert('File harus berupa gambar');
+            input.value = '';
+            return;
+        }
+
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
+        text.style.display = 'none';
+    }
+}
+</script>
+
 
             <!-- Tombol Submit -->
           <div class="mt-4 text-end">
