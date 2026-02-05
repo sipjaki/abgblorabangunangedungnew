@@ -2279,9 +2279,6 @@ document.getElementById('suratkesanggupan').addEventListener('change', function 
 <div class="section-header mt-4">
     <i class="bi bi-camera me-2"></i> Foto Dokumentasi Pemilik Bangunan
 </div>
-<div class="section-header mt-4">
-    <i class="bi bi-building-gear me-2"></i> Foto Kondisi Bangunan Gedung
-</div>
 
 <div class="row">
 

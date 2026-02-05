@@ -6663,12 +6663,6 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        // DOKUMENTASI FOTO
-        'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'cadangan4' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'cadangan5' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-        'catatan8' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-
         'luastanah' => 'nullable|numeric',
         'statustanah' => 'nullable|string|max:255',
         'namapemeganghak' => 'nullable|string|max:255',
@@ -6702,6 +6696,14 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
 
         'cadangan1' => 'nullable|string|max:255',
         'cadangan2' => 'nullable|string|max:255',
+
+
+        // DOKUMENTASI FOTO
+        'cadangan3' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'cadangan4' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'cadangan5' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'catatan8' => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+
         ]);
 
     // ==============================
