@@ -1,0 +1,34 @@
+    <div class="col-md-12">
+        <div class="form-modern">
+
+            <label class="form-label-modern">
+                <i class="bi bi-image me-2 text-primary"></i>
+                Foto Tampak Samping Kiri
+            </label>
+
+            {{-- PREVIEW --}}
+            <div class="mb-2">
+                @if($data->catatan8)
+                    <img src="{{ asset('storage/'.$data->catatan8) }}"
+                         class="img-thumbnail"
+                         style="max-height:200px;">
+                @else
+                    <div class="text-muted">Belum ada foto tampak depan</div>
+                @endif
+            </div>
+
+            {{-- INPUT --}}
+            <input type="file"
+                   name="catatan8"
+                   class="form-control @error('catatan8') is-invalid @enderror"
+                   accept="image/*">
+
+            @error('catatan8')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan: Unggah foto kondisi bangunan dari arah depan.
+            </small>
+        </div>
+    </div>

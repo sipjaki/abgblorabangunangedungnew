@@ -6663,6 +6663,12 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
         'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
+        // DOKUMENTASI FOTO
+        'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan4' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan5' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'catatan8' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
         'luastanah' => 'nullable|numeric',
         'statustanah' => 'nullable|string|max:255',
         'namapemeganghak' => 'nullable|string|max:255',
@@ -6740,6 +6746,10 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         'sertifikattanah',
         'kib',
         'pbg',
+        'cadangan3',
+        'cadangan4',
+        'cadangan5',
+        'catatan8',
     ];
 
     foreach ($fileFields as $field) {

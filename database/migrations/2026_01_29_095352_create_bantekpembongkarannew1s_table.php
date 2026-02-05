@@ -103,17 +103,22 @@ return new class extends Migration
     $table->string('apakahadapbg')->nullable();
     $table->string('pbg')->nullable();
     $table->string('validasiberkas8')->nullable();
-    $table->text('catatan8')->nullable();
+    $table->text('catatan8')->nullable(); // FOTO TAMPAK SAMPING KIRI 
 
     /* =========================
      * CADANGAN
      * ========================= */
     $table->string('cadangan1')->nullable(); // SUDAH DI PAKAI NAMA BANGUNAN
     $table->string('cadangan2')->nullable(); // DI PAKAI ALASAN PEMBONGKARAN
-    $table->string('cadangan3')->nullable();
-    $table->string('cadangan4')->nullable();
-    $table->string('cadangan5')->nullable();
+    $table->string('cadangan3')->nullable(); // FOTO TAMPAK DEPAN
+    $table->string('cadangan4')->nullable(); // FOTO TAMPAK BELAKANG
+    $table->string('cadangan5')->nullable(); // FOTO TAMPAK SAMPING KANAN
 
+
+    // CADANGAN 3 UNTUK FOTO 1
+    // CADANGAN 4 UNTUK FOTO 2
+    // CADANGAN 5 UNTUK FOTO 3
+    // CATATAN 8 UNTUK FOTO 4
     $table->softDeletes();
     $table->timestamps();
 });
