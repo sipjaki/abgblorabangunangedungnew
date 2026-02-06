@@ -143,14 +143,14 @@
                             <div class="card-body">
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-        <label class="form-label fw-bold">Nomor Surat Konsultasi</label>
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern fw-bold">Nomor Surat Konsultasi</label>
         <input type="text" name="nomorsuratkonsul" class="form-control"
                value="{{ old('nomorsuratkonsul', $data->nomorsuratkonsul ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label class="form-label fw-bold">Tanggal Surat Konsultasi</label>
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern fw-bold">Tanggal Surat Konsultasi</label>
         <input type="date" name="tanggalsuratkonsul" class="form-control"
                value="{{ old('tanggalsuratkonsul', $data->tanggalsuratkonsul ?? '') }}">
     </div>
@@ -158,8 +158,8 @@
 
 <div class="row">
     @for($i = 1; $i <= 4; $i++)
-        <div class="col-md-4 mb-4 text-center">
-            <label class="form-label fw-bold">Foto Konsultasi {{ $i }}</label>
+        <div class="col-md-3 mb-3 text-center">
+            <label class="form-label-modern fw-bold">Foto Konsultasi {{ $i }}</label>
 
             <input type="file"
                    name="fotokonsul{{ $i }}"
@@ -210,9 +210,9 @@ function previewImage(event, previewId) {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 <div class="mb-3">
-    <label class="form-label" for="cadangan1">
+    <label class="form-label-modern" for="cadangan1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
     </label>
     <input type="file" id="cadangan1" name="cadangan1" accept="application/pdf"
