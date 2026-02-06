@@ -138,14 +138,21 @@
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data"> --}}
                   {{-- <form action="{{ route('bantekpembongkarannew') }}" method="POST" enctype="multipart/form-data"> --}}
-    <form action="{{ url('/bebantekpembongkaran/createnewbaru') }}" method="POST" enctype="multipart/form-data">
-
+    <form action="{{ url('/informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-                    @csrf
                             <!-- begin::Body -->
 
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+        <!-- Hidden Input untuk ID Data Awal -->
+<input type="hidden" name="id_awal" value="{{ $data->id }}">
+
+<!-- Hidden Input untuk Nama Pemilik Data Awal -->
+<input type="hidden" name="namapemilik_awal" value="{{ $data->namapemilik }}">
+
+
+<input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id }}">
+
+        <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
                             <div class="card-body">
                                 <div class="row">
@@ -153,170 +160,145 @@
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
-  Data Informasi Pemohon
+  Dokumentasi Survey Lapangan Kajian Pembongkaran Bangunan Gedung
 </h5>
-    <div class="col-md-6">
-            <div class="form-modern mb-3">
-                <label class="form-label-modern" for="namapemilik">
-                    <i class="bi bi-person-badge-fill me-2 text-primary"></i>
-                    Nama Pemilik Bangunan
-                </label>
-                <input type="text"
-                    class="form-control @error('namapemilik') is-invalid @enderror"
-                    id="namapemilik"
-                    name="namapemilik"
-                    value="{{ old('namapemilik') }}">
-                @error('namapemilik')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+
+<div class="row">
+    {{-- KETERANGAN --}}
+    <div class="col-md-8">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="keterangan">
+                <i class="bi bi-chat-text-fill me-2 text-primary"></i>
+                Keterangan
+            </label>
+            <textarea
+                class="form-control @error('keterangan') is-invalid @enderror"
+                id="keterangan"
+                name="keterangan"
+                rows="3">{{ old('keterangan') }}</textarea>
+            @error('keterangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
+    </div>
 
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern">
-            <i class="bi bi-building me-2 text-success"></i>
-            Instansi / OPD
-        </label>
-
-        <textarea
-            class="form-control"
-            rows="2"
-            readonly>{{ auth()->user()->name }}</textarea>
+    {{-- TANGGAL --}}
+    <div class="col-md-4">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="tanggal">
+                <i class="bi bi-calendar-event-fill me-2 text-success"></i>
+                Tanggal
+            </label>
+            <input type="date"
+                class="form-control @error('tanggal') is-invalid @enderror"
+                id="tanggal"
+                name="tanggal"
+                value="{{ old('tanggal') }}">
+            @error('tanggal')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
 </div>
 
+{{-- ================= FOTO BARIS 1 ================= --}}
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto1">
+                <i class="bi bi-image-fill me-2 text-info"></i> Foto 1
+            </label>
+            <input type="file" class="form-control" id="foto1" name="foto1" accept="image/*">
+        </div>
+    </div>
 
-        {{-- Hidden user_id --}}
-        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto2">
+                <i class="bi bi-image-fill me-2 text-info"></i> Foto 2
+            </label>
+            <input type="file" class="form-control" id="foto2" name="foto2" accept="image/*">
+        </div>
+    </div>
 
-        {{-- Nama Bangunan --}}
-        <div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="namabangunan">
-            <i class="bi bi-house-door-fill me-2 text-warning"></i>
-            Nama Bangunan
-        </label>
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto3">
+                <i class="bi bi-image-fill me-2 text-info"></i> Foto 3
+            </label>
+            <input type="file" class="form-control" id="foto3" name="foto3" accept="image/*">
+        </div>
+    </div>
 
-        <textarea
-            class="form-control @error('namabangunan') is-invalid @enderror"
-            id="namabangunan"
-            name="namabangunan"
-            rows="3"
-            placeholder="Masukkan nama bangunan, tekan Enter untuk baris baru">{{ old('namabangunan') }}</textarea>
-
-        @error('namabangunan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto4">
+                <i class="bi bi-image-fill me-2 text-info"></i> Foto 4
+            </label>
+            <input type="file" class="form-control" id="foto4" name="foto4" accept="image/*">
+        </div>
     </div>
 </div>
 
+{{-- ================= FOTO BARIS 2 ================= --}}
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto5">
+                <i class="bi bi-image-fill me-2 text-warning"></i> Foto 5
+            </label>
+            <input type="file" class="form-control" id="foto5" name="foto5" accept="image/*">
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto6">
+                <i class="bi bi-image-fill me-2 text-warning"></i> Foto 6
+            </label>
+            <input type="file" class="form-control" id="foto6" name="foto6" accept="image/*">
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto7">
+                <i class="bi bi-image-fill me-2 text-warning"></i> Foto 7
+            </label>
+            <input type="file" class="form-control" id="foto7" name="foto7" accept="image/*">
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="foto8">
+                <i class="bi bi-image-fill me-2 text-warning"></i> Foto 8
+            </label>
+            <input type="file" class="form-control" id="foto8" name="foto8" accept="image/*">
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(input, previewId) {
+        const file = input.files[0];
+        const preview = document.getElementById(previewId);
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
-  Alamat Bangunan Gedung Pemohon
-</h5>
 
-<div class="row g-3">
-  {{-- Provinsi dan Kabupaten --}}
-    {{-- Alamat Lengkap --}}
-  <div class="col-12">
-      <div class="form-modern mb-3">
-          <label class="form-label-modern d-flex align-items-center" for="alamat">
-            <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
-          </label>
-          <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
-          @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-      </div>
-  </div>
-
-</div>
-
-<div class="row g-3">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    {{-- keterangan --}}
-    <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="keterangan">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat Lokasi Bangunan Gedung
-            </label>
-            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" value="{{ old('keterangan', $data->keterangan ?? '') }}">
-            @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-
-        {{-- Peta --}}
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-    </div>
-
-</div>
-
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // keterangan Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Marker (jika sudah ada nilai awal keterangan)
-    var marker;
-    var input = document.getElementById('keterangan');
-    if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
-    }
-
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
-
-        // Simpan keterangan ke input
-        document.getElementById('keterangan').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
-</script>
-
-
-{{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $('#kecamatanblora_id').on('change', function () {
-    var kecamatanID = $(this).val();
-    if (kecamatanID) {
-      $.ajax({
-        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
-        type: 'GET',
-        data: { kecamatan_id: kecamatanID },
-        success: function (data) {
-          $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-          $.each(data, function (key, value) {
-            $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-          });
-        }
-      });
-    } else {
-      $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-    }
-  });
-</script>
 
 {{-- ======================================================================================================================= --}}
 

@@ -9,6 +9,7 @@ use App\Models\bantuanteknis;
 use App\Models\bglapangan;
 use App\Models\bujkkonsultan;
 use App\Models\ceklapanganbantek;
+use App\Models\fotobongkarlap;
 use App\Models\gambarbantuan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
@@ -6595,7 +6596,7 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     $namapemilik = urldecode($namapemilik);
 
     // Cari data HARUS cocok ID & nama + bawa relasi bantekbongkar1
-    $data = bantekpembongkaraninduk::with('bantekpembongkarannew1', 'bantekpembongkarannew2')
+    $data = bantekpembongkaraninduk::with('bantekpembongkarannew1', 'bantekpembongkarannew2', 'fotobongkarlap')
         ->where('id', $id)
         ->where('namapemilik', $namapemilik)
         ->firstOrFail();
@@ -7560,18 +7561,30 @@ public function validasiberkasfilebangunan(Request $request, $id)
 // UPLOAD SURVEY LAPANGAN PEMBONGKARAN BANGUNAN GEDUNG
 
 
-public function bebantekfotosurveycreate(Request $request)
-{
-    // Ambil user login
-    $user = Auth::user();
+// SHOW DATA BARU
+public function bebantekfotosurveycreate($namapemilik, $id)
+    {
+        // Decode nama pemilik dari URL
+        $namapemilik = urldecode($namapemilik);
 
+        // Ambil data induk + relasi
+        $data = bantekpembongkaraninduk::with('fotobongkarlap')
+            ->where('id', $id)                     // kunci utama
+            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
+            ->firstOrFail();
 
-        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
-        return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.08_uploadfotolapbongkarsurvey', [
-            'title' => 'Upload Survey Lapangan Pembongkaran Bangunan Gedung',
-            'user' => $user,
-    ]);
-}
+        // User login
+        $user = Auth::user();
+
+        return view(
+            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.08_uploadfotolapbongkarsurvey',
+            [
+                'title' => 'Upload Survey Lapangan Pembongkaran Bangunan Gedung',
+                'data'  => $data,
+                'user'  => $user
+            ]
+        );
+    }
 
 }
 

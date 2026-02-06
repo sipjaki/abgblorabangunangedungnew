@@ -104,7 +104,7 @@
             </div>
 
             <div class="d-block">
-                <a href="{{ route('bebantekbongkarfotocreate') }}"
+                <a href="{{ route('basurveylapfotopembongkaran') }}"
                     class="button-modern">
                     Survey Lapangan
                 </a>
