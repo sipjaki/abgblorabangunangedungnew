@@ -7016,35 +7016,60 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 // KODINGAN UNTUK MENAMBAHKAN BERKAS FOTO
 public function bakonsultasipembongkaran(Request $request, $id)
 {
-    // Validasi file, max 15MB
+    // ============================
+    // VALIDASI INPUT
+    // ============================
     $request->validate([
-        'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'nomorsuratkonsul'     => 'nullable|string',
+        'tanggalsuratkonsul'   => 'nullable|date',
+        'cadangan1'            => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'fotokonsul1'          => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'fotokonsul2'          => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'fotokonsul3'          => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
+        'fotokonsul4'          => 'nullable|file|mimes:jpg,jpeg,png|max:15360',
     ]);
 
-    // Ambil data dari database
+    // ============================
+    // AMBIL DATA DARI DATABASE
+    // ============================
     $data = bantekpembongkaraninduk::findOrFail($id);
 
-    // Upload file
-    if ($request->hasFile('cadangan1')) {
-        $file = $request->file('cadangan1');
-        $filename = time().'_'.$file->getClientOriginalName();
-        $file->move(public_path('bantekpembongkaran'), $filename);
+    // ============================
+    // SIMPAN NOMOR & TANGGAL SURAT
+    // ============================
+    $data->nomorsuratkonsul   = $request->nomorsuratkonsul;
+    $data->tanggalsuratkonsul = $request->tanggalsuratkonsul;
+    $data->save();
 
-        // Simpan path file ke database
-        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
-        $data->save();
+    // ============================
+    // UPLOAD FILE
+    // ============================
+    $fileFields = ['cadangan1', 'fotokonsul1', 'fotokonsul2', 'fotokonsul3', 'fotokonsul4'];
+
+    foreach ($fileFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = time() . '_' . $file->getClientOriginalName();
+
+            // Simpan di public/bantekpembongkaran
+            $file->move(public_path('bantekpembongkaran'), $filename);
+
+            // Simpan path ke database
+            $data->$field = 'bantekpembongkaran/' . $filename;
+            $data->save();
+        }
     }
 
-    // Ambil nama pemilik dari database (sesuai schema)
-    $namapemilik = $data->namapemilik;
+    // ============================
+    // REDIRECT MENGGUNAKAN NAMAPEMILIK
+    // ============================
+    $namapemilik = $data->namapemilik; // tetap pakai ini
 
-    // Redirect ke halaman show dengan parameter lengkap
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'namapemilik' => urlencode($namapemilik),
         'id'          => $data->id
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
-
 
 public function basurveylappembongkaranupload(Request $request, $id)
 {

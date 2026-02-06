@@ -152,6 +152,90 @@
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label class="form-label">
+            <i class="bi bi-hash text-primary me-1"></i>
+            Nomor Surat Konsultasi
+        </label>
+        <input type="text"
+               name="nomorsuratkonsul"
+               class="form-control"
+               value="{{ old('nomorsuratkonsul', $data->nomorsuratkonsul ?? '') }}"
+               placeholder="Contoh: 640/BA-KONSUL/2025">
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label">
+            <i class="bi bi-calendar-event text-primary me-1"></i>
+            Tanggal Surat Konsultasi
+        </label>
+        <input type="date"
+               name="tanggalsuratkonsul"
+               class="form-control"
+               value="{{ old('tanggalsuratkonsul', $data->tanggalsuratkonsul ?? '') }}">
+    </div>
+</div>
+
+<div class="row">
+@php
+    $fotoKonsul = [
+        'fotokonsul1' => 'Foto Konsultasi 1',
+        'fotokonsul2' => 'Foto Konsultasi 2',
+        'fotokonsul3' => 'Foto Konsultasi 3',
+        'fotokonsul4' => 'Foto Konsultasi 4',
+    ];
+@endphp
+
+@foreach ($fotoKonsul as $field => $label)
+    <div class="col-md-3 mb-4">
+        <label class="form-label fw-semibold">
+            <i class="bi bi-camera-fill text-warning me-1"></i> {{ $label }}
+        </label>
+
+        <input type="file"
+               name="{{ $field }}"
+               class="form-control"
+               accept="image/*"
+               onchange="previewImage(event, '{{ $field }}Preview')">
+
+        <div class="mt-2 text-center">
+            @if(!empty($data->$field))
+                <img id="{{ $field }}Preview"
+                     src="{{ asset($data->$field) }}"
+                     class="img-fluid rounded shadow-sm"
+                     style="max-height:160px; object-fit:cover;">
+            @else
+                <img id="{{ $field }}Preview"
+                     style="display:none; max-height:160px;"
+                     class="img-fluid rounded shadow-sm">
+                <small class="text-muted fst-italic">
+                    Belum ada foto
+                </small>
+            @endif
+        </div>
+    </div>
+@endforeach
+</div>
+
+<script>
+function previewImage(event, previewId) {
+    const input = event.target;
+    const preview = document.getElementById(previewId);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+
 <div class="col-md-6">
 <div class="mb-3">
     <label class="form-label" for="cadangan1">
