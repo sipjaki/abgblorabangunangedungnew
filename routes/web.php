@@ -1581,7 +1581,7 @@ Route::put('/perbaikanbangunandetail/{id}', [BantuanteknisController::class, 'pe
 
 // Upload Survey Lapangan Bangunan Gedung
 Route::get('/basurveylappembongkaran/{id}', [BantuanteknisController::class, 'basurveylappembongkaran'])->middleware('auth', 'can:admindinas')->name('basurveylappembongkaran');
-// Route::put('/bakonsultasipembongkaran/upload/{id}', [BantuanteknisController::class, 'bakonsultasipembongkaran'])->middleware('auth', 'can:admindinas')->name('bakonsultasipembongkaran.upload');
+// Route::put('/bakonsultasipembongkaran/upload/{id}', [BantuanteknisController::class, 'bakonsultasipembongkaran'])->middleware('auth', 'can:admindinas')->name('basurveylappembongkaran.upload');
 
 // Upload BA Konsultasi
 Route::get('/berkaskonsultasipembongkaran/{id}', [BantuanteknisController::class, 'berkaskonsultasiPembongkaran'])->middleware('auth', 'can:admindinas')->name('berkaskonsultasipembongkaran');

@@ -155,47 +155,116 @@
                value="{{ old('tanggalsuratkonsul', $data->tanggalsuratkonsul ?? '') }}">
     </div>
 </div>
-
 <div class="row">
-    @for($i = 1; $i <= 4; $i++)
-        <div class="col-md-3 mb-3 text-center">
-            <label class="form-label-modern fw-bold">Foto Konsultasi {{ $i }}</label>
 
-            <input type="file"
-                   name="fotokonsul{{ $i }}"
-                   class="form-control"
-                   accept="image/*"
-                   onchange="previewImage(event, 'preview{{ $i }}')">
+    {{-- FOTO 1 --}}
+    <div class="form-modern col-md-3 mb-3 text-center">
+        <label class="form-label-modern fw-bold">Foto Konsultasi 1</label>
+        <input type="file" name="fotokonsul1" class="form-control"
+               accept="image/*"
+               onchange="previewImage(event, 'preview1')">
 
-            <div class="mt-2">
-                <img id="preview{{ $i }}"
-                     src="{{ !empty($data->{'fotokonsul'.$i}) ? asset($data->{'fotokonsul'.$i}) : '' }}"
-                     class="img-fluid rounded shadow"
-                     style="max-height:160px; {{ empty($data->{'fotokonsul'.$i}) ? 'display:none;' : '' }}">
-            </div>
-
-            @if(empty($data->{'fotokonsul'.$i}))
-                <small class="text-muted fst-italic">Belum ada foto</small>
-            @endif
+        <div class="mt-2">
+            <img id="preview1"
+                 src="{{ $data->fotokonsul1 ? asset($data->fotokonsul1) : '' }}"
+                 class="img-fluid rounded shadow"
+                 style="max-height:160px; {{ $data->fotokonsul1 ? '' : 'display:none;' }}">
         </div>
-    @endfor
-</div>
 
+        @if(!$data->fotokonsul1)
+            <small class="text-muted fst-italic">Belum ada foto</small>
+        @endif
+    </div>
+
+    {{-- FOTO 2 --}}
+    <div class="form-modern col-md-3 mb-3 text-center">
+        <label class="form-label-modern fw-bold">Foto Konsultasi 2</label>
+        <input type="file" name="fotokonsul2" class="form-control"
+               accept="image/*"
+               onchange="previewImage(event, 'preview2')">
+
+        <div class="mt-2">
+            <img id="preview2"
+                 src="{{ $data->fotokonsul2 ? asset($data->fotokonsul2) : '' }}"
+                 class="img-fluid rounded shadow"
+                 style="max-height:160px; {{ $data->fotokonsul2 ? '' : 'display:none;' }}">
+        </div>
+
+        @if(!$data->fotokonsul2)
+            <small class="text-muted fst-italic">Belum ada foto</small>
+        @endif
+    </div>
+
+    {{-- FOTO 3 --}}
+    <div class="form-modern col-md-3 mb-3 text-center">
+        <label class="form-label-modern fw-bold">Foto Konsultasi 3</label>
+        <input type="file" name="fotokonsul3" class="form-control"
+               accept="image/*"
+               onchange="previewImage(event, 'preview3')">
+
+        <div class="mt-2">
+            <img id="preview3"
+                 src="{{ $data->fotokonsul3 ? asset($data->fotokonsul3) : '' }}"
+                 class="img-fluid rounded shadow"
+                 style="max-height:160px; {{ $data->fotokonsul3 ? '' : 'display:none;' }}">
+        </div>
+
+        @if(!$data->fotokonsul3)
+            <small class="text-muted fst-italic">Belum ada foto</small>
+        @endif
+    </div>
+
+    {{-- FOTO 4 --}}
+    <div class="form-modern col-md-3 mb-3 text-center">
+        <label class="form-label-modern fw-bold">Foto Konsultasi 4</label>
+        <input type="file" name="fotokonsul4" class="form-control"
+               accept="image/*"
+               onchange="previewImage(event, 'preview4')">
+
+        <div class="mt-2">
+            <img id="preview4"
+                 src="{{ $data->fotokonsul4 ? asset($data->fotokonsul4) : '' }}"
+                 class="img-fluid rounded shadow"
+                 style="max-height:160px; {{ $data->fotokonsul4 ? '' : 'display:none;' }}">
+        </div>
+
+        @if(!$data->fotokonsul4)
+            <small class="text-muted fst-italic">Belum ada foto</small>
+        @endif
+    </div>
+
+</div>
 <script>
 function previewImage(event, previewId) {
-    const input = event.target;
+    const input   = event.target;
+    const file    = input.files[0];
     const preview = document.getElementById(previewId);
 
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
+    if (!file) return;
 
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            preview.style.display = 'block';
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    // Validasi tipe file
+    if (!file.type.startsWith('image/')) {
+        alert('File harus berupa gambar (JPG / PNG)');
+        input.value = '';
+        preview.style.display = 'none';
+        return;
     }
+
+    // Validasi ukuran (2MB)
+    if (file.size > 2 * 1024 * 1024) {
+        alert('Ukuran foto maksimal 2MB');
+        input.value = '';
+        preview.style.display = 'none';
+        return;
+    }
+
+    // Preview gambar
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
 }
 </script>
 
