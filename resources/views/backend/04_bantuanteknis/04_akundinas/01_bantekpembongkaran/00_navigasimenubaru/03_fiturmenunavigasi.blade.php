@@ -103,32 +103,48 @@
                 </div>
             </div>
 
-<div class="d-block">
-
-    {{-- JIKA BELUM ADA FOTO SURVEY --}}
-    @if($data->fotobongkarlap->count() == 0)
-        <a href="{{ route('basurveylapfotopembongkaran', [$data->namapemilik, $data->id]) }}"
-           class="button-modern">
-            <i class="bi bi-camera"></i> Input Survey Lapangan
-        </a>
-
-    {{-- JIKA SUDAH ADA FOTO SURVEY --}}
-    @else
+@canany(['pemohon', 'dinas'])
+    @if($data->fotobongkarlap->count() > 0)
+        {{-- ADA DATA → BISA DIKLIK --}}
         <a href="{{ route(
-                    'basurveylapfotopembongkaranshowdata',
-                    [
-                        $data->fotobongkarlap->first()->id,
-                        urlencode($data->fotobongkarlap->first()->keterangan)
-                    ]
-                ) }}"
-                class="button-berkas">
-                    <i class="bi bi-eye"></i> Lihat Hasil Survey
-                </a>
+                'basurveylapfotopembongkaranshowdata',
+                [
+                    $data->fotobongkarlap->first()->id,
+                    urlencode($data->fotobongkarlap->first()->keterangan)
+                ]
+            ) }}"
+            class="button-berkas">
+            <i class="bi bi-eye"></i> Lihat Hasil Survey
+        </a>
+    @else
+        {{-- TIDAK ADA DATA → DISABLED --}}
+        <button class="button-berkas disabled" disabled
+                style="cursor:not-allowed; opacity:0.6;">
+            <i class="bi bi-eye-slash"></i> Hasil Survey Belum Tersedia
+        </button>
     @endif
-
-</div>
+@endcanany
 
             @can('admindpupr')
+            @if($data->fotobongkarlap->count() == 0)
+                    <a href="{{ route('basurveylapfotopembongkaran', [$data->namapemilik, $data->id]) }}"
+                    class="button-modern">
+                        <i class="bi bi-camera"></i> Input Survey Lapangan
+                    </a>
+
+    {{-- JIKA SUDAH ADA FOTO SURVEY --}}
+                    @else
+                        <a href="{{ route(
+                                    'basurveylapfotopembongkaranshowdata',
+                                    [
+                                        $data->fotobongkarlap->first()->id,
+                                        urlencode($data->fotobongkarlap->first()->keterangan)
+                                    ]
+                                ) }}"
+                                class="button-berkas">
+                                    <i class="bi bi-eye"></i> Lihat Hasil Survey
+                                </a>
+                    @endif
 
                 <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
