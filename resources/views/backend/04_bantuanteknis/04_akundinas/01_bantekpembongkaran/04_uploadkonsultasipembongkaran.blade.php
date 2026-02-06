@@ -401,9 +401,15 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
+
+                                    <a href="{{ url()->previous() }}" class="button-modern">
+                                            <i class="bi bi-arrow-left-circle me-2"></i>
+                                            <span style="font-family: 'Poppins', sans-serif;">Kembali</span>
+                                        </a>
+
                                <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Upload Berkas</span>
                                     </button>
 
                                 </div>
