@@ -7673,12 +7673,10 @@ public function bebantekfotosurveycreatenewlap(Request $request)
 
 public function bebantekfotosurveylapanganshow($id, $keterangan)
 {
-    // Decode keterangan dari URL
     $keterangan = urldecode($keterangan);
 
-    // Ambil data fotobongkarlap beserta relasi induk
-    $data = bantekpembongkaraninduk::withTrashed()
-        ->with('dataindukfoto')
+    $data = fotobongkarlap::withTrashed()
+        ->with('dataindukfoto') // relasi ke induk
         ->where('id', $id)
         ->where('keterangan', $keterangan)
         ->firstOrFail();
@@ -7691,6 +7689,5 @@ public function bebantekfotosurveylapanganshow($id, $keterangan)
         ]
     );
 }
-
 }
 
