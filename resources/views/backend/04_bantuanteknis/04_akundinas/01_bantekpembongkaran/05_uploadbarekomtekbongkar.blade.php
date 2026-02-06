@@ -161,7 +161,7 @@
 @endphp
 
 @foreach ($infoItems as $item)
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
             <div class="card-body bg-white rounded-3"
                 style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
@@ -189,7 +189,7 @@
     {{-- Keterangan --}}
     <div class="col-md-12">
         <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="keterangan">
+            <label class="form-label-modern-modern d-flex align-items-center" for="keterangan">
                 <i class="bi bi-info-circle-fill me-2 text-primary" style="font-size: 1.2rem;"></i> Keterangan
             </label>
             <input type="text" class="form-control" id="keterangan" name="keterangan"
@@ -260,8 +260,8 @@
 
 <div class="row">
     {{-- Nomor Surat Rekomendasi --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label fw-semibold">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern fw-semibold">
             <i class="bi bi-file-earmark-text-fill text-primary me-1"></i> Nomor Surat Rekomendasi Teknis
         </label>
         <input type="text"
@@ -275,8 +275,8 @@
     </div>
 
     {{-- Tanggal Surat Rekomendasi --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label fw-semibold">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern fw-semibold">
             <i class="bi bi-calendar-check-fill text-success me-1"></i> Tanggal Surat Rekomendasi Teknis
         </label>
         <input type="date"
@@ -289,9 +289,9 @@
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 <div class="mb-3">
-    <label class="form-label" for="cadangan2">
+    <label class="form-label-modern" for="cadangan2">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Rekomtek Pembongkaran Bangunan Gedung
     </label>
     <input type="file" id="cadangan2" name="cadangan2" accept="application/pdf"
