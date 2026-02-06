@@ -7155,18 +7155,24 @@ public function basurveylappembongkaranupload(Request $request, $id)
     );
 }
 
-
 public function barekomtekberkas(Request $request, $id)
 {
-    // Validasi file, max 15MB
+    // Validasi file PDF maksimal 15MB
     $request->validate([
-        'cadangan2' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'cadangan2'        => 'required|file|mimes:pdf|max:15360',
+        'nomorsuratrekom'  => 'nullable|string',
+        'tanggalsuratrekom'=> 'nullable|date',
+    ], [
+        'cadangan2.required' => 'Rekomendasi teknis belum di upload.',
+        'cadangan2.file'     => 'Rekomendasi teknis harus berupa file PDF.',
+        'cadangan2.mimes'    => 'Format file salah. Hanya PDF yang diperbolehkan.',
+        'cadangan2.max'      => 'Ukuran file Rekomendasi teknis terlalu besar. Maksimal 15MB.',
     ]);
 
     // Ambil data dari database
     $data = bantekpembongkaraninduk::findOrFail($id);
 
-    // Upload file
+    // Upload file cadangan2
     if ($request->hasFile('cadangan2')) {
         $file = $request->file('cadangan2');
         $filename = time().'_'.$file->getClientOriginalName();
@@ -7174,18 +7180,25 @@ public function barekomtekberkas(Request $request, $id)
 
         // Simpan path file ke database
         $data->cadangan2 = 'bantekpembongkaran/'.$filename;
-        $data->save();
     }
 
-    // Ambil nama pemilik dari database (sesuai schema)
+    // Simpan nomor dan tanggal surat rekomendasi
+    $data->nomorsuratrekom   = $request->nomorsuratrekom;
+    $data->tanggalsuratrekom = $request->tanggalsuratrekom;
+
+    // Simpan perubahan
+    $data->save();
+
+    // Ambil nama pemilik dari database (untuk redirect)
     $namapemilik = $data->namapemilik;
 
-    // Redirect ke halaman show dengan parameter lengkap
+    // Redirect ke halaman show
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'namapemilik' => urlencode($namapemilik),
         'id'          => $data->id
     ])->with('create', 'Berkas Berhasil Di Upload !');
 }
+
 
 
     public function berkaspersetujuanBupati($id)
