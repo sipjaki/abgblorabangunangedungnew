@@ -243,10 +243,9 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  {{-- <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data"> --}}
-                  {{-- <form action="{{ route('bantekpembongkarannew') }}" method="POST" enctype="multipart/form-data"> --}}
-    <form action="{{ url('/basurveylapfotopembongkaran.uploadlap') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('basurveylapfotopembongkaran.uploadlap') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('POST')
 
                             <!-- begin::Body -->
 
@@ -432,7 +431,7 @@
                                 <div class="flex justify-end">
 
                                <button class="button-berkas" type="button" onclick="openModal()">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i> Upload Survey Lapangan
                                     </button>
 
                                     <a href="{{ route('bebantekpembongkaran') }}" class="button-modern">
@@ -454,7 +453,7 @@
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Saudara ingin mengajukan permohonan ini ?
+                                        Upload Dokumentasi Survey Lapangan ?
                                     </p>
 
                                       <!-- Tombol -->
