@@ -7012,38 +7012,108 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 }
 
 
+// KODINGAN UNTUK MENAMBAHKAN BERKAS FOTO
+// public function bakonsultasipembongkaran(Request $request, $id)
+// {
+//     // Validasi file, max 15MB
+//     $request->validate([
+//         'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+//     ]);
+
+//     // Ambil data dari database
+//     $data = bantekpembongkaraninduk::findOrFail($id);
+
+//     // Upload file
+//     if ($request->hasFile('cadangan1')) {
+//         $file = $request->file('cadangan1');
+//         $filename = time().'_'.$file->getClientOriginalName();
+//         $file->move(public_path('bantekpembongkaran'), $filename);
+
+//         // Simpan path file ke database
+//         $data->cadangan1 = 'bantekpembongkaran/'.$filename;
+//         $data->save();
+//     }
+
+//     // Ambil nama pemilik dari database (sesuai schema)
+//     $namapemilik = $data->namapemilik;
+
+//     // Redirect ke halaman show dengan parameter lengkap
+//     return redirect()->route('bebantekpembongkaranshow', [
+//         'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+//         'id'          => $data->id
+//     ])->with('create', 'Berkas Berhasil Di Upload !');
+// }
+
 
 public function bakonsultasipembongkaran(Request $request, $id)
 {
-    // Validasi file, max 15MB
+    // =========================
+    // VALIDASI
+    // =========================
     $request->validate([
-        'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'nomorsuratkonsul'   => 'required|string|max:255',
+        'tanggalsuratkonsul' => 'required|date',
+
+        'fotokonsul1' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
+        'fotokonsul2' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
+        'fotokonsul3' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
+        'fotokonsul4' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
     ]);
 
-    // Ambil data dari database
+    // =========================
+    // AMBIL DATA
+    // =========================
     $data = bantekpembongkaraninduk::findOrFail($id);
 
-    // Upload file
-    if ($request->hasFile('cadangan1')) {
-        $file = $request->file('cadangan1');
-        $filename = time().'_'.$file->getClientOriginalName();
-        $file->move(public_path('bantekpembongkaran'), $filename);
+    // =========================
+    // SIMPAN NOMOR & TANGGAL
+    // =========================
+    $data->nomorsuratkonsul   = $request->nomorsuratkonsul;
+    $data->tanggalsuratkonsul = $request->tanggalsuratkonsul;
 
-        // Simpan path file ke database
-        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
-        $data->save();
+    // =========================
+    // FOLDER UPLOAD
+    // =========================
+    $path = public_path('bantekpembongkaran/konsultasi');
+
+    if (!file_exists($path)) {
+        mkdir($path, 0777, true);
     }
 
-    // Ambil nama pemilik dari database (sesuai schema)
-    $namapemilik = $data->namapemilik;
+    // =========================
+    // UPLOAD FOTO (DINAMIS)
+    // =========================
+    $fields = [
+        'fotokonsul',
+        'fotokonsul1',
+        'fotokonsul2',
+        'fotokonsul3',
+        'fotokonsul4'
+    ];
 
-    // Redirect ke halaman show dengan parameter lengkap
+    foreach ($fields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = time().'_'.$field.'.'.$file->getClientOriginalExtension();
+            $file->move($path, $filename);
+
+            $data->$field = 'bantekpembongkaran/konsultasi/'.$filename;
+        }
+    }
+
+    // =========================
+    // SIMPAN KE DATABASE
+    // =========================
+    $data->save();
+
+    // =========================
+    // REDIRECT
+    // =========================
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'namapemilik' => urlencode($data->namapemilik),
         'id'          => $data->id
-    ])->with('create', 'Berkas Berhasil Di Upload !');
+    ])->with('create', 'Berita Acara Konsultasi berhasil disimpan.');
 }
-
 
     public function berkasrekomtekPembongkaran($id)
 {

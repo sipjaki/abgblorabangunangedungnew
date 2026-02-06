@@ -141,6 +141,65 @@
     @method('PUT')
                             <!-- begin::Body -->
                             <div class="card-body">
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label class="form-label fw-bold">Nomor Surat Konsultasi</label>
+        <input type="text" name="nomorsuratkonsul" class="form-control"
+               value="{{ old('nomorsuratkonsul', $data->nomorsuratkonsul ?? '') }}">
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label fw-bold">Tanggal Surat Konsultasi</label>
+        <input type="date" name="tanggalsuratkonsul" class="form-control"
+               value="{{ old('tanggalsuratkonsul', $data->tanggalsuratkonsul ?? '') }}">
+    </div>
+</div>
+
+<div class="row">
+    @for($i = 1; $i <= 4; $i++)
+        <div class="col-md-4 mb-4 text-center">
+            <label class="form-label fw-bold">Foto Konsultasi {{ $i }}</label>
+
+            <input type="file"
+                   name="fotokonsul{{ $i }}"
+                   class="form-control"
+                   accept="image/*"
+                   onchange="previewImage(event, 'preview{{ $i }}')">
+
+            <div class="mt-2">
+                <img id="preview{{ $i }}"
+                     src="{{ !empty($data->{'fotokonsul'.$i}) ? asset($data->{'fotokonsul'.$i}) : '' }}"
+                     class="img-fluid rounded shadow"
+                     style="max-height:160px; {{ empty($data->{'fotokonsul'.$i}) ? 'display:none;' : '' }}">
+            </div>
+
+            @if(empty($data->{'fotokonsul'.$i}))
+                <small class="text-muted fst-italic">Belum ada foto</small>
+            @endif
+        </div>
+    @endfor
+</div>
+
+<script>
+function previewImage(event, previewId) {
+    const input = event.target;
+    const preview = document.getElementById(previewId);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+
+
                                 <div class="row">
 <input type="hidden" name="namapemilik" value="{{ $data->pemilikbangunan }}">                                    <!-- Left Column (6/12) -->
 <div class="text-center">
