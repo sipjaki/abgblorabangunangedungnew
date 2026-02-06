@@ -158,22 +158,22 @@
         [
             'icon'  => 'bi-person-fill',
             'title' => 'Nama Pemilik Bangunan',
-            'value' => $data->namapemilik ?? '-',
+            'value' => $data->bantekpembongkaraninduk->namapemilik ?? '-',
         ],
         [
             'icon'  => 'bi-building',
             'title' => 'Instansi / Dinas',
-            'value' => $data->user->name ?? '-',
+            'value' => $data->bantekpembongkaraninduk->user->name ?? '-',
         ],
         [
             'icon'  => 'bi-house-fill',
             'title' => 'Nama Bangunan',
-            'value' => $data->namabangunan ?? '-',
+            'value' => $data->bantekpembongkaraninduk->namabangunan ?? '-',
         ],
         [
             'icon'  => 'bi-geo-alt-fill',
             'title' => 'Alamat Bangunan',
-            'value' => $data->alamat ?? '-',
+            'value' => $data->bantekpembongkaraninduk->alamat ?? '-',
         ],
 
     ];
@@ -207,14 +207,6 @@
 
     {{-- Keterangan --}}
     <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="keterangan">
-                <i class="bi bi-info-circle-fill me-2 text-primary" style="font-size: 1.2rem;"></i> Keterangan
-            </label>
-            <input type="text" class="form-control" id="keterangan" name="keterangan"
-                value="{{ $data->keterangan ?? '-' }}" readonly>
-        </div>
-
         {{-- Koordinat (hidden) --}}
         <input type="hidden" id="koordinat" name="koordinat" value="{{ $data->koordinat ?? '' }}">
 
@@ -329,10 +321,10 @@
                 </div>
 
                 <div class="card-body d-flex align-items-center justify-content-center bg-light">
-                    @if($data->$foto)
-                        <a href="{{ asset('storage/'.$data->$foto) }}" target="_blank">
+                    @if(!empty($data->$foto))
+                        <a href="{{ asset($data->$foto) }}" target="_blank">
                             <img
-                                src="{{ asset('storage/'.$data->$foto) }}"
+                                src="{{ asset($data->$foto) }}"
                                 class="img-fluid rounded shadow-sm"
                                 style="max-height:180px; object-fit:cover;">
                         </a>
@@ -345,7 +337,7 @@
     @endfor
 </div>
 
-    <!-- =========================== -->
+<!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
 
