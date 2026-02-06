@@ -153,8 +153,8 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-hash text-primary me-1"></i>
             Nomor Surat Konsultasi
         </label>
@@ -165,8 +165,8 @@
                placeholder="Contoh: 640/BA-KONSUL/2025">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-calendar-event text-primary me-1"></i>
             Tanggal Surat Konsultasi
         </label>
@@ -188,8 +188,8 @@
 @endphp
 
 @foreach ($fotoKonsul as $field => $label)
-    <div class="col-md-3 mb-4">
-        <label class="form-label fw-semibold">
+    <div class="form-modern col-md-3 mb-4">
+        <label class="form-label-modern fw-semibold">
             <i class="bi bi-camera-fill text-warning me-1"></i> {{ $label }}
         </label>
 
@@ -236,9 +236,9 @@ function previewImage(event, previewId) {
 }
 </script>
 
-<div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="cadangan1">
+<div class="form-modern col-md-6">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
     </label>
     <input type="file" id="cadangan1" name="cadangan1" accept="application/pdf"
