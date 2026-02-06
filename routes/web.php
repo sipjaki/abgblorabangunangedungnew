@@ -1581,11 +1581,7 @@ Route::put('/perbaikanbangunandetail/{id}', [BantuanteknisController::class, 'pe
 
 
 Route::get('/bebantekfotosurvey/{namapemilik}/{id}', [BantuanteknisController::class, 'bebantekfotosurveycreate'])->middleware('auth', 'can:admindinas')->name('basurveylapfotopembongkaran');
-// Route::post(
-//     '/bebantekpembongkaran/createnewbaru',
-//     [BantuanteknisController::class, 'bebantekpembongkarancreatenew']
-// )->middleware('auth', 'can:admindinas')
-//  ->name('bantekpembongkarannew');
+    Route::post('/bebantekfotosurveycreate/new', [BantuanteknisController::class, 'bebantekfotosurveycreatenewlap'])->middleware('auth', 'can:admindinas')->name('basurveylapfotopembongkaran.uploadlap');
 
 
 // Upload BA Konsultasi

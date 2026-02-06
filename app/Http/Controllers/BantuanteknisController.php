@@ -7586,5 +7586,90 @@ public function bebantekfotosurveycreate($namapemilik, $id)
         );
     }
 
+public function bebantekfotosurveycreatenewlap(Request $request)
+{
+    // ===============================
+    // 1. VALIDASI
+    // ===============================
+    $validated = $request->validate([
+        'bantekpembongkaraninduk_id' => 'nullable|integer',
+
+        'keterangan' => 'nullable|string',
+        'tanggal'    => 'nullable|date',
+
+        'foto1' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto2' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto3' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto4' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto5' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto6' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto7' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'foto8' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+    ]);
+
+    DB::beginTransaction();
+
+    try {
+        // ===============================
+        // 2. FOLDER UPLOAD
+        // ===============================
+        $path = public_path('fotobongkarlap');
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        // ===============================
+        // 3. PROSES UPLOAD FOTO (SATU-SATU, TANPA LOOPING)
+        // ===============================
+        for ($i = 1; $i <= 8; $i++) {
+            $field = 'foto' . $i;
+
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $filename);
+
+                $validated[$field] = 'fotobongkarlap/' . $filename;
+            }
+        }
+
+        // ===============================
+        // 4. SIMPAN DATABASE
+        // ===============================
+        fotobongkarlap::create([
+            'bantekpembongkaraninduk_id' => $validated['bantekpembongkaraninduk_id'] ,
+            'keterangan' => $validated['keterangan'] ?? null,
+            'tanggal'    => $validated['tanggal'] ?? null,
+
+            'foto1' => $validated['foto1'] ?? null,
+            'foto2' => $validated['foto2'] ?? null,
+            'foto3' => $validated['foto3'] ?? null,
+            'foto4' => $validated['foto4'] ?? null,
+            'foto5' => $validated['foto5'] ?? null,
+            'foto6' => $validated['foto6'] ?? null,
+            'foto7' => $validated['foto7'] ?? null,
+            'foto8' => $validated['foto8'] ?? null,
+        ]);
+
+        DB::commit();
+
+        // ===============================
+        // 5. REDIRECT (SESUAI PERMINTAAN)
+        // ===============================
+        return redirect()->route('bebantekpembongkaranshow', [
+            'namapemilik' => $request->input('namapemilik_awal'),
+            'id'          => $request->input('id_awal'),
+        ])->with('create', 'Data Foto Survey Lapangan berhasil disimpan!');
+
+    } catch (\Exception $e) {
+        DB::rollBack();
+        Log::error('Error Foto Bongkar Lapangan: ' . $e->getMessage());
+
+        return back()
+            ->withInput()
+            ->with('error', 'Terjadi kesalahan saat menyimpan data.');
+    }
+}
+
 }
 
