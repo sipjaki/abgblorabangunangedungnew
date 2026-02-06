@@ -7677,7 +7677,7 @@ public function bebantekfotosurveylapanganshow($id, $keterangan)
     $keterangan = urldecode($keterangan);
 
     // Ambil data fotobongkarlap beserta relasi induk
-    $data = fotobongkarlap::withTrashed()
+    $data = bantekpembongkaraninduk::withTrashed()
         ->with('dataindukfoto')
         ->where('id', $id)
         ->where('keterangan', $keterangan)
