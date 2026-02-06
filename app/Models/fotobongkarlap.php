@@ -12,7 +12,7 @@ class fotobongkarlap extends Model
 
     protected $guarded = ['id'];
 
-    public function induk()
+    public function dataindukfoto()
     {
         return $this->belongsTo(
             bantekpembongkaraninduk::class,

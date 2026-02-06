@@ -1576,13 +1576,12 @@ Route::get('/bebantekpembongkaran/informasibangunangedung/{namapemilik}/{id}',[B
 // UPDATE INFORMASI DETAIL BANGUNAN GEDUNG
 Route::put('/perbaikanbangunandetail/{id}', [BantuanteknisController::class, 'perbaikanbangunandetail'])->middleware('auth', 'can:admindinas')->name('perbaikanbangunandetail');
 
-// berkas uplkoad
 
-
+// UPLOAD SURVEY LAPAANGAN PEMBONGKARAN BANGUNAN GEDUNG
 
 Route::get('/bebantekfotosurvey/{namapemilik}/{id}', [BantuanteknisController::class, 'bebantekfotosurveycreate'])->middleware('auth', 'can:admindinas')->name('basurveylapfotopembongkaran');
     Route::post('/bebantekfotosurveycreate/new', [BantuanteknisController::class, 'bebantekfotosurveycreatenewlap'])->middleware('auth', 'can:admindinas')->name('basurveylapfotopembongkaran.uploadlap');
-
+Route::get('/bebongkar/surveylapangan/{id}/{keterangan}',[BantuanteknisController::class, 'bebantekfotosurveylapanganshow'])->middleware('auth')->name('basurveylapfotopembongkaranshowdata');
 
 // Upload BA Konsultasi
 Route::get('/berkaskonsultasipembongkaran/{id}', [BantuanteknisController::class, 'berkaskonsultasiPembongkaran'])->middleware('auth', 'can:admindinas')->name('berkaskonsultasipembongkaran');

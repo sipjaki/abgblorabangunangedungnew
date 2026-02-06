@@ -7671,5 +7671,26 @@ public function bebantekfotosurveycreatenewlap(Request $request)
     }
 }
 
+public function bebantekfotosurveylapanganshow($id, $keterangan)
+{
+    // Decode keterangan dari URL
+    $keterangan = urldecode($keterangan);
+
+    // Ambil data fotobongkarlap beserta relasi induk
+    $data = fotobongkarlap::withTrashed()
+        ->with('dataindukfoto')
+        ->where('id', $id)
+        ->where('keterangan', $keterangan)
+        ->firstOrFail();
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.09_showsurveylap',
+        [
+            'title' => 'Informasi Survey Lapangan Pembongkaran Bangunan Gedung',
+            'data'  => $data
+        ]
+    );
+}
+
 }
 

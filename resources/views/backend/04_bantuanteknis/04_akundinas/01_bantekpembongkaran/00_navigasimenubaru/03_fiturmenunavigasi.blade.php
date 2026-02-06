@@ -103,12 +103,30 @@
                 </div>
             </div>
 
-            <div class="d-block">
-                <a href="{{ route('basurveylapfotopembongkaran', [$data->namapemilik, $data->id]) }}"
-                    class="button-modern">
-                    Survey Lapangan
+<div class="d-block">
+
+    {{-- JIKA BELUM ADA FOTO SURVEY --}}
+    @if($data->fotobongkarlap->count() == 0)
+        <a href="{{ route('basurveylapfotopembongkaran', [$data->namapemilik, $data->id]) }}"
+           class="button-modern">
+            <i class="bi bi-camera"></i> Input Survey Lapangan
+        </a>
+
+    {{-- JIKA SUDAH ADA FOTO SURVEY --}}
+    @else
+        <a href="{{ route(
+                    'basurveylapfotopembongkaranshowdata',
+                    [
+                        $data->fotobongkarlap->first()->id,
+                        urlencode($data->fotobongkarlap->first()->keterangan)
+                    ]
+                ) }}"
+                class="button-berkas">
+                    <i class="bi bi-eye"></i> Lihat Hasil Survey
                 </a>
-            </div>
+    @endif
+
+</div>
 
             @can('admindpupr')
 
