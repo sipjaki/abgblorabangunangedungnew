@@ -199,8 +199,7 @@ function previewImage(event, previewId) {
 }
 </script>
 
-
-                                <div class="row">
+<div class="row">
 <input type="hidden" name="namapemilik" value="{{ $data->pemilikbangunan }}">                                    <!-- Left Column (6/12) -->
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">

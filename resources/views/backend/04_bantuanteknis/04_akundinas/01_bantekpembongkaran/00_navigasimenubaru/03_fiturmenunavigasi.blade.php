@@ -103,12 +103,12 @@
                 </div>
             </div>
 
-            <div class="d-block">
+            {{-- <div class="d-block">
                 <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
                     Survey Lapangan
                 </a>
-            </div>
+            </div> --}}
             @can('admindpupr')
 
                 <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
