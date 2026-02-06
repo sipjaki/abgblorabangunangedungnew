@@ -7013,39 +7013,39 @@ public function perbaikanBerkasInformasiPemilik(Request $request, $id)
 
 
 // KODINGAN UNTUK MENAMBAHKAN BERKAS FOTO
-// public function bakonsultasipembongkaran(Request $request, $id)
-// {
-//     // Validasi file, max 15MB
-//     $request->validate([
-//         'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
-//     ]);
-
-//     // Ambil data dari database
-//     $data = bantekpembongkaraninduk::findOrFail($id);
-
-//     // Upload file
-//     if ($request->hasFile('cadangan1')) {
-//         $file = $request->file('cadangan1');
-//         $filename = time().'_'.$file->getClientOriginalName();
-//         $file->move(public_path('bantekpembongkaran'), $filename);
-
-//         // Simpan path file ke database
-//         $data->cadangan1 = 'bantekpembongkaran/'.$filename;
-//         $data->save();
-//     }
-
-//     // Ambil nama pemilik dari database (sesuai schema)
-//     $namapemilik = $data->namapemilik;
-
-//     // Redirect ke halaman show dengan parameter lengkap
-//     return redirect()->route('bebantekpembongkaranshow', [
-//         'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
-//         'id'          => $data->id
-//     ])->with('create', 'Berkas Berhasil Di Upload !');
-// }
-
-
 public function bakonsultasipembongkaran(Request $request, $id)
+{
+    // Validasi file, max 15MB
+    $request->validate([
+        'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+    ]);
+
+    // Ambil data dari database
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Upload file
+    if ($request->hasFile('cadangan1')) {
+        $file = $request->file('cadangan1');
+        $filename = time().'_'.$file->getClientOriginalName();
+        $file->move(public_path('bantekpembongkaran'), $filename);
+
+        // Simpan path file ke database
+        $data->cadangan1 = 'bantekpembongkaran/'.$filename;
+        $data->save();
+    }
+
+    // Ambil nama pemilik dari database (sesuai schema)
+    $namapemilik = $data->namapemilik;
+
+    // Redirect ke halaman show dengan parameter lengkap
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'id'          => $data->id
+    ])->with('create', 'Berkas Berhasil Di Upload !');
+}
+
+
+public function basurveylappembongkaranupload(Request $request, $id)
 {
     // =========================
     // VALIDASI

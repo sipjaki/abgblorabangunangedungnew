@@ -136,7 +136,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                 <form action="{{ route('bakonsultasipembongkaran.upload', $data->id) }}" method="POST" enctype="multipart/form-data">
+                 <form action="{{ route('basurveylappembongkaran.upload', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
                             <!-- begin::Body -->
