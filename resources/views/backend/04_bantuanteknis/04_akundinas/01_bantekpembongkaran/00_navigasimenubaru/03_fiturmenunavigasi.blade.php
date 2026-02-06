@@ -290,7 +290,7 @@
 
 
 <!-- Modal Berkas Rekomtek -->
-<div class="modal fade" id="modalRekomtek" tabindex="-1" aria-labelledby="modalRekomtekLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modalRekomtek" tabindex="-1" aria-labelledby="modalRekomtekLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -313,8 +313,64 @@
     </div>
   </div>
 </div>
+ --}}
+
+ <div class="modal fade" id="modalRekomtek" tabindex="-1" aria-labelledby="modalRekomtekLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRekomtekLabel">Berkas Rekomtek</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{-- Tampilkan Nomor dan Tanggal Rekomtek --}}
+        <div class="mb-3">
+            <p><strong>Nomor Surat Rekomtek:</strong> {{ $data->nomorsuratrekom ?? '-' }}</p>
+            <p><strong>Tanggal Surat Rekomtek:</strong> {{ $data->tanggalsuratrekom ?? '-' }}</p>
+        </div>
+
+        {{-- Preview Berkas --}}
+        @if($data->cadangan2)
+          <iframe src="{{ asset($data->cadangan2) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+        @else
+          <p class="text-muted">Berkas belum tersedia.</p>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if($data->cadangan2)
+          <a href="{{ asset($data->cadangan2) }}" download class="button-berkas">Download</a>
+        @endif
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal Berkas Per Bupati -->
+{{-- <div class="modal fade" id="modalPerBupati" tabindex="-1" aria-labelledby="modalPerBupatiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalPerBupatiLabel">Berkas Per Bupati</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if($data->cadangan3)
+          <iframe src="{{ asset($data->cadangan3) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+        @else
+          <p class="text-muted">Berkas belum tersedia.</p>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if($data->cadangan3)
+          <a href="{{ asset($data->cadangan3) }}" download class="button-berkas">Download</a>
+        @endif
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
 <div class="modal fade" id="modalPerBupati" tabindex="-1" aria-labelledby="modalPerBupatiLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -323,6 +379,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        {{-- Tampilkan Nomor dan Tanggal Surat BUP --}}
+        <div class="mb-3">
+            <p><strong>Nomor Surat Persetujuan Bupati:</strong> {{ $data->nomorsuratbup ?? '-' }}</p>
+            <p><strong>Tanggal Surat Persetujuan Bupati:</strong> {{ $data->tanggalsuratbup ?? '-' }}</p>
+        </div>
+
+        {{-- Preview Berkas --}}
         @if($data->cadangan3)
           <iframe src="{{ asset($data->cadangan3) }}" style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
         @else
