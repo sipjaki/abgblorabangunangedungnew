@@ -7216,12 +7216,17 @@ public function barekomtekberkas(Request $request, $id)
     );
 }
 
-
 public function bapersetujuanbupatibongkar(Request $request, $id)
 {
-    // Validasi file, max 15MB
+    // Validasi file PDF, wajib diisi, maksimal 15MB
     $request->validate([
-        'cadangan3' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+        'nomorsuratbup' => 'required|string', // hanya PDF, max 15MB
+        'tanggalsuratbup' => 'required|date', // hanya PDF, max 15MB
+        'cadangan3' => 'required|file|mimes:pdf|max:15360', // hanya PDF, max 15MB
+    ], [
+        'cadangan3.required' => 'File Persetujuan Bupati harus diupload!',
+        'cadangan3.mimes'    => 'File harus berformat PDF.',
+        'cadangan3.max'      => 'File tidak boleh lebih dari 15 MB.',
     ]);
 
     // Ambil data dari database
@@ -7243,9 +7248,9 @@ public function bapersetujuanbupatibongkar(Request $request, $id)
 
     // Redirect ke halaman show dengan parameter lengkap
     return redirect()->route('bebantekpembongkaranshow', [
-        'namapemilik' => urlencode($namapemilik), // penting kalau ada spasi
+        'namapemilik' => urlencode($namapemilik),
         'id'          => $data->id
-    ])->with('create', 'Berkas Berhasil Di Upload !');
+    ])->with('create', 'Berkas Persetujuan Bupati berhasil diupload!');
 }
 
 
