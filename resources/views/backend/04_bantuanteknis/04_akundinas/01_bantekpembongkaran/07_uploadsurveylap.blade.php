@@ -155,6 +155,20 @@
                value="{{ old('tanggalsuratkonsul', $data->tanggalsuratkonsul ?? '') }}">
     </div>
 </div>
+
+<div class="row">
+<input type="hidden" name="namapemilik" value="{{ $data->pemilikbangunan }}">                                    <!-- Left Column (6/12) -->
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Upload Foto Survey Lapangan Pembongkaran
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+
+
+</div>
 <div class="row">
 
     {{-- FOTO 1 --}}
@@ -268,43 +282,7 @@ function previewImage(event, previewId) {
 }
 </script>
 
-<div class="row">
-<input type="hidden" name="namapemilik" value="{{ $data->pemilikbangunan }}">                                    <!-- Left Column (6/12) -->
-<div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Berita Acara Kajian Konsultasi Pembongkaran Bangunan Gedung
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-</div>
 
-<div class="form-modern col-md-6">
-<div class="mb-3">
-    <label class="form-label-modern" for="cadangan1">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
-    </label>
-    <input type="file" id="cadangan1" name="cadangan1" accept="application/pdf"
-        class="form-control @error('cadangan1') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerProposal', 'iframeProposal', 'msgProposal')" />
-    @error('cadangan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerProposal" style="{{ isset($data->cadangan1) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Berita Acara Konsultasi </label>
-        <iframe id="iframeProposal" src="{{ isset($data->cadangan1) ? asset($data->cadangan1) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgProposal" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->cadangan1) ? 'display:none;' : '' }}">
-        Belum Upload Berkas. Silahkan upload berkas Berita Acara Konsultasi.
-    </div>
-</div>
-
-
-</div>
-
-
-</div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
     const file = event.target.files[0];

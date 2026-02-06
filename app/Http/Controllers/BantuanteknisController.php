@@ -7053,7 +7053,6 @@ public function bakonsultasipembongkaran(Request $request, $id)
     $request->validate([
         'nomorsuratkonsul'   => 'required|string|max:255',
         'tanggalsuratkonsul' => 'required|date',
-        'cadangan1' => 'required|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
         'fotokonsul1' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
         'fotokonsul2' => 'nullable|image|mimes:jpg,jpeg,png|max:20048',
@@ -7085,7 +7084,6 @@ public function bakonsultasipembongkaran(Request $request, $id)
     // UPLOAD FOTO (DINAMIS)
     // =========================
     $fields = [
-        'cadangan1',
         'fotokonsul1',
         'fotokonsul2',
         'fotokonsul3',
