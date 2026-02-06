@@ -288,8 +288,8 @@
     </div>
 
 <div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="cadangan3">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan3">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Persetujuan Bupati
     </label>
     <input type="file" id="cadangan3" name="cadangan3" accept="application/pdf"

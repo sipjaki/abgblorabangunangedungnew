@@ -409,7 +409,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                                <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Upload Berkas</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
                                 </div>
