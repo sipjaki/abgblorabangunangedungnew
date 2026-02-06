@@ -103,9 +103,14 @@
                 </div>
             </div>
 
+            <div class="d-block">
+                <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
+                    class="button-modern">
+                    Survey Lapangan
+                </a>
+            </div>
             @can('admindpupr')
 
-            <div class="d-block">
                 <a href="{{ route('berkaskonsultasipembongkaran', ['id' => $data->id]) }}"
                     class="button-modern">
                     Upload BA Konsultasi

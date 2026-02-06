@@ -7223,8 +7223,8 @@ public function bebantekbangunanbongkarcrnew(Request $request)
         'cadangan2' => 'nullable|array',
         'cadangan3' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
 
-        'cadangan5' => 'required|date',
-        'catatan5'  => 'required|date|after_or_equal:cadangan5', // Selesai harus setelah atau sama dengan mulai
+        'cadangan5' => 'nullable|date',
+        'catatan5'  => 'nullable|date|after_or_equal:cadangan5', // Selesai harus setelah atau sama dengan mulai
     ]);
 
     // ==============================
@@ -7487,5 +7487,23 @@ public function validasiberkasfilebangunan(Request $request, $id)
 }
 
 
+
+// UPLOAD SURVEY LAPANGAN PEMBONGKARAN BANGUNAN GEDUNG
+
+
+    public function basurveylappembongkaran($id)
+{
+    // Ambil data dari database berdasarkan ID
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Kirim data ke view untuk ditampilkan
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.07_uploadsurveylap',
+        [
+            'title' => 'Upload Dokumentasi Foto Survey Lapangan',
+            'data'  => $data
+        ]
+    );
+}
 }
 

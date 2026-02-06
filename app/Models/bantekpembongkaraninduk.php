@@ -36,5 +36,14 @@ class bantekpembongkaraninduk extends Model
             'id'
         );
     }
+
+    public function fotobongkarlap()
+    {
+        return $this->hasMany(
+            fotobongkarlap::class,
+            'bantekpembongkaraninduk_id',
+            'id'
+        );
+    }
 }
 

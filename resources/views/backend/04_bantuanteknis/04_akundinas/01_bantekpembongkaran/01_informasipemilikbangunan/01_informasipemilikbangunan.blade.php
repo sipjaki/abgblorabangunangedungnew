@@ -1455,6 +1455,11 @@ document.getElementById('sk').addEventListener('change', function () {
                    id="ketinggianbangunan" name="ketinggianbangunan" value="{{ old('ketinggianbangunan') }}"
                    placeholder="Contoh: 8.5">
             @error('ketinggianbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+            <small class="text-muted d-block mt-1">
+                Keterangan : <em>Contoh Penulisan Misal 10,046 <strong>Ditulis Menjadi 10,04</strong> 2 Angka Setelah Koma </em>
+            </small>
+
         </div>
     </div>
 
@@ -1468,6 +1473,9 @@ document.getElementById('sk').addEventListener('change', function () {
                    id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan') }}"
                    placeholder="Contoh: 150.75">
             @error('luasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                      <small class="text-muted d-block mt-1">
+                Keterangan : <em>Contoh Penulisan Misal 245,126 <strong>Ditulis Menjadi 245,12</strong> 2 Angka Setelah Koma </em>
+            </small>
         </div>
     </div>
 
