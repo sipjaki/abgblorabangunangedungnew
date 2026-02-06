@@ -200,81 +200,94 @@
         </div>
     </div>
 </div>
-
-{{-- ================= FOTO BARIS 1 ================= --}}
 <div class="row">
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto1">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-info"></i> Foto 1
             </label>
-            <input type="file" class="form-control" id="foto1" name="foto1" accept="image/*">
+            <input type="file" class="form-control" name="foto1" accept="image/*"
+                   onchange="previewImage(this, 'preview1')">
+            <img id="preview1" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto2">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-info"></i> Foto 2
             </label>
-            <input type="file" class="form-control" id="foto2" name="foto2" accept="image/*">
+            <input type="file" class="form-control" name="foto2" accept="image/*"
+                   onchange="previewImage(this, 'preview2')">
+            <img id="preview2" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto3">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-info"></i> Foto 3
             </label>
-            <input type="file" class="form-control" id="foto3" name="foto3" accept="image/*">
+            <input type="file" class="form-control" name="foto3" accept="image/*"
+                   onchange="previewImage(this, 'preview3')">
+            <img id="preview3" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto4">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-info"></i> Foto 4
             </label>
-            <input type="file" class="form-control" id="foto4" name="foto4" accept="image/*">
+            <input type="file" class="form-control" name="foto4" accept="image/*"
+                   onchange="previewImage(this, 'preview4')">
+            <img id="preview4" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 </div>
 
-{{-- ================= FOTO BARIS 2 ================= --}}
 <div class="row">
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto5">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-warning"></i> Foto 5
             </label>
-            <input type="file" class="form-control" id="foto5" name="foto5" accept="image/*">
+            <input type="file" class="form-control" name="foto5" accept="image/*"
+                   onchange="previewImage(this, 'preview5')">
+            <img id="preview5" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto6">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-warning"></i> Foto 6
             </label>
-            <input type="file" class="form-control" id="foto6" name="foto6" accept="image/*">
+            <input type="file" class="form-control" name="foto6" accept="image/*"
+                   onchange="previewImage(this, 'preview6')">
+            <img id="preview6" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto7">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-warning"></i> Foto 7
             </label>
-            <input type="file" class="form-control" id="foto7" name="foto7" accept="image/*">
+            <input type="file" class="form-control" name="foto7" accept="image/*"
+                   onchange="previewImage(this, 'preview7')">
+            <img id="preview7" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="form-modern mb-3">
-            <label class="form-label-modern" for="foto8">
+            <label class="form-label-modern">
                 <i class="bi bi-image-fill me-2 text-warning"></i> Foto 8
             </label>
-            <input type="file" class="form-control" id="foto8" name="foto8" accept="image/*">
+            <input type="file" class="form-control" name="foto8" accept="image/*"
+                   onchange="previewImage(this, 'preview8')">
+            <img id="preview8" class="img-fluid mt-2 rounded" style="display:none;">
         </div>
     </div>
 </div>
@@ -289,12 +302,11 @@
             reader.onload = function (e) {
                 preview.src = e.target.result;
                 preview.style.display = 'block';
-            }
+            };
             reader.readAsDataURL(file);
         }
     }
 </script>
-
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
