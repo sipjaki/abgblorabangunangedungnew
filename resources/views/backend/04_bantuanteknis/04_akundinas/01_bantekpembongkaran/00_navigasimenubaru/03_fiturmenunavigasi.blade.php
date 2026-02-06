@@ -146,6 +146,26 @@
 
                 @canany(['pemohon', 'dinas'])
 <div class="d-block">
+    @if($data->fotobongkarlap->count() > 0)
+        {{-- ADA DATA → BISA DIKLIK --}}
+        <a href="{{ route(
+                'basurveylapfotopembongkaranshowdata',
+                [
+                    $data->fotobongkarlap->first()->id,
+                    urlencode($data->fotobongkarlap->first()->keterangan)
+                ]
+            ) }}"
+            class="button-berkas">
+            <i class="bi bi-eye"></i> Lihat Hasil Survey
+        </a>
+    @else
+        {{-- TIDAK ADA DATA → DISABLED --}}
+        <button class="button-berkas disabled" disabled
+                style="cursor:not-allowed; opacity:0.6;">
+            <i class="bi bi-eye-slash"></i> Hasil Survey Belum Tersedia
+        </button>
+    @endif
+
 <!-- Berkas Konsultasi (cadangan1) -->
 <button type="button"
     class="button-baru {{ $data->cadangan1 ? '' : 'disabled' }}"
