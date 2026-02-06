@@ -275,18 +275,18 @@
     </div>
 
     {{-- Tanggal Surat Rekomendasi --}}
-    <div class="form-modern col-md-6 mb-3">
-        <label class="form-label-modern fw-semibold">
-            <i class="bi bi-calendar-check-fill text-success me-1"></i> Tanggal Surat Rekomendasi Teknis
-        </label>
-        <input type="date"
-               name="tanggalsuratrekom"
-               class="form-control @error('tanggalsuratrekom') is-invalid @enderror"
-               value="{{ old('tanggalsuratrekom', isset($data->tanggalsuratrekom) ? $data->tanggalsuratrekom->format('Y-m-d') : '') }}">
-        @error('tanggalsuratrekom')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+  <div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern fw-semibold">
+        <i class="bi bi-calendar-check-fill text-success me-1"></i> Tanggal Surat Rekomendasi Teknis
+    </label>
+    <input type="date"
+           name="tanggalsuratrekom"
+           class="form-control @error('tanggalsuratrekom') is-invalid @enderror"
+           value="{{ old('tanggalsuratrekom', isset($data->tanggalsuratrekom) ? \Carbon\Carbon::parse($data->tanggalsuratrekom)->format('Y-m-d') : '') }}">
+    @error('tanggalsuratrekom')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 </div>
 
 <div class="form-modern col-md-6">
