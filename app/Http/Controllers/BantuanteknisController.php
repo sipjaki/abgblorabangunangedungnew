@@ -7560,19 +7560,18 @@ public function validasiberkasfilebangunan(Request $request, $id)
 // UPLOAD SURVEY LAPANGAN PEMBONGKARAN BANGUNAN GEDUNG
 
 
-    public function basurveylappembongkaran($id)
+public function bebantekfotosurveycreate(Request $request)
 {
-    // Ambil data dari database berdasarkan ID
-    $data = bantekpembongkaraninduk::findOrFail($id);
+    // Ambil user login
+    $user = Auth::user();
 
-    // Kirim data ke view untuk ditampilkan
-    return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.07_uploadsurveylap',
-        [
-            'title' => 'Upload Dokumentasi Foto Survey Lapangan',
-            'data'  => $data
-        ]
-    );
+
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.08_uploadfotolapbongkarsurvey', [
+            'title' => 'Upload Survey Lapangan Pembongkaran Bangunan Gedung',
+            'user' => $user,
+    ]);
 }
+
 }
 

@@ -1546,7 +1546,6 @@ Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpem
 
 Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');
-// Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenewbaru');
 Route::post(
     '/bebantekpembongkaran/createnewbaru',
     [BantuanteknisController::class, 'bebantekpembongkarancreatenew']
@@ -1579,9 +1578,15 @@ Route::put('/perbaikanbangunandetail/{id}', [BantuanteknisController::class, 'pe
 
 // berkas uplkoad
 
-// Upload Survey Lapangan Bangunan Gedung
-Route::get('/basurveylappembongkaran/{id}', [BantuanteknisController::class, 'basurveylappembongkaran'])->middleware('auth', 'can:admindinas')->name('basurveylappembongkaran');
-Route::put('/basurveylappembongkaran/upload/{id}', [BantuanteknisController::class, 'basurveylappembongkaranupload'])->middleware('auth', 'can:admindinas')->name('basurveylappembongkaran.upload');
+
+
+Route::get('/bebantekfotosurvey/create', [BantuanteknisController::class, 'bebantekfotosurveycreate'])->middleware('auth', 'can:admindinas')->name('bebantekbongkarfotocreate');
+// Route::post(
+//     '/bebantekpembongkaran/createnewbaru',
+//     [BantuanteknisController::class, 'bebantekpembongkarancreatenew']
+// )->middleware('auth', 'can:admindinas')
+//  ->name('bantekpembongkarannew');
+
 
 // Upload BA Konsultasi
 Route::get('/berkaskonsultasipembongkaran/{id}', [BantuanteknisController::class, 'berkaskonsultasiPembongkaran'])->middleware('auth', 'can:admindinas')->name('berkaskonsultasipembongkaran');
