@@ -104,7 +104,7 @@
             </div>
 
             <div class="d-block">
-                <a href="{{ route('basurveylapfotopembongkaran') }}"
+                <a href="{{ route('basurveylapfotopembongkaran', [$data->namapemilik, $data->id]) }}"
                     class="button-modern">
                     Survey Lapangan
                 </a>
