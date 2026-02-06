@@ -7671,23 +7671,46 @@ public function bebantekfotosurveycreatenewlap(Request $request)
     }
 }
 
-public function bebantekfotosurveylapanganshow($id, $keterangan)
-{
-    $keterangan = urldecode($keterangan);
+// public function bebantekfotosurveylapanganshow($id, $keterangan)
+// {
+//     $keterangan = urldecode($keterangan);
 
-    $data = fotobongkarlap::withTrashed()
-        ->with('dataindukfoto') // relasi ke induk
-        ->where('id', $id)
-        ->where('keterangan', $keterangan)
-        ->firstOrFail();
+//     $data = fotobongkarlap::withTrashed()
+//         ->with('dataindukfoto') // relasi ke induk
+//         ->where('id', $id)
+//         ->where('keterangan', $keterangan)
+//         ->firstOrFail();
 
-    return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.09_showsurveylap',
-        [
-            'title' => 'Informasi Survey Lapangan Pembongkaran Bangunan Gedung',
-            'data'  => $data
-        ]
-    );
-}
+//     return view(
+//         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.09_showsurveylap',
+//         [
+//             'title' => 'Informasi Survey Lapangan Pembongkaran Bangunan Gedung',
+//             'data'  => $data
+//         ]
+//     );
+// }
+
+  public function bebantekfotosurveylapanganshow($id, $keterangan)
+    {
+        // ==========================
+        // AMBIL DATA FOTO + DATA INDUK
+        // ==========================
+        $data = fotobongkarlap::with([
+                'dataindukfoto',
+                'dataindukfoto.user'
+            ])
+            ->where('id', $id)
+            ->where('keterangan', $keterangan)
+            ->firstOrFail();
+
+        // ==========================
+        // KIRIM KE VIEW
+        // ==========================
+        return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.09_showsurveylap', [
+            'title' => 'Informasi Data Survey Lapangan Bangunan Gedung',
+            'data'  => $data,                       // fotobongkarlap
+            'induk' => $data->dataindukfoto,        // bantekpembongkaraninduk
+        ]);
+    }
 }
 

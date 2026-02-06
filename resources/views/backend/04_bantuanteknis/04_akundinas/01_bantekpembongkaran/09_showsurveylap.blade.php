@@ -158,24 +158,23 @@
         [
             'icon'  => 'bi-person-fill',
             'title' => 'Nama Pemilik Bangunan',
-            'value' => $data->fotobongkarlap->namapemilik ?? '-',
+            'value' => optional($induk)->namapemilik ?? '-',
         ],
         [
             'icon'  => 'bi-building',
             'title' => 'Instansi / Dinas',
-            'value' => $data->fotobongkarlap->user->name ?? '-',
+            'value' => optional(optional($induk)->user)->name ?? '-',
         ],
         [
             'icon'  => 'bi-house-fill',
             'title' => 'Nama Bangunan',
-            'value' => $data->fotobongkarlap->namabangunan ?? '-',
+            'value' => optional($induk)->namabangunan ?? '-',
         ],
         [
             'icon'  => 'bi-geo-alt-fill',
             'title' => 'Alamat Bangunan',
-            'value' => $data->fotobongkarlap->alamat ?? '-',
+            'value' => optional($induk)->alamat ?? '-',
         ],
-
     ];
 @endphp
 
@@ -183,7 +182,7 @@
     <div class="col-md-6">
         <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
             <div class="card-body bg-white rounded-3"
-                style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                 style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                 <div class="d-flex align-items-start">
                     <div class="me-3">
                         <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
@@ -197,7 +196,6 @@
         </div>
     </div>
 @endforeach
-
 <div class="row g-3">
 
     <!-- Leaflet CSS -->
