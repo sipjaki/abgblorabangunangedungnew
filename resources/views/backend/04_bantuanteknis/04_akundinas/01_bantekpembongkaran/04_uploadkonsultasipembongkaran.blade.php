@@ -133,6 +133,115 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
 
+
+
+
+<div class="row g-4">
+
+@php
+    $infoItems = [
+        [
+            'icon'  => 'bi-person-fill',
+            'title' => 'Nama Pemilik Bangunan',
+            'value' => $data->namapemilik ?? '-',
+        ],
+        [
+            'icon'  => 'bi-building',
+            'title' => 'Instansi / Dinas',
+            'value' => $data->user->name ?? '-',
+        ],
+        [
+            'icon'  => 'bi-house-fill',
+            'title' => 'Nama Bangunan',
+            'value' => $data->namabangunan ?? '-',
+        ],
+        [
+            'icon'  => 'bi-geo-alt-fill',
+            'title' => 'Alamat Bangunan',
+            'value' => $data->alamat ?? '-',
+        ],
+
+    ];
+@endphp
+
+@foreach ($infoItems as $item)
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+            <div class="card-body bg-white rounded-3"
+                style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                <div class="d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
+                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+<div class="row g-3">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    {{-- Keterangan --}}
+    <div class="col-md-12">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern d-flex align-items-center" for="keterangan">
+                <i class="bi bi-info-circle-fill me-2 text-primary" style="font-size: 1.2rem;"></i> Keterangan
+            </label>
+            <input type="text" class="form-control" id="keterangan" name="keterangan"
+                value="{{ $data->keterangan ?? '-' }}" readonly>
+        </div>
+
+        {{-- Koordinat (hidden) --}}
+        <input type="hidden" id="koordinat" name="koordinat" value="{{ $data->koordinat ?? '' }}">
+
+        {{-- Peta --}}
+        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+    </div>
+
+</div>
+
+<script>
+    // Ambil koordinat awal dari PHP
+    var initialCoord = "{{ $data->koordinat ?? '' }}"; // format: "lat,lng"
+    var lat = -7.0421; // default Blora
+    var lng = 111.4046;
+    var zoom = 11;
+
+    if(initialCoord) {
+        var parts = initialCoord.split(',');
+        if(parts.length === 2) {
+            lat = parseFloat(parts[0]);
+            lng = parseFloat(parts[1]);
+            zoom = 15; // zoom lebih dekat kalau ada koordinat
+        }
+    }
+
+    // Inisialisasi map
+    var map = L.map('map').setView([lat, lng], zoom);
+
+    // Layer peta
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
+    }).addTo(map);
+
+    // Marker non-draggable
+    L.marker([lat, lng], {draggable: false}).addTo(map)
+        .bindPopup("Koordinat: " + lat.toFixed(6) + ", " + lng.toFixed(6))
+        .openPopup();
+
+    // Hapus event klik, jadi marker tidak bisa berpindah
+</script>
+
+</div>
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
