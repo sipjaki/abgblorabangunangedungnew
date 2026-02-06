@@ -191,7 +191,7 @@
 </button>
 
 </div>
-
+{{--
 <!-- Modal Berkas Konsultasi -->
 <div class="modal fade" id="modalKonsultasi" tabindex="-1" aria-labelledby="modalKonsultasiLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -215,7 +215,79 @@
       </div>
     </div>
   </div>
+</div> --}}
+
+
+<!-- Modal Berkas Konsultasi -->
+<div class="modal fade" id="modalKonsultasi" tabindex="-1" aria-labelledby="modalKonsultasiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalKonsultasiLabel">Berkas Konsultasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <!-- Nomor dan Tanggal Surat Konsul -->
+        <div class="mb-3">
+          <p><strong>Nomor Surat Konsultasi:</strong> {{ $data->nomorsuratkonsul ?? '-' }}</p>
+          <p><strong>Tanggal Surat Konsultasi:</strong> {{ $data->tanggalsuratkonsul ? date('d-m-Y', strtotime($data->tanggalsuratkonsul)) : '-' }}</p>
+        </div>
+
+        <!-- File Cadangan1 (PDF / Dokumen) -->
+        <div class="mb-4">
+          @if($data->cadangan1)
+            <label class="fw-bold">Berita Acara / Dokumen:</label>
+            <iframe src="{{ asset($data->cadangan1) }}"
+                    style="width:100%; height:400px; border:1px solid #ccc; border-radius:6px;"></iframe>
+          @else
+            <p class="text-muted fst-italic">Berkas belum tersedia.</p>
+          @endif
+        </div>
+
+        <!-- Foto Konsultasi -->
+        <div class="row g-3">
+          @for ($i = 1; $i <= 4; $i++)
+            @php
+                $field = 'fotokonsul'.$i;
+            @endphp
+            <div class="col-md-6">
+              <div class="card shadow-sm h-100 border-0">
+                <div class="card-header text-center fw-semibold text-warning">
+                  <i class="bi bi-camera-fill me-2"></i> Foto Konsultasi {{ $i }}
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center bg-light" style="min-height:150px;">
+                  @if($data->$field)
+                    <img src="{{ asset($data->$field) }}"
+                         class="img-fluid rounded shadow-sm"
+                         style="max-height:180px; object-fit:cover;">
+                  @else
+                    <span class="text-muted fst-italic">Belum ada foto</span>
+                  @endif
+                </div>
+              </div>
+            </div>
+          @endfor
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer">
+        @if($data->cadangan1)
+          <a href="{{ asset($data->cadangan1) }}" download class="button-berkas">Download Dokumen</a>
+        @endif
+        <button type="button" class="button-modern" data-bs-dismiss="modal">Tutup</button>
+      </div>
+
+    </div>
+  </div>
 </div>
+
 
 <!-- Modal Berkas Rekomtek -->
 <div class="modal fade" id="modalRekomtek" tabindex="-1" aria-labelledby="modalRekomtekLabel" aria-hidden="true">

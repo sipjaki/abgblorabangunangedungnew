@@ -237,7 +237,7 @@ function previewImage(event, previewId) {
 </script>
 
 <div class="form-modern col-md-6">
-<div class="form-modern mb-3">
+<div class="mb-3">
     <label class="form-label-modern" for="cadangan1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Pembongkaran Bangunan Gedung
     </label>
