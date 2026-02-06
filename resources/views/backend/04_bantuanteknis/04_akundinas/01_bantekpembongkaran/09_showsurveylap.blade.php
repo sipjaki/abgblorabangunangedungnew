@@ -158,22 +158,22 @@
         [
             'icon'  => 'bi-person-fill',
             'title' => 'Nama Pemilik Bangunan',
-            'value' => $data->bantekpembongkaraninduk->namapemilik ?? '-',
+            'value' => $data->fotobongkarlap->namapemilik ?? '-',
         ],
         [
             'icon'  => 'bi-building',
             'title' => 'Instansi / Dinas',
-            'value' => $data->bantekpembongkaraninduk->user->name ?? '-',
+            'value' => $data->fotobongkarlap->user->name ?? '-',
         ],
         [
             'icon'  => 'bi-house-fill',
             'title' => 'Nama Bangunan',
-            'value' => $data->bantekpembongkaraninduk->namabangunan ?? '-',
+            'value' => $data->fotobongkarlap->namabangunan ?? '-',
         ],
         [
             'icon'  => 'bi-geo-alt-fill',
             'title' => 'Alamat Bangunan',
-            'value' => $data->bantekpembongkaraninduk->alamat ?? '-',
+            'value' => $data->fotobongkarlap->alamat ?? '-',
         ],
 
     ];
