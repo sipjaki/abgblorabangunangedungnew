@@ -12,7 +12,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/NEW04.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
