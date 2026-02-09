@@ -83,7 +83,7 @@
                         box-shadow: 0 0 0 3px rgba(26,35,126,0.15);
                     }
                     .form-modern { margin-bottom: 16px; }
-                    .required { color: red; margin-left: 3px; }
+                    . { color: red; margin-left: 3px; }
                     .form-buttons { text-align: center; margin-top: 20px; }
                     .button-baru {
                         background-color: #1a237e; color: white;
@@ -110,16 +110,16 @@
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="namalengkap">
-                                <i class="bi bi-person-fill" style="margin-right:6px; color:#1a237e;"></i> Nama Lengkap <span class="required">*</span>
+                                <i class="bi bi-person-fill" style="margin-right:6px; color:#1a237e;"></i> Nama Lengkap <span class="">*</span>
                             </label>
-                            <input type="text" name="namalengkap" id="namalengkap" required>
+                            <input type="text" name="namalengkap" id="namalengkap" >
                         </div>
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="jenjangpendidikan_id">
-                                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:#1a237e;"></i> Jenjang Pendidikan <span class="required">*</span>
+                                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:#1a237e;"></i> Jenjang Pendidikan <span class="">*</span>
                             </label>
-                            <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" required>
+                            <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" >
                                 <option value="">-- Pilih Jenjang Pendidikan --</option>
                                 @foreach ($jenjangpendidikan as $item)
                                     <option value="{{ $item->id }}">{{ $item->jenjangpendidikan }}</option>
@@ -129,16 +129,16 @@
 
                         {{-- <div class="form-modern">
                             <label class="form-label-modern" for="nik">
-                                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:#1a237e;"></i> NIK <span class="required">*</span>
+                                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:#1a237e;"></i> NIK <span class="">*</span>
                             </label>
-                            <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required>
+                            <input type="text" name="nik" id="nik" minlength="16" maxlength="16" >
                         </div> --}}
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="jeniskelamin">
-                                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:#1a237e;"></i> Jenis Kelamin <span class="required">*</span>
+                                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:#1a237e;"></i> Jenis Kelamin <span class="">*</span>
                             </label>
-                            <select name="jeniskelamin" id="jeniskelamin" required>
+                            <select name="jeniskelamin" id="jeniskelamin" >
                                 <option value="">-- Pilih Jenis Kelamin --</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -147,23 +147,23 @@
 
                         {{-- <div class="form-modern">
                             <label class="form-label-modern" for="tanggallahir">
-                                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:#1a237e;"></i> Tanggal Lahir <span class="required">*</span>
+                                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:#1a237e;"></i> Tanggal Lahir <span class="">*</span>
                             </label>
-                            <input type="date" name="tanggallahir" id="tanggallahir" required>
+                            <input type="date" name="tanggallahir" id="tanggallahir" >
                         </div> --}}
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="notelepon">
-                                <i class="bi bi-telephone-fill" style="margin-right:6px; color:#1a237e;"></i> No Telepon <span class="required">*</span>
+                                <i class="bi bi-telephone-fill" style="margin-right:6px; color:#1a237e;"></i> No Telepon <span class="">*</span>
                             </label>
-                            <input type="tel" name="notelepon" id="notelepon" required pattern="[0-9]+">
+                            <input type="tel" name="notelepon" id="notelepon"  pattern="[0-9]+">
                         </div>
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="instansi">
-                                <i class="bi bi-building-fill" style="margin-right:6px; color:#1a237e;"></i> Instansi <span class="required">*</span>
+                                <i class="bi bi-building-fill" style="margin-right:6px; color:#1a237e;"></i> Instansi <span class="">*</span>
                             </label>
-                            <input type="text" name="instansi" id="instansi" required>
+                            <input type="text" name="instansi" id="instansi" >
                         </div>
                     </div>
 
