@@ -268,7 +268,7 @@
 }
 </style>
 
-<div id="NewsPromo" class="news-section">
+{{-- <div id="NewsPromo" class="news-section">
   <div class="news-header">
     <h6 class="news-title" style="font-size: 16px;">Berita Bangunan Gedung</h6>
     <a href="#" class="news-link">Lihat Semua</a>
@@ -278,13 +278,10 @@
     <div class="news-card">
       <div class="news-image-container">
         @if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
-            <!-- Gambar dari storage -->
             <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
         @elseif ($item->foto)
-            <!-- Gambar dari path luar storage -->
             <img src="{{ asset($item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
         @else
-            <!-- Gambar default -->
             <img src="/assets/android/thumbnails/default.png" class="news-image" alt="Default Berita" loading="lazy" />
         @endif
 
@@ -293,7 +290,6 @@
 
       <div class="news-content">
         <div class="news-meta">
-          {{-- <span class="news-category">{{ $item->kategori ?? 'Berita' }}</span> --}}
           <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
         </div>
         <h3 class="news-headline">{{ $item->judulberita }}</h3>
@@ -330,8 +326,9 @@
 </style>
 
 
-</div>
-<div id="NewsPromo" class="news-section">
+</div> --}}
+
+{{-- <div id="NewsPromo" class="news-section">
   <div class="news-header">
     <h6 class="news-title" style="font-size: 16px;">Artikel Bangunan Gedung </h6>
     <a href="#" class="news-link">Lihat Semua</a>
@@ -405,7 +402,7 @@
 }
 </style>
 
-</div>
+</div> --}}
 
 
 <style>

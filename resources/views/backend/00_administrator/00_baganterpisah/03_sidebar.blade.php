@@ -1192,9 +1192,18 @@
 <li class="nav-item">
     <a href="/bebantekpembongkaran" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Permohonan <br> Pembongkaran</p>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pembongkaran</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="/bebantekpembongkaran" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pembongkaran</p>
+    </a>
+</li>
+
+<hr>
 
 <li class="nav-item">
     <a href="/bebantuanteknisindex" class="nav-link" style="display: flex; align-items: center;">
