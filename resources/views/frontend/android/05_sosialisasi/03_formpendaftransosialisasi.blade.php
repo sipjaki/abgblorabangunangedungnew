@@ -169,7 +169,7 @@
 
                     <div class="form-buttons">
                         <button type="submit" class="button-baru" id="submitButton">
-                            <i class="bi bi-send-fill" style="margin-right:6px;"></i> Kirim Pendaftaran
+                            <i class="bi bi-send-fill"></i> <span style="color: black">Daftar</span>
                         </button>
                     </div>
                 </form>
