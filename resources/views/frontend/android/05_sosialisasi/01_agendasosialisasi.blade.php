@@ -23,176 +23,112 @@
           </div>
 
                             <!-- Table Section -->
-                            <div class="flex flex-col gap-4 px-4 mt-4">
+                            <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
+                                <br><br>
+
+<div class="flex flex-col gap-4 px-4 mt-4">
     @foreach ($data as $item)
-    <div class="modern-card w-full border border-[#E1E8F2] flex items-center p-4 gap-4 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-        <!-- Image Container -->
-        <div class="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 p-2 border border-blue-100">
-            <div class="w-full h-full flex items-center justify-center">
+    <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+        <div class="w-20 h-[90px] flex-shrink-0 rounded-2xl overflow-hidden" style="margin-right: 16px;">
+            <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
-                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi"
-                         class="w-full h-full object-contain rounded-lg" loading="lazy">
+                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
                 @elseif($item->foto)
-                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan"
-                         class="w-full h-full object-contain rounded-lg" loading="lazy">
+                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
                 @else
-                    <div class="w-full h-full flex items-center justify-center bg-blue-50 rounded-lg">
-                        <i class="fas fa-calendar-alt text-blue-300 text-2xl"></i>
-                    </div>
+                    <p>Data belum diupdate</p>
                 @endif
             </div>
         </div>
+        <div class="flex flex-col gap-1 w-full">
+            <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
 
-        <!-- Content Container -->
-        <div class="flex flex-col flex-1 gap-2">
-            <!-- Title -->
-            <p class="font-bold text-lg line-clamp-1 hover:line-clamp-none transition-all"
-               style="color: #2196F3; border-bottom: 2px solid #E3F2FD; padding-bottom: 4px;">
-                {{$item->namakegiatan}}
-            </p>
-
-            <!-- Description -->
             @php
                 $text = $item->keterangan;
                 $limit = 100;
                 $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-                $hasMore = strlen($text) > $limit;
             @endphp
 
-            <div class="description-container">
-                <span class="text-gray-700 text-sm leading-relaxed">
-                    {{ $truncatedText }}
-                </span>
+            <span class="text-[#000000] text-sm">{{ $truncatedText }}</span>
 
-                @if($hasMore)
-                <span class="full-text hidden text-gray-700 text-sm leading-relaxed">
-                    {{ $item->keterangan }}
-                </span>
+            <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
+                <span class="text-[#000000]">{{ $item->keterangan }}</span>
+            </p>
 
-                <button class="toggle-btn text-xs font-medium mt-1 px-3 py-1 rounded-full
-                              bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors
-                              border border-blue-200 flex items-center gap-1 w-fit"
-                        onclick="toggleText(this)">
-                    <i class="fas fa-chevron-down text-xs"></i>
-                    <span class="btn-text">Selengkapnya</span>
-                </button>
-                @endif
-            </div>
+            <button class="text-xs mt-1" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
 
-            <!-- Status & Button -->
+            <script>
+                function toggleText() {
+                    var moreText = document.getElementById("moreText");
+                    var button = document.querySelector("button");
+
+                    if (moreText.style.display === "none") {
+                        moreText.style.display = "inline";
+                        button.innerHTML = "Tutup";
+                    } else {
+                        moreText.style.display = "none";
+                        button.innerHTML = "Selengkapnya";
+                    }
+                }
+            </script>
+
             @php
                 $eventDate = \Carbon\Carbon::parse($item->penutupan);
                 $today = \Carbon\Carbon::now();
                 $isClosed = $today->greaterThanOrEqualTo($eventDate);
-                $daysLeft = $today->diffInDays($eventDate, false);
             @endphp
-
-            <div class="mt-3 w-full">
-                @if ($isClosed)
-                    <div class="closed-btn w-full bg-gradient-to-r from-red-50 to-red-100 border-2
-                               border-red-200 text-red-700 px-4 py-3 rounded-xl font-semibold
-                               flex items-center justify-center gap-2 cursor-not-allowed">
-                        <i class="fas fa-times-circle text-red-500"></i>
-                        <span>Ditutup</span>
-                        <span class="text-xs font-normal opacity-75 ml-auto">
-                            {{ $eventDate->format('d M Y') }}
-                        </span>
-                    </div>
-                @else
-                    <a href="{{ route('ressosialisasishow', $item->id) }}" class="block no-underline">
-                        <div class="register-btn w-full bg-gradient-to-r from-blue-500 to-blue-600
-                                   border-2 border-blue-500 text-white px-4 py-3 rounded-xl
-                                   font-semibold flex items-center justify-center gap-2
-                                   transition-all duration-300 hover:shadow-lg hover:shadow-blue-100
-                                   hover:translate-y-[-2px] active:translate-y-0">
-                            <i class="fas fa-user-check"></i>
-                            <span>Daftar Sekarang</span>
-                            @if($daysLeft >= 0 && $daysLeft <= 7)
-                                <span class="text-xs font-normal bg-white/20 px-2 py-1 rounded-full ml-auto">
-                                    {{ $daysLeft }} hari lagi
-                                </span>
-                            @endif
-                        </div>
-                    </a>
-                @endif
+<div class="mt-2 w-full">
+    @if ($isClosed)
+        <button style="
+            background-color: #FF0000;
+            color: white;
+            border: 2px solid #FF0000;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: not-allowed;
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+        " disabled>
+            <i class="fas fa-times-circle"></i> Ditutup
+        </button>
+    @else
+        <a href="{{ route('ressosialisasishow', $item->id) }}" style="text-decoration: none;">
+            <div style="
+                background-color: #006b1b;
+                color: white;
+                border: 2px solid #006b1b;
+                padding: 8px 12px;
+                font-size: 14px;
+                font-weight: bold;
+                border-radius: 6px;
+                opacity: 0.9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 100%;
+                transition: 0.2s;
+            "
+            onmouseover="this.style.backgroundColor='white'; this.style.color='#006b1b';"
+            onmouseout="this.style.backgroundColor='#006b1b'; this.style.color='white';">
+                <i class="fas fa-user-check"></i> Daftar
             </div>
+        </a>
+    @endif
+</div>
 
         </div>
     </div>
     @endforeach
 </div>
 
-<style>
-    .modern-card {
-        background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-        border-left: 4px solid #2196F3;
-        box-shadow: 0 2px 12px rgba(33, 150, 243, 0.05);
-        transition: all 0.3s ease;
-    }
-
-    .modern-card:hover {
-        border-left-color: #1976D2;
-        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.12);
-        transform: translateY(-2px);
-    }
-
-    .register-btn:hover {
-        background: linear-gradient(to right, #1976D2, #2196F3) !important;
-        color: white !important;
-        border-color: #1976D2 !important;
-    }
-
-    .toggle-btn.active {
-        background: #1976D2 !important;
-        color: white !important;
-        border-color: #1976D2 !important;
-    }
-
-    .toggle-btn.active .fa-chevron-down {
-        transform: rotate(180deg);
-        transition: transform 0.3s ease;
-    }
-</style>
-
-<script>
-function toggleText(button) {
-    const container = button.closest('.description-container');
-    const fullText = container.querySelector('.full-text');
-    const shortText = container.querySelector('.text-gray-700:not(.full-text)');
-    const btnText = container.querySelector('.btn-text');
-    const icon = container.querySelector('.fa-chevron-down');
-
-    if (fullText.classList.contains('hidden')) {
-        fullText.classList.remove('hidden');
-        shortText.classList.add('hidden');
-        btnText.textContent = 'Tutup';
-        button.classList.add('active');
-        icon.style.transform = 'rotate(180deg)';
-    } else {
-        fullText.classList.add('hidden');
-        shortText.classList.remove('hidden');
-        btnText.textContent = 'Selengkapnya';
-        button.classList.remove('active');
-        icon.style.transform = 'rotate(0deg)';
-    }
-}
-
-// Add smooth scrolling for card hover effects
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.modern-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-});
-</script>
-
+</div>
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
                  <br><br>
                             </div>
