@@ -127,12 +127,12 @@
                             </select>
                         </div>
 
-                        <div class="form-modern">
+                        {{-- <div class="form-modern">
                             <label class="form-label-modern" for="nik">
                                 <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:#1a237e;"></i> NIK <span class="required">*</span>
                             </label>
                             <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required>
-                        </div>
+                        </div> --}}
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="jeniskelamin">
@@ -145,12 +145,12 @@
                             </select>
                         </div>
 
-                        <div class="form-modern">
+                        {{-- <div class="form-modern">
                             <label class="form-label-modern" for="tanggallahir">
                                 <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:#1a237e;"></i> Tanggal Lahir <span class="required">*</span>
                             </label>
                             <input type="date" name="tanggallahir" id="tanggallahir" required>
-                        </div>
+                        </div> --}}
 
                         <div class="form-modern">
                             <label class="form-label-modern" for="notelepon">
