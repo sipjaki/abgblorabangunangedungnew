@@ -30,15 +30,31 @@
     @foreach ($data as $item)
     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
         <div class="w-20 h-[90px] flex-shrink-0 rounded-2xl overflow-hidden" style="margin-right: 16px;">
-            <div style="margin-top: 10px;">
-                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
-                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
-                @elseif($item->foto)
-                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
+            <div style="
+    margin-top:10px;
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f8f9fa;
+    border-radius:6px;
+    overflow:hidden;
+">
+@if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+    <img src="{{ asset('storage/' . $item->foto) }}"
+         alt="Sosialisasi"
+         style="max-width:100%; max-height:100%; object-fit:contain;"
+         loading="lazy">
+@elseif($item->foto)
+    <img src="{{ asset($item->foto) }}"
+         alt="Gambar Peraturan"
+         style="max-width:100%; max-height:100%; object-fit:contain;"
+         loading="lazy">
+@else
+    <span style="font-size:12px;color:#999;">Data belum diupdate</span>
+@endif
+</div>
         </div>
         <div class="flex flex-col gap-1 w-full">
             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
