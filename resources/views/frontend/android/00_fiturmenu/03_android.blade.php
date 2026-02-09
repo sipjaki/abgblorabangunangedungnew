@@ -14,14 +14,14 @@
   </a>
 
   <!-- Tracking -->
-  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+  {{-- <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
     <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
       </svg>
     </div>
     <small style="font-size: 11px;">Tracking</small>
-  </a>
+  </a> --}}
 
   <!-- Home (Center Button) -->
   <a href="/" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; transform: translateY(-24px); text-decoration: none;">
@@ -35,7 +35,7 @@
   </a>
 
   <!-- Informasi -->
-  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+  {{-- <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
     <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -44,7 +44,7 @@
       </svg>
     </div>
     <small style="font-size: 11px;">Informasi</small>
-  </a>
+  </a> --}}
 
   <!-- Settings -->
   <a href="/404" id="settings-icon" class="nav-icon" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
