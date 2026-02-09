@@ -4,7 +4,7 @@
 
 <body class="font-poppins text-[#070625]">
     <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-      @include('frontend.android.00_fiturmenu.07_coverdepan')
+      @include('frontend.abgblora.00_fiturmenu.07_coverdepan')
 
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
