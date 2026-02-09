@@ -27,6 +27,7 @@
         0 2px 4px rgba(0, 0, 0, 0.04),
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
+
 .form-modern {
     background: #ffffff;
     border-left: 6px solid #61b9f3; /* navy utama */

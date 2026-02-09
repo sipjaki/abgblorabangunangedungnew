@@ -12,7 +12,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/NEW04.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -29,8 +29,6 @@
 <div class="flex flex-col gap-4 px-4 mt-4">
     @foreach ($data as $item)
     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-
-        <!-- Gambar -->
         <div class="w-20 h-[90px] flex-shrink-0 rounded-2xl overflow-hidden" style="margin-right: 16px;">
             <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
@@ -42,8 +40,6 @@
                 @endif
             </div>
         </div>
-
-        <!-- Info -->
         <div class="flex flex-col gap-1 w-full">
             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
 
@@ -130,14 +126,11 @@
         </div>
     </div>
     @endforeach
-
-    <!-- Pagination -->
-    {{-- <div class="mt-4">
-        {{ $data->links() }}
-    </div> --}}
 </div>
-                                </div>
+
+</div>
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
+                 <br><br>
                             </div>
 
         </div>
