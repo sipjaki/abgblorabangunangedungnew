@@ -420,8 +420,8 @@ Route::get('/bekrkmenarapemohon', [KrkController::class, 'bekrkmenarapemohon'])-
 
 
 // MENU KRK USAHA
-Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha'])->middleware(['auth', 'admindpupr'])->name('krkusaha.index');
-Route::get('/bekrkshowpermohonan/{id}', [KrkController::class, 'bekrkshowpermohonan'])->middleware(['auth', 'admindpupr'])->name('bekrkshowpermohonan.show');
+Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha'])->name('krkusaha.index');
+Route::get('/bekrkshowpermohonan/{id}', [KrkController::class, 'bekrkshowpermohonan'])->middleware('auth')->name('bekrkshowpermohonan.show');
 Route::put('/validasikrkusaha/{id}', [KrkController::class, 'validasikrkusaha'])->middleware('auth')->name('validasikrkusaha');
 Route::put('/valberkasusaha/{id}', [KrkController::class, 'valberkasusaha1'])->name('valberkasusaha.update');
 Route::get('/doklapkrkusaha/{id}', [KrkController::class, 'doklapkrkusaha'])->middleware('auth')->name('doklapkrkusaha.show');
