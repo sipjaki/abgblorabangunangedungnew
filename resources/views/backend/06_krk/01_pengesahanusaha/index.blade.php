@@ -95,7 +95,7 @@
                         <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                            {{-- <div style="position: relative; display: inline-block; margin-right:10px;">
                                <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                               <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                               <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                            </div>
                            <script>
                                function updateEntries() {
@@ -122,7 +122,7 @@
                                    </script> --}}
 <a href="javascript:history.back();" style="text-decoration: none;">
     <button class="button-modern">
-    <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
+    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
 </button>
 </a>
 
@@ -153,7 +153,7 @@
                 <!-- Nomor Registrasi KRK -->
                 <div class="form-group row mb-4">
                     <label for="nomor_registrasi" class="col-md-4 col-form-label">
-                        <i class="bi bi-id-card-alt"></i> Nomor Registrasi KRK
+                        <i class="fas fa-id-card-alt"></i> Nomor Registrasi KRK
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="nomorregistrasi" name="nomorregistrasi" readonly>
@@ -179,7 +179,7 @@
                 <!-- Tanggal Dibuat KRK -->
                 <div class="form-group row mb-4">
                     <label for="tanggalpermohonan" class="col-md-4 col-form-label">
-                        <i class="bi bi-calendar-alt"></i> Tanggal Dibuat KRK
+                        <i class="fas fa-calendar-alt"></i> Tanggal Dibuat KRK
                     </label>
                     <div class="col-md-8">
                         <input type="date" class="form-control" id="tanggalpermohonan" name="tanggalpermohonan" readonly>
@@ -201,7 +201,7 @@
                 <!-- Kepadatan -->
                 <div class="form-group row mb-4">
                     <label for="kepadatan" class="col-md-4 col-form-label">
-                        <i class="bi bi-users"></i> Kepadatan
+                        <i class="fas fa-users"></i> Kepadatan
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="kepadatan" name="kepadatan" required>
@@ -219,7 +219,7 @@
                 <!-- Jumlah Lantai Maksimal -->
                 <div class="form-group row mb-4">
                     <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
-                        <i class="bi bi-building"></i> Jumlah Lantai Maksimal
+                        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal" readonly>
@@ -232,7 +232,7 @@
                 <!-- Luas Bangunan Maksimal -->
                 <div class="form-group row mb-4">
                     <label for="luasbangunan" class="col-md-4 col-form-label">
-                        <i class="bi bi-ruler-combined"></i> Luas Bangunan Maksimal
+                        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
@@ -250,7 +250,7 @@
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="fungsibangunan" class="col-md-4 col-form-label">
-                        <i class="bi bi-cogs"></i> Fungsi Utama Bangunan
+                        <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
@@ -263,7 +263,7 @@
                 <!-- Lokasi Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="lokasibangunan" class="col-md-4 col-form-label">
-                        <i class="bi bi-map-marker-alt"></i> Lokasi Bangunan
+                        <i class="fas fa-map-marker-alt"></i> Lokasi Bangunan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" name="lokasibangunan" value="{{$data->lokasibangunan}}" readonly>
@@ -276,7 +276,7 @@
                 <!-- Ruas Jalan -->
                 <div class="form-group row mb-4">
                     <label for="rencanagsbblora_id" class="col-md-4 col-form-label">
-                        <i class="bi bi-road"></i> Ruas Jalan
+                        <i class="fas fa-road"></i> Ruas Jalan
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="rencanagsbblora_id" name="rencanagsbblora_id" required>
@@ -296,7 +296,7 @@
                 <!-- Jenis Ruas Jalan -->
                 <div class="form-group row mb-4" id="jenisjalan-wrapper" style="display: none;">
                     <label class="col-md-4 col-form-label">
-                        <i class="bi bi-road"></i> Jenis Ruas Jalan
+                        <i class="fas fa-road"></i> Jenis Ruas Jalan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="jenisjalan" name="jenisjalan" readonly>
@@ -306,7 +306,7 @@
                 <!-- GSB -->
                 <div class="form-group row mb-4" id="gsb-wrapper" style="display: none;">
                     <label class="col-md-4 col-form-label">
-                        <i class="bi bi-cogs"></i> GSB (Garis Sempadan Bangunan)
+                        <i class="fas fa-cogs"></i> GSB (Garis Sempadan Bangunan)
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
@@ -321,7 +321,7 @@
                 <!-- KLB -->
                 <div class="form-group row mb-4">
                     <label for="klb" class="col-md-4 col-form-label">
-                        <i class="bi bi-cogs"></i> KDB (Koefisien Dasar Bangunan)
+                        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="klb" name="klb" readonly>
@@ -333,7 +333,7 @@
 
 <div class="form-group row mb-4">
     <label for="kdb" class="col-md-4 col-form-label">
-        <i class="bi bi-cogs"></i> KLB (Koefisien Lantai Bangunan)
+        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
     </label>
     <div class="col-md-8">
         <div class="input-group">
@@ -394,7 +394,7 @@
                 <!-- KDH -->
                 <div class="form-group row mb-4">
                     <label for="kdh" class="col-md-4 col-form-label">
-                        <i class="bi bi-cogs"></i> KDH (Koefisien Dasar Hijau)
+                        <i class="fas fa-cogs"></i> KDH (Koefisien Dasar Hijau)
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="kdh" name="kdh" required>
@@ -416,7 +416,7 @@
                 <!-- Jaringan Utilitas Kota -->
                 <div class="form-group row mb-4">
                     <label for="jaringanutilitas" class="col-md-4 col-form-label">
-                        <i class="bi bi-plug"></i> Jaringan Utilitas Kota
+                        <i class="fas fa-plug"></i> Jaringan Utilitas Kota
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="jaringanutilitas" name="jaringanutilitas" required>
@@ -497,7 +497,7 @@
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 <button class="button-baru" type="button" onclick="openPengesahanModal()">
-    <i class="bi bi-check-circle-fill" style="margin-right: 5px; color: navy;"></i>
+    <i class="fas fa-check-circle-fill" style="margin-right: 5px; color: navy;"></i>
     <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
 </button>
 </div>
