@@ -182,6 +182,35 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
     ])->with('success', 'Data berhasil disimpan!');
 }
 
+// RT DAN RW
+
+<input type="text"
+       name="rt"
+       id="rt"
+       class="form-control @error('rt') is-invalid @enderror"
+       value="{{ old('rt') }}"
+       placeholder="Masukkan RT">
+
+@error('rt')
+    <div class="invalid-feedback" style="color: red;">
+        {{ $message }}
+    </div>
+@enderror
+
+
+
+<input type="text"
+       name="rw"
+       id="rw"
+       class="form-control @error('rw') is-invalid @enderror"
+       value="{{ old('rw') }}"
+       placeholder="Masukkan RW">
+
+@error('rw')
+    <div class="invalid-feedback" style="color: red;">
+        {{ $message }}
+    </div>
+@enderror
 
 
 // LUAS BANGUNAN PERIHAL BANGUNAN
@@ -220,3 +249,8 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
 
 
 
+
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous" />
