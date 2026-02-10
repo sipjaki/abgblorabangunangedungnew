@@ -85,8 +85,8 @@ public function permohonankrkusaha(Request $request)
             'notelepon' => 'required|string|max:255',
             'luastanah' => 'required|numeric|max:1000000',
             'jumlahlantai' => 'required|string|max:10',
-            'rt' => 'required|string|max:10',
-            'rw' => 'required|string|max:10',
+            'rt' => 'nullable|string|max:10',
+            'rw' => 'nullable|string|max:10',
             'kabupaten' => 'required|string|max:255',
             'kecamatanblora_id' => 'required|string|max:255',
             'kelurahandesa_id' => 'required|string|max:255',
@@ -116,8 +116,8 @@ public function permohonankrkusaha(Request $request)
             'luastanah.required' => 'Luas Tanah wajib diisi!',
             'notelepon.required' => 'Nomor telepon wajib diisi!',
             'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
-            'rt.required' => 'RT wajib diisi!',
-            'rw.required' => 'RW wajib diisi!',
+            // 'rt.required' => 'RT wajib diisi!',
+            // 'rw.required' => 'RW wajib diisi!',
             'kabupaten.required' => 'Kabupaten wajib diisi!',
             'kecamatanblora_id.required' => 'Kecamatan wajib diisi!',
             'kelurahandesa_id.required' => 'Kelurahan/Desa wajib diisi!',
@@ -482,9 +482,21 @@ $datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
     ]);
 }
 
-
 public function permohonanpengesahanusahacreate(Request $request, $id)
 {
+    // ==============================
+    // KONVERSI ANGKA KOMA → TITIK
+    // (WAJIB sebelum validasi)
+    // ==============================
+    if ($request->has('luasbangunan')) {
+        $request->merge([
+            'luasbangunan' => str_replace(',', '.', $request->luasbangunan),
+        ]);
+    }
+
+    // ==============================
+    // VALIDASI
+    // ==============================
     $validated = $request->validate([
         'nomorregistrasi' => 'required|string|max:50',
         'tanggalpermohonan' => 'required|date',
@@ -501,7 +513,6 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'kdh' => 'required|numeric|in:10,20,30,40,50,60,70',
         'jaringanutilitas' => 'required|string|max:255',
     ], [
-        // Custom error messages
         'required' => 'Kolom :attribute wajib diisi.',
         'in' => 'Nilai :attribute tidak valid.',
         'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -509,17 +520,23 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'max' => 'Kolom :attribute maksimal :max karakter.',
     ]);
 
-    // Dapatkan data utama
+    // ==============================
+    // DATA UTAMA
+    // ==============================
     $mainData = krkusaha::findOrFail($id);
 
-    // Simpan data pengesahan
+    // ==============================
+    // SIMPAN DATA
+    // ==============================
     $pengesahan = new krkusahasurat();
     $pengesahan->krkusaha_id = $mainData->id;
     $pengesahan->fill($validated);
     $pengesahan->save();
 
-    return redirect('/bekrkusaha')->with('pengesahankrk',
-        'Surat Permohonan KRK berhasil disetujui!');
+    return redirect('/bekrkusaha')->with(
+        'pengesahankrk',
+        'Surat Permohonan KRK berhasil disetujui!'
+    );
 }
 
 public function perpengesahankrkhunian(Request $request, $id)

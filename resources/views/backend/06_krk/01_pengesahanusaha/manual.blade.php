@@ -19,7 +19,7 @@
       <!--begin::App Main-->
       <main class="app-main"
          style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -87,27 +87,15 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-header">
-                       <div style="
-                       margin-bottom:10px;
-                       font-weight: 900;
-                       font-size: 16px;
-                       text-align: center;
-                       background: linear-gradient(135deg, #000080, #000080);
-                       color: white;
-                       padding: 10px 25px;
-                       border-radius: 10px;
-                       display: inline-block;
-                       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                       width: 100%;
-                   ">
-                   <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                   </div>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+                </div>
 
 
                         <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                            {{-- <div style="position: relative; display: inline-block; margin-right:10px;">
                                <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                               <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                               <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                            </div>
                            <script>
                                function updateEntries() {
@@ -166,7 +154,7 @@
                 <!-- Nomor Registrasi KRK -->
                 <div class="form-group row mb-4">
                     <label for="nomor_registrasi" class="col-md-4 col-form-label">
-                        <i class="fas fa-id-card-alt"></i> Nomor Registrasi KRK
+                        <i class="bi bi-id-card-alt"></i> Nomor Registrasi KRK
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="nomorregistrasi" name="nomorregistrasi" readonly>
@@ -192,7 +180,7 @@
                 <!-- Tanggal Dibuat KRK -->
                 <div class="form-group row mb-4">
                     <label for="tanggalpermohonan" class="col-md-4 col-form-label">
-                        <i class="fas fa-calendar-alt"></i> Tanggal Dibuat KRK
+                        <i class="bi bi-calendar-alt"></i> Tanggal Dibuat KRK
                     </label>
                     <div class="col-md-8">
                         <input type="date" class="form-control" id="tanggalpermohonan" name="tanggalpermohonan" readonly>
@@ -214,7 +202,7 @@
                 <!-- Kepadatan -->
                 <div class="form-group row mb-4">
                     <label for="kepadatan" class="col-md-4 col-form-label">
-                        <i class="fas fa-users"></i> Kepadatan
+                        <i class="bi bi-users"></i> Kepadatan
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="kepadatan" name="kepadatan" required>
@@ -232,7 +220,7 @@
                 <!-- Jumlah Lantai Maksimal -->
          <div class="form-group row mb-4">
     <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
-        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
+        <i class="bi bi-building"></i> Jumlah Lantai Maksimal
     </label>
     <div class="col-md-8">
         <input type="text"
@@ -247,33 +235,41 @@
 </div>
 
                 <!-- Luas Bangunan Maksimal -->
-                <div class="form-group row mb-4">
+<div class="form-group row mb-4">
     <label for="luasbangunan" class="col-md-4 col-form-label">
-        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+        <i class="bi bi-ruler-combined"></i> Luas Bangunan Maksimal
     </label>
+
     <div class="col-md-8">
         <div class="input-group">
-            <input type="number"
+            <input type="text"
                    class="form-control @error('luasbangunan') is-invalid @enderror"
                    id="luasbangunan"
                    name="luasbangunan"
                    value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
-                   step="0.01"
-                   min="0">
+                   placeholder="Contoh: 20,21 atau 20.21"
+                   oninput="this.value = this.value.replace(',', '.')">
+
             <div class="input-group-append">
                 <span class="input-group-text bg-danger text-white">M²</span>
             </div>
         </div>
+
+        <small class="text-muted">
+            Gunakan tanda koma (,) atau titik (.) untuk desimal
+        </small>
+
         @error('luasbangunan')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
         @enderror
     </div>
 </div>
-
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="fungsibangunan" class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
+                        <i class="bi bi-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
@@ -286,7 +282,7 @@
                 <!-- Lokasi Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="lokasibangunan" class="col-md-4 col-form-label">
-                        <i class="fas fa-map-marker-alt"></i> Lokasi Bangunan
+                        <i class="bi bi-map-marker-alt"></i> Lokasi Bangunan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" name="lokasibangunan" value="{{$data->lokasibangunan}}" readonly>
@@ -299,7 +295,7 @@
                 <!-- Ruas Jalan -->
                 <div class="form-group row mb-4">
                     <label for="rencanagsbblora_id" class="col-md-4 col-form-label">
-                        <i class="fas fa-road"></i> Ruas Jalan
+                        <i class="bi bi-road"></i> Ruas Jalan
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="rencanagsbblora_id" name="rencanagsbblora_id" required>
@@ -319,7 +315,7 @@
                 <!-- Jenis Ruas Jalan -->
                 <div class="form-group row mb-4" id="jenisjalan-wrapper" style="display: none;">
                     <label class="col-md-4 col-form-label">
-                        <i class="fas fa-road"></i> Jenis Ruas Jalan
+                        <i class="bi bi-road"></i> Jenis Ruas Jalan
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="jenisjalan" name="jenisjalan" readonly>
@@ -329,7 +325,7 @@
                 <!-- GSB -->
                 <div class="form-group row mb-4" id="gsb-wrapper" style="display: none;">
                     <label class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> GSB (Garis Sempadan Bangunan)
+                        <i class="bi bi-cogs"></i> GSB (Garis Sempadan Bangunan)
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
@@ -344,7 +340,7 @@
                 <!-- KLB -->
              <div class="form-group row mb-4">
     <label for="klb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
+        <i class="bi bi-cogs"></i> KDB (Koefisien Dasar Bangunan)
     </label>
     <div class="col-md-8">
         <div class="input-group">
@@ -368,7 +364,7 @@
 
 <div class="form-group row mb-4">
     <label for="kdb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
+        <i class="bi bi-cogs"></i> KLB (Koefisien Lantai Bangunan)
     </label>
     <div class="col-md-8">
         <div class="input-group">
@@ -435,7 +431,7 @@
                 <!-- KDH -->
                 <div class="form-group row mb-4">
                     <label for="kdh" class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> KDH (Koefisien Dasar Hijau)
+                        <i class="bi bi-cogs"></i> KDH (Koefisien Dasar Hijau)
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="kdh" name="kdh" required>
@@ -457,7 +453,7 @@
                 <!-- Jaringan Utilitas Kota -->
                 <div class="form-group row mb-4">
                     <label for="jaringanutilitas" class="col-md-4 col-form-label">
-                        <i class="fas fa-plug"></i> Jaringan Utilitas Kota
+                        <i class="bi bi-plug"></i> Jaringan Utilitas Kota
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="jaringanutilitas" name="jaringanutilitas" required>

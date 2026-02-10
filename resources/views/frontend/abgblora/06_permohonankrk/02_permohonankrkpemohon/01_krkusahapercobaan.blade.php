@@ -252,10 +252,109 @@
           <!-- Info Koordinat -->
           <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
             <i class="bi bi-info-circle-fill me-2"></i>
-<div>
+<div class="mb-2">
     <strong>Lokasi Terpilih:</strong>
     <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
 </div>
+
+<div class="mt-3">
+    <input type="text"
+           id="koordinatlokasi"
+           name="koordinatlokasi"
+           class="form-control form-control-lg"
+           placeholder="Contoh: -6.970123,111.423456"
+           value="{{ old('koordinatlokasi') }}"
+           style="font-family: monospace;">
+
+    @error('koordinatlokasi')
+        <div class="invalid-feedback d-block mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<div id="map" style="height:400px;" class="mt-3 rounded"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // =============================
+    // INIT MAP
+    // =============================
+    const map = L.map('map').setView([-6.967, 111.420], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© Dinas PUPR Kabupaten Blora',
+    }).addTo(map);
+
+    let marker = null;
+
+    // =============================
+    // FUNGSI SET LOKASI (PUSAT)
+    // =============================
+    function setLokasi(lat, lng) {
+        lat = parseFloat(lat).toFixed(6);
+        lng = parseFloat(lng).toFixed(6);
+
+        if (isNaN(lat) || isNaN(lng)) return;
+
+        const latlng = L.latLng(lat, lng);
+
+        // Update text
+        document.getElementById('koordinat').innerHTML =
+            `<span class="text-success">${lat}, ${lng}</span>`;
+
+        // Update input
+        document.getElementById('koordinatlokasi').value = `${lat},${lng}`;
+
+        // Marker
+        if (!marker) {
+            marker = L.marker(latlng, {
+                icon: L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41]
+                })
+            }).addTo(map);
+        } else {
+            marker.setLatLng(latlng);
+        }
+
+        marker.bindPopup(`<strong>Lokasi Terpilih</strong><br>${lat}, ${lng}`).openPopup();
+        map.setView(latlng, 16);
+    }
+
+    // =============================
+    // KLIK PETA
+    // =============================
+    map.on('click', function (e) {
+        setLokasi(e.latlng.lat, e.latlng.lng);
+    });
+
+    // =============================
+    // INPUT MANUAL
+    // =============================
+    document.getElementById('koordinatlokasi').addEventListener('blur', function () {
+        const value = this.value.trim();
+        if (!value.includes(',')) return;
+
+        const parts = value.split(',');
+        setLokasi(parts[0], parts[1]);
+    });
+
+    // =============================
+    // JIKA OLD VALUE ADA (EDIT FORM)
+    // =============================
+    const oldValue = document.getElementById('koordinatlokasi').value;
+    if (oldValue && oldValue.includes(',')) {
+        const [lat, lng] = oldValue.split(',');
+        setLokasi(lat, lng);
+    }
+
+});
+</script>
+
 
           </div>
 
@@ -279,7 +378,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-{{-- <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const loader = document.getElementById('map-loader');
     loader.style.display = 'block';
@@ -321,83 +420,8 @@ document.addEventListener('DOMContentLoaded', function () {
         map.invalidateSize();
     });
 });
-</script> --}}
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const loader = document.getElementById('map-loader');
-    loader.style.display = 'block';
-
-    const map = L.map('map').setView([-6.967, 111.420], 11);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas PUPR Kab. Blora',
-    }).addTo(map);
-
-    let marker = null;
-
-    // =============================
-    // KLIK PETA (OTOMATIS)
-    // =============================
-    map.on('click', function (e) {
-        updateLokasi(e.latlng.lat, e.latlng.lng);
-    });
-
-    // =============================
-    // INPUT MANUAL
-    // =============================
-    document.getElementById('koordinatlokasi').addEventListener('input', function () {
-        const value = this.value.trim();
-
-        if (!value.includes(',')) return;
-
-        const parts = value.split(',');
-        const lat = parseFloat(parts[0]);
-        const lng = parseFloat(parts[1]);
-
-        if (isNaN(lat) || isNaN(lng)) return;
-
-        updateLokasi(lat, lng);
-    });
-
-    // =============================
-    // FUNGSI UPDATE LOKASI (BIAR RAPI)
-    // =============================
-    function updateLokasi(lat, lng) {
-        lat = parseFloat(lat).toFixed(6);
-        lng = parseFloat(lng).toFixed(6);
-
-        document.getElementById("koordinat").innerHTML =
-            `<span class="text-success">${lat}, ${lng}</span>`;
-
-        document.getElementById("koordinatlokasi").value = `${lat},${lng}`;
-
-        const latlng = L.latLng(lat, lng);
-
-        if (marker) {
-            marker.setLatLng(latlng).openPopup();
-        } else {
-            marker = L.marker(latlng, {
-                icon: L.icon({
-                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34]
-                })
-            }).addTo(map);
-        }
-
-        marker.bindPopup(`<strong>Lokasi Terpilih</strong><br>${lat}, ${lng}`).openPopup();
-        map.setView(latlng, 16);
-    }
-
-    map.whenReady(() => {
-        loader.style.display = 'none';
-        map.invalidateSize();
-    });
-});
 </script>
+
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
     <i class="bi bi-info-circle-fill me-2"></i>
 <div>
@@ -520,40 +544,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- RT -->
     <div class="form-modern col-md-4" style="margin-top: -40px;">
-<label class="form-label-modern d-flex align-items-center" for="rt">
-    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
-    RT
-</label>
+    <label class="form-label-modern d-flex align-items-center" for="rt">
+        <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+        RT
+    </label>
 
-        <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
-            <option value="" style="font-size: 14px;">-- Pilih RT --</option>
-            @for ($i = 1; $i <= 25; $i++)
-                <option value="{{ $i }}" style="font-size:14px;" {{ old('rt') == $i ? 'selected' : '' }}>{{ $i }}</option>
-            @endfor
-        </select>
-        @error('rt')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
+    <input type="text"
+           name="rt"
+           id="rt"
+           class="form-control @error('rt') is-invalid @enderror"
+           value="{{ old('rt') }}"
+           placeholder="Masukkan RT">
 
+    <small class="text-muted">
+        Keterangan : Lewati kolom ini jika tidak mengetahui
+    </small>
+
+    @error('rt')
+        <div class="invalid-feedback" style="color: red;">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
     <!-- RW -->
     <div class="form-modern col-md-4" style="margin-top: -40px;">
-        <label class="form-label-modern d-flex align-items-center" for="rw">
-    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
-    RW
-</label>
-<select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
-            <option value="" style="font-size: 16px;">-- Pilih RW --</option>
-            @for ($i = 1; $i <= 25; $i++)
-                <option value="{{ $i }}" {{ old('rw') == $i ? 'selected' : '' }}>{{ $i }}</option>
-            @endfor
-        </select>
-        @error('rw')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+    <label class="form-label-modern d-flex align-items-center" for="rw">
+        <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+        RW
+    </label>
 
+    <input type="text"
+           name="rw"
+           id="rw"
+           class="form-control @error('rw') is-invalid @enderror"
+           value="{{ old('rw') }}"
+           placeholder="Masukkan RW">
+
+    <small class="text-muted">
+        Keterangan : Lewati kolom ini jika tidak mengetahui
+    </small>
+
+    @error('rw')
+        <div class="invalid-feedback" style="color: red;">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
 
 <div class="row mt-3">
     <!-- Kabupaten (dikunci) -->
