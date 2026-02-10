@@ -247,6 +247,7 @@
             <div id="map-loader">
               <div class="spinner-border text-primary" role="status"></div>
             </div>
+          </div>
 
           <!-- Info Koordinat -->
           <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
@@ -255,7 +256,6 @@
     <strong>Lokasi Terpilih:</strong>
     <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
 </div>
-          </div>
 
 <div class="mt-3">
     <input type="text"
