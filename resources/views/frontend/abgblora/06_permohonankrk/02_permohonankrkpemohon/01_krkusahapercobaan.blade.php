@@ -279,7 +279,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const loader = document.getElementById('map-loader');
     loader.style.display = 'block';
@@ -321,8 +321,83 @@ document.addEventListener('DOMContentLoaded', function () {
         map.invalidateSize();
     });
 });
-</script>
+</script> --}}
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const loader = document.getElementById('map-loader');
+    loader.style.display = 'block';
+
+    const map = L.map('map').setView([-6.967, 111.420], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas PUPR Kab. Blora',
+    }).addTo(map);
+
+    let marker = null;
+
+    // =============================
+    // KLIK PETA (OTOMATIS)
+    // =============================
+    map.on('click', function (e) {
+        updateLokasi(e.latlng.lat, e.latlng.lng);
+    });
+
+    // =============================
+    // INPUT MANUAL
+    // =============================
+    document.getElementById('koordinatlokasi').addEventListener('input', function () {
+        const value = this.value.trim();
+
+        if (!value.includes(',')) return;
+
+        const parts = value.split(',');
+        const lat = parseFloat(parts[0]);
+        const lng = parseFloat(parts[1]);
+
+        if (isNaN(lat) || isNaN(lng)) return;
+
+        updateLokasi(lat, lng);
+    });
+
+    // =============================
+    // FUNGSI UPDATE LOKASI (BIAR RAPI)
+    // =============================
+    function updateLokasi(lat, lng) {
+        lat = parseFloat(lat).toFixed(6);
+        lng = parseFloat(lng).toFixed(6);
+
+        document.getElementById("koordinat").innerHTML =
+            `<span class="text-success">${lat}, ${lng}</span>`;
+
+        document.getElementById("koordinatlokasi").value = `${lat},${lng}`;
+
+        const latlng = L.latLng(lat, lng);
+
+        if (marker) {
+            marker.setLatLng(latlng).openPopup();
+        } else {
+            marker = L.marker(latlng, {
+                icon: L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34]
+                })
+            }).addTo(map);
+        }
+
+        marker.bindPopup(`<strong>Lokasi Terpilih</strong><br>${lat}, ${lng}`).openPopup();
+        map.setView(latlng, 16);
+    }
+
+    map.whenReady(() => {
+        loader.style.display = 'none';
+        map.invalidateSize();
+    });
+});
+</script>
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
     <i class="bi bi-info-circle-fill me-2"></i>
 <div>
