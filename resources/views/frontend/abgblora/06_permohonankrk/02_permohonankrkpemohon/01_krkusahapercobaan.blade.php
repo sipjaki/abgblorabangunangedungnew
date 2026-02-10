@@ -256,6 +256,7 @@
     <strong>Lokasi Terpilih:</strong>
     <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
 </div>
+</div>
 
 <div class="mt-3">
     <input type="text"
