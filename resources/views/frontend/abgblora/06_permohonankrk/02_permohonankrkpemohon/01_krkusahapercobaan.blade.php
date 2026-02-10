@@ -544,52 +544,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- RT -->
     <div class="form-modern col-md-4" style="margin-top: -40px;">
-    <label class="form-label-modern d-flex align-items-center" for="rt">
-        <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
-        RT
-    </label>
+<label class="form-label-modern d-flex align-items-center" for="rt">
+    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+    RT
+</label>
 
-    <input type="text"
-           name="rt"
-           id="rt"
-           class="form-control @error('rt') is-invalid @enderror"
-           value="{{ old('rt') }}"
-           placeholder="Masukkan RT">
+        <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
+            <option value="" style="font-size: 14px;">-- Pilih RT --</option>
+            @for ($i = 1; $i <= 25; $i++)
+                <option value="{{ $i }}" style="font-size:14px;" {{ old('rt') == $i ? 'selected' : '' }}>{{ $i }}</option>
+            @endfor
+        </select>
+        @error('rt')
+            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
 
-    <small class="text-muted">
-        Keterangan : Lewati kolom ini jika tidak mengetahui
-    </small>
-
-    @error('rt')
-        <div class="invalid-feedback" style="color: red;">
-            {{ $message }}
-        </div>
-    @enderror
-</div>
     <!-- RW -->
     <div class="form-modern col-md-4" style="margin-top: -40px;">
-    <label class="form-label-modern d-flex align-items-center" for="rw">
-        <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
-        RW
-    </label>
-
-    <input type="text"
-           name="rw"
-           id="rw"
-           class="form-control @error('rw') is-invalid @enderror"
-           value="{{ old('rw') }}"
-           placeholder="Masukkan RW">
-
-    <small class="text-muted">
-        Keterangan : Lewati kolom ini jika tidak mengetahui
-    </small>
-
-    @error('rw')
-        <div class="invalid-feedback" style="color: red;">
-            {{ $message }}
-        </div>
-    @enderror
+        <label class="form-label-modern d-flex align-items-center" for="rw">
+    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+    RW
+</label>
+<select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
+            <option value="" style="font-size: 16px;">-- Pilih RW --</option>
+            @for ($i = 1; $i <= 25; $i++)
+                <option value="{{ $i }}" {{ old('rw') == $i ? 'selected' : '' }}>{{ $i }}</option>
+            @endfor
+        </select>
+        @error('rw')
+            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
 </div>
+
 
 <div class="row mt-3">
     <!-- Kabupaten (dikunci) -->
