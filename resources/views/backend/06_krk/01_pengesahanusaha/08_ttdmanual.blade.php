@@ -476,10 +476,10 @@ th {
         <br>
 <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
     <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        MOHAMAD ARIF HIDAYAT, ST
+        NIDZAMUDIN AL HUDDA, S.T
     </span>
     <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIP. 19710506 199403 1 011
+        NIP. 19720326 200604 1 005
     </span>
 </div>
     </div>

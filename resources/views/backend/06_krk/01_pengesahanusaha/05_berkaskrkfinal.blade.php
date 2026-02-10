@@ -462,7 +462,7 @@ th {
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        {{-- <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
             <!-- TTD Kabupaten Blora agak ke kanan -->
             <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
                  style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
@@ -470,14 +470,14 @@ th {
             <!-- TTD PA Huda di kanan -->
             <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
                  style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
-        </div> --}}
+        </div>
         <br>
 <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
     <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        MOHAMAD ARIF HIDAYAT, ST
+        NIDZAMUDIN AL HUDDA, S.T
     </span>
     <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIP. 19710506 199403 1 011
+        NIP. 19720326 200604 1 005
     </span>
 </div>
     </div>
