@@ -713,7 +713,9 @@ th {
     <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
 </td> --}}
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    <button class="button-baru">
+        <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    </button>
 </td>
 
 </tr>
@@ -818,11 +820,15 @@ th {
 </td> --}}
 
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+</button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
+    <button class="button-baru">
+        <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
+    </button>
 </td>
 
 </tr>
@@ -1479,9 +1485,7 @@ th {
 
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <button class="button-baru">
         <i class="bi bi-house-fill"></i> Sertifikat Tanah
-    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1829,9 +1833,7 @@ th {
                                     {{-- BUKTI PBB --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <button class="button-baru">
         <i class="bi bi-receipt-cutoff"></i> Bukti PBB
-    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1998,9 +2000,7 @@ th {
                                     {{-- DOKUMEN VALIDASI DPUPR --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <button class="button-baru">
         <i class="bi bi-check2-square"></i> Validasi Tata Ruang
-    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
