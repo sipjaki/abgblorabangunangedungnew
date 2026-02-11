@@ -488,14 +488,14 @@ Route::get('/perpengesahanhunian/{id}', [KrkController::class, 'perpengesahanhun
 Route::get('/perpengesahanhuniannew/{id}', [KrkController::class, 'perpengesahanhuniannew'])->middleware('auth', 'can:admindpupr')->name('perpengesahanhuniannew'); // SUPER ADMIN DAN ADMIN
 Route::post('/perpengesahanhuniancreate/{id}', [KrkController::class, 'perpengesahanhuniancreate'])->name('permohonan.pengesahanhuniancreate');
 
-Route::get('/perpengesahanhunianber/{id}', [KrkController::class, 'perpengesahanhunianber'])->name('berkas.perpengesahanhunianber');
-Route::delete('/krkhuniansuratdelete/{id}', [KrkController::class, 'krkhuniansuratdelete'])->name('krkusahasuratsurat.destroy');
+Route::get('/perpengesahanhunianber/{id}', [KrkController::class, 'perpengesahanhunianber'])->middleware('auth', 'can:admindpupr')->name('berkas.perpengesahanhunianber'); // SUPER ADMIN DAN ADMIN
+Route::delete('/krkhuniansuratdelete/{id}', [KrkController::class, 'krkhuniansuratdelete'])->middleware('auth', 'can:admindpupr')->name('krkusahasuratsurat.destroy');
 
 
 Route::put('/valberkashunian3/{id}', [KrkController::class, 'valberkashunian3'])->name('valberkashunian3.update');
 
-Route::get('/permohonankrkhunianfinal/{id}', [KrkController::class, 'permohonankrkhunianfinal'])->name('permohonan.permohonankrkhunianfinal');
-Route::get('/permohonankrkhunianfinalman/{id}', [KrkController::class, 'permohonankrkhunianfinalman'])->name('permohonan.permohonankrkhunianfinalmanual');
+Route::get('/permohonankrkhunianfinal/{id}', [KrkController::class, 'permohonankrkhunianfinal'])->middleware('auth', 'can:admindpupr')->name('permohonan.permohonankrkhunianfinal');  // SUPER ADMIN DAN ADMIN
+Route::get('/permohonankrkhunianfinalman/{id}', [KrkController::class, 'permohonankrkhunianfinalman'])->middleware('auth', 'can:admindpupr')->name('permohonan.permohonankrkhunianfinalmanual');
 
 Route::get('/krkhuniannoterbit/{id}', [KrkController::class, 'krkhuniannoterbit'])->middleware('auth')->name('krkhuniannoterbit.create');
 Route::post('/krkhuniannoterbitnew/{id}', [KrkController::class, 'krkhuniannoterbitnew'])->middleware('auth')->name('create.krkhuniannoterbitnew');

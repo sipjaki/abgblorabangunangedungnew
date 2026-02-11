@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -225,7 +225,7 @@
 </h5>
 
 <div class="table-responsive">
-    <table id="dataTable" class="zebra-table table-striped" style="font-size: 16px; width: 100%; border-collapse: collapse;">
+    <table id="dataTable" class="zebra-table" style="font-size: 16px; width: 100%; border-collapse: collapse;">
         <thead>
             <tr>
                 <td style="text-align: center;"><i class="bi bi-hash" style="margin-right: 6px;"></i> No</td>

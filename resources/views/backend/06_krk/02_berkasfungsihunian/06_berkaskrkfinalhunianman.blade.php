@@ -50,7 +50,7 @@
         @include('frontend.android.00_fiturmenu.06_alert')
 
         <!--begin::App Main-->
-        <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
+        <main class="app-main" style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
             <!-- Your existing content header -->
             <div class="app-content-header">
                 <div class="container-fluid">
