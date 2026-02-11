@@ -63,7 +63,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -705,7 +705,9 @@ th {
     <table class="zebra-table table-striped">
         <tr>
     <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        <button class="button-baru">
+            <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        </button>
 </td>
 {{-- <td style="text-align: center; font-size:16px;">
     <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
@@ -820,7 +822,7 @@ th {
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi DPUPR
+    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
 </td>
 
 </tr>
@@ -1477,7 +1479,9 @@ th {
 
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-house-fill"></i> Sertifikat Tanah
+    <button class="button-baru">
+        <i class="bi bi-house-fill"></i> Sertifikat Tanah
+    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1825,7 +1829,9 @@ th {
                                     {{-- BUKTI PBB --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-receipt-cutoff"></i> Bukti PBB
+    <button class="button-baru">
+        <i class="bi bi-receipt-cutoff"></i> Bukti PBB
+    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1992,7 +1998,9 @@ th {
                                     {{-- DOKUMEN VALIDASI DPUPR --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-check2-square"></i> Bukti Validasi DPUPR
+    <button class="button-baru">
+        <i class="bi bi-check2-square"></i> Validasi Tata Ruang
+    </button>
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2011,7 +2019,7 @@ th {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">Bukti Validasi DPUPR .pdf</h5>
+                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">Validasi Tata Ruang </h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
@@ -2545,7 +2553,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-modern" type="button" onclick="openModal()">
+                                      <button class="button-baru" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 

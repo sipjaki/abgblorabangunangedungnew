@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -157,7 +157,7 @@
                                 </script>
 
                     <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-modern" style="color: black;">
+    <button class="button-berkas" style="color: black;">
         <!-- Ikon Kembali -->
 <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i>
  Menu Utama
@@ -186,7 +186,7 @@
 <th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
 <th><i class="bi bi-telephone" style="margin-right: 6px;"></i> Whatsapp</th>
 <th><i class="bi bi-bank" style="margin-right: 6px;"></i> Luas Tanah</th>
-<th><i class="bi bi-building" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+{{-- <th><i class="bi bi-building" style="margin-right: 6px;"></i> Lokasi Bangunan</th> --}}
 <th><i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat Permohonan</th>
 <th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
 <th><i class="bi bi-clipboard-data" style="margin-right: 6px;"></i> Dok Lapangan</th>
@@ -225,7 +225,7 @@
                                     <td style="text-align: left;">
                                         {{ strtoupper($item->kelurahandesa->desa) }}
                                     </td> --}}
-                                    <td style="text-align: left;">{{$item->lokasibangunan}}</td>
+                                    {{-- <td style="text-align: left;">{{$item->lokasibangunan}}</td> --}}
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkhunianpermohonan.show', $item->id) }}"

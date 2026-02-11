@@ -354,7 +354,7 @@ Route::post('/permohonanpengesahanusahacreate/{id}', [KrkController::class, 'per
 Route::get('/permohonanpengesahanusahaber/{id}', [KrkController::class, 'permohonanpengesahanusahaber'])->name('permohonan.permohonanpengesahanusahaber');
 Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusahasurat'])->name('krkusahasurat.destroy');
 
-Route::get('/perusahamanual/{id}', [KrkController::class, 'perusahamanual'])->name('perusahamanual');
+Route::get('/perusahamanual/{id}', [KrkController::class, 'perusahamanual'])->middleware('auth', 'can:admindpupr')->name('perusahamanual'); // SUPER ADMIN DAN ADMIN
 
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 // -----------------------------------
@@ -364,7 +364,7 @@ Route::get('/besuratpemohonkrk/{id}', [KrkController::class, 'besuratpemohonkrk'
 Route::get('/permohonankrkhunian', [KrkController::class, 'permohonankrkhunian'])->middleware('auth')->name('permohonan.krkhunian');
 Route::post('/permohonankrkhunian/create', [KrkController::class, 'permohonankrkhuniancreate'])->name('permohonan.krkhuniancreate');
 Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerkashunian'])->name('berkashunian.validate');
-Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesahankrkhunian'])->name('perpengesahankrkhunian');
+Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesahankrkhunian'])->middleware('auth', 'can:admindpupr')->name('perpengesahankrkhunian'); // SUPER ADMIN DAN ADMIN
 
 Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->name('perpengesahankrkagama');
 
@@ -468,13 +468,11 @@ Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusaha
 
 
 // MENU KRK HUNIAN
-Route::get('/bekrkindex', [KrkController::class, 'bekrkindex']);
+Route::get('/bekrkindex', [KrkController::class, 'bekrkindex'])->middleware('auth', 'can:admindpupr'); // ADMIN DAN SUPER ADMIN
 Route::get('/bekrkindexnew', [KrkController::class, 'bekrkindexnew']);
-// -------
-Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->name('bekrkhunianindex');
-
-Route::get('/bekrkhunianpermohonan/{id}', [KrkController::class, 'bekrkhunianpermohonan'])->middleware('auth')->name('bekrkhunianpermohonan.show');
-Route::put('/validasikrkhunian/{id}', [KrkController::class, 'validasikrkhunian'])->middleware('auth')->name('validasikrkhunian');
+Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->middleware('auth', 'can:admindpupr')->name('bekrkhunianindex'); // ADMIN DAN SUPER ADMIN
+Route::get('/bekrkhunianpermohonan/{id}', [KrkController::class, 'bekrkhunianpermohonan'])->middleware('auth', 'can:admindpupr')->name('bekrkhunianpermohonan.show'); // ADMIN DAN SUPER ADMIN
+Route::put('/validasikrkhunian/{id}', [KrkController::class, 'validasikrkhunian'])->middleware('auth', 'can:admindpupr')->name('validasikrkhunian'); // ADMIN DAN SUPER ADMIN
 Route::put('/valberkashunian1/{id}', [KrkController::class, 'valberkashunian1'])->name('valberkashunian1.update');
 Route::get('/doklapkrkhunian/{id}', [KrkController::class, 'doklapkrkhunian'])->middleware('auth')->name('doklapkrkhunian.show');
 
@@ -486,8 +484,8 @@ Route::delete('/doklapkrkhuniancreatedelete/{id}', [KrkController::class, 'dokla
 Route::put('/valberkashunian2/{id}', [KrkController::class, 'valberkashunian2'])->name('valberkashunian2.update');
 Route::post('/berkashunianval/{id}/validate', [KrkController::class, 'berkashunianval'])->name('berkashunianval.validate');
 
-Route::get('/perpengesahanhunian/{id}', [KrkController::class, 'perpengesahanhunian'])->name('permohonan.perpengesahanhunian');
-Route::get('/perpengesahanhuniannew/{id}', [KrkController::class, 'perpengesahanhuniannew'])->name('perpengesahanhuniannew');
+Route::get('/perpengesahanhunian/{id}', [KrkController::class, 'perpengesahanhunian'])->middleware('auth', 'can:admindpupr')->name('permohonan.perpengesahanhunian'); // SUPER ADMIN DAN ADMIN
+Route::get('/perpengesahanhuniannew/{id}', [KrkController::class, 'perpengesahanhuniannew'])->middleware('auth', 'can:admindpupr')->name('perpengesahanhuniannew'); // SUPER ADMIN DAN ADMIN
 Route::post('/perpengesahanhuniancreate/{id}', [KrkController::class, 'perpengesahanhuniancreate'])->name('permohonan.pengesahanhuniancreate');
 
 Route::get('/perpengesahanhunianber/{id}', [KrkController::class, 'perpengesahanhunianber'])->name('berkas.perpengesahanhunianber');

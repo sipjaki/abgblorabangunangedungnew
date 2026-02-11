@@ -538,15 +538,21 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'Surat Permohonan KRK berhasil disetujui!'
     );
 }
-
 public function perpengesahankrkhunian(Request $request, $id)
 {
+    // Ganti koma jadi titik dulu
+    if ($request->has('luasbangunan')) {
+        $request->merge([
+            'luasbangunan' => str_replace(',', '.', $request->luasbangunan),
+        ]);
+    }
+
     $validated = $request->validate([
         'nomorregistrasi' => 'required|string|max:50',
         'tanggalpermohonan' => 'required|date',
         'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
         'luaslantaimaksimal' => 'required|string',
-        'luasbangunan' => 'required|numeric|min:0',
+        'luasbangunan' => 'required|numeric|min:0', // sekarang aman pakai titik
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',
         'rencanagsbblora_id' => 'required|integer',
@@ -557,7 +563,6 @@ public function perpengesahankrkhunian(Request $request, $id)
         'kdh' => 'required|numeric|in:10,20,30,40,50,60,70',
         'jaringanutilitas' => 'required|string|max:255',
     ], [
-        // Custom error messages
         'required' => 'Kolom :attribute wajib diisi.',
         'in' => 'Nilai :attribute tidak valid.',
         'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -577,15 +582,13 @@ public function perpengesahankrkhunian(Request $request, $id)
     return redirect('/bekrkhunian')->with('pengesahankrk',
         'Surat KRK Hunian berhasil disetujui!');
 }
-
-
 // ========================================================
 
 public function bekrkhunian(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
 
     // Query dasar
     $query = krkhunian::query();

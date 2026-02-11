@@ -257,3 +257,42 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
 
 
       ->middleware(['auth', 'admindpupr'])
+
+
+      'auth', 'can:admindpupr'
+
+
+
+
+      // luas bangunan yang pakai decimal
+      <div class="form-group row mb-4">
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+    </label>
+
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text"
+                   class="form-control @error('luasbangunan') is-invalid @enderror"
+                   id="luasbangunan"
+                   name="luasbangunan"
+                   value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
+                   placeholder="Contoh: 20,21 atau 20.21"
+                   oninput="this.value = this.value.replace(',', '.')">
+
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+
+        <small class="text-muted">
+            Gunakan tanda koma (,) atau titik (.) untuk desimal
+        </small>
+
+        @error('luasbangunan')
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+</div>
