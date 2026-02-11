@@ -474,9 +474,9 @@ Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->middleware('a
 Route::get('/bekrkhunianpermohonan/{id}', [KrkController::class, 'bekrkhunianpermohonan'])->middleware('auth', 'can:admindpupr')->name('bekrkhunianpermohonan.show'); // ADMIN DAN SUPER ADMIN
 Route::put('/validasikrkhunian/{id}', [KrkController::class, 'validasikrkhunian'])->middleware('auth', 'can:admindpupr')->name('validasikrkhunian'); // ADMIN DAN SUPER ADMIN
 Route::put('/valberkashunian1/{id}', [KrkController::class, 'valberkashunian1'])->name('valberkashunian1.update');
-Route::get('/doklapkrkhunian/{id}', [KrkController::class, 'doklapkrkhunian'])->middleware('auth')->name('doklapkrkhunian.show');
+Route::get('/doklapkrkhunian/{id}', [KrkController::class, 'doklapkrkhunian'])->middleware('auth', 'can:admindpupr')->name('doklapkrkhunian.show'); // SUPER ADAMIN DAN ADMIN
 
-Route::get('/doklapkrkhuniancreate/{id}', [KrkController::class, 'doklapkrkhuniancreate'])->middleware('auth')->name('doklapkrkhuniancreate.create');
+Route::get('/doklapkrkhuniancreate/{id}', [KrkController::class, 'doklapkrkhuniancreate'])->middleware('auth', 'can:admindpupr')->name('doklapkrkhuniancreate.create'); // SUPER ADMIN DAN ADMIN
 Route::post('/doklapkrkhuniancreatenew', [KrkController::class, 'doklapkrkhuniancreatenew'])->middleware('auth')->name('create.doklapkrkhuniancreatenew');
 
 Route::delete('/doklapkrkhuniancreatedelete/{id}', [KrkController::class, 'doklapkrkhuniancreatedelete'])->middleware('auth')->name('delete.doklapkrkhuniancreatedelete');
