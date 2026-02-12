@@ -123,7 +123,7 @@
                      <a href="/bekrkhunianpemohon" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
@@ -136,12 +136,27 @@
                         <table class="zebra-table">
                             <thead>
                                 <tr>
-                                    <th style="background-color: #ADD8E6;">No</th>
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-user"></i> Pemohon</th>
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Perusahaan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> NIK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-alt"></i> Tanggal Permohonan</th>
+                              <th class="text-center">No</th>
+
+<th>
+    <i class="bi bi-person-fill me-1"></i> Pemohon
+</th>
+
+<th>
+    <i class="bi bi-building me-1"></i> Perusahaan
+</th>
+
+<th>
+    <i class="bi bi-geo-alt-fill me-1"></i> Koordinat
+</th>
+
+<th>
+    <i class="bi bi-card-text me-1"></i> NIK
+</th>
+
+<th>
+    <i class="bi bi-calendar-date-fill me-1"></i> Tanggal Permohonan
+</th>
                                     {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-phone-alt"></i> Whatsapp</th>
                                     <th style="background-color: #ADD8E6;"><i class="bi bi-landmark"></i> Luas Tanah</th>
                                     <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Jumlah Lantai</th>
@@ -152,7 +167,7 @@
                                     <th style="background-color: #ADD8E6;"><i class="bi bi-map-pin"></i> Kelurahan/Desa</th>
                                     <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lokasi Bangunan</th> --}}
 
-                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lihat Permohonan</th>
+                                    <th><i class="bi bi-building"></i> Lihat Permohonan</th>
 
                                     {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> KTP</th>
                                     <th style="background-color: #ADD8E6;"><i class="bi bi-address-card"></i> NPWP</th>
