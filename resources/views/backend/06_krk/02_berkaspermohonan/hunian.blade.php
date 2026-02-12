@@ -252,7 +252,7 @@
     <button
         class="button-hijau"
         type="button"
-        style="background-color: #10B981; cursor: not-allowed;"
+        style="background-color: #10B981;"
         disabled
     >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
