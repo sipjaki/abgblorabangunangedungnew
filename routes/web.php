@@ -333,8 +333,7 @@ Route::get('/rescarigsb', [FedashboardController::class, 'rescarigsb'])->middlew
 Route::get('/informasikrk', [KrkController::class, 'informasikrk']);
 Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 
-
-Route::get('/pemohonkrk', [KrkController::class, 'pemohonkrk'])->middleware('auth', 'can:dinas-atau-pemohon');
+Route::get('/pemohonkrk', [KrkController::class, 'pemohonkrk'])->middleware('auth', 'can:admindpupr');
 
 // PERMOHONAN KRK MENARA TELEKOMUNIKASI
 Route::get('/permohonanmenara', [KrkController::class, 'permohonanmenara'])->middleware('auth')->name('permohonanmenara');
@@ -385,10 +384,10 @@ Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrk
 // MENU 06 KRK BANGUNAN GEDUNG
 
 // AKUN PEMOHON KRK KETERANGAN RENCANA KOTA
-Route::get('/bekrkusahapemohon', [KrkController::class, 'bekrkusahapemohon'])->name('bekrkusahapemohon.indexpemohon');
-Route::get('/bekrkhunianpemohon', [KrkController::class, 'bekrkhunianpemohon'])->name('bekrkhunianpemohon.indexpemohon');
-Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->name('bekrkkeagamaanpemohon.indexpemohon');
-Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->name('bekrksosbud.indexpemohon');
+Route::get('/bekrkusahapemohon', [KrkController::class, 'bekrkusahapemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrkusahapemohon.indexpemohon');
+Route::get('/bekrkhunianpemohon', [KrkController::class, 'bekrkhunianpemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrkhunianpemohon.indexpemohon');
+Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrkkeagamaanpemohon.indexpemohon');
+Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrksosbud.indexpemohon');
 
 // SARIGIT
 Route::get('/bekrkmenaratelkom', [KrkController::class, 'bekrkmenaratelkom'])->name('bekrkmenaratelkom');

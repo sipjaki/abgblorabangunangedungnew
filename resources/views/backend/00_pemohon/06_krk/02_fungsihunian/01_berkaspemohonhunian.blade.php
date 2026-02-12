@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,27 +85,15 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                                        <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari KRK ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -179,7 +121,7 @@ th {
 
 
                      <a href="/bekrkhunianpemohon" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -191,51 +133,51 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
+                        <table class="zebra-table">
                             <thead>
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-user"></i> Pemohon</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Perusahaan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-marker-alt"></i> Koordinat</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> NIK</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-alt"></i> Tanggal Permohonan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-phone-alt"></i> Whatsapp</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-landmark"></i> Luas Tanah</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Jumlah Lantai</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-home"></i> RT</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-home"></i> RW</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-city"></i> Kabupaten</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-marker-alt"></i> Kecamatan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-pin"></i> Kelurahan/Desa</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lokasi Bangunan</th> --}}
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lihat Permohonan</th>
 
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-paperclip"></i> Lampiran OSS</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-invoice-dollar"></i> Bukti PBB</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> Dok Validasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> KTP</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-address-card"></i> NPWP</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-file-alt"></i> Sertifikat Tanah</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-paperclip"></i> Lampiran OSS</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-file-invoice-dollar"></i> Bukti PBB</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-check-circle"></i> Dok Validasi DPUPR</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-drafting-compass"></i> Site Plan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-pen-fancy"></i> Tanda Tangan</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Verifikasi DPUPR</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Dok Lapangan</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Status Cek Lapangan</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Olah Data KRK</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Buat Data KRK</th> --}}
                              {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Informasi KRK
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Informasi KRK
 </th> --}}
                              {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Berkas Final KRK
 </th> --}}
                              <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Dokumen KRK
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Dokumen KRK
 </th>
                              {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Selesai
 </th>
        <th style="background-color: #ADD8E6;">Aksi</th> --}}
                                 </tr>
@@ -270,7 +212,7 @@ th {
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkhunianpermohonan.show', $item->id) }}"
                     class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
                                     <style>
