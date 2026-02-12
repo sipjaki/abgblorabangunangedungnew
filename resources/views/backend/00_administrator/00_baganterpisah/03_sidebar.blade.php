@@ -724,7 +724,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link">
         <!-- Ganti SVG dengan Bootstrap Icon -->
-        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-building nav-icon" style="color: red; font-size: 16px;"></i>
 
         <p style="color: white; margin-left: 8px;">
             PBG/SLF

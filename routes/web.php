@@ -334,7 +334,7 @@ Route::get('/informasikrk', [KrkController::class, 'informasikrk']);
 Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 
 
-Route::get('/pemohonkrk', [KrkController::class, 'pemohonkrk'])->middleware('auth');
+Route::get('/pemohonkrk', [KrkController::class, 'pemohonkrk'])->middleware('auth', 'can:dinas-atau-pemohon');
 
 // PERMOHONAN KRK MENARA TELEKOMUNIKASI
 Route::get('/permohonanmenara', [KrkController::class, 'permohonanmenara'])->middleware('auth')->name('permohonanmenara');
