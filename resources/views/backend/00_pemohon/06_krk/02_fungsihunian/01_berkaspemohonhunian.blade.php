@@ -188,7 +188,7 @@
                              {{-- <th style="background-color: #ADD8E6;">
     <i class="bi bi-database" style="margin-right: 6px;"></i> Berkas Final KRK
 </th> --}}
-                             <th style="background-color: #ADD8E6;">
+                             <th>
     <i class="bi bi-database" style="margin-right: 6px;"></i> Dokumen KRK
 </th>
                              {{-- <th style="background-color: #ADD8E6;">
