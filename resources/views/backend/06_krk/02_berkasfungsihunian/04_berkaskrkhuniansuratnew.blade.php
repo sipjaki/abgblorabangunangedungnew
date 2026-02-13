@@ -240,8 +240,8 @@
                    class="form-control @error('luasbangunan') is-invalid @enderror"
                    id="luasbangunan"
                    name="luasbangunan"
-                   value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
-                   placeholder="Contoh: 20,21 atau 20.21"
+                   value="{{ old('luasbangunan', isset($data->luasbangunan) ? number_format($data->luasbangunan / 100, 2, '.', '') : '') }}"
+                   placeholder="Contoh: 65.45"
                    oninput="this.value = this.value.replace(',', '.')">
 
             <div class="input-group-append">
