@@ -296,3 +296,44 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
         @enderror
     </div>
 </div>
+
+
+
+
+/// VERIFIKASI 1
+
+<td>
+
+  @if($item->verifikasi1 == 'lolos')
+    <button
+        class="button-hijau"
+        type="button"
+        onclick="openModal({{ $item->id }})"
+        style="background-color: #10B981; cursor: pointer;"
+    >
+        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
+    </button>
+
+  @elseif($item->verifikasi1 == 'dikembalikan')
+    <button
+        class="button-merah"
+        type="button"
+        onclick="openModal({{ $item->id }})"
+        style="background-color: #EF4444; cursor: pointer;"
+    >
+        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
+    </button>
+
+  @else
+    <button
+        class="button-modern"
+        type="button"
+        onclick="openModal({{ $item->id }})"
+        style="cursor: pointer;"
+    >
+        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
+    </button>
+
+  @endif
+
+</td>

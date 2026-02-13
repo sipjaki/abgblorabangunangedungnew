@@ -247,7 +247,7 @@
 
 
 <!-- Tombol Validasi -->
-<td>
+<td style="text-align: center;">
 
   @if($item->verifikasi1 == 'lolos')
     <button
@@ -448,10 +448,7 @@
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-merah"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
+                                    class="button-modern">
                                     <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> Belum di Setujui !
                                 </button>
                                 @else
