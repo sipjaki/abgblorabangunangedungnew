@@ -374,7 +374,7 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">7</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">(KLB) Koefisien Lantai Bangunan</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->kdb ?? 'Belum Dibuatkan' }}%</td>
 </tr>
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">8</td>
@@ -445,6 +445,8 @@
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Wajib menyediakan tempat/area parkir.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
+
     </ol>
 </div>
 

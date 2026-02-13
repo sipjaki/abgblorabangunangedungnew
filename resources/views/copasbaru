@@ -337,3 +337,9 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
   @endif
 
 </td>
+
+
+
+
+// no 11
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
