@@ -262,13 +262,25 @@
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td style="text-align: center;">5</td>
                         <td>Luas Bangunan Maksimal (m²)</td>
                         <td style="text-align: center;">:</td>
                         <td>
                             @if($item->luasbangunan)
                                 {{ $item->luasbangunan }} M<sup>2</sup>
+                            @else
+                                -
+                            @endif
+                        </td>
+                    </tr> --}}
+                    <tr>
+                        <td style="text-align: center;">5</td>
+                        <td>Luas Bangunan Maksimal (m²)</td>
+                        <td style="text-align: center;">:</td>
+                        <td>
+                            @if($item->luasbangunan)
+                                {{ number_format($item->luasbangunan / 100, 2, '.', '') }} M<sup>2</sup>
                             @else
                                 -
                             @endif

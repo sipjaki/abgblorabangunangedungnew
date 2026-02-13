@@ -314,29 +314,37 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">3</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Bangunan Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
-    @php
+  <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+@php
     $luasB = $item->luasbangunan ?? null;
-    $luasBFormatted = is_numeric($luasB) ? number_format($luasB, 0, ',', '.') . ' M²' : '-';
+    $luasBFormatted = is_numeric($luasB)
+        ? number_format($luasB / 100, 2, ',', '.') . ' M²'
+        : '-';
 @endphp
 
 {{ $luasBFormatted }}
 
-    </td>
+</td>
+
 </tr>
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">4</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Lantai Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+   <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
 @php
-    // Ambil nilai luas bangunan
-    $luasBangunan = $item->luasbangunan ?? null;
+    // Ambil nilai luas bangunan dari database (masih dikali 100)
+    $luasBangunanRaw = $item->luasbangunan ?? null;
+
+    // Ubah ke nilai asli (bagi 100)
+    $luasBangunan = is_numeric($luasBangunanRaw)
+        ? $luasBangunanRaw / 100
+        : null;
 
     // Ambil text lantai
     $lantaiText = $item->luaslantaimaksimal ?? null;
 
-    // Tentukan nilai lantai sesuai aturan
+    // Tentukan jumlah lantai
     $lantai = match($lantaiText) {
         '2 Lantai' => 2,
         '4 Lantai' => 4,
@@ -344,13 +352,15 @@
         default => null
     };
 
-    // Hitung hasil kali
-    $hasil = (is_numeric($luasBangunan) && $lantai)
+    // Hitung total luas
+    $hasil = ($luasBangunan !== null && $lantai !== null)
         ? $luasBangunan * $lantai
         : null;
 
-    // Format ribuan
-    $hasilFormatted = $hasil ? number_format($hasil, 0, ',', '.') . ' M²' : '-';
+    // Format hasil dengan desimal Indonesia
+    $hasilFormatted = $hasil !== null
+        ? number_format($hasil, 2, ',', '.') . ' M²'
+        : '-';
 @endphp
 
 {{ $hasilFormatted }}
