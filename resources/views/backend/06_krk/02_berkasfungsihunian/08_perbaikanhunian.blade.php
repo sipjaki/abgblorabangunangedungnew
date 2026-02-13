@@ -289,7 +289,7 @@
         </div>
     </div>
 
-    {{-- <div class="col-md-6">
+    <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="kabupaten">
                 <i class="bi bi-geo-fill" style="margin-right: 8px; color: navy;"></i> Kabupaten
@@ -299,9 +299,9 @@
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-    </div> --}}
+    </div>
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="luasbangunan">
                 <i class="bi bi-geo-fill" style="margin-right: 8px; color: navy;"></i> Luas Bangunan
@@ -311,7 +311,7 @@
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-    </div>
+    </div> --}}
 
     <div class="col-md-12">
         <div class="mb-3">
