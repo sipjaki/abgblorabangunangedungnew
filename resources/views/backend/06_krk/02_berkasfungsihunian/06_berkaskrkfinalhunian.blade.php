@@ -384,7 +384,7 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">7</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">(KLB) Koefisien Lantai Bangunan</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->kdb ?? 'Belum Dibuatkan' }}%</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
 </tr>
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">8</td>
