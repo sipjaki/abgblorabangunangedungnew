@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                                        <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -153,7 +95,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -347,13 +289,25 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="kabupaten">
                 <i class="bi bi-geo-fill" style="margin-right: 8px; color: navy;"></i> Kabupaten
             </label>
             <input type="text" id="kabupaten" name="kabupaten" value="{{ old('kabupaten', $data->kabupaten ?? '') }}" class="form-control @error('kabupaten') is-invalid @enderror" placeholder="Masukkan nama kabupaten">
             @error('kabupaten')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div> --}}
+
+        <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="luasbangunan">
+                <i class="bi bi-geo-fill" style="margin-right: 8px; color: navy;"></i> Luas Bangunan
+            </label>
+            <input type="text" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}" class="form-control @error('luasbangunan') is-invalid @enderror" placeholder="Masukkan nama kabupaten">
+            @error('luasbangunan')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>

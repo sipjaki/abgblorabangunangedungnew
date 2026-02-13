@@ -3298,7 +3298,8 @@ public function bekrkhunianperbaikannewupdate(Request $request, $id)
     $bantuan->jumlahlantai = $request->jumlahlantai;
     $bantuan->rt = $request->rt;
     $bantuan->rw = $request->rw;
-    $bantuan->kabupaten = $request->kabupaten;
+    // $bantuan->kabupaten = $request->kabupaten;
+    $bantuan->luasbangunan = $request->luasbangunan;
     $bantuan->lokasibangunan = $request->lokasibangunan;
     $bantuan->alamatpemohon = $request->alamatpemohon;
 
