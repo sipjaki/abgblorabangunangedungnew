@@ -247,7 +247,7 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td>
 
   @if($item->verifikasi1 == 'lolos')
     <button
