@@ -302,7 +302,7 @@
                         <td style="text-align: center;">10</td>
                         <td>(KDB) Koefisien Dasar Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->klb ?? '-' }}</td>
+                        <td>{{ $item->klb ?? '-' }} %</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">11</td>
