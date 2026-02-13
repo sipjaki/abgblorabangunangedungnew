@@ -248,26 +248,40 @@
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+
   @if($item->verifikasi1 == 'lolos')
     <button
         class="button-hijau"
         type="button"
-        style="background-color: #10B981;"
-        disabled
+        onclick="openModal({{ $item->id }})"
+        style="background-color: #10B981; cursor: pointer;"
     >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
-    @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
-        </button>
-    @else
-        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
-        </button>
-    @endif
-</td>
 
+  @elseif($item->verifikasi1 == 'dikembalikan')
+    <button
+        class="button-merah"
+        type="button"
+        onclick="openModal({{ $item->id }})"
+        style="background-color: #EF4444; cursor: pointer;"
+    >
+        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
+    </button>
+
+  @else
+    <button
+        class="button-modern"
+        type="button"
+        onclick="openModal({{ $item->id }})"
+        style="cursor: pointer;"
+    >
+        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
+    </button>
+
+  @endif
+
+</td>
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
