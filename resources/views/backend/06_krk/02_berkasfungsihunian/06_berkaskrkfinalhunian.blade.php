@@ -470,35 +470,12 @@
         {{$subtanda->jabatan}}<br>
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
-<td style="text-align:center;">
-    @if (!empty($item->tandatangan))
-        <a href="{{ asset('uploads/ttd/'.$item->tandatangan) }}" target="_blank">
-            <img src="{{ asset('uploads/ttd/'.$item->tandatangan) }}"
-                 alt="Tanda Tangan"
-                 style="height:60px;">
-        </a>
-    @else
-        <span class="text-muted">Belum ada</span>
-    @endif
-</td>
 
-<td style="text-align:center;">
-    @if (!empty($item->capblora))
-        <a href="{{ asset('uploads/ttd/'.$item->capblora) }}" target="_blank">
-            <img src="{{ asset('uploads/ttd/'.$item->capblora) }}"
-                 alt="Cap Blora"
-                 style="height:60px;">
-        </a>
-    @else
-        <span class="text-muted">Belum ada</span>
-    @endif
-</td>
-
-<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center; justify-content: center;">
+<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center;justify-content: center;">
 
     {{-- Cap / Stempel Blora --}}
-    @if (!empty($data->capblora))
-        <img src="{{ $data->capblora }}"
+    @if(!empty($subtanda->capblora))
+        <img src="{{ asset('uploads/ttd/'.$subtanda->capblora) }}"
              alt="Cap Blora"
              style="
                 position: absolute;
@@ -509,8 +486,8 @@
     @endif
 
     {{-- Tanda Tangan --}}
-    @if (!empty($data->tandatangan))
-        <img src="{{ $data->tandatangan }}"
+    @if(!empty($subtanda->tandatangan))
+        <img src="{{ asset('uploads/ttd/'.$subtanda->tandatangan) }}"
              alt="Tanda Tangan"
              style="
                 position: absolute;
@@ -520,6 +497,7 @@
     @endif
 
 </div>
+
         <br>
             <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
                 <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
