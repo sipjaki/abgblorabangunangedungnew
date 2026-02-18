@@ -116,12 +116,6 @@
   }
 </script>
 
-<hr>
-
-<a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
-                    <i class="bi bi-eye"></i>
-                </a>
-
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">

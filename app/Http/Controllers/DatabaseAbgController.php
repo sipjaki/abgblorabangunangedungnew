@@ -980,5 +980,25 @@ public function ttdkepaladinasbloracreatenew(Request $request)
     return redirect()->route('ttdkepaladinasblora');
 }
 
+
+
+    public function ttdkepaladinasbloraupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = ttdkepaladinas::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.99_databaseabg.01_gsbblora.03_updatekepaladinas', [
+        'title' => 'Perbaikan Data Kepala Dinas !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
 }
 
