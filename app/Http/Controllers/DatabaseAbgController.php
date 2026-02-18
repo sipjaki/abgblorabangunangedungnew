@@ -897,11 +897,11 @@ public function beartikeldelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
-   public function ttdkepaladinasblora(Request $request)
+public function ttdkepaladinasblora()
 {
     $user = Auth::user();
 
-    $data = ttdkepaladinas::all();
+    $data = ttdkepaladinas::orderBy('id', 'desc')->get();
 
     return view('backend.99_databaseabg.04_ttdkepaladinas.01_ttdkepaladinas', [
         'title' => 'Tanda Tangan Kepala Dinas Kabupaten Blora',
@@ -909,7 +909,6 @@ public function beartikeldelete($id)
         'user'  => $user,
     ]);
 }
-
 
 // BUAT TANDA TANGAN KEPALA DINAS
 
