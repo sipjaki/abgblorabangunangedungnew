@@ -1,3 +1,6 @@
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!-- Header Includes -->
     @include('backend.00_administrator.00_baganterpisah.01_header')
 
     <!-- App Wrapper -->
@@ -11,7 +14,7 @@
         @include('frontend.android.00_fiturmenu.06_alert')
 
         <!-- Main Content -->
-        <main class="app-main" style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
+        <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
             <!-- Content Header -->
             <div class="app-content-header">
                 <div class="container-fluid">
@@ -27,8 +30,9 @@
                     <div class="card mb-4">
                         <!-- Card Header -->
                         <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-
+                            <div style="margin-bottom:10px; font-weight: 900; font-size: 16px; text-align: center; background: linear-gradient(135deg, #000080, #000080); color: white; padding: 10px 25px; border-radius: 10px; display: inline-block; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); width: 100%;">
+                                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                            </div>
 
                             <!-- Back Button -->
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
@@ -230,3 +234,4 @@
     <!-- Bootstrap JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
