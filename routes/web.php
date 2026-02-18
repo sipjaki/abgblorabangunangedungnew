@@ -459,7 +459,7 @@ Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbi
 // PERBAIAKN DATA DARI SISI ADMIN UNTUK KRK USAHA
 Route::get('/bekrkusahaperbaikanadmin/{id}', [KrkController::class, 'bekrkusahaperbaikanadmin'])->middleware('auth', 'can:admindinas')->name('bekrkusahaperbaikan.perbaikanadmin');
 
-Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
+Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth', 'can:admindinas')->name('bekrkusahaperbaikan.perbaikan');
 Route::post('/bekrkusahaperbaikannew/{id}', [KrkController::class, 'bekrkusahaperbaikannewupdate'])->middleware('auth')->name('bekrkusahaperbaikannewupdate');
 
 Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusahadelete'])->middleware('auth')->name('delete.dokbekrkusahadelete');
