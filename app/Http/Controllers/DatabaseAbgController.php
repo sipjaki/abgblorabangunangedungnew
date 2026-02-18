@@ -16,6 +16,7 @@ use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\mbrgambar;
 use App\Models\rencanagsbblora;
+use App\Models\ttdkepaladinas;
 use App\Models\uijk;
 use App\Models\undangundang;
 use Illuminate\Http\Request;
@@ -895,6 +896,21 @@ public function beartikeldelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+   public function ttdkepaladinasblora(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 10);
+
+    $data = ttdkepaladinas::latest()
+        ->paginate($perPage)
+        ->appends($request->all());
+
+    return view('backend.99_databaseabg.04_ttdkepaladinas.01_ttdkepaladinas', [
+        'title' => 'Tanda Tangan Kepala Dinas Kabupaten Blora',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
 
 }
 

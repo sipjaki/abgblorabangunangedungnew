@@ -1021,6 +1021,10 @@ Route::get('/infobantekpemeliharaan', [BantuanteknisController::class, 'infobant
 Route::get('/infobantekpendampingan', [BantuanteknisController::class, 'infobantekpendampingan']);
 Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantektimteknis']);
 
+
+// TANDA TANGAN KEPALA DINAS
+Route::get('/ttdkepaladinasblora', [DatabaseAbgController::class, 'ttdkepaladinasblora'])->middleware('auth')->name('ttdkepaladinasblora');
+
 // DATABASE ABG BLORA ---------------------------------------------
 Route::get('/datagsbblora', [DatabaseAbgController::class, 'datagsbblora'])->middleware('auth')->name('datagsbbloraindex');
 Route::delete('/bedatagsbbloradelete/{id}', [DatabaseAbgController::class, 'bedatagsbbloradelete'])->middleware('auth')->name('delete.bedatagsbbloradelete');
