@@ -467,7 +467,7 @@ Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusaha
 
 
 // MENU KRK HUNIAN
-Route::get('/bekrkindex', [KrkController::class, 'bekrkindex'])->middleware('auth', 'can:admindpupr'); // ADMIN DAN SUPER ADMIN
+Route::get('/bekrkindex', [KrkController::class, 'bekrkindex'])->middleware('auth', 'can:admindpupr')->name('bekrkindex'); // ADMIN DAN SUPER ADMIN
 Route::get('/bekrkindexnew', [KrkController::class, 'bekrkindexnew']);
 Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->middleware('auth', 'can:admindpupr')->name('bekrkhunianindex'); // ADMIN DAN SUPER ADMIN
 Route::get('/bekrkhunianpermohonan/{id}', [KrkController::class, 'bekrkhunianpermohonan'])->middleware('auth')->name('bekrkhunianpermohonan.show'); // PEMOHON, ADMIN, SUPER ADMIN
