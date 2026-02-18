@@ -117,6 +117,11 @@
 </script>
 
 <hr>
+
+<a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
+                    <i class="bi bi-eye"></i>
+                </a>
+
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
@@ -171,10 +176,10 @@
             <td style="text-align: center; vertical-align: middle;">
 
                 {{-- BUAT DATA AWAL DULU --}}
-                <a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
+                {{-- <a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
                 </a>
-                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update"> --}}
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         {{-- <a href="javascript:void(0)" class="button-merah" title="Delete"
