@@ -462,54 +462,52 @@
 
                                             <!-- Signature section -->
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
-
 @foreach ($tandatangan as $subtanda)
 
-    <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
-        {{-- Kabupaten Blora<br> --}}
-        {{$subtanda->jabatan}}<br>
-        PEKERJAAN UMUM DAN PENATAAN RUANG<br>
-        KABUPATEN BLORA<br><br>
+<div style="text-align:left; font-size:14px; font-family:'Times New Roman', Times, serif; line-height:1;">
 
-<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center;justify-content: center;">
+    {{ $subtanda->jabatan }}<br>
+    PEKERJAAN UMUM DAN PENATAAN RUANG<br>
+    KABUPATEN BLORA<br><br>
 
-    {{-- Cap / Stempel Blora --}}
-    @if(!empty($subtanda->capblora))
-        <img src="{{ asset('uploads/ttd/'.$subtanda->capblora) }}"
-             alt="Cap Blora"
-             style="
-                position: absolute;
-                height: 90px;
-                opacity: 0.85;
-                z-index: 1;
-             ">
-    @endif
+    <div style="
+        position: relative;
+        width: 220px;
+        height: 100px;
+        margin-top: -15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
 
-    {{-- Tanda Tangan --}}
-    @if(!empty($subtanda->tandatangan))
-        <img src="{{ asset('uploads/ttd/'.$subtanda->tandatangan) }}"
-             alt="Tanda Tangan"
-             style="
-                position: absolute;
-                height: 70px;
-                z-index: 2;
-             ">
-    @endif
+        {{-- Cap / Stempel Blora --}}
+        @if (!empty($subtanda->capblora))
+            <img src="{{ $subtanda->capblora }}"
+                 alt="Cap Blora"
+                 style="position:absolute; height:90px; opacity:0.85; z-index:1;">
+        @endif
 
-</div>
+        {{-- Tanda Tangan --}}
+        @if (!empty($subtanda->tandatangan))
+            <img src="{{ $subtanda->tandatangan }}"
+                 alt="Tanda Tangan"
+                 style="position:absolute; height:70px; z-index:2;">
+        @endif
 
-        <br>
-            <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
-                <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-                    {{$subtanda->namalengkap}}
-                </span>
-                <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-                    {{$subtanda->nip}}
-                    {{-- NIP. 19720326 200604 1 005 --}}
-                </span>
-        </div>
     </div>
 
+    <br>
+
+    <div style="display:inline-flex; flex-direction:column; line-height:1; margin-top:-10px;">
+        <span style="text-decoration:underline;">
+            {{ $subtanda->namalengkap }}
+        </span>
+        <span>
+            {{ $subtanda->nip }}
+        </span>
+    </div>
+
+</div>
 
 @endforeach
 </div>
