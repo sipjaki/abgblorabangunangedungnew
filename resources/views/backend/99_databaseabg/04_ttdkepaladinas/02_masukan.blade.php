@@ -262,56 +262,62 @@ th {
 
     {{-- Kolom Kanan --}}
     <div class="col-md-6">
+{{-- Upload Tanda Tangan --}}
+<div class="mb-3">
+    <label class="form-label" for="tandatangan">
+        <i class="bi bi-pencil-fill" style="margin-right:8px;color:navy;"></i>
+        Upload Tanda Tangan (Max 15MB)
+    </label>
 
-        {{-- URL Tanda Tangan --}}
-        <div class="mb-3">
-            <label class="form-label" for="tandatangan">
-                <i class="bi bi-pencil-fill" style="margin-right:8px;color:navy;"></i>
-                URL Tanda Tangan (Image)
-            </label>
-            <input
-                type="text"
-                id="tandatangan"
-                name="tandatangan"
-                value="{{ old('tandatangan', $data->tandatangan ?? '') }}"
-                class="form-control @error('tandatangan') is-invalid @enderror"
-                placeholder="/assets/ttd/ttd_kepala_dinas.png"
-            >
-            @error('tandatangan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    <input
+        type="file"
+        id="tandatangan"
+        name="tandatangan"
+        class="form-control @error('tandatangan') is-invalid @enderror"
+        accept="image/png, image/jpeg, image/jpg"
+    >
 
-            @if (!empty($data->tandatangan))
-                <div class="mt-2">
-                    <img src="{{ $data->tandatangan }}" alt="Tanda Tangan" style="height:80px;">
-                </div>
-            @endif
+    @error('tandatangan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    {{-- Preview lama --}}
+    @if (!empty($data->tandatangan))
+        <div class="mt-2">
+            <small class="text-muted">Preview saat ini:</small><br>
+            <img src="{{ $data->tandatangan }}" alt="Tanda Tangan" style="height:80px;">
         </div>
+    @endif
+</div>
 
-        {{-- URL Cap Blora --}}
-        <div class="mb-3">
-            <label class="form-label" for="capblora">
-                <i class="bi bi-patch-check-fill" style="margin-right:8px;color:navy;"></i>
-                URL Cap Blora (Image)
-            </label>
-            <input
-                type="text"
-                id="capblora"
-                name="capblora"
-                value="{{ old('capblora', $data->capblora ?? '') }}"
-                class="form-control @error('capblora') is-invalid @enderror"
-                placeholder="/assets/cap/cap_blora.png"
-            >
-            @error('capblora')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+{{-- Upload Cap Blora --}}
+<div class="mb-3">
+    <label class="form-label" for="capblora">
+        <i class="bi bi-patch-check-fill" style="margin-right:8px;color:navy;"></i>
+        Upload Cap Blora (Max 15MB)
+    </label>
 
-            @if (!empty($data->capblora))
-                <div class="mt-2">
-                    <img src="{{ $data->capblora }}" alt="Cap Blora" style="height:80px;">
-                </div>
-            @endif
+    <input
+        type="file"
+        id="capblora"
+        name="capblora"
+        class="form-control @error('capblora') is-invalid @enderror"
+        accept="image/png, image/jpeg, image/jpg"
+    >
+
+    @error('capblora')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    {{-- Preview lama --}}
+    @if (!empty($data->capblora))
+        <div class="mt-2">
+            <small class="text-muted">Preview saat ini:</small><br>
+            <img src="{{ $data->capblora }}" alt="Cap Blora" style="height:80px;">
         </div>
+    @endif
+</div>
+
 
     </div>
 </div>
