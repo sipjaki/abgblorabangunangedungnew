@@ -1087,6 +1087,8 @@ public function valberkasusaha3(Request $request, $id)
         return abort(404, 'Data usaha tidak ditemukan');
     }
 
+        $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
     // Ambil data sub: krkusahasurat (relasi dari krkusaha)
     $datasurat = krkusahasurat::where('krkusaha_id', $datausaha->id)->paginate(50);
 
@@ -1099,6 +1101,7 @@ public function valberkasusaha3(Request $request, $id)
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
+        'tandatangan' => $tandatangan,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
 }

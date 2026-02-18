@@ -450,8 +450,8 @@ Route::put('/valberkasusaha2/{id}', [KrkController::class, 'valberkasusaha2'])->
 Route::put('/valberkasusaha3/{id}', [KrkController::class, 'valberkasusaha3'])->name('valberkasusaha3.update');
 Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
 
-Route::get('/permohonankrkusahafinal/{id}', [KrkController::class, 'permohonankrkusahafinal'])->name('permohonan.permohonankrkusahafinal');
-Route::get('/permohonankrkusahafinalmanual/{id}', [KrkController::class, 'permohonankrkusahafinalmanual'])->name('permohonankrkusahafinalmanual');
+Route::get('/permohonankrkusahafinal/{id}', [KrkController::class, 'permohonankrkusahafinal'])->middleware('auth', 'can:admindpupr')->name('permohonan.permohonankrkusahafinal');
+Route::get('/permohonankrkusahafinalmanual/{id}', [KrkController::class, 'permohonankrkusahafinalmanual'])->middleware('auth', 'can:admindpupr')->name('permohonankrkusahafinalmanual');
 
 Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])->middleware('auth')->name('krkusahanoterbit.create');
 Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
