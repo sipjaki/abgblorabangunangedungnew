@@ -470,25 +470,56 @@
         {{$subtanda->jabatan}}<br>
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
+<td style="text-align:center;">
+    @if (!empty($item->tandatangan))
+        <a href="{{ asset('uploads/ttd/'.$item->tandatangan) }}" target="_blank">
+            <img src="{{ asset('uploads/ttd/'.$item->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="height:60px;">
+        </a>
+    @else
+        <span class="text-muted">Belum ada</span>
+    @endif
+</td>
 
-<div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+<td style="text-align:center;">
+    @if (!empty($item->capblora))
+        <a href="{{ asset('uploads/ttd/'.$item->capblora) }}" target="_blank">
+            <img src="{{ asset('uploads/ttd/'.$item->capblora) }}"
+                 alt="Cap Blora"
+                 style="height:60px;">
+        </a>
+    @else
+        <span class="text-muted">Belum ada</span>
+    @endif
+</td>
+
+<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center;justify-content: center;">
 
     {{-- Cap / Stempel Blora --}}
     @if(!empty($data->capblora))
         <img src="{{ asset('uploads/ttd/'.$data->capblora) }}"
              alt="Cap Blora"
-             style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
+             style="
+                position: absolute;
+                height: 90px;
+                opacity: 0.85;
+                z-index: 1;
+             ">
     @endif
 
     {{-- Tanda Tangan --}}
     @if(!empty($data->tandatangan))
         <img src="{{ asset('uploads/ttd/'.$data->tandatangan) }}"
              alt="Tanda Tangan"
-             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+             style="
+                position: absolute;
+                height: 70px;
+                z-index: 2;
+             ">
     @endif
 
 </div>
-
         <br>
             <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
                 <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
