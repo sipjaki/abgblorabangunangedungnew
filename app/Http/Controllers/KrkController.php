@@ -81,7 +81,7 @@ public function permohonankrkusaha(Request $request)
             'perorangan' => 'required|string|max:255',
             'perusahaan' => 'nullable|string|max:255',
             'nik' => 'required|digits:16|numeric',
-            'koordinatlokasi' => 'required|string',
+            'koordinatlokasi' => 'nullable|string',
             'tanggalpermohonan' => 'required|date',
             'notelepon' => 'required|string|max:255',
             'luastanah' => 'required|numeric|max:1000000',
