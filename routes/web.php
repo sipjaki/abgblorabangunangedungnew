@@ -1023,7 +1023,13 @@ Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantekt
 
 
 // TANDA TANGAN KEPALA DINAS
-Route::get('/ttdkepaladinasblora', [DatabaseAbgController::class, 'ttdkepaladinasblora'])->middleware('auth')->name('ttdkepaladinasblora');
+Route::get('/ttdkepaladinasblora', [DatabaseAbgController::class, 'ttdkepaladinasblora'])->middleware(['auth', 'can:admindpupr'])->name('ttdkepaladinasblora');
+// Route::get('/ttdkepaladinasbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware(['auth', 'can:admindpupr'])->name('ttdkepaladinasblora.perbaikan');
+// Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
+
+Route::get('/ttdkepaladinasbloracreate', [DatabaseAbgController::class, 'ttdkepaladinasbloracreate'])->middleware('auth')->name('ttdkepaladinasbloracreate');
+// Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafasilitatorcreatenew'])->middleware('auth')->name('datafasilitatorcreatenew');
+
 
 // DATABASE ABG BLORA ---------------------------------------------
 Route::get('/datagsbblora', [DatabaseAbgController::class, 'datagsbblora'])->middleware('auth')->name('datagsbbloraindex');

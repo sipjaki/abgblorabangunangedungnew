@@ -912,5 +912,24 @@ public function beartikeldelete($id)
     ]);
 }
 
+
+// BUAT TANDA TANGAN KEPALA DINAS
+
+
+       public function ttdkepaladinasbloracreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.04_ttdkepaladinas.02_masukan', [
+        'title' => 'Tambah Pejabat',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
 }
 

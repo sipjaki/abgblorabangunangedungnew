@@ -90,56 +90,6 @@
 
 
 
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-
-  <!-- Bagian kiri: dropdown entries + search -->
-  <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-
-    <!-- Dropdown Entries -->
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
-      <select id="entries" onchange="updateEntries()"
-        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="75">75</option>
-        <option value="100">100</option>
-        <option value="150">150</option>
-        <option value="200">200</option>
-        <option value="500">500</option>
-        <option value="1000">1000</option>
-        <option value="2000">2000</option>
-      </select>
-    </div>
-
-    <!-- Search Box -->
-    <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari GSB Kab Blora ...." onkeyup="searchTable()"
-        style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="bi bi-search"
-         style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
-      </i>
-    </div>
-
-  </div>
-
-  <!-- Bagian kanan: tombol download dan create -->
-  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_GSBKabupatenBlora')"
-      class="button-berkas"
-      >
-      <i class="bi bi-download"></i> Download Excel
-    </button>
-
-
-    {{-- <a href="/datajenispermohonancreate" style="text-decoration: none;">
-      <button class="button-baru"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-plus-circle"></i> Create
-      </button>
-    </a> --}}
-
-  </div>
 
 </div>
 
@@ -219,18 +169,20 @@
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
-                {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
+
+                {{-- BUAT DATA AWAL DULU --}}
+                <a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
-                </a> --}}
-                                        <a href="/datagsbbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
+                </a>
+                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
+                                        {{-- <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
                                         <i class="bi bi-trash"></i>
-                                    </a>
+                                    </a> --}}
                                 </td>
 
                                 @endcan
