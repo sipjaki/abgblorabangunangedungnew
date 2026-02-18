@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -85,20 +85,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                                        <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -351,8 +339,8 @@
 </div>
 
 <div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="ktp">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="ktp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload KTP (PDF)
     </label>
     <input type="file" id="ktp" name="ktp" accept="application/pdf"
@@ -372,8 +360,8 @@
 </div>
 
 
-<div class="mb-3">
-    <label class="form-label" for="npwp">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="npwp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload NPWP (PDF)
     </label>
     <input type="file" id="npwp" name="npwp" accept="application/pdf"
@@ -397,8 +385,8 @@
 
 <div class="col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="sertifikattanah">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="sertifikattanah">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Sertifikat Tanah (PDF)
     </label>
     <input type="file" id="sertifikattanah" name="sertifikattanah" accept="application/pdf"
@@ -417,8 +405,8 @@
     </div>
 </div>
 
-<div class="mb-3">
-    <label class="form-label" for="lampiranoss">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="lampiranoss">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Lampiran OSS (PDF)
     </label>
     <input type="file" id="lampiranoss" name="lampiranoss" accept="application/pdf"
@@ -439,8 +427,8 @@
 
 </div>
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="buktipbb">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="buktipbb">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti PBB (PDF)
         </label>
         <input type="file" id="buktipbb" name="buktipbb" accept="application/pdf"
@@ -458,8 +446,8 @@
             Data belum di update. Silahkan upload berkas Bukti PBB.
         </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label" for="dokvalidasi">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="dokvalidasi">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Validasi (PDF)
         </label>
         <input type="file" id="dokvalidasi" name="dokvalidasi" accept="application/pdf"
@@ -481,8 +469,8 @@
 </div>
 <div class="col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="siteplan">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="siteplan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
     </label>
     <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
@@ -500,8 +488,8 @@
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
-<div class="mb-3">
-    <label class="form-label" for="tandatangan">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"

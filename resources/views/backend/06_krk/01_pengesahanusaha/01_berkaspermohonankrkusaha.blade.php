@@ -794,7 +794,7 @@
 
 <td style="text-align: center; font-size:16px;">
 <button class="button-baru">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang atau PKKPR
+    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
 </button>
 </td>
 
