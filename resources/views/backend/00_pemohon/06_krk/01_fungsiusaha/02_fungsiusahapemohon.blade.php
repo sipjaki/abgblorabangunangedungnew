@@ -15,7 +15,7 @@
 
 
    <!--begin::App Main-->
-   <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
+   <main class="app-main" style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -134,13 +134,13 @@
         <i class="bi bi-person"></i> Pemohon
     </th>
 
-    <th style="width:180px;">
+    {{-- <th style="width:180px;">
         <i class="bi bi-buildings"></i> Perusahaan
-    </th>
+    </th> --}}
 
-    <th style="width:160px;">
+    {{-- <th style="width:160px;">
         <i class="bi bi-geo-alt"></i> Koordinat
-    </th>
+    </th> --}}
 
     <th style="width:140px;">
         <i class="bi bi-person-vcard"></i> NIK
@@ -164,8 +164,8 @@
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
                                     <td style="text-align: left;">{{$item->perorangan}}</td>
-                                    <td style="text-align: left;">{{$item->perusahaan}}</td>
-                                    <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
+                                    {{-- <td style="text-align: left;">{{$item->perusahaan}}</td>
+                                    <td style="text-align: center;">{{$item->koordinatlokasi}}</td> --}}
                                     <td style="text-align: center;">{{$item->nik}}</td>
                                     <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
