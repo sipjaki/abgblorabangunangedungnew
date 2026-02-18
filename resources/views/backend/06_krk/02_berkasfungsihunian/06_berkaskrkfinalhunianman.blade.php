@@ -492,7 +492,7 @@
                     {{$subtanda->namalengkap}}
                 </span>
                 <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-                    {{$subtanda->nip}}
+                    NIP. {{$subtanda->nip}}
                     {{-- NIP. 19720326 200604 1 005 --}}
                 </span>
         </div>
