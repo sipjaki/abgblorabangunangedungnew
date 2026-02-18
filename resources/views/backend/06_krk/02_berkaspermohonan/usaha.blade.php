@@ -157,7 +157,7 @@
 </a>
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-baru" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
 <i class="bi bi-arrow-left" style="margin-right: 8px; color: navy;"></i> Kembali
     </button>
@@ -176,8 +176,8 @@
 <th><i class="bi bi-person-fill"></i> Pemohon</th>
 <th><i class="bi bi-building"></i> Perusahaan/Instansi</th>
 <th><i class="bi bi-calendar-event"></i> Tanggal Permohonan</th>
-<th><i class="bi bi-telephone-fill"></i> Whatsapp</th>
-<th><i class="bi bi-bounding-box"></i> Luas Tanah</th>
+{{-- <th><i class="bi bi-telephone-fill"></i> Whatsapp</th>
+<th><i class="bi bi-bounding-box"></i> Luas Tanah</th> --}}
 {{-- <th><i class="bi bi-geo-alt-fill"></i> Lokasi Bangunan</th> --}}
 
 <th><i class="bi bi-eye-fill"></i> Lihat Permohonan</th>
@@ -212,10 +212,10 @@
                                     <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
                                     </td>
-                                    <td style="text-align: left;">{{$item->notelepon}}</td>
+                                    {{-- <td style="text-align: left;">{{$item->notelepon}}</td>
                                     <td style="text-align: center;">
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
-                                    </td>
+                                    </td> --}}
                                     {{-- <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
                                     <td style="text-align: center;">{{$item->rt}}</td>
                                     <td style="text-align: center;">{{$item->rw}}</td>
@@ -230,7 +230,7 @@
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
@@ -257,7 +257,7 @@
     @else
         <button
             type="button"
-            class="button-baru"
+            class="button-modern"
             onclick="openModal({{ $item->id }})"
         >
             <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
@@ -330,7 +330,7 @@
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -358,7 +358,7 @@
   @else
     <button
         type="button"
-        class="button-baru"
+        class="button-modern"
         onclick="openModalVerifikasi2({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Verifikasi
@@ -658,7 +658,7 @@
   @else
     <button
         type="button"
-        class="button-baru"
+        class="button-modern"
         onclick="openModal3({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
@@ -759,7 +759,7 @@
 @endif
 
                 <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
                 </a>
@@ -791,7 +791,7 @@
   @else
     <button
         type="button"
-        class="button-baru"
+        class="button-modern"
         onclick="openModal4({{ $item->id }})"
     >
         <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi

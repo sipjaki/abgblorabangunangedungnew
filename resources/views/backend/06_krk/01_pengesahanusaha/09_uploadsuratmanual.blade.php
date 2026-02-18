@@ -1,4 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $title ?? 'Document' }}</title>
 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .zebra-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .zebra-table th {
+            background-color: #ADD8E6;
+            color: black;
+            text-align: center;
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            white-space: nowrap;
+        }
+
+        .zebra-table td {
+            text-align: center;
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            white-space: nowrap;
+        }
+
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #ffd100 !important;
+        }
+
+        th {
+            background-color: #ADD8E6;
+        }
+
+        /* Button Styles */
+        .button-baru {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .button-baru:hover {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            transform: translateY(-2px);
+        }
+
+        .button-baru i {
+            margin-right: 8px;
+        }
+
+        /* Modal Styles */
+        #confirmModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 24px 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Form Styles */
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .invalid-feedback {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* Preview Container */
+        #previewContainer {
+            margin-top: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        #previewIframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .section-header h5 {
+            color: #0d6efd;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .hr-custom {
+            border-top: 2px dashed #0d6efd;
+            width: 60%;
+            margin: auto;
+        }
+    </style>
+</head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!-- Header Includes -->
     @include('backend.00_administrator.00_baganterpisah.01_header')
@@ -235,3 +384,4 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
