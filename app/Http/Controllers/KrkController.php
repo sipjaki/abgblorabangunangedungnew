@@ -1588,12 +1588,15 @@ public function permohonankrkhunianfinalman($id)
 
     // Ambil data GSB Kabupaten Blora
     $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+        $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
 
     // Return ke view
     return view('backend.06_krk.02_berkasfungsihunian.06_berkaskrkfinalhunianman', [
         'title' => 'Berkas Final Permohonan KRK Fungsi Hunian',
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
+        'tandatangan' => $tandatangan,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
