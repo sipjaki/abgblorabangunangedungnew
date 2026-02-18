@@ -1024,11 +1024,11 @@ public function destroykrkusahasurat($id)
     if ($data) {
         $data->delete();
 
-        return redirect()->back()
+        return redirect(url()->previous())
             ->with('delete', 'Data berhasil dihapus.');
     }
 
-    return redirect()->back()
+    return redirect(url()->previous())
         ->with('error', 'Data tidak ditemukan.');
 }
 
