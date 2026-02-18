@@ -140,130 +140,80 @@
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
-<div class="row">
-    <div class="col-md-6">
+      <div class="row">
 
-        {{-- Nama Lengkap --}}
+    {{-- BARIS 1 --}}
+    <div class="col-md-4">
         <div class="form-modern mb-3">
-            <label class="form-label-modern">
-                <i class="bi bi-person-badge" style="margin-right:8px; color:navy;"></i>
-                Nama Lengkap
-            </label>
-            <input
-                type="text"
-                name="namalengkap"
+            <label class="form-label-modern">Nama Lengkap</label>
+            <input type="text" name="namalengkap"
                 value="{{ old('namalengkap', $data->namalengkap ?? '') }}"
-                class="form-control @error('namalengkap') is-invalid @enderror"
-                placeholder="Masukkan nama lengkap"
-            >
-            @error('namalengkap')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+                class="form-control">
         </div>
-
-        {{-- Jabatan --}}
-        <div class="form-modern mb-3">
-            <label class="form-label-modern">
-                <i class="bi bi-briefcase" style="margin-right:8px; color:navy;"></i>
-                Jabatan
-            </label>
-            <input
-                type="text"
-                name="jabatan"
-                value="{{ old('jabatan', $data->jabatan ?? '') }}"
-                class="form-control @error('jabatan') is-invalid @enderror"
-                placeholder="Masukkan jabatan"
-            >
-            @error('jabatan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        {{-- NIP --}}
-        <div class="form-modern mb-3">
-            <label class="form-label-modern">
-                <i class="bi bi-credit-card-2-front" style="margin-right:8px; color:navy;"></i>
-                NIP
-            </label>
-            <input
-                type="text"
-                name="nip"
-                value="{{ old('nip', $data->nip ?? '') }}"
-                class="form-control @error('nip') is-invalid @enderror"
-                placeholder="Masukkan NIP (opsional)"
-            >
-            @error('nip')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        {{-- Tanda Tangan --}}
-        <div class="form-modern mb-3">
-            <label class="form-label-modern">
-                <i class="bi bi-pen" style="margin-right:8px; color:navy;"></i>
-                Tanda Tangan
-            </label>
-
-            <input
-                type="file"
-                name="tandatangan"
-                class="form-control"
-                accept="image/*"
-                onchange="previewImage(this, 'preview_ttd')"
-            >
-
-            <div class="mt-2">
-                <img
-                    id="preview_ttd"
-                    src="{{ $data->tandatangan ? asset('storage/'.$data->tandatangan) : '' }}"
-                    style="max-height:120px; {{ $data->tandatangan ? '' : 'display:none;' }}"
-                    class="border rounded p-1"
-                >
-            </div>
-        </div>
-
-        {{-- Cap / Stempel --}}
-        <div class="form-modern mb-3">
-            <label class="form-label-modern">
-                <i class="bi bi-patch-check" style="margin-right:8px; color:navy;"></i>
-                Cap / Stempel
-            </label>
-
-            <input
-                type="file"
-                name="capblora"
-                class="form-control"
-                accept="image/*"
-                onchange="previewImage(this, 'preview_cap')"
-            >
-
-            <div class="mt-2">
-                <img
-                    id="preview_cap"
-                    src="{{ $data->capblora ? asset('storage/'.$data->capblora) : '' }}"
-                    style="max-height:120px; {{ $data->capblora ? '' : 'display:none;' }}"
-                    class="border rounded p-1"
-                >
-            </div>
-        </div>
-
     </div>
+
+    <div class="col-md-4">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">Jabatan</label>
+            <input type="text" name="jabatan"
+                value="{{ old('jabatan', $data->jabatan ?? '') }}"
+                class="form-control">
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">NIP</label>
+            <input type="text" name="nip"
+                value="{{ old('nip', $data->nip ?? '') }}"
+                class="form-control">
+        </div>
+    </div>
+
 </div>
 
-<script>
-function previewImage(input, previewId) {
-    const preview = document.getElementById(previewId);
+<div class="row">
 
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-            preview.style.display = 'block';
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-</script>
+    {{-- BARIS 2 --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">Tanda Tangan</label>
+
+            <input type="file" name="tandatangan"
+                class="form-control"
+                accept="image/*"
+                onchange="previewImage(this, 'preview_ttd')">
+
+            <div class="mt-2 text-center">
+                <img
+                    id="preview_ttd"
+                    src="{{ isset($data) && $data->tandatangan ? asset('storage/'.$data->tandatangan) : '' }}"
+                    style="max-height:130px; {{ empty($data->tandatangan) ? 'display:none;' : '' }}"
+                    class="img-thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">Cap / Stempel</label>
+
+            <input type="file" name="capblora"
+                class="form-control"
+                accept="image/*"
+                onchange="previewImage(this, 'preview_cap')">
+
+            <div class="mt-2 text-center">
+                <img
+                    id="preview_cap"
+                    src="{{ isset($data) && $data->capblora ? asset('storage/'.$data->capblora) : '' }}"
+                    style="max-height:130px; {{ empty($data->capblora) ? 'display:none;' : '' }}"
+                    class="img-thumbnail">
+            </div>
+        </div>
+    </div>
+
+</div>
                   <!-- End row -->
                             </div>
                             <!-- end::Body -->
