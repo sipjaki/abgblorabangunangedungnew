@@ -21,6 +21,7 @@ use App\Models\krkusahacek;
 use App\Models\krkusahasurat;
 use App\Models\krkusahasuratpemohon;
 use App\Models\rencanagsbblora;
+use App\Models\ttdkepaladinas;
 use Illuminate\Support\Facades\Auth;
 
 class KrkController extends Controller
@@ -1017,10 +1018,10 @@ public function destroykrkusahasurat($id)
     if ($data) {
         $data->delete();
         // Redirect dengan flash message sukses
-        return redirect()->route('krkusaha.index')->with('delete', 'Data berhasil dihapus.');
+        return redirect()->route('bekrkhunianindex')->with('delete', 'Data berhasil dihapus.');
     } else {
         // Redirect dengan flash message error
-        return redirect()->route('krkusaha.index')->with('error', 'Data tidak ditemukan.');
+        return redirect()->route('bekrkhunianindex')->with('error', 'Data tidak ditemukan.');
     }
 }
 
@@ -1558,12 +1559,16 @@ public function valberkashunian3(Request $request, $id)
     // Ambil data GSB Kabupaten Blora
     $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
 
+    $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
+
     // Return ke view
     return view('backend.06_krk.02_berkasfungsihunian.06_berkaskrkfinalhunian', [
         'title' => 'Berkas Final Permohonan KRK Fungsi Hunian',
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
+        'tandatangan' => $tandatangan,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
 }

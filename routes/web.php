@@ -351,7 +351,7 @@ Route::post('/berkasusaha/{id}/validate', [KrkController::class, 'validateBerkas
 Route::get('/permohonanpengesahanusaha/{id}', [KrkController::class, 'permohonanpengesahanusaha'])->middleware('auth', 'can:admindpupr')->name('permohonan.pengesahanusaha');
 Route::post('/permohonanpengesahanusahacreate/{id}', [KrkController::class, 'permohonanpengesahanusahacreate'])->name('permohonan.pengesahanusahacreate');
 Route::get('/permohonanpengesahanusahaber/{id}', [KrkController::class, 'permohonanpengesahanusahaber'])->name('permohonan.permohonanpengesahanusahaber');
-Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusahasurat'])->name('krkusahasurat.destroy');
+Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusahasurat'])->middleware('auth', 'can:admindpupr')->name('krkusahasurat.destroy');
 
 Route::get('/perusahamanual/{id}', [KrkController::class, 'perusahamanual'])->middleware('auth', 'can:admindpupr')->name('perusahamanual'); // SUPER ADMIN DAN ADMIN
 
