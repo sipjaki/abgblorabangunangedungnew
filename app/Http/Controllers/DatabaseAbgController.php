@@ -900,9 +900,8 @@ public function beartikeldelete($id)
    public function ttdkepaladinasblora(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 10);
 
-    $data = ttdkepaladinas::latest();
+    $data = ttdkepaladinas::all();
 
     return view('backend.99_databaseabg.04_ttdkepaladinas.01_ttdkepaladinas', [
         'title' => 'Tanda Tangan Kepala Dinas Kabupaten Blora',
