@@ -343,3 +343,55 @@ public function bebantekpembongkaraninformasipemiliknew(Request $request)
 
 // no 11
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
+
+
+
+
+        <div class="form-group row mb-4">
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+    </label>
+
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text"
+                   class="form-control @error('luasbangunan') is-invalid @enderror"
+                   id="luasbangunan"
+                   name="luasbangunan"
+                   value="{{ old('luasbangunan', isset($data->luasbangunan) ? number_format($data->luasbangunan / 100, 2, '.', '') : '') }}"
+                   placeholder="Contoh: 65.45"
+                   oninput="this.value = this.value.replace(',', '.')">
+
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+
+        <small class="text-muted">
+            Gunakan tanda koma (,) atau titik (.) untuk desimal
+        </small>
+
+        @error('luasbangunan')
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+</div>
+
+
+
+if ($request->filled('luasbangunan')) {
+
+    // ubah koma jadi titik
+    $luasbangunan = str_replace(',', '.', $request->luasbangunan);
+
+    // kalikan 100 supaya bisa disimpan di integer
+    $request->merge([
+        'luasbangunan' => (int) round($luasbangunan * 100)
+    ]);
+
+}
+
+
+        'luasbangunan' => ['required','regex:/^\d+([.,]\d{1,2})?$/'],

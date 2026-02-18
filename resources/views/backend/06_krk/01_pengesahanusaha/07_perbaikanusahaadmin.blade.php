@@ -218,7 +218,7 @@
     <div class="form-modern col-md-6">
         <div class="mb-3">
             <label class="form-label-modern" for="tanggalpermohonan">
-                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
+                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal KRK di Buat
             </label>
             <input type="date" id="tanggalpermohonan" name="tanggalpermohonan" value="{{ old('tanggalpermohonan', $data->tanggalpermohonan ?? '') }}" class="form-control @error('tanggalpermohonan') is-invalid @enderror">
             @error('tanggalpermohonan')

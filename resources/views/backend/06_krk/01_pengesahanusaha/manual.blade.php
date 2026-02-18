@@ -235,7 +235,7 @@
 </div>
 
                 <!-- Luas Bangunan Maksimal -->
-<div class="form-group row mb-4">
+        <div class="form-group row mb-4">
     <label for="luasbangunan" class="col-md-4 col-form-label">
         <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
     </label>
@@ -246,8 +246,8 @@
                    class="form-control @error('luasbangunan') is-invalid @enderror"
                    id="luasbangunan"
                    name="luasbangunan"
-                   value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
-                   placeholder="Contoh: 20,21 atau 20.21"
+                   value="{{ old('luasbangunan', isset($data->luasbangunan) ? number_format($data->luasbangunan / 100, 2, '.', '') : '') }}"
+                   placeholder="Contoh: 65.45"
                    oninput="this.value = this.value.replace(',', '.')">
 
             <div class="input-group-append">
@@ -266,6 +266,7 @@
         @enderror
     </div>
 </div>
+
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="fungsibangunan" class="col-md-4 col-form-label">

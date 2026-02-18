@@ -489,11 +489,17 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
     // KONVERSI ANGKA KOMA → TITIK
     // (WAJIB sebelum validasi)
     // ==============================
-    if ($request->has('luasbangunan')) {
-        $request->merge([
-            'luasbangunan' => str_replace(',', '.', $request->luasbangunan),
-        ]);
-    }
+if ($request->filled('luasbangunan')) {
+
+    // ubah koma jadi titik
+    $luasbangunan = str_replace(',', '.', $request->luasbangunan);
+
+    // kalikan 100 supaya bisa disimpan di integer
+    $request->merge([
+        'luasbangunan' => (int) round($luasbangunan * 100)
+    ]);
+
+}
 
     // ==============================
     // VALIDASI
@@ -503,7 +509,8 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'tanggalpermohonan' => 'required|date',
         'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
         'luaslantaimaksimal' => 'required|string',
-        'luasbangunan' => 'required|numeric|min:0',
+        // 'luasbangunan' => 'required|numeric|min:0',
+        'luasbangunan' => ['required','regex:/^\d+([.,]\d{1,2})?$/'],
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',
         'rencanagsbblora_id' => 'required|integer',
