@@ -140,62 +140,130 @@
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
-      <div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="ruasjalan">
-            <i class="bi bi-signpost-split" style="margin-right: 8px; color: navy;"></i> Ruas Jalan
-        </label>
-        <input
-            type="text"
-            id="ruasjalan"
-            name="ruasjalan"
-            value="{{ old('ruasjalan', $data->ruasjalan ?? '') }}"
-            class="form-control @error('ruasjalan') is-invalid @enderror"
-            placeholder="Masukkan nama ruas jalan"
-        />
-        @error('ruasjalan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+<div class="row">
+    <div class="col-md-6">
 
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="jenisjalan">
-            <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Jalan
-        </label>
-        <input
-            type="text"
-            id="jenisjalan"
-            name="jenisjalan"
-            value="{{ old('jenisjalan', $data->jenisjalan ?? '') }}"
-            class="form-control @error('jenisjalan') is-invalid @enderror"
-            placeholder="Masukkan jenis jalan"
-        />
-        @error('jenisjalan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+        {{-- Nama Lengkap --}}
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">
+                <i class="bi bi-person-badge" style="margin-right:8px; color:navy;"></i>
+                Nama Lengkap
+            </label>
+            <input
+                type="text"
+                name="namalengkap"
+                value="{{ old('namalengkap', $data->namalengkap ?? '') }}"
+                class="form-control @error('namalengkap') is-invalid @enderror"
+                placeholder="Masukkan nama lengkap"
+            >
+            @error('namalengkap')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="gsb">
-            <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i> Garis Sempadan Bangunan (m)
-        </label>
-        <input
-            type="number"
-            step="0.01"
-            id="gsb"
-            name="gsb"
-            value="{{ old('gsb', $data->gsb ?? '') }}"
-            class="form-control @error('gsb') is-invalid @enderror"
-            placeholder="Masukkan GSB dalam meter"
-        />
-        @error('gsb')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        {{-- Jabatan --}}
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">
+                <i class="bi bi-briefcase" style="margin-right:8px; color:navy;"></i>
+                Jabatan
+            </label>
+            <input
+                type="text"
+                name="jabatan"
+                value="{{ old('jabatan', $data->jabatan ?? '') }}"
+                class="form-control @error('jabatan') is-invalid @enderror"
+                placeholder="Masukkan jabatan"
+            >
+            @error('jabatan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- NIP --}}
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">
+                <i class="bi bi-credit-card-2-front" style="margin-right:8px; color:navy;"></i>
+                NIP
+            </label>
+            <input
+                type="text"
+                name="nip"
+                value="{{ old('nip', $data->nip ?? '') }}"
+                class="form-control @error('nip') is-invalid @enderror"
+                placeholder="Masukkan NIP (opsional)"
+            >
+            @error('nip')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Tanda Tangan --}}
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">
+                <i class="bi bi-pen" style="margin-right:8px; color:navy;"></i>
+                Tanda Tangan
+            </label>
+
+            <input
+                type="file"
+                name="tandatangan"
+                class="form-control"
+                accept="image/*"
+                onchange="previewImage(this, 'preview_ttd')"
+            >
+
+            <div class="mt-2">
+                <img
+                    id="preview_ttd"
+                    src="{{ $data->tandatangan ? asset('storage/'.$data->tandatangan) : '' }}"
+                    style="max-height:120px; {{ $data->tandatangan ? '' : 'display:none;' }}"
+                    class="border rounded p-1"
+                >
+            </div>
+        </div>
+
+        {{-- Cap / Stempel --}}
+        <div class="form-modern mb-3">
+            <label class="form-label-modern">
+                <i class="bi bi-patch-check" style="margin-right:8px; color:navy;"></i>
+                Cap / Stempel
+            </label>
+
+            <input
+                type="file"
+                name="capblora"
+                class="form-control"
+                accept="image/*"
+                onchange="previewImage(this, 'preview_cap')"
+            >
+
+            <div class="mt-2">
+                <img
+                    id="preview_cap"
+                    src="{{ $data->capblora ? asset('storage/'.$data->capblora) : '' }}"
+                    style="max-height:120px; {{ $data->capblora ? '' : 'display:none;' }}"
+                    class="border rounded p-1"
+                >
+            </div>
+        </div>
+
     </div>
 </div>
-</div>
 
+<script>
+function previewImage(input, previewId) {
+    const preview = document.getElementById(previewId);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
                   <!-- End row -->
                             </div>
                             <!-- end::Body -->
