@@ -384,10 +384,10 @@ Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrk
 // MENU 06 KRK BANGUNAN GEDUNG
 
 // AKUN PEMOHON KRK KETERANGAN RENCANA KOTA
-Route::get('/bekrkusahapemohon', [KrkController::class, 'bekrkusahapemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrkusahapemohon.indexpemohon');
+Route::get('/bekrkusahapemohon', [KrkController::class, 'bekrkusahapemohon'])->middleware('auth', 'can:dinas-atau-pemohon')->name('bekrkusahapemohon.indexpemohon');
 Route::get('/bekrkhunianpemohon', [KrkController::class, 'bekrkhunianpemohon'])->middleware('auth', 'can:dinas-atau-pemohon')->name('bekrkhunianpemohon.indexpemohon');
-Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrkkeagamaanpemohon.indexpemohon');
-Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->middleware('auth', 'can:admin-atau-pemohon')->name('bekrksosbud.indexpemohon');
+Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->middleware('auth', 'can:dinas-atau-pemohon')->name('bekrkkeagamaanpemohon.indexpemohon');
+Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->middleware('auth', 'can:dinas-atau-pemohon')->name('bekrksosbud.indexpemohon');
 
 // SARIGIT
 Route::get('/bekrkmenaratelkom', [KrkController::class, 'bekrkmenaratelkom'])->name('bekrkmenaratelkom');
