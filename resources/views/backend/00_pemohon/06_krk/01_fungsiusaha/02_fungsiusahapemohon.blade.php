@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -61,15 +15,7 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main"
-      style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  "
->
+   <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -151,7 +97,7 @@ th {
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -179,9 +125,9 @@ th {
 
 
                      <a href="/pemohonkrk" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
@@ -191,30 +137,30 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
+                        <table class="zebra-table">
                             <thead>
 <tr>
     <th style="background-color: #ADD8E6; width: 50px; text-align: center;">No</th>
     <th style="background-color: #ADD8E6; width: 180px;">
-        <i class="fas fa-user"></i> Pemohon
+        <i class="bi bi-user"></i> Pemohon
     </th>
     <th style="background-color: #ADD8E6; width: 180px;">
-        <i class="fas fa-building"></i> Perusahaan
+        <i class="bi bi-building"></i> Perusahaan
     </th>
     <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="fas fa-map-marker-alt"></i> Koordinat
+        <i class="bi bi-map-marker-alt"></i> Koordinat
     </th>
     <th style="background-color: #ADD8E6; width: 140px;">
-        <i class="fas fa-id-card"></i> NIK
+        <i class="bi bi-id-card"></i> NIK
     </th>
     <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="fas fa-calendar-alt"></i> Tanggal Permohonan
+        <i class="bi bi-calendar-alt"></i> Tanggal Permohonan
     </th>
     <th style="background-color: #ADD8E6; width: 140px;">
-        <i class="fas fa-building"></i> Lihat Permohonan
+        <i class="bi bi-building"></i> Lihat Permohonan
     </th>
     <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="fas fa-database" style="margin-right: 6px;"></i> Dokumen KRK
+        <i class="bi bi-database" style="margin-right: 6px;"></i> Dokumen KRK
     </th>
 </tr>
 
@@ -249,31 +195,9 @@ th {
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
                     class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
-                                    <style>
-                                        .btn-secondary {
-                                            background-color: #6c757d;
-                                            color: white;
-                                            border-radius: 15px;
-                                            padding: 8px 16px;
-                                            border: none;
-                                        }
-
-                                        .btn-secondary:hover {
-                                            background-color: white;
-                                            color: black;
-                                            border: 1px solid #6c757d; /* Optional: border on hover */
-                                        }
-
-                                        .btn-secondary i {
-                                            margin-right: 5px; /* Adjust the spacing between the icon and text */
-                                        }
-                                    </style>
-
-<!-- Tombol KTP -->
-
 
 
 
