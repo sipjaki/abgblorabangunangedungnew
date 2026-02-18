@@ -174,24 +174,48 @@
 >
                             <thead>
                                   <tr>
-     <th >No</th>
-{{-- <th ><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th ><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th ><i class="bi bi-signpost-split"></i> Ruas Jalan</th>
-<th ><i class="bi bi-diagram-3"></i> Jenis Jalan</th>
-<th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th>
-<th style="text-align: center;" ><i class="bi bi-tools"></i> Aksi</th>
-
-    </tr>
+    <th>No</th>
+    <th><i class="bi bi-person-badge"></i> Nama Lengkap</th>
+    <th><i class="bi bi-briefcase"></i> Jabatan</th>
+    <th><i class="bi bi-credit-card-2-front"></i> NIP</th>
+    <th style="text-align:center;"><i class="bi bi-pencil"></i> Tanda Tangan</th>
+    <th style="text-align:center;"><i class="bi bi-patch-check"></i> Cap Blora</th>
+    <th style="text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
+</tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+                                @forelse ($data as $item )
 
                                 <tr class="align-middle">
-                                 <td>{{ $loop->iteration }}</td>
-<td style="text-align: left;">{{ $item->ruasjalan ?? '-' }}</td>
-<td>{{ $item->jenisjalan ?? '-' }}</td>
-<td>{{ $item->gsb ?? '-' }} Meter </td>
+                                <td>{{ $data->firstItem() + $index }}</td>
+    <td>{{ $item->namalengkap }}</td>
+    <td>{{ $item->jabatan }}</td>
+    <td>{{ $item->nip ?? '-' }}</td>
+
+    <td style="text-align:center;">
+        @if ($item->tandatangan)
+            <a href="{{ $item->tandatangan }}" target="_blank">
+                <img src="{{ $item->tandatangan }}"
+                     alt="Tanda Tangan"
+                     style="height:60px;">
+            </a>
+        @else
+            <span class="text-muted">Belum ada</span>
+        @endif
+    </td>
+
+    <td style="text-align:center;">
+        @if ($item->capblora)
+            <a href="{{ $item->capblora }}" target="_blank">
+                <img src="{{ $item->capblora }}"
+                     alt="Cap Blora"
+                     style="height:60px;">
+            </a>
+        @else
+            <span class="text-muted">Belum ada</span>
+        @endif
+    </td>
+
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
@@ -212,7 +236,41 @@
                                 @endcan
 
                                 </tr>
-                                @endforeach
+
+        @empty
+    <tr>
+    <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+
                             </tbody>
                         </table>
 
