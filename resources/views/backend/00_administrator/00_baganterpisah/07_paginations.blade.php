@@ -39,11 +39,8 @@
                       color: {{ $data->onFirstPage() ? '#94a3b8' : '#2563eb' }};
                       padding: 8px 16px; border-radius: 10px; text-decoration: none;
                       display: flex; align-items: center; gap: 6px;
-                      transition: all 0.2s ease; border: 1px solid {{ $data->onFirstPage() ? '#e2e8f0' : '#e2e8f0' }};
-                      font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                      {{ $data->onFirstPage() ? '' : 'hover:background-color: #f8fafc; hover:border-color: #2563eb;' }}"
-               onmouseover="this.style.backgroundColor='{{ $data->onFirstPage() ? '#f1f5f9' : '#f8fafc' }}'; this.style.borderColor='{{ $data->onFirstPage() ? '#e2e8f0' : '#2563eb' }}';"
-               onmouseout="this.style.backgroundColor='{{ $data->onFirstPage() ? '#f1f5f9' : 'white' }}'; this.style.borderColor='#e2e8f0';">
+                      transition: all 0.2s ease; border: 1px solid #e2e8f0;
+                      font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
                     <path d="M15 19l-7-7 7-7"/>
@@ -58,9 +55,7 @@
                 <a class="custom-page-link" href="{{ $paginator->url(1) }}"
                    style="background-color: white; color: #334155; padding: 8px 14px; border-radius: 10px; text-decoration: none;
                           border: 1px solid #e2e8f0; transition: all 0.2s ease; font-weight: 500;
-                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);"
-                   onmouseover="this.style.backgroundColor='#eff6ff'; this.style.borderColor='#2563eb'; this.style.color='#2563eb';"
-                   onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#e2e8f0'; this.style.color='#334155';">
+                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     1
                 </a>
             </li>
@@ -81,13 +76,7 @@
                           padding: 8px 14px; border-radius: 10px; text-decoration: none;
                           border: 1px solid {{ $page == $current ? '#2563eb' : '#e2e8f0' }};
                           transition: all 0.2s ease; font-weight: {{ $page == $current ? '600' : '500' }};
-                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);"
-                   onmouseover="this.style.backgroundColor='{{ $page == $current ? '#2563eb' : '#eff6ff' }}';
-                                this.style.borderColor='#2563eb';
-                                {{ $page != $current ? 'this.style.color='#2563eb';' : '' }}"
-                   onmouseout="this.style.backgroundColor='{{ $page == $current ? '#2563eb' : 'white' }}';
-                              this.style.borderColor='{{ $page == $current ? '#2563eb' : '#e2e8f0' }}';
-                              {{ $page != $current ? 'this.style.color='#334155';' : '' }}">
+                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     {{ $page }}
                 </a>
             </li>
@@ -104,9 +93,7 @@
                 <a class="custom-page-link" href="{{ $paginator->url($last) }}"
                    style="background-color: white; color: #334155; padding: 8px 14px; border-radius: 10px; text-decoration: none;
                           border: 1px solid #e2e8f0; transition: all 0.2s ease; font-weight: 500;
-                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);"
-                   onmouseover="this.style.backgroundColor='#eff6ff'; this.style.borderColor='#2563eb'; this.style.color='#2563eb';"
-                   onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#e2e8f0'; this.style.color='#334155';">
+                          box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     {{ $last }}
                 </a>
             </li>
@@ -119,10 +106,8 @@
                       color: {{ !$data->hasMorePages() ? '#94a3b8' : '#2563eb' }};
                       padding: 8px 16px; border-radius: 10px; text-decoration: none;
                       display: flex; align-items: center; gap: 6px;
-                      transition: all 0.2s ease; border: 1px solid {{ !$data->hasMorePages() ? '#e2e8f0' : '#e2e8f0' }};
-                      font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02);"
-               onmouseover="this.style.backgroundColor='{{ !$data->hasMorePages() ? '#f1f5f9' : '#f8fafc' }}'; this.style.borderColor='{{ !$data->hasMorePages() ? '#e2e8f0' : '#2563eb' }}';"
-               onmouseout="this.style.backgroundColor='{{ !$data->hasMorePages() ? '#f1f5f9' : 'white' }}'; this.style.borderColor='#e2e8f0';">
+                      transition: all 0.2s ease; border: 1px solid #e2e8f0;
+                      font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                 Next
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
@@ -132,3 +117,27 @@
         </li>
     </ul>
 </div>
+
+<style>
+/* Hover effects untuk pagination */
+.custom-page-link:hover {
+    background-color: #eff6ff !important;
+    border-color: #2563eb !important;
+    color: #2563eb !important;
+}
+
+/* Kecuali untuk tombol active */
+.custom-page-item.active .custom-page-link:hover {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: white !important;
+}
+
+/* Kecuali untuk tombol disabled */
+.custom-page-item.disabled .custom-page-link:hover {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    cursor: not-allowed;
+}
+</style>
