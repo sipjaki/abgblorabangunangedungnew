@@ -471,23 +471,24 @@
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+<div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
 
     {{-- Cap / Stempel Blora --}}
     @if(!empty($data->capblora))
-        <img src="{{ asset('uploads/ttd/' . $data->capblora) }}"
+        <img src="{{ asset('uploads/ttd/'.$data->capblora) }}"
              alt="Cap Blora"
              style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
     @endif
 
     {{-- Tanda Tangan --}}
     @if(!empty($data->tandatangan))
-        <img src="{{ asset('uploads/ttd/' . $data->tandatangan) }}"
+        <img src="{{ asset('uploads/ttd/'.$data->tandatangan) }}"
              alt="Tanda Tangan"
              style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
     @endif
 
-        </div>
+</div>
+
         <br>
             <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
                 <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
