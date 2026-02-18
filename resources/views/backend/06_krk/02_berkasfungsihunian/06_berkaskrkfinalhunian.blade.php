@@ -494,29 +494,24 @@
     @endif
 </td>
 
-<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center;justify-content: center;">
+<div style="position: relative; width: 220px; height: 100px; margin-top: -15px; display: flex; align-items: center; justify-content: center;">
 
     {{-- Cap / Stempel Blora --}}
     @if(!empty($data->capblora))
-        <img src="{{ asset('uploads/ttd/'.$data->capblora) }}"
+        <img src="{{ Str::startsWith($data->capblora, 'uploads/')
+                        ? asset($data->capblora)
+                        : asset('uploads/ttd/'.$data->capblora) }}"
              alt="Cap Blora"
-             style="
-                position: absolute;
-                height: 90px;
-                opacity: 0.85;
-                z-index: 1;
-             ">
+             style="position:absolute; height:90px; opacity:0.85; z-index:1;">
     @endif
 
     {{-- Tanda Tangan --}}
     @if(!empty($data->tandatangan))
-        <img src="{{ asset('uploads/ttd/'.$data->tandatangan) }}"
+        <img src="{{ Str::startsWith($data->tandatangan, 'uploads/')
+                        ? asset($data->tandatangan)
+                        : asset('uploads/ttd/'.$data->tandatangan) }}"
              alt="Tanda Tangan"
-             style="
-                position: absolute;
-                height: 70px;
-                z-index: 2;
-             ">
+             style="position:absolute; height:70px; z-index:2;">
     @endif
 
 </div>
