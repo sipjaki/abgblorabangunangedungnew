@@ -77,20 +77,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                                        <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -140,30 +128,36 @@
                         <table class="zebra-table">
                             <thead>
 <tr>
-    <th style="background-color: #ADD8E6; width: 50px; text-align: center;">No</th>
-    <th style="background-color: #ADD8E6; width: 180px;">
-        <i class="bi bi-user"></i> Pemohon
+    <th style="width:50px; text-align:center;">No</th>
+
+    <th style="width:180px;">
+        <i class="bi bi-person"></i> Pemohon
     </th>
-    <th style="background-color: #ADD8E6; width: 180px;">
-        <i class="bi bi-building"></i> Perusahaan
+
+    <th style="width:180px;">
+        <i class="bi bi-buildings"></i> Perusahaan
     </th>
-    <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="bi bi-map-marker-alt"></i> Koordinat
+
+    <th style="width:160px;">
+        <i class="bi bi-geo-alt"></i> Koordinat
     </th>
-    <th style="background-color: #ADD8E6; width: 140px;">
-        <i class="bi bi-id-card"></i> NIK
+
+    <th style="width:140px;">
+        <i class="bi bi-person-vcard"></i> NIK
     </th>
-    <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="bi bi-calendar-alt"></i> Tanggal Permohonan
+
+    <th style="width:160px;">
+        <i class="bi bi-calendar-event"></i> Tanggal Permohonan
     </th>
-    <th style="background-color: #ADD8E6; width: 140px;">
-        <i class="bi bi-building"></i> Lihat Permohonan
+
+    <th style="width:140px;">
+        <i class="bi bi-file-earmark-text"></i> Lihat Permohonan
     </th>
-    <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="bi bi-database" style="margin-right: 6px;"></i> Dokumen KRK
+
+    <th style="width:160px;">
+        <i class="bi bi-database"></i> Dokumen KRK
     </th>
 </tr>
-
                             </thead>
                               <tbody id="tableBody">
                                 @forelse ($data as $item)
