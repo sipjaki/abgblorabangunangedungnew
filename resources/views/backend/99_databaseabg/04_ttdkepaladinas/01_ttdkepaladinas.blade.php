@@ -142,8 +142,8 @@
                                 @forelse ($data as $item )
 
                                 <tr class="align-middle">
-                                <td>{{ $data->firstItem() + $index }}</td>
-    <td>{{ $item->namalengkap }}</td>
+                                     <td>{{ $loop->iteration }}</td>
+ <td>{{ $item->namalengkap }}</td>
     <td>{{ $item->jabatan }}</td>
     <td>{{ $item->nip ?? '-' }}</td>
 
@@ -178,8 +178,8 @@
                 {{-- BUAT DATA AWAL DULU --}}
                 {{-- <a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
-                </a>
-                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update"> --}}
+                </a> --}}
+                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         {{-- <a href="javascript:void(0)" class="button-merah" title="Delete"
