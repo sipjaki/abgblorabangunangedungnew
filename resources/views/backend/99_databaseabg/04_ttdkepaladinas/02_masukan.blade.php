@@ -194,16 +194,18 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datafasilitatorcreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('ttdkepaladinasbloracreatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
 <div class="row">
     {{-- Kolom Kiri --}}
     <div class="col-md-6">
+
         {{-- Nama Lengkap --}}
         <div class="mb-3">
             <label class="form-label" for="namalengkap">
-                <i class="bi bi-person-vcard-fill" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                <i class="bi bi-person-vcard-fill" style="margin-right:8px;color:navy;"></i>
+                Nama Lengkap
             </label>
             <input
                 type="text"
@@ -211,48 +213,9 @@ th {
                 name="namalengkap"
                 value="{{ old('namalengkap', $data->namalengkap ?? '') }}"
                 class="form-control @error('namalengkap') is-invalid @enderror"
-                placeholder="Contoh: Budi Gunawan"
+                placeholder="Contoh: Drs. Budi Santoso"
             >
             @error('namalengkap')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        {{-- Alamat --}}
-        <div class="mb-3">
-            <label class="form-label" for="alamat">
-                <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Alamat
-            </label>
-            <input
-                type="text"
-                id="alamat"
-                name="alamat"
-                value="{{ old('alamat', $data->alamat ?? '') }}"
-                class="form-control @error('alamat') is-invalid @enderror"
-                placeholder="Contoh: Jl. Raya No. 123, Blora"
-            >
-            @error('alamat')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    </div>
-
-    {{-- Kolom Kanan --}}
-    <div class="col-md-6">
-        {{-- NIK --}}
-        <div class="mb-3">
-            <label class="form-label" for="nik">
-                <i class="bi bi-card-heading" style="margin-right: 8px; color: navy;"></i> NIK
-            </label>
-            <input
-                type="text"
-                id="nik"
-                name="nik"
-                value="{{ old('nik', $data->nik ?? '') }}"
-                class="form-control @error('nik') is-invalid @enderror"
-                placeholder="Contoh: 3301123456780001"
-            >
-            @error('nik')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
@@ -260,7 +223,8 @@ th {
         {{-- Jabatan --}}
         <div class="mb-3">
             <label class="form-label" for="jabatan">
-                <i class="bi bi-briefcase-fill" style="margin-right: 8px; color: navy;"></i> Jabatan
+                <i class="bi bi-briefcase-fill" style="margin-right:8px;color:navy;"></i>
+                Jabatan
             </label>
             <input
                 type="text"
@@ -268,15 +232,89 @@ th {
                 name="jabatan"
                 value="{{ old('jabatan', $data->jabatan ?? '') }}"
                 class="form-control @error('jabatan') is-invalid @enderror"
-                placeholder="Contoh: Arsitek, Pengawas Lapangan, dll"
+                placeholder="Contoh: Kepala Dinas PUPR"
             >
             @error('jabatan')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+
+        {{-- NIP --}}
+        <div class="mb-3">
+            <label class="form-label" for="nip">
+                <i class="bi bi-credit-card-2-front-fill" style="margin-right:8px;color:navy;"></i>
+                NIP
+            </label>
+            <input
+                type="text"
+                id="nip"
+                name="nip"
+                value="{{ old('nip', $data->nip ?? '') }}"
+                class="form-control @error('nip') is-invalid @enderror"
+                placeholder="Contoh: 197012312005011001"
+            >
+            @error('nip')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+    </div>
+
+    {{-- Kolom Kanan --}}
+    <div class="col-md-6">
+
+        {{-- URL Tanda Tangan --}}
+        <div class="mb-3">
+            <label class="form-label" for="tandatangan">
+                <i class="bi bi-pencil-fill" style="margin-right:8px;color:navy;"></i>
+                URL Tanda Tangan (Image)
+            </label>
+            <input
+                type="text"
+                id="tandatangan"
+                name="tandatangan"
+                value="{{ old('tandatangan', $data->tandatangan ?? '') }}"
+                class="form-control @error('tandatangan') is-invalid @enderror"
+                placeholder="/assets/ttd/ttd_kepala_dinas.png"
+            >
+            @error('tandatangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            @if (!empty($data->tandatangan))
+                <div class="mt-2">
+                    <img src="{{ $data->tandatangan }}" alt="Tanda Tangan" style="height:80px;">
+                </div>
+            @endif
+        </div>
+
+        {{-- URL Cap Blora --}}
+        <div class="mb-3">
+            <label class="form-label" for="capblora">
+                <i class="bi bi-patch-check-fill" style="margin-right:8px;color:navy;"></i>
+                URL Cap Blora (Image)
+            </label>
+            <input
+                type="text"
+                id="capblora"
+                name="capblora"
+                value="{{ old('capblora', $data->capblora ?? '') }}"
+                class="form-control @error('capblora') is-invalid @enderror"
+                placeholder="/assets/cap/cap_blora.png"
+            >
+            @error('capblora')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            @if (!empty($data->capblora))
+                <div class="mt-2">
+                    <img src="{{ $data->capblora }}" alt="Cap Blora" style="height:80px;">
+                </div>
+            @endif
+        </div>
+
     </div>
 </div>
-
 
                   <!-- End row -->
                             <!-- end::Body -->

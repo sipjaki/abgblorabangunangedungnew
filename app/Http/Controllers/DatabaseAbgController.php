@@ -485,6 +485,7 @@ public function datafasilitatordelete($id)
         // 'dataakun'  => $dataakun
     ]);
 }
+
 public function datafasilitatorcreatenew(Request $request)
 {
     // Validasi input
@@ -931,5 +932,57 @@ public function beartikeldelete($id)
         // 'dataakun'  => $dataakun
     ]);
 }
+
+
+public function ttdkepaladinasbloracreatenew(Request $request)
+{
+    // VALIDASI
+    $validated = $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'jabatan'     => 'required|string|max:255',
+        'nip'         => 'nullable|string|max:50',
+
+        // upload image max 15MB
+        'tandatangan' => 'nullable|image|mimes:png,jpg,jpeg|max:15360',
+        'capblora'    => 'nullable|image|mimes:png,jpg,jpeg|max:15360',
+    ], [
+        'namalengkap.required' => 'Nama lengkap wajib diisi.',
+        'jabatan.required'     => 'Jabatan wajib diisi.',
+        'tandatangan.max'      => 'Ukuran tanda tangan maksimal 15 MB.',
+        'capblora.max'         => 'Ukuran cap Blora maksimal 15 MB.',
+        'tandatangan.image'    => 'Tanda tangan harus berupa gambar.',
+        'capblora.image'       => 'Cap Blora harus berupa gambar.',
+    ]);
+
+    // SIMPAN FILE KE PUBLIC (BUKAN STORAGE)
+    $tandatanganUrl = null;
+    if ($request->hasFile('tandatangan')) {
+        $file = $request->file('tandatangan');
+        $filename = 'ttd_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('assets/ttd'), $filename);
+        $tandatanganUrl = '/assets/ttd/' . $filename;
+    }
+
+    $capBloraUrl = null;
+    if ($request->hasFile('capblora')) {
+        $file = $request->file('capblora');
+        $filename = 'cap_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('assets/cap'), $filename);
+        $capBloraUrl = '/assets/cap/' . $filename;
+    }
+
+    // SIMPAN KE DATABASE
+    ttdkepaladinas::create([
+        'namalengkap' => $validated['namalengkap'],
+        'jabatan'     => $validated['jabatan'],
+        'nip'         => $validated['nip'] ?? null,
+        'tandatangan' => $tandatanganUrl,
+        'capblora'    => $capBloraUrl,
+    ]);
+
+    session()->flash('create', 'Data TTD Kepala Dinas berhasil disimpan.');
+    return redirect()->route('ttdkepaladinasblora');
+}
+
 }
 

@@ -1028,7 +1028,7 @@ Route::get('/ttdkepaladinasblora', [DatabaseAbgController::class, 'ttdkepaladina
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
 Route::get('/ttdkepaladinasbloracreate', [DatabaseAbgController::class, 'ttdkepaladinasbloracreate'])->middleware('auth')->name('ttdkepaladinasbloracreate');
-// Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafasilitatorcreatenew'])->middleware('auth')->name('datafasilitatorcreatenew');
+Route::post('/ttdkepaladinasbloracreatenew', [DatabaseAbgController::class, 'ttdkepaladinasbloracreatenew'])->middleware('auth')->name('ttdkepaladinasbloracreatenew');
 
 
 // DATABASE ABG BLORA ---------------------------------------------
