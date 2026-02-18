@@ -471,8 +471,8 @@
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        {{-- <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
-
+        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+{{--
    @if(!empty($subtanda->capblora))
         <img src="{{ asset($subtanda->capblora) }}"
              alt="Cap Blora"
@@ -483,9 +483,9 @@
         <img src="{{ asset($subtanda->tandatangan) }}"
              alt="Tanda Tangan"
              style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
-    @endif
+    @endif --}}
 
-        </div> --}}
+        </div>
         <br>
             <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
                 <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
