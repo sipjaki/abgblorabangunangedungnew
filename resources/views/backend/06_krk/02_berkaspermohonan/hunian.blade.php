@@ -834,7 +834,7 @@
                                         {{-- <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">

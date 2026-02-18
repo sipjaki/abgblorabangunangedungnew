@@ -1376,6 +1376,13 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="/datagsbblora" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: orange; margin: 0 0 0 8px;">Ttd Kepala Dinas</p>
+    </a>
+</li>
+
 {{-- <li class="nav-item">
     <a href="/bekrkindexnew" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
