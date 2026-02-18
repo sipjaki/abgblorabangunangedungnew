@@ -1019,17 +1019,17 @@ public function permohonanpengesahanusahaber($id)
 
 public function destroykrkusahasurat($id)
 {
-    // Cari data berdasarkan ID
     $data = krkusahasurat::find($id);
 
     if ($data) {
         $data->delete();
-        // Redirect dengan flash message sukses
-        return redirect()->route('bekrkhunianindex')->with('delete', 'Data berhasil dihapus.');
-    } else {
-        // Redirect dengan flash message error
-        return redirect()->route('bekrkhunianindex')->with('error', 'Data tidak ditemukan.');
+
+        return redirect()->back()
+            ->with('delete', 'Data berhasil dihapus.');
     }
+
+    return redirect()->back()
+        ->with('error', 'Data tidak ditemukan.');
 }
 
 public function valberkasusaha3(Request $request, $id)
