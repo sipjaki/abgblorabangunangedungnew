@@ -1025,7 +1025,7 @@ Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantekt
 // TANDA TANGAN KEPALA DINAS
 Route::get('/ttdkepaladinasblora', [DatabaseAbgController::class, 'ttdkepaladinasblora'])->middleware(['auth', 'can:admindpupr'])->name('ttdkepaladinasblora');
 Route::get('/ttdkepaladinasbloraupdate/{id}', [DatabaseAbgController::class, 'ttdkepaladinasbloraupdate'])->middleware(['auth', 'can:admindpupr'])->name('ttdkepaladinasbloraupdate.update');
-// Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
+Route::post('/ttdkepaladinasbloraupdatenew/{id}', [DatabaseAbgController::class, 'ttdkepaladinasbloraupdatenew'])->middleware('auth')->name('ttdkepaladinasbloraupdatenew.update');
 
 Route::get('/ttdkepaladinasbloracreate', [DatabaseAbgController::class, 'ttdkepaladinasbloracreate'])->middleware('auth')->name('ttdkepaladinasbloracreate');
 Route::post('/ttdkepaladinasbloracreatenew', [DatabaseAbgController::class, 'ttdkepaladinasbloracreatenew'])->middleware('auth')->name('ttdkepaladinasbloracreatenew');

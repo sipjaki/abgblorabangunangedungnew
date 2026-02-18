@@ -21,6 +21,8 @@ use App\Models\uijk;
 use App\Models\undangundang;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\File;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -999,6 +1001,70 @@ public function ttdkepaladinasbloracreatenew(Request $request)
     ]);
 }
 
+
+public function ttdkepaladinasbloraupdatenew(Request $request, $id)
+{
+    $data = ttdkepaladinas::findOrFail($id);
+
+    // VALIDASI
+    $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'jabatan'     => 'required|string|max:255',
+        'nip'         => 'nullable|string|max:255',
+
+        'tandatangan' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+        'capblora'    => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+    ], [
+        'namalengkap.required' => 'Nama lengkap wajib diisi!',
+        'jabatan.required'     => 'Jabatan wajib diisi!',
+    ]);
+
+    // UPDATE TEXT
+    $data->namalengkap = $request->namalengkap;
+    $data->jabatan     = $request->jabatan;
+    $data->nip         = $request->nip;
+
+    // ===============================
+    // UPLOAD TANDA TANGAN (PUBLIC)
+    // ===============================
+    if ($request->hasFile('tandatangan')) {
+
+        // hapus file lama
+        if ($data->tandatangan && File::exists(public_path($data->tandatangan))) {
+            File::delete(public_path($data->tandatangan));
+        }
+
+        $file = $request->file('tandatangan');
+        $namaFile = 'ttd_' . time() . '.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('uploads/tandatangan'), $namaFile);
+
+        // simpan path RELATIF
+        $data->tandatangan = 'uploads/tandatangan/' . $namaFile;
+    }
+
+    // ===============================
+    // UPLOAD CAP / STEMPEL (PUBLIC)
+    // ===============================
+    if ($request->hasFile('capblora')) {
+
+        if ($data->capblora && File::exists(public_path($data->capblora))) {
+            File::delete(public_path($data->capblora));
+        }
+
+        $file = $request->file('capblora');
+        $namaFile = 'cap_' . time() . '.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('uploads/cap'), $namaFile);
+
+        $data->capblora = 'uploads/cap/' . $namaFile;
+    }
+
+    $data->save();
+
+    session()->flash('update', 'Data Kepala Dinas berhasil diperbarui!');
+    return redirect()->route('ttdkepaladinasblora');
+}
 
 }
 
