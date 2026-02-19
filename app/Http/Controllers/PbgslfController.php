@@ -450,7 +450,7 @@ public function createdatapbgslfnew(Request $request)
 
     // Feedback ke user
     session()->flash('create', 'Data Pengajuan PBG/SLF berhasil disimpan!');
-    return redirect()->route('bepbgslfindexslfindex');
+    return redirect('/bepbgslfindexslf');
 }
 
 
