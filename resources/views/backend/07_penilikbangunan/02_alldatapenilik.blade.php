@@ -115,7 +115,7 @@
                                         }
                                     </script>
 
-                                    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_Penilik_Bangunan_Gedung_Kab_Blora')"
+                                    <button style="gap:5px;" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_Penilik_Bangunan_Gedung_Kab_Blora')"
                                         class="button-berkas"
                                         >
                                         <i class="bi bi-download"></i> Download Excel
@@ -131,7 +131,7 @@
 
 
                                            <a href="/dataallpenilikbg">
-                                                <button class="button-baru">
+                                                <button style="gap:5px;" class="button-baru">
                                                     <i class="bi bi-folder2-open"></i> Data Lengkap
                                                 </button>
                                             </a>
