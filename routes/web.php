@@ -1074,8 +1074,8 @@ Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->mid
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
 // MENU 07 PENILIK BANGUNAN
-Route::get('/bedatapetugaspenilik', [PenilikbangunanController::class, 'bedatapetugaspenilik'])->middleware('auth')->name('bedatapetugaspenilik');
-Route::get('/bedatapetugaspenilikcreate', [PenilikbangunanController::class, 'bedatapetugaspenilikcreate'])->middleware('auth')->name('bedatapetugaspenilikcreate');
+Route::get('/bedatapetugaspenilik', [PenilikbangunanController::class, 'bedatapetugaspenilik'])->middleware('auth')->name('bedatapetugaspenilik'); // SUPER ADMIN DAN ADMIN
+Route::get('/bedatapetugaspenilikcreate', [PenilikbangunanController::class, 'bedatapetugaspenilikcreate'])->middleware('auth')->name('bedatapetugaspenilikcreate'); // SUPER ADMIN DAN ADMIN
 
 Route::post('/bedatapetugaspenilikcreatenew', [PenilikbangunanController::class, 'bedatapetugaspenilikcreatenew'])->middleware('auth')->name('bedatapetugaspenilikcreatenew');
 

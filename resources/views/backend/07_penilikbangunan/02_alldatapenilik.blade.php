@@ -114,12 +114,13 @@
                                             window.location.href = url.toString();
                                         }
                                     </script>
-
-                                    <button style="gap:5px;" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_Penilik_Bangunan_Gedung_Kab_Blora')"
-                                        class="button-berkas"
-                                        >
-                                        <i class="bi bi-download"></i> Download Excel
-                                        </button>
+                                            <button
+                                                onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_Penilik_Bangunan_Gedung_Kab_Blora')"
+                                                class="button-berkas"
+                                                style="margin: 0 5px;"
+                                            >
+                                                <i class="bi bi-download"></i> Download Excel
+                                            </button>
 
                                         <script>
                                         function exportTableToExcel(tableID, filename = '') {
@@ -129,12 +130,11 @@
                                         }
                                         </script>
 
-
-                                           <a href="/dataallpenilikbg">
-                                                <button style="gap:5px;" class="button-baru">
-                                                    <i class="bi bi-folder2-open"></i> Data Lengkap
-                                                </button>
-                                            </a>
+                                        <a href="/dataallpenilikbg">
+                                            <button class="button-baru" style="margin: 0 5px;">
+                                                <i class="bi bi-folder2-open"></i> Data Lengkap
+                                            </button>
+                                        </a>
 
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
