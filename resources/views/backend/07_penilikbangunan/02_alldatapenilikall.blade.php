@@ -519,7 +519,7 @@ function exportTableToExcel(tableID, filename = '') {
     @endif
 </td> --}}
 
-<td style="text-align: left;">
+{{-- <td style="text-align: left;">
     @if(!empty($item->berkaspbg))
         <a href="/{{ $item->berkaspbg }}" target="_blank" class="button-hijau">
             <i class="bi bi-download me-1"></i> Download
@@ -528,7 +528,7 @@ function exportTableToExcel(tableID, filename = '') {
         <span class="button-newvalidasi">On Progress</span>
     @endif
 </td>
-
+ --}}
 
 
             <td style="text-align: center;">
