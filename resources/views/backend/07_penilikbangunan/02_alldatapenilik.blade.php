@@ -130,40 +130,51 @@
                                         </script>
 
 
+                                           <a href="/dataallpenilikbg">
+                                                <button class="button-baru">
+                                                    <i class="bi bi-folder2-open"></i> Data Lengkap
+                                                </button>
+                                            </a>
 
-
-                                    <a href="/dataallpenilikbg">
-                                        <button class="button-berkas">
-                                            Data Lengkap
-                                        </button>
-                                    </a>
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
+                                let debounceTimer;
 
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
+                                function searchTable() {
+                                    clearTimeout(debounceTimer);
 
-                            fetch(`/dataallpenilikbg?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
+                                    debounceTimer = setTimeout(() => {
+                                        let input = document.getElementById("searchInput").value;
 
+                                        fetch(`/dataallpenilikbg?search=${encodeURIComponent(input)}`, {
+                                            headers: {
+                                                'X-Requested-With': 'XMLHttpRequest'
+                                            }
+                                        })
+                                        .then(response => {
+                                            if (!response.ok) {
+                                                throw new Error("Network response was not ok");
+                                            }
+                                            return response.text();
+                                        })
+                                        .then(html => {
+                                            let parser = new DOMParser();
+                                            let doc = parser.parseFromString(html, "text/html");
+                                            let newTableBody = doc.querySelector("#tableBody");
+
+                                            if (newTableBody) {
+                                                document.getElementById("tableBody").innerHTML = newTableBody.innerHTML;
+                                            } else {
+                                                console.error("tableBody tidak ditemukan di response");
+                                            }
+                                        })
+                                        .catch(error => console.error("Fetch error:", error));
+                                    }, 300); // delay 300ms biar tidak spam
+                                }
                                 </script>
 
 
