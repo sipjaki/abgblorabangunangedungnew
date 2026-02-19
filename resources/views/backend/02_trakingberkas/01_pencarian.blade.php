@@ -1,120 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Pencarian Berkas Permohonan PBG/SLF</title>
-    <!--begin::Primary Meta Tags-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Bangunan Gedung  Kabupaten Blora Provinsi Jawa Tengah" />
-    <meta name="author" content="ColorlibHQ" />
-    <meta name="description" content="Bangunan Gedung Kabupaten Blora Provinsi Jawa Tengah" />
-    <meta name="keywords" content="Bangunan Gedung Kabupaten Blora Provinsi Jawa Tengah" />
-    <!--end::Primary Meta Tags-->
-
-    <!--begin::Fonts-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous" />
-    <!--end::Fonts-->
-
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css" integrity="sha256-tZHrRjVqNSRyWg2wbppGnT833E/Ys0DHWGwT04GiqQg=" crossorigin="anonymous" />
-    <!--end::Third Party Plugin(OverlayScrollbars)-->
-
-    <!--begin::Third Party Plugin(Bootstrap Icons)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=" crossorigin="anonymous" />
-    <!--end::Third Party Plugin(Bootstrap Icons)-->
-
-    <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="/assets/00_administrator/dist/css/adminlte.css" />
-    <!--end::Required Plugin(AdminLTE)-->
-
-    <!-- apexcharts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous" />
-
-    <!-- jsvectormap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .zebra-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .zebra-table th {
-            background-color: #ADD8E6; /* biru muda */
-            color: black;
-            text-align: center;
-            padding: 8px 12px;
-            border: 1px solid #e5e7eb;
-            white-space: nowrap;
-        }
-
-        .zebra-table td {
-            text-align: center;
-            padding: 8px 12px;
-            border: 1px solid #e5e7eb;
-            white-space: nowrap;
-        }
-
-        .zebra-table tbody tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-
-        .zebra-table tbody tr:nth-child(even) {
-            background-color: #f1f1f1;
-        }
-
-        .zebra-table tbody tr:hover {
-            background-color: #ffd100 !important;
-        }
-
-        th {
-            background-color: #ADD8E6;
-        }
-
-        .app-main {
-            background: linear-gradient(to bottom, #7de3f1, #ffffff);
-            margin: 0;
-            padding: 0;
-            position: relative;
-            left: 0;
-        }
-
-        .button-baru {
-            background-color: #000080;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button-baru:hover {
-            background-color: #1e40af;
-        }
-    </style>
-</head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
@@ -138,18 +21,8 @@
 <div class="container-fluid" style="color: black !important;">
     <div class="row" style="margin: 0 10px;">
         <div class="card mb-4" style="color: black !important;">
-            <div class="card-header" style="
-                font-weight: 900;
-                font-size: 16px;
-                text-align: center;
-                background: linear-gradient(135deg, #000080, #000080);
-                color: white;
-                padding: 10px 25px;
-                border-radius: 10px;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                width: 100%;
-            ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
             </div>
 
             <div class="card-body" style="background: white; color: black !important;">
@@ -244,5 +117,3 @@
             return XLSX.writeFile(wb, filename + '.xlsx');
         }
     </script>
-</body>
-</html>
