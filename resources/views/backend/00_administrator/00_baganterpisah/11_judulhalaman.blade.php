@@ -1,8 +1,4 @@
-<div class="card mb-4" style="
-    border: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    border-radius: 14px;
-">
+<div class="card mb-4">
     <div class="card-header p-4" style="
         background: linear-gradient(135deg, #e7f1fb, #d6e8f7); /* biru lembut */
         border-left: 6px solid #61b9f3; /* navy */
