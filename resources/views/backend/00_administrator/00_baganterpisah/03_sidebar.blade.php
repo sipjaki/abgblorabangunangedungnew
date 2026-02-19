@@ -1442,14 +1442,14 @@
     <li class="nav-item">
     <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-clipboard-plus nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Buat Inspeksi</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Buat Inspeksi</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Data Inspeksi</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Data Inspeksi</p>
     </a>
 </li>
 

@@ -18,7 +18,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -86,27 +86,61 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
+                                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
+                                        <select id="entries" onchange="updateEntries()"
+                                            style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="75">75</option>
+                                            <option value="100">100</option>
+                                            <option value="150">150</option>
+                                            <option value="200">200</option>
+                                            <option value="500">500</option>
+                                            <option value="1000">1000</option>
+                                            <option value="2000">2000</option>
+                                        </select>
+                                    </div>
+
+                                    <script>
+                                        function updateEntries() {
+                                            let selectedValue = document.getElementById("entries").value;
+                                            let url = new URL(window.location.href);
+                                            url.searchParams.set("perPage", selectedValue);
+                                            window.location.href = url.toString();
+                                        }
+                                    </script>
+
+                                    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_GSBKabupatenBlora')"
+                                        class="button-berkas"
+                                        >
+                                        <i class="bi bi-download"></i> Download Excel
+                                        </button>
+
+                                        <script>
+                                        function exportTableToExcel(tableID, filename = '') {
+                                            var table = document.getElementById(tableID);
+                                            var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+                                            return XLSX.writeFile(wb, filename + '.xlsx');
+                                        }
+                                        </script>
 
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+
+                                    <a href="/dataallpenilikbg">
+                                        <button class="button-berkas">
+                                            Data Lengkap
+                                        </button>
+                                    </a>
+
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -146,7 +180,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                 <tr>
 <th>

@@ -1084,9 +1084,9 @@ Route::delete('/bedatapetugaspenilikdelete/{id}', [PenilikbangunanController::cl
 Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth', 'can:admindpupr')->name('datanewpenilik.create');
 Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpeniliknew.create');
 
-Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->name('dataallpenilikbg.index');
-Route::get('/dataallpenilikbgupdate/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdate'])->name('dataallpenilikbgupdate');
-Route::put('/dataallpenilikbgupdatenew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdatenew'])->middleware('auth')->name('dataallpenilikbgupdatenew');
+Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
+Route::get('/dataallpenilikbgupdate/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdate'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgupdate');
+Route::put('/dataallpenilikbgupdatenew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdatenew'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgupdatenew');
 
 Route::get('/dataallpenilikbgregsimbg/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbg'])->name('dataallpenilikbgregsimbg');
 Route::put('/dataallpenilikbgregsimbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbgnew'])->middleware('auth')->name('dataallpenilikbgregsimbgnew');
