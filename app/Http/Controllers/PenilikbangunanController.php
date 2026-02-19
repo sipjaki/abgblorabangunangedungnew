@@ -40,7 +40,7 @@ class PenilikbangunanController extends Controller
 
         // Kirim data ke view tanpa ambil dari database bantuanhibahbg
         return view('backend.07_penilikbangunan.01_createpenilikbangunan', [
-            'title' => 'Buat Data Baru Inspeksi Bangunan Gedung',
+            'title' => 'Input Data Baru Inspeksi Bangunan Gedung',
             'user' => $user,
             'datakelurahan' => $datakelurahan,
         'kecamatanList' => $kecamatanList
