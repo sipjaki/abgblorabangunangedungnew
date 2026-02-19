@@ -115,7 +115,7 @@
                                         }
                                     </script>
 
-                                    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_GSBKabupatenBlora')"
+                                    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_Penilik_Bangunan_Gedung_Kab_Blora')"
                                         class="button-berkas"
                                         >
                                         <i class="bi bi-download"></i> Download Excel
@@ -542,7 +542,7 @@
         <a href="/{{ $item->berkaspbg }}" target="_blank" class="button-hijau">
             <i class="bi bi-download me-1"></i> Download
         </a>
-    @else
+    @elsedata_
         <span class="button-newvalidasi">On Progress</span>
     @endif
 </td>
