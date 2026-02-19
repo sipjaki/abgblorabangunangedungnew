@@ -1447,7 +1447,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/dataallpenilikbgall" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: orange; margin: 0 0 0 8px;">Data Inspeksi</p>
     </a>
