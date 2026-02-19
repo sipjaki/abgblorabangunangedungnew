@@ -1006,7 +1006,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-search nav-icon" style="color: white;"></i>
-    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <p style="color: green; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
         Tracking Berkas
         <i class="nav-arrow bi bi-chevron-right" style="color: white;"></i>
     </p>
@@ -1034,7 +1034,7 @@
                 <li class="nav-item">
     <a href="/betracking" class="nav-link">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white;"></i>
-        <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+        <p style="color: orange; margin-left: 8px;">PBG/SLF</p>
     </a>
 </li>
 
