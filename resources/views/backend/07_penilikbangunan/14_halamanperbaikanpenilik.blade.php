@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -205,7 +147,7 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+<h5 class="mt-4 form-modern mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
   Data Informasi Pemohon
@@ -213,8 +155,8 @@ th {
 
 {{-- Nama Pemohon --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="namapemohon">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="namapemohon">
             <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
         </label>
         <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $penilik->namapemohon ?? '') }}">
@@ -224,8 +166,8 @@ th {
 
 {{-- NIK --}}
 {{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nik">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="nik">
             <i class="bi bi-card-list me-2 text-success"></i> NIK
         </label>
         <input type="number"
@@ -242,8 +184,8 @@ th {
 
 {{-- Fungsi Bangunan --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="fungsibangunan">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="fungsibangunan">
             <i class="bi bi-building me-2 text-danger"></i> Fungsi Bangunan
         </label>
         <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
@@ -259,8 +201,8 @@ th {
 
 {{-- Subfungsi Bangunan --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="subfungsibangunan">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="subfungsibangunan">
             <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
         </label>
         <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $penilik->subfungsibangunan ?? '') }}">
@@ -272,7 +214,7 @@ th {
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+<h5 class="mt-4 form-modern mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
   Alamat Bangunan Gedung Pemohon
@@ -285,8 +227,8 @@ th {
       'kabupaten' => 'Kabupaten/Kota'
   ] as $name => $label)
       <div class="col-md-6">
-          <div class="mb-3">
-              <label class="form-label d-flex align-items-center" for="{{ $name }}">
+          <div class="form-modern mb-3">
+              <label class="form-label-modern d-flex align-items-center" for="{{ $name }}">
                 <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> {{ $label }}
               </label>
               <input
@@ -304,8 +246,8 @@ th {
 
   {{-- Kecamatan --}}
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
         <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kecamatan
       </label>
       <select class="form-select @error('kecamatanblora_id') is-invalid @enderror" name="kecamatanblora_id" id="kecamatanblora_id" style="min-height: 42px;">
@@ -322,8 +264,8 @@ th {
 
   {{-- Kelurahan/Desa --}}
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kelurahandesa_id">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern d-flex align-items-center" for="kelurahandesa_id">
         <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kelurahan/Desa
       </label>
       <select class="form-select @error('kelurahandesa_id') is-invalid @enderror" name="kelurahandesa_id" id="kelurahandesa_id" style="min-height: 42px;">
@@ -340,8 +282,8 @@ th {
 
   {{-- Alamat Lengkap --}}
   <div class="col-12">
-      <div class="mb-3">
-          <label class="form-label d-flex align-items-center" for="alamatlengkap">
+      <div class="form-modern mb-3">
+          <label class="form-label-modern d-flex align-items-center" for="alamatlengkap">
             <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
           </label>
           <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $penilik->alamatlengkap ?? '') }}</textarea>
@@ -353,8 +295,8 @@ th {
 <div class="row g-3">
     {{-- Koordinat --}}
     <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label d-flex align-items-center" for="koordinat">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern d-flex align-items-center" for="koordinat">
                 <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
             </label>
             <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $penilik->koordinat ?? '') }}">
@@ -417,7 +359,7 @@ th {
 
 {{-- ======================================================================================================================= --}}
 <div class="row">
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+<h5 class="mt-4 form-modern mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-house-gear-fill me-3" style="font-size: 18px;"></i>
   Intensitas Bangunan Gedung
@@ -426,8 +368,8 @@ th {
 <div class="row">
     {{-- Nama Bangunan --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="namabangunan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="namabangunan">
                 <i class="bi bi-bank2 me-2 text-primary"></i> Nama Bangunan
             </label>
             <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $penilik->namabangunan ?? '') }}">
@@ -437,8 +379,8 @@ th {
 
     {{-- Luas Bangunan (m2) --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="luasbangunan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="luasbangunan">
                 <i class="bi bi-fullscreen me-2 text-success"></i> Luas Bangunan (m<sup>2</sup>)
             </label>
             <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $penilik->luasbangunan ?? '') }}">
@@ -448,8 +390,8 @@ th {
 
     {{-- Jumlah Lantai --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="jumlahlantai">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="jumlahlantai">
                 <i class="bi bi-layers-fill me-2 text-warning"></i> Jumlah Lantai
             </label>
             <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $penilik->jumlahlantai ?? '') }}">
@@ -459,8 +401,8 @@ th {
 
     {{-- GSB (meter) --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="gsb">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="gsb">
                 <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Lapangan) [m]
             </label>
             <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $penilik->gsb ?? '') }}">
@@ -469,57 +411,57 @@ th {
     </div>
 </div>
 
-{{-- <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+{{-- <h5 class="mt-4 form-modern mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-file-earmark-text-fill me-3" style="font-size: 18px;"></i>
   Dokumen SIMBG, KRK & PBG
 </h5>
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-        <label for="noregsimbg" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="noregsimbg" class="form-label-modern">
             <i class="bi bi-file-earmark-text-fill text-primary me-2"></i> No Registrasi SIMBG
         </label>
         <input type="text" class="form-control" id="noregsimbg" name="noregsimbg" value="{{ old('noregsimbg', $penilik->noregsimbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalsimbg" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="tanggalsimbg" class="form-label-modern">
             <i class="bi bi-calendar-date text-success me-2"></i> Tanggal SIMBG
         </label>
         <input type="date" class="form-control" id="tanggalsimbg" name="tanggalsimbg" value="{{ old('tanggalsimbg', $penilik->tanggalsimbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="nokrk" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="nokrk" class="form-label-modern">
             <i class="bi bi-file-earmark-code-fill text-warning me-2"></i> No KRK
         </label>
         <input type="text" class="form-control" id="nokrk" name="nokrk" value="{{ old('nokrk', $penilik->nokrk ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalkrk" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="tanggalkrk" class="form-label-modern">
             <i class="bi bi-calendar-date text-warning me-2"></i> Tanggal KRK
         </label>
         <input type="date" class="form-control" id="tanggalkrk" name="tanggalkrk" value="{{ old('tanggalkrk', $penilik->tanggalkrk ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="nopbg" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="nopbg" class="form-label-modern">
             <i class="bi bi-building-fill-gear text-danger me-2"></i> No PBG
         </label>
         <input type="text" class="form-control" id="nopbg" name="nopbg" value="{{ old('nopbg', $penilik->nopbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalpbg" class="form-label">
+    <div class="col-md-6 form-modern mb-3">
+        <label for="tanggalpbg" class="form-label-modern">
             <i class="bi bi-calendar-event text-danger me-2"></i> Tanggal PBG
         </label>
         <input type="date" class="form-control" id="tanggalpbg" name="tanggalpbg" value="{{ old('tanggalpbg', $penilik->tanggalpbg ?? '') }}">
     </div>
 
-    <div class="col-md-12 mb-3">
-        <label for="berkaspbg" class="form-label">
+    <div class="col-md-12 form-modern mb-3">
+        <label for="berkaspbg" class="form-label-modern">
             <i class="bi bi-filetype-pdf text-danger me-2"></i> Berkas PBG (PDF)
         </label>
         <input class="form-control" type="file" name="berkaspbg" id="berkaspbg" accept="application/pdf" onchange="previewPDF(event)">
@@ -544,8 +486,8 @@ th {
 {{-- ----------------------------------------------------------------------------------- --}}
 
 <div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+    {{-- <div class="form-modern mb-3">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input
