@@ -122,13 +122,19 @@
                                                 <i class="bi bi-download"></i> Download Excel
                                             </button>
 
-                                        <script>
-                                        function exportTableToExcel(tableID, filename = '') {
-                                            var table = document.getElementById(tableID);
-                                            var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-                                            return XLSX.writeFile(wb, filename + '.xlsx');
-                                        }
-                                        </script>
+<script>
+function exportTableToExcel(tableID, filename = '') {
+    var table = document.getElementById(tableID);
+
+    if (!table) {
+        alert("Tabel tidak ditemukan!");
+        return;
+    }
+
+    var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+    XLSX.writeFile(wb, filename + '.xlsx');
+}
+</script>
 
                                         <a href="/dataallpenilikbg">
                                             <button class="button-baru" style="margin: 0 5px;">
@@ -138,7 +144,7 @@
 
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Nama Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -1049,3 +1055,4 @@
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>

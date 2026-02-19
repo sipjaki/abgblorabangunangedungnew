@@ -129,14 +129,12 @@
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarpetugasinspeksibangunangedung')"
-      class="button-berkas"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      class="button-berkas">
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/bedatapetugaspenilikcreate" style="text-decoration: none;">
-      <button class="button-modern"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      <button class="button-modern">
         <i class="bi bi-plus-circle"></i> Tambah Personil
       </button>
     </a>
