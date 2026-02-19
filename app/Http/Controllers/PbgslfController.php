@@ -3932,6 +3932,7 @@ public function betracking(Request $request)
         'title' => 'Tracking Berkas Permohonan PBG SLF',
         'data'  => $data,
         'user'  => $user,
+        'title'  => 'Halaman Pencarian Berkas PBG SLF',
     ]);
 }
 
