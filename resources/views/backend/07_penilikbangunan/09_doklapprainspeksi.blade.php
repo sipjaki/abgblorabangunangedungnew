@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -124,20 +78,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -234,35 +176,35 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+    <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
-    <th style="background-color: #ADD8E6; width:50px; text-align: center;">
+    <th style="width:50px; text-align: center;">
         <i class="bi bi-hash"></i> No
     </th>
-    <th style="background-color: #ADD8E6; width:200px;">
+    <th style="width:200px;">
         <i class="bi bi-journal-text"></i> Kegiatan
     </th>
-    <th style="background-color: #ADD8E6; width:150px;">
+    <th style="width:150px;">
         <i class="bi bi-calendar-event"></i> Tanggal Kegiatan
     </th>
-    {{-- <th style="background-color: #ADD8E6; width:200px;">
+    {{-- <th style="width:200px;">
         <i class="bi bi-list-task"></i> Nama Kegiatan
     </th> --}}
-    <th style="background-color: #ADD8E6; width:120px;">
+    <th style="width:120px;">
         <i class="bi bi-123"></i> Kegiatan Ke-
     </th>
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style="width:300px;">
         <i class="bi bi-card-text"></i> Uraian Kegiatan
     </th>
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style="width:300px;">
         <i class="bi bi-journal-check"></i> Catatan Kegiatan
     </th>
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style="width:300px;">
         <i class="bi bi-journal-check"></i> Lihat Foto & Berkas
     </th>
     @canany(['superadmin', 'admin'])
-    <th style="background-color: #ADD8E6; width:120px;">
+    <th style="width:120px;">
         <i class="bi bi-tools"></i> Aksi
     </th>
     @endcanany
