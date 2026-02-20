@@ -424,9 +424,6 @@ th {
     </p>
 
     <p style="margin-top: 5px;">
-      A.n. KEPALA DINAS PEKERJAAN UMUM DAN<br>
-      PENATAAN RUANG<br>
-      KAB. BLORA<br>
       Kepala Bidang Bangunan Gedung
     </p>
 

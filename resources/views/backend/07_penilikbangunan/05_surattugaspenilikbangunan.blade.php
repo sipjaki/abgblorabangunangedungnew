@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -132,7 +132,7 @@
 
 <div class="container" style="margin-bottom: 20px;">
 <a href="/dataallpenilikbg">
-    <button class="button-baru">
+    <button class="button-berkas">
         <i class="bi bi-folder2-open me-2"></i> Berkas Inspeksi Bangunan Gedung
     </button>
 </a>

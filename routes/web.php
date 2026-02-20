@@ -1110,10 +1110,10 @@ Route::get('/bedatadasarpenilik/{id}', [PenilikbangunanController::class, 'bedat
 
 Route::get('/bedatapeniliksurvey/{id}', [PenilikbangunanController::class, 'bedatapeniliksurvey'])->middleware('auth')->name('bedatapeniliksurvey.show');
 
-Route::get('/dokpenilikpra/{id}', [PenilikbangunanController::class, 'dokpenilikpra'])->middleware('auth')->name('dokpenilikpra');
+Route::get('/dokpenilikpra/{id}', [PenilikbangunanController::class, 'dokpenilikpra'])->middleware('auth','can:admindpupr')->name('dokpenilikpra');
 
-Route::get('/dokpenilikpracreate/{id}', [PenilikbangunanController::class, 'dokpenilikpracreate'])->middleware('auth')->name('dokpenilikpracreate');
-Route::post('/dokpenilikpracreatenew', [PenilikbangunanController::class, 'dokpenilikpracreatenew'])->middleware('auth')->name('dokpenilikpracreatenew');
+Route::get('/dokpenilikpracreate/{id}', [PenilikbangunanController::class, 'dokpenilikpracreate'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpracreate');
+Route::post('/dokpenilikpracreatenew', [PenilikbangunanController::class, 'dokpenilikpracreatenew'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpracreatenew');
 
 Route::get('/dokpenilikprafoto/{id}', [PenilikbangunanController::class, 'dokpenilikprafoto'])->middleware('auth')->name('dokpenilikprafoto');
 Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
