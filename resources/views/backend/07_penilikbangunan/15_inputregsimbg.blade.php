@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,21 +85,9 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            </div>
 
 
 
@@ -213,50 +155,50 @@ th {
 </h5>
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-        <label for="noregsimbg" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="noregsimbg" class="form-label-modern">
             <i class="bi bi-file-earmark-text-fill text-primary me-2"></i> No Registrasi SIMBG
         </label>
         <input type="text" class="form-control" id="noregsimbg" name="noregsimbg" value="{{ old('noregsimbg', $penilik->noregsimbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalsimbg" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="tanggalsimbg" class="form-label-modern">
             <i class="bi bi-calendar-date text-success me-2"></i> Tanggal SIMBG
         </label>
         <input type="date" class="form-control" id="tanggalsimbg" name="tanggalsimbg" value="{{ old('tanggalsimbg', $penilik->tanggalsimbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="nokrk" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="nokrk" class="form-label-modern">
             <i class="bi bi-file-earmark-code-fill text-warning me-2"></i> No KRK
         </label>
         <input type="text" class="form-control" id="nokrk" name="nokrk" value="{{ old('nokrk', $penilik->nokrk ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalkrk" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="tanggalkrk" class="form-label-modern">
             <i class="bi bi-calendar-date text-warning me-2"></i> Tanggal KRK
         </label>
         <input type="date" class="form-control" id="tanggalkrk" name="tanggalkrk" value="{{ old('tanggalkrk', $penilik->tanggalkrk ?? '') }}">
     </div>
 
-    {{-- <div class="col-md-6 mb-3">
-        <label for="nopbg" class="form-label">
+    {{-- <div class="form-modern col-md-6 mb-3">
+        <label for="nopbg" class="form-label-modern">
             <i class="bi bi-building-fill-gear text-danger me-2"></i> No PBG
         </label>
         <input type="text" class="form-control" id="nopbg" name="nopbg" value="{{ old('nopbg', $penilik->nopbg ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
-        <label for="tanggalpbg" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="tanggalpbg" class="form-label-modern">
             <i class="bi bi-calendar-event text-danger me-2"></i> Tanggal PBG
         </label>
         <input type="date" class="form-control" id="tanggalpbg" name="tanggalpbg" value="{{ old('tanggalpbg', $penilik->tanggalpbg ?? '') }}">
     </div> --}}
 
     {{-- <div class="col-md-12 mb-3">
-        <label for="berkaspbg" class="form-label">
+        <label for="berkaspbg" class="form-label-modern">
             <i class="bi bi-filetype-pdf text-danger me-2"></i> Berkas PBG (PDF)
         </label>
         <input class="form-control" type="file" name="berkaspbg" id="berkaspbg" accept="application/pdf" onchange="previewPDF(event)">
@@ -282,7 +224,7 @@ th {
 
 <div class="col-12">
     {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input

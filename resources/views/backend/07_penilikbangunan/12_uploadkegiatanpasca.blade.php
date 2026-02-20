@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -204,8 +146,8 @@ th {
 <div class="row">
     <!-- Kolom Kiri -->
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="tanggalkegiatan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="tanggalkegiatan">
                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
             </label>
             <input
@@ -219,8 +161,8 @@ th {
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-<div class="mb-3">
-    <label class="form-label" for="kegiatanke">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="kegiatanke">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Kegiatan Ke-
     </label>
     <select
@@ -242,8 +184,8 @@ th {
 
     <!-- Kolom Kanan -->
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="kegiatan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="kegiatan">
                 <i class="bi bi-clipboard-check" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
             </label>
             <input
@@ -259,8 +201,8 @@ th {
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="uraiankegiatan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="uraiankegiatan">
                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Kegiatan
             </label>
             <textarea
@@ -278,8 +220,8 @@ th {
 
     <!-- Full Width -->
     <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label" for="catatankegiatan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="catatankegiatan">
                 <i class="bi bi-journal-check" style="margin-right: 8px; color: navy;"></i> Catatan Kegiatan
             </label>
             <textarea
@@ -297,8 +239,8 @@ th {
 </div>
 <div class="row">
     <!-- Tanggal Mulai -->
-    <div class="col-md-4 mb-3">
-        <label for="tanggalmulai" class="form-label">
+    <div class="col-md-4 form-modern mb-3">
+        <label for="tanggalmulai" class="form-label-modern">
             <i class="bi bi-calendar-event" style="color: navy;"></i> Tanggal Mulai
         </label>
         <input type="date" id="tanggalmulai" name="tanggalmulai"
@@ -310,8 +252,8 @@ th {
     </div>
 
     <!-- Tanggal Selesai -->
-    <div class="col-md-4 mb-3">
-        <label for="tanggalselesai" class="form-label">
+    <div class="col-md-4 form-modern mb-3">
+        <label for="tanggalselesai" class="form-label-modern">
             <i class="bi bi-calendar-check" style="color: navy;"></i> Tanggal Selesai
         </label>
         <input type="date" id="tanggalselesai" name="tanggalselesai"
@@ -323,8 +265,8 @@ th {
     </div>
 
     <!-- Hasil Inspeksi -->
-    <div class="col-md-4 mb-3">
-        <label for="hasilinspeksi" class="form-label">
+    <div class="col-md-4 form-modern mb-3">
+        <label for="hasilinspeksi" class="form-label-modern">
             <i class="bi bi-ui-checks" style="color: navy;"></i> Hasil Inspeksi
         </label>
         <select id="hasilinspeksi" name="hasilinspeksi"

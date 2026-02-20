@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -62,7 +16,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-               style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
+               style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -124,20 +78,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -145,49 +87,7 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-                            @can('pemohon')
-                        <button class="button-newvalidasi"
-                        type="button"
 
-                        onclick="location.href='{{ url('/bekrkusahapemohon') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-                            @can('dinas')
-                        <button class="button-kembali"
-                        type="button"
-
-                        onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-                            @can('pemohonbantek')
-                        <button class="button-kembali"
-                        type="button"
-
-                        onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-
-                        {{-- @canany(['konsultanbantek'])
-<button class="button-create" type="button"
-    onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
-    style="cursor: pointer; margin-left:10px; color:black;">
-    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
-</button>
-
-   <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-kembali"
-   style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
-    <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-</a>
-
-
-        @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
 
@@ -197,7 +97,7 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Data Kegiatan Pasca Inspeksi
 </button>
 
-<a href="{{ url('/dataallpenilikbg') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url()->previous() }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
 
@@ -234,50 +134,50 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+    <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
-    <th style="background-color: #ADD8E6; width:50px; text-align: center;">
+    <th style=" width:50px; text-align: center;">
         <i class="bi bi-hash"></i> No
     </th>
-    <th style="background-color: #ADD8E6; width:200px;">
+    <th style=" width:200px;">
         <i class="bi bi-journal-text"></i> Kegiatan
     </th>
-    <th style="background-color: #ADD8E6; width:150px;">
+    <th style=" width:150px;">
         <i class="bi bi-calendar-event"></i> Tanggal Kegiatan
     </th>
-    {{-- <th style="background-color: #ADD8E6; width:200px;">
+    {{-- <th style=" width:200px;">
         <i class="bi bi-list-task"></i> Nama Kegiatan
     </th> --}}
-    <th style="background-color: #ADD8E6; width:120px;">
+    <th style=" width:120px;">
         <i class="bi bi-123"></i> Kegiatan Ke-
     </th>
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-card-text"></i> Uraian Kegiatan
     </th>
 
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-journal-check"></i> Catatan Kegiatan
     </th>
 
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-journal-check"></i> Tanggal Mulai
     </th>
 
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-journal-check"></i> Tanggal Selesai
     </th>
 
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-journal-check"></i> Hasil Inspeksi
     </th>
 
-    <th style="background-color: #ADD8E6; width:300px;">
+    <th style=" width:300px;">
         <i class="bi bi-journal-check"></i> Lihat Foto & Berkas
     </th>
 
     @canany(['superadmin', 'admin'])
-    <th style="background-color: #ADD8E6; width:120px;">
+    <th style=" width:120px;">
         <i class="bi bi-tools"></i> Aksi
     </th>
     @endcanany

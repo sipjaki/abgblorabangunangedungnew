@@ -131,7 +131,8 @@
 <br>
 
 <div class="container" style="margin-bottom: 20px;">
-<a href="/dataallpenilikbg">
+
+<a href="{{ url()->previous() }}">
     <button class="button-berkas">
         <i class="bi bi-folder2-open me-2"></i> Berkas Inspeksi Bangunan Gedung
     </button>

@@ -1089,11 +1089,11 @@ Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenil
 Route::get('/dataallpenilikbgupdate/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdate'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgupdate');
 Route::put('/dataallpenilikbgupdatenew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdatenew'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgupdatenew');
 
-Route::get('/dataallpenilikbgregsimbg/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbg'])->name('dataallpenilikbgregsimbg');
-Route::put('/dataallpenilikbgregsimbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbgnew'])->middleware('auth')->name('dataallpenilikbgregsimbgnew');
+Route::get('/dataallpenilikbgregsimbg/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgregsimbg');
+Route::put('/dataallpenilikbgregsimbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbgnew'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgregsimbgnew');
 
-Route::get('/dataallpenilikuploadpbg/{id}', [PenilikbangunanController::class, 'dataallpenilikuploadpbg'])->name('dataallpenilikuploadpbg');
-Route::put('/dataallpenilikuploadpbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikuploadpbgnew'])->middleware('auth')->name('dataallpenilikuploadpbgnew');
+Route::get('/dataallpenilikuploadpbg/{id}', [PenilikbangunanController::class, 'dataallpenilikuploadpbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikuploadpbg');
+Route::put('/dataallpenilikuploadpbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikuploadpbgnew'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikuploadpbgnew');
 
 Route::get('/surattugaspenilik/{id}', [PenilikbangunanController::class, 'surattugaspenilik'])->middleware('auth', 'can:admindpupr')->name('surattugaspenilik');
 Route::get('/surattugaspenilikcreate/{id}', [PenilikbangunanController::class, 'surattugaspenilikcreate'])->middleware('auth', 'can:admindpupr')->name('surattugaspenilikcreate');
@@ -1121,7 +1121,7 @@ Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokp
 Route::delete('/fotopradelete/{id}', [PenilikbangunanController::class, 'fotopradelete'])->middleware('auth')->name('fotopradelete');
 Route::delete('/prakegiatanfotopradelete/{id}', [PenilikbangunanController::class, 'prakegiatanfotopradelete'])->middleware('auth')->name('prakegiatanfotopradelete');
 
-Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenilikpasca'])->middleware('auth')->name('dokpenilikpasca');
+Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenilikpasca'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpasca');
 
 Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth')->name('dokpenilikpascafoto');
 Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikpascafotoupload'])->middleware('auth')->name('dokpenilikpascafotoupload');
@@ -1129,8 +1129,8 @@ Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'do
 // in brot ----------
 Route::delete('/fotopascadelete/{id}', [PenilikbangunanController::class, 'fotopascadelete'])->middleware('auth')->name('fotopascadelete');
 
-Route::get('/dokpenilikpascacreate/{id}', [PenilikbangunanController::class, 'dokpenilikpascacreate'])->middleware('auth')->name('dokpenilikpascacreate');
-Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dokpenilikpascacreatenew'])->middleware('auth')->name('dokpenilikpascacreatenew');
+Route::get('/dokpenilikpascacreate/{id}', [PenilikbangunanController::class, 'dokpenilikpascacreate'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpascacreate');
+Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dokpenilikpascacreatenew'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpascacreatenew');
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 

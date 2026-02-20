@@ -16,7 +16,7 @@
 
    <!--begin::App Main-->
    <main class="app-main"
-               style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
+               style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -87,49 +87,7 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-                            @can('pemohon')
-                        <button class="button-newvalidasi"
-                        type="button"
 
-                        onclick="location.href='{{ url('/bekrkusahapemohon') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-                            @can('dinas')
-                        <button class="button-kembali"
-                        type="button"
-
-                        onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-                            @can('pemohonbantek')
-                        <button class="button-kembali"
-                        type="button"
-
-                        onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
-                        style="cursor: pointer; color:black; margin-left:5px;">
-                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-                        </button>
-                    @endcan
-
-                        {{-- @canany(['konsultanbantek'])
-<button class="button-create" type="button"
-    onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
-    style="cursor: pointer; margin-left:10px; color:black;">
-    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
-</button>
-
-   <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-kembali"
-   style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
-    <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-</a>
-
-
-        @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
 
@@ -139,10 +97,9 @@
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Data Kegiatan Pra Inspeksi
 </button>
 
-<a href="{{ url('/dataallpenilikbg') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url()->previous() }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
-
         @endcanany
 
     </div>
