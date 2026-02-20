@@ -1115,16 +1115,16 @@ Route::get('/dokpenilikpra/{id}', [PenilikbangunanController::class, 'dokpenilik
 Route::get('/dokpenilikpracreate/{id}', [PenilikbangunanController::class, 'dokpenilikpracreate'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpracreate');
 Route::post('/dokpenilikpracreatenew', [PenilikbangunanController::class, 'dokpenilikpracreatenew'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpracreatenew');
 
-Route::get('/dokpenilikprafoto/{id}', [PenilikbangunanController::class, 'dokpenilikprafoto'])->middleware('auth')->name('dokpenilikprafoto');
-Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
+Route::get('/dokpenilikprafoto/{id}', [PenilikbangunanController::class, 'dokpenilikprafoto'])->middleware('auth', 'can:admindpupr')->name('dokpenilikprafoto');
+Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth', 'can:admindpupr')->name('dokpenilikprafotoupload');
 
 Route::delete('/fotopradelete/{id}', [PenilikbangunanController::class, 'fotopradelete'])->middleware('auth')->name('fotopradelete');
 Route::delete('/prakegiatanfotopradelete/{id}', [PenilikbangunanController::class, 'prakegiatanfotopradelete'])->middleware('auth')->name('prakegiatanfotopradelete');
 
 Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenilikpasca'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpasca');
 
-Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth')->name('dokpenilikpascafoto');
-Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikpascafotoupload'])->middleware('auth')->name('dokpenilikpascafotoupload');
+Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpascafoto');
+Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikpascafotoupload'])->middleware('auth', 'can:admindpupr')->name('dokpenilikpascafotoupload');
 
 // in brot ----------
 Route::delete('/fotopascadelete/{id}', [PenilikbangunanController::class, 'fotopascadelete'])->middleware('auth')->name('fotopascadelete');
