@@ -1,23 +1,4 @@
 <style>
-    /* Background sidebar dengan animasi */
-    /* .app-sidebar {
-        background:
-            linear-gradient(45deg,
-                rgba(0, 0, 128, 0.9) 30%,
-                rgba(0, 0, 128, 0.7)),
-            repeating-linear-gradient(-45deg,
-                rgba(255, 209, 0, 0.1) 0px,
-                rgba(255, 209, 0, 0.1) 2px,
-                transparent 2px,
-                transparent 5px),
-            url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23000080"/><path d="M20 20L50 5L80 20V35L50 50L20 35V20Z" fill="%23ffd100" opacity="0.1"/><path d="M20 65L50 50L80 65V80L50 95L20 80V65Z" fill="%23ffd100" opacity="0.1"/></svg>');
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        overflow: hidden;
-        animation: buildingPan 20s linear infinite;
-    } */
-
     .app-sidebar {
     position: relative;
     overflow: hidden;
@@ -1404,7 +1385,7 @@
   {{-- <i class="bi bi-person-search nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i> --}}
   <i class="bi bi-clipboard-check nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
 
-  <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
+  <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
   <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
