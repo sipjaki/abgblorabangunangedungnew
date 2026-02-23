@@ -122,7 +122,7 @@
                                    </script> --}}
 <a href="{{ url()->previous() }}" style="text-decoration: none;">
     <button class="button-modern" type="button">
-        <i class="fas fa-arrow-left" style="margin-right: 8px; color: navy;"></i> Kembali
+        <i class="bi bi-arrow-left" style="margin-right: 8px; color: navy;"></i> Kembali
     </button>
 </a>
 
@@ -573,8 +573,8 @@
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-    <button class="button-modern" type="button" onclick="openPengesahanModal()">
-        <i class="fas fa-check-circle-fill" style="margin-right: 5px; color: navy;"></i>
+    <button class="button-baru" type="button" onclick="openPengesahanModal()">
+        <i class="bi bi-check-circle-fill" style="margin-right: 5px; color: navy;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
 </div>
