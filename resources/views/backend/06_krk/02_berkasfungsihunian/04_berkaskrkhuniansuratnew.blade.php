@@ -215,7 +215,7 @@
                 </div>
 
                 <!-- Jumlah Lantai Maksimal -->
-                <div class="form-group row mb-4">
+                {{-- <div class="form-group row mb-4">
                     <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
                         <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
@@ -226,7 +226,45 @@
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
                     @enderror
                     <small> Keterangan : Contoh (2 Lantai)</small>
-                </div>
+                </div> --}}
+
+                <div class="form-group row mb-4">
+    <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
+        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
+    </label>
+    <div class="col-md-8">
+        <select
+            class="form-control @error('luaslantaimaksimal') is-invalid @enderror"
+            id="luaslantaimaksimal"
+            name="luaslantaimaksimal"
+        >
+            <option value="">-- Pilih Jumlah Lantai --</option>
+
+            <option value="2 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 Lantai' ? 'selected' : '' }}>
+                2 Lantai
+            </option>
+
+            <option value="4 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '4 Lantai' ? 'selected' : '' }}>
+                4 Lantai
+            </option>
+
+            <option value="2 - 8 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 - 8 Lantai' ? 'selected' : '' }}>
+                2 - 8 Lantai
+            </option>
+        </select>
+
+        @error('luaslantaimaksimal')
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+</div>
+
+
 
                 <!-- Luas Bangunan Maksimal -->
                    <div class="form-group row mb-4">
