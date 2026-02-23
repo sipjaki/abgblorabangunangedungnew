@@ -1,49 +1,3 @@
-<style>
-    body {
-           font-family: 'Poppins', sans-serif;
-       }
-       .zebra-table {
-       width: 100%;
-       border-collapse: collapse;
-       font-family: 'Poppins', sans-serif;
-       font-size: 14px;
-       border: 1px solid #e5e7eb;
-   }
-
-   .zebra-table th {
-       background-color: #ADD8E6; /* biru muda */
-       color: black;
-       text-align: center;
-       padding: 8px 12px;
-       border: 1px solid #e5e7eb;
-       white-space: nowrap;
-   }
-
-   .zebra-table td {
-       text-align: center;
-       padding: 8px 12px;
-       border: 1px solid #e5e7eb;
-       white-space: nowrap;
-   }
-
-   .zebra-table tbody tr:nth-child(odd) {
-       background-color: #ffffff;
-   }
-
-   .zebra-table tbody tr:nth-child(even) {
-       background-color: #f1f1f1;
-   }
-
-   .zebra-table tbody tr:hover {
-       background-color: #ffd100 !important;
-   }
-
-   th {
-       background-color: #ADD8E6;
-   }
-
-   </style>
-
    @include('backend.00_administrator.00_baganterpisah.01_header')
 
    <!--begin::Body-->
@@ -132,21 +86,9 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-header">
-                       <div style="
-                       margin-bottom:10px;
-                       font-weight: 900;
-                       font-size: 16px;
-                       text-align: center;
-                       background: linear-gradient(135deg, #000080, #000080);
-                       color: white;
-                       padding: 10px 25px;
-                       border-radius: 10px;
-                       display: inline-block;
-                       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                       width: 100%;
-                   ">
-                   <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                   </div>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+                </div>
 
 
                         <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
@@ -271,36 +213,78 @@
                     @enderror
                 </div>
 
-                <!-- Jumlah Lantai Maksimal -->
-                <div class="form-group row mb-4">
-                    <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
-                        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
-                    </label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal">
-                    </div>
-                    @error('luaslantaimaksimal')
-                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+        <div class="form-group row mb-4">
+    <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
+        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
+    </label>
+    <div class="col-md-8">
+        <select
+            class="form-control @error('luaslantaimaksimal') is-invalid @enderror"
+            id="luaslantaimaksimal"
+            name="luaslantaimaksimal"
+        >
+            <option value="">-- Pilih Jumlah Lantai --</option>
+
+            <option value="2 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 Lantai' ? 'selected' : '' }}>
+                2 Lantai
+            </option>
+
+            <option value="4 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '4 Lantai' ? 'selected' : '' }}>
+                4 Lantai
+            </option>
+
+            <option value="2 - 8 Lantai"
+                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 - 8 Lantai' ? 'selected' : '' }}>
+                2 - 8 Lantai
+            </option>
+        </select>
+
+        @error('luaslantaimaksimal')
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+</div>
 
                 <!-- Luas Bangunan Maksimal -->
-                <div class="form-group row mb-4">
-                    <label for="luasbangunan" class="col-md-4 col-form-label">
-                        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
-                    </label>
-                    <div class="col-md-8">
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" >
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-danger text-white">M²</span>
-                            </div>
-                        </div>
-                        @error('luasbangunan')
-                        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
+
+
+        <div class="form-group row mb-4">
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+    </label>
+
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text"
+                   class="form-control @error('luasbangunan') is-invalid @enderror"
+                   id="luasbangunan"
+                   name="luasbangunan"
+                   value="{{ old('luasbangunan', isset($data->luasbangunan) ? number_format($data->luasbangunan / 100, 2, '.', '') : '') }}"
+                   placeholder="Contoh: 65.45"
+                   oninput="this.value = this.value.replace(',', '.')">
+
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+
+        <small class="text-muted">
+            Gunakan tanda koma (,) atau titik (.) untuk desimal
+        </small>
+
+        @error('luasbangunan')
+            <div class="invalid-feedback" style="color: red;">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+</div>
+
+
 
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
@@ -551,7 +535,7 @@
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <button class="button-modern" type="button" onclick="openPengesahanModal()">
+    <button class="button-baru" type="button" onclick="openPengesahanModal()">
         <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>

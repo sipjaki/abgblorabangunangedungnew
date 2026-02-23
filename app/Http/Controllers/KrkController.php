@@ -4377,12 +4377,27 @@ public function dokuploadkrkhuniannew(Request $request, $id)
 
 public function perpengesahankrkagama(Request $request, $id)
 {
+
+if ($request->filled('luasbangunan')) {
+
+    // ubah koma jadi titik
+    $luasbangunan = str_replace(',', '.', $request->luasbangunan);
+
+    // kalikan 100 supaya bisa disimpan di integer
+    $request->merge([
+        'luasbangunan' => (int) round($luasbangunan * 100)
+    ]);
+
+}
+
+
     $validated = $request->validate([
         'nomorregistrasi' => 'required|string|max:50',
         'tanggalpermohonan' => 'required|date',
         'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
         'luaslantaimaksimal' => 'required|string',
-        'luasbangunan' => 'required|string',
+        // 'luasbangunan' => 'required|string',
+        'luasbangunan' => ['required','regex:/^\d+([.,]\d{1,2})?$/'],
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',
         'rencanagsbblora_id' => 'required|integer',

@@ -365,7 +365,7 @@ Route::post('/permohonankrkhunian/create', [KrkController::class, 'permohonankrk
 Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerkashunian'])->name('berkashunian.validate');
 Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesahankrkhunian'])->middleware('auth', 'can:admindpupr')->name('perpengesahankrkhunian'); // SUPER ADMIN DAN ADMIN
 
-Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->name('perpengesahankrkagama');
+Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->middleware('auth', 'can:admindpupr')->name('perpengesahankrkagama');
 
 Route::post('/perpengesahankrksosbud/{id}', [KrkController::class, 'perpengesahankrksosbud'])->name('perpengesahankrksosbud');
 
@@ -513,19 +513,19 @@ Route::get('/bekrkkeagamaan', [KrkController::class, 'bekrkkeagamaan'])->middlew
 
 Route::get('/bekrkkeagamaanpermohonan/{id}', [KrkController::class, 'bekrkkeagamaanpermohonan'])->middleware('auth')->name('bekrkkeagamaanpermohonan.show');
 Route::put('/validasikrkkeagamaan/{id}', [KrkController::class, 'validasikrkkeagamaan'])->middleware('auth')->name('validasikrkkeagamaan');
-Route::put('/valberkasagama1/{id}', [KrkController::class, 'valberkasagama1'])->name('valberkasagama1.update');
-Route::get('/doklapkrkkeagamaan/{id}', [KrkController::class, 'doklapkrkkeagamaan'])->middleware('auth')->name('doklapkrkkeagamaan.show');
+Route::put('/valberkasagama1/{id}', [KrkController::class, 'valberkasagama1'])->middleware('auth')->name('valberkasagama1.update');
+Route::get('/doklapkrkkeagamaan/{id}', [KrkController::class, 'doklapkrkkeagamaan'])->middleware('auth', 'can:admindpupr')->name('doklapkrkkeagamaan.show');
 
-Route::get('/doklapkrkkeagamaancreate/{id}', [KrkController::class, 'doklapkrkkeagamaancreate'])->middleware('auth')->name('doklapkrkkeagamaancreate.create');
-Route::post('/doklapkrkkeagamaancreatenew', [KrkController::class, 'doklapkrkkeagamaancreatenew'])->middleware('auth')->name('create.doklapkrkkeagamaancreatenew');
+Route::get('/doklapkrkkeagamaancreate/{id}', [KrkController::class, 'doklapkrkkeagamaancreate'])->middleware('auth', 'can:admindpupr')->name('doklapkrkkeagamaancreate.create');
+Route::post('/doklapkrkkeagamaancreatenew', [KrkController::class, 'doklapkrkkeagamaancreatenew'])->middleware('auth', 'can:admindpupr')->name('create.doklapkrkkeagamaancreatenew');
 
 Route::delete('/doklapkrkkeagamaancreatedelete/{id}', [KrkController::class, 'doklapkrkkeagamaandelete'])->middleware('auth')->name('delete.doklapkrkkeagamaancreatedelete');
 
-Route::put('/valberkasagama2/{id}', [KrkController::class, 'valberkasagama2'])->name('valberkasagama2.update');
-Route::post('/berkaskeagamaanval/{id}/validate', [KrkController::class, 'berkaskeagamaanval'])->name('berkaskeagamaanval.validate');
+Route::put('/valberkasagama2/{id}', [KrkController::class, 'valberkasagama2'])->middleware('auth')->name('valberkasagama2.update');
+Route::post('/berkaskeagamaanval/{id}/validate', [KrkController::class, 'berkaskeagamaanval'])->middleware('auth')->name('berkaskeagamaanval.validate');
 
-Route::get('/perpengesahanagama/{id}', [KrkController::class, 'perpengesahanagama'])->name('permohonan.perpengesahanagama');
-Route::get('/perpengesahanagamaman/{id}', [KrkController::class, 'perpengesahanagamaman'])->name('perpengesahanagamaman');
+Route::get('/perpengesahanagama/{id}', [KrkController::class, 'perpengesahanagama'])->middleware('auth', 'can:admindpupr')->name('permohonan.perpengesahanagama');
+Route::get('/perpengesahanagamaman/{id}', [KrkController::class, 'perpengesahanagamaman'])->middleware('auth', 'can:admindpupr')->name('perpengesahanagamaman');
 
 Route::post('/perpengesahanagamacreate/{id}', [KrkController::class, 'perpengesahanagamacreate'])->name('permohonan.perpengesahanagamacreate');
 
