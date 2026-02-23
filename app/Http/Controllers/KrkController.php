@@ -2140,6 +2140,7 @@ public function valberkasagama3(Request $request, $id)
 
     // Ambil data GSB Kabupaten Blora
     $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+    $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
 
     // Return ke view
     return view('backend.06_krk.03_berkasfungsikeagamaan.06_berkaskrkfinalagama', [
@@ -2147,6 +2148,7 @@ public function valberkasagama3(Request $request, $id)
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
+        'tandatangan' => $tandatangan,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
 }

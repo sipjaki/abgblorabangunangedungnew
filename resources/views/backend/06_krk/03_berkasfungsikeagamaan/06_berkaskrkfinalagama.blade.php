@@ -50,7 +50,7 @@
         @include('frontend.android.00_fiturmenu.06_alert')
 
         <!--begin::App Main-->
-        <main class="app-main" style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
+        <main class="app-main" style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
             <!-- Your existing content header -->
             <div class="app-content-header">
                 <div class="container-fluid">
@@ -313,14 +313,48 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">3</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Bangunan Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+    @php
+        $luasB = $item->luasbangunan ?? null;
+
+        $luasBFormatted = is_numeric($luasB)
+            ? number_format($luasB / 100, 2, ',', '.') . ' M²'
+            : '-';
+    @endphp
+
+    {{ $luasBFormatted }}
+    </td>
 </tr>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">4</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Lantai Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+    @php
+        $luasBangunan = $item->luasbangunan ?? null;
+        $lantaiText = $item->luaslantaimaksimal ?? null;
+
+        $lantai = match($lantaiText) {
+            '2 Lantai' => 2,
+            '4 Lantai' => 4,
+            '2 - 8 Lantai' => 8,
+            default => null
+        };
+
+        $hasil = (is_numeric($luasBangunan) && $lantai !== null)
+            ? ($luasBangunan / 100) * $lantai
+            : null;
+
+        $hasilFormatted = $hasil !== null
+            ? number_format($hasil, 2, ',', '.') . ' M²'
+            : '-';
+    @endphp
+
+    {{ $hasilFormatted }}
+    </td>
 </tr>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">5</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Fungsi Utama Bangunan</td>
@@ -408,37 +442,55 @@
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Wajib menyediakan tempat/area parkir.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
         <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+              <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
+
     </ol>
 </div>
 
                                             <!-- Signature section -->
-                                            <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
+                                                        <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
+
+@foreach ($tandatangan as $subtanda)
+
     <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
         {{-- Kabupaten Blora<br> --}}
-        Plt. KEPALA DINAS<br>
+        {{$subtanda->jabatan}}<br>
         PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
         <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
-            <!-- TTD Kabupaten Blora agak ke kanan -->
-            <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
-                 style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
 
-            <!-- TTD PA Huda di kanan -->
-            <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
-                 style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+    {{-- Cap / Stempel Blora --}}
+    @if(!empty($subtanda->capblora))
+        <img src="{{ asset($subtanda->capblora) }}"
+             alt="Cap Blora"
+             style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
+    @endif
+
+    {{-- Tanda Tangan --}}
+    @if(!empty($subtanda->tandatangan))
+        <img src="{{ asset($subtanda->tandatangan) }}"
+             alt="Tanda Tangan"
+             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+    @endif
+
         </div>
         <br>
-<div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
-    <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIDZAMUDIN AL HUDDA, S.T
-    </span>
-    <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
-        NIP. 19720326 200604 1 005
-    </span>
-</div>
+            <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
+                <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+                    {{$subtanda->namalengkap}}
+                </span>
+                <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+                    NIP. {{$subtanda->nip}}
+                    {{-- NIP. 19720326 200604 1 005 --}}
+                </span>
+        </div>
     </div>
+
+
+@endforeach
 </div>
+
 
                                         </div>
                                     </div>

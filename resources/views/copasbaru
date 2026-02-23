@@ -485,3 +485,64 @@ if ($request->filled('luasbangunan')) {
         @enderror
     </div>
 </div>
+
+
+--------
+
+    $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
+            'tandatangan' => $tandatangan,      // Data dropdown/GSB
+
+            <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dokumen ini disusun hanya sebagai panduan informatif bagi pemohon, dengan mengacu pada dokumen tata ruang dan peraturan perundang-undangan yang berlaku. Tujuannya adalah untuk memberikan kemudahan  bagi pemohon dalam melakukan pengisian data pada aplikasi SIMBG</li>
+
+
+
+
+
+
+            ------------------------------------------------
+
+
+
+            <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
+
+@foreach ($tandatangan as $subtanda)
+
+    <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
+        {{-- Kabupaten Blora<br> --}}
+        {{$subtanda->jabatan}}<br>
+        PEKERJAAN UMUM DAN PENATAAN RUANG<br>
+        KABUPATEN BLORA<br><br>
+
+        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+
+    {{-- Cap / Stempel Blora --}}
+    @if(!empty($subtanda->capblora))
+        <img src="{{ asset($subtanda->capblora) }}"
+             alt="Cap Blora"
+             style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
+    @endif
+
+    {{-- Tanda Tangan --}}
+    @if(!empty($subtanda->tandatangan))
+        <img src="{{ asset($subtanda->tandatangan) }}"
+             alt="Tanda Tangan"
+             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+    @endif
+
+        </div>
+        <br>
+            <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
+                <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+                    {{$subtanda->namalengkap}}
+                </span>
+                <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+                    NIP. {{$subtanda->nip}}
+                    {{-- NIP. 19720326 200604 1 005 --}}
+                </span>
+        </div>
+    </div>
+
+
+@endforeach
+</div>
