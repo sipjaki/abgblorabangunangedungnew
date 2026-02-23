@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -62,13 +16,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-   style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  ">
+   style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0; ">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -131,20 +79,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -153,7 +89,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-kembali" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -201,8 +137,8 @@ th {
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="luastanah">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="luastanah">
             <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
         </label>
         <input
@@ -220,8 +156,8 @@ th {
 </div>
 
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="jumlahlantai">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="jumlahlantai">
             <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
         <select
@@ -252,8 +188,8 @@ th {
 </div>
 
 <div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="ktp">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="ktp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload KTP (PDF)
     </label>
     <input type="file" id="ktp" name="ktp" accept="application/pdf"
@@ -273,8 +209,8 @@ th {
 </div>
 
 
-<div class="mb-3">
-    <label class="form-label" for="npwp">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="npwp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload NPWP (PDF)
     </label>
     <input type="file" id="npwp" name="npwp" accept="application/pdf"
@@ -298,8 +234,8 @@ th {
 
 <div class="col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="sertifikattanah">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="sertifikattanah">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Sertifikat Tanah (PDF)
     </label>
     <input type="file" id="sertifikattanah" name="sertifikattanah" accept="application/pdf"
@@ -318,8 +254,8 @@ th {
     </div>
 </div>
 
-<div class="mb-3">
-    <label class="form-label" for="lampiranoss">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="lampiranoss">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Lampiran OSS (PDF)
     </label>
     <input type="file" id="lampiranoss" name="lampiranoss" accept="application/pdf"
@@ -340,8 +276,8 @@ th {
 
 </div>
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="buktipbb">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="buktipbb">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti PBB (PDF)
         </label>
         <input type="file" id="buktipbb" name="buktipbb" accept="application/pdf"
@@ -359,8 +295,8 @@ th {
             Data belum di update. Silahkan upload berkas Bukti PBB.
         </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label" for="dokvalidasi">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="dokvalidasi">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Validasi (PDF)
         </label>
         <input type="file" id="dokvalidasi" name="dokvalidasi" accept="application/pdf"
@@ -382,8 +318,8 @@ th {
 </div>
 <div class="col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="siteplan">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="siteplan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
     </label>
     <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
@@ -401,8 +337,8 @@ th {
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
-<div class="mb-3">
-    <label class="form-label" for="tandatangan">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Tanda Tangan (PDF/Jpeg)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
@@ -466,9 +402,9 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-berkas" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Perbaikan </span>
                                     </button>
 
                                 </div>

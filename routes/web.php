@@ -543,8 +543,8 @@ Route::post('/krkagamanoterbitnew/{id}', [KrkController::class, 'krkagamanoterbi
 
 Route::put('/valberkasagama4/{id}', [KrkController::class, 'valberkasagama4'])->name('valberkasagama4.update');
 
-Route::get('/bekrkkeagamaanperbaikan/{id}', [KrkController::class, 'bekrkkeagamaanperbaikan'])->middleware('auth')->name('bekrkkeagamaanperbaikan.perbaikan');
-Route::post('/bekrkkeagamaanperbaikannew/{id}', [KrkController::class, 'bekrkkeagamaanperbaikannew'])->middleware('auth')->name('bekrkkeagamaanperbaikannewupdate');
+Route::get('/bekrkkeagamaanperbaikan/{id}', [KrkController::class, 'bekrkkeagamaanperbaikan'])->middleware('auth', 'can:admindinas')->name('bekrkkeagamaanperbaikan.perbaikan');
+Route::post('/bekrkkeagamaanperbaikannew/{id}', [KrkController::class, 'bekrkkeagamaanperbaikannew'])->middleware('auth', 'can:admindinas')->name('bekrkkeagamaanperbaikannewupdate');
 
 Route::delete('/dokbekrkkeagamaandelete/{id}', [KrkController::class, 'dokbekrkkeagamaandelete'])->middleware('auth')->name('delete.dokbekrkkeagamaandelete');
 
