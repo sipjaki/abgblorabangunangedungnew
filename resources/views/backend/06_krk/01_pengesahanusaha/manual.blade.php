@@ -265,6 +265,7 @@
             </div>
         @enderror
     </div>
+
 </div>
 
                 <!-- Fungsi Utama Bangunan -->
