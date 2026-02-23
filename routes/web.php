@@ -551,8 +551,8 @@ Route::delete('/dokbekrkkeagamaandelete/{id}', [KrkController::class, 'dokbekrkk
 
 // -------
 // MENU KRK SOSIAL BUDAYA
-Route::get('/bekrksosbud', [KrkController::class, 'bekrksosbud'])->name('bekrksosbudindex');
-Route::get('/bekrksosbudnew', [KrkController::class, 'bekrksosbudnew'])->name('bekrksosbudindexnew');
+Route::get('/bekrksosbud', [KrkController::class, 'bekrksosbud'])->middleware('auth', 'can:admindpupr')->name('bekrksosbudindex');
+Route::get('/bekrksosbudnew', [KrkController::class, 'bekrksosbudnew'])->middleware('auth')->name('bekrksosbudindexnew');
 
 Route::get('/bekrksosbudpermohonan/{id}', [KrkController::class, 'bekrksosbudpermohonan'])->middleware('auth')->name('bekrksosbudpermohonan.show');
 Route::put('/validasikrksosbud/{id}', [KrkController::class, 'validasikrksosbud'])->middleware('auth')->name('validasikrksosbud');
@@ -589,8 +589,8 @@ Route::put('/valberkassosbud4/{id}', [KrkController::class, 'valberkassosbud4'])
 Route::delete('/dokbekrksosbuddelete/{id}', [KrkController::class, 'dokbekrksosbuddelete'])->middleware('auth')->name('delete.dokbekrksosbuddelete');
 
 // PERBAIAKN DARI SISI ADMIN
-Route::get('/bekrksosbudperbaikanadmin/{id}', [KrkController::class, 'bekrksosbudperbaikanadmin'])->middleware('auth')->name('bekrksosbudperbaikan.perbaikan');
-Route::post('/bekrksosbudperbaikannewadmin/{id}', [KrkController::class, 'bekrksosbudperbaikannewadmin'])->middleware('auth')->name('bekrksosbudperbaikannewupdateadmin');
+Route::get('/bekrksosbudperbaikanadmin/{id}', [KrkController::class, 'bekrksosbudperbaikanadmin'])->middleware('auth', 'can:admindinas')->name('bekrksosbudperbaikan.perbaikan');
+Route::post('/bekrksosbudperbaikannewadmin/{id}', [KrkController::class, 'bekrksosbudperbaikannewadmin'])->middleware('auth', 'can:admindinas')->name('bekrksosbudperbaikannewupdateadmin');
 
 Route::get('/bekrksosbudperbaikan/{id}', [KrkController::class, 'bekrksosbudperbaikan'])->middleware('auth')->name('bekrksosbudperbaikan.perbaikan');
 Route::post('/bekrksosbudperbaikannew/{id}', [KrkController::class, 'bekrksosbudperbaikannew'])->middleware('auth')->name('bekrksosbudperbaikannewupdate');

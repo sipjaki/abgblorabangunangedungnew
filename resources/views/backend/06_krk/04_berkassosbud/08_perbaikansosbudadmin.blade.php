@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -85,20 +85,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -385,7 +373,7 @@
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="form-modern col-md-6">
+<div class="col-md-6">
 <div class="form-modern mb-3">
     <label class="form-label-modern" for="ktp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload KTP (PDF)
@@ -430,7 +418,7 @@
 
 </div>
 
-<div class="form-modern col-md-6">
+<div class="col-md-6">
 
     <div class="form-modern mb-3">
     <label class="form-label-modern" for="sertifikattanah">
@@ -494,7 +482,7 @@
 
 
 </div>
-<div class="form-modern col-md-6">
+<div class="col-md-6">
     <div class="form-modern mb-3">
         <label class="form-label-modern" for="buktipbb">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti PBB (PDF)
@@ -516,7 +504,7 @@
     </div>
 
 </div>
-<div class="form-modern col-md-6">
+<div class="col-md-6">
 
     <div class="form-modern mb-3">
     <label class="form-label-modern" for="siteplan">
@@ -562,7 +550,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
 
                                     </div>
-                                    <div class="form-modern col-md-6">
+                                    <div class="col-md-6">
 <div class="form-modern mb-3">
     <label class="form-label-modern " for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Pernyataan KRK

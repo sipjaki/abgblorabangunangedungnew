@@ -63,7 +63,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -2565,7 +2565,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-modern" type="button" onclick="openModal()">
+                                      <button class="button-baru" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 
