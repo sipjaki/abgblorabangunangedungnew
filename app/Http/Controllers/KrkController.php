@@ -2815,12 +2815,16 @@ public function permohonankrksosbudfinalman($id)
     // Ambil data GSB Kabupaten Blora
     $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
 
+    // TANDA TANGAN KEPALA DINAS
+     $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
     // Return ke view
     return view('backend.06_krk.04_berkassosbud.06_berkaskrkfinalsosbudman', [
-        'title' => 'Berkas Final Permohonan KRK Fungsi Sosial Budaya Keagamaan',
+        'title' => 'Berkas Final Permohonan KRK Fungsi Sosial Budaya',
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
+        'tandatangan' => $tandatangan,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
 }
