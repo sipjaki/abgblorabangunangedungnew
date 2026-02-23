@@ -63,7 +63,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -112,7 +112,13 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newvalidasi"
+        <a href="/bekrkmenaraperbaikan/{{$data->id}}" style="text-decoration: none;">
+            <button class="button-berkas">
+                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
+            </button>
+        </a>
+
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkmenaratelkom') }}';"
                 style="cursor: pointer; color:black;">
@@ -176,7 +182,7 @@ th {
 @can('pemohon')
 
            <a href="/bekrkusahapemohon">
-    <button class="button-newvalidasi" >
+    <button class="button-modern" >
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
     viewBox="0 0 16 16">
     <path fill-rule="evenodd"
@@ -629,7 +635,7 @@ th {
 </tr>
 <tr>
     <td style="text-align: center;">5</td>
-    <td style="text-align: left;"><i class="bi bi-calendar-event" style="margin-right:6px;"></i> Tanggal Permohonan</td>
+    <td style="text-align: left;"><i class="bi bi-calendar-event" style="margin-right:6px;"></i> Tanggal KRK Dibuat </td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->format('d-m-Y') : '-' }}</td>
 </tr>
@@ -701,13 +707,19 @@ th {
     <table class="zebra-table table-striped">
         <tr>
     <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        <button class="button-baru">
+            <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        </button>
 </td>
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
+    <button class="button-baru">
+        <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
+    </button>
 </td>
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    <button class="button-baru">
+        <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    </button>
 </td>
 
 </tr>
@@ -808,15 +820,21 @@ th {
     <table class="zebra-table table-striped">
         <tr>
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-file-earmark-bar-graph" style="margin-right:6px;"></i> Lampiran OSS
+    <button class="button-baru">
+        <i class="bi bi-file-earmark-bar-graph" style="margin-right:6px;"></i> Lampiran OSS
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+    <button class="button-baru">
+        <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang atau PKKPR
+    <button class="button-baru">
+        <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
+    </button>
 </td>
 
 </tr>
@@ -919,11 +937,15 @@ th {
         <tr>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
+    <button class="button-baru">
+        <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Surat Permohonan KRK
+    <button class="button-baru">
+        <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Surat Permohonan KRK
+    </button>
 </td>
 
 </tr>
@@ -998,12 +1020,16 @@ th {
         <tr>
 <!-- Untuk "Surat KKOP" -->
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-geo-alt-fill" style="margin-right:6px;"></i> Surat KKOP
+    <button class="button-baru">
+        <i class="bi bi-geo-alt-fill" style="margin-right:6px;"></i> Surat KKOP
+    </button>
 </td>
 
 <!-- Untuk "Berkas Dukung Lainnya" -->
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-folder-symlink" style="margin-right:6px;"></i> Berkas Dukung Lainnya
+    <button class="button-baru">
+        <i class="bi bi-folder-symlink" style="margin-right:6px;"></i> Berkas Dukung Lainnya
+    </button>
 </td>
 
 </tr>
@@ -1091,6 +1117,7 @@ th {
                 <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
             </button>
         </a>
+
     </div>
 </div>
 @endif
@@ -2044,7 +2071,7 @@ th {
                                     {{-- DOKUMEN VALIDASI DPUPR --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-check2-square"></i> Bukti Validasi DPUPR
+    <i class="bi bi-check2-square"></i> Validasi Tata Ruang
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
