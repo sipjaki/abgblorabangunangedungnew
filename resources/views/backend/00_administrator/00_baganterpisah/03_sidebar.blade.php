@@ -1317,7 +1317,7 @@
     <li class="nav-item">
         <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+            <p style="color: green; margin: 0 0 0 8px;">Permohonan</p>
         </a>
     </li>
 
