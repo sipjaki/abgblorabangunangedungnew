@@ -2790,7 +2790,7 @@ public function valberkassosbud3(Request $request, $id)
 
     // Return ke view
     return view('backend.06_krk.04_berkassosbud.06_berkaskrkfinalsosbud', [
-        'title' => 'Berkas Final Permohonan KRK Fungsi Sosial Budaya Keagamaan',
+        'title' => 'Berkas Final Permohonan KRK Fungsi Sosial Budaya',
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
