@@ -603,7 +603,7 @@
 </tr>
 <tr>
     <td style="text-align: center;">5</td>
-    <td style="text-align: left;"><i class="bi bi-calendar-event" style="margin-right:6px;"></i> Tanggal Permohonan</td>
+    <td style="text-align: left;"><i class="bi bi-calendar-event" style="margin-right:6px;"></i> Tanggal KRK Di Buat</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->format('d-m-Y') : '-' }}</td>
 </tr>

@@ -430,7 +430,7 @@ Route::get('/dokuploadkrkhunian/{id}', [KrkController::class, 'dokuploadkrkhunia
 
 Route::put('/dokuploadkrkhuniannew/{id}', [KrkController::class, 'dokuploadkrkhuniannew'])->middleware('auth')->name('dokuploadkrkhuniannew');
 
-Route::get('/dokuploadkrkagama/{id}', [KrkController::class, 'dokuploadkrkagama'])->middleware('auth')->name('dokuploadkrkagama');
+Route::get('/dokuploadkrkagama/{id}', [KrkController::class, 'dokuploadkrkagama'])->middleware('auth', 'can:admindinas')->name('dokuploadkrkagama');
 
 Route::put('/dokuploadkrkagamanew/{id}', [KrkController::class, 'dokuploadkrkagamanew'])->middleware('auth')->name('dokuploadkrkagamanew');
 
