@@ -401,8 +401,8 @@ Route::put('/validasikrkmenara4/{id}', [KrkController::class, 'validasikrkmenara
 
 
 
-Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
-Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
+Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth', 'admindinas')->name('bekrkmenaraperbaikan');
+Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth', 'admindinas')->name('bekrkmenaraperbaikannew');
 
 Route::get('/dokuploadkrkmenara/{id}', [KrkController::class, 'dokuploadkrkmenara'])->middleware('auth')->name('dokuploadkrkmenara');
 

@@ -178,7 +178,7 @@
 
 <th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
 <th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
-<th><i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Dok Lapangan</th>
+{{-- <th><i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Dok Lapangan</th> --}}
 <th><i class="bi bi-clipboard2-check-fill" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
 
 <th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Data</th>
@@ -218,7 +218,7 @@
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkmenaratelkomshow', $item->id) }}"
                     class="button-modern">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
 
@@ -228,7 +228,7 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td style="text-align: center; ">
   @if($item->verifikasi1 == 'lolos')
     <button
         class="button-hijau"
@@ -312,15 +312,15 @@
     }
 </script>
 
-  <td style="text-align: center;">
+  {{-- <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
-            </td>
+            </td> --}}
 
-            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+            <td style="text-align: center; ">
   @if($item->verifikasi2 == 'sudah')
     <button
         class="button-hijau"
@@ -618,7 +618,7 @@
 </td>
  --}}
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td style="text-align: center; ">
   @if($item->verifikasi3 == 'sudah')
     <button
         class="button-hijau"
@@ -715,7 +715,7 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td style="text-align: center; ">
   @if($item->verifikasi4 == 'sudah')
     <button
         class="button-hijau"
