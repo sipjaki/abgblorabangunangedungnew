@@ -59,12 +59,21 @@
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
+
+                <a href="/bekrkkeagamaanperbaikan/{{$data->id}}" style="text-decoration: none;">
+                    <button class="button-berkas">
+                        <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
+                    </button>
+                </a>
+
         <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkkeagamaanindex') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
+
+
     </div>
 @endcanany
 
@@ -988,7 +997,7 @@
                 </p>
 
                 <a href="/bekrkkeagamaanperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-berkas">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
@@ -1944,7 +1953,7 @@
                                     {{-- DOKUMEN VALIDASI DPUPR --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-check2-square"></i> Bukti Validasi DPUPR
+    <i class="bi bi-check2-square"></i> Validasi Tata Ruang
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
