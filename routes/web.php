@@ -577,8 +577,8 @@ Route::delete('/krksosbudsuratdelete/{id}', [KrkController::class, 'krksosbudsur
 
 Route::put('/valberkassosbud3/{id}', [KrkController::class, 'valberkassosbud3'])->name('valberkassosbud3.update');
 
-Route::get('/permohonankrksosbudfinal/{id}', [KrkController::class, 'permohonankrksosbudfinal'])->name('permohonan.permohonankrksosbudfinal');
-Route::get('/permohonankrksosbudfinalman/{id}', [KrkController::class, 'permohonankrksosbudfinalman'])->name('permohonankrksosbudfinalman');
+Route::get('/permohonankrksosbudfinal/{id}', [KrkController::class, 'permohonankrksosbudfinal'])->middleware('auth', 'can:admindpupr')->name('permohonan.permohonankrksosbudfinal');
+Route::get('/permohonankrksosbudfinalman/{id}', [KrkController::class, 'permohonankrksosbudfinalman'])->middleware('auth', 'can:admindpupr')->name('permohonankrksosbudfinalman');
 
 Route::get('/krksosbufnoterbit/{id}', [KrkController::class, 'krksosbufnoterbit'])->middleware('auth')->name('krksosbufnoterbit.create');
 Route::post('/krksosbufnoterbitnew/{id}', [KrkController::class, 'krksosbufnoterbitnew'])->middleware('auth')->name('create.krksosbufnoterbitnew');
