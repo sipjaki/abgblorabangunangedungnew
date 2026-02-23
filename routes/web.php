@@ -404,7 +404,7 @@ Route::put('/validasikrkmenara4/{id}', [KrkController::class, 'validasikrkmenara
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth', 'admindinas')->name('bekrkmenaraperbaikan');
 Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth', 'admindinas')->name('bekrkmenaraperbaikannew');
 
-Route::get('/dokuploadkrkmenara/{id}', [KrkController::class, 'dokuploadkrkmenara'])->middleware('auth')->name('dokuploadkrkmenara');
+Route::get('/dokuploadkrkmenara/{id}', [KrkController::class, 'dokuploadkrkmenara'])->middleware('auth', 'can:admindinas')->name('dokuploadkrkmenara');
 
 Route::put('/dokuploadkrkmenaranew/{id}', [KrkController::class, 'dokuploadkrkmenaranew'])->middleware('auth')->name('dokuploadkrkmenaranew');
 
