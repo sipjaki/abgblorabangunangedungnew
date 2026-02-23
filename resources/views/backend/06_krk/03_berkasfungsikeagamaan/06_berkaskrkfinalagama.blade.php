@@ -469,7 +469,7 @@
 
     {{-- Tanda Tangan --}}
     @if(!empty($subtanda->tandatangan))
-        <img src="{{ asset($subtanda->tandatangan) }}"
+    <img src="{{ asset($subtanda->tandatangan) }}"
              alt="Tanda Tangan"
              style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
     @endif

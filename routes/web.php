@@ -530,13 +530,13 @@ Route::get('/perpengesahanagamaman/{id}', [KrkController::class, 'perpengesahana
 Route::post('/perpengesahanagamacreate/{id}', [KrkController::class, 'perpengesahanagamacreate'])->name('permohonan.perpengesahanagamacreate');
 
 Route::get('/perpengesahanagamaber/{id}', [KrkController::class, 'perpengesahanagamaber'])->name('berkas.perpengesahanagamaber');
-Route::delete('/krkagamasuratdelete/{id}', [KrkController::class, 'krkagamasuratdelete'])->name('krkagamasuratdelete.destroy');
+Route::delete('/krkagamasuratdelete/{id}', [KrkController::class, 'krkagamasuratdelete'])->middleware('auth', 'can:admindpupr')->name('krkagamasuratdelete.destroy');
 
 
 Route::put('/valberkasagama3/{id}', [KrkController::class, 'valberkasagama3'])->name('valberkasagama3.update');
 
-Route::get('/permohonankrkkeagamaanfinal/{id}', [KrkController::class, 'permohonankrkkeagamaanfinal'])->name('permohonan.permohonankrkkeagamaanfinal');
-Route::get('/permohonankrkkeagamaanfinalman/{id}', [KrkController::class, 'permohonankrkkeagamaanfinalman'])->name('permohonankrkkeagamaanfinalman');
+Route::get('/permohonankrkkeagamaanfinal/{id}', [KrkController::class, 'permohonankrkkeagamaanfinal'])->middleware('auth', 'can:admindpupr')->name('permohonan.permohonankrkkeagamaanfinal');
+Route::get('/permohonankrkkeagamaanfinalman/{id}', [KrkController::class, 'permohonankrkkeagamaanfinalman'])->middleware('auth', 'can:admindpupr')->name('permohonankrkkeagamaanfinalman');
 
 Route::get('/krkagamanoterbit/{id}', [KrkController::class, 'krkagamanoterbit'])->middleware('auth')->name('krkagamanoterbit.create');
 Route::post('/krkagamanoterbitnew/{id}', [KrkController::class, 'krkagamanoterbitnew'])->middleware('auth')->name('create.krkagamanoterbitnew');

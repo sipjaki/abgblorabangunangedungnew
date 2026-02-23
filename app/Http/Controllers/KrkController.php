@@ -2169,12 +2169,16 @@ public function permohonankrkkeagamaanfinalman($id)
     // Ambil data GSB Kabupaten Blora
     $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
 
+    // Tanda Tangan Kepala Dinas
+    $tandatangan = ttdkepaladinas::orderBy('id', 'desc')->get();
+
     // Return ke view
     return view('backend.06_krk.03_berkasfungsikeagamaan.06_berkaskrkfinalagamaman', [
         'title' => 'Berkas Final Permohonan KRK Fungsi Keagamaan',
         'data' => $datausaha,       // Data utama krkusaha
         'subdata' => $datasurat,    // Data sub krkusahasurat
         'datagsb' => $datagsb,      // Data dropdown/GSB
+        'tandatangan' => $tandatangan,      // Data dropdown/GSB
         'user' => Auth::user()
     ]);
 }
