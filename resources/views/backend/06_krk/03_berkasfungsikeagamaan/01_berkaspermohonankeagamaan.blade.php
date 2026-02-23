@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -62,14 +16,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-      style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  "
->
+      style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -719,14 +666,20 @@ th {
     <table class="zebra-table table-striped">
         <tr>
     <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
-</td>
-<td style="text-align: center; font-size:16px;">
-    <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
-</td>
-<td style="text-align: center; font-size:16px;">
-    <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
-</td>
+        <button class="button-baru">
+            <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        </button>
+    </td>
+    <td style="text-align: center; font-size:16px;">
+        <button class="button-baru">
+            <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
+        </button>
+    </td>
+    <td style="text-align: center; font-size:16px;">
+        <button class="button-baru">
+            <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+        </button>
+    </td>
 
 </tr>
 
@@ -826,15 +779,21 @@ th {
     <table class="zebra-table table-striped">
         <tr>
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-file-earmark-bar-graph" style="margin-right:6px;"></i> FKUB Kemenag Blora
+    <button class="button-baru">
+        <i class="bi bi-file-earmark-bar-graph" style="margin-right:6px;"></i> FKUB Kemenag Blora
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+    <button class="button-baru">
+        <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi DPUPR
+    <button class="button-baru">
+        <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
+    </button>
 </td>
 
 </tr>
@@ -937,11 +896,15 @@ th {
         <tr>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
+    <button class="button-baru">
+        <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
+    </button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Tanda Tangan
+    <button class="button-baru">
+        <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Tanda Tangan
+    </button>
 </td>
 
 </tr>
@@ -2522,7 +2485,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-modern" type="button" onclick="openModal()">
+                                      <button class="button-baru" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 

@@ -509,7 +509,7 @@ Route::delete('/dokbekrkhuniandelete/{id}', [KrkController::class, 'dokbekrkhuni
 
 // -------
 // MENU KRK KEAGAMAAN
-Route::get('/bekrkkeagamaan', [KrkController::class, 'bekrkkeagamaan'])->name('bekrkkeagamaanindex');
+Route::get('/bekrkkeagamaan', [KrkController::class, 'bekrkkeagamaan'])->middleware('auth', 'can:admindpupr')->name('bekrkkeagamaanindex');
 
 Route::get('/bekrkkeagamaanpermohonan/{id}', [KrkController::class, 'bekrkkeagamaanpermohonan'])->middleware('auth')->name('bekrkkeagamaanpermohonan.show');
 Route::put('/validasikrkkeagamaan/{id}', [KrkController::class, 'validasikrkkeagamaan'])->middleware('auth')->name('validasikrkkeagamaan');
