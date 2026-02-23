@@ -367,7 +367,7 @@ Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesaha
 
 Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->middleware('auth', 'can:admindpupr')->name('perpengesahankrkagama');
 
-Route::post('/perpengesahankrksosbud/{id}', [KrkController::class, 'perpengesahankrksosbud'])->name('perpengesahankrksosbud');
+Route::post('/perpengesahankrksosbud/{id}', [KrkController::class, 'perpengesahankrksosbud'])->middleware('auth', 'can:admindpupr')->name('perpengesahankrksosbud');
 
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN
@@ -557,19 +557,19 @@ Route::get('/bekrksosbudnew', [KrkController::class, 'bekrksosbudnew'])->middlew
 Route::get('/bekrksosbudpermohonan/{id}', [KrkController::class, 'bekrksosbudpermohonan'])->middleware('auth')->name('bekrksosbudpermohonan.show');
 Route::put('/validasikrksosbud/{id}', [KrkController::class, 'validasikrksosbud'])->middleware('auth')->name('validasikrksosbud');
 Route::put('/valberkassosbud1/{id}', [KrkController::class, 'valberkassosbud1'])->name('valberkassosbud1.update');
-Route::get('/doklapkrksosbud/{id}', [KrkController::class, 'doklapkrksosbud'])->middleware('auth')->name('doklapkrksosbud.show');
+Route::get('/doklapkrksosbud/{id}', [KrkController::class, 'doklapkrksosbud'])->middleware('auth', 'can:admindpupr')->name('doklapkrksosbud.show');
 
-Route::get('/doklapkrksosbudcreate/{id}', [KrkController::class, 'doklapkrksosbudcreate'])->middleware('auth')->name('ddoklapkrksosbudcreate.create');
-Route::post('/doklapkrksosbudcreatenew', [KrkController::class, 'doklapkrksosbudcreatenew'])->middleware('auth')->name('create.doklapkrksosbudcreatenew');
+Route::get('/doklapkrksosbudcreate/{id}', [KrkController::class, 'doklapkrksosbudcreate'])->middleware('auth', 'can:admindpupr')->name('ddoklapkrksosbudcreate.create');
+Route::post('/doklapkrksosbudcreatenew', [KrkController::class, 'doklapkrksosbudcreatenew'])->middleware('auth', 'can:admindpupr')->name('create.doklapkrksosbudcreatenew');
 
 Route::delete('/doklapkrksosbudcreatedelete/{id}', [KrkController::class, 'doklapkrksosbudcreatedelete'])->middleware('auth')->name('delete.doklapkrksosbudcreatedelete');
 
 Route::put('/valberkassosbud2/{id}', [KrkController::class, 'valberkassosbud2'])->name('valberkassosbud2.update');
 Route::post('/berkassosbudval/{id}/validate', [KrkController::class, 'berkassosbudval'])->name('berkassosbudval.validate');
 
-Route::get('/perpengesahansosbud/{id}', [KrkController::class, 'perpengesahansosbud'])->name('permohonan.perpengesahansosbud');
-Route::post('/perpengesahansosbudcreate/{id}', [KrkController::class, 'perpengesahansosbudcreate'])->name('permohonan.perpengesahansosbudcreate');
-Route::get('/perpengesahansosbudman/{id}', [KrkController::class, 'perpengesahansosbudman'])->name('perpengesahansosbudman');
+Route::get('/perpengesahansosbud/{id}', [KrkController::class, 'perpengesahansosbud'])->middleware('auth', 'can:admindpupr')->name('permohonan.perpengesahansosbud');
+Route::post('/perpengesahansosbudcreate/{id}', [KrkController::class, 'perpengesahansosbudcreate'])->middleware('auth', 'can:admindpupr')->name('permohonan.perpengesahansosbudcreate');
+Route::get('/perpengesahansosbudman/{id}', [KrkController::class, 'perpengesahansosbudman'])->middleware('auth', 'can:admindpupr')->name('perpengesahansosbudman');
 
 Route::get('/perpengesahansosbudber/{id}', [KrkController::class, 'perpengesahansosbudber'])->name('berkas.perpengesahansosbudber');
 Route::delete('/krksosbudsuratdelete/{id}', [KrkController::class, 'krksosbudsuratdelete'])->name('krksosbudsuratdelete.destroy');
