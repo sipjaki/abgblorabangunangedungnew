@@ -89,14 +89,15 @@ public function datanewhibahnew(Request $request)
 
     // Simpan ke database
     bantuanhibahbg::create([
-        'nomorproposal' => $validated['nomorproposal'],
-        'tanggalproposal' => $validated['tanggalproposal'],
-        'instansi' => $validated['instansi'],
-        'intiproposal' => $validated['intiproposal'],
-        'narahubung' => $validated['narahubung'],
-        'kontakperson' => $validated['kontakperson'],
-        'user_id' => $validated['user_id'],
-        'dokumenproposal' => $dokumenPath,
+        'nomorproposal' => $validated['nomorproposal'] ?? null,
+        'tanggalproposal' => $validated['tanggalproposal'] ?? null,
+        'instansi' => $validated['instansi'] ?? null,
+        'intiproposal' => $validated['intiproposal'] ?? null,
+        'narahubung' => $validated['narahubung'] ?? null,
+        'kontakperson' => $validated['kontakperson'] ?? null,
+        'user_id' => $validated['user_id'] ?? null,
+        'cadbantuanhibah1' => $validated['cadbantuanhibah1'] ?? null,
+        'dokumenproposal' => $dokumenPath ?? null,
     ]);
 
 

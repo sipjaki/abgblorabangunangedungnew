@@ -189,25 +189,7 @@
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
-                                    <style>
-                                        .btn-secondary {
-                                            background-color: #6c757d;
-                                            color: white;
-                                            border-radius: 15px;
-                                            padding: 8px 16px;
-                                            border: none;
-                                        }
 
-                                        .btn-secondary:hover {
-                                            background-color: white;
-                                            color: black;
-                                            border: 1px solid #6c757d; /* Optional: border on hover */
-                                        }
-
-                                        .btn-secondary i {
-                                            margin-right: 5px; /* Adjust the spacing between the icon and text */
-                                        }
-                                    </style>
 
 <!-- Tombol KTP -->
 
@@ -215,7 +197,7 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td style="text-align: center; ">
 
         <a href="{{ route('dokhibahbantuanberkas.show', $item->id) }}"
                     class="button-modern">
@@ -315,7 +297,7 @@
                 </a>
             </td>
 
-            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+            <td style="text-align: center; ">
   @if($item->verifikasi2 == 'sudah')
     <button
         class="button-hijau"
@@ -502,7 +484,7 @@
 </td>
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+<td style="text-align: center; ">
   @if($item->verifikasi3 == 'sudah')
     <button
         class="button-hijau"
