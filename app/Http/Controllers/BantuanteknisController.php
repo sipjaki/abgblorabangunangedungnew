@@ -6387,7 +6387,8 @@ public function bebantekpembongkaranall(Request $request)
         });
     }
 
-    $data = $query
+    // Add the relations bantekpembongkarannew1 and bantekpembongkarannew2
+    $data = $query->with(['induk', 'induk2'])  // <-- Add relations here
         ->latest()
         ->paginate($perPage)
         ->appends($request->query());
