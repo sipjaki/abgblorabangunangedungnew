@@ -309,8 +309,8 @@ Route::get('/respesertashow/{id}', [FedashboardController::class, 'respesertasho
 // 08_ MENU MBR BANTUAN GAMBAR
 // ----------------------------------------------------------------------------------------
 Route::get('/resmbrgambarindex', [FedashboardController::class, 'resmbrgambarindex']);
-Route::get('/mbrgambarupdate/{id}', [FedashboardController::class, 'mbrgambarupdate'])->middleware('auth')->name('mbrgambarupdate');
-Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupdatenew'])->middleware('auth')->name('mbrgambarupdatenew');
+Route::get('/mbrgambarupdate/{id}', [FedashboardController::class, 'mbrgambarupdate'])->middleware('auth', 'can:admindpupr')->name('mbrgambarupdate');
+Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupdatenew'])->middleware('auth', 'can:admindpupr')->name('mbrgambarupdatenew');
 
 // Route::post('/mbrgambarupdatenew/{id}', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
 
@@ -1069,7 +1069,7 @@ Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafas
 
 
 Route::get('/datainformasibantuangmbr', [DatabaseAbgController::class, 'datainformasibantuangmbr'])->middleware('auth')->name('datainformasibantuangmbr');
-Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->middleware('auth')->name('datambrblora');
+Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->middleware('auth', 'can:admindpupr')->name('datambrblora');
 // Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 

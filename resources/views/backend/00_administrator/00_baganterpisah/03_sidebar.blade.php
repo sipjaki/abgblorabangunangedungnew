@@ -1461,7 +1461,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-file-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Informasi MBR</p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Informasi MBR</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
@@ -1488,26 +1488,9 @@
         <li class="nav-item">
         <a href="/datambrblora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Informasi MBR</p>
+            <p style="color: red; margin: 0 0 0 8px;">Informasi MBR</p>
         </a>
     </li>
-
-    <div style="margin-bottom: 10px; margin-top: 10px;">
-    <p style="
-        font-size: 13px;
-        margin-left: 12px;
-        margin-bottom: -5px;
-        font-weight: bold;
-        color: #ffffff;
-        background-color: #0d6efd;
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 8px;
-        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    ">
-        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
-    </p>
-</div>
 
 
     {{-- <li class="nav-item">

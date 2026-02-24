@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -153,7 +95,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-kembali" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -201,8 +143,8 @@ th {
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="judul1">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="judul1">
             <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul 1
         </label>
         <input
@@ -220,8 +162,8 @@ th {
 </div>
 
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="judul2">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="judul2">
             <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul 2
         </label>
         <input
@@ -253,8 +195,8 @@ th {
 </div>
 <div class="row">
   {{-- Berkas 1 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas1">
+  <div class="col-md-6 form-modern mb-3">
+    <label class="form-label-modern" for="berkas1">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 1 (PDF/Gambar)
     </label>
     <input type="file" id="berkas1" name="berkas1" accept="application/pdf,image/*"
@@ -282,8 +224,8 @@ th {
   </div>
 
   {{-- Berkas 2 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas2">
+  <div class="col-md-6 form-modern mb-3">
+    <label class="form-label-modern" for="berkas2">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 2 (PDF/Gambar)
     </label>
     <input type="file" id="berkas2" name="berkas2" accept="application/pdf,image/*"
@@ -313,8 +255,8 @@ th {
 
 <div class="row">
   {{-- Berkas 3 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas3">
+  <div class="col-md-6 form-modern mb-3">
+    <label class="form-label-modern" for="berkas3">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 3 (PDF/Gambar)
     </label>
     <input type="file" id="berkas3" name="berkas3" accept="application/pdf,image/*"
@@ -342,8 +284,8 @@ th {
   </div>
 
   {{-- Berkas 4 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas4">
+  <div class="col-md-6 form-modern mb-3">
+    <label class="form-label-modern" for="berkas4">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 4 (PDF/Gambar)
     </label>
     <input type="file" id="berkas4" name="berkas4" accept="application/pdf,image/*"
