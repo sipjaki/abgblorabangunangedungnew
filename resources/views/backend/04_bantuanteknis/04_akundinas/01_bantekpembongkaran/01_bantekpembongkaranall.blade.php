@@ -291,37 +291,37 @@
 
 <td>{{ $item->alamat ?? '-' }}</td>
 
-<td>{{ $item->induk->nosurat ?? '-' }}</td>
-<td>{{ $item->induk->tanggalsurat ?? '-' }}</td>
-<td>{{ $item->induk->suratpermohonan ?? '-' }}</td>
-<td>{{ $item->induk->catatan1 ?? '-' }}</td>
-<td>{{ $item->induk->namabangunan ?? '-' }}</td>
-<td>{{ $item->induk->pilihanbangunan ?? '-' }}</td>
-<td>{{ $item->induk->pilihansanggup ?? '-' }}</td>
-<td>{{ $item->induk->namalengkap ?? '-' }}</td>
-<td>{{ $item->induk->jabatan ?? '-' }}</td>
-<td>{{ $item->induk->alamatpemilik ?? '-' }}</td>
-<td>{{ $item->induk->notelepon ?? '-' }}</td>
-<td>{{ $item->induk->luastanah ?? '-' }} m²</td>
-<td>{{ $item->induk->statustanah ?? '-' }}</td>
-<td>{{ $item->induk->namapemeganghak ?? '-' }}</td>
-<td>{{ $item->induk->legalitasbangunan ?? '-' }}</td>
-<td>{{ $item->induk->nomorpbg ?? '-' }}</td>
-<td>{{ $item->induk->pemilikbangunan ?? '-' }}</td>
-<td>{{ $item->induk->kodebarang ?? '-' }}</td>
-<td>{{ $item->induk->alamatbangunan ?? '-' }}</td>
-<td>{{ $item->induk->koordinatbangunan ?? '-' }}</td>
-<td>{{ $item->induk->fungsibangunan ?? '-' }}</td>
-<td>{{ $item->induk->jumlahlantai ?? '-' }}</td>
-<td>{{ $item->induk->ketinggianbangunan ?? '-' }} m</td>
-<td>{{ $item->induk->luasbangunan ?? '-' }} m²</td>
-<td>{{ $item->induk->kompleksitasbangunan ?? '-' }}</td>
-<td>{{ $item->induk->tingkatpermanensi ?? '-' }}</td>
-<td>{{ $item->induk->kepadatan ?? '-' }}</td>
-<td>{{ $item->induk->tanggaldibangun ?? '-' }}</td>
-<td>{{ $item->induk->tanggalrevovasi ?? '-' }}</td>
-<td>Rp {{ number_format($item->induk->nilaibangunanbaru ?? 0, 0, ',', '.') }}</td>
-<td>Rp {{ number_format($item->induk->nilaibangunanlama ?? 0, 0, ',', '.') }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->nosurat ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->tanggalsurat ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->suratpermohonan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->catatan1 ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->namabangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->pilihanbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->pilihansanggup ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->namalengkap ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->jabatan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->alamatpemilik ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->notelepon ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->luastanah ?? '-' }} m²</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->statustanah ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->namapemeganghak ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->legalitasbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->nomorpbg ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->pemilikbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->kodebarang ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->alamatbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->koordinatbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->fungsibangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->jumlahlantai ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->ketinggianbangunan ?? '-' }} m</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->luasbangunan ?? '-' }} m²</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->kompleksitasbangunan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->tingkatpermanensi ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->kepadatan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->tanggaldibangun ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->tanggalrevovasi ?? '-' }}</td>
+<td>Rp {{ number_format(optional($item->bantekpembongkarannew1->first())->nilaibangunanbaru ?? 0, 0, ',', '.') }}</td>
+<td>Rp {{ number_format(optional($item->bantekpembongkarannew1->first())->nilaibangunanlama ?? 0, 0, ',', '.') }}</td>
 
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 

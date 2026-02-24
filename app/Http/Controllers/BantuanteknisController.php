@@ -6388,10 +6388,13 @@ public function bebantekpembongkaranall(Request $request)
     }
 
     // Add the relations bantekpembongkarannew1 and bantekpembongkarannew2
-    $data = $query->with(['induk', 'induk2'])  // <-- Add relations here
+    // $data = $query->with(['induk', 'induk2'])  // <-- Add relations here
+
+        $data = $query->with(['bantekpembongkarannew1', 'bantekpembongkarannew2'])
         ->latest()
         ->paginate($perPage)
         ->appends($request->query());
+
 
     return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_bantekpembongkaranall', [
         'title' => 'Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
