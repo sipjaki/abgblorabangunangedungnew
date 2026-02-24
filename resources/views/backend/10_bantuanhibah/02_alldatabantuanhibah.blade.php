@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,27 +85,15 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -191,39 +133,40 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                        <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
                         >
                             <thead>
                                 <tr>
-                                    <th style="background-color: #ADD8E6;">No</th>
-                                 <th style="background-color: #ADD8E6;"><i class="bi bi-person"></i> Admin DPUPR</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-text"></i> Nomor Proposal</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-calendar"></i> Tanggal Proposal</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Instansi</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-journal-text"></i> Inti Proposal</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-telephone"></i> Narahubung</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-phone"></i> Kontak Person</th>
+                                    <th >No</th>
+                                 <th ><i class="bi bi-person"></i> Admin DPUPR</th>
+<th ><i class="bi bi-file-text"></i> Nomor Proposal</th>
+<th ><i class="bi bi-calendar"></i> Tanggal Proposal</th>
+<th ><i class="bi bi-building"></i> Instansi</th>
+{{-- <th ><i class="bi bi-journal-text"></i> Inti Proposal</th> --}}
+<th ><i class="bi bi-telephone"></i> Narahubung</th>
+<th ><i class="bi bi-phone"></i> Kontak Person</th>
+<th ><i class="bi bi-phone"></i> Sumber Dana </th>
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+                                    <th ><i class="bi bi-building"></i> Lihat Permohonan</th>
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dokumentasi Berkas Survey</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
-<th style="background-color: #ADD8E6;">
+                                    <th ><i class="bi bi-tasks"></i> Dokumentasi Berkas Survey</th>
+                                    <th ><i class="bi bi-tasks"></i> Dok Lapangan</th>
+                                    {{-- <th ><i class="bi bi-tasks"></i> Status Cek Lapangan</th> --}}
+<th >
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
 </th>
 
-                             {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
+                             {{-- <th >
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Status Olah Data
 </th> --}}
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> SK Bupati
+                             <th >
+    <i class="bi bi-database" style="margin-right: 6px;"></i> SK Bupati
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status SK
+                             <th >
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Status SK
 </th>
-       <th style="background-color: #ADD8E6;">Status Akhir</th>
-       <th style="background-color: #ADD8E6;">Aksi</th>
+       <th >Status Akhir</th>
+       <th >Aksi</th>
                                 </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -238,11 +181,12 @@ th {
 {{-- <td style="text-align: left;">{{ !empty($item->intiproposal) ? $item->intiproposal : '-' }}</td> --}}
 <td style="text-align: left;">{{ !empty($item->narahubung) ? $item->narahubung : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->kontakperson) ? $item->kontakperson : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kontakperson) ? $item->cadbantuanhibah1 : 'Data Tidak Di Temukan' }}</td>
 
                                        <td style="text-align: center;">
                 <a href="{{ route('banhibahpermohonan.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
                                     <style>
@@ -274,14 +218,14 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
 
         <a href="{{ route('dokhibahbantuanberkas.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Berkas Survey
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Berkas Survey
                 </a>
 
 
   @if($item->verifikasi1 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -365,7 +309,7 @@ th {
   <td style="text-align: center;">
 
                 <a href="{{ route('doklapbanhibah.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -374,7 +318,7 @@ th {
             <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: white; cursor: not-allowed;"
         disabled
@@ -550,7 +494,7 @@ th {
 
 
     <a href="{{ route('dokuploadskhibah.show', $item->id) }}"
-        class="button-baru">
+        class="button-modern">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload SK Bupati
     </a>
 
@@ -561,7 +505,7 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi3 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -645,7 +589,7 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
   @if($item->verifikasi4 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -736,10 +680,10 @@ th {
                                         {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                                             <i class="bi bi-eye"></i>
                                         </a> --}}
-                                        {{-- <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        </a>
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
