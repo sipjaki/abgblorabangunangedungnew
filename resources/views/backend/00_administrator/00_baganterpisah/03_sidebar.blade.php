@@ -1177,13 +1177,6 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="/bebantekpembongkaran" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pembongkaran</p>
-    </a>
-</li>
-
 <hr>
 
 <li class="nav-item">
@@ -1632,7 +1625,7 @@
 <li class="nav-item">
 <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
   <i class="bi bi-house-gear nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-  <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
+  <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
   <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 

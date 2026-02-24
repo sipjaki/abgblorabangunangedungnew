@@ -38,6 +38,7 @@ public function datanewhibahnew(Request $request)
         'narahubung' => 'required|string|max:255',
         'kontakperson' => 'required|string|max:255',
         'user_id' => 'required|string',
+        'cadbantuanhibah1' => 'required|string',
         'dokumenproposal' => 'nullable|file|mimes:pdf,doc,docx|max:15360', // 15MB in kilobytes
     ], [
         'nomorproposal.required' => 'Nomor proposal wajib diisi.',

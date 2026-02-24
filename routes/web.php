@@ -1134,10 +1134,10 @@ Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dok
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 
-Route::get('/datanewhibah', [BantuanhibahbgController::class, 'hibahdokcreate'])->middleware('auth')->name('hibahdok.create');
-Route::post('/datanewhibahnew', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
-Route::get('/dataallhibahbangunan', [BantuanhibahbgController::class, 'dataallhibahbangunan'])->name('dataallhibahbangunan.index');
-Route::get('/banhibahpermohonan/{id}', [BantuanhibahbgController::class, 'banhibahpermohonan'])->middleware('auth')->name('banhibahpermohonan.show');
+Route::get('/datanewhibah', [BantuanhibahbgController::class, 'hibahdokcreate'])->middleware('auth', 'can:admindpupr')->name('hibahdok.create');
+Route::post('/datanewhibahnew', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth', 'can:admindpupr')->name('dokhibahnew.create');
+Route::get('/dataallhibahbangunan', [BantuanhibahbgController::class, 'dataallhibahbangunan'])->middleware('auth', 'can:admindpupr')->name('dataallhibahbangunan.index');
+Route::get('/banhibahpermohonan/{id}', [BantuanhibahbgController::class, 'banhibahpermohonan'])->middleware('auth', 'can:admindpupr')->name('banhibahpermohonan.show');
 
 Route::put('/valhibahbantuan1/{id}', [BantuanhibahbgController::class, 'valhibahbantuan1'])->name('valhibahbantuan1.update');
 Route::get('/dokhibahbantuanberkas/{id}', [BantuanhibahbgController::class, 'dokhibahbantuanberkas'])->middleware('auth')->name('dokhibahbantuanberkas.show');

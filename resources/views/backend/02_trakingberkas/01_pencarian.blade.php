@@ -138,8 +138,18 @@
 <div class="container-fluid" style="color: black !important;">
     <div class="row" style="margin: 0 10px;">
         <div class="card mb-4" style="color: black !important;">
-                                <div>
-                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            <div class="card-header" style="
+                font-weight: 900;
+                font-size: 16px;
+                text-align: center;
+                background: linear-gradient(135deg, #000080, #000080);
+                color: white;
+                padding: 10px 25px;
+                border-radius: 10px;
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                width: 100%;
+            ">
+                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
 
             </div>
 
