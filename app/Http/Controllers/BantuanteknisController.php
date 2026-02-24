@@ -6392,7 +6392,7 @@ public function bebantekpembongkaranall(Request $request)
         ->paginate($perPage)
         ->appends($request->query());
 
-    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_bantekpembongkaran', [
+    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_bantekpembongkaranall', [
         'title' => 'Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
         'data'  => $data,
         'user'  => $user,
