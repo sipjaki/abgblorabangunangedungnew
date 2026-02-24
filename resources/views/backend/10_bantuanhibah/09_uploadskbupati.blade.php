@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,12 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  ">
+    background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -131,21 +80,9 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            </div>
 
 
 
@@ -203,8 +140,8 @@ th {
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nomorproposal">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="nomorproposal">
             <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Nomor Proposal
         </label>
         <input
@@ -224,8 +161,8 @@ th {
 </div>
 
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="tanggalproposal">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="tanggalproposal">
             <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Proposal
         </label>
         <input
@@ -244,8 +181,8 @@ th {
 </div>
 
 <div class="col-12">
-    <div class="mb-3">
-        <label class="form-label" for="intiproposal">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="intiproposal">
             <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Perihal/ Isi Proposal Hibah
         </label>
         <textarea
@@ -264,8 +201,8 @@ th {
 </div>
 
 {{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="narahubung">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="narahubung">
             <i class="bi bi-person-lines-fill" style="margin-right: 8px; color: navy;"></i> Narahubung
         </label>
         <input
@@ -285,8 +222,8 @@ th {
 </div>
 
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="kontakperson">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="kontakperson">
             <i class="bi bi-telephone-fill" style="margin-right: 8px; color: navy;"></i> Kontak Person
         </label>
         <input
@@ -309,8 +246,8 @@ th {
 </div> --}}
 
 <div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+    {{-- <div class="form-modern mb-3">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input
@@ -346,8 +283,8 @@ th {
 
 <div class="row">
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas1">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Nota Dinas Pengajuan Hibah
       </label>
       <input type="file" id="berkas1" name="berkas1" accept="application/pdf"
@@ -366,8 +303,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas2">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas2">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload SK Bupati Penetapan Penerima Hibah
       </label>
       <input type="file" id="berkas2" name="berkas2" accept="application/pdf"
@@ -386,8 +323,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas3">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas3">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> BAST (Berita Acara Serat Terima)
       </label>
       <input type="file" id="berkas3" name="berkas3" accept="application/pdf"
@@ -406,8 +343,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas4">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas4">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> NPHD (Naskah Perjanjian Hibah Daerah)
       </label>
       <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
@@ -426,8 +363,8 @@ th {
   </div>
 
   {{-- <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas3">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas3">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Hasil Evaluasi & Pengkajian
       </label>
       <input type="file" id="berkas3" name="berkas3" accept="application/pdf"
@@ -446,8 +383,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas4">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas4">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Rekomendasi Penetapan Penerima Hibah
       </label>
       <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
@@ -466,8 +403,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas5">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas5">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Kepada TAPD
       </label>
       <input type="file" id="berkas5" name="berkas5" accept="application/pdf"
@@ -486,8 +423,8 @@ th {
   </div>
 
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas6">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern" for="berkas6">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung Lainnya
       </label>
       <input type="file" id="berkas6" name="berkas6" accept="application/pdf"

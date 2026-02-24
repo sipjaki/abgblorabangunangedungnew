@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -62,7 +16,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-               style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
+               style="background: linear-gradient(to bottom, #ffffff, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -124,20 +78,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -146,7 +88,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
                             @can('pemohon')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bekrkusahapemohon') }}';"
@@ -155,7 +97,7 @@ th {
                         </button>
                     @endcan
                             @can('dinas')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
@@ -164,7 +106,7 @@ th {
                         </button>
                     @endcan
                             @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
@@ -181,7 +123,7 @@ th {
 </button>
 
    <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-kembali"
+   class="button-modern"
    style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
@@ -232,18 +174,18 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+    <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
     >
                 <thead>
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>
 {{-- <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th> --}}
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-journal-text"></i> Surat Tugas Penunjukan</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-journal-text"></i> SK Tim Evaluasi</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-journal-text"></i> Berita Acara</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Rekomendasi Penetapan</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Surat TAPD</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Berkas lainnya </th>
+<th ><i class="bi bi-journal-text"></i> Surat Tugas Penunjukan</th>
+<th ><i class="bi bi-journal-text"></i> SK Tim Evaluasi</th>
+<th ><i class="bi bi-journal-text"></i> Berita Acara</th>
+<th ><i class="bi bi-image"></i> Rekomendasi Penetapan</th>
+<th ><i class="bi bi-image"></i> Surat TAPD</th>
+<th ><i class="bi bi-image"></i> Berkas lainnya </th>
 @canany(['superadmin', 'admin'])
 <th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
 @endcanany
@@ -411,7 +353,7 @@ th {
             <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
+            <a href="javascript:void(0)" class="button-merah" title="Hapus Data"
             data-bs-toggle="modal" data-bs-target="#deleteModal"
             data-id="{{ $item->id }}"
             onclick="setDeleteUrl(this)">
@@ -504,13 +446,6 @@ function setDeleteUrl(button) {
 }
 </script>
 
-
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
 
              </div>
              <!-- /.card -->

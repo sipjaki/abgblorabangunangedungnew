@@ -1625,7 +1625,7 @@
 <li class="nav-item">
 <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
   <i class="bi bi-house-gear nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-  <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
+  <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
   <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
@@ -1657,19 +1657,19 @@
     <li class="nav-item">
     <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Statistik Pemohon</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Statistik Pemohon</p>
     </a>
 </li>
 <li class="nav-item">
     <a href="/datanewhibah" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-plus-square nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Buat Pengajuan</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Buat Pengajuan</p>
     </a>
 </li>
 <li class="nav-item">
     <a href="/dataallhibahbangunan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Data Pengajuan</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Data Pengajuan</p>
     </a>
 </li>
 
