@@ -15,7 +15,7 @@ class bantekpembongkarannew1 extends Model
     public function induk()
     {
         return $this->belongsTo(
-            bantekpembongkaraninduk::class,
+            bantekpembongkaraninduk::class, 
             'bantekpembongkaraninduk_id',
             'id'
         );
