@@ -1047,25 +1047,25 @@ Route::get('/datadesablora', [DatabaseAbgController::class, 'datadesablora'])->m
 // Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datakecbloradelete'])->middleware('auth')->name('delete.datakecbloradelete');
 
 // DATA UNTUK JENIS PERMOHONAN BARU BANTUAN GAMBAR
-Route::get('/datajenispermohonan', [DatabaseAbgController::class, 'datajenispermohonan'])->middleware('auth')->name('datajenispermohonanindex');
+Route::get('/datajenispermohonan', [DatabaseAbgController::class, 'datajenispermohonan'])->middleware('auth', 'can:admindpupr')->name('datajenispermohonanindex');
 Route::delete('/datajenispermohonandelete/{id}', [DatabaseAbgController::class, 'datajenispermohonandelete'])->middleware('auth')->name('datajenispermohonandelete');
 
-Route::get('/datajenispermohonancreate', [DatabaseAbgController::class, 'datajenispermohonancreate'])->middleware('auth')->name('datajenispermohonancreate');
-Route::post('/datajenispermohonancreatenew', [DatabaseAbgController::class, 'datajenispermohonancreatenew'])->middleware('auth')->name('datajenispermohonancreatenew');
+Route::get('/datajenispermohonancreate', [DatabaseAbgController::class, 'datajenispermohonancreate'])->middleware('auth','can:admindpupr')->name('datajenispermohonancreate');
+Route::post('/datajenispermohonancreatenew', [DatabaseAbgController::class, 'datajenispermohonancreatenew'])->middleware('auth', 'can:admindpupr')->name('datajenispermohonancreatenew');
 
 // DATA UNTUK FUNGSI BANGUNAN BANTUAN GAMBAR
-Route::get('/datafungsibangunan', [DatabaseAbgController::class, 'datafungsibangunan'])->middleware('auth')->name('datafungsibangunanindex');
-Route::delete('/datafungsibangunandelete/{id}', [DatabaseAbgController::class, 'datafungsibangunandelete'])->middleware('auth')->name('datafungsibangunandelete');
+Route::get('/datafungsibangunan', [DatabaseAbgController::class, 'datafungsibangunan'])->middleware('auth', 'can:admindpupr')->name('datafungsibangunanindex');
+Route::delete('/datafungsibangunandelete/{id}', [DatabaseAbgController::class, 'datafungsibangunandelete'])->middleware('auth','can:admindpupr')->name('datafungsibangunandelete');
 
-Route::get('/datafungsibangunancreate', [DatabaseAbgController::class, 'datafungsibangunancreate'])->middleware('auth')->name('datafungsibangunancreate');
-Route::post('/datafungsibangunancreatenew', [DatabaseAbgController::class, 'datafungsibangunancreatenew'])->middleware('auth')->name('datafungsibangunancreatenew');
+Route::get('/datafungsibangunancreate', [DatabaseAbgController::class, 'datafungsibangunancreate'])->middleware('auth', 'can:admindpupr')->name('datafungsibangunancreate');
+Route::post('/datafungsibangunancreatenew', [DatabaseAbgController::class, 'datafungsibangunancreatenew'])->middleware('auth', 'can:admindpupr')->name('datafungsibangunancreatenew');
 
 // DATA UNTUK FASILITATOR PBG BANGUNAN GEDUNG
-Route::get('/datafasilitator', [DatabaseAbgController::class, 'datafasilitator'])->middleware('auth')->name('datafasilitatorindex');
-Route::delete('/datafasilitatordelete/{id}', [DatabaseAbgController::class, 'datafasilitatordelete'])->middleware('auth')->name('datafasilitatordelete');
+Route::get('/datafasilitator', [DatabaseAbgController::class, 'datafasilitator'])->middleware('auth', 'can:admindpupr')->name('datafasilitatorindex');
+Route::delete('/datafasilitatordelete/{id}', [DatabaseAbgController::class, 'datafasilitatordelete'])->middleware('auth', 'can:admindpupr')->name('datafasilitatordelete');
 
-Route::get('/datafasilitatorcreate', [DatabaseAbgController::class, 'datafasilitatorcreate'])->middleware('auth')->name('datafasilitatorcreate');
-Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafasilitatorcreatenew'])->middleware('auth')->name('datafasilitatorcreatenew');
+Route::get('/datafasilitatorcreate', [DatabaseAbgController::class, 'datafasilitatorcreate'])->middleware('auth','can:admindpupr')->name('datafasilitatorcreate');
+Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafasilitatorcreatenew'])->middleware('auth', 'can:admindpupr')->name('datafasilitatorcreatenew');
 
 
 Route::get('/datainformasibantuangmbr', [DatabaseAbgController::class, 'datainformasibantuangmbr'])->middleware('auth')->name('datainformasibantuangmbr');

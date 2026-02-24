@@ -1461,7 +1461,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-file-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Informasi MBR</p>
+    <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Informasi MBR</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
@@ -1488,7 +1488,7 @@
         <li class="nav-item">
         <a href="/datambrblora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: red; margin: 0 0 0 8px;">Informasi MBR</p>
+            <p style="color: orange; margin: 0 0 0 8px;">Informasi MBR</p>
         </a>
     </li>
 
@@ -1506,7 +1506,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Bantek <br> Gambar PBG </p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Bantek <br> Gambar PBG </p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1567,35 +1567,35 @@
 <li class="nav-item">
     <a href="/datakecblora" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-geo-alt-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Kecamatan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datadesablora" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-house-door-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Kelurahan Desa</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datajenispermohonan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-list-check nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Jenis Permohonan</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Jenis Permohonan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datafungsibangunan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building-fill-gear nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Fungsi Bangunan</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Fungsi Bangunan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/datafasilitator" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-people-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Fasilitator</p>
+        <p style="color: orange; margin: 0 0 0 8px;">Fasilitator</p>
     </a>
 </li>
 
