@@ -274,6 +274,15 @@
 <th><i class="bi bi-cash-stack me-1"></i> Nilai Bangunan Baru</th>
 <th><i class="bi bi-cash me-1"></i> Nilai Bangunan Lama</th>
 
+{{--  BANTEK NEW 2 --}}
+
+<th><i class="bi bi-percent me-1"></i> Tingkat Kerusakan</th>
+<th><i class="bi bi-exclamation-triangle me-1"></i> Status Kerusakan</th>
+<th><i class="bi bi-file-earmark-text me-1"></i> No Surat</th>
+<th><i class="bi bi-calendar-date me-1"></i> Tanggal Surat</th>
+<th><i class="bi bi-person-workspace me-1"></i> Pelaksana</th>
+<th><i class="bi bi-person-check me-1"></i> Penanggung Jawab</th>
+<th><i class="bi bi-telephone me-1"></i> No Telepon</th>
 
         <th><i class="bi bi-eye"></i> Lihat Permohonan</th>
             <th ><i class="bi bi-tools"></i> Aksi</th>
@@ -325,7 +334,19 @@
 
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 
+// BANTEK PEMBONGKARAN 2
+
+
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
+
+<td>{{ optional($item->bantekpembongkarannew2->first())->tingkat_kerusakan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->status_kerusakan ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->nosurat ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->tanggalsurat ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->pelaksana ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->namapenanggungjawab ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew2->first())->notelepon ?? '-' }}</td>
+
 <td style="text-align: center;">
     <a href="{{ route('bebantekpembongkaranshow', [
             'namapemilik' => urlencode($item->namapemilik),
