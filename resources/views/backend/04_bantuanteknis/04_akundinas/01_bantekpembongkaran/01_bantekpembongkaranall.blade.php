@@ -244,11 +244,11 @@
 
 <th><i class="bi bi-file-earmark-text me-1"></i> No Surat</th>
 <th><i class="bi bi-calendar-date me-1"></i> Tanggal Surat</th>
-<th><i class="bi bi-envelope-paper me-1"></i> Surat Permohonan</th>
+{{-- <th><i class="bi bi-envelope-paper me-1"></i> Surat Permohonan</th> --}}
 <th><i class="bi bi-journal-text me-1"></i> Catatan</th>
-<th><i class="bi bi-building me-1"></i> Nama Bangunan</th>
+{{-- <th><i class="bi bi-building me-1"></i> Nama Bangunan</th>
 <th><i class="bi bi-list-check me-1"></i> Pilihan Bangunan</th>
-<th><i class="bi bi-check-circle me-1"></i> Pilihan Sanggup</th>
+<th><i class="bi bi-check-circle me-1"></i> Pilihan Sanggup</th> --}}
 <th><i class="bi bi-person me-1"></i> Nama Lengkap</th>
 <th><i class="bi bi-briefcase me-1"></i> Jabatan</th>
 <th><i class="bi bi-geo-alt me-1"></i> Alamat Pemilik</th>
@@ -293,11 +293,11 @@
 
 <td>{{ optional($item->bantekpembongkarannew1->first())->nosurat ?? '-' }}</td>
 <td>{{ optional($item->bantekpembongkarannew1->first())->tanggalsurat ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->suratpermohonan ?? '-' }}</td>
+{{-- <td>{{ optional($item->bantekpembongkarannew1->first())->suratpermohonan ?? '-' }}</td> --}}
 <td>{{ optional($item->bantekpembongkarannew1->first())->catatan1 ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->namabangunan ?? '-' }}</td>
+{{-- <td>{{ optional($item->bantekpembongkarannew1->first())->namabangunan ?? '-' }}</td>
 <td>{{ optional($item->bantekpembongkarannew1->first())->pilihanbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->pilihansanggup ?? '-' }}</td>
+<td>{{ optional($item->bantekpembongkarannew1->first())->pilihansanggup ?? '-' }}</td> --}}
 <td>{{ optional($item->bantekpembongkarannew1->first())->namalengkap ?? '-' }}</td>
 <td>{{ optional($item->bantekpembongkarannew1->first())->jabatan ?? '-' }}</td>
 <td>{{ optional($item->bantekpembongkarannew1->first())->alamatpemilik ?? '-' }}</td>

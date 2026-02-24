@@ -171,7 +171,7 @@
                                     class="button-baru"
                                     style="color: black; text-decoration: none;">
 
-                                        <i class="bi bi-plus-circle me-1"></i>
+                                        <i class="bi bi-database me-1"></i>
                                         Data Lengkap
                                     </a>
 
