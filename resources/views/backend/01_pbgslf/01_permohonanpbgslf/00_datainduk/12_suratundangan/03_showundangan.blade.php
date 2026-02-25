@@ -482,7 +482,7 @@ th {
             Hari / Tanggal
         </td>
         <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px;">
-            : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
+            : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('d F Y') : '-' }}
         </td>
     </tr>
     <tr>
