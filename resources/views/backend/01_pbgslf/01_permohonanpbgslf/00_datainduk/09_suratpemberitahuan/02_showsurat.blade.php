@@ -572,8 +572,8 @@ th {
 </p>
 
 <p style="text-align: justify; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-  Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 9 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram
-  <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon.
+  Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 8 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram
+  <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon. Kontak Kami 088987209343
 </p>
 
 <p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">

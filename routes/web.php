@@ -1457,7 +1457,7 @@ Route::delete('/bepbgsuratpemberitahuandel/{id}', [PbgslfController::class, 'bep
 Route::get('/bepbgsuratpemberitahuancreate/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuancreate'])->middleware('auth')->name('bepbgsuratpemberitahuancreate');
 Route::post('/bepbgsuratnew', [PbgslfController::class, 'bepbgsuratnew'])->middleware('auth')->name('bepbgsuratnew');
 
-Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth')->name('suratpemberitahuan.detail');
+Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth', 'can:admindpupr')->name('suratpemberitahuan.detail');
 
 // DATA SURAT TUGAS
 Route::get('/bepbgsurattugas/{id}', [PbgslfController::class, 'bepbgsurattugas'])->middleware('auth')->name('bepbgsurattugas');
