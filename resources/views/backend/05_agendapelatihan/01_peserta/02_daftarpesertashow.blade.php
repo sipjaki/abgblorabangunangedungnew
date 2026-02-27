@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -59,27 +13,11 @@ th {
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-<style>
-
-    body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        </style>
 
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -146,20 +84,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -204,13 +130,12 @@ th {
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarinternalbidangbangunan')"
-      class="button-baru"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      class="button-berkas">
       <i class="bi bi-download"></i> Download Excel
     </button>
 <a href="/beagendapeserta" style="text-decoration: none;">
-  <button class="button-newvalidasi"
-    style="display: flex; align-items: center; gap: 8px; justify-content: center; padding: 10px 16px; border-radius: 10px; border: 1px solid #ddd; background-color: #f5f5f5; cursor: pointer; transition: 0.3s;">
+  <button class="button-modern"
+    >
     <i class="bi bi-arrow-left-circle" style="font-size: 18px; color: black;"></i>
     <span style="color: black; font-weight: 500;">Kembali</span>
   </button>
@@ -249,8 +174,8 @@ th {
           <div class="card-body p-0">
                    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-                        >                <thead>
+                        class="zebra-table">
+                                <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">
                                             <i class="bi bi-hash" style="margin-right: 5px;"></i>No
@@ -261,27 +186,27 @@ th {
                                         {{-- <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
                                         </th> --}}
-                                        <th style="width: 100px; text-align:center;">
+                                        {{-- <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-person" style="margin-right: 5px;"></i>Nik
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Gender
                                         </th>
-                                          <th style="width: 200px; text-align:center;">
+                                          {{-- <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
-                                        <th style="width: 200px; text-align:center;">
+                                        {{-- <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-mortarboard" style="margin-right: 5px;"></i> Jenjang Pendidikan
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
                                         </th>
-                                        <th style="width: 300px; text-align:center;">
+                                        {{-- <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi
                                         </th>
@@ -298,22 +223,22 @@ th {
                                                             {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
                                                         </td>
              {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
-                                        <td style="text-align: center;">{{ $item->nik }}</td>
+                                        {{-- <td style="text-align: center;">{{ $item->nik }}</td> --}}
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
-                                        <td style="text-align: center;">
+                                        {{-- <td style="text-align: center;">
                                             {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
-                                        </td>
+                                        </td> --}}
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
-                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
+                                        {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td> --}}
                                         <td style="text-align: left;">{{ $item->instansi }}</td>
 
-                                        <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
+                                        {{-- <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
                                             @if($item->sertifikat)
                                                 <p>Terbit</p>
                                             @else
                                                 <p>Belum Terbit</p>
                                             @endif
-                                        </td>
+                                        </td> --}}
 
                                         <!-- Script untuk update status sertifikat -->
                                         <script>
@@ -410,7 +335,7 @@ th {
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                             <i class="bi bi-trash"></i>
                                         </a>
@@ -515,13 +440,6 @@ th {
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
-
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
 
              </div>
              <!-- /.card -->

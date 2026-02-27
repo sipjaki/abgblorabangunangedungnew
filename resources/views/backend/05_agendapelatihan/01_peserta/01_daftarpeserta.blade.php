@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -59,27 +13,10 @@ th {
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-<style>
-
-    body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        </style>
-
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -146,20 +83,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -194,7 +119,7 @@ th {
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Agenda Pelatihan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -204,15 +129,15 @@ th {
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarinternalbidangbangunan')"
-      class="button-baru"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      class="button-berkas"
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/beagendapelatihanabgcreate" style="text-decoration: none;">
       <button class="button-baru"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-plus-circle"></i> Create
+        >
+        <i class="bi bi-plus-circle"></i> Buat Pelatihan
       </button>
     </a>
   </div>
@@ -247,29 +172,28 @@ th {
                  <div class="card-body p-0">
            <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-                        >
+                        class="zebra-table">
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
+     <th style="">No</th>
 
-     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-book"></i> Materi Pelatihan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-tags"></i> Kategori Pelatihan</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> User Input</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Status</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Jumlah Peserta</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Lokasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-info-circle"></i> Keterangan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Isi Agenda</th> --}}
-<th style="background-color: #ADD8E6; width:300px;"><i class="fas fa-image" ></i> Foto</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
+     {{-- <th style=""><i class="fas fa-book"></i> Materi Pelatihan</th> --}}
+<th style=""><i class="fas fa-tags"></i> Kategori Pelatihan</th>
+{{-- <th style=""><i class="fas fa-user"></i> User Input</th> --}}
+<th style=""><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
+<th style=""><i class="fas fa-chalkboard-teacher"></i> Status</th>
+<th style=""><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
+{{-- <th style=""><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th> --}}
+{{-- <th style=""><i class="fas fa-users"></i> Jumlah Peserta</th> --}}
+{{-- <th style=""><i class="fas fa-map-marker-alt"></i> Lokasi</th> --}}
+{{-- <th style=""><i class="fas fa-info-circle"></i> Keterangan</th>
+<th style=""><i class="fas fa-align-left"></i> Isi Agenda</th> --}}
+<th style=" width:300px;"><i class="fas fa-image" ></i> Foto</th>
+{{-- <th style=""><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
+{{-- <th style=""><i class="fas fa-envelope-open-text"></i> Surat Undangan</th> --}}
+<th style=""><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
 
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Lihat Peserta</th>
+<th style=""><i class="fas fa-tools"></i> Lihat Peserta</th>
 
     </tr>
                             </thead>
@@ -347,7 +271,7 @@ th {
         <iframe src="{{ asset('storage/' . $item->suratundangan) }}"
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
-            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="button-berkas">
                 <i class="fas fa-download"></i> Download Surat
             </a>
         </div>
@@ -355,7 +279,7 @@ th {
         <iframe src="{{ asset($item->suratundangan) }}"
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
-            <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset($item->suratundangan) }}" download class="button-berkas">
                 <i class="fas fa-download"></i> Download Surat
             </a>
         </div>
@@ -372,7 +296,7 @@ th {
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendapesertalist/' . $item->id) }}" style="text-decoration: none;">
-                <button class="button-baru">
+                <button class="button-modern">
                     <span style="display: inline-flex; align-items: center;">
                         <i class="bi bi-people-fill" style="margin-right: 6px;"></i>Lihat {{ $item->pesertapelatihan_count }}
  Peserta

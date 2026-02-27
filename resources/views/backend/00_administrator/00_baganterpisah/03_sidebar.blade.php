@@ -1262,13 +1262,13 @@
    <li class="nav-item">
       <a href="/beagendapelatihanabg" class="nav-link" style="display: flex; align-items: center;">
           <i class="bi bi-calendar-event nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-          <p style="color: white; margin: 0 0 0 8px;">Agenda</p>
+          <p style="color: orange; margin: 0 0 0 8px;">Agenda</p>
       </a>
    </li>
    <li class="nav-item">
       <a href="/beagendapeserta" class="nav-link" style="display: flex; align-items: center;">
           <i class="bi bi-people nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-          <p style="color: white; margin: 0 0 0 8px;">Peserta</p>
+          <p style="color: orange; margin: 0 0 0 8px;">Peserta</p>
       </a>
    </li>
 </ul>
