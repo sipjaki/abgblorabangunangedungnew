@@ -18,7 +18,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -86,20 +86,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -158,8 +146,8 @@
 
          <div class="row">
     {{-- Judul Materi --}}
-    <div class="col-12 mb-3">
-        <label for="judulmateripelatihan" class="form-label">
+    <div class="form-modern col-12 mb-3">
+        <label for="judulmateripelatihan" class="form-label-modern">
             <i class="bi bi-journal-text text-primary me-1"></i> Judul Materi Pelatihan
         </label>
         <input type="text" name="judulmateripelatihan" id="judulmateripelatihan"
@@ -172,8 +160,8 @@
     </div>
 
     {{-- Materi Pelatihan 1 --}}
-    <div class="col-md-6 mb-3">
-        <label for="materipelatihan1" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="materipelatihan1" class="form-label-modern">
             <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Upload Materi Pelatihan 1 (PDF)
         </label>
         <input type="file" name="materipelatihan1" id="materipelatihan1" accept=".pdf"
@@ -195,8 +183,8 @@
     </div>
 
     {{-- Materi Pelatihan 2 --}}
-    <div class="col-md-6 mb-3">
-        <label for="materipelatihan2" class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label for="materipelatihan2" class="form-label-modern">
             <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Upload Materi Pelatihan 2 (PDF)
         </label>
         <input type="file" name="materipelatihan2" id="materipelatihan2" accept=".pdf"
@@ -251,7 +239,7 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>

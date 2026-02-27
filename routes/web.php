@@ -955,13 +955,13 @@ Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikel
 Route::get('/daftaragenda/{id}', [AgendapelatihanabgController::class, 'daftaragendapelatihan'])->name('daftaragenda');
 // Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->name('pendaftaranpesertanew');
 Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->name('pendaftaranpesertanew');
-Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
+Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth', 'can:admindpupr')->name('beagendapelatihanabg');
 
 Route::get('/resagendapelatihan/{id}', [AgendapelatihanabgController::class, 'resagendapelatihan']);
 
 // EDIT AGENDA PELATIHAN BRO
-Route::get('/beagendapelatihanedit/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanedit'])->middleware('auth')->name('agendapelatihanedit');
-Route::post('/beagendapelatihaneditnew/{id}', [AgendapelatihanabgController::class, 'beagendapelatihaneditnew'])->middleware('auth')->name('agendapelatihaneditnew');
+Route::get('/beagendapelatihanedit/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanedit'])->middleware('auth' , 'can:admindpupr')->name('agendapelatihanedit');
+Route::post('/beagendapelatihaneditnew/{id}', [AgendapelatihanabgController::class, 'beagendapelatihaneditnew'])->middleware('auth', 'can:admindpupr')->name('agendapelatihaneditnew');
 
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 
@@ -969,9 +969,9 @@ Route::get('/beagendapelatihanabgcreate', [AgendapelatihanabgController::class, 
 Route::post('/beagendapelatihanabgcreatenew', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreatenew'])->middleware('auth')->name('beagendapelatihanabgcreatenew');
 
 
-Route::get('/beagendapelatihanabgmateri/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgmateri'])->middleware('auth')->name('beagendapelatihanabgmateri.show');
-Route::get('/beagendapelatihanabgupload/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgupload'])->middleware('auth')->name('beagendapelatihanabgupload');
-Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::class, 'beagendapelatihanabguploadnew'])->middleware('auth')->name('beagendapelatihanabguploadnew');
+Route::get('/beagendapelatihanabgmateri/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgmateri'])->middleware('auth', 'can:admindpupr')->name('beagendapelatihanabgmateri.show');
+Route::get('/beagendapelatihanabgupload/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgupload'])->middleware('auth', 'can:admindpupr')->name('beagendapelatihanabgupload');
+Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::class, 'beagendapelatihanabguploadnew'])->middleware('auth', 'can:admindpupr')->name('beagendapelatihanabguploadnew');
 
 // sigit bro
 Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth')->name('beagendapeserta');
