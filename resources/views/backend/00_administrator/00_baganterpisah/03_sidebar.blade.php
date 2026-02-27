@@ -894,14 +894,14 @@
   <li class="nav-item">
     <a href="/bepbgslfinformasi" class="nav-link">
         <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
-        <p style="color: white; margin-left: 8px;">Informasi</p>
+        <p style="color: orange; margin-left: 8px;">Informasi</p>
     </a>
 </li>
 
         <li class="nav-item">
             <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
                 <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
-                <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan <br> Perencana Teknis</p>
+                <p style="color: orange; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan <br> Perencana Teknis</p>
             </a>
         </li>
         <li class="nav-item">
@@ -959,21 +959,21 @@
 <li class="nav-item">
     <a href="/betpatpt" class="nav-link">
         <i class="bi bi-diagram-3 nav-icon" style="color: white;"></i> <!-- cocok untuk TPA/TPT -->
-        <p style="color: white; margin-left: 8px;">TPA/TPT</p>
+        <p style="color: orange; margin-left: 8px;">TPA/TPT</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/betempatkonsultasi" class="nav-link">
         <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i> <!-- cocok untuk Tempat Konsultasi -->
-        <p style="color: white; margin-left: 8px;">Tempat <br> Konsultasi</p>
+        <p style="color: orange; margin-left: 8px;">Tempat <br> Konsultasi</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/befungsibangunan" class="nav-link">
         <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i> <!-- cocok untuk Tempat Konsultasi -->
-        <p style="color: white; margin-left: 8px;">Fungsi Bangunan</p>
+        <p style="color: orange; margin-left: 8px;">Fungsi Bangunan</p>
     </a>
 </li>
 

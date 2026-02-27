@@ -134,9 +134,8 @@
       <i class="bi bi-download"></i> Download Excel
     </button>
 <a href="/beagendapeserta" style="text-decoration: none;">
-  <button class="button-modern"
-    >
-    <i class="bi bi-arrow-left-circle" style="font-size: 18px; color: black;"></i>
+  <button class="button-modern">
+    <i class="bi bi-arrow-left-circle"></i>
     <span style="color: black; font-weight: 500;">Kembali</span>
   </button>
 </a>

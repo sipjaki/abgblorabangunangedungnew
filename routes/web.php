@@ -974,8 +974,8 @@ Route::get('/beagendapelatihanabgupload/{id}', [AgendapelatihanabgController::cl
 Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::class, 'beagendapelatihanabguploadnew'])->middleware('auth', 'can:admindpupr')->name('beagendapelatihanabguploadnew');
 
 // sigit bro
-Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth')->name('beagendapeserta');
-Route::get('/beagendapesertalist/{id}', [AgendapelatihanabgController::class, 'beagendapesertalist'])->middleware('auth')->name('beagendapesertalist');
+Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth', 'can:admindpupr')->name('beagendapeserta');
+Route::get('/beagendapesertalist/{id}', [AgendapelatihanabgController::class, 'beagendapesertalist'])->middleware('auth', 'can:admindpupr')->name('beagendapesertalist');
 
 Route::delete('/beagendapesertadelete/{id}', [AgendapelatihanabgController::class, 'beagendapesertadelete'])->middleware('auth')->name('beagendapesertadelete');
 
@@ -1349,16 +1349,16 @@ Route::get('/betpatptupdatenew/{id}', [PbgslfController::class, 'betpatptupdaten
 Route::get('/betpatptupdatenewcreate/{id}', [PbgslfController::class, 'betpatptupdatestore'])->middleware('auth', 'can:admindpupr')->name('update.betpatptupdatenew');
 
 // PENGATURAN MENU TEMPAT KONSULTASI
-Route::get('/betempatkonsultasi', [PbgslfController::class, 'betempatkonsultasi'])->middleware('auth')->name('betempatkonsultasi');
-Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth')->name('betempatkonsultasidelete');
-Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth')->name('betempatcreate');
-Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth')->name('create.betempatcreatenew');
+Route::get('/betempatkonsultasi', [PbgslfController::class, 'betempatkonsultasi'])->middleware('auth' , 'can:admindpupr')->name('betempatkonsultasi');
+Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth' , 'can:admindpupr')->name('betempatkonsultasidelete');
+Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth' , 'can:admindpupr')->name('betempatcreate');
+Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth' , 'can:admindpupr')->name('create.betempatcreatenew');
 
 // PENGATURAN FUNGSI BANGUNAN GEDUNG
-Route::get('/befungsibangunan', [PbgslfController::class, 'befungsibangunan'])->middleware('auth')->name('befungsibangunan');
-Route::delete('/befungsibangunandelete/{id}', [PbgslfController::class, 'befungsibangunandelete'])->middleware('auth')->name('befungsibangunandelete');
-Route::get('/befungsibangunancreate', [PbgslfController::class, 'befungsibangunancreate'])->middleware('auth')->name('befungsibangunancreate');
-Route::post('/befungsibangunancreatenew', [PbgslfController::class, 'befungsibangunancreatenew'])->middleware('auth')->name('befungsibangunancreatenew');
+Route::get('/befungsibangunan', [PbgslfController::class, 'befungsibangunan'])->middleware('auth', 'can:admindpupr')->name('befungsibangunan');
+Route::delete('/befungsibangunandelete/{id}', [PbgslfController::class, 'befungsibangunandelete'])->middleware('auth', 'can:admindpupr')->name('befungsibangunandelete');
+Route::get('/befungsibangunancreate', [PbgslfController::class, 'befungsibangunancreate'])->middleware('auth', 'can:admindpupr')->name('befungsibangunancreate');
+Route::post('/befungsibangunancreatenew', [PbgslfController::class, 'befungsibangunancreatenew'])->middleware('auth', 'can:admindpupr')->name('befungsibangunancreatenew');
 
 // KONSULTASI TEKNIS
 Route::get('/bepbgslfkonsultasi', [PbgslfController::class, 'bepbgslfkonsultasi'])->middleware('auth')->name('bepbgslfkonsultasi');
