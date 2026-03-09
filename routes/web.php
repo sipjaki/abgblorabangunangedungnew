@@ -1236,9 +1236,9 @@ Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->
 Route::post('/createdatapbgslfnew', [PbgslfController::class, 'createdatapbgslfnew'])->middleware('auth')->name('createdatapbgslf.create');
 
 // DATA PEMILIK
-Route::get('/bepbgdatapemilik/{id}', [PbgslfController::class, 'bepbgdatapemilik'])->middleware('auth')->name('bepbgdatapemilik');
-Route::get('/updatedatapemilik/{id}', [PbgslfController::class, 'updatedatapemilik'])->middleware('auth')->name('updatedatapemilikupdate');
-Route::put('/updatedatapemiliknew/{id}', [PbgslfController::class, 'updatedatapemiliknew'])->middleware('auth')->name('updatedatapemiliknew');
+Route::get('/bepbgdatapemilik/{id}', [PbgslfController::class, 'bepbgdatapemilik'])->middleware('auth', 'can:admindpupr')->name('bepbgdatapemilik');
+Route::get('/updatedatapemilik/{id}', [PbgslfController::class, 'updatedatapemilik'])->middleware('auth', 'can:admindpupr')->name('updatedatapemilikupdate');
+Route::put('/updatedatapemiliknew/{id}', [PbgslfController::class, 'updatedatapemiliknew'])->middleware('auth', 'can:admindpupr')->name('updatedatapemiliknew');
 
 Route::get('/bepbgdatapemilikcreate/{id}', [PbgslfController::class, 'bepbgdatapemilikcreate'])->middleware('auth')->name('datapemilik.create');
 Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatapemilikcreatenew'])->middleware('auth')->name('bepbgdatapemilikcreatenew');
