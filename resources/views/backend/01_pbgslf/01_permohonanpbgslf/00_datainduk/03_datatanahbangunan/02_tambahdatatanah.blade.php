@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -192,7 +134,7 @@ th {
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="col-md-12" style="margin-top: -20px;">
+                    <div class="form-modern col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
@@ -245,7 +187,7 @@ th {
     @endphp
 
     @foreach ($infoItems as $item)
-        <div class="col-md-6">
+        <div class="form-modern col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="d-flex align-items-start">
@@ -266,7 +208,7 @@ th {
 
 <div class="col-12">
     {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input
@@ -397,8 +339,8 @@ th {
 
     <div class="row g-3 mt-2">
 
-        <div class="col-md-6 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
                 <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
             </label>
 
@@ -421,8 +363,8 @@ th {
             @enderror
         </div>
 
-        <div class="col-md-6 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
                 <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
             </label>
 
@@ -459,8 +401,8 @@ th {
     </script>
     {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Layout
     </label>
 
@@ -483,8 +425,8 @@ th {
     @enderror
 </div>
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Layout
     </label>
 
@@ -520,8 +462,8 @@ th {
 </script>
 
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Penyelidikan
     </label>
 
@@ -544,8 +486,8 @@ th {
     @enderror
 </div>
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Penyelidikan
     </label>
 
@@ -579,8 +521,8 @@ th {
         }
     });
 </script>
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas Dukung lainnya
     </label>
 
@@ -603,8 +545,8 @@ th {
     @enderror
 </div>
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas Dukung lainnya
     </label>
 
@@ -642,8 +584,8 @@ th {
 </div>
 
         {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
                 <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
 
@@ -662,7 +604,7 @@ th {
 <br>
         {{-- Catatan --}}
         <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
+            <label class="form-label-modern"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
             <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>

@@ -1246,9 +1246,9 @@ Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatape
 Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgdatapemilikdelete'])->middleware('auth')->name('bepbgdatapemilikdelete');
 
 // DATA BANGUNAN
-Route::get('/bepbgdatabangunan/{id}', [PbgslfController::class, 'bepbgdatabangunan'])->middleware('auth')->name('bepbgdatabangunan');
-Route::get('/updatedatabangunan/{id}', [PbgslfController::class, 'updatedatabangunan'])->middleware('auth')->name('updatedatabangunan');
-Route::put('/updatedatabangunannew/{id}', [PbgslfController::class, 'updatedatabangunannew'])->middleware('auth')->name('updatedatabangunannew');
+Route::get('/bepbgdatabangunan/{id}', [PbgslfController::class, 'bepbgdatabangunan'])->middleware('auth', 'can:admindpupr')->name('bepbgdatabangunan');
+Route::get('/updatedatabangunan/{id}', [PbgslfController::class, 'updatedatabangunan'])->middleware('auth', 'can:admindpupr')->name('updatedatabangunan');
+Route::put('/updatedatabangunannew/{id}', [PbgslfController::class, 'updatedatabangunannew'])->middleware('auth', 'can:admindpupr')->name('updatedatabangunannew');
 
 
 Route::get('/bepbgdatabangunancreate/{id}', [PbgslfController::class, 'bepbgdatabangunancreate'])->middleware('auth')->name('bepbgdatabangunancreate');
