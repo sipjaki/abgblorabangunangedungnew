@@ -19,11 +19,11 @@
                 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
                     @php $status = $item['validasiberkas' . $i] ?? null; @endphp
                     @if ($status == 'sudah')
-                        <button class="button-create" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
+                        <button class="button-create" type="button" style=" color: black; cursor: not-allowed;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Sudah
                         </button>
                     @elseif ($status == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Belum
                         </button>
                     @else
@@ -45,11 +45,11 @@
                 @csrf
                 @method('PUT')
 
-                <button type="submit" name="validasiberkas{{ $i }}" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+                <button type="submit" name="validasiberkas{{ $i }}" value="lolos" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                     <i class="bi bi-check2-circle me-1"></i> Sudah
                 </button>
 
-                <button type="submit" name="validasiberkas{{ $i }}" value="dikembalikan" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+                <button type="submit" name="validasiberkas{{ $i }}" value="dikembalikan" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                     <i class="bi bi-x-circle me-1"></i> Belum
                 </button>
             </form>
@@ -104,11 +104,11 @@
                         @php $status = $data['validasiberkas' . $i] ?? null; @endphp
 
                         @if ($status == 'sudah')
-                            <button class="button-hijau" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
+                            <button class="button-hijau" type="button" style=" color: black; cursor: not-allowed;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($status == 'belum')
-                            <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                            <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style=" color: black;">
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
@@ -132,13 +132,13 @@
                 @csrf
                 @method('PUT')
 
-                <button type="submit" name="validasiberkas{{ $i }}" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
+                <button type="submit" name="validasiberkas{{ $i }}" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                     <i class="bi bi-check2-circle me-1"></i> Sudah
                 </button>
 
-                <button type="submit" name="validasiberkas{{ $i }}" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
+                <button type="submit" name="validasiberkas{{ $i }}" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none;"
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                     <i class="bi bi-x-circle me-1"></i> Belum
@@ -217,11 +217,11 @@
                         @endphp
 
                         @if ($data->$field == 'sudah')
-                            <button class="button-hijau" type="button" style="background-color: #10B981; color: black;" >
+                            <button class="button-hijau" type="button" style=" color: black;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($data->$field == 'belum')
-                            <button class="button-merah" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="background-color: #0400ff; color: black;">
+                            <button class="button-merah" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style=" color: black;">
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
@@ -250,12 +250,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="{{ $i }}">
-            <button type="submit" name="{{ $fieldName }}" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="{{ $fieldName }}" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="{{ $fieldName }}" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="{{ $fieldName }}" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -357,11 +357,11 @@
 
                     <!-- Berkas Selesai (7) -->
                     @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas7 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal7({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
                         </button>
                     @else
@@ -371,11 +371,11 @@
                     @endif
 
                     {{-- @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-hijau" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas1 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Dokumen Lengkap
                         </button>
                     @else
@@ -386,11 +386,11 @@
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Surat Pemberitahuan Batal
                         </button>
                     @else
@@ -401,11 +401,11 @@
 
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal3({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal3({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> TPA/TPT Batal
                         </button>
                     @else
@@ -416,11 +416,11 @@
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal4({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal4({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Surat Undangan Batal
                         </button>
                     @else
@@ -431,11 +431,11 @@
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal5({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Berita Acara Batal
                         </button>
                     @else
@@ -446,11 +446,11 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal8({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
                         </button>
                     @elseif($data->validasiberkas8 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal8({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> Belum Selesai
                         </button>
                     @else
@@ -461,11 +461,11 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style=" color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal6({{ $data->id }})" style=" color: black;">
                             <i class="bi bi-x-circle me-1"></i> SKRD Tidak Terbit
                         </button>
                     @else
@@ -488,12 +488,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="1">
-            <button type="submit" name="validasiberkas1" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas1" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas1" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas1" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -516,12 +516,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="2">
-            <button type="submit" name="validasiberkas2" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas2" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas2" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas2" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -544,12 +544,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="3">
-            <button type="submit" name="validasiberkas3" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas3" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas3" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas3" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -572,12 +572,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="4">
-            <button type="submit" name="validasiberkas4" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas4" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas4" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas4" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -600,12 +600,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="5">
-            <button type="submit" name="validasiberkas5" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas5" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas5" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas5" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -628,12 +628,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="6">
-            <button type="submit" name="validasiberkas6" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas6" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas6" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas6" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -656,12 +656,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="7">
-            <button type="submit" name="validasiberkas7" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas7" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas7" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas7" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
@@ -684,12 +684,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="8">
-            <button type="submit" name="validasiberkas8" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas8" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas8" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas8" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum
