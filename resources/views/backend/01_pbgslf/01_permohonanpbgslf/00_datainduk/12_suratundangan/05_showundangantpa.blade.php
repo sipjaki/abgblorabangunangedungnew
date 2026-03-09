@@ -330,7 +330,7 @@
     </td>
     <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
     <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-      050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
+      050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2026
     </td>
   </tr>
   <tr>
@@ -436,7 +436,7 @@
 
     <p style="text-align: left; font-weight: bold; margin-top: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
       LAMPIRAN SURAT UNDANGAN<br>
-      Nomor: 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
+      Nomor: 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2026<br>
       Tanggal: {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}
     </p>
 

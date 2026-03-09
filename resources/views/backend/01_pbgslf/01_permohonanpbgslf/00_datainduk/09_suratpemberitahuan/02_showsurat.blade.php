@@ -603,7 +603,7 @@ th {
     Nomor
   </strong> :
   <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
-    640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025
+    640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2026
   </span>
   <br />
 

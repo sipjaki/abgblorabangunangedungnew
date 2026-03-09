@@ -200,7 +200,7 @@ th {
                                     <!-- Judul -->
                                     <div class="force-times" style="text-align: center; font-weight: bold; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                         BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
-                                        Nomor: 050/{{ $surat->tpatpt->timpenilai ?? '-' }}-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
+                                        Nomor: 050/{{ $surat->tpatpt->timpenilai ?? '-' }}-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2026
                                     </div>
 
                                     <!-- Paragraf Pembuka -->

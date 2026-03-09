@@ -372,7 +372,7 @@ th {
       </td>
       <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
+        050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2026
       </td>
     </tr>
     <tr>
