@@ -104,7 +104,7 @@
                         @php $status = $data['validasiberkas' . $i] ?? null; @endphp
 
                         @if ($status == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
+                            <button class="button-hijau" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($status == 'belum')
@@ -217,7 +217,7 @@
                         @endphp
 
                         @if ($data->$field == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                            <button class="button-hijau" type="button" style="background-color: #10B981; color: black;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($data->$field == 'belum')
@@ -308,7 +308,7 @@
 
 <style>
     /* Add some basic styling for buttons */
-    .button-lolos, .button-merah, .button-modern {
+    .button-hijau, .button-merah, .button-modern {
         padding: 8px 12px;
         border-radius: 6px;
         border: 1px solid #ddd;
@@ -357,7 +357,7 @@
 
                     <!-- Berkas Selesai (7) -->
                     @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas7 == 'belum')
@@ -371,7 +371,7 @@
                     @endif
 
                     {{-- @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas1 == 'belum')
@@ -386,7 +386,7 @@
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
@@ -401,7 +401,7 @@
 
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
@@ -416,7 +416,7 @@
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
@@ -431,7 +431,7 @@
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
@@ -446,7 +446,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
                         </button>
                     @elseif($data->validasiberkas8 == 'belum')
@@ -461,7 +461,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
