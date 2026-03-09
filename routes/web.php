@@ -864,10 +864,10 @@ Route::get('/bebanteklapcekdokcreate/{id}', [BantuanteknisController::class, 'be
 Route::post('/bebanteklapcekdokcreatenew', [BantuanteknisController::class, 'bebanteklapcekdokcreatenew'])->middleware('auth')->name('create.bebanteklapcekdokcreate');
 Route::delete('/bebanteklapcekdokcredelete/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcredelete'])->middleware('auth')->name('delete.bebanteklapcekdokcredelete');
 
-Route::get('/bepengkajiteknis', [BantuanteknisController::class, 'bepengkajiteknis'])->middleware('auth')->name('bepengkajiteknis');
-Route::delete('/bepengkajiteknisdelete/{id}', [BantuanteknisController::class, 'bepengkajiteknisdelete'])->middleware('auth')->name('bepengkajiteknisdelete');
-Route::get('/bepengkajiteknisnew', [BantuanteknisController::class, 'bepengkajiteknisnew'])->middleware('auth')->name('bepengkajiteknisnew');
-Route::post('/bepengkajiteknisnewcreate', [BantuanteknisController::class, 'bepengkajiteknisnewcreate'])->middleware('auth')->name('bepengkajiteknisnewcreate');
+Route::get('/bepengkajiteknis', [BantuanteknisController::class, 'bepengkajiteknis'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknis');
+Route::delete('/bepengkajiteknisdelete/{id}', [BantuanteknisController::class, 'bepengkajiteknisdelete'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknisdelete');
+Route::get('/bepengkajiteknisnew', [BantuanteknisController::class, 'bepengkajiteknisnew'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknisnew');
+Route::post('/bepengkajiteknisnewcreate', [BantuanteknisController::class, 'bepengkajiteknisnewcreate'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknisnewcreate');
 
 
 
