@@ -18,7 +18,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -86,20 +86,8 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -169,7 +157,7 @@
                   font-size: 14px;
                   border-radius: 10px;
                   width: 250px;">
-    <i class="fas fa-search"
+    <i class="bi bi-search"
        style="position: absolute;
               right: 12px;
               top: 50%;
@@ -229,14 +217,14 @@
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="/createdatapbgslf" class="text-decoration-none">
-    <div class="button-modern">
-        <i class="bi bi-plus-square me-2"></i> Buat Baru
+    <div class="button-berkas">
+        <i class="bi bi-plus me-2"></i> Buat Baru
     </div>
 </a>
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanpbgdpuprblora')">
-        <div class="button-modern">
+        <div class="button-berkas">
             <i class="bi bi-download me-2"></i> Download Excel
         </div>
     </a>

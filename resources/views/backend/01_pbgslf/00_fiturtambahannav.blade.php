@@ -7,7 +7,7 @@
 
 
 <div class="form-modern shadow-sm border-0">
-    <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px; background: #f0f8ff; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <div class="card-body form-modern" >
         {{-- <a href="#" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
