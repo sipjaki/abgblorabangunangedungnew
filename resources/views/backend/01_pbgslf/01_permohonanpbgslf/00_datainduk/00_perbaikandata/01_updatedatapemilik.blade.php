@@ -134,7 +134,7 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="col-md-12" style="margin-top: -20px;">
+                    <div class="form-modern col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
@@ -188,7 +188,7 @@
 
 
     @foreach ($infoItems as $item)
-        <div class="form-modern col-md-6">
+        <div class="form-modern form-modern col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="d-flex align-items-start">
@@ -209,7 +209,7 @@
 
 <div class="col-12">
     {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input
@@ -341,8 +341,8 @@
 
     <div class="row g-3 mt-2">
         {{-- Nama Pemilik --}}
-        <div class="col-md-6">
-            <label class="form-label">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern">
                 <i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik
             </label>
             <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror"
@@ -351,8 +351,8 @@
         </div>
 
         {{-- Alamat Pemilik --}}
-        <div class="col-md-6">
-            <label class="form-label">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern">
                 <i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Pemilik
             </label>
             <input type="text" name="alamatpemilik" class="form-control @error('alamatpemilik') is-invalid @enderror"
@@ -361,8 +361,8 @@
         </div>
 
         {{-- Nomor Telepon --}}
-        <div class="col-md-6">
-            <label class="form-label">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern">
                 <i class="bi bi-telephone-fill text-navy me-1" style="color: blue"></i> Nomor Telepon
             </label>
             <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror"
@@ -371,8 +371,8 @@
         </div>
 
         {{-- Email --}}
-        <div class="col-md-6">
-            <label class="form-label">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern">
                 <i class="bi bi-envelope-fill text-navy me-1" style="color: blue"></i> Email
             </label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
@@ -381,8 +381,8 @@
         </div>
 
         {{-- No Identitas --}}
-        <div class="col-md-6">
-            <label class="form-label">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern">
                 <i class="bi bi-credit-card-fill text-navy me-1" style="color: blue"></i> No Identitas
             </label>
             <input type="text" name="noidentitas" class="form-control @error('noidentitas') is-invalid @enderror"
@@ -391,8 +391,8 @@
         </div>
 
         {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
                 <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
 
@@ -415,7 +415,7 @@
 
         {{-- Catatan --}}
         <div class="col-12" id="catatan-field" style="{{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? '' : 'display: none;' }}">
-            <label class="form-label">
+            <label class="form-label-modern">
                 <i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan
             </label>
             <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror"

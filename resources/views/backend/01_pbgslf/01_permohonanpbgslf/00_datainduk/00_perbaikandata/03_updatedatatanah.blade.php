@@ -134,7 +134,7 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="col-md-12" style="margin-top: -20px;">
+                    <div class="form-modern col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
@@ -187,7 +187,7 @@
     @endphp
 
     @foreach ($infoItems as $item)
-        <div class="form-modern col-md-6">
+        <div class="form-modern form-modern col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="d-flex align-items-start">
@@ -338,7 +338,7 @@
 
     <div class="row g-3 mt-2">
         {{-- Isi Data Tanah --}}
-      <div class="col-md-4 mb-3">
+      <div class="form-modern col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
     </label>
@@ -364,7 +364,7 @@
     @enderror
 </div>
 
-<div class="col-md-6 mb-3">
+<div class="form-modern col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
     </label>
@@ -397,7 +397,7 @@
 </script>
 
 {{-- Layout --}}
-<div class="col-md-4 mb-3">
+<div class="form-modern col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan
     </label>
@@ -421,7 +421,7 @@
 </div>
 
 {{-- Catatan Layout --}}
-<div class="col-md-6 mb-3">
+<div class="form-modern col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Layout
     </label>
@@ -455,7 +455,7 @@
 
 
 {{-- Penyelidikan Tanah --}}
-<div class="col-md-4 mb-3">
+<div class="form-modern col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah
     </label>
@@ -482,7 +482,7 @@
 </div>
 
 {{-- Catatan Penyelidikan --}}
-<div class="col-md-6 mb-3">
+<div class="form-modern col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Penyelidikan
     </label>
@@ -513,7 +513,7 @@
     });
 </script>
 {{-- Berkas Dukung --}}
-<div class="col-md-4 mb-3">
+<div class="form-modern col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
     </label>
@@ -525,7 +525,7 @@
 </div>
 
 {{-- Catatan Berkas 4 --}}
-<div class="col-md-6 mb-3">
+<div class="form-modern col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung Lainnya
     </label>
@@ -556,7 +556,7 @@
 </script>
 
         {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
+        <div class="form-modern col-md-6">
             <label class="form-label d-block" style="color: navy; font-weight: 600;">
                 <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
