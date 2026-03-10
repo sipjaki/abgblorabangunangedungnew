@@ -1256,7 +1256,7 @@ Route::post('/bepbgdatabangunancreatenew', [PbgslfController::class, 'bepbgdatab
 Route::delete('/bepbgdatabangunandelete/{id}', [PbgslfController::class, 'bepbgdatabangunandelete'])->middleware('auth')->name('bepbgdatabangunandelete');
 
 // DATA TANAH
-Route::get('/bepbgdatatanah/{id}', [PbgslfController::class, 'bepbgdatatanah'])->middleware('auth')->name('bepbgdatatanah');
+Route::get('/bepbgdatatanah/{id}', [PbgslfController::class, 'bepbgdatatanah'])->middleware('auth', 'can:admindpupr')->name('bepbgdatatanah');
 
 Route::get('/updatedatatanah/{id}', [PbgslfController::class, 'updatedatatanah'])->middleware('auth', 'can:admindpupr')->name('updatedatatanah');
 Route::post('/updatedatatanahnew/{id}', [PbgslfController::class, 'updatedatatanahnew'])->middleware('auth', 'can:admindpupr')->name('updatedatatanahnew');
@@ -1272,8 +1272,8 @@ Route::post('/bepbgdataumumcreatenew', [PbgslfController::class, 'bepbgdataumumc
 Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdataumumdelete'])->middleware('auth','can:admindpupr')->name('bepbgdataumumdelete');
 
 
-Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])->middleware('auth')->name('updatedataumum');
-Route::post('/updatedataumumnew/{id}', [PbgslfController::class, 'updatedataumumnew'])->middleware('auth')->name('updatedataumumnew');
+Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])->middleware('auth','can:admindpupr')->name('updatedataumum');
+Route::post('/updatedataumumnew/{id}', [PbgslfController::class, 'updatedataumumnew'])->middleware('auth','can:admindpupr')->name('updatedataumumnew');
 
 // DATA TEKNIS ARSITEKTUR
 Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth')->name('bepbgdokumeteknisars');

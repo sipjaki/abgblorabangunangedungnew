@@ -186,7 +186,7 @@
     @endphp
 
 @foreach ($infoItems as $item)
-        <div class="col-md-6">
+        <div class="form-modern col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="d-flex align-items-start">
