@@ -199,7 +199,7 @@
     @endphp
 
     @foreach ($infoItems as $item)
-        <div class="col-md-6">
+        <div class="form-modern col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="d-flex align-items-start">
@@ -220,7 +220,7 @@
 
 <div class="col-12">
     {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
+        <label class="form-label-modern" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
         <input
@@ -356,8 +356,8 @@
 
 {{-- Berkas 1 --}}
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Identitas Pemilik Bangunan (KTP/KITAS)
     </label>
 
@@ -383,8 +383,8 @@
 </div>
 
 {{-- Catatan Berkas 1 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)
 
     </label>
@@ -422,8 +422,8 @@
 
 
 {{-- Berkas 2 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 2. Data Persetujuan Lingkungan
     </label>
 
@@ -449,8 +449,8 @@
 </div>
 
 {{-- Catatan Berkas 2 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Persetujuan Lingkungan
     </label>
 
@@ -486,7 +486,7 @@
 
 
 {{-- <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
     </label>
     <div class="d-flex flex-column gap-2">
@@ -503,8 +503,8 @@
 </div> --}}
 
 {{-- Berkas 3 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
     </label>
 
@@ -530,8 +530,8 @@
 </div>
 
 {{-- Catatan Berkas 3 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Intensitas Bangunan (KKPR/KRK)
     </label>
 
@@ -569,7 +569,7 @@
 
 
 {{-- <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 4. Data Identitas Pemilik Bangunan (KTP/KITAS)
     </label>
     <div class="d-flex flex-column gap-2">
@@ -587,8 +587,8 @@
 
 
 {{-- Berkas 4 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 4. Data Penyedia Jasa Perencana / Perorangan
     </label>
 
@@ -614,8 +614,8 @@
 </div>
 
 {{-- Catatan Berkas 4 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
     </label>
 
@@ -650,8 +650,8 @@
 </script>
 
 {{-- Cadangan 1 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 5. Data Surat Perjanjian Sewa Lahan
     </label>
 
@@ -677,8 +677,8 @@
 </div>
 
 {{-- Cadangan 2 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Surat Perjanjian Sewa Lahan
     </label>
 
@@ -714,7 +714,7 @@
 
 
 {{-- <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
     </label>
     <input type="text" name="berkas5" value="{{ old('berkas5') }}" class="form-control" placeholder="Masukkan status dokumen (misalnya: Lengkap / Tidak Lengkap)">
@@ -722,8 +722,8 @@
 </div> --}}
 
 {{-- Berkas 5 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 6. Berkas Dukung Lainnya
     </label>
 
@@ -749,8 +749,8 @@
 </div>
 
 {{-- Catatan Berkas 5 --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung Lainnya
     </label>
 
@@ -788,7 +788,7 @@
 
 {{--
 <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 5.
     </label>
     <div class="d-flex flex-column gap-2">
@@ -805,7 +805,7 @@
 </div>
 
 <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 6. Gambar Site Plan
     </label>
     <div class="d-flex flex-column gap-2">
@@ -825,8 +825,8 @@
 </div>
 
         {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
                 <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
 
@@ -845,7 +845,7 @@
 <br>
         {{-- Catatan --}}
         <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
+            <label class="form-label-modern"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
             <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>

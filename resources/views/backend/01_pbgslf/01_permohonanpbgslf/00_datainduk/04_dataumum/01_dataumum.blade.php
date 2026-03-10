@@ -317,7 +317,7 @@
             ];
         @endphp
 
-        <div class="form-modern col-12 mb-4 mt-5">
+        <div class="col-12 mb-4 mt-5">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-folder-check me-2 fs-5"></i>
