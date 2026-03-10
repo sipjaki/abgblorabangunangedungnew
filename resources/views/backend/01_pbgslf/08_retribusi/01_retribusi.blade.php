@@ -490,6 +490,7 @@ $tanggal = \Carbon\Carbon::createFromFormat('Y-m', $item);
 </div>
 
 </div>
+
 @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
 <br><br></div>
