@@ -75,27 +75,44 @@
     </div>
 
   <!-- Form Filter Bulan -->
-  <form method="GET" action="{{ url()->current() }}" style="display: flex; align-items: center; gap: 12px;">
-    <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
-    <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
-      padding: 6px 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    ">
-      <option value="">-- Semua Bulan --</option>
-      @php
-        $namaBulan = [
-          1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
-          5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
-          9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
-        ];
-      @endphp
-      @foreach ($namaBulan as $num => $nama)
-        <option value="{{ $num }}" {{ request('bulan') == $num ? 'selected' : '' }}>{{ $nama }}</option>
-      @endforeach
-    </select>
-  </form>
+<form method="GET" action="{{ url()->current() }}" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
 
+<label style="font-weight:600;">Filter Periode :</label>
+
+<select name="bulan_tahun" onchange="this.form.submit()" style="
+padding:6px 10px;
+border:1px solid #ccc;
+border-radius:6px;
+">
+
+<option value="">-- Semua Data --</option>
+
+@php
+$namaBulan = [
+1=>'Januari',2=>'Februari',3=>'Maret',4=>'April',
+5=>'Mei',6=>'Juni',7=>'Juli',8=>'Agustus',
+9=>'September',10=>'Oktober',11=>'November',12=>'Desember'
+];
+@endphp
+
+@foreach($daftarBulanTahun as $item)
+
+@php
+$tanggal = \Carbon\Carbon::createFromFormat('Y-m', $item);
+@endphp
+
+<option value="{{ $item }}"
+{{ request('bulan_tahun') == $item ? 'selected' : '' }}>
+
+{{ $namaBulan[$tanggal->month] }} {{ $tanggal->year }}
+
+</option>
+
+@endforeach
+
+</select>
+
+</form>
 
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">

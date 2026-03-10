@@ -2899,12 +2899,15 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
 }
 
 
-    public function bepbgslfretribusi(Request $request)
+ public function bepbgslfretribusi(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 100);
+    $search = $request->search;
 
-    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
+    // ================================
+    // HITUNG BERDASARKAN JENIS PENGAJUAN
+    // ================================
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
         $q->where('id', 1);
     })->count();
@@ -2925,83 +2928,72 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
         $q->where('id', 5);
     })->count();
 
-$tahunIni = Carbon::now()->year;
+    // ================================
+    // FILTER BULAN + TAHUN
+    // ================================
+    $bulanTahun = $request->input('bulan_tahun');
 
+    $query = pbgslfbangunan::with(['user','jenispengajuanpbgslfper'])
+        ->where('validasiberkas5','sudah')
+        ->when($search, function ($query, $search) {
+            return $query->where('namapemohon', 'like', "%{$search}%");
+        });
 
-// $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
-//     ->where('validasiberkas5', 'sudah')
-//     ->whereYear('updated_at', $tahunIni)
-//       ->paginate($perPage);
+    if ($bulanTahun) {
+        $tanggal = Carbon::createFromFormat('Y-m', $bulanTahun);
 
+        $query->whereYear('updated_at', $tanggal->year)
+              ->whereMonth('updated_at', $tanggal->month);
+    }
 
-    // $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
-    //     ->where('validasiberkas5', 'sudah')
-    //     ->whereYear('updated_at', $tahunIni)
-    //     ->when($search, function ($query, $search) {
-    //         $query->where('namapemohon', 'like', "%{$search}%");
-    //     })
-    //     ->paginate($perPage);
-$search = $request->search;
+    // ================================
+    // TOTAL DATA SETELAH FILTER
+    // ================================
+    $totalFiltered = $query->count();
 
-$query = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
-    ->where('validasiberkas5', 'sudah')
-    ->whereYear('updated_at', $tahunIni)
-    ->when($search, function ($query, $search) {
-        return $query->where('namapemohon', 'like', "%{$search}%");
-    });
+    $data = $query->latest()->paginate($perPage);
+    $data->appends($request->all());
 
-$bulanFilter = $request->input('bulan');
+    // ================================
+    // DATA SIDANG BULANAN (GRAFIK)
+    // ================================
+    $jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+        ->groupBy('bulan')
+        ->orderBy('bulan')
+        ->pluck('jumlah','bulan')
+        ->toArray();
 
-if ($bulanFilter) {
-    $query->whereMonth('updated_at', $bulanFilter);
-}
+    $jumlahsidangbulanan = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+    }
 
-// 👉 Hitung total data setelah filter
-$totalFiltered = $query->count();
+    // ================================
+    // DAFTAR BULAN + TAHUN DARI DATABASE
+    // ================================
+    $daftarBulanTahun = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw("DATE_FORMAT(updated_at,'%Y-%m') as bulan_tahun")
+        ->distinct()
+        ->orderBy('bulan_tahun','asc')
+        ->pluck('bulan_tahun');
 
-$data = $query->paginate($perPage);
-$data->appends($request->all());
+    // ================================
+    // NOMINAL RETRIBUSI
+    // ================================
+    $nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
 
-    // ->get(); // ✅ AMBIL OBJEK
+    $nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas9','sudah')
+        ->whereNotNull('rupiah')
+        ->sum('rupiah');
 
-$jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5', 'sudah')
-    ->whereYear('updated_at', $tahunIni)
-    ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
-    ->groupBy('bulan')
-    ->orderBy('bulan')
-    ->pluck('jumlah', 'bulan')
-    ->toArray();
+    $nominalPenerimaan = $nominalSudahTerbayar;
 
-$jumlahsidangbulanan = [];
-for ($i = 1; $i <= 12; $i++) {
-    $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
-}
-
-$bulanFilter = $request->input('bulan');
-
-if ($bulanFilter) {
-    $data = $data->filter(function ($item) use ($bulanFilter) {
-        return optional($item->updated_at)->month == $bulanFilter;
-    });
-}
-
-
-// Hitung semua nominal retribusi
-$nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
-
-// Hitung nominal yang sudah terbayar (validasiberkas8 == 'sudah')
-$nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas9', 'sudah')
-    ->whereNotNull('rupiah')
-    ->sum('rupiah');
-
-// Hitung penerimaan = total - yang sudah terbayar
-$nominalPenerimaan = $nominalSudahTerbayar;
-
-// ----------------------------------------------------------------------------
-
+    // ================================
+    // RETURN VIEW
+    // ================================
     return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
         'title' => 'Potensi Retribusi PBG/SLF Bangunan Gedung',
-        // 'data' => $dataTanpaIdSatu,
         'user' => $user,
 
         'jumlahDataIdSatu' => $jumlahDataIdSatu,
@@ -3011,18 +3003,19 @@ $nominalPenerimaan = $nominalSudahTerbayar;
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
-        'bulanFilter' => $bulanFilter,
+
         'data' => $data,
         'totalFiltered' => $totalFiltered,
 
+        'bulanTahun' => $bulanTahun,
+        'daftarBulanTahun' => $daftarBulanTahun,
+
         'nominalRetribusiTotal' => $nominalRetribusiTotal,
-'nominalSudahTerbayar' => $nominalSudahTerbayar,
-'nominalPenerimaan' => $nominalPenerimaan,
-
-
-        // 'datasemua' => $dataTanpaIdSatu,
+        'nominalSudahTerbayar' => $nominalSudahTerbayar,
+        'nominalPenerimaan' => $nominalPenerimaan,
     ]);
 }
+
 
 
 

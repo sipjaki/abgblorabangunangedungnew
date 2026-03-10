@@ -364,7 +364,7 @@ $bulan = \Carbon\Carbon::createFromFormat('Y-m', $item);
         <td style="white-space: nowrap; padding: 6px; text-align: center;">
   <a href="{{ route('bepbgsuratundangan', $item->id) }}"
      class="button-modern">
-     <i class="fas fa-eye me-1"></i> Lihat Surat Undangan
+     <i class="bi bi-eye me-1"></i> Lihat Surat Undangan
   </a>
 </td>
 
