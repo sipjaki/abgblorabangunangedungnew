@@ -874,13 +874,12 @@ Route::post('/bepengkajiteknisnewcreate', [BantuanteknisController::class, 'bepe
 Route::get('/allakun', [akuncontroller::class, 'allakun'])->middleware('auth')->name('allakun.showdata');
 Route::delete('/allakundelete/{id}', [akuncontroller::class, 'allakundelete'])->middleware('auth')->name('delete.allakundelete');
 
-Route::get('/allakundinas', [akuncontroller::class, 'allakundinas'])->middleware('auth')->name('allakundinas.showdata');
-Route::get('/allakunkonsultan', [akuncontroller::class, 'allakunkonsultan'])->middleware('auth')->name('allakunkonsultan.showdata');
-Route::get('/allakuninternal', [akuncontroller::class, 'allakuninternal'])->middleware('auth')->name('allakuninternal.showdata');
+Route::get('/allakundinas', [akuncontroller::class, 'allakundinas'])->middleware('auth', 'can:admindpupr')->name('allakundinas.showdata');
+Route::get('/allakunkonsultan', [akuncontroller::class, 'allakunkonsultan'])->middleware('auth', 'can:admindpupr')->name('allakunkonsultan.showdata');
+Route::get('/allakuninternal', [akuncontroller::class, 'allakuninternal'])->middleware('auth', 'can:admindpupr')->name('allakuninternal.showdata');
 
-
-Route::get('/allakuncreate', [akuncontroller::class, 'allakuncreate'])->middleware('auth')->name('allakuncreate.create');
-Route::post('/allakuncreatenew', [akuncontroller::class, 'allakuncreatenew'])->middleware('auth')->name('create.allakuncreatenew');
+Route::get('/allakuncreate', [akuncontroller::class, 'allakuncreate'])->middleware('auth', 'can:admindpupr')->name('allakuncreate.create');
+Route::post('/allakuncreatenew', [akuncontroller::class, 'allakuncreatenew'])->middleware('auth', 'can:admindpupr')->name('create.allakuncreatenew');
 // MENU AKUN SEMUA
 
 

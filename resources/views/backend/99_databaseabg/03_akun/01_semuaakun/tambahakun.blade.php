@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -201,8 +143,8 @@ th {
                                 <div class="row">
 <div class="row">
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="name">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="name">
                 <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
             </label>
             <input type="text" id="name" name="name" value="{{ old('name', $data->name ?? '') }}"
@@ -212,8 +154,8 @@ th {
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="username">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="username">
                 <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Username
             </label>
             <input type="text" id="username" name="username" value="{{ old('username', $data->username ?? '') }}"
@@ -223,8 +165,8 @@ th {
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="phone_number">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="phone_number">
                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No. Telepon
             </label>
             <input type="text" id="phone_number" name="phone_number"
@@ -234,8 +176,8 @@ th {
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-<div class="mb-3">
-    <label class="form-label" for="password">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="password">
         <i class="bi bi-lock" style="margin-right: 8px; color: navy;"></i> Password
     </label>
     <input type="password" id="password" name="password"
@@ -245,8 +187,8 @@ th {
     @enderror
 </div>
 
-<div class="mb-3">
-    <label class="form-label" for="password_confirmation">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="password_confirmation">
         <i class="bi bi-lock-fill" style="margin-right: 8px; color: navy;"></i> Konfirmasi Password
     </label>
     <input type="password" id="password_confirmation" name="password_confirmation"
@@ -258,8 +200,8 @@ th {
     </div>
 
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="email">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="email">
                 <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
             </label>
             <input type="email" id="email" name="email" value="{{ old('email', $data->email ?? '') }}"
@@ -269,8 +211,8 @@ th {
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="avatar">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="avatar">
                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Upload Avatar
             </label>
             <input type="file" id="avatar" name="avatar"
@@ -285,9 +227,9 @@ th {
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="statusadmin_id">
-                <i class="bi bi-person-gear" style="margin-right: 8px; color: navy;"></i> Status Admin
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="statusadmin_id">
+                <i class="bi bi-person-gear" style="margin-right: 8px; color: navy;"></i> Status Akun Aplikasi
             </label>
             <select name="statusadmin_id" id="statusadmin_id"
                 class="form-select @error('statusadmin_id') is-invalid @enderror">
