@@ -121,7 +121,7 @@
         onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 280px;"
       />
-      <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+      <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
     </div>
 
   </div>
@@ -170,21 +170,21 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+    <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
              <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-{{-- <th style="background-color: #ADD8E6;">No</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-circle"></i> Nama Lengkap</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user-tag"></i> Username</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> No Telepon</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-key"></i> OTP</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Avatar</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-shield"></i> Status Admin</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-cogs"></i> Aksi</th>
+     <th style="">No</th>
+{{-- <th style=""><i class="bi bi-layer-group"></i> Sub Kualifikasi</th> --}}
+{{-- <th style=""><i class="bi bi-users"></i> Asosiasi Masjaki</th> --}}
+{{-- <th style="">No</th> --}}
+<th style=""><i class="bi bi-user-circle"></i> Nama Lengkap</th>
+{{-- <th style=""><i class="bi bi-user-tag"></i> Username</th> --}}
+<th style=""><i class="bi bi-phone-alt"></i> No Telepon</th>
+{{-- <th style=""><i class="bi bi-key"></i> OTP</th> --}}
+<th style=""><i class="bi bi-envelope"></i> Email</th>
+<th style=""><i class="bi bi-image"></i> Avatar</th>
+<th style=""><i class="bi bi-user-shield"></i> Status Admin</th>
+<th style=""><i class="bi bi-cogs"></i> Aksi</th>
 
     </tr>
                             </thead>
