@@ -1,4 +1,27 @@
+
 <style>
+
+    /* Perbaikan untuk mobile */
+@media (max-width: 768px) {
+    .app-sidebar {
+        width: 100% !important;
+        overflow-y: auto;
+    }
+    .nav-link {
+        padding: 12px 15px !important;
+    }
+    /* Matiin efek 3D di mobile biar nggak ganggu klik */
+    .floating-building {
+        display: none !important;
+    }
+}
+
+/* Animasi halus */
+.nav-treeview {
+    transition: all 0.3s ease;
+}
+
+
     .app-sidebar {
     position: relative;
     overflow: hidden;
