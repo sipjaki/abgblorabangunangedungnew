@@ -1378,7 +1378,7 @@
   {{-- <i class="bi bi-person-search nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i> --}}
   <i class="bi bi-clipboard-check nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
 
-  <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
+  <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
   <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1424,6 +1424,13 @@
     <a href="/dataallpenilikbgall" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: orange; margin: 0 0 0 8px;">Data Inspeksi</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: red; margin: 0 0 0 8px;">Data PBG</p>
     </a>
 </li>
 
