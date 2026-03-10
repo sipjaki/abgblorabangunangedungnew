@@ -1947,7 +1947,7 @@
       </aside>
       <!--end::Sidebar-->
 
-      <script>
+      {{-- <script>
         // Toggle sub-menu saat item Dashboard diklik
         $(".nav-item > a").click(function (e) {
           // Pastikan kita hanya menampilkan sub-menu yang terkait dengan item yang diklik
@@ -1961,4 +1961,53 @@
             $this.slideDown(); // Buka sub-menu yang diklik
           }
         });
-      </script>
+      </script> --}}
+
+      <script>
+$(document).ready(function() {
+    // 1. Tangani klik pada menu utama (hanya yang memiliki submenu)
+    $(".nav-item.has-treeview > a").on("click", function(e) {
+        e.preventDefault(); // Mencegah link langsung navigasi
+        e.stopPropagation(); // Mencegah event bubbling
+
+        var $parent = $(this).parent(); // .nav-item
+        var $submenu = $(this).next(".nav-treeview");
+
+        // Cek apakah submenu sedang terbuka
+        if ($submenu.is(":visible")) {
+            // Jika terbuka, tutup
+            $submenu.slideUp(300);
+            $parent.removeClass("menu-open");
+        } else {
+            // Jika tertutup, buka
+            $submenu.slideDown(300);
+            $parent.addClass("menu-open");
+
+            // Opsional: Tutup menu lain yang terbuka (kalau mau)
+            // $parent.siblings().find(".nav-treeview").slideUp(300);
+            // $parent.siblings().removeClass("menu-open");
+        }
+    });
+
+    // 2. Tangani klik pada link di dalam submenu
+    $(".nav-treeview .nav-link").on("click", function(e) {
+        // Biarkan event berjalan normal (navigasi ke halaman)
+        // Tapi stop propagation agar tidak mempengaruhi menu utama
+        e.stopPropagation();
+    });
+
+    // 3. Inisialisasi: Sembunyikan semua submenu saat load
+    $(".nav-treeview").hide();
+
+    // 4. Jika ada menu yang harus terbuka berdasarkan halaman aktif
+    // (opsional, untuk menandai menu yang sedang aktif)
+    var currentUrl = window.location.pathname;
+    $(".nav-treeview a").each(function() {
+        if ($(this).attr("href") === currentUrl) {
+            // Buka parent menu jika link ini aktif
+            $(this).closest(".nav-item.has-treeview").find(".nav-treeview").show();
+            $(this).closest(".nav-item.has-treeview").addClass("menu-open");
+        }
+    });
+});
+</script>
