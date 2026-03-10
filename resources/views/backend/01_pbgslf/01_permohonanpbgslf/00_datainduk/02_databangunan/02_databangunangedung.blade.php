@@ -281,7 +281,7 @@
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="row g-3">
                         @foreach ($infoItems as $item)
-                            <div class="col-md-6">
+                            <div class="form-modern col-md-6">
                                 <div class="d-flex align-items-start">
                                     <div class="me-3">
                                         <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>

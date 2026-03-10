@@ -1276,9 +1276,9 @@ Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])-
 Route::post('/updatedataumumnew/{id}', [PbgslfController::class, 'updatedataumumnew'])->middleware('auth','can:admindpupr')->name('updatedataumumnew');
 
 // DATA TEKNIS ARSITEKTUR
-Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth')->name('bepbgdokumeteknisars');
-Route::get('/bepbgdokumeteknisarscreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisarscreate'])->middleware('auth')->name('bepbgdokumeteknisarscreate');
-Route::post('/bepbgdokumeteknisarscreatenew', [PbgslfController::class, 'bepbgdokumeteknisarscreatenew'])->middleware('auth')->name('bepbgdokumeteknisarscreatenew');
+Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisars');
+Route::get('/bepbgdokumeteknisarscreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisarscreate'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisarscreate');
+Route::post('/bepbgdokumeteknisarscreatenew', [PbgslfController::class, 'bepbgdokumeteknisarscreatenew'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisarscreatenew');
 
 Route::get('/updatedataarsitektur/{id}', [PbgslfController::class, 'updatedataarsitektur'])->middleware('auth')->name('updatedataarsitektur');
 Route::post('/updatedataarsitekturnew/{id}', [PbgslfController::class, 'updatedataarsitekturnew'])->middleware('auth')->name('updatedataarsitekturnew');

@@ -19,11 +19,11 @@
                 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
                     @php $status = $item['validasiberkas' . $i] ?? null; @endphp
                     @if ($status == 'sudah')
-                        <button class="button-create" type="button" style=" color: black; cursor: not-allowed;" >
+                        <button class="button-create" type="button" style="  cursor: not-allowed;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Sudah
                         </button>
                     @elseif ($status == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Belum
                         </button>
                     @else
@@ -55,7 +55,7 @@
             </form>
 
             <br><br>
-            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
+            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; " onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
                 <i class="bi bi-x-circle me-1"></i> Batal
             </button>
         </div>
@@ -104,15 +104,15 @@
                         @php $status = $data['validasiberkas' . $i] ?? null; @endphp
 
                         @if ($status == 'sudah')
-                            <button class="button-hijau" type="button" style=" color: black; cursor: not-allowed;" >
+                            <button class="button-hijau" type="button" style="  cursor: not-allowed;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($status == 'belum')
-                            <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style=" color: black;">
+                            <button class="button-merah" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style=" ">
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
-                            <button class="button-modern" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="color: black;">
+                            <button class="button-modern" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="">
                                 <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @endif
@@ -146,7 +146,7 @@
             </form>
 
             <br><br>
-            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
+            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; "
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
                 <i class="bi bi-x-circle me-1"></i> Batal
@@ -217,15 +217,15 @@
                         @endphp
 
                         @if ($data->$field == 'sudah')
-                            <button class="button-hijau" type="button" style=" color: black;" >
+                            <button class="button-hijau" type="button" style=" " >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($data->$field == 'belum')
-                            <button class="button-merah" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style=" color: black;">
+                            <button class="button-merah" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style=" ">
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
-                            <button class="button-modern" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="color: black;">
+                            <button class="button-modern" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="">
                                 <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @endif
@@ -262,7 +262,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal({{ $i }})" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal({{ $i }})" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -357,119 +357,119 @@
 
                     <!-- Berkas Selesai (7) -->
                     @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas7 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal7({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal7({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal7({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal7({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Validasi Berkas
                         </button>
                     @endif
 
                     {{-- @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-hijau" type="button" style=" color: black;" >
+                        <button class="button-hijau" type="button" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas1 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dokumen Lengkap
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Dokumen Lengkap
                         </button>
                     @endif --}}
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Surat Pemberitahuan Batal
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal2({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal2({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Status Surat Pemberitahuan
                         </button>
                     @endif
 
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal3({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal3({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal3({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal3({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> TPA/TPT Batal
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal3({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal3({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Pemilihan TPA/TPT
                         </button>
                     @endif
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal4({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal4({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal4({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal4({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Surat Undangan Batal
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal4({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal4({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Status Surat Undangan
                         </button>
                     @endif
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal5({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal5({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Berita Acara Batal
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal5({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal5({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Status Berita Acara
                         </button>
                     @endif
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal8({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal8({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
                         </button>
                     @elseif($data->validasiberkas8 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal8({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal8({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Belum Selesai
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal8({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal8({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Finalisasi
                         </button>
                     @endif
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style=" color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal6({{ $data->id }})" style=" color: black;">
+                        <button class="button-merah" type="button" onclick="openModal6({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> SKRD Tidak Terbit
                         </button>
                     @else
-                        <button class="button-modern" type="button" onclick="openModal6({{ $data->id }})" style="color: black;">
+                        <button class="button-modern" type="button" onclick="openModal6({{ $data->id }})" style="">
                             <i class="bi bi-patch-check me-1"></i> Status SKRD
                         </button>
                     @endif
@@ -500,7 +500,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal1()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal1()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -528,7 +528,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal2()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal2()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -556,7 +556,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal3()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal3()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -584,7 +584,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal4()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal4()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -612,7 +612,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal5()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal5()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -640,7 +640,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal6()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal6()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -668,7 +668,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal7()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal7()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal
@@ -696,7 +696,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal8()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
+        <button type="button" onclick="closeModal8()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
             onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
             <i class="bi bi-x-circle me-1"></i> Batal

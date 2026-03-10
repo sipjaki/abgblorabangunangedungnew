@@ -134,7 +134,7 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="form-modern col-md-12" style="margin-top: -20px;">
+                    <div class="col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
@@ -338,7 +338,7 @@
 
 <div class="row g-3 mt-2">
 {{-- 1. Berkas Dukung Lainnya (Input Teks) --}}
-<div class="form-modern col-md-4 mb-3">
+<div class="form-modern col-md-6 mb-3">
     <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 1. Berkas Dukung Lainnya
     </label>
@@ -375,7 +375,7 @@
         $catatan = 'catatanberkas' . $i;
     @endphp
 
-    <div class="form-modern col-md-4 mb-3">
+    <div class="form-modern col-md-6 mb-3">
         <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
             <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $i }}. {{ $labels[$i] }}
         </label>
