@@ -1377,8 +1377,8 @@ Route::post('/log-download', [PbgslfController::class, 'history'])->name('log.do
 
 // ------------------------------------------------------
 // MENU BANTUAN GAMBAR
-Route::get('/bebantuangambarpemohon', [GambarbantuanController::class, 'bebantuangambarpemohon'])->name('bebantuangambarpemohon');
-Route::get('/bebantuangambar', [GambarbantuanController::class, 'bebantuangambar'])->name('bebantuangambar.index');
+Route::get('/bebantuangambarpemohon', [GambarbantuanController::class, 'bebantuangambarpemohon'])->middleware('auth')->name('bebantuangambarpemohon');
+Route::get('/bebantuangambar', [GambarbantuanController::class, 'bebantuangambar'])->middleware('auth')->name('bebantuangambar.index');
 Route::get('/bebantuangambarshow/{id}', [GambarbantuanController::class, 'bebantuangambarshow'])->middleware('auth')->name('bebantuangambar.show');
 Route::put('/bebantuangambarvalidasi/{id}', [GambarbantuanController::class, 'bebantuangambarvalidasi'])->middleware('auth')->name('bebantuangambarvalidasi');
 

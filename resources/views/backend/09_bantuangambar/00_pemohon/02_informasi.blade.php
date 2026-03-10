@@ -111,14 +111,14 @@
 
       {{-- Row Judul --}}
       <div class="row">
-        <div class="col-md-6 mb-3">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-3">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-card-heading text-primary me-1"></i> Judul 1
           </label>
           <div class="form-control bg-light">{{ $item->judul1 ?? '-' }}</div>
         </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-3">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-card-text text-primary me-1"></i> Judul 2
           </label>
           <div class="form-control bg-light">{{ $item->judul2 ?? '-' }}</div>
@@ -128,8 +128,8 @@
       {{-- Row Berkas 1 & 2 --}}
       <div class="row">
         {{-- Berkas 1 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-4">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 1
           </label>
           @php
@@ -150,8 +150,8 @@
         </div>
 
         {{-- Berkas 2 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-4">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 2
           </label>
           @php
@@ -175,8 +175,8 @@
       {{-- Row Berkas 3 & 4 --}}
       <div class="row">
         {{-- Berkas 3 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-4">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 3
           </label>
           @php
@@ -197,8 +197,8 @@
         </div>
 
         {{-- Berkas 4 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
+        <div class="form-modern col-md-6 mb-4">
+          <label class="form-label-modern fw-bold">
             <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 4
           </label>
           @php

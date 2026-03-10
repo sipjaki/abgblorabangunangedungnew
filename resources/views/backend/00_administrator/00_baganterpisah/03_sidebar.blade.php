@@ -868,7 +868,7 @@
     <!-- Ganti SVG dengan Bootstrap Icon -->
     <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
-    <p style="color: red; margin-left: 8px;">
+    <p style="color: green; margin-left: 8px;">
         PBG/SLF
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -1506,7 +1506,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Bantek <br> Gambar PBG </p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Bantek PBG </p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1538,7 +1538,7 @@
     <li class="nav-item">
         <a href="/datainformasibantuangmbr" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Informasi</p>
+            <p style="color: red; margin: 0 0 0 8px;">Informasi</p>
         </a>
     </li>
     <li class="nav-item">
