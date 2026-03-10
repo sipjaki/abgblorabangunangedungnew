@@ -1232,8 +1232,8 @@ Route::get('/updatefungsicampuran/{id}', [PbgslfController::class, 'updatefungsi
 Route::post('/updatefungsicampurannew/{id}', [PbgslfController::class, 'updatefungsicampurannew'])->middleware('auth', 'can:superadmin')->name('updatefungsicampurannew');
 
 // TAHAP INDUK ----------------
-Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth')->name('createdatapbgslf.create');
-Route::post('/createdatapbgslfnew', [PbgslfController::class, 'createdatapbgslfnew'])->middleware('auth')->name('createdatapbgslf.create');
+Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth', 'can:admindpupr')->name('createdatapbgslf.create');
+Route::post('/createdatapbgslfnew', [PbgslfController::class, 'createdatapbgslfnew'])->middleware('auth', 'can:admindpupr')->name('createdatapbgslf.create');
 
 // DATA PEMILIK
 Route::get('/bepbgdatapemilik/{id}', [PbgslfController::class, 'bepbgdatapemilik'])->middleware('auth', 'can:admindpupr')->name('bepbgdatapemilik');
