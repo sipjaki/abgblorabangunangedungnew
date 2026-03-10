@@ -1488,15 +1488,15 @@ Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbg
 // Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth')->name('suratpemberitahuan.detail');
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN
-Route::get('/bepbgberitaacaraslf/{id}', [PbgslfController::class, 'bepbgberitaacaraslf'])->middleware('auth')->name('bepbgberitaacaraslf');
-Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth')->name('bepbgberitaacaraslf.detail');
+Route::get('/bepbgberitaacaraslf/{id}', [PbgslfController::class, 'bepbgberitaacaraslf'])->middleware('auth', 'can:admindpupr')->name('bepbgberitaacaraslf');
+Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth', 'can:admindpupr')->name('bepbgberitaacaraslf.detail');
 
-Route::get('/bepbgberitaacaraonline/{id}', [PbgslfController::class, 'bepbgberitaacaraonline'])->middleware('auth')->name('bepbgberitaacaraonline');
-Route::get('/bepbgberitaacaraonlineshow/{id}', [PbgslfController::class, 'bepbgberitaacaraonlineshow'])->middleware('auth')->name('bepbgberitaacaraonlineshow.detials');
+Route::get('/bepbgberitaacaraonline/{id}', [PbgslfController::class, 'bepbgberitaacaraonline'])->middleware('auth', 'can:admindpupr')->name('bepbgberitaacaraonline');
+Route::get('/bepbgberitaacaraonlineshow/{id}', [PbgslfController::class, 'bepbgberitaacaraonlineshow'])->middleware('auth', 'can:admindpupr')->name('bepbgberitaacaraonlineshow.detials');
 
-Route::get('/bepbgbeuploadberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkas'])->middleware('auth')->name('bepbgbeuploadberkas');
-Route::get('/bepbgbeuploadberkasnew/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnew'])->middleware('auth')->name('bepbgbeuploadberkasnew');
-Route::put('/bepbgbeuploadberkasnewberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnewberkas'])->middleware('auth')->name('bepbgbeuploadberkasnewberkas');
+Route::get('/bepbgbeuploadberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkas'])->middleware('auth', 'can:admindpupr')->name('bepbgbeuploadberkas');
+Route::get('/bepbgbeuploadberkasnew/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnew'])->middleware('auth', 'can:admindpupr')->name('bepbgbeuploadberkasnew');
+Route::put('/bepbgbeuploadberkasnewberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnewberkas'])->middleware('auth', 'can:admindpupr')->name('bepbgbeuploadberkasnewberkas');
 
 
 // Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth')->name('bepbgsuratundangancreate');
