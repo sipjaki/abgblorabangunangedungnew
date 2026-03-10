@@ -3099,7 +3099,7 @@ public function validasipbgslfbukti(Request $request, $id)
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
 
     // Tampilkan ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
+    return view('backend.01_pbgslf.01_permohonanpbgslf.02_slfpermohonan', [
         'title' => 'Permohonan (SLF) Sertifikat Laik Fungsi ',
         'data'  => $berkasbantek,
         'user'  => $user,
