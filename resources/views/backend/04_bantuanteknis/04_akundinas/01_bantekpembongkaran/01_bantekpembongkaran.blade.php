@@ -179,7 +179,7 @@
                                     class="button-modern"
                                     style="color: black; text-decoration: none;">
 
-                                        <i class="bi bi-plus-circle me-1"></i>
+                                        <i class="bi bi-plus me-1"></i>
                                         Permohonan Baru
                                     </a>
 
