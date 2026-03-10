@@ -131,7 +131,7 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="form-modern col-md-12" style="margin-top: -20px;">
+                    <div class="col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf

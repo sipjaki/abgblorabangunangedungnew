@@ -1287,10 +1287,10 @@ Route::post('/updatedataarsitekturnew/{id}', [PbgslfController::class, 'updateda
 Route::delete('/bepbgdokumearsidelete/{id}', [PbgslfController::class, 'bepbgdokumearsidelete'])->middleware('auth')->name('bepbgdokumearsidelete');
 
 // DATA TEKNIS ARSITEKTUR
-Route::get('/bepbgdokumeteknisstrk/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrk'])->middleware('auth')->name('bepbgdokumeteknisstrk');
-Route::get('/bepbgdokumeteknisstrkcreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkcreate'])->middleware('auth')->name('bepbgdokumeteknisstrkcreate');
-Route::post('/bepbgdokumeteknisstrkcreatenew', [PbgslfController::class, 'bepbgdokumeteknisstrkcreatenew'])->middleware('auth')->name('bepbgdokumeteknisstrkcreatenew');
-Route::delete('/bepbgdokumeteknisstrkdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkdelete'])->middleware('auth')->name('bepbgdokumeteknisstrkdelete');
+Route::get('/bepbgdokumeteknisstrk/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrk'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisstrk');
+Route::get('/bepbgdokumeteknisstrkcreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkcreate'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisstrkcreate');
+Route::post('/bepbgdokumeteknisstrkcreatenew', [PbgslfController::class, 'bepbgdokumeteknisstrkcreatenew'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisstrkcreatenew');
+Route::delete('/bepbgdokumeteknisstrkdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkdelete'])->middleware('auth', 'can:admindpupr')->name('bepbgdokumeteknisstrkdelete');
 
 Route::get('/updatedatastruktur/{id}', [PbgslfController::class, 'updatedatastruktur'])->middleware('auth')->name('updatedatastruktur');
 Route::post('/updatedatastrukturnew/{id}', [PbgslfController::class, 'updatedatastrukturnew'])->middleware('auth')->name('updatedatastrukturnew');
@@ -1316,10 +1316,10 @@ Route::put('/bepbgtpatptupdatenew/{id}', [PbgslfController::class, 'bepbgtpatptu
 
 
 // DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
-Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf'])->middleware('auth')->name('dokumenteknisslf');
-Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumenteknisslfcreate'])->middleware('auth')->name('dokumenteknisslfcreate');
-Route::post('/dokumenteknisslfcreatenew', [PbgslfController::class, 'dokumenteknisslfcreatenew'])->middleware('auth')->name('dokumenteknisslfcreatenew');
-Route::delete('/dokumenteknisslfdelete/{id}', [PbgslfController::class, 'dokumenteknisslfdelete'])->middleware('auth')->name('dokumenteknisslfdelete');
+Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf'])->middleware('auth', 'can:admindpupr')->name('dokumenteknisslf');
+Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumenteknisslfcreate'])->middleware('auth', 'can:admindpupr')->name('dokumenteknisslfcreate');
+Route::post('/dokumenteknisslfcreatenew', [PbgslfController::class, 'dokumenteknisslfcreatenew'])->middleware('auth', 'can:admindpupr')->name('dokumenteknisslfcreatenew');
+Route::delete('/dokumenteknisslfdelete/{id}', [PbgslfController::class, 'dokumenteknisslfdelete'])->middleware('auth', 'can:admindpupr')->name('dokumenteknisslfdelete');
 
 
 Route::get('/updatedataslf/{id}', [PbgslfController::class, 'updatedataslf'])->middleware('auth')->name('updatedataslf');
@@ -1452,10 +1452,10 @@ Route::get('/bekecamatan', [PbgslfController::class, 'bekecamatan'])->middleware
 
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN
-Route::get('/bepbgsuratpemberitahuan/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuan'])->middleware('auth')->name('bepbgsuratpemberitahuan');
-Route::delete('/bepbgsuratpemberitahuandel/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuandel'])->middleware('auth')->name('bepbgsuratpemberitahuandel');
-Route::get('/bepbgsuratpemberitahuancreate/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuancreate'])->middleware('auth')->name('bepbgsuratpemberitahuancreate');
-Route::post('/bepbgsuratnew', [PbgslfController::class, 'bepbgsuratnew'])->middleware('auth')->name('bepbgsuratnew');
+Route::get('/bepbgsuratpemberitahuan/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuan'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratpemberitahuan');
+Route::delete('/bepbgsuratpemberitahuandel/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuandel'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratpemberitahuandel');
+Route::get('/bepbgsuratpemberitahuancreate/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuancreate'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratpemberitahuancreate');
+Route::post('/bepbgsuratnew', [PbgslfController::class, 'bepbgsuratnew'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratnew');
 
 Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth', 'can:admindpupr')->name('suratpemberitahuan.detail');
 
@@ -1469,22 +1469,22 @@ Route::post('/bepbgsurattugasnew', [PbgslfController::class, 'bepbgsurattugasnew
 Route::delete('/bepbgsurattugasnewdelete/{id}', [PbgslfController::class, 'bepbgsurattugasnewdelete'])->middleware('auth')->name('bepbgsurattugasnewdelete');
 
 // DATA SURAT TPA TPT
-Route::get('/bepbgtpatpt/{id}', [PbgslfController::class, 'bepbgtpatpt'])->middleware('auth')->name('bepbgtpatpt');
-Route::get('/bepbgtpatptcreate/{id}', [PbgslfController::class, 'bepbgtpatptcreate'])->middleware('auth')->name('bepbgtpatptcreate');
-Route::post('/bepbgtpatptcreatenew', [PbgslfController::class, 'bepbgtpatptcreatenew'])->middleware('auth')->name('bepbgtpatptcreatenew');
+Route::get('/bepbgtpatpt/{id}', [PbgslfController::class, 'bepbgtpatpt'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatpt');
+Route::get('/bepbgtpatptcreate/{id}', [PbgslfController::class, 'bepbgtpatptcreate'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreate');
+Route::post('/bepbgtpatptcreatenew', [PbgslfController::class, 'bepbgtpatptcreatenew'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreatenew');
 
 Route::delete('/bepbgtpatptdelete/{id}', [PbgslfController::class, 'bepbgtpatptdelete'])->middleware('auth')->name('bepbgtpatptdelete');
 
-Route::get('/bepbgsuratundangantpatpt/{id}', [PbgslfController::class, 'bepbgsuratundangantpatpt'])->middleware('auth')->name('bepbgsuratundangantpatpt');
-Route::get('/bepbgsuratundangantpatptshow/{id}', [PbgslfController::class, 'bepbgsuratundangantpatptshow'])->middleware('auth')->name('bepbgsuratundangantpatptshow');
+Route::get('/bepbgsuratundangantpatpt/{id}', [PbgslfController::class, 'bepbgsuratundangantpatpt'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratundangantpatpt');
+Route::get('/bepbgsuratundangantpatptshow/{id}', [PbgslfController::class, 'bepbgsuratundangantpatptshow'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratundangantpatptshow');
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN
-Route::get('/bepbgsuratundangan/{id}', [PbgslfController::class, 'bepbgsuratundangan'])->middleware('auth')->name('bepbgsuratundangan');
-Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth')->name('bepbgsuratundangancreate');
-Route::post('/bepbgsuratundangannew', [PbgslfController::class, 'bepbgsuratundangannew'])->middleware('auth')->name('bepbgsuratundangannew');
+Route::get('/bepbgsuratundangan/{id}', [PbgslfController::class, 'bepbgsuratundangan'])->middleware('auth','can:admindpupr')->name('bepbgsuratundangan');
+Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth','can:admindpupr')->name('bepbgsuratundangancreate');
+Route::post('/bepbgsuratundangannew', [PbgslfController::class, 'bepbgsuratundangannew'])->middleware('auth','can:admindpupr')->name('bepbgsuratundangannew');
 
-Route::get('/bepbgsuratundanganshow/{id}', [PbgslfController::class, 'bepbgsuratundanganshow'])->middleware('auth')->name('bepbgsuratundanganshow.detail');
-Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbgsuratundangandelete'])->middleware('auth')->name('bepbgsuratundangandelete');
+Route::get('/bepbgsuratundanganshow/{id}', [PbgslfController::class, 'bepbgsuratundanganshow'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratundanganshow.detail');
+Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbgsuratundangandelete'])->middleware('auth', 'can:admindpupr')->name('bepbgsuratundangandelete');
 // Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth')->name('suratpemberitahuan.detail');
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN

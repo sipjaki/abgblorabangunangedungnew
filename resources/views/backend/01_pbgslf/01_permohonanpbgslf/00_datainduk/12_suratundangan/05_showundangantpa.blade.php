@@ -175,7 +175,7 @@
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
