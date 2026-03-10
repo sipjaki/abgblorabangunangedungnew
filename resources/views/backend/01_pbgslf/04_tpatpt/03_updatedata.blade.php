@@ -94,9 +94,8 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
 <button class="button-modern" type="button"
-    onclick="window.location.href='{{ url()->previous() }}';"
+    onclick="window.location.href='{{ url('/betpatpt') }}';"
     style="cursor: pointer; margin-left:10px;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
