@@ -5116,7 +5116,7 @@ public function betpatptupdatestore(Request $request, $id)
     $user = Auth::user();
 
     // Ambil data lama
-    $data = Tpatpt::findOrFail($id);
+    $data = pengawasatpt::findOrFail($id);
 
     // Validasi
     $request->validate([
