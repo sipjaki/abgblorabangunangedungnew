@@ -1170,6 +1170,19 @@
     </p>
 </div>
 
+<hr>
+Menu Sementara
+<hr>
+
+<li class="nav-item">
+    <a href="/bebantuanteknisindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Permohonan</p>
+    </a>
+</li>
+
+<hr>
+
 <li class="nav-item">
     <a href="/bebantekpembongkaran" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
@@ -1177,12 +1190,59 @@
     </a>
 </li>
 
-<hr>
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Berkas Asistensi</p>
+    </a>
+</li>
 
 <li class="nav-item">
-    <a href="/bebantuanteknisindex" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Permohonan</p>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Peneliti Kontrak</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Penyusutan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tingkat Kerusakan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pemeliharaan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konstruksi</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pendampingan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tim Teknis</p>
     </a>
 </li>
 
@@ -1206,21 +1266,21 @@
     <li class="nav-item">
     <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
+        <p style="color: orange; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/allakundinas" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building-gear nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Dinas</p>
+        <p style="color: orange; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Dinas</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/allakunkonsultan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Konsultan</p>
+        <p style="color: orange; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Konsultan</p>
     </a>
 </li>
 
