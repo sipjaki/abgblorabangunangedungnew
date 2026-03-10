@@ -1366,7 +1366,7 @@ Route::put('/validasipbgslfbukti/{id}', [PbgslfController::class, 'validasipbgsl
 
 
 // SKRD
-Route::get('/bepbgslfskrd', [PbgslfController::class, 'bepbgslfskrd'])->middleware('auth', 'can:admindpupr')->name('bepbgslfskrd');
+Route::get('/bepbgslfskrd', [PbgslfController::class, 'bepbgslfskrd'])->middleware('auth')->name('bepbgslfskrd');
 
 Route::get('/bepbgslfskrdcreate/{id}', [PbgslfController::class, 'bepbgslfskrdcreate'])->middleware('auth')->name('bepbgslfskrdcreate');
 Route::post('/bepbgslfskrdcreatenew/{id}', [PbgslfController::class, 'bepbgslfskrdcreatenew'])->middleware('auth')->name('create.bepbgslfskrdcreatenew');
