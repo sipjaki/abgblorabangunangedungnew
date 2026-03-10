@@ -619,7 +619,7 @@
     </div>
 
     <!-- 4. Keterangan Rencana Kabupaten -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+    {{-- <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -634,17 +634,16 @@
                         <p class="info-text">
                             Rencana Teknis Pembongkaran
                         </p>
-                        {{-- <p class="small-text">Data dan pengelolaan perusahaan</p> --}}
                     </div>
                 </div>
             </div>
         </a>
-    </div>
+    </div> --}}
 </div>
 
 <div class="row">
     <!-- 4. Keterangan Rencana Kabupaten -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+    {{-- <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -659,12 +658,11 @@
                         <p class="info-text">
                             Pendataan Bangunan Gedung
                         </p>
-                        {{-- <p class="small-text">Data dan pengelolaan perusahaan</p> --}}
                     </div>
                 </div>
             </div>
         </a>
-    </div>
+    </div> --}}
 </div>
 
 
