@@ -929,14 +929,14 @@
     <li class="nav-item">
         <a href="/bepbgslfskrd" class="nav-link">
             <i class="bi bi-receipt nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">SKRD</p>
+            <p style="color: orange; margin-left: 8px;">SKRD</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/bepbgslfretribusi" class="nav-link">
             <i class="bi bi-cash-coin nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Retribusi</p>
+            <p style="color: orange; margin-left: 8px;">Retribusi</p>
         </a>
     </li>
 
