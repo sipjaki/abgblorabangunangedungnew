@@ -932,14 +932,14 @@ Route::post('/bedinaspetugasnew', [PerjalanandinasController::class, 'bedinaspet
 
 // MENU BERITA ABG BLORA BANGUNAN GEDUNG
 
-Route::get('/beberita', [DatabaseAbgController::class, 'beberita'])->middleware('auth')->name('beberita');
-Route::delete('/beberitadelete/{id}', [DatabaseAbgController::class, 'beberitadelete'])->middleware('auth')->name('beberitadelete');
+Route::get('/beberita', [DatabaseAbgController::class, 'beberita'])->middleware('auth', 'can:admindpupr')->name('beberita');
+Route::delete('/beberitadelete/{id}', [DatabaseAbgController::class, 'beberitadelete'])->middleware('auth','can:admindpupr')->name('beberitadelete');
 
-Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])->middleware('auth')->name('beberitacreate');
-Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
+Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])->middleware('auth','can:admindpupr')->name('beberitacreate');
+Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth','can:admindpupr')->name('beberitacreatenew');
 
-Route::get('/beberitacreate/update/{id}', [DatabaseAbgController::class, 'beberitacreateupdate'])->middleware('auth')->name('beberitacreateupdate');
-Route::put('/beberitacreate/updatenew/{id}', [DatabaseAbgController::class, 'beberitacreateupdatenew'])->middleware('auth')->name('beberitacreateupdatenew');
+Route::get('/beberitacreate/update/{id}', [DatabaseAbgController::class, 'beberitacreateupdate','can:admindpupr'])->middleware('auth')->name('beberitacreateupdate');
+Route::put('/beberitacreate/updatenew/{id}', [DatabaseAbgController::class, 'beberitacreateupdatenew','can:admindpupr'])->middleware('auth')->name('beberitacreateupdatenew');
 
 
 // MENU ARTIKEL BANGUNAN GEDUNG

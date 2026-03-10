@@ -767,7 +767,7 @@
 {{-- ============================================================================= --}}
 @can('konsultanbangunan')
 
-<li class="nav-header" style="color: white;">MAIN MENU</li>
+<li class="nav-header" style="color: white;">Main Menu </li>
 <li class="nav-item">
                 <a href="#" class="nav-link">
     <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
@@ -861,7 +861,7 @@
 @endcan
 
 @canany('superadmin')
-<li class="nav-header" style="color: white;">MAIN MENU</li>
+<li class="nav-header" style="color: white;">Main Menu</li>
 <li class="nav-item">
 
               <a href="#" class="nav-link">
@@ -1830,7 +1830,7 @@ Menu Sementara
 
               <a href="#" class="nav-link">
     <!-- Ganti SVG dengan Bootstrap Icon -->
-    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+    <i class="bi bi-building nav-icon" style="color: green; font-size: 16px;"></i>
 
     <p style="color: white; margin-left: 8px;">
         Berita & Artikel
@@ -1842,14 +1842,14 @@ Menu Sementara
 
     <li class="nav-item">
         <a href="/beberita" class="nav-link">
-            <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+            <i class="bi bi-info-circle nav-icon" style="color: orange;"></i>
             <p style="color: white; margin-left: 8px;">Berita</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/beartikel" class="nav-link">
-            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <i class="bi bi-card-list nav-icon" style="color: orange;"></i>
             <p style="color: white; margin-left: 8px;">Artikel</p>
         </a>
     </li>
