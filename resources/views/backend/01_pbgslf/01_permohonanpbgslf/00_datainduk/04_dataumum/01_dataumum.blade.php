@@ -134,7 +134,7 @@
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
-                    <div class="form-modern col-md-12" style="margin-top: -20px;">
+                    <div class="col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
@@ -209,7 +209,7 @@
 
 </div>
 
-<div class="form-modern col-12">
+<div class="col-12">
     {{-- <div class="mb-3">
         <label class="form-label" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal

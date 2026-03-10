@@ -1258,18 +1258,18 @@ Route::delete('/bepbgdatabangunandelete/{id}', [PbgslfController::class, 'bepbgd
 // DATA TANAH
 Route::get('/bepbgdatatanah/{id}', [PbgslfController::class, 'bepbgdatatanah'])->middleware('auth')->name('bepbgdatatanah');
 
-Route::get('/updatedatatanah/{id}', [PbgslfController::class, 'updatedatatanah'])->middleware('auth')->name('updatedatatanah');
-Route::post('/updatedatatanahnew/{id}', [PbgslfController::class, 'updatedatatanahnew'])->middleware('auth')->name('updatedatatanahnew');
+Route::get('/updatedatatanah/{id}', [PbgslfController::class, 'updatedatatanah'])->middleware('auth', 'can:admindpupr')->name('updatedatatanah');
+Route::post('/updatedatatanahnew/{id}', [PbgslfController::class, 'updatedatatanahnew'])->middleware('auth', 'can:admindpupr')->name('updatedatatanahnew');
 
-Route::get('/bepbgdatatanahcreate/{id}', [PbgslfController::class, 'bepbgdatatanahcreate'])->middleware('auth')->name('bepbgdatatanahcreate');
-Route::post('/bepbgdatatanahcreatenew', [PbgslfController::class, 'bepbgdatatanahcreatenew'])->middleware('auth')->name('bepbgdatatanahnew');
-Route::delete('/bepbgdatatanahdelete/{id}', [PbgslfController::class, 'bepbgdatatanahdelete'])->middleware('auth')->name('bepbgdatatanahdelete');
+Route::get('/bepbgdatatanahcreate/{id}', [PbgslfController::class, 'bepbgdatatanahcreate'])->middleware('auth', 'can:admindpupr')->name('bepbgdatatanahcreate');
+Route::post('/bepbgdatatanahcreatenew', [PbgslfController::class, 'bepbgdatatanahcreatenew'])->middleware('auth', 'can:admindpupr')->name('bepbgdatatanahnew');
+Route::delete('/bepbgdatatanahdelete/{id}', [PbgslfController::class, 'bepbgdatatanahdelete'])->middleware('auth', 'can:admindpupr')->name('bepbgdatatanahdelete');
 
 // DATA UMUM
-Route::get('/bepbgdataumum/{id}', [PbgslfController::class, 'bepbgdataumum'])->middleware('auth')->name('bepbgdataumum');
-Route::get('/bepbgdataumumcreate/{id}', [PbgslfController::class, 'bepbgdataumumcreate'])->middleware('auth')->name('bepbgdataumumcreate');
-Route::post('/bepbgdataumumcreatenew', [PbgslfController::class, 'bepbgdataumumcreatenew'])->middleware('auth')->name('bepbgdataumumcreatenew');
-Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdataumumdelete'])->middleware('auth')->name('bepbgdataumumdelete');
+Route::get('/bepbgdataumum/{id}', [PbgslfController::class, 'bepbgdataumum'])->middleware('auth','can:admindpupr')->name('bepbgdataumum');
+Route::get('/bepbgdataumumcreate/{id}', [PbgslfController::class, 'bepbgdataumumcreate'])->middleware('auth','can:admindpupr')->name('bepbgdataumumcreate');
+Route::post('/bepbgdataumumcreatenew', [PbgslfController::class, 'bepbgdataumumcreatenew'])->middleware('auth','can:admindpupr')->name('bepbgdataumumcreatenew');
+Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdataumumdelete'])->middleware('auth','can:admindpupr')->name('bepbgdataumumdelete');
 
 
 Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])->middleware('auth')->name('updatedataumum');
