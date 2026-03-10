@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -174,7 +116,7 @@ th {
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Jenis Permohonan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -184,8 +126,7 @@ th {
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
-      class="button-baru"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      class="button-berkas">
       <i class="bi bi-download"></i> Download Excel
     </button>
 
@@ -228,30 +169,30 @@ th {
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                            class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                            class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
                             >
                             <thead>
                                   <tr>
-        <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Pemohon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Email</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Alamat </th> --}}
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> No Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Username Pemohon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Akun Pemohon</th> --}}
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Kecamatan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Kelurahan/Desa</th>
+        <th style="">No</th>
+        <th style=""><i class="bi bi-user"></i> Nama Pemohon</th>
+        <th style=""><i class="bi bi-user"></i> Email</th>
+        {{-- <th style=""><i class="bi bi-user"></i> Alamat </th> --}}
+        {{-- <th style=""><i class="bi bi-user"></i> No Telepon</th>
+        <th style=""><i class="bi bi-user"></i> Username Pemohon</th>
+        <th style=""><i class="bi bi-user"></i> Nama Akun Pemohon</th> --}}
+        <th style=""><i class="bi bi-user"></i> Kecamatan</th>
+        <th style=""><i class="bi bi-user"></i> Kelurahan/Desa</th>
 
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Fasilitator </th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
-            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Asistensi</th> --}}
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantuan Gambar</th>
-            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th> --}}
+            <th style=""><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
+            <th style=""><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
+            <th style=""><i class="bi bi-cpu"></i> Fasilitator </th>
+            <th style=""><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
+            {{-- <th style=""><i class="bi bi-eye"></i> Verifikasi Asistensi</th> --}}
+            <th style=""><i class="bi bi-cpu"></i> Upload Berkas Bantuan Gambar</th>
+            {{-- <th style=""><i class="bi bi-journal-check"></i> Terbitkan Surat</th> --}}
             @can('superadmin')
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+            <th style=""><i class="bi bi-tools"></i> Aksi</th>
             @endcan
 
     </tr>
@@ -275,7 +216,7 @@ th {
             <td style="text-align: center;">
                 <a href="{{ route('bebantuangambar.show', $item->id) }}"
                     class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
             <!-- Tombol KTP -->
@@ -463,7 +404,7 @@ th {
 
     <a href="{{ route('bebantuangambarlap.show', $item->id) }}"
                     class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
 
                      <div style="display: flex; justify-content: center;">
@@ -565,7 +506,7 @@ th {
       <div style="display: flex; justify-content: center;">
      <a href="{{ route('bebantuangambarupload', $item->id) }}"
                     class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
     @if($item->verifikasi4 == 'sudah')
         <button
