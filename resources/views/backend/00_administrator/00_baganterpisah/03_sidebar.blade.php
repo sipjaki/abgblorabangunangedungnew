@@ -915,14 +915,14 @@
     <li class="nav-item">
         <a href="/bepbgslfindex" class="nav-link">
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Permohonan</p>
+            <p style="color: orange; margin-left: 8px;">Permohonan</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/bepbgslfkonsultasi" class="nav-link">
             <i class="bi bi-chat-dots nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+            <p style="color: orange; margin-left: 8px;">Konsultasi Teknis</p>
         </a>
     </li>
 

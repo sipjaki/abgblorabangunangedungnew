@@ -2641,17 +2641,14 @@ public function betempatcreatenew(Request $request)
     return redirect()->route('betempatkonsultasi'); // Pastikan route ini benar
 }
 
-
-
-    public function bepbgslfkonsultasi(Request $request)
+public function bepbgslfkonsultasi(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 10);
 
-      $query = pbgslfbangunan::query();
-
-      $data = $query->latest()->paginate($perPage)->appends($request->all());
-    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
+    // ================================
+    // HITUNG JUMLAH BERDASARKAN JENIS
+    // ================================
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
         $q->where('id', 1);
     })->count();
@@ -2672,58 +2669,52 @@ public function betempatcreatenew(Request $request)
         $q->where('id', 5);
     })->count();
 
-    // -------------------------------------------------------------------------------
-//     $jumlahsidangbulanan = pbgslfbangunan::selectRaw('MONTH(tanggalpermohonan) as bulan, COUNT(*) as jumlah')
-//     ->groupBy('bulan')
-//     ->orderBy('bulan')
-//     ->pluck('jumlah', 'bulan')
-//     ->toArray();
+    // ================================
+    // FILTER BULAN + TAHUN
+    // ================================
+    $bulanTahun = $request->input('bulan_tahun');
 
-// // Konversi bulan angka ke nama bulan
-// $bulanNama = [
-//     1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
-//     5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
-//     9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
-// ];
+    $query = pbgslfbangunan::with(['user','jenispengajuanpbgslfper'])
+        ->where('validasiberkas5','sudah');
 
-// $jumlahsidangbulanan = array_map(function ($bulan) use ($jumlahsidangbulanan) {
-//     return $jumlahsidangbulanan[$bulan] ?? 0;
-// }, range(1, 12));
+    if ($bulanTahun) {
+        $tanggal = Carbon::createFromFormat('Y-m', $bulanTahun);
 
-$tahunIni = Carbon::now()->year;
+        $query->whereYear('updated_at', $tanggal->year)
+              ->whereMonth('updated_at', $tanggal->month);
+    }
 
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
 
-$data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
-    ->where('validasiberkas5', 'sudah')
-    ->whereYear('updated_at', $tahunIni)
-    ->get(); // ✅ AMBIL OBJEK
+    // ================================
+    // DATA SIDANG BULANAN (UNTUK GRAFIK)
+    // ================================
+    $jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+        ->groupBy('bulan')
+        ->orderBy('bulan')
+        ->pluck('jumlah','bulan')
+        ->toArray();
 
-$jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5', 'sudah')
-    ->whereYear('updated_at', $tahunIni)
-    ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
-    ->groupBy('bulan')
-    ->orderBy('bulan')
-    ->pluck('jumlah', 'bulan')
-    ->toArray();
+    $jumlahsidangbulanan = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+    }
 
-$jumlahsidangbulanan = [];
-for ($i = 1; $i <= 12; $i++) {
-    $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
-}
+    // ================================
+    // AMBIL BULAN + TAHUN DARI DATABASE
+    // ================================
+    $daftarBulanTahun = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw("DATE_FORMAT(updated_at,'%Y-%m') as bulan_tahun")
+        ->distinct()
+        ->orderBy('bulan_tahun','asc')
+        ->pluck('bulan_tahun');
 
-$bulanFilter = $request->input('bulan');
-
-if ($bulanFilter) {
-    $data = $data->filter(function ($item) use ($bulanFilter) {
-        return optional($item->updated_at)->month == $bulanFilter;
-    });
-}
-
-// ----------------------------------------------------------------------------
-
+    // ================================
+    // RETURN VIEW
+    // ================================
     return view('backend.01_pbgslf.06_konsultasi.01_konsultasi', [
         'title' => 'Konsultasi Teknis Permohonan PBG/SLF Bangunan Gedung',
-        // 'data' => $dataTanpaIdSatu,
         'user' => $user,
 
         'jumlahDataIdSatu' => $jumlahDataIdSatu,
@@ -2733,10 +2724,10 @@ if ($bulanFilter) {
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
-        'bulanFilter' => $bulanFilter,
-        'data' => $data,
 
-        // 'datasemua' => $dataTanpaIdSatu,
+        'data' => $data,
+        'bulanTahun' => $bulanTahun,
+        'daftarBulanTahun' => $daftarBulanTahun,
     ]);
 }
 

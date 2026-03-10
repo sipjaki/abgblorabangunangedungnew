@@ -1361,7 +1361,7 @@ Route::get('/befungsibangunancreate', [PbgslfController::class, 'befungsibanguna
 Route::post('/befungsibangunancreatenew', [PbgslfController::class, 'befungsibangunancreatenew'])->middleware('auth', 'can:admindpupr')->name('befungsibangunancreatenew');
 
 // KONSULTASI TEKNIS
-Route::get('/bepbgslfkonsultasi', [PbgslfController::class, 'bepbgslfkonsultasi'])->middleware('auth')->name('bepbgslfkonsultasi');
+Route::get('/bepbgslfkonsultasi', [PbgslfController::class, 'bepbgslfkonsultasi'])->middleware('auth', 'can:admindpupr')->name('bepbgslfkonsultasi');
 Route::put('/validasipbgslfbukti/{id}', [PbgslfController::class, 'validasipbgslfbukti'])->name('validasipbgslfbukti.update');
 
 

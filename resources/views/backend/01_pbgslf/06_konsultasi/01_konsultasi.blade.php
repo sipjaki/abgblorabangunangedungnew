@@ -16,7 +16,7 @@
       <!--begin::App Main-->
       <main class="app-main"
          style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -240,7 +240,7 @@
 
 <div class="putih">
 
-    <form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
+    {{-- <form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
         <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
             <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
             <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
@@ -261,7 +261,48 @@
         @endforeach
     </select>
   </div>
+</form> --}}
+
+
+<form method="GET" action="{{ url()->current() }}" style="margin-bottom:20px;">
+<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+
+<label style="font-weight:600;">Filter Bulan :</label>
+
+<select name="bulan_tahun" onchange="this.form.submit()"
+style="padding:6px 10px;border:1px solid #ccc;border-radius:6px;">
+
+<option value="">-- Semua Data --</option>
+
+@php
+$namaBulan = [
+1=>'Januari',2=>'Februari',3=>'Maret',4=>'April',
+5=>'Mei',6=>'Juni',7=>'Juli',8=>'Agustus',
+9=>'September',10=>'Oktober',11=>'November',12=>'Desember'
+];
+@endphp
+
+@foreach($daftarBulanTahun as $item)
+
+@php
+$bulan = \Carbon\Carbon::createFromFormat('Y-m', $item);
+@endphp
+
+<option value="{{ $item }}"
+{{ request('bulan_tahun') == $item ? 'selected' : '' }}>
+
+{{ $namaBulan[$bulan->month] }} {{ $bulan->year }}
+
+</option>
+
+@endforeach
+
+</select>
+
+</div>
 </form>
+
+
 <br>
 </div>
 
