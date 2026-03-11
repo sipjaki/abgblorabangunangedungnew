@@ -1,5 +1,6 @@
 ssh -p 65002 u744637779@46.202.138.120
 
+ssh -p 65002 u744637779@46.202.138.120
 
 ssh abg blora bangunan gedung
 
