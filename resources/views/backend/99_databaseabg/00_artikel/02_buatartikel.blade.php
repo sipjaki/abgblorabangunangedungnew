@@ -150,7 +150,7 @@
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="form-modern col-md-6">
+<div class="col-md-6">
     {{-- Cadangan 1 --}}
     <div class="form-modern mb-3">
         <label class="form-label-modern" for="cadangan1">
@@ -181,7 +181,7 @@
 </div>
 
 
-<div class="form-modern col-md-6">
+<div class="col-md-6">
 
 {{-- Cadangan 3 --}}
 <div class="form-modern mb-3">

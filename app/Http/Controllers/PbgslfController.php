@@ -2902,7 +2902,7 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
  public function bepbgslfretribusi(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 100);
+    $perPage = $request->input('perPage', 10);
     $search = $request->search;
 
     // ================================
