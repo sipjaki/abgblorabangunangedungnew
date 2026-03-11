@@ -1083,6 +1083,10 @@ Route::delete('/bedatapetugaspenilikdelete/{id}', [PenilikbangunanController::cl
 Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth', 'can:admindpupr')->name('datanewpenilik.create');
 Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpeniliknew.create');
 
+// TAMBAHAN DARU PBG PENULIK BANGUNAN
+Route::get('/datapbgpenilik', [PenilikbangunanController::class, 'datapbgpenilik'])->middleware('auth', 'can:admindpupr')->name('datapbgpenilik.index');
+
+
 Route::get('/dataallpenilikbgall', [PenilikbangunanController::class, 'dataallpenilikbgall'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
 Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
 Route::get('/dataallpenilikbgupdate/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdate'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbgupdate');

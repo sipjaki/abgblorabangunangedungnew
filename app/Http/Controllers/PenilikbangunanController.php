@@ -1123,5 +1123,29 @@ public function dataallpenilikuploadpbgnew(Request $request, $id)
     return redirect()->route('dataallpenilikbg.index');
 }
 
+public function datapbgpenilik(Request $request)
+{
+    $user = Auth::user();
+
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = penilikbangunan::query(); // cukup query biasa dulu
+
+    // 🔥 SEARCH HANYA namapemohon
+    if (!empty($search)) {
+        $query->where('namapemohon', 'like', '%' . $search . '%');
+    }
+
+    $datapenilik = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.07_penilikbangunan.02_pbgpenilik.01_alldatapbg', [
+        'title' => 'Data Persetujuan Bangunan Gedung',
+        'data' => $datapenilik,
+        'user' => $user,
+    ]);
+}
+
+
 
 }
