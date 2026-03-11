@@ -136,7 +136,7 @@
     <a href="/beberitacreate" style="text-decoration: none;">
       <button
         class="button-baru">
-        <i class="bi bi-plus-circle"></i> Buat Berita
+        <i class="bi bi-plus"></i> Buat Berita
       </button>
     </a>
   </div>
@@ -187,7 +187,7 @@
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+                                @forelse ($data as $item )
 
                                 <tr class="align-middle">
                                  {{-- <td>{{ $loop->iteration }}</td> --}}
@@ -252,7 +252,39 @@
                                 @endcan
 
                                 </tr>
-                                @endforeach
+
+                                    @empty
+    <tr>
+    <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
                             </tbody>
                         </table>
 

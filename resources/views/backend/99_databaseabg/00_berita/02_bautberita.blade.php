@@ -142,7 +142,7 @@
 <div class="row">
     <div class="forn-modern col-md-6">
         {{-- Judul Berita --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="judulberita">
                 <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul Berita
             </label>
@@ -156,7 +156,7 @@
         </div>
 
         {{-- Tanggal --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="tanggal">
                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal
             </label>
@@ -169,7 +169,7 @@
         </div>
 
         {{-- Foto Utama --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="foto">
                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama
             </label>
@@ -183,7 +183,7 @@
 
     <div class="forn-modern col-md-6">
         {{-- Keterangan --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="keterangan">
                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
             </label>
@@ -196,7 +196,7 @@
         </div>
 
         {{-- Foto Tambahan 1 --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="foto1">
                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1
             </label>
@@ -208,7 +208,7 @@
         </div>
 
         {{-- Foto Tambahan 2 --}}
-        <div class="mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="foto2">
                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2
             </label>
@@ -222,7 +222,7 @@
 </div>
 
 {{-- Penulis Berita (User Login) --}}
-<div class="mb-3">
+<div class="form-modern mb-3">
     <label class="form-label-modern" for="user_id_display">
         <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Penulis Berita
     </label>
@@ -237,7 +237,7 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-hijau" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>

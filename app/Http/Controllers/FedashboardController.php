@@ -44,7 +44,7 @@ class FedashboardController extends Controller
         // return view('frontend.00_full.index', [
         // return view('frontend.abgblora.00_beranda.01_beranda', [
         return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Bangunan Gedung Kabupaten Blora | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora ',
+            'title' => 'Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
             'user' => $user,
             'data' => $databerita,
             'dataartikel' => $dataartikel,
@@ -61,7 +61,7 @@ class FedashboardController extends Controller
         // return view('frontend.abgblora.00_beranda.01_beranda', [
         return view('frontend.abgblora.00_beranda.03_merge', [
         // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Abg Blora Bangunan Gedung',
+            'title' => 'Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
         ]);
     }
 

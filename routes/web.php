@@ -943,12 +943,12 @@ Route::put('/beberitacreate/updatenew/{id}', [DatabaseAbgController::class, 'beb
 
 
 // MENU ARTIKEL BANGUNAN GEDUNG
-Route::get('/beartikel', [DatabaseAbgController::class, 'beartikel'])->middleware('auth')->name('beartikel');
+Route::get('/beartikel', [DatabaseAbgController::class, 'beartikel'])->middleware('auth', 'can:admindpupr')->name('beartikel');
 
-Route::get('/beartikelcreate', [DatabaseAbgController::class, 'beartikelcreate'])->middleware('auth')->name('beartikelcreate');
-Route::post('/beartikelcreatenew', [DatabaseAbgController::class, 'beartikelcreatenew'])->middleware('auth')->name('beartikelcreatenew');
+Route::get('/beartikelcreate', [DatabaseAbgController::class, 'beartikelcreate'])->middleware('auth', 'can:admindpupr')->name('beartikelcreate');
+Route::post('/beartikelcreatenew', [DatabaseAbgController::class, 'beartikelcreatenew'])->middleware('auth', 'can:admindpupr')->name('beartikelcreatenew');
 
-Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikeldelete'])->middleware('auth')->name('beartikeldelete');
+Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikeldelete'])->middleware('auth', 'can:admindpupr')->name('beartikeldelete');
 
 // MENU AGENDA PELATIHAN BANGUNAN GEDUNG
 Route::get('/daftaragenda/{id}', [AgendapelatihanabgController::class, 'daftaragendapelatihan'])->name('daftaragenda');

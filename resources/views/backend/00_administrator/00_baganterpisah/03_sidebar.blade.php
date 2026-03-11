@@ -1732,7 +1732,7 @@ Menu Sementara
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="flex-shrink: 0;">
     <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9L2 14v2l8-2.5V19l-2 1.5v1L12 21l4-1.5v-1L14 19v-5.5l7 2.5z"/>
   </svg>
-  <p style="color: purple; margin: 0 0 0 8px; flex-grow: 1;">Perjalanan Dinas</p>
+  <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Perjalanan Dinas</p>
   <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
@@ -1830,9 +1830,9 @@ Menu Sementara
 
               <a href="#" class="nav-link">
     <!-- Ganti SVG dengan Bootstrap Icon -->
-    <i class="bi bi-building nav-icon" style="color: green; font-size: 16px;"></i>
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
-    <p style="color: white; margin-left: 8px;">
+    <p style="color: green; margin-left: 8px;">
         Berita & Artikel
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -1842,15 +1842,15 @@ Menu Sementara
 
     <li class="nav-item">
         <a href="/beberita" class="nav-link">
-            <i class="bi bi-info-circle nav-icon" style="color: orange;"></i>
-            <p style="color: white; margin-left: 8px;">Berita</p>
+            <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+            <p style="color: orange; margin-left: 8px;">Berita</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/beartikel" class="nav-link">
-            <i class="bi bi-card-list nav-icon" style="color: orange;"></i>
-            <p style="color: white; margin-left: 8px;">Artikel</p>
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: orange; margin-left: 8px;">Artikel</p>
         </a>
     </li>
 

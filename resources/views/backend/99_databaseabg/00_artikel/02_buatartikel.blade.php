@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                         <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -208,10 +150,10 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     {{-- Cadangan 1 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan1">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="cadangan1">
             <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
         </label>
         <input type="text" id="cadangan1" name="cadangan1"
@@ -224,8 +166,8 @@ th {
     </div>
 
     {{-- Cadangan 2 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan2">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="cadangan2">
             <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
         </label>
         <textarea id="cadangan2" name="cadangan2"
@@ -235,9 +177,15 @@ th {
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
+
+</div>
+
+
+<div class="form-modern col-md-6">
+
 {{-- Cadangan 3 --}}
-<div class="mb-3">
-    <label class="form-label" for="cadangan3">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan3">
         <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
     </label>
     <input type="file" id="cadangan3" name="cadangan3"
@@ -285,8 +233,8 @@ document.getElementById('cadangan3').addEventListener('change', function (event)
 
     {{-- Cadangan 4 --}}
 {{-- Cadangan 4 --}}
-<div class="mb-3">
-    <label class="form-label" for="cadangan4">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan4">
         <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
     </label>
     <input type="file" id="cadangan4" name="cadangan4"
@@ -298,8 +246,8 @@ document.getElementById('cadangan3').addEventListener('change', function (event)
 </div>
 
 {{-- Cadangan 5 --}}
-<div class="mb-3">
-    <label class="form-label" for="cadangan5">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan5">
         <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
     </label>
     <input type="file" id="cadangan5" name="cadangan5"
@@ -311,8 +259,8 @@ document.getElementById('cadangan3').addEventListener('change', function (event)
 </div>
 
 {{-- Cadangan 6 --}}
-<div class="mb-3">
-    <label class="form-label" for="cadangan6">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="cadangan6">
         <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
     </label>
     <input type="file" id="cadangan6" name="cadangan6"
