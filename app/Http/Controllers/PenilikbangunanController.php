@@ -1140,7 +1140,7 @@ public function datapbgpenilik(Request $request)
     $datapenilik = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.07_penilikbangunan.02_pbgpenilik.01_alldatapbg', [
-        'title' => 'Data Persetujuan Bangunan Gedung',
+        'title' => 'Data Yang Sudah Memiliki Persetujuan Bangunan Gedung ',
         'data' => $datapenilik,
         'user' => $user,
     ]);
