@@ -2644,7 +2644,7 @@ public function betempatcreatenew(Request $request)
 public function bepbgslfkonsultasi(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 1000);
 
     // ================================
     // HITUNG JUMLAH BERDASARKAN JENIS
