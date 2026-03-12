@@ -15,13 +15,13 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="/assets/2026/css/reset.css">
-    <link rel="stylesheet" href="/assets/2026/css/variables.css">
-    <link rel="stylesheet" href="/assets/2026/css/base.css">
-    <link rel="stylesheet" href="/assets/2026/css/components.css">
-    <link rel="stylesheet" href="/assets/2026/css/sections.css">
-    <link rel="stylesheet" href="/assets/2026/css/animations.css">
-    <link rel="stylesheet" href="/assets/2026/css/responsive.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/reset.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/variables.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/base.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/components.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/sections.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/animations.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/responsive.css">
 
 <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
 
