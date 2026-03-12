@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Informasi Penyelenggaraan Bangunan Gedung - Kabupaten Blora</title>
-    <meta name="description" content="Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora - Pelayanan administrasi bangunan gedung yang modern dan terintegrasi">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>{{$title}}</title>
 
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+<meta name="description" content="Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora - Pelayanan administrasi bangunan gedung yang modern dan terintegrasi">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/2026/css/style.css">
+<meta name="keywords" content="Sistem Informasi Bangunan Gedung, PBG Kabupaten Blora, SLF Kabupaten Blora, Bangunan Gedung Indonesia, Sistem Bangunan Gedung PUPR, Kementerian PUPR, Administrasi Bangunan Gedung">
+
+<meta name="author" content="Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<link rel="stylesheet" href="/assets/2026/css/style.css">
 </head>
