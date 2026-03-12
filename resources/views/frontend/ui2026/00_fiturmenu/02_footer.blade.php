@@ -81,7 +81,8 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah</p>
+                <p>&copy; 2026 Pemerintah Kabupaten Blora. Dinas Pekerjaan Umum dan Perumahan Rakyat.</p>
+                <p>Semua hak dilindungi undang-undang.</p>
             </div>
         </div>
     </footer>

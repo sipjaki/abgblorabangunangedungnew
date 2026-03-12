@@ -8,35 +8,18 @@
                 <!-- Logo -->
                 <div class="logo">
                     <div class="logo-icon">
-                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="height:40px;">
+                        <i class="ph ph-buildings"></i>
                     </div>
-
                     <div class="logo-text">
-                        <span class="logo-title">Penyelengaraan Bangunan Gedung</span>
-                        <span class="logo-subtitle">DPUPR Kabupaten Blora</span>
+                        <span class="logo-title">Sistem Informasi</span>
+                        <span class="logo-subtitle">Penyelenggaraan Bangunan Gedung</span>
                     </div>
                 </div>
 
                 <!-- Navigation -->
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li class="nav-item dropdown">
-                            <a href="#beranda" class="nav-link dropdown-toggle active">
-                                Beranda
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Campuran</a></li>
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Hunian</a></li>
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Keagamaan</a></li>
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Fungsi Prasarana</a></li>
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Sosial Budaya</a></li>
-                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Usaha</a></li>
-                                <li><a href="#menu1" class="dropdown-item">SLF Fungsi Usaha</a></li>
-                                <li><a href="#menu1" class="dropdown-item">SLF Menara Telekomunikasi</a></li>
-                            </ul>
-                        </li>
-
+                        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
                         <li><a href="#layanan" class="nav-link">Layanan</a></li>
                         <li><a href="#statistik" class="nav-link">Statistik</a></li>
                         <li><a href="#informasi" class="nav-link">Informasi</a></li>
