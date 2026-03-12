@@ -19,7 +19,21 @@
                 <!-- Navigation -->
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#beranda" class="nav-link dropdown-toggle active">
+                                Beranda
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#menu1" class="dropdown-item">Menu 1</a></li>
+                                <li><a href="#menu2" class="dropdown-item">Menu 2</a></li>
+                                <li><a href="#menu3" class="dropdown-item">Menu 3</a></li>
+                                <li><a href="#menu4" class="dropdown-item">Menu 4</a></li>
+                                <li><a href="#menu5" class="dropdown-item">Menu 5</a></li>
+                                <li><a href="#menu6" class="dropdown-item">Menu 6</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="#layanan" class="nav-link">Layanan</a></li>
                         <li><a href="#statistik" class="nav-link">Statistik</a></li>
                         <li><a href="#informasi" class="nav-link">Informasi</a></li>
