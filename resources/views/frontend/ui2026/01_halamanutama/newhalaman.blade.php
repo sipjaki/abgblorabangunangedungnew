@@ -1,23 +1,5 @@
+@include('frontend.ui2026.00_fiturmenu.01_header')
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Informasi Penyelenggaraan Bangunan Gedung - Kabupaten Blora</title>
-    <meta name="description" content="Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora - Pelayanan administrasi bangunan gedung yang modern dan terintegrasi">
-
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/2026/css/style.css">
-</head>
 <body>
     <!-- Header -->
     <header class="header" id="header">
@@ -26,18 +8,35 @@
                 <!-- Logo -->
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="ph ph-buildings"></i>
+                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="height:40px;">
                     </div>
+
                     <div class="logo-text">
-                        <span class="logo-title">Sistem Informasi</span>
-                        <span class="logo-subtitle">Penyelenggaraan Bangunan Gedung</span>
+                        <span class="logo-title">Penyelengaraan Bangunan Gedung</span>
+                        <span class="logo-subtitle">DPUPR Kabupaten Blora</span>
                     </div>
                 </div>
 
                 <!-- Navigation -->
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#beranda" class="nav-link dropdown-toggle active">
+                                Beranda
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Campuran</a></li>
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Hunian</a></li>
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Keagamaan</a></li>
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Fungsi Prasarana</a></li>
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Sosial Budaya</a></li>
+                                <li><a href="#menu1" class="dropdown-item">PBG Fungsi Usaha</a></li>
+                                <li><a href="#menu1" class="dropdown-item">SLF Fungsi Usaha</a></li>
+                                <li><a href="#menu1" class="dropdown-item">SLF Menara Telekomunikasi</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="#layanan" class="nav-link">Layanan</a></li>
                         <li><a href="#statistik" class="nav-link">Statistik</a></li>
                         <li><a href="#informasi" class="nav-link">Informasi</a></li>
@@ -620,101 +619,4 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Footer Brand -->
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="ph ph-buildings"></i>
-                        </div>
-                        <div class="logo-text">
-                            <span class="logo-title">Sistem Informasi</span>
-                            <span class="logo-subtitle">Penyelenggaraan Bangunan Gedung</span>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Sistem layanan digital untuk administrasi bangunan gedung di Kabupaten Blora yang modern, terintegrasi, dan mudah diakses.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="ph ph-facebook-logo"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="ph ph-twitter-logo"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="ph ph-instagram-logo"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="ph ph-youtube-logo"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Footer Links -->
-                <div class="footer-links">
-                    <h4 class="footer-title">Layanan</h4>
-                    <ul class="footer-list">
-                        <li><a href="#">Pengajuan PBG</a></li>
-                        <li><a href="#">Sertifikat Laik Fungsi</a></li>
-                        <li><a href="#">Perpanjangan SLF</a></li>
-                        <li><a href="#">Cek Status Pengajuan</a></li>
-                        <li><a href="#">Pembayaran Online</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4 class="footer-title">Informasi</h4>
-                    <ul class="footer-list">
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Regulasi</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Panduan Pengguna</a></li>
-                        <li><a href="#">Berita & Pengumuman</a></li>
-                    </ul>
-                </div>
-
-                <!-- Footer Contact -->
-                <div class="footer-contact">
-                    <h4 class="footer-title">Hubungi Kami</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="ph ph-map-pin"></i>
-                            <span>Jl. Sudirman No. 123, Blora, Jawa Tengah</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-phone"></i>
-                            <span>(0296) 123456</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-envelope"></i>
-                            <span>pupr@blorakab.go.id</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-clock"></i>
-                            <span>Senin - Jumat: 08.00 - 16.00 WIB</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2026 Pemerintah Kabupaten Blora. Dinas Pekerjaan Umum dan Perumahan Rakyat.</p>
-                <p>Semua hak dilindungi undang-undang.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <i class="ph ph-arrow-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="/assets/2026/js/main.js"></script>
-</body>
-</html>
+@include('frontend.ui2026.00_fiturmenu.02_footer')

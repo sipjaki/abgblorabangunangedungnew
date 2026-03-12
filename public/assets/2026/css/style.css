@@ -6,13 +6,13 @@
 /* CSS Variables - Design System */
 :root {
     /* Primary Colors */
-    --color-primary: #1613cf;
-    --color-primary-dark: #1613cf;
-    --color-primary-light: #1613cf;
-    --color-primary-lighter: #1613cf;
+    --color-primary: #080741;
+    --color-primary-dark: #05052d;
+    --color-primary-light: #0e0b5c;
+    --color-primary-lighter: #141270;
 
     /* Secondary Colors */
-    --color-secondary: #1613cf;
+    --color-secondary: #1e3a8a;
     --color-accent: #3b82f6;
     --color-accent-light: #60a5fa;
 
