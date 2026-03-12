@@ -1,18 +1,5 @@
  <header class="header" id="header">
-         <div class="header-top">
-            <div class="header-top-content">
-                <div class="header-top-left">
-                    <span><i class="fas fa-map-marker-alt"></i> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora, Provinsi Jawa Tengah</span>
-                    {{-- <span><i class="fas fa-phone"></i> (0296) 531333</span> --}}
-                    {{-- <span><i class="fas fa-envelope"></i> diskominfo@blorakab.go.id</span> --}}
-                </div>
-                {{-- <div class="header-top-right">
-                    <span>Senin - Jumat: 08.00 - 16.00 WIB</span>
-                </div> --}}
-            </div>
-        </div>
-
-        <div class="container header-container">
+                 <div class="container header-container">
             <!-- Logo -->
             <a href="#" class="logo">
                 <div class="logo-icon">
