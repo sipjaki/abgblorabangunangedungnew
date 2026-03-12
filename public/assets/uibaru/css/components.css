@@ -481,3 +481,30 @@
 .status-badge.nonaktif::before {
     background-color: var(--color-error);
 }
+
+ .header-top {
+            background: var(--navy-dark);
+            padding: 0.5rem 0;
+        }
+
+        .header-top-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--gray-300);
+        }
+
+        .header-top-left {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .header-top-left span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
