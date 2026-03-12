@@ -1,198 +1,92 @@
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>Penyelenggaraan Bangunan Gedung</h3>
-                    <p>Kabupaten Blora berkomitmen untuk menyediakan layanan perizinan bangunan gedung yang cepat, transparan, dan berkualitas demi pembangunan yang berkelanjutan.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    </div>
+                <!-- Column 1 - Logo & Description -->
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-icon">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">Sistem Informasi Bangunan</span>
+                            <span class="logo-subtitle">Kabupaten Blora</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">
+                        Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora menyediakan layanan administrasi bangunan gedung yang efisien, transparan, dan terintegrasi.
+                    </p>
                 </div>
-                <div class="footer-column">
-                    <h4>Layanan</h4>
+
+                <!-- Column 2 - Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Layanan Cepat</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Pengajuan PBG</a></li>
-                        <li><a href="#">Sertifikat SLF</a></li>
-                        <li><a href="#">Perpanjangan SLF</a></li>
-                        <li><a href="#">Perubahan Data</a></li>
-                        <li><a href="#">Cek Status</a></li>
+                        <li><a href="#"><i data-lucide="chevron-right"></i>Pengajuan PBG</a></li>
+                        <li><a href="#"><i data-lucide="chevron-right"></i>Pengajuan SLF</a></li>
+                        <li><a href="#"><i data-lucide="chevron-right"></i>Cek Status Izin</a></li>
+                        <li><a href="#"><i data-lucide="chevron-right"></i>Download Formulir</a></li>
+                        <li><a href="#"><i data-lucide="chevron-right"></i>Jadwal Pelayanan</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Informasi</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Regulasi</a></li>
-                        <li><a href="#">Statistik</a></li>
-                        <li><a href="#">Berita</a></li>
-                        <li><a href="#">Pengumuman</a></li>
+
+                <!-- Column 3 - Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Kontak Kami</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span>Jl. Nusantara No. 10, Blora, Jawa Tengah 58214</span>
+                        </li>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <span>(0296) 531333</span>
+                        </li>
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <span>dputr@blorakab.go.id</span>
+                        </li>
+                        <li>
+                            <i data-lucide="clock"></i>
+                            <span>Senin - Jumat: 08.00 - 15.00 WIB</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Kontak</h4>
+
+                <!-- Column 4 - Related Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Link Terkait</h4>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-phone"></i> (0296) 531333</a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i> diskominfo@blorakab.go.id</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jl. Nusantara No. 8 Blora</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Senin-Jumat: 08.00-16.00</a></li>
+                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>Kementerian PUPR</a></li>
+                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>Dinas PUPR Jateng</a></li>
+                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>LPSE Blora</a></li>
+                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>e-Procurement</a></li>
+                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>e-Budgeting</a></li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Bottom Bar -->
             <div class="footer-bottom">
-                <p>&copy; 2024 Penyelenggaraan Bangunan Gedung Kabupaten Blora. All rights reserved.</p>
+                <p class="copyright">
+                    © 2025 Pemerintah Kabupaten Blora. All Rights Reserved.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <script>
-        // Mobile Navigation Toggle
-        function toggleMobileNav() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        // Mobile Dropdown Toggle
-        function toggleMobileDropdown(element) {
-            const dropdown = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            dropdown.classList.toggle('active');
-            icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
-        }
-
-        // Animated Counter
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const updateCounter = () => {
-                current += step;
-                if (current < target) {
-                    element.textContent = Math.floor(current).toLocaleString('id-ID');
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target.toLocaleString('id-ID');
-                }
-            };
-
-            updateCounter();
-        }
-
-        // Intersection Observer for counters
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
-
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-number').forEach(counter => {
-            counterObserver.observe(counter);
-        });
-
-        // Scroll to Top Button
-        const scrollTopBtn = document.getElementById('scrollTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Table Search
-        const tableSearch = document.getElementById('tableSearch');
-        const tableBody = document.getElementById('tableBody');
-        const tableRows = tableBody.querySelectorAll('tr');
-
-        tableSearch.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-
-            tableRows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                row.style.display = text.includes(searchTerm) ? '' : 'none';
-            });
-        });
-
-        // Pagination
-        const paginationBtns = document.querySelectorAll('.pagination-btn');
-
-        paginationBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (!btn.disabled && !btn.querySelector('i')) {
-                    paginationBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                }
-            });
-        });
-
-        // Favorite Button Toggle
-        const favoriteBtns = document.querySelectorAll('.marketplace-favorite');
-
-        favoriteBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const icon = btn.querySelector('i');
-                icon.classList.toggle('far');
-                icon.classList.toggle('fas');
-                btn.style.background = icon.classList.contains('fas') ? 'var(--accent-red)' : 'var(--white)';
-                btn.style.color = icon.classList.contains('fas') ? 'var(--white)' : '';
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation on scroll
-        const animateOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                    animateOnScroll.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.service-card, .info-card, .marketplace-card').forEach(card => {
-            animateOnScroll.observe(card);
-        });
-    </script>
+    <!-- JavaScript Files -->
+    <script src="/assets/2026/js/main.js"></script>
+    <script src="/assets/2026/js/dropdown.js"></script>
+    <script src="/assets/2026/js/counter.js"></script>
+    <script src="/assets/2026/js/table.js"></script>
+    <script src="/assets/2026/js/scroll.js"></script>
 </body>
 </html>

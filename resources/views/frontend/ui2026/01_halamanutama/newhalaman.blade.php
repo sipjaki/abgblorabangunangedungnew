@@ -1,353 +1,331 @@
 @include('frontend.ui2026.00_fiturmenu.01_header')
+
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <div class="header-top-content">
-                <div class="header-top-left">
-                    <span><i class="fas fa-phone"></i> (0296) 531333</span>
-                    <span><i class="fas fa-envelope"></i> diskominfo@blorakab.go.id</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Jl. Nusantara No. 8 Blora</span>
-                </div>
-                <div class="header-top-right">
-                    <span>Senin - Jumat: 08.00 - 16.00 WIB</span>
-                </div>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="logo-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>Penyelenggaraan Bangunan Gedung</h1>
-                        <p>Kabupaten Blora</p>
-                    </div>
-                </div>
-                <nav class="nav-desktop">
-                    <ul class="nav-menu">
-                        <li class="nav-item">
-                            <a class="nav-link">Beranda <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-home"></i> Halaman Utama</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-info-circle"></i> Tentang Kami</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-bullseye"></i> Visi & Misi</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-users"></i> Struktur Organisasi</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-history"></i> Sejarah</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Layanan <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-file-alt"></i> Izin Bangunan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-certificate"></i> Sertifikat Laik Fungsi</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-clipboard-check"></i> Pemeriksaan Bangunan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-tools"></i> Pemeliharaan Gedung</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-hammer"></i> Renovasi Bangunan</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Regulasi <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-gavel"></i> Peraturan Pusat</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-balance-scale"></i> Peraturan Daerah</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-file-contract"></i> Keputusan Bupati</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-sticky-note"></i> Surat Edaran</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-book"></i> Pedoman Teknis</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Data <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-database"></i> Data Bangunan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-chart-bar"></i> Statistik</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-map"></i> Peta Sebaran</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-download"></i> Unduhan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-table"></i> Laporan Berkala</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Pengaduan <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-comment-dots"></i> Formulir Pengaduan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-question-circle"></i> FAQ</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-headset"></i> Hubungi Kami</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-comments"></i> Live Chat</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-list"></i> Daftar Pengaduan</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Galeri <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-images"></i> Foto Kegiatan</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-video"></i> Video</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-newspaper"></i> Berita</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-calendar"></i> Agenda</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-bullhorn"></i> Pengumuman</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Login <i class="fas fa-chevron-down"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Login Pemohon</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-tie"></i> Login Petugas</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-shield"></i> Login Admin</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-plus"></i> Daftar Akun</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-key"></i> Lupa Password</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <button class="mobile-menu-toggle" onclick="toggleMobileNav()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-header">
-            <div class="logo-section">
+    <header class="header" id="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-building"></i>
+                    <i data-lucide="building-2"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>Penyelenggaraan Bangunan</h1>
-                    <p>Kabupaten Blora</p>
+                    <span class="logo-title">Sistem Informasi Bangunan</span>
+                    <span class="logo-subtitle">Kabupaten Blora</span>
                 </div>
-            </div>
-            <button class="mobile-nav-close" onclick="toggleMobileNav()">
-                <i class="fas fa-times"></i>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Beranda</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="layanan">
+                            Layanan
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-layanan">
+                            <li><a href="#" class="dropdown-link"><i data-lucide="file-check"></i>Pengajuan PBG</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="shield-check"></i>Pengajuan SLF</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>Rekomendasi Teknis</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="award"></i>Sertifikasi Ahli</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="message-square"></i>Konsultasi Bangunan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="data">
+                            Data Bangunan
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-data">
+                            <li><a href="#" class="dropdown-link"><i data-lucide="bar-chart-3"></i>Statistik Bangunan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="check-circle"></i>Verifikasi Data</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="file-text"></i>Data Perizinan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="upload"></i>Pelaporan Bangunan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="eye"></i>Monitoring Proyek</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="informasi">
+                            Informasi
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-informasi">
+                            <li><a href="#" class="dropdown-link"><i data-lucide="bell"></i>Pengumuman</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="newspaper"></i>Berita Terbaru</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>Regulasi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="calendar"></i>Jadwal Kegiatan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="help-circle"></i>FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="profil">
+                            Profil
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-profil">
+                            <li><a href="#" class="dropdown-link"><i data-lucide="target"></i>Visi & Misi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="users"></i>Struktur Organisasi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="briefcase"></i>Tugas & Fungsi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="history"></i>Sejarah</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="phone"></i>Kontak Kami</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="bantuan">
+                            Bantuan
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-bantuan">
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Panduan Penggunaan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="video"></i>Video Tutorial</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="download"></i>Download Formulir</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="mail"></i>Hubungi Kami</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="message-circle"></i>Live Chat</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-primary btn-sm">Login</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
             </button>
         </div>
-        <ul class="mobile-nav-menu">
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Beranda <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Halaman Utama</a>
-                    <a href="#" class="mobile-dropdown-item">Tentang Kami</a>
-                    <a href="#" class="mobile-dropdown-item">Visi & Misi</a>
-                    <a href="#" class="mobile-dropdown-item">Struktur Organisasi</a>
-                    <a href="#" class="mobile-dropdown-item">Sejarah</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Layanan <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Izin Bangunan</a>
-                    <a href="#" class="mobile-dropdown-item">Sertifikat Laik Fungsi</a>
-                    <a href="#" class="mobile-dropdown-item">Pemeriksaan Bangunan</a>
-                    <a href="#" class="mobile-dropdown-item">Pemeliharaan Gedung</a>
-                    <a href="#" class="mobile-dropdown-item">Renovasi Bangunan</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Regulasi <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Peraturan Pusat</a>
-                    <a href="#" class="mobile-dropdown-item">Peraturan Daerah</a>
-                    <a href="#" class="mobile-dropdown-item">Keputusan Bupati</a>
-                    <a href="#" class="mobile-dropdown-item">Surat Edaran</a>
-                    <a href="#" class="mobile-dropdown-item">Pedoman Teknis</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Data <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Data Bangunan</a>
-                    <a href="#" class="mobile-dropdown-item">Statistik</a>
-                    <a href="#" class="mobile-dropdown-item">Peta Sebaran</a>
-                    <a href="#" class="mobile-dropdown-item">Unduhan</a>
-                    <a href="#" class="mobile-dropdown-item">Laporan Berkala</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Pengaduan <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Formulir Pengaduan</a>
-                    <a href="#" class="mobile-dropdown-item">FAQ</a>
-                    <a href="#" class="mobile-dropdown-item">Hubungi Kami</a>
-                    <a href="#" class="mobile-dropdown-item">Live Chat</a>
-                    <a href="#" class="mobile-dropdown-item">Daftar Pengaduan</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Galeri <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Foto Kegiatan</a>
-                    <a href="#" class="mobile-dropdown-item">Video</a>
-                    <a href="#" class="mobile-dropdown-item">Berita</a>
-                    <a href="#" class="mobile-dropdown-item">Agenda</a>
-                    <a href="#" class="mobile-dropdown-item">Pengumuman</a>
-                </div>
-            </li>
-            <li class="mobile-nav-item">
-                <a class="mobile-nav-link" onclick="toggleMobileDropdown(this)">
-                    Login <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="mobile-dropdown">
-                    <a href="#" class="mobile-dropdown-item">Login Pemohon</a>
-                    <a href="#" class="mobile-dropdown-item">Login Petugas</a>
-                    <a href="#" class="mobile-dropdown-item">Login Admin</a>
-                    <a href="#" class="mobile-dropdown-item">Daftar Akun</a>
-                    <a href="#" class="mobile-dropdown-item">Lupa Password</a>
-                </div>
-            </li>
-        </ul>
-    </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Service Icons Section -->
-        <section class="section services-section">
-            <div class="section-bg-building">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="currentColor" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="navMobile">
+            <ul class="nav-mobile-menu">
+                <li><a href="#" class="nav-mobile-link active">Beranda</a></li>
+                <li class="nav-mobile-item has-submenu">
+                    <button class="nav-mobile-link submenu-toggle">Layanan</button>
+                    <ul class="submenu">
+                        <li><a href="#">Pengajuan PBG</a></li>
+                        <li><a href="#">Pengajuan SLF</a></li>
+                        <li><a href="#">Rekomendasi Teknis</a></li>
+                        <li><a href="#">Sertifikasi Ahli</a></li>
+                        <li><a href="#">Konsultasi Bangunan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-mobile-item has-submenu">
+                    <button class="nav-mobile-link submenu-toggle">Data Bangunan</button>
+                    <ul class="submenu">
+                        <li><a href="#">Statistik Bangunan</a></li>
+                        <li><a href="#">Verifikasi Data</a></li>
+                        <li><a href="#">Data Perizinan</a></li>
+                        <li><a href="#">Pelaporan Bangunan</a></li>
+                        <li><a href="#">Monitoring Proyek</a></li>
+                    </ul>
+                </li>
+                <li class="nav-mobile-item has-submenu">
+                    <button class="nav-mobile-link submenu-toggle">Informasi</button>
+                    <ul class="submenu">
+                        <li><a href="#">Pengumuman</a></li>
+                        <li><a href="#">Berita Terbaru</a></li>
+                        <li><a href="#">Regulasi</a></li>
+                        <li><a href="#">Jadwal Kegiatan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-mobile-item has-submenu">
+                    <button class="nav-mobile-link submenu-toggle">Profil</button>
+                    <ul class="submenu">
+                        <li><a href="#">Visi & Misi</a></li>
+                        <li><a href="#">Struktur Organisasi</a></li>
+                        <li><a href="#">Tugas & Fungsi</a></li>
+                        <li><a href="#">Sejarah</a></li>
+                        <li><a href="#">Kontak Kami</a></li>
+                    </ul>
+                </li>
+                <li class="nav-mobile-item has-submenu">
+                    <button class="nav-mobile-link submenu-toggle">Bantuan</button>
+                    <ul class="submenu">
+                        <li><a href="#">Panduan Penggunaan</a></li>
+                        <li><a href="#">Video Tutorial</a></li>
+                        <li><a href="#">Download Formulir</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="btn btn-primary">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main Service Icons Section - FIRST SECTION (NO HERO BANNER) -->
+        <section class="section services-section" id="services">
+            <div class="bg-illustration bg-illustration--skyline">
+                <img src="/assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Layanan Utama</h2>
+                    <p class="section-subtitle">Akses layanan administrasi bangunan gedung dengan mudah dan cepat</p>
+                </div>
+
                 <div class="services-grid">
-                    <div class="service-card">
+                    <!-- Service Card 1 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="0">
                         <div class="service-icon">
-                            <i class="fas fa-file-signature"></i>
+                            <i data-lucide="file-check"></i>
                         </div>
-                        <h3 class="service-title">Pengajuan PBG</h3>
-                        <p class="service-desc">Persetujuan Bangunan Gedung untuk pembangunan baru</p>
+                        <h3 class="service-title">PBG</h3>
+                        <p class="service-desc">Persetujuan Bangunan Gedung</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 2 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="50">
                         <div class="service-icon">
-                            <i class="fas fa-certificate"></i>
+                            <i data-lucide="shield-check"></i>
                         </div>
-                        <h3 class="service-title">Sertifikat SLF</h3>
-                        <p class="service-desc">Sertifikat Laik Fungsi untuk bangunan yang sudah berdiri</p>
+                        <h3 class="service-title">SLF</h3>
+                        <p class="service-desc">Sertifikat Laik Fungsi</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 3 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="100">
                         <div class="service-icon">
-                            <i class="fas fa-sync-alt"></i>
+                            <i data-lucide="clipboard-check"></i>
                         </div>
-                        <h3 class="service-title">Perpanjangan SLF</h3>
-                        <p class="service-desc">Perpanjangan masa berlaku Sertifikat Laik Fungsi</p>
+                        <h3 class="service-title">Rekomendasi Teknis</h3>
+                        <p class="service-desc">Rekomendasi teknis bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 4 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="150">
                         <div class="service-icon">
-                            <i class="fas fa-edit"></i>
+                            <i data-lucide="award"></i>
                         </div>
-                        <h3 class="service-title">Perubahan Data</h3>
-                        <p class="service-desc">Pemutakhiran data bangunan gedung terdaftar</p>
+                        <h3 class="service-title">Sertifikasi Ahli</h3>
+                        <p class="service-desc">Sertifikasi tenaga ahli</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 5 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="200">
                         <div class="service-icon">
-                            <i class="fas fa-search"></i>
+                            <i data-lucide="message-square"></i>
                         </div>
-                        <h3 class="service-title">Cek Status</h3>
-                        <p class="service-desc">Pengecekan status pengajuan perizinan bangunan</p>
+                        <h3 class="service-title">Konsultasi Bangunan</h3>
+                        <p class="service-desc">Konsultasi teknis bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 6 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="250">
                         <div class="service-icon">
-                            <i class="fas fa-print"></i>
+                            <i data-lucide="file-search"></i>
                         </div>
-                        <h3 class="service-title">Cetak Dokumen</h3>
-                        <p class="service-desc">Cetak ulang dokumen PBG dan SLF</p>
+                        <h3 class="service-title">Verifikasi Dokumen</h3>
+                        <p class="service-desc">Verifikasi dokumen bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 7 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="300">
                         <div class="service-icon">
-                            <i class="fas fa-clipboard-check"></i>
+                            <i data-lucide="upload"></i>
                         </div>
-                        <h3 class="service-title">Inspeksi Bangunan</h3>
-                        <p class="service-desc">Jadwal dan hasil pemeriksaan bangunan gedung</p>
+                        <h3 class="service-title">Pelaporan Bangunan</h3>
+                        <p class="service-desc">Laporan data bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 8 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="350">
                         <div class="service-icon">
-                            <i class="fas fa-tools"></i>
+                            <i data-lucide="eye"></i>
                         </div>
-                        <h3 class="service-title">Pemeliharaan</h3>
-                        <p class="service-desc">Layanan pemeliharaan berkala bangunan gedung</p>
+                        <h3 class="service-title">Monitoring Proyek</h3>
+                        <p class="service-desc">Pemantauan proyek bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 9 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="400">
                         <div class="service-icon">
-                            <i class="fas fa-hammer"></i>
+                            <i data-lucide="calendar-clock"></i>
                         </div>
-                        <h3 class="service-title">Renovasi</h3>
-                        <p class="service-desc">Izin untuk renovasi dan perubahan struktur bangunan</p>
+                        <h3 class="service-title">Perpanjangan Izin</h3>
+                        <p class="service-desc">Perpanjangan izin bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 10 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="450">
                         <div class="service-icon">
-                            <i class="fas fa-map-marked-alt"></i>
+                            <i data-lucide="refresh-cw"></i>
                         </div>
-                        <h3 class="service-title">Peta Sebaran</h3>
-                        <p class="service-desc">Peta lokasi bangunan gedung terverifikasi</p>
+                        <h3 class="service-title">Perubahan Izin</h3>
+                        <p class="service-desc">Perubahan data izin</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 11 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="500">
                         <div class="service-icon">
-                            <i class="fas fa-calculator"></i>
+                            <i data-lucide="x-circle"></i>
                         </div>
-                        <h3 class="service-title">Simulasi Retribusi</h3>
-                        <p class="service-desc">Hitung estimasi biaya retribusi bangunan gedung</p>
+                        <h3 class="service-title">Pembatalan Izin</h3>
+                        <p class="service-desc">Pembatalan izin bangunan</p>
                     </div>
-                    <div class="service-card">
+
+                    <!-- Service Card 12 -->
+                    <div class="service-card" data-animate="fade-up" data-delay="550">
                         <div class="service-icon">
-                            <i class="fas fa-headset"></i>
+                            <i data-lucide="search"></i>
                         </div>
-                        <h3 class="service-title">Bantuan</h3>
-                        <p class="service-desc">Pusat bantuan dan konsultasi layanan</p>
+                        <h3 class="service-title">Cek Status Izin</h3>
+                        <p class="service-desc">Cek status perizinan</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="section stats-section">
-            <div class="section-bg-building">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="currentColor" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
+        <!-- Building Statistics Section -->
+        <section class="section stats-section" id="stats">
+            <div class="bg-illustration bg-illustration--blueprint">
+                <img src="/assets/2026/assets/illustrations/blueprint.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
-                <div class="section-header">
+                <div class="section-header section-header--light">
                     <h2 class="section-title">Statistik Bangunan Gedung</h2>
-                    <p class="section-subtitle">Data terkini mengenai bangunan gedung di Kabupaten Blora</p>
+                    <p class="section-subtitle">Data terkini penyelenggaraan bangunan gedung di Kabupaten Blora</p>
                 </div>
+
                 <div class="stats-grid">
-                    <div class="stat-card">
+                    <!-- Stat Card 1 -->
+                    <div class="stat-card" data-animate="fade-up" data-delay="0">
                         <div class="stat-icon">
-                            <i class="fas fa-building"></i>
+                            <i data-lucide="building-2"></i>
                         </div>
-                        <div class="stat-number" data-target="12000">0</div>
+                        <div class="stat-number" data-count="12000">0</div>
                         <div class="stat-label">Total Bangunan Gedung</div>
                     </div>
-                    <div class="stat-card">
+
+                    <!-- Stat Card 2 -->
+                    <div class="stat-card" data-animate="fade-up" data-delay="100">
                         <div class="stat-icon">
-                            <i class="fas fa-check-circle"></i>
+                            <i data-lucide="check-circle"></i>
                         </div>
-                        <div class="stat-number" data-target="8450">0</div>
+                        <div class="stat-number" data-count="8450">0</div>
                         <div class="stat-label">Bangunan Terverifikasi</div>
                     </div>
-                    <div class="stat-card">
+
+                    <!-- Stat Card 3 -->
+                    <div class="stat-card" data-animate="fade-up" data-delay="200">
                         <div class="stat-icon">
-                            <i class="fas fa-file-alt"></i>
+                            <i data-lucide="file-check"></i>
                         </div>
-                        <div class="stat-number" data-target="6230">0</div>
+                        <div class="stat-number" data-count="6230">0</div>
                         <div class="stat-label">PBG Aktif</div>
                     </div>
-                    <div class="stat-card">
+
+                    <!-- Stat Card 4 -->
+                    <div class="stat-card" data-animate="fade-up" data-delay="300">
                         <div class="stat-icon">
-                            <i class="fas fa-certificate"></i>
+                            <i data-lucide="shield-check"></i>
                         </div>
-                        <div class="stat-number" data-target="5890">0</div>
+                        <div class="stat-number" data-count="5890">0</div>
                         <div class="stat-label">SLF Aktif</div>
                     </div>
                 </div>
@@ -355,322 +333,339 @@
         </section>
 
         <!-- Information Section -->
-        <section class="section info-section">
-            <div class="section-bg-building">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="currentColor" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,170.7C672,149,768,139,864,154.7C960,171,1056,213,1152,218.7C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
+        <section class="section info-section" id="information">
+            <div class="bg-illustration bg-illustration--building">
+                <img src="/assets/2026/assets/illustrations/building.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Informasi Terkini</h2>
-                    <p class="section-subtitle">Pengumuman dan berita terbaru seputar penyelenggaraan bangunan gedung</p>
+                    <h2 class="section-title">Informasi Terbaru</h2>
+                    <p class="section-subtitle">Pengumuman dan berita terkini seputar administrasi bangunan gedung</p>
                 </div>
+
                 <div class="info-grid">
-                    <div class="info-card">
-                        <span class="info-badge urgent">Penting</span>
-                        <h3 class="info-title">Perpanjangan Masa Berlaku SLF Tahun 2024</h3>
-                        <p class="info-text">Pemilik bangunan gedung dimohon untuk segera memperpanjang masa berlaku SLF yang akan berakhir pada bulan Desember 2024.</p>
-                        <div class="info-meta">
-                            <span><i class="fas fa-calendar"></i> 15 Nov 2024</span>
-                            <span><i class="fas fa-eye"></i> 1,234 views</span>
+                    <!-- Info Card 1 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="0">
+                        <div class="info-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">Jan</span>
                         </div>
-                    </div>
-                    <div class="info-card">
-                        <span class="info-badge success">Info</span>
-                        <h3 class="info-title">Sosialisasi Peraturan Baru PBG dan SLF</h3>
-                        <p class="info-text">Dinas PUPR Kabupaten Blora akan mengadakan sosialisasi peraturan terbaru mengenai PBG dan SLF pada tanggal 25 November 2024.</p>
-                        <div class="info-meta">
-                            <span><i class="fas fa-calendar"></i> 12 Nov 2024</span>
-                            <span><i class="fas fa-eye"></i> 892 views</span>
+                        <div class="info-content">
+                            <h3 class="info-title">Pemberitahuan Pemutakhiran Data Bangunan Gedung Tahun 2024</h3>
+                            <p class="info-excerpt">Seluruh pemilik bangunan gedung dimohon untuk melakukan pemutakhiran data...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
                         </div>
-                    </div>
-                    <div class="info-card">
-                        <span class="info-badge">Pengumuman</span>
-                        <h3 class="info-title">Pembukaan Layanan Online 24 Jam</h3>
-                        <p class="info-text">Kini layanan pengajuan PBG dan SLF dapat diakses secara online selama 24 jam melalui portal resmi Kabupaten Blora.</p>
-                        <div class="info-meta">
-                            <span><i class="fas fa-calendar"></i> 10 Nov 2024</span>
-                            <span><i class="fas fa-eye"></i> 2,156 views</span>
+                    </article>
+
+                    <!-- Info Card 2 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="100">
+                        <div class="info-date">
+                            <span class="date-day">12</span>
+                            <span class="date-month">Jan</span>
                         </div>
-                    </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Jadwal Layanan PBG dan SLF Bulan Januari 2025</h3>
+                            <p class="info-excerpt">Informasi lengkap jadwal pelayanan PBG dan SLF untuk bulan Januari 2025...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Info Card 3 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="200">
+                        <div class="info-date">
+                            <span class="date-day">10</span>
+                            <span class="date-month">Jan</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Pengumuman Hasil Verifikasi Bangunan Gedung Periode Desember 2024</h3>
+                            <p class="info-excerpt">Hasil verifikasi bangunan gedung yang telah selesai diproses pada periode...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Info Card 4 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="300">
+                        <div class="info-date">
+                            <span class="date-day">08</span>
+                            <span class="date-month">Jan</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Perubahan Persyaratan Pengajuan SLF Terbaru</h3>
+                            <p class="info-excerpt">Adanya perubahan persyaratan pengajuan SLF sesuai dengan peraturan terbaru...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Info Card 5 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="400">
+                        <div class="info-date">
+                            <span class="date-day">05</span>
+                            <span class="date-month">Jan</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Workshop Sertifikasi Ahli Bangunan Gedung</h3>
+                            <p class="info-excerpt">Workshop sertifikasi ahli bangunan gedung akan dilaksanakan pada tanggal...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Info Card 6 -->
+                    <article class="info-card" data-animate="fade-left" data-delay="500">
+                        <div class="info-date">
+                            <span class="date-day">03</span>
+                            <span class="date-month">Jan</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Pentingnya Memiliki SLF untuk Bangunan Komersial</h3>
+                            <p class="info-excerpt">Sertifikat Laik Fungsi (SLF) menjadi persyaratan wajib bagi bangunan komersial...</p>
+                            <a href="#" class="info-link">Baca Selengkapnya <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Data Table Section -->
-        <section class="section table-section">
-            <div class="section-bg-building">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="currentColor" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
+        <!-- Building Data Table Section -->
+        <section class="section table-section" id="data-table">
+            <div class="bg-illustration bg-illustration--cityscape">
+                <img src="/assets/2026/assets/illustrations/cityscape.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Data Bangunan Gedung</h2>
-                    <p class="section-subtitle">Daftar bangunan gedung terdaftar di Kabupaten Blora</p>
+                    <h2 class="section-title">Data Bangunan Gedung Terdaftar</h2>
+                    <p class="section-subtitle">Daftar bangunan gedung yang telah terdaftar dalam sistem</p>
                 </div>
+
+                <!-- Search Bar -->
+                <div class="table-controls">
+                    <div class="search-box">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" class="search-input" id="tableSearch" placeholder="Cari nama bangunan atau alamat...">
+                    </div>
+                    <div class="table-filters">
+                        <select class="filter-select" id="filterStatus">
+                            <option value="">Semua Status</option>
+                            <option value="aktif">Aktif</option>
+                            <option value="proses">Dalam Proses</option>
+                            <option value="nonaktif">Nonaktif</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Table -->
                 <div class="table-container">
-                    <div class="table-header">
-                        <h3 class="table-title">Daftar Bangunan</h3>
-                        <div class="table-actions">
-                            <div class="search-box">
-                                <i class="fas fa-search"></i>
-                                <input type="text" id="tableSearch" placeholder="Cari bangunan...">
-                            </div>
-                            <button class="btn btn-primary">
-                                <i class="fas fa-plus"></i> Tambah Data
-                            </button>
-                        </div>
-                    </div>
-                    <div class="table-wrapper">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Bangunan</th>
-                                    <th>Alamat</th>
-                                    <th>Status PBG</th>
-                                    <th>Status SLF</th>
-                                    <th>Tahun</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody">
-                                <tr>
-                                    <td>1</td>
-                                    <td>Gedung Perkantoran Pemda Blora</td>
-                                    <td>Jl. Nusantara No. 8, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td>2019</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Rumah Sakit Umum Daerah Blora</td>
-                                    <td>Jl. Dr. Sutomo No. 42, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td>2018</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Mall Blora Square</td>
-                                    <td>Jl. Pemuda No. 15, Blora</td>
-                                    <td><span class="status-badge status-pending"><i class="fas fa-clock"></i> Proses</span></td>
-                                    <td><span class="status-badge status-inactive"><i class="fas fa-times"></i> Belum</span></td>
-                                    <td>2023</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Hotel Grand Blora</td>
-                                    <td>Jl. Sudirman No. 25, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-pending"><i class="fas fa-clock"></i> Proses</span></td>
-                                    <td>2020</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Gedung Serbaguna Kunden</td>
-                                    <td>Jl. Raya Kunden No. 10, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td>2017</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Apartemen Blora Residence</td>
-                                    <td>Jl. Ahmad Yani No. 88, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td>2021</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Pasar Tradisional Blora</td>
-                                    <td>Jl. Pasar No. 1, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-pending"><i class="fas fa-clock"></i> Proses</span></td>
-                                    <td>2016</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Gedung Olahraga Blora</td>
-                                    <td>Jl. Sport Center No. 5, Blora</td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td><span class="status-badge status-active"><i class="fas fa-check"></i> Aktif</span></td>
-                                    <td>2019</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="table-pagination">
-                        <div class="pagination-info">Menampilkan 1-8 dari 12.000 data</div>
-                        <div class="pagination-controls">
-                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                            <button class="pagination-btn active">1</button>
-                            <button class="pagination-btn">2</button>
-                            <button class="pagination-btn">3</button>
-                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
+                    <table class="data-table" id="buildingTable">
+                        <thead>
+                            <tr>
+                                <th class="th-number">No</th>
+                                <th class="th-sortable" data-sort="name">
+                                    Nama Bangunan
+                                    <i data-lucide="chevrons-up-down" class="sort-icon"></i>
+                                </th>
+                                <th>Alamat</th>
+                                <th class="th-sortable" data-sort="pbg">
+                                    Status PBG
+                                    <i data-lucide="chevrons-up-down" class="sort-icon"></i>
+                                </th>
+                                <th class="th-sortable" data-sort="slf">
+                                    Status SLF
+                                    <i data-lucide="chevrons-up-down" class="sort-icon"></i>
+                                </th>
+                                <th class="th-sortable" data-sort="year">
+                                    Tahun
+                                    <i data-lucide="chevrons-up-down" class="sort-icon"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Table rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be populated by JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Marketplace Section -->
-        <section class="section marketplace-section">
-            <div class="section-bg-building">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="currentColor" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
+        <!-- Marketplace-style Cards Section -->
+        <section class="section marketplace-section" id="marketplace">
+            <div class="bg-illustration bg-illustration--skyline-right">
+                <img src="/assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Bangunan Gedung Populer</h2>
-                    <p class="section-subtitle">Daftar bangunan gedung dengan status terbaik di Kabupaten Blora</p>
+                    <h2 class="section-title">Bangunan Gedung Unggulan</h2>
+                    <p class="section-subtitle">Beberapa bangunan gedung yang telah terverifikasi dan memiliki perizinan lengkap</p>
                 </div>
+
                 <div class="marketplace-grid">
-                    <div class="marketplace-card">
+                    <!-- Marketplace Card 1 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="0">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="Gedung Perkantoran">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/government.jpg" alt="Gedung Perkantoran Pemkab Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Gedung Perkantoran Modern</h3>
+                            <h3 class="marketplace-title">Gedung Perkantoran Pemkab Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Nusantara No. 10, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2022</span>
+                                <span class="marketplace-year">Tahun: 2018</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 2 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="80">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" alt="Apartemen">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/hospital.jpg" alt="Rumah Sakit Umum Daerah Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Apartemen Blora Heights</h3>
+                            <h3 class="marketplace-title">Rumah Sakit Umum Daerah Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Dr. Sutomo No. 42, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2023</span>
+                                <span class="marketplace-year">Tahun: 2015</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 3 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="160">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop" alt="Hotel">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/mall.jpg" alt="Mall Blora Square">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Hotel Blora Premium</h3>
+                            <h3 class="marketplace-title">Mall Blora Square</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Sudirman No. 88, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2021</span>
+                                <span class="marketplace-year">Tahun: 2020</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 4 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="240">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop" alt="Ruang Usaha">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/hotel.jpg" alt="Hotel Grand Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Gedung Perkantoran Swasta</h3>
+                            <h3 class="marketplace-title">Hotel Grand Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pemuda No. 25, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2020</span>
+                                <span class="marketplace-year">Tahun: 2019</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 5 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="320">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=400&h=300&fit=crop" alt="Pusat Perbelanjaan">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/convention.jpg" alt="Gedung Serbaguna Bahurekso">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Pusat Perbelanjaan Blora</h3>
+                            <h3 class="marketplace-title">Gedung Serbaguna Bahurekso</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Veteran No. 15, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2019</span>
+                                <span class="marketplace-year">Tahun: 2017</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 6 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="400">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop" alt="Rumah Sakit">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/market.jpg" alt="Pasar Tradisional Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-warning">SLF Proses</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Rumah Sakit Swasta</h3>
+                            <h3 class="marketplace-title">Pasar Tradisional Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pasar No. 1, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2018</span>
+                                <span class="marketplace-year">Tahun: 2016</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 7 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="480">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" alt="Sekolah">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/sports.jpg" alt="Gedung Olahraga Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Gedung Sekolah Tinggi</h3>
+                            <h3 class="marketplace-title">Gedung Olahraga Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Sport Center, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2021</span>
+                                <span class="marketplace-year">Tahun: 2021</span>
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-card">
+
+                    <!-- Marketplace Card 8 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="560">
                         <div class="marketplace-image">
-                            <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=400&h=300&fit=crop" alt="Gedung Olahraga">
-                            <span class="marketplace-badge">Terverifikasi</span>
-                            <div class="marketplace-favorite"><i class="far fa-heart"></i></div>
+                            <img src="/assets/2026/assets/images/buildings/library.jpg" alt="Perpustakaan Daerah Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
                         </div>
                         <div class="marketplace-content">
-                            <h3 class="marketplace-title">Gedung Olahraga Indoor</h3>
+                            <h3 class="marketplace-title">Perpustakaan Daerah Blora</h3>
                             <div class="marketplace-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Kecamatan Blora, Kabupaten Blora</span>
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pendidikan No. 5, Blora</span>
                             </div>
                             <div class="marketplace-meta">
-                                <span class="marketplace-status status-active">SLF Aktif</span>
-                                <span class="marketplace-year">2020</span>
+                                <span class="marketplace-year">Tahun: 2022</span>
                             </div>
                         </div>
                     </div>
