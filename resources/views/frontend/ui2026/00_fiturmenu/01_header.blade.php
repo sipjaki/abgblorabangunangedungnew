@@ -24,13 +24,13 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- CSS Files -->
-   <link rel="stylesheet" href="{{ asset('assets/2026/css/reset.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/variables.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/base.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/components.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/sections.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/animations.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/2026/css/responsive.css') }}">
+   <link rel="stylesheet" href="{{ asset('2026/css/reset.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/variables.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/base.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/components.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/sections.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/animations.css') }}">
+<link rel="stylesheet" href="{{ asset('2026/css/responsive.css') }}">
 
 
 </head>

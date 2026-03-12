@@ -83,11 +83,11 @@
     </footer>
 
     <!-- JavaScript Files -->
-  <script src="{{ asset('assets/2026/js/main.js') }}"></script>
-<script src="{{ asset('assets/2026/js/dropdown.js') }}"></script>
-<script src="{{ asset('assets/2026/js/counter.js') }}"></script>
-<script src="{{ asset('assets/2026/js/table.js') }}"></script>
-<script src="{{ asset('assets/2026/js/scroll.js') }}"></script>
+  <script src="{{ asset('2026/js/main.js') }}"></script>
+<script src="{{ asset('2026/js/dropdown.js') }}"></script>
+<script src="{{ asset('2026/js/counter.js') }}"></script>
+<script src="{{ asset('2026/js/table.js') }}"></script>
+<script src="{{ asset('2026/js/scroll.js') }}"></script>
 
 </body>
 </html>
