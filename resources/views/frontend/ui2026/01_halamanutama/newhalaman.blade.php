@@ -19,7 +19,7 @@
                 <!-- Navigation -->
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li class="nav-item dropdown">
+                     <li class="nav-item dropdown">
                             <a href="#beranda" class="nav-link dropdown-toggle active">
                                 Beranda
                             </a>

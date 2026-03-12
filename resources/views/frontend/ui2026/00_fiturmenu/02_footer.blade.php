@@ -94,5 +94,14 @@
 
     <!-- JavaScript -->
     <script src="/assets/2026/js/main.js"></script>
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(function(menu){
+    menu.addEventListener('click', function(e){
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+    });
+});
+</script>
+
 </body>
 </html>
