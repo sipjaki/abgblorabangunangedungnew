@@ -161,7 +161,7 @@
         <!-- Main Service Icons Section - FIRST SECTION (NO HERO BANNER) -->
         <section class="section services-section" id="services">
             <div class="bg-illustration bg-illustration--skyline">
-                <img src="/assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
+                <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
@@ -284,7 +284,7 @@
         <!-- Building Statistics Section -->
         <section class="section stats-section" id="stats">
             <div class="bg-illustration bg-illustration--blueprint">
-                <img src="/assets/2026/assets/illustrations/blueprint.png" alt="" aria-hidden="true">
+                <img src="assets/2026/assets/illustrations/blueprint.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header section-header--light">
@@ -335,7 +335,7 @@
         <!-- Information Section -->
         <section class="section info-section" id="information">
             <div class="bg-illustration bg-illustration--building">
-                <img src="/assets/2026/assets/illustrations/building.png" alt="" aria-hidden="true">
+                <img src="assets/2026/assets/illustrations/building.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
@@ -428,7 +428,7 @@
         <!-- Building Data Table Section -->
         <section class="section table-section" id="data-table">
             <div class="bg-illustration bg-illustration--cityscape">
-                <img src="/assets/2026/assets/illustrations/cityscape.png" alt="" aria-hidden="true">
+                <img src="assets/2026/assets/illustrations/cityscape.png" alt="" aria-hidden="true">
             </div>
             <div class="container">
                 <div class="section-header">
@@ -490,6 +490,188 @@
             </div>
         </section>
 
+        <!-- Marketplace-style Cards Section -->
+        <section class="section marketplace-section" id="marketplace">
+            <div class="bg-illustration bg-illustration--skyline-right">
+                <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Bangunan Gedung Unggulan</h2>
+                    <p class="section-subtitle">Beberapa bangunan gedung yang telah terverifikasi dan memiliki perizinan lengkap</p>
+                </div>
+
+                <div class="marketplace-grid">
+                    <!-- Marketplace Card 1 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="0">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/government.jpg" alt="Gedung Perkantoran Pemkab Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Gedung Perkantoran Pemkab Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Nusantara No. 10, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2018</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 2 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="80">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/hospital.jpg" alt="Rumah Sakit Umum Daerah Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Rumah Sakit Umum Daerah Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Dr. Sutomo No. 42, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2015</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 3 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="160">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/mall.jpg" alt="Mall Blora Square">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Mall Blora Square</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Sudirman No. 88, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 4 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="240">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/hotel.jpg" alt="Hotel Grand Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Hotel Grand Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pemuda No. 25, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2019</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 5 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="320">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/convention.jpg" alt="Gedung Serbaguna Bahurekso">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Gedung Serbaguna Bahurekso</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Veteran No. 15, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2017</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 6 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="400">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/market.jpg" alt="Pasar Tradisional Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-warning">SLF Proses</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Pasar Tradisional Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pasar No. 1, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2016</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 7 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="480">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/sports.jpg" alt="Gedung Olahraga Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Gedung Olahraga Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Sport Center, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Card 8 -->
+                    <div class="marketplace-card" data-animate="scale-up" data-delay="560">
+                        <div class="marketplace-image">
+                            <img src="assets/2026/assets/images/buildings/library.jpg" alt="Perpustakaan Daerah Blora">
+                            <div class="marketplace-badges">
+                                <span class="badge badge-pbg">PBG Aktif</span>
+                                <span class="badge badge-slf">SLF Aktif</span>
+                            </div>
+                        </div>
+                        <div class="marketplace-content">
+                            <h3 class="marketplace-title">Perpustakaan Daerah Blora</h3>
+                            <div class="marketplace-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Jl. Pendidikan No. 5, Blora</span>
+                            </div>
+                            <div class="marketplace-meta">
+                                <span class="marketplace-year">Tahun: 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
 @include('frontend.ui2026.00_fiturmenu.02_footer')
