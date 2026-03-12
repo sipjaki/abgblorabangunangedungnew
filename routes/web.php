@@ -12,6 +12,7 @@ use App\Http\Controllers\BantuanteknisController;
 use App\Http\Controllers\DatabaseAbgController;
 use App\Http\Controllers\GambarbantuanController;
 use App\Http\Controllers\KrkController;
+use App\Http\Controllers\NewUiController;
 use App\Http\Controllers\PbgslfController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\PenilikbangunanController;
@@ -1645,6 +1646,11 @@ Route::post('/validasibongkarkembali/{id}', [BantuanteknisController::class, 'va
 // Route::put('/validasipbgslf6/{id}', [PbgslfController::class, 'validasipbgslf6'])->name('validasipbgslf6.update');
 // Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7'])->name('validasipbgslf7.update');
 // Route::put('/validasipbgslf8/{id}', [PbgslfController::class, 'validasipbgslf8'])->name('validasipbgslf8.update');
+
+
+// HALAMAN NEW UI 2026 FRONTEND
+
+Route::get('/newui', [NewUiController::class, 'index'])->name('newui');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
