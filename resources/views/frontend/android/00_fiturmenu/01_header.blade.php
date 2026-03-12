@@ -22,7 +22,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sistem Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas PUPR Blora</title>
+<title>Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas PUPR Kabupaten Blora</title>
 
 <!-- SEO DESCRIPTION -->
 <meta name="description" content="Portal resmi Sistem Penyelenggaraan Bangunan Gedung Kabupaten Blora yang dikelola oleh Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora. Sistem ini menyediakan informasi pembangunan bangunan gedung, layanan PBG (Persetujuan Bangunan Gedung), SLF (Sertifikat Laik Fungsi), pemeliharaan bangunan, analisa kerusakan bangunan, serta berbagai layanan teknis bangunan gedung yang mendukung kebijakan Kementerian PUPR Republik Indonesia dan pembangunan di Jawa Tengah.">
