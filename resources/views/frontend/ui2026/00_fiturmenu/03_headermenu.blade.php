@@ -4,10 +4,11 @@
             <a href="#" class="logo">
                 <div class="logo-icon">
                     <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+                    <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora">
                 </div>
                 <div class="logo-text">
-                    <span class="logo-title">Penyelenggaraan Bangunan Gedung</span>
-                    <span class="logo-subtitle">Kabupaten Blora</span>
+                    <span class="logo-title">Penyelenggaraan</span>
+                    <span class="logo-subtitle">Bangunan Gedung</span>
                 </div>
             </a>
 

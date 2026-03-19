@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Layanan Utama</h2>
-                    <p class="section-subtitle">Akses layanan administrasi bangunan gedung dengan mudah dan cepat</p>
+                    {{-- <p class="section-subtitle">Akses layanan administrasi bangunan gedung dengan mudah dan cepat</p> --}}
                 </div>
 
                 <div class="services-grid">
