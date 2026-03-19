@@ -8,9 +8,11 @@
                     <a href="#" class="footer-logo">
 
                           <div class="logo-icon">
-                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora">
-                            <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora">
-                        </div>
+                              <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+                            </div>
+                            <div class="logo-icon">
+                                <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora">
+                            </div>
                         <div class="logo-text">
                             <span class="logo-title">Penyelenggaraan</span>
                             <span class="logo-title">Bangunan Gedung </span>
@@ -18,9 +20,8 @@
                     </a>
 
                     <p class="footer-desc">
-                    Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora merupakan platform layanan terpadu yang mendukung proses administrasi dan pengelolaan bangunan gedung secara efisien, transparan, dan terintegrasi, meliputi layanan Persetujuan Bangunan Gedung (PBG), Sertifikat Laik Fungsi (SLF), bantuan teknis penyelenggaraan bangunan gedung, bantuan asistensi teknis, peneliti kontrak pekerjaan konstruksi, analisis penyusutan nilai bangunan, pemeliharaan bangunan gedung, perhitungan konstruksi bangunan, pendampingan proses serah terima pekerjaan, hingga pengawasan dan proses pembongkaran bangunan gedung sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.
+                    Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora merupakan platform layanan terpadu yang mendukung proses administrasi dan pengelolaan bangunan gedung secara efisien, transparan, dan terintegrasi, meliputi layanan Persetujuan Bangunan Gedung (PBG), Sertifikat Laik Fungsi (SLF), bantuan teknis dan asistensi teknis, peneliti kontrak pekerjaan konstruksi, analisis penyusutan nilai bangunan, pemeliharaan dan perhitungan konstruksi bangunan, pendampingan serah terima pekerjaan, hingga pengawasan dan pembongkaran bangunan gedung sesuai dengan ketentuan peraturan perundang-undangan.
                     </p>
-
                 </div>
 
                 <!-- Column 2 - Quick Links -->
@@ -44,18 +45,32 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Kontak Kami</h4>
                     <ul class="footer-contact">
-                        <li>
-                            <i data-lucide="map-pin"></i>
-                            <span>Jl. Nusantara No. 62, Blora, Jawa Tengah 58214</span>
-                        </li>
-                        <li>
+
+                        <li style="display: block;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>Jl. Nusantara No. 62, Blora, Jawa Tengah 58214</span>
+                                </div>
+
+                                <div style="margin-top:10px;">
+                                    <iframe
+                                        src="https://www.google.com/maps?q=Jl.+Nusantara+No.+62,+Blora,+Jawa+Tengah+58214&output=embed"
+                                        width="100%"
+                                        height="200"
+                                        style="border:0; border-radius:10px;"
+                                        allowfullscreen=""
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </li>
+                        {{-- <li>
                             <i data-lucide="phone"></i>
                             <span>(0296) 531333</span>
                         </li>
                         <li>
                             <i data-lucide="mail"></i>
                             <span>dputr@blorakab.go.id</span>
-                        </li>
+                        </li> --}}
                         <li>
                             <i data-lucide="clock"></i>
                             <span>Jam Layanan <br> Senin - Jumat : 09.00 - 15.00 WIB</span>
@@ -67,11 +82,9 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Link Terkait</h4>
                     <ul class="footer-links">
-                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>Kementerian PUPR</a></li>
-                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>Dinas PUPR Jateng</a></li>
-                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>LPSE Blora</a></li>
-                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>e-Procurement</a></li>
-                        <li><a href="#" target="_blank"><i data-lucide="external-link"></i>e-Budgeting</a></li>
+                        <li><a href="https://masjakidpuprblora.co.id/" target="_blank"><i data-lucide="external-link"></i>Mas Jaki Informasi Jasa Konstruksi <br> (Sistem Informasi Pembina Jasa Konstruksi Kab Blora)</a></li>
+                        <li><a href="https://abgdpuprblora.com/" target="_blank"><i data-lucide="external-link"></i>ABG Blora (Penyelenggaran Bangunan Gedung Kab Blora)</a></li>
+                        <li><a href="https://simpokdpuprblora.id/" target="_blank"><i data-lucide="external-link"></i>SIMPOK (Sistem Informasi Manajemen Pengendalian dan Operational Kab Blora)</a></li>
                     </ul>
                 </div>
             </div>
@@ -79,13 +92,15 @@
             <!-- Bottom Bar -->
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2025 Pemerintah Kabupaten Blora. All Rights Reserved.
+                    © 2026 Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
                 </p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    <p>
+                        Build & Deploy By
+                        <a href="https://wa.me/6281321455855" target="_blank">
+                            CV. Angkasa Raya Teknik
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
