@@ -92,16 +92,11 @@
             <!-- Bottom Bar -->
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2026 Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
-                </p>
-                <div class="social-links">
-                    <p>
-                        Build & Deploy By
+                    © 2026 Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah | Build & Deploy By
                         <a href="https://wa.me/6281321455855" target="_blank">
                             CV. Angkasa Raya Teknik
                         </a>
-                    </p>
-                </div>
+                </p>
             </div>
         </div>
     </footer>
