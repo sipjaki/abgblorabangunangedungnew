@@ -19,7 +19,7 @@
                         </div>
                     </a>
 
-                    <p class="footer-desc">
+                    <p class="footer-desc" style="text-align: justify;">
                     Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora merupakan platform layanan terpadu yang mendukung proses administrasi dan pengelolaan bangunan gedung secara efisien, transparan, dan terintegrasi, meliputi layanan Persetujuan Bangunan Gedung (PBG), Sertifikat Laik Fungsi (SLF), bantuan teknis dan asistensi teknis, peneliti kontrak pekerjaan konstruksi, analisis penyusutan nilai bangunan, pemeliharaan dan perhitungan konstruksi bangunan, pendampingan serah terima pekerjaan, hingga pengawasan dan pembongkaran bangunan gedung sesuai dengan ketentuan peraturan perundang-undangan.
                     </p>
                 </div>
@@ -93,7 +93,7 @@
             <div class="footer-bottom">
                 <p class="copyright">
                     © 2026 Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah | Build & Deploy By
-                        <a href="https://wa.me/6281321455855" target="_blank">
+                        <a href="https://wa.me/6281321455855" target="_blank" style="color: orange">
                             CV. Angkasa Raya Teknik
                         </a>
                 </p>
