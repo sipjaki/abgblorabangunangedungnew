@@ -7,9 +7,9 @@
                 <div class="footer-col">
                     <a href="#" class="footer-logo">
 
-                          <div class="logo-icon">
+                          {{-- <div class="logo-icon">
                               <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora">
-                            </div>
+                            </div> --}}
                             <div class="logo-icon">
                                 <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora">
                             </div>

@@ -4,7 +4,7 @@
             <a href="#" class="logo">
                 <div class="logo-icon">
                     <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora">
-                    <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora">
+                    {{-- <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora"> --}}
                 </div>
                 <div class="logo-text">
                     <span class="logo-title">Penyelenggaraan</span>
@@ -24,14 +24,14 @@
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-layanan">
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Campuran</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Usaha</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Keagamaan</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Prasarana</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Sosial Budaya</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi Usaha</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>SLF Fungsi Usaha</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>SLF Menara Telekomunikasi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Campuran</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Usaha</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Keagamaan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Prasarana</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Sosial Budaya</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Usaha</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>SLF Fungsi <br> Usaha</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>SLF Menara <br> Telekomunikasi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -40,10 +40,10 @@
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-data">
-                            <li><a href="#" class="dropdown-link"><i data-lucide="bar-chart-3"></i>Informasi</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="bar-chart-3"></i>Statistik </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="file-text"></i>Informasi</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="file-text"></i>Statistik </a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="file-text"></i>Pendataan</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="check-circle"></i>Kartu Inventaris Barang</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="file-text"></i>Kartu Inventaris Barang</a></li>
                             {{-- <li><a href="#" class="dropdown-link"><i data-lucide="upload"></i>Pelaporan Bangunan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="eye"></i>Monitoring Proyek</a></li> --}}
                         </ul>
@@ -58,10 +58,10 @@
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Asistensi Perencanaan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Analisa Kerusakan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Peneliti Kontrak</a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Perhitungan Penyusutan</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Penyusutan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Pemeliharaan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Konstruksi </a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Pendampingan Serah Terima</a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Serah Terima</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Permintaan Personil </a></li>
                         </ul>
                     </li>
@@ -71,8 +71,12 @@
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-profil">
-                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Informasi </a></li>
-                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>Permohonan KRK </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>Informasi </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>KRK Fungsi Usaha </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>KRK Fungsi Hunian </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>KRK Fungsi Kegamaan </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>KRK Fungsi Sosial Budaya </a></li>
+                            <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>KRK Menara Telekomunikasi </a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -98,9 +102,25 @@
                             <li><a href="#" class="dropdown-link"><i data-lucide="message-circle"></i>Live Chat</a></li>
                         </ul>
                     </li> --}}
-                    <li class="nav-item">
-                        <a href="/login" class="btn btn-primary btn-sm">Login</a>
+                      <li class="nav-item has-dropdown">
+                        <button class="nav-link dropdown-toggle" data-dropdown="profil">
+                            Login
+                            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-profil">
+                            <li>
+                                <a href="/login" class="dropdown-link">
+                                    <i data-lucide="log-in"></i> Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/daftar" class="dropdown-link">
+                                    <i data-lucide="user-plus"></i> Daftar
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                 </ul>
             </nav>
 
