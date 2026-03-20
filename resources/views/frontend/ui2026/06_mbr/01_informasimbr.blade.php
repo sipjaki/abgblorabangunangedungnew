@@ -6,7 +6,6 @@
     @include('frontend.ui2026.00_fiturmenu.03_headermenu')
 
     <main>
-
 <section class="section services-section" id="services">
     <div class="bg-illustration bg-illustration--skyline">
         <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
@@ -21,16 +20,18 @@
                     @if($item->$berkas)
                     <a href="{{ $item->$berkas }}"
                        download
-                       style="border-radius: 8px; overflow: hidden; display: block; cursor: pointer;">
+                       style="display: block; border-radius: 8px; overflow: hidden;">
                         <img src="{{ $item->$berkas }}"
                              alt=""
-                             style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                             style="width: 100%; height: auto; max-width: 100%; display: block; border-radius: 8px;">
                     </a>
                     @endif
                 @endforeach
             @endforeach
         </div>
     </div>
+
+
 </section>
 
     </main>
