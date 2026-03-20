@@ -13,81 +13,92 @@
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Layanan Utama</h2>
-            {{-- <p class="section-subtitle">Akses layanan administrasi bangunan gedung dengan mudah dan cepat</p> --}}
         </div>
 
         <div class="services-grid">
             @foreach($data as $item)
             <div class="service-card" data-animate="fade-up" data-delay="{{ $loop->index * 50 }}">
+                <!-- Gambar dari berkas -->
                 @if($item->berkas)
-                <a href="{{ $item->berkas }}" download class="service-icon-link">
-                    <div class="service-icon">
-                        <i data-lucide="file-check"></i>
-                    </div>
-                </a>
+                <div class="service-image-wrapper">
+                    <img src="{{ $item->berkas }}" alt="{{ $item->judul }}" class="service-image">
+                    <a href="{{ $item->berkas }}" download class="service-download-overlay">
+                        <i data-lucide="download"></i>
+                        <span>Unduh</span>
+                    </a>
+                </div>
                 @else
-                <div class="service-icon">
-                    <i data-lucide="file-check"></i>
+                <div class="service-image-placeholder">
+                    <i data-lucide="image"></i>
+                    <span>No Image</span>
                 </div>
                 @endif
 
-                @if($item->judul)
-                <h3 class="service-title">{{ $item->judul }}</h3>
-                @endif
+                <div class="service-content">
+                    @if($item->judul)
+                    <h3 class="service-title">{{ $item->judul }}</h3>
+                    @endif
 
-                @if($item->keterangan)
-                <p class="service-desc">{!! nl2br(e($item->keterangan)) !!}</p>
-                @endif
+                    @if($item->keterangan)
+                    <p class="service-desc">{!! nl2br(e($item->keterangan)) !!}</p>
+                    @endif
 
-                @if($item->infolanjut)
-                <div class="service-info">
-                    <i data-lucide="info" class="info-icon"></i>
-                    <span class="info-text">{!! nl2br(e($item->infolanjut)) !!}</span>
+                    @if($item->infolanjut)
+                    <div class="service-info">
+                        <i data-lucide="info" class="info-icon"></i>
+                        <span class="info-text">{!! nl2br(e($item->infolanjut)) !!}</span>
+                    </div>
+                    @endif
+
+                    @php
+                        $cadangans = array_filter([
+                            $item->cadangan1, $item->cadangan2, $item->cadangan3,
+                            $item->cadangan4, $item->cadangan5, $item->cadangan6,
+                            $item->cadangan7, $item->cadangan8, $item->cadangan9,
+                            $item->cadangan10, $item->cadangan11, $item->cadangan12,
+                        ]);
+                    @endphp
+
+                    @if(count($cadangans) > 0)
+                    <ul class="service-features">
+                        @foreach($cadangans as $cadangan)
+                        <li class="feature-item">
+                            <i data-lucide="check-circle-2" class="feature-icon"></i>
+                            <span>{!! nl2br(e($cadangan)) !!}</span>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+
+                    @if($item->berkas)
+                    <a href="{{ $item->berkas }}" download class="service-download-btn">
+                        <i data-lucide="download"></i>
+                        <span>Unduh Dokumen</span>
+                    </a>
+                    @endif
                 </div>
-                @endif
-
-                @php
-                    $cadangans = array_filter([
-                        $item->cadangan1, $item->cadangan2, $item->cadangan3,
-                        $item->cadangan4, $item->cadangan5, $item->cadangan6,
-                        $item->cadangan7, $item->cadangan8, $item->cadangan9,
-                        $item->cadangan10, $item->cadangan11, $item->cadangan12,
-                    ]);
-                @endphp
-
-                @if(count($cadangans) > 0)
-                <ul class="service-features">
-                    @foreach($cadangans as $cadangan)
-                    <li class="feature-item">
-                        <i data-lucide="check-circle-2" class="feature-icon"></i>
-                        <span>{!! nl2br(e($cadangan)) !!}</span>
-                    </li>
-                    @endforeach
-                </ul>
-                @endif
-
-                @if($item->berkas)
-                <a href="{{ $item->berkas }}" download class="service-download">
-                    <i data-lucide="download"></i>
-                    <span>Unduh Dokumen</span>
-                </a>
-                @endif
             </div>
             @endforeach
         </div>
     </div>
 
     <style>
-        /* ========== MODERN STYLE - BLUE & WHITE ========== */
+        /* ========== MODERN STYLE - FULL WIDTH & RESPONSIVE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         .services-section {
             width: 100%;
             padding: 80px 0;
             position: relative;
             background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Background effect */
+        /* Background effects */
         .services-section::before {
             content: '';
             position: absolute;
@@ -128,8 +139,10 @@
             display: block;
         }
 
+        /* Container - FULL WIDTH */
         .container {
-            max-width: 1400px;
+            width: 100%;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 40px;
             position: relative;
@@ -143,7 +156,7 @@
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 800;
             background: linear-gradient(135deg, #0a2b44 0%, #1e5a9c 50%, #2f7fc9 100%);
             background-clip: text;
@@ -161,17 +174,18 @@
             bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 70px;
             height: 4px;
             background: linear-gradient(90deg, #2a73c4, #7bc4f7);
             border-radius: 99px;
         }
 
-        /* Grid - 12 Column System */
+        /* Grid - FULL 12 COLUMN SYSTEM */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 28px;
+            width: 100%;
         }
 
         /* Service Card Modern */
@@ -179,13 +193,13 @@
             grid-column: span 3;
             background: #ffffff;
             border-radius: 24px;
-            padding: 28px 20px;
-            text-align: center;
             transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1);
             border: 1px solid rgba(74,144,217,0.12);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::before {
@@ -198,60 +212,108 @@
             background: linear-gradient(90deg, #2a73c4, #7bc4f7, #a2d6fb);
             transform: scaleX(0);
             transition: transform 0.4s ease;
+            z-index: 2;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px -12px rgba(42,115,196,0.2);
-            border-color: rgba(74,144,217,0.25);
+            box-shadow: 0 24px 48px -12px rgba(42,115,196,0.2);
+            border-color: rgba(74,144,217,0.3);
         }
 
         .service-card:hover::before {
             transform: scaleX(1);
         }
 
-        /* Service Icon */
-        .service-icon-link {
-            text-decoration: none;
-            display: inline-block;
+        /* Image Wrapper */
+        .service-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #f0f7ff;
+            border-radius: 20px 20px 0 0;
         }
 
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #eef6fe, #e2effa);
-            border-radius: 20px;
-            display: inline-flex;
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.08);
+        }
+
+        .service-download-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(42,115,196,0.85), rgba(30,90,156,0.9));
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .service-icon i {
-            width: 32px;
-            height: 32px;
-            color: #2a73c4;
-            stroke-width: 1.5;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, #2a73c4, #1e5a9c);
-            transform: scale(1.05);
-        }
-
-        .service-card:hover .service-icon i {
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
             color: white;
+            font-weight: 600;
+            font-size: 14px;
+            backdrop-filter: blur(4px);
+        }
+
+        .service-image-wrapper:hover .service-download-overlay {
+            opacity: 1;
+        }
+
+        .service-download-overlay i {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Image Placeholder */
+        .service-image-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #eef3fc, #e2effa);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #9bb7d4;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-image-placeholder i {
+            width: 48px;
+            height: 48px;
+            stroke-width: 1.2;
+        }
+
+        .service-image-placeholder span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Service Content */
+        .service-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
         }
 
         /* Service Title */
         .service-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: #0a2b44;
-            margin-bottom: 10px;
+            margin: 0;
             transition: color 0.3s ease;
+            line-height: 1.3;
         }
 
         .service-card:hover .service-title {
@@ -260,23 +322,22 @@
 
         /* Service Description */
         .service-desc {
-            font-size: 13px;
+            font-size: 14px;
             color: #5a6e8a;
             line-height: 1.6;
-            margin-bottom: 16px;
+            margin: 0;
         }
 
         /* Info Section */
         .service-info {
-            background: #f0f7ff;
-            border-radius: 12px;
-            padding: 12px;
-            margin-top: 16px;
+            background: linear-gradient(120deg, #f0f7ff, #ffffff);
+            border-radius: 14px;
+            padding: 12px 14px;
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            text-align: left;
             border-left: 3px solid #2a73c4;
+            margin-top: 4px;
         }
 
         .info-icon {
@@ -288,7 +349,7 @@
         }
 
         .info-text {
-            font-size: 12px;
+            font-size: 13px;
             color: #3a6b9e;
             line-height: 1.5;
         }
@@ -297,17 +358,16 @@
         .service-features {
             list-style: none;
             padding: 0;
-            margin: 16px 0 0;
-            text-align: left;
+            margin: 8px 0 0;
         }
 
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            font-size: 12px;
+            gap: 10px;
+            font-size: 13px;
             color: #4a627a;
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #f0f4fa;
         }
 
@@ -316,47 +376,64 @@
         }
 
         .feature-icon {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             color: #2a73c4;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
         /* Download Button */
-        .service-download {
+        .service-download-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             background: linear-gradient(135deg, #2a73c4, #1e5a9c);
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 40px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 16px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            width: fit-content;
         }
 
-        .service-download i {
-            width: 16px;
-            height: 16px;
+        .service-download-btn i {
+            width: 18px;
+            height: 18px;
         }
 
-        .service-download:hover {
+        .service-download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(42,115,196,0.3);
+            box-shadow: 0 8px 20px rgba(42,115,196,0.35);
             background: linear-gradient(135deg, #1e5a9c, #0f4578);
         }
 
-        /* ========== RESPONSIVE - FULL 12 COLUMN ========== */
+        /* ========== RESPONSIVE - FULL WIDTH MONITOR & RESPONSIVE HP ========== */
 
-        /* Desktop XL ≥ 1400px - 4 kolom */
-        @media (min-width: 1400px) {
+        /* Desktop 4K+ (≥ 1920px) - Full width */
+        @media (min-width: 1920px) {
+            .container {
+                padding: 0 80px;
+            }
+            .service-card {
+                grid-column: span 3;
+            }
+            .services-grid {
+                gap: 32px;
+            }
+            .section-title {
+                font-size: 48px;
+            }
+        }
+
+        /* Desktop Large (1440px - 1919px) - 4 kolom */
+        @media (min-width: 1440px) and (max-width: 1919px) {
             .container {
                 padding: 0 60px;
             }
@@ -366,19 +443,25 @@
             .services-grid {
                 gap: 30px;
             }
+            .section-title {
+                font-size: 42px;
+            }
         }
 
-        /* Desktop 1200px - 1399px - 4 kolom */
-        @media (min-width: 1200px) and (max-width: 1399px) {
+        /* Desktop (1200px - 1439px) - 4 kolom */
+        @media (min-width: 1200px) and (max-width: 1439px) {
             .container {
                 padding: 0 48px;
             }
             .service-card {
                 grid-column: span 3;
             }
+            .services-grid {
+                gap: 26px;
+            }
         }
 
-        /* Desktop 992px - 1199px - 3 kolom */
+        /* Desktop Small (992px - 1199px) - 3 kolom */
         @media (min-width: 992px) and (max-width: 1199px) {
             .container {
                 padding: 0 40px;
@@ -390,11 +473,14 @@
                 gap: 24px;
             }
             .section-title {
-                font-size: 32px;
+                font-size: 36px;
+            }
+            .service-title {
+                font-size: 18px;
             }
         }
 
-        /* Tablet 768px - 991px - 2 kolom */
+        /* Tablet (768px - 991px) - 2 kolom */
         @media (min-width: 768px) and (max-width: 991px) {
             .services-section {
                 padding: 60px 0;
@@ -409,11 +495,15 @@
                 gap: 22px;
             }
             .section-title {
-                font-size: 28px;
+                font-size: 32px;
+            }
+            .service-image-wrapper,
+            .service-image-placeholder {
+                height: 200px;
             }
         }
 
-        /* Mobile Landscape 576px - 767px - 2 kolom */
+        /* Mobile Landscape (576px - 767px) - 2 kolom */
         @media (min-width: 576px) and (max-width: 767px) {
             .services-section {
                 padding: 48px 0;
@@ -425,26 +515,35 @@
                 grid-column: span 6;
             }
             .services-grid {
-                gap: 18px;
+                gap: 20px;
             }
             .section-title {
-                font-size: 24px;
+                font-size: 28px;
             }
             .service-title {
-                font-size: 16px;
+                font-size: 17px;
             }
-            .service-desc {
+            .service-desc,
+            .info-text,
+            .feature-item {
                 font-size: 12px;
+            }
+            .service-image-wrapper,
+            .service-image-placeholder {
+                height: 180px;
+            }
+            .service-content {
+                padding: 18px;
             }
         }
 
-        /* Mobile Portrait ≤ 575px - 1 kolom */
+        /* Mobile Portrait (≤ 575px) - 1 kolom FULL WIDTH */
         @media (max-width: 575px) {
             .services-section {
                 padding: 40px 0;
             }
             .container {
-                padding: 0 20px;
+                padding: 0 16px;
             }
             .service-card {
                 grid-column: span 12;
@@ -456,10 +555,26 @@
                 margin-bottom: 32px;
             }
             .section-title {
-                font-size: 22px;
+                font-size: 26px;
             }
             .service-title {
-                font-size: 17px;
+                font-size: 18px;
+            }
+            .service-desc,
+            .info-text,
+            .feature-item {
+                font-size: 13px;
+            }
+            .service-image-wrapper,
+            .service-image-placeholder {
+                height: 200px;
+            }
+            .service-content {
+                padding: 20px;
+            }
+            .service-download-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -482,7 +597,7 @@
     </style>
 
     <script>
-        // Untuk lucide icons (pastikan sudah include lucide)
+        // Untuk lucide icons
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
