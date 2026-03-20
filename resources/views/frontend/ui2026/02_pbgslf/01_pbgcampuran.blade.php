@@ -19,7 +19,6 @@
         <div class="infopbg-grid">
             @foreach($data as $item)
             <div class="infopbg-card">
-
                 @if($item->berkas)
                 <a href="{{ $item->berkas }}" download class="infopbg-img-wrap">
                     <img src="{{ $item->berkas }}" alt="{{ $item->judul }}" class="infopbg-img">
@@ -37,7 +36,6 @@
                 @endif
 
                 <div class="infopbg-body">
-
                     @if($item->judul)
                     <h3 class="infopbg-judul">{{ $item->judul }}</h3>
                     @endif
@@ -75,7 +73,6 @@
                         @endforeach
                     </ul>
                     @endif
-
                 </div>
             </div>
             @endforeach
@@ -85,8 +82,38 @@
     <style>
         .infopbg-section {
             width: 100%;
-            padding: 64px 0;
+            padding: 80px 0;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
             box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Efek background modern */
+        .infopbg-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(74,144,217,0.08) 0%, rgba(74,144,217,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .infopbg-section::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -5%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(ellipse, rgba(123,196,247,0.1) 0%, transparent 70%);
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .infopbg-container {
@@ -94,88 +121,123 @@
             max-width: 100%;
             padding: 0 40px;
             box-sizing: border-box;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Header */
+        /* Header Modern */
         .infopbg-header {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
+            position: relative;
         }
 
         .infopbg-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
+            font-size: 32px;
+            font-weight: 800;
             margin: 0;
-            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #0a2b44 0%, #1e5a9c 50%, #2f7fc9 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
         }
 
         .infopbg-title-line {
-            width: 52px;
+            width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, #4a90d9, #7bc4f7);
+            background: linear-gradient(90deg, #2a73c4, #7bc4f7, #a2d6fb);
             border-radius: 99px;
+            transition: width 0.4s ease;
         }
 
-        /* Grid */
+        .infopbg-header:hover .infopbg-title-line {
+            width: 100px;
+        }
+
+        /* Grid - 12 Column System */
         .infopbg-grid {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 28px;
             box-sizing: border-box;
         }
 
-        /* Card */
+        /* Card Modern */
         .infopbg-card {
-            width: 100%;
+            grid-column: span 3;
             background: #ffffff;
-            border-radius: 16px;
-            border: 1px solid #f0f0f0;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(74,144,217,0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1);
             box-sizing: border-box;
+            position: relative;
+        }
+
+        .infopbg-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(125deg, rgba(74,144,217,0.2), rgba(123,196,247,0.4), rgba(74,144,217,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
         }
 
         .infopbg-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(74,144,217,0.13);
-            border-color: #d0e8f8;
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(42, 115, 196, 0.2);
+            border-color: rgba(74,144,217,0.3);
         }
 
-        /* Gambar */
+        .infopbg-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Gambar Modern */
         .infopbg-img-wrap {
             display: block;
             width: 100%;
             overflow: hidden;
             position: relative;
+            background: linear-gradient(135deg, #eef3fc, #e0eefa);
         }
 
         .infopbg-img {
             width: 100%;
-            height: auto;
+            height: 200px;
+            object-fit: cover;
             display: block;
-            transition: transform 0.35s ease;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .infopbg-img-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(26, 26, 46, 0.45);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(42, 115, 196, 0.75));
+            backdrop-filter: blur(2px);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.35s ease;
         }
 
         .infopbg-img-wrap:hover .infopbg-img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .infopbg-img-wrap:hover .infopbg-img-overlay {
@@ -185,140 +247,231 @@
         .infopbg-download-icon {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             color: #fff;
             font-size: 13px;
             font-weight: 600;
-            background: rgba(74,144,217,0.85);
-            padding: 8px 16px;
+            background: linear-gradient(135deg, #2a73c4, #1e5a9c);
+            padding: 10px 20px;
             border-radius: 99px;
-            letter-spacing: 0.2px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        /* Body */
+        .infopbg-download-icon:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+
+        /* Body Card */
         .infopbg-body {
-            padding: 18px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             flex: 1;
             box-sizing: border-box;
         }
 
         .infopbg-judul {
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 700;
-            color: #1a1a2e;
+            color: #0a2b44;
             margin: 0;
             line-height: 1.4;
-            letter-spacing: -0.1px;
+            letter-spacing: -0.2px;
+            border-left: 3px solid #2f7fc9;
+            padding-left: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .infopbg-card:hover .infopbg-judul {
+            border-left-color: #7bc4f7;
         }
 
         .infopbg-keterangan {
-            font-size: 13px;
-            color: #555;
+            font-size: 14px;
+            color: #4a5568;
             margin: 0;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .infopbg-infolanjut {
             font-size: 13px;
-            color: #4a6fa5;
-            line-height: 1.7;
-            padding: 10px 14px;
-            background: #eef5fd;
-            border-left: 3px solid #4a90d9;
-            border-radius: 0 8px 8px 0;
+            color: #1e5a9c;
+            line-height: 1.6;
+            padding: 12px 14px;
+            background: linear-gradient(120deg, #f0f7ff, #ffffff);
+            border-left: 3px solid #2f7fc9;
+            border-radius: 0 12px 12px 0;
             display: flex;
-            gap: 8px;
+            gap: 10px;
             align-items: flex-start;
         }
 
         .infopbg-infolanjut-icon {
             flex-shrink: 0;
             margin-top: 2px;
-            color: #4a90d9;
+            color: #2f7fc9;
         }
 
-        /* Cadangan list */
+        /* Cadangan list modern */
         .infopbg-cadangan-list {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 4px 0 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
         }
 
         .infopbg-cadangan-item {
             font-size: 13px;
-            color: #444;
+            color: #2d3e5f;
             padding: 8px 14px;
-            background: #f8f9fb;
-            border-radius: 8px;
-            border: 1px solid #ebebeb;
-            line-height: 1.6;
+            background: #fafcff;
+            border-radius: 12px;
+            border: 1px solid #e9f0f8;
+            line-height: 1.5;
             display: flex;
             align-items: flex-start;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.2s;
         }
 
         .infopbg-cadangan-item::before {
-            content: '';
+            content: '✨';
             display: inline-block;
             flex-shrink: 0;
-            width: 6px;
-            height: 6px;
-            background: #4a90d9;
-            border-radius: 50%;
-            margin-top: 6px;
+            width: auto;
+            height: auto;
+            background: none;
+            font-size: 12px;
+            margin-top: 0;
+        }
+
+        .infopbg-cadangan-item:hover {
+            background: #eff6fe;
+            border-color: #cae0f5;
+            transform: translateX(4px);
+        }
+
+        /* Animasi fade in untuk card */
+        .infopbg-card {
+            animation: fadeInUp 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) backwards;
+            animation-delay: calc(var(--order, 0) * 0.05s);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ==============================
-           RESPONSIVE
+           RESPONSIVE - FULL 12 COLUMN
         ============================== */
 
-        /* Large Desktop ≥ 1440px */
-        @media (min-width: 1440px) {
+        /* Desktop XL ≥ 1400px - 4 kolom */
+        @media (min-width: 1400px) {
             .infopbg-container {
                 padding: 0 60px;
             }
             .infopbg-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 28px;
+                gap: 30px;
+            }
+            .infopbg-card {
+                grid-column: span 3;
             }
         }
 
-        /* Desktop 1025px - 1439px */
-        @media (min-width: 1025px) and (max-width: 1439px) {
+        /* Desktop 1200px - 1399px - 4 kolom */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .infopbg-container {
+                padding: 0 48px;
+            }
+            .infopbg-grid {
+                gap: 26px;
+            }
+            .infopbg-card {
+                grid-column: span 3;
+            }
+        }
+
+        /* Desktop 992px - 1199px - 3 kolom */
+        @media (min-width: 992px) and (max-width: 1199px) {
             .infopbg-container {
                 padding: 0 40px;
             }
             .infopbg-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 22px;
+                gap: 24px;
+            }
+            .infopbg-card {
+                grid-column: span 4;
+            }
+            .infopbg-title {
+                font-size: 28px;
             }
         }
 
-        /* Tablet 769px - 1024px */
-        @media (min-width: 769px) and (max-width: 1024px) {
+        /* Tablet 768px - 991px - 2 kolom */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .infopbg-section {
+                padding: 60px 0;
+            }
+            .infopbg-container {
+                padding: 0 32px;
+            }
+            .infopbg-grid {
+                gap: 22px;
+            }
+            .infopbg-card {
+                grid-column: span 6;
+            }
+            .infopbg-title {
+                font-size: 26px;
+            }
+            .infopbg-img {
+                height: 190px;
+            }
+        }
+
+        /* Mobile Landscape 576px - 767px - 2 kolom */
+        @media (min-width: 576px) and (max-width: 767px) {
             .infopbg-section {
                 padding: 48px 0;
             }
             .infopbg-container {
-                padding: 0 28px;
+                padding: 0 24px;
             }
             .infopbg-grid {
-                grid-template-columns: repeat(2, 1fr);
                 gap: 18px;
+            }
+            .infopbg-card {
+                grid-column: span 6;
             }
             .infopbg-title {
                 font-size: 24px;
             }
+            .infopbg-img {
+                height: 170px;
+            }
+            .infopbg-judul {
+                font-size: 16px;
+            }
+            .infopbg-body {
+                padding: 16px;
+            }
         }
 
-        /* HP 481px - 768px */
-        @media (min-width: 481px) and (max-width: 768px) {
+        /* Mobile Portrait ≤ 575px - 1 kolom */
+        @media (max-width: 575px) {
             .infopbg-section {
                 padding: 40px 0;
             }
@@ -326,57 +479,30 @@
                 padding: 0 20px;
             }
             .infopbg-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
+                gap: 20px;
+            }
+            .infopbg-card {
+                grid-column: span 12;
+            }
+            .infopbg-header {
+                margin-bottom: 32px;
             }
             .infopbg-title {
                 font-size: 22px;
             }
             .infopbg-body {
-                padding: 14px;
+                padding: 18px;
             }
             .infopbg-judul {
-                font-size: 13px;
+                font-size: 17px;
             }
-            .infopbg-keterangan,
-            .infopbg-infolanjut,
-            .infopbg-cadangan-item {
-                font-size: 12px;
-            }
-        }
-
-        /* HP kecil ≤ 480px */
-        @media (max-width: 480px) {
-            .infopbg-section {
-                padding: 32px 0;
-            }
-            .infopbg-container {
-                padding: 0 16px;
-            }
-            .infopbg-grid {
-                grid-template-columns: repeat(1, 1fr);
-                gap: 14px;
-            }
-            .infopbg-header {
-                margin-bottom: 28px;
-            }
-            .infopbg-title {
-                font-size: 20px;
-            }
-            .infopbg-body {
-                padding: 14px;
-            }
-            .infopbg-judul {
-                font-size: 14px;
-            }
-            .infopbg-keterangan,
-            .infopbg-infolanjut,
-            .infopbg-cadangan-item {
-                font-size: 13px;
+            .infopbg-img {
+                height: 180px;
             }
         }
     </style>
 </section>
+
 
     </main>
 
