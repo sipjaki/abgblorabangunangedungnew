@@ -6,17 +6,18 @@
     @include('frontend.ui2026.00_fiturmenu.03_headermenu')
 
     <main>
-        <!-- Main Service Icons Section - FIRST SECTION (NO HERO BANNER) -->
+
+
         <section class="section services-section" id="services">
     <div class="bg-illustration bg-illustration--skyline">
         <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
     </div>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Informasi MBR </h2>
+            <h2 class="section-title">Layanan Utama</h2>
         </div>
         <div class="services-grid">
-            @foreach($data->item as $index => $item)
+            @foreach($data as $index => $item)
                 @foreach(['berkas1','berkas2','berkas3','berkas4'] as $delay => $berkas)
                     @if($item->$berkas)
                     <div class="service-card" data-animate="fade-up" data-delay="{{ ($index * 4 + $delay) * 50 }}">
