@@ -1653,6 +1653,12 @@ Route::post('/validasibongkarkembali/{id}', [BantuanteknisController::class, 'va
 Route::get('/newui', [NewUiController::class, 'index'])->middleware('auth', 'can:admindpupr')->name('newui');
 // Route::get('/newui', [NewUiController::class, 'index'])->name('newui');
 
+
+// HALAMAN UI BARU
+
+// BAGIAN 6
+
+Route::get('/informasimbr', [NewUiController::class, 'informasimbr']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

@@ -7,8 +7,8 @@
                     {{-- <img src="/assets/abgblora/logo/logodpupr.png" alt="Logo Kabupaten Blora"> --}}
                 </div>
                 <div class="logo-text">
-                    <span class="logo-title">Penyelenggaraan</span>
-                    <span class="logo-subtitle">Bangunan Gedung</span>
+                    <span class="logo-title">Penyelenggaraan Bangunan Gedung</span>
+                    <span class="logo-subtitle">Kabupaten Blora</span>
                 </div>
             </a>
 
@@ -81,11 +81,11 @@
                     </li>
                     <li class="nav-item has-dropdown">
                         <button class="nav-link dropdown-toggle" data-dropdown="profil">
-                            MBR
+                            <span style="color:orange">MBR</span>
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-profil">
-                            <li><a href="#" class="dropdown-link"><i data-lucide="book"></i>Informasi </a></li>
+                            <li><a href="/informasimbr" class="dropdown-link"><i data-lucide="book"></i>Informasi </a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="book-open"></i>Permohonan MBR </a></li>
                         </ul>
                     </li>
@@ -104,7 +104,7 @@
                     </li> --}}
                       <li class="nav-item has-dropdown">
                         <button class="nav-link dropdown-toggle" data-dropdown="profil">
-                            Login
+                            <span style="color:green">Login</span>
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-profil">
@@ -135,7 +135,7 @@
             <ul class="nav-mobile-menu">
                 <li><a href="#" class="nav-mobile-link active">Beranda</a></li>
                 <li class="nav-mobile-item has-submenu">
-                    <button class="nav-mobile-link submenu-toggle">Layanan</button>
+                    <button class="nav-mobile-link submenu-toggle">PBG/SLF</button>
                     <ul class="submenu">
                         <li><a href="#">Pengajuan PBG</a></li>
                         <li><a href="#">Pengajuan SLF</a></li>
