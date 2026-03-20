@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\agendapelatihanabg;
 use App\Models\artikelabg;
 use App\Models\beritaabg;
+use App\Models\mbrgambar;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -26,11 +27,13 @@ class NewUiController extends Controller
     // BAGIAN 6 UI BARU 2026
     public function informasimbr()
     {
+        $data = mbrgambar::all();
 
         $user = Auth::user();
-        return view('frontend.ui2026.06_mbr.informasimbr', [
+        return view('frontend.ui2026.06_mbr.01_informasimbr', [
             'title' => 'Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
