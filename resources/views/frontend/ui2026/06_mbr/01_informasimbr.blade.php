@@ -6,29 +6,22 @@
     @include('frontend.ui2026.00_fiturmenu.03_headermenu')
 
     <main>
-
-
         <section class="section services-section" id="services">
     <div class="bg-illustration bg-illustration--skyline">
         <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
     </div>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Layanan Utama</h2>
+            <h2 class="section-title">Informasi MBR</h2>
         </div>
-        <div class="services-grid">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
             @foreach($data as $index => $item)
-                @foreach(['berkas1','berkas2','berkas3','berkas4'] as $delay => $berkas)
+                @foreach(['berkas1','berkas2','berkas3','berkas4'] as $berkas)
                     @if($item->$berkas)
-                    <div class="service-card" data-animate="fade-up" data-delay="{{ ($index * 4 + $delay) * 50 }}">
-                        <div class="service-icon">
-                            <img src="{{ $item->$berkas }}"
-                                 alt="{{ $item->judul1 }}"
-                                 style="width: 48px; height: 48px; object-fit: contain;">
-                        </div>
-                        <h3 class="service-title">
-                            {{ $berkas === 'berkas1' || $berkas === 'berkas2' ? $item->judul1 : $item->judul2 }}
-                        </h3>
+                    <div style="border-radius: 8px; overflow: hidden;">
+                        <img src="{{ $item->$berkas }}"
+                             alt=""
+                             style="width: 100%; height: 120px; object-fit: cover; display: block;">
                     </div>
                     @endif
                 @endforeach
@@ -36,7 +29,6 @@
         </div>
     </div>
 </section>
-
 
     </main>
 
