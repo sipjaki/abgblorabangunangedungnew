@@ -24,7 +24,7 @@
                             <i data-lucide="chevron-down" class="dropdown-icon"></i>
                         </button>
                         <ul class="dropdown-menu" id="dropdown-layanan">
-                            <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Campuran</a></li>
+                            <li><a href="/pbgfungsicampuran" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Campuran</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Usaha</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Keagamaan</a></li>
                             <li><a href="#" class="dropdown-link"><i data-lucide="clipboard-check"></i>PBG Fungsi <br> Prasarana</a></li>

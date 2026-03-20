@@ -1656,8 +1656,10 @@ Route::get('/newui', [NewUiController::class, 'index'])->middleware('auth', 'can
 
 // HALAMAN UI BARU
 
-// BAGIAN 6
+// BAGIAN 2
+Route::get('/pbgfungsicampuran', [NewUiController::class, 'pbgfungsicampuran']);
 
+// BAGIAN 6
 Route::get('/informasimbr', [NewUiController::class, 'informasimbr']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
