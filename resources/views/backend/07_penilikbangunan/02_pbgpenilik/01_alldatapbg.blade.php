@@ -136,9 +136,9 @@ function exportTableToExcel(tableID, filename = '') {
 }
 </script>
 
-                                        <a href="/dataallpenilikbg">
+                                        <a href="/datanewpbgpenilik">
                                             <button class="button-baru" style="margin: 0 5px;">
-                                                <i class="bi bi-folder2-open"></i> Data Lengkap
+                                                <i class="bi bi-folder2-open"></i> Data Baru
                                             </button>
                                         </a>
 

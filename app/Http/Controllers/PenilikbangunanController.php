@@ -15,6 +15,7 @@ use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\pascapenilikdok;
 use App\Models\penilikbangunan;
+use App\Models\penilikpbgbangunan;
 use App\Models\petugaspenilik;
 use App\Models\prapenilikdok;
 use App\Models\surattugaspenilik;
@@ -1130,7 +1131,7 @@ public function datapbgpenilik(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 10);
 
-    $query = penilikbangunan::query(); // cukup query biasa dulu
+    $query = penilikpbgbangunan::query(); // cukup query biasa dulu
 
     // 🔥 SEARCH HANYA namapemohon
     if (!empty($search)) {
@@ -1146,6 +1147,17 @@ public function datapbgpenilik(Request $request)
     ]);
 }
 
+
+public function datanewpbgpenilik(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.02_pbgpenilik.02_createpbgpenilik', [
+            'title' => 'Input Data Baru Bangunan Terbit PBG',
+            'user' => $user,
+    ]);
+}
 
 
 }
