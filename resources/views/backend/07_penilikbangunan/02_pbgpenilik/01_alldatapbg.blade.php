@@ -264,9 +264,9 @@ function exportTableToExcel(tableID, filename = '') {
 
 
                                     <td style="text-align: center;">
-                                        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                        {{-- <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i> Perbaikan Data
-                                        </a>
+                                        </a> --}}
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
