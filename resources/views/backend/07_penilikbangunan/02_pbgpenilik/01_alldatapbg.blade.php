@@ -199,140 +199,72 @@ function exportTableToExcel(tableID, filename = '') {
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
-                                <tr>
-<th>
-    <span class="text-danger"></span> No
-</th>
-<th>
-    <i class="bi bi-person text-danger me-1"></i> Pembuat Data
-</th>
-<th>
-    <i class="bi bi-person-vcard  me-1"></i> Nama Pemohon
-</th>
-<th>
-    <i class="bi bi-person-vcard  me-1"></i> Nomor Telepon
-</th>
-{{-- <th style="background-color: #ADD8E6;">
-    <i class="bi bi-card-list  me-1"></i> NIK
-</th> --}}
-{{-- <th>
-    <i class="bi bi-building  me-1"></i> Fungsi Bangunan
-</th>
-<th>
-    <i class="bi bi-building-check  me-1"></i> Subfungsi Bangunan
-</th>
-<th>
-    <i class="bi bi-geo-alt-fill  me-1"></i> Provinsi
-</th>
-<th>
-    <i class="bi bi-geo  me-1"></i> Kabupaten
-</th>
-<th>
-    <i class="bi bi-geo-alt  me-1"></i> Kecamatan
-</th>
-<th>
-    <i class="bi bi-geo-alt  me-1"></i> Kelurahan/Desa
-</th>
-<th>
-    <i class="bi bi-signpost  me-1"></i> Alamat Lengkap
-</th>
-<th>
-    <i class="bi bi-crosshair  me-1"></i> Koordinat
-</th>
-<th>
-    <i class="bi bi-house-door  me-1"></i> Nama Bangunan
-</th>
-<th>
-    <i class="bi bi-fullscreen  me-1"></i> Luas Bangunan (m²)
-</th>
-<th>
-    <i class="bi bi-layers  me-1"></i> Jumlah Lantai
-</th>
-<th>
-    <i class="bi bi-signpost-2  me-1"></i> GSB (m)
-</th> --}}
-<th>
-    <i class="bi bi-file-earmark-person  me-1"></i> Update
-</th>
-<th>
-    <i class="bi bi-file-earmark-person  me-1"></i> Surat Tugas
-</th>
-<th>
-    <i class="bi bi-camera  me-1"></i> Inspeksi Pra
-</th>
-<th>
-    <i class="bi bi-file-earmark-person  me-1"></i> Input Reg SIMBG
-</th>
-{{-- <th>
-    <i class="bi bi-hash  me-1"></i> No Reg SIMBG
-</th>
-<th>
-    <i class="bi bi-calendar-event  me-1"></i> Tanggal SIMBG
-</th>
-<th>
-    <i class="bi bi-file-earmark-code  me-1"></i> No KRK
-</th>
-
-<th>
-    <i class="bi bi-calendar-check  me-1"></i> Tanggal KRK
-</th> --}}
-
-<th>
-    <i class="bi bi-calendar-check  me-1"></i> Upload Berkas PBG
-</th>
-
-
-{{-- <th>
-    <i class="bi bi-file-earmark-text  me-1"></i> No PBG
-</th>
-<th>
-    <i class="bi bi-calendar  me-1"></i> Tanggal PBG
-</th>
-<th>
-    <i class="bi bi-folder2-open  me-1"></i> Berkas PBG
-</th> --}}
-
-<th>
-    <i class="bi bi-camera  me-1"></i> Inspeksi Pasca
-</th>
-
-
-       <th>Aksi</th>
-                                </tr>
-                            </thead>
+     <tr>
+                <th>No</th>
+                <th>
+                    <i class="bi bi-card-text text-primary me-1"></i> No Registrasi PBG
+                </th>
+                <th>
+                    <i class="bi bi-person-badge text-primary me-1"></i> Nama Pemohon
+                </th>
+                <th>
+                    <i class="bi bi-geo-alt text-danger me-1"></i> Alamat Pemohon
+                </th>
+                <th>
+                    <i class="bi bi-building text-warning me-1"></i> Fungsi Bangunan
+                </th>
+                <th>
+                    <i class="bi bi-map text-success me-1"></i> Lokasi Bangunan
+                </th>
+                <th>
+                    <i class="bi bi-journal-text text-secondary me-1"></i> Keterangan
+                </th>
+                <th>
+                    <i class="bi bi-calendar text-info me-1"></i> Tahun Terbit
+                </th>
+                <th class="text-center">Aksi</th>
+            </tr>
+                                </thead>
                               <tbody id="tableBody">
 
                                 @forelse ($data as $item)
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
-                       <td style="text-align: left;">{{ !empty($item->user_id) ? $item->user->name : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->namapemohon) ? $item->namapemohon : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->nomortelepon) ? $item->nomortelepon : '-' }}</td>
-{{-- <td style="text-align: left;">{{ !empty($item->nik) ? $item->nik : '-' }}</td> --}}
-{{-- <td style="text-align: left;">{{ !empty($item->fungsibangunan) ? $item->fungsibangunan : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->provinsi) ? $item->provinsi : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kabupaten) ? $item->kabupaten : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kecamatanblora->kecamatanblora) ? $item->kecamatanblora->kecamatanblora : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kelurahandesa->desa) ? $item->kelurahandesa->desa : '-' }}</td>
+                    <td>
+                        <span class="fw-semibold text-primary">
+                            {{ $item->notanggalsk }}
+                        </span>
+                    </td>
 
-@php
-    $words = explode(' ', $item->alamatlengkap ?? '');
-    $chunks = array_chunk($words, 6);
-    $newAlamat = implode('<br>', array_map(fn($chunk) => implode(' ', $chunk), $chunks));
-@endphp
+                    <td>{{ $item->namapemohon }}</td>
 
-<td style="text-align: left; white-space: pre-line;">
-    {!! !empty($item->alamatlengkap) ? $newAlamat : '-' !!}
-</td>
+                    <td style="max-width:200px;">
+                        <small>{{ $item->alamatpemohon }}</small>
+                    </td>
 
-<td style="text-align: left;">{{ !empty($item->koordinat) ? $item->koordinat : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->namabangunan) ? $item->namabangunan : '-' }}</td>
-<td style="text-align: center;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' M²' : '-' }}</td>
-<td style="text-align: center;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai . ' Lantai' : '-' }}</td>
-<td style="text-align: center;">{{ !empty($item->gsb) ? $item->gsb . ' Meter' : '-' }}</td> --}}
-<td style="text-align: center;">
-        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
+                    <td>
+                        <span class="badge bg-warning text-dark">
+                            {{ $item->fungsibangunan }}
+                        </span>
+                    </td>
+
+                    <td>{{ $item->lokasibangunan }}</td>
+
+                    <td>
+                        <small class="text-muted">
+                            {{ $item->keterangan ?? '-' }}
+                        </small>
+                    </td>
+
+                    <td>
+                        <span class="badge bg-info text-dark">
+                            {{ $item->cadangan1 }}
+                        </span>
+                    </td>
+
+
+                                    <td style="text-align: center;">
+                            <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i> Perbaikan Data
                                         </a>
 

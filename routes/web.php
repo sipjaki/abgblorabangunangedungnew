@@ -1087,7 +1087,7 @@ Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpen
 // TAMBAHAN DARU PBG PENULIK BANGUNAN
 Route::get('/datapbgpenilik', [PenilikbangunanController::class, 'datapbgpenilik'])->middleware('auth', 'can:admindpupr')->name('datapbgpenilik.index');
 Route::get('/datanewpbgpenilik', [PenilikbangunanController::class, 'datanewpbgpenilik'])->middleware('auth', 'can:admindpupr')->name('datanewpbgpenilik.create');
-// Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpeniliknew.create');
+Route::post('/datanewpbgpeniliknew', [PenilikbangunanController::class, 'datanewpbgpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpbgpenilik.createnew');
 
 
 Route::get('/dataallpenilikbgall', [PenilikbangunanController::class, 'dataallpenilikbgall'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');

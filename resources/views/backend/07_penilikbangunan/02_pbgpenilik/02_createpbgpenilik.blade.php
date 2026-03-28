@@ -136,7 +136,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('datanewpbgpenilik.createnew') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
 

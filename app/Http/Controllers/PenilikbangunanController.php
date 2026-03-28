@@ -1153,11 +1153,53 @@ public function datanewpbgpenilik(Request $request)
     // Ambil user login
     $user = Auth::user();
         // Kirim data ke view tanpa ambil dari database bantuanhibahbg
-        return view('backend.02_pbgpenilik.02_createpbgpenilik', [
+        return view('backend.07_penilikbangunan.02_pbgpenilik.02_createpbgpenilik', [
             'title' => 'Input Data Baru Bangunan Terbit PBG',
             'user' => $user,
     ]);
 }
 
+public function datanewpbgpeniliknew(Request $request)
+{
+    $validated = $request->validate([
+        'notanggalsk' => 'required|string|max:255',
+        'namapemohon' => 'required|string|max:255',
+        'alamatpemohon' => 'required|string',
+
+        'fungsibangunan' => 'required|string|max:255',
+        'lokasibangunan' => 'required|string|max:255',
+
+        'keterangan' => 'nullable|string',
+        'cadangan1' => 'nullable|digits:4', // tahun
+
+        'user_id' => 'required|exists:users,id',
+    ], [
+        'notanggalsk.required' => 'No Registrasi PBG wajib diisi.',
+        'namapemohon.required' => 'Nama pemohon wajib diisi.',
+        'alamatpemohon.required' => 'Alamat pemohon wajib diisi.',
+        'fungsibangunan.required' => 'Fungsi bangunan wajib diisi.',
+        'lokasibangunan.required' => 'Lokasi bangunan wajib diisi.',
+        'cadangan1.digits' => 'Tahun harus 4 digit (contoh: 2025).',
+        'user_id.required' => 'User tidak boleh kosong.',
+    ]);
+
+    // Simpan ke database
+    penilikpbgbangunan::create([
+        'notanggalsk' => $validated['notanggalsk'] ?? null,
+        'namapemohon' => $validated['namapemohon'] ?? null,
+        'alamatpemohon' => $validated['alamatpemohon'] ?? null,
+
+        'fungsibangunan' => $validated['fungsibangunan'] ?? null,
+        'lokasibangunan' => $validated['lokasibangunan'] ?? null,
+
+        'keterangan' => $validated['keterangan'] ?? null,
+        'cadangan1' => $validated['cadangan1'] ?? null,
+
+        // 'user_id' => $validated['user_id'] ?? null,
+    ]);
+
+    session()->flash('create', 'Data PBG Berhasil di Inputkan!');
+    return redirect()->route('datapbgpenilik.index');
+}
 
 }
