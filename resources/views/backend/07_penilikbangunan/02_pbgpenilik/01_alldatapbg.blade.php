@@ -348,7 +348,7 @@ function exportTableToExcel(tableID, filename = '') {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/dokinspeksibangunandelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/datapbgpenilikdelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

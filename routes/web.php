@@ -1089,6 +1089,8 @@ Route::get('/datapbgpenilik', [PenilikbangunanController::class, 'datapbgpenilik
 Route::get('/datanewpbgpenilik', [PenilikbangunanController::class, 'datanewpbgpenilik'])->middleware('auth', 'can:admindpupr')->name('datanewpbgpenilik.create');
 Route::post('/datanewpbgpeniliknew', [PenilikbangunanController::class, 'datanewpbgpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpbgpenilik.createnew');
 
+Route::delete('/datapbgpenilikdelete/{id}', [BantuanhibahbgController::class, 'datapbgpenilikdelete'])->middleware('auth')->name('datapbgpenilikdelete');
+
 
 Route::get('/dataallpenilikbgall', [PenilikbangunanController::class, 'dataallpenilikbgall'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
 Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
