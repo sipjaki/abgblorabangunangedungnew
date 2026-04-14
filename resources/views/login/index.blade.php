@@ -467,10 +467,10 @@
         <!-- Header -->
         <div class="login-header">
             <div class="logo-container">
-                <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora" class="logo">
+                <img src="/assets/abgblora/logo/bangunangedungnew.png" alt="ABG Blora" class="logo">
             </div>
 
-            <h1 class="title">Bangunan Gedung</h1>
+            {{-- <h1 class="title">Bangunan Gedung</h1> --}}
         </div>
 
         <!-- Form -->
