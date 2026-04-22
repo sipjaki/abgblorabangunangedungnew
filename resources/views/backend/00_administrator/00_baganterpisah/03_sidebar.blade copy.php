@@ -5,7 +5,7 @@
     background: linear-gradient(135deg, #020243, #020243, #020243); /* navy gelap sesuai gambar */
     background-size: 300% 300%;
     animation: sidebarGradientMove 20s ease infinite;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 280px;
     z-index: 1;
     box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6),

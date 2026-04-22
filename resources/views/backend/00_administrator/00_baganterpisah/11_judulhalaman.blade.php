@@ -11,7 +11,7 @@
             <div>
                 {{-- <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="icon" style=" --}}
                 {{-- <img src="/assets/abgblora/logo/bangunangedungnew.png" alt="icon" style=" --}}
-                <img src="/assets/abgblora/logo/bangunangedungapril.png" alt="icon" style="
+                <img src="/assets/abgblora/logo/bangunangedungpng.png" alt="icon" style="
                     width:50px;
                     height:50px;
                     object-fit:contain;

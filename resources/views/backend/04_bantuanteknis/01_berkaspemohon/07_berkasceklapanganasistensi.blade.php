@@ -162,17 +162,17 @@
     <table id="tabelSuratbantuanteknis" class="zebra-table" style="min-width: 900px;">
                 <thead>
                                   <tr>
-   <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Asistensi </th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 4</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 5</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 6</th>
+   <th style="">No</th>
+<th style=" width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
+<th style=" width:75px;"><i class="bi bi-journal-text"></i> Tanggal Asistensi </th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 1</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 2</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 3</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 4</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 5</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 6</th>
 @canany(['superadmin', 'admin'])
-<th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
+<th style=" width:150px;"><i class="bi bi-tools"></i> Aksi</th>
 @endcanany
 
     </tr>
