@@ -1762,3 +1762,7 @@ public function bujkkontraktorshow($namalengkap)
 
 <div>
                     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+
+
+
+@include('frontend.ui2026.00_fiturmenu.02_footer')

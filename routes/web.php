@@ -1655,7 +1655,7 @@ Route::post('/validasibongkarkembali/{id}', [BantuanteknisController::class, 'va
 // HALAMAN NEW UI 2026 FRONTEND
 
 Route::get('/newui', [NewUiController::class, 'index'])->middleware('auth', 'can:admindpupr')->name('newui');
-// Route::get('/newui', [NewUiController::class, 'index'])->name('newui');
+// Route::get('/newui', [NewUiController::class, 'index'])web->name('newui');
 
 
 // HALAMAN UI BARU
