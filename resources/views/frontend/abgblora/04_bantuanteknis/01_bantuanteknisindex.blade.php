@@ -208,7 +208,7 @@
                 <input type="hidden" name="dinas_id" value="{{ $dinas_id }}">
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div class="button-baru">
         <strong>Jenis Permohonan Bantuan Teknis Saudara ! </strong>
     </div>
@@ -219,7 +219,7 @@
 <div class="col-md-6" style="margin-top: -60px;">
     <div>
         <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
-            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
+            <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
         </label>
         <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
             class="form-control @error('jenispengajuanbantek_id') is-invalid @enderror"
@@ -240,7 +240,7 @@
 <div class="col-md-6" id="konsultanFormGroup" style="margin-top: -70px; display: none;">
     <div style="margin-top: 10px;">
         <label class="form-label d-flex align-items-center" for="bujkkonsultan_id">
-            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Pilih Konsultan Asistensi
+            <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Pilih Konsultan Asistensi
         </label>
         <select id="bujkkonsultan_id" name="bujkkonsultan_id"
             class="form-control w-100 @error('bujkkonsultan_id') is-invalid @enderror"
@@ -285,7 +285,7 @@
 
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 20px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div class="button-baru">
         <strong>Informasi Permohonan Bantuan Teknis </strong>
     </div>
@@ -295,7 +295,7 @@
     <div class="col-md-6" style="margin-top: 0px;">
     <div>
         <label class="form-label d-flex align-items-center" for="nosuratdinas">
-            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas
+            <i class="bi bi-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas ke DPUPR
         </label>
         <input type="text" name="nosuratdinas" id="nosuratdinas"
             class="form-control @error('nosuratdinas') is-invalid @enderror"
@@ -309,7 +309,7 @@
 {{-- <div class="col-md-6" style="margin-top: 0px;">
     <div>
         <label class="form-label d-flex align-items-center" for="nosurat">
-            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> No Surat Permohonan</span>
+            <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> No Surat Permohonan</span>
         </label>
         <input type="text" name="nosurat" id="nosurat"
             class="form-control @error('nosurat') is-invalid @enderror"
@@ -341,19 +341,21 @@
 <div class="col-md-6" style="margin-top: 0px;">
     <div>
         <label class="form-label d-flex align-items-center" for="tanggalsurat">
-            <i class="fas fa-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Surat
+            <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i>
+            Tanggal Surat
         </label>
-        <input type="date" name="tanggalsurat" id="tanggalsurat"
-            class="form-control"
-            value="{{ date('Y-m-d') }}" readonly>
+
+        <input type="date"
+               name="tanggalsurat"
+               id="tanggalsurat"
+               class="form-control">
     </div>
 </div>
 
-
-<div class="col-md-6" style="margin-top: 15px;">
+{{-- <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="nama_pemohon">
-            <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
+            <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
         </label>
         <input type="text" name="nama_pemohon" id="nama_pemohon"
             class="form-control @error('nama_pemohon') is-invalid @enderror"
@@ -362,12 +364,12 @@
             <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="no_telepon">
-            <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
+            <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
         </label>
         <input type="text" name="no_telepon" id="no_telepon"
             class="form-control @error('no_telepon') is-invalid @enderror"
@@ -382,7 +384,7 @@
 
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div class="button-baru">
         <strong>Informasi Paket Pekerjaan Bangunan Gedung </strong>
     </div>
@@ -394,7 +396,7 @@
     <div class="col-md-6" style="margin-top: 0px;">
         <div>
             <label class="form-label d-flex align-items-center" for="namapaket">
-                <i class="fas fa-box" style="margin-right: 8px; color: navy;"></i> Nama Paket
+                <i class="bi bi-box" style="margin-right: 8px; color: navy;"></i> Nama Paket
             </label>
             <input type="text" name="namapaket" id="namapaket"
                 class="form-control @error('namapaket') is-invalid @enderror"
@@ -408,7 +410,7 @@
 <div class="col-md-6" style="margin-top: 0px;">
     <div>
         <label class="form-label d-flex align-items-center" for="kategoribangunan">
-            <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Kategori Bangunan
+            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Kategori Bangunan
         </label>
         <select name="kategoribangunan" id="kategoribangunan"
             class="form-control @error('kategoribangunan') is-invalid @enderror" style="font-size: 15px;">
@@ -428,7 +430,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="luasbangunan">
-            <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
+            <i class="bi bi-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
         </label>
         <input type="text" name="luasbangunan" id="luasbangunan"
             class="form-control @error('luasbangunan') is-invalid @enderror"
@@ -480,7 +482,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="luastanahtotal">
-            <i class="fas fa-ruler" style="margin-right: 8px; color: navy;"></i> Luas Tanah Total (m²)
+            <i class="bi bi-ruler" style="margin-right: 8px; color: navy;"></i> Luas Tanah Total (m²)
         </label>
         <input type="text" name="luastanahtotal" id="luastanahtotal"
             class="form-control @error('luastanahtotal') is-invalid @enderror"
@@ -530,7 +532,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="jumlahlantai">
-            <i class="fas fa-layer-group" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
+            <i class="bi bi-layer-group" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
         <select name="jumlahlantai" id="jumlahlantai"
             class="form-control @error('jumlahlantai') is-invalid @enderror"
@@ -553,7 +555,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="tinggibangunan">
-            <i class="fas fa-arrows-alt-v" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (m)
+            <i class="bi bi-arrows-alt-v" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (m)
         </label>
         <input type="text" name="tinggibangunan" id="tinggibangunan"
             class="form-control @error('tinggibangunan') is-invalid @enderror"
@@ -603,7 +605,7 @@
     <div class="col-md-6" style="margin-top: 15px;">
         <div>
             <label class="form-label d-flex align-items-center" for="bassement">
-                <i class="fas fa-warehouse" style="margin-right: 8px; color: navy;"></i> Ada Bassement?
+                <i class="bi bi-warehouse" style="margin-right: 8px; color: navy;"></i> Ada Bassement?
             </label>
             <select name="bassement" id="bassement" class="form-control @error('bassement') is-invalid @enderror" style="font-size: 15px;>
                 <option value="">-- Pilih --</option>
@@ -618,7 +620,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="kepemilikan">
-            <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> Kepemilikan
+            <i class="bi bi-id-card" style="margin-right: 8px; color: navy;"></i> Kepemilikan
         </label>
         <select name="kepemilikan" id="kepemilikan"
             class="form-control @error('kepemilikan') is-invalid @enderror">
@@ -636,7 +638,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="tahunpembangunan">
-            <i class="fas fa-calendar-plus" style="margin-right: 8px; color: navy;"></i> Tahun Pembangunan
+            <i class="bi bi-calendar-plus" style="margin-right: 8px; color: navy;"></i> Tahun Pembangunan
         </label>
         <input type="number" name="tahunpembangunan" id="tahunpembangunan"
             class="form-control @error('tahunpembangunan') is-invalid @enderror"
@@ -650,7 +652,7 @@
 <div class="col-md-6" style="margin-top: 15px;">
     <div>
         <label class="form-label d-flex align-items-center" for="tahunrenovasi">
-            <i class="fas fa-tools" style="margin-right: 8px; color: navy;"></i> Tahun Renovasi (jika ada)
+            <i class="bi bi-tools" style="margin-right: 8px; color: navy;"></i> Tahun Renovasi (jika ada)
         </label>
         <input type="number" name="tahunrenovasi" id="tahunrenovasi"
             class="form-control @error('tahunrenovasi') is-invalid @enderror"
@@ -679,7 +681,7 @@
 
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div class="button-baru">
         <strong>Informasi Lokasi Bangunan Gedung Pemohon </strong>
     </div>
@@ -696,7 +698,7 @@
        <!-- RT -->
     <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="rt">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RT
+            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RT
         </label>
         <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
             <option value="" style="font-size: 14px;">-- Pilih RT --</option>
@@ -712,7 +714,7 @@
     <!-- RW -->
     <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="rw">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RW
+            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RW
         </label>
         <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
             <option value="" style="font-size: 16px;">-- Pilih RW --</option>
@@ -727,7 +729,7 @@
 
      <div class="col-md-4" style="margin-top: -40px; margin-bottom: 0px;">
         <label class="form-label d-flex align-items-center" for="kabupaten">
-            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
+            <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
         <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
             <option value="kabupaten blora" selected style="font-size: 14px;">Kabupaten Blora</option>
@@ -744,7 +746,7 @@
 <!-- Kecamatan (dinamis dari controller) -->
 <div class="col-md-4" style="margin-top: 10px; margin-bottom: 0px;">
     <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
     </label>
     <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
         <option value="" style="font-size:14px;">Pilih Kecamatan</option>
@@ -804,7 +806,7 @@
 
 <div style="margin-top: 10px;">
     <label class="form-label d-flex align-items-center" for="alamatlokasi">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
     </label>
     <input type="text" id="alamatlokasi" name="alamatlokasi" placeholder="Lokasi Bangunan Gedung"
         class="form-control @error('alamatlokasi') is-invalid @enderror"
@@ -814,22 +816,32 @@
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
     @enderror
 </div>
-
-<div style="margin-top: 40px; margin-bottom: 40px;" >
+<div style="margin-top: 40px; margin-bottom: 40px;">
     <label class="form-label d-flex align-items-center" for="pengelola">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Pengelola Bangunan Gedung
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i>
+        Pengelola Bangunan Gedung
     </label>
-    <input type="text" id="pengelola" name="pengelola" placeholder="Pengelola Bangunan Gedung"
+
+    <input type="text"
+        id="pengelola"
+        name="pengelola"
+        placeholder="Pengelola Bangunan Gedung"
         class="form-control @error('pengelola') is-invalid @enderror"
         value="{{ old('pengelola') }}"
-        style="margin-bottom: -25px;"/>
+        style="margin-bottom: 5px;"/>
+
+    <!-- Keterangan -->
+    <small style="color: #6c757d;">
+        Keterangan Contoh : <b>Dinas Pekerjaan Umum dan Penataan Ruang</b>
+    </small>
+
     @error('pengelola')
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
     @enderror
 </div>
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 400px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div class="button-baru">
         <strong>Berkas Kelengkapan Dokumen Permohonan Bantuan Teknis  </strong>
     </div>
