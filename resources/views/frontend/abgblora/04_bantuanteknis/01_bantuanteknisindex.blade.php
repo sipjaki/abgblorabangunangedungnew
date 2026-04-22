@@ -856,7 +856,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
         </svg>
-        <span class="text-sm">Surat Permohonan <br> File .pdf Max 10Mb </span>
+        <span class="text-sm">Surat Permohonan <br> File .pdf Max 20Mb </span>
     </label>
 
     <input id="suratpermohonan" name="suratpermohonan" type="file" accept="image/*,application/pdf"
@@ -915,7 +915,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        <span class="text-sm">Kartu Inventaris Barang <br> File .pdf Max 10Mb </span>
+        <span class="text-sm">Kartu Inventaris Barang <br> File .pdf Max 20Mb </span>
     </label>
 
     <input id="kic" name="kic" type="file" accept="application/pdf,image/*"
@@ -988,7 +988,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
         </svg>
-        <span class="text-sm">Foto Kondisi <br>File .pdf Max 10Mb </span>
+        <span class="text-sm">Foto Kondisi <br>File .pdf Max 20Mb </span>
     </label>
     <input id="fotokondisi" name="fotokondisi" type="file" accept="application/pdf"
     class="border border-[#ccc] rounded-md p-2 mb-2 @error('fotokondisi') border-red-500 @enderror"
@@ -1022,7 +1022,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
                 </svg>
-                <span class="text-sm">Rencana Anggaran Biaya <br> File .pdf Max 10Mb </span>
+                <span class="text-sm">Rencana Anggaran Biaya <br> File .pdf Max 20Mb </span>
             </label>
 
             <input id="rab" name="rab" type="file" accept="image/*,application/pdf"
@@ -1042,7 +1042,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span class="text-sm">As Built Drawing <br> File .pdf Max 10Mb </span>
+                <span class="text-sm">As Built Drawing <br> File .pdf Max 20Mb </span>
             </label>
 
             <input id="asbuilt" name="asbuilt" type="file" accept="application/pdf,image/*"

@@ -108,11 +108,11 @@ $validated = $request->validate([
     'kecamatanblora_id' => 'required|string',
     'kelurahandesa_id' => 'nullable|string',
 
-    'suratpermohonan' => 'nullable|file|mimes:pdf|max:15120',
-    'kic' => 'nullable|file|mimes:pdf|max:15120',
-    'fotokondisi' => 'nullable|file|mimes:pdf|max:15120',
-    'rab' => 'nullable|file|mimes:pdf|max:15120',
-    'asbuilt' => 'nullable|file|mimes:pdf|max:15120',
+    'suratpermohonan' => 'nullable|file|mimes:pdf|max:20120',
+    'kic' => 'nullable|file|mimes:pdf|max:20120',
+    'fotokondisi' => 'nullable|file|mimes:pdf|max:20120',
+    'rab' => 'nullable|file|mimes:pdf|max:20120',
+    'asbuilt' => 'nullable|file|mimes:pdf|max:20120',
 
 ], [
     'bujkkonsultan_id.required' => 'Pemohon Wajib Di Isi !.',
