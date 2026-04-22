@@ -1,296 +1,348 @@
-<style>
-    /* Footer utama */
-* {
-    font-family: 'Poppins', sans-serif;
-}
-    .footer-section {
-    /* background-color: #f5f5f5; */
-      background-color: navy; /* dari #f5f5f5 diganti navy */
-    padding: 40px 20px;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-}
-
-/* Container Footer */
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Struktur utama footer */
-.footer-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-/* Bagian kiri dan kanan */
-.footer-left, .footer-right {
-    flex: 1 1 300px; /* min-width 300px untuk responsif */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Logo container */
-.footer-logo-container {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto; /* scroll horizontal jika sempit */
-}
-
-.footer-logo-container img {
-    height: 50px; /* ukuran logo seragam */
-    width: auto;
-    flex-shrink: 0;
-}
-
-/* Judul dan subtitle */
-.footer-title h3 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.subtitle {
-    font-size: 0.9rem;
-    color: white;
-    margin-bottom: 10px;
-}
-
-/* Footer Services */
-.footer-services {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.service-column {
-    flex: 1 1 200px;
-}
-
-.footer-widget-title {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.footer-widget ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-widget ul li {
-    margin-bottom: 5px;
-}
-
-.footer-widget ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 0.9rem;
-}
-
-.footer-widget ul li a:hover {
-    color: navy;
-}
-
-/* Kontak & Peta */
-.contact-info p, .contact-item a {
-    font-size: 0.9rem;
-    margin: 0;
-    color: white;
-    text-decoration: none;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 5px;
-}
-
-.map-container {
-    width: 100%;
-    height: 200px; /* seragam tinggi peta */
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.map-iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .footer-main {
-        flex-direction: column;
-    }
-
-    .footer-services {
-        flex-direction: column;
-    }
-
-    .footer-logo-container {
-        justify-content: flex-start;
-    }
-}
-
-</style>
-    <!-- Footer Section Start -->
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
-        body, .footer-section {
-            font-family: 'Poppins', sans-serif;
+        /* RESET & GLOBAL */
+
+        /* ---- FOOTER UTAMA (BACKGROUND BIRU TUA) ---- */
+        .footer-main-wrapper {
+            background-color: #09146A;  /* biru gelap solid */
+            margin-top: auto;
         }
-        .footer-copyright-area {
-            background-color: #FFD100;
-            padding: 15px 0;
+
+        /* container footer konten */
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px 40px 24px;
         }
-        .copyright-text p {
-            color: black;
+
+        /* FLEX GRID UTAMA */
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        /* KOLOM KIRI & KANAN */
+        .footer-col {
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* ---- LOGO & DESKRIPSI ---- */
+        .logo-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .title-wrapper h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
             margin: 0;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .title-wrapper h3 span {
+            font-weight: 700;
+        }
+
+        .subtitle-badge {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #FFD100;
+            margin-top: 6px;
+            display: inline-block;
+        }
+
+        .desc-text {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+
+        /* LAYANAN & JENIS PERMOHONAN (dua kolom dalam satu area) */
+        .services-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 8px;
+        }
+
+        .service-box {
+            flex: 1 1 180px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid #FFD100;
+            padding-left: 12px;
+        }
+
+        .widget-title i {
+            font-size: 1.2rem;
+            color: #FFD100;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links li a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .footer-links li a:hover {
+            color: #FFD100;
+            transform: translateX(4px);
+        }
+
+        /* ---- KONTAK & PETA (KOLOM KANAN) ---- */
+        .contact-block {
+            margin-bottom: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: #FFD100;
+            font-size: 1.1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .contact-item a, .contact-item span {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            line-height: 1.4;
+        }
+
+        .contact-item a:hover {
+            color: #FFD100;
+            text-decoration: underline;
+        }
+
+        /* MAP CONTAINER */
+        .map-wrapper {
+            margin-top: 6px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 210px;
+            border: 0;
+            display: block;
+        }
+
+        /* COPYRIGHT SECTION (KUNING) */
+        .copyright-bar {
+            background-color: #FFD100;
+            padding: 16px 20px;
             text-align: center;
         }
-        .footer-widget-title {
-            color: white;
+
+        .copyright-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #0a1a3a;
+            letter-spacing: 0.3px;
         }
-        .footer-widget .link a {
-            color: white;
+
+        .copyright-text a {
+            color: #0a1a3a;
             text-decoration: none;
+            font-weight: 600;
         }
-        .footer-widget .link a:hover {
+
+        .copyright-text a:hover {
             text-decoration: underline;
+        }
+
+        /* RESPONSIVE TWEAKS */
+        @media (max-width: 850px) {
+            .footer-container {
+                padding: 40px 20px 32px 20px;
+            }
+            .footer-grid {
+                gap: 36px;
+            }
+            .services-row {
+                gap: 24px;
+            }
+            .widget-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .logo-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .services-row {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .service-box {
+                width: 100%;
+            }
+            .footer-col {
+                flex-basis: 100%;
+            }
+            .map-iframe {
+                height: 190px;
+            }
+            .title-wrapper h3 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
-
 <body>
-<br><br>
-<!-- Footer Section Start -->
-<div class="section footer-section" style="background-color: #09146A; background-size: cover; background-position: center;">
 
-    <!-- Konten Footer -->
-<footer class="footer-section">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Bagian Kiri (Logo, Layanan) -->
-                <div class="footer-left">
-                    <!-- Logo & About Section -->
-                    <div class="footer-about">
-                        <div class="footer-logo-container">
-                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="footer-logo">
-                            <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="footer-logo">
-                        </div>
-                        <div class="footer-title">
-                            <h3 style="font-family: 'Poppins', sans-serif;">
-                                <span class="abg-text" style="font-family: 'Poppins', sans-serif; color:white;" >ABG</span>
-                                <span class="blora-text" style="color: white;">BLORA</span>
-                            </h3>
-                        </div>
-                        <div class="subtitle">BANGUNAN GEDUNG</div>
-                        <p style="color: white;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</p>
+<!-- ========== FOOTER UTAMA (BERSIH & RAPI) ========== -->
+<div class="footer-main-wrapper">
+    <div class="footer-container">
+        <div class="footer-grid">
+
+            <!-- BAGIAN KIRI: Logo, Deskripsi, Layanan & Jenis Permohonan -->
+            <div class="footer-col">
+                <!-- Logo + ABG BLORA -->
+                <div>
+                    <div class="logo-wrapper">
+                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="logo-img" loading="lazy">
+                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="logo-img" loading="lazy">
                     </div>
-
-                    <!-- Services Section -->
-                    <div class="footer-services">
-                        <div class="service-column">
-                                <h4 class="footer-widget-title" style="color: white;">
-                                    <i class="bi bi-gear-fill" style="margin-right: 6px;"></i>
-                                    Layanan Kami
-                                </h4>
-                            <div class="footer-widget">
-                                <ul class="link">
-                                    <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
-                                    <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
-                                    <li><a href="#">Tracking PBG</a></li>
-                                    <li><a href="#">Pendataan Bangunan Gedung</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-column">
-                                <h4 class="footer-widget-title" style="color: white;">
-                                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i>
-                                    Jenis Permohonan
-                                </h4>
-                            <div class="footer-widget">
-                                <ul class="link">
-                                    <li><a href="#">Bantuan Teknis</a></li>
-                                    <li><a href="#">Sosialisasi & Pelatihan</a></li>
-                                    <li><a href="#">Keterangan Rencana Kota (KRK)</a></li>
-                                    <li><a href="#">Penilik Bangunan Gedung</a></li>
-                                    <li><a href="#">SPPD</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="title-wrapper" style="margin-top: 14px;">
+                        <h3>
+                            <span style="color: white;">ABG</span>
+                            <span style="color: white;"> BLORA</span>
+                        </h3>
+                        <div class="subtitle-badge">BANGUNAN GEDUNG</div>
                     </div>
+                    <p class="desc-text">
+                        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah
+                    </p>
                 </div>
 
-                <!-- Bagian Kanan (Kontak & Peta) -->
-                <div class="footer-right">
-                    <!-- Kontak Kami -->
-                    <div class="footer-widget">
-                        <h4 class="footer-widget-title">
-                        <i class="bi bi-telephone-fill" style="margin-right: 6px;"></i>
-                        Kontak Kami
-                    </h4>
-<div class="contact-info">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 6px; color: white;"></i>
-    <span style="color: white;">Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
-</div>
-
-<div class="contact-item">
-    <i class="bi bi-envelope-fill" style="margin-right: 6px; color: white;"></i>
-    <a href="mailto:bid.bangunan.gedung.blora@gmail.com" style="color: white;">bid.bangunan.gedung.blora@gmail.com</a>
-</div>
-
+                <!-- Layanan & Jenis Permohonan (dua kolom) -->
+                <div class="services-row">
+                    <!-- Kolom Layanan Kami -->
+                    <div class="service-box">
+                        <div class="widget-title">
+                            <i class="bi bi-gear-fill"></i> Layanan Kami
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
+                            <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
+                            <li><a href="#">Tracking PBG</a></li>
+                            <li><a href="#">Pendataan Bangunan Gedung</a></li>
+                        </ul>
                     </div>
 
-                    <!-- Google Maps -->
-                    <div class="footer-widget">
-                        <h4 class="footer-widget-title">
-                            <i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i>
-                            Lokasi Kami
-                        </h4>
-                    <div class="map-container">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
-                                class="map-iframe" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                    <!-- Kolom Jenis Permohonan -->
+                    <div class="service-box">
+                        <div class="widget-title">
+                            <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
                         </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Bantuan Teknis</a></li>
+                            <li><a href="#">Sosialisasi & Pelatihan</a></li>
+                            <li><a href="#">Keterangan Rencana Kota (KRK)</a></li>
+                            <li><a href="#">Penilik Bangunan Gedung</a></li>
+                            <li><a href="#">SPPD</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
 
-    <div style="background-color: #FFD100; padding: 15px 0;">
-        <div class="container" style="height: auto;">
-            <div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <div class="copyright-text">
-                            <p style="font-family: 'Poppins', sans-serif; margin: 0; font-size: 14px;">
-                                © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025
-                            </p>
+            <!-- BAGIAN KANAN: Kontak & Peta -->
+            <div class="footer-col">
+                <!-- Kontak -->
+                <div>
+                    <div class="widget-title">
+                        <i class="bi bi-telephone-fill"></i> Kontak Kami
+                    </div>
+                    <div class="contact-block">
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
                         </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:bid.bangunan.gedung.blora@gmail.com">bid.bangunan.gedung.blora@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div>
+                    <div class="widget-title">
+                        <i class="bi bi-geo-alt-fill"></i> Lokasi Kami
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe
+                            class="map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Peta Kantor Dinas PUPR Blora">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <!-- COPYRIGHT AREA (KUNING) -->
+    <div class="copyright-bar">
+        <div class="copyright-text">
+            © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025
+        </div>
+    </div>
 </div>
 
-    <!-- Copyright -->
-<!-- Footer Section End -->
+<!-- Catatan: Tidak ada elemen menggangu, struktur rapi, semua tautan bersih & ikon menggunakan Bootstrap Icons CDN -->
 </body>
 
