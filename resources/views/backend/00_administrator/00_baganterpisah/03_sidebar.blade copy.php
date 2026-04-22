@@ -1,27 +1,17 @@
 <style>
- .app-sidebar {
+    .app-sidebar {
     position: relative;
-
-    /* SCROLL */
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    /* BACKGROUND */
-    background: linear-gradient(135deg, #020243, #020243, #020243);
+    overflow: hidden;
+    background: linear-gradient(135deg, #020243, #020243, #020243); /* navy gelap sesuai gambar */
     background-size: 300% 300%;
     animation: sidebarGradientMove 20s ease infinite;
-
-    /* SIZE & LAYOUT */
     min-height: 100vh;
     width: 280px;
-    padding: 25px 0;
-
-    /* STYLE */
-    color: white;
-    z-index: 1055; /* tetap tinggi biar di atas overlay */
+    z-index: 1;
     box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6),
                 5px 0 20px rgba(0, 0, 0, 0.45);
-
+    padding: 25px 0;
+    color: white;
     transition: left 0.3s ease;
 }
 
