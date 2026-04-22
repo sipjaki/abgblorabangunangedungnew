@@ -217,39 +217,39 @@
                         <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
-        <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-user"></i> Jenis Pengajuan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-user-tie"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-envelope"></i> No Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-calendar"></i> Tanggal Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-toolbox"></i> Nama Paket</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Kategori Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-ruler-combined"></i> Luas Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-landmark"></i> Luas Tanah</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Jumlah Lantai</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-arrows-alt-v"></i> Tinggi Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-water"></i> Bassement</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-user-tag"></i> Kepemilikan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-check"></i> Tahun Pembangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Tahun Renovasi</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-briefcase"></i> Pengelola</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-map-marked-alt"></i> Lokasi Bangunan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house-door"></i> RT</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th> --}}
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Lihat Berkas</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Berita Acara</th>
-            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Pengolahan Data</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Dokumentasi Lapangan</th> --}}
+        <th style="">No</th>
+        <th style=""><i class="bi bi-user"></i> Jenis Pengajuan</th>
+        <th style=""><i class="bi bi-user-tie"></i> Dinas</th>
+        <th style=""><i class="bi bi-phone"></i> Telepon</th>
+        <th style=""><i class="bi bi-envelope"></i> No Surat</th>
+        <th style=""><i class="bi bi-calendar"></i> Tanggal Surat</th>
+        <th style=""><i class="bi bi-toolbox"></i> Nama Paket</th>
+        {{-- <th style=""><i class="bi bi-layer-group"></i> Kategori Bangunan</th>
+        <th style=""><i class="bi bi-ruler-combined"></i> Luas Bangunan</th>
+        <th style=""><i class="bi bi-landmark"></i> Luas Tanah</th>
+        <th style=""><i class="bi bi-building"></i> Jumlah Lantai</th>
+        <th style=""><i class="bi bi-arrows-alt-v"></i> Tinggi Bangunan</th>
+        <th style=""><i class="bi bi-water"></i> Bassement</th>
+        <th style=""><i class="bi bi-user-tag"></i> Kepemilikan</th>
+        <th style=""><i class="bi bi-calendar-check"></i> Tahun Pembangunan</th>
+        <th style=""><i class="bi bi-tools"></i> Tahun Renovasi</th>
+        <th style=""><i class="bi bi-briefcase"></i> Pengelola</th>
+        <th style=""><i class="bi bi-map-marked-alt"></i> Lokasi Bangunan</th>
+            <th style=""><i class="bi bi-house-door"></i> RT</th>
+            <th style=""><i class="bi bi-house"></i> RW</th>
+            <th style=""><i class="bi bi-geo-alt"></i> Kabupaten</th>
+            <th style=""><i class="bi bi-geo"></i> Kecamatan</th>
+            <th style=""><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
+            <th style=""><i class="bi bi-envelope-paper"></i> Surat Permohonan</th> --}}
+            <th style=""><i class="bi bi-check2-circle"></i> Lihat Berkas</th>
+            <th style=""><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
+            <th style=""><i class="bi bi-eye"></i> Berita Acara</th>
+            {{-- <th style=""><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
+            <th style=""><i class="bi bi-cpu"></i> Pengolahan Data</th>
+            <th style=""><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
+            <th style=""><i class="bi bi-journal-check"></i> Dokumentasi Lapangan</th> --}}
             @can('superadmin')
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+            <th style=""><i class="bi bi-tools"></i> Aksi</th>
             @endcan
 
     </tr>

@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -131,20 +85,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -153,7 +95,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -211,7 +153,7 @@ th {
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="luasbangunan">
+        <label class="form-label-modern" for="luasbangunan">
             <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
         </label>
         <input
@@ -227,7 +169,7 @@ th {
         @enderror
     </div>
     <div class="mb-3">
-    <label class="form-label" for="luastanahtotal">
+    <label class="form-label-modern" for="luastanahtotal">
         <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Tanah Total (m²)
     </label>
     <input
@@ -244,7 +186,7 @@ th {
 </div>
 
 <div class="mb-3">
-    <label class="form-label" for="jumlahlantai">
+    <label class="form-label-modern" for="jumlahlantai">
         <i class="bi bi-layers" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
     </label>
     <select
@@ -264,7 +206,7 @@ th {
     @enderror
 </div>
 <div class="mb-3">
-    <label class="form-label" for="tinggibangunan">
+    <label class="form-label-modern" for="tinggibangunan">
         <i class="bi bi-arrow-up-short" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (meter)
     </label>
     <input
@@ -287,7 +229,7 @@ th {
 
 <div class="col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="suratpermohonan">
+        <label class="form-label-modern" for="suratpermohonan">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Surat Permohonan (PDF)
         </label>
         <input
@@ -321,7 +263,7 @@ th {
     </div>
 
     <div class="mb-3">
-        <label class="form-label" for="kic">
+        <label class="form-label-modern" for="kic">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Kartu Identitas Bangunan (PDF)
         </label>
         <input
@@ -362,7 +304,7 @@ th {
 
 <div class="col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="fotokondisi">
+        <label class="form-label-modern" for="fotokondisi">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Foto Kondisi (PDF)
         </label>
         <input
