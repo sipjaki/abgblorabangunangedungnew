@@ -237,8 +237,6 @@
             }
         }
     </style>
-</head>
-<body>
 
 <!-- ========== FOOTER UTAMA (BERSIH & RAPI) ========== -->
 <div class="footer-main-wrapper">
