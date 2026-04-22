@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -130,20 +84,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -183,7 +125,7 @@ th {
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -213,16 +155,16 @@ th {
 
 <div style="display: flex; justify-content: flex-end;">
 
-    @canany(['superadmin', 'admin', 'dinas'])
+    {{-- @canany(['superadmin', 'admin', 'dinas'])
 
     <a href="/datapermohonandinas" class="button-berkas" style="color: black; margin-right:5px; text-decoration: none; display: inline-flex; align-items: center;">
         <i class="bi bi-bar-chart-line" style="margin-right: 5px;"></i> Statistika
     </a>
-    @endcanany
+    @endcanany --}}
 
 
                                 <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
-                                    class="button-baru" style="color: black;">
+                                    class="button-berkas" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
@@ -230,7 +172,7 @@ th {
              {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-baru" type="button"
+        <button class="button-modern" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -276,23 +218,23 @@ th {
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-ruler-combined"></i> Luas Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Jumlah Lantai</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-arrows-alt-v"></i> Tinggi Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-water"></i> Bassement</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tag"></i> Kepemilikan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Tahun Pembangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Tahun Renovasi</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Pengelola</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-map-marked-alt"></i> Lokasi Bangunan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-user"></i> Jenis Pengajuan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-user-tie"></i> Dinas</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-phone"></i> Telepon</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-envelope"></i> No Surat</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-calendar"></i> Tanggal Surat</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-toolbox"></i> Nama Paket</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Kategori Bangunan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-ruler-combined"></i> Luas Bangunan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-landmark"></i> Luas Tanah</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Jumlah Lantai</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-arrows-alt-v"></i> Tinggi Bangunan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-water"></i> Bassement</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-user-tag"></i> Kepemilikan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-check"></i> Tahun Pembangunan</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Tahun Renovasi</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-briefcase"></i> Pengelola</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-map-marked-alt"></i> Lokasi Bangunan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-house-door"></i> RT</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
@@ -342,8 +284,8 @@ th {
 
             <td style="text-align: center;">
                 <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
             <!-- Tombol KTP -->
@@ -351,8 +293,8 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
             </td>
 
@@ -361,10 +303,10 @@ th {
 
 <td style="text-align: center;">
     <button type="button"
-        class="button-baru"
+        class="button-modern"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas{{ $item->id }}">
-        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Berkas
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
     </button>
 </td>
 
