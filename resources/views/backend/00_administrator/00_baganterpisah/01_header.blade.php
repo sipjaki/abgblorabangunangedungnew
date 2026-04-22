@@ -4,19 +4,14 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{{$title}}</title>
+    <title>Sistem Informasi Penyelenggaraan Bangunan Gedung Kabupaten Blora</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"/>
     <meta name="author" content="CV. Angkasa Raya Teknik" />
-    <meta
-      name="description"
-      content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"
-    />
-    <meta
-      name="keywords"
-      content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"
-    />
+    <meta name="title" content="Sistem Informasi Penyelenggaraan Bangunan Gedung"/>
+    <meta property="og:title" content="Sistem Informasi Penyelenggaraan Bangunan Gedung">
+    <meta property="og:description" content="Aplikasi resmi Kabupaten Blora untuk pengelolaan Bangunan Gedung">
+
     <!--end::Primary Meta Tags-->
     <!--begin::Fonts-->
     <link

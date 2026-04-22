@@ -1310,8 +1310,8 @@ function previewFile(input, previewId) {
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  {{-- @include('frontend.abgblora.00_fiturmenu.03_footer') --}}
-  @include('frontend.ui2026.00_fiturmenu.02_footer')
+
+  @include('frontend.abgblora.00_fiturmenu.03_footer')
 
   <!-- back to top start -->
   <div class="progress-wrap">
