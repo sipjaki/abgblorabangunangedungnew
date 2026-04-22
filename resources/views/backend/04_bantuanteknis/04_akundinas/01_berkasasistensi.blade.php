@@ -221,8 +221,9 @@
         <th style=""><i class="bi bi-user"></i> Jenis Pengajuan</th>
         <th style=""><i class="bi bi-user-tie"></i> Dinas</th>
         <th style=""><i class="bi bi-phone"></i> Telepon</th>
-        <th style=""><i class="bi bi-envelope"></i> No Surat</th>
-        <th style=""><i class="bi bi-calendar"></i> Tanggal Surat</th>
+        <th style=""><i class="bi bi-phone"></i> Kategori Bangunan</th>
+        {{-- <th style=""><i class="bi bi-envelope"></i> No Surat</th>
+        <th style=""><i class="bi bi-calendar"></i> Tanggal Surat</th> --}}
         <th style=""><i class="bi bi-toolbox"></i> Nama Paket</th>
         {{-- <th style=""><i class="bi bi-layer-group"></i> Kategori Bangunan</th>
         <th style=""><i class="bi bi-ruler-combined"></i> Luas Bangunan</th>
@@ -261,8 +262,9 @@
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
-            <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
+            <td>{{ $item->kategoribangunan ?? '-' }}</td>
+            {{-- <td>{{ $item->nosurat ?? '-' }}</td>
+            <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td> --}}
             <td>{{ $item->namapaket ?? '-' }}</td>
             {{-- <td>{{ $item->kategoribangunan ?? '-' }}</td>
             <td>{{ $item->luasbangunan ?? '-' }} m²</td>
