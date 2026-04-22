@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
       style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -111,7 +65,7 @@ th {
 
          @canany(['konsultanbantek'])
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-    <button class="button-newvalidasi"
+    <button class="button-modern"
             type="button"
             onclick="location.href='{{ url()->previous() }}';"
             style="cursor: pointer; color:black;">
@@ -123,7 +77,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -135,7 +89,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -147,7 +101,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantuanteknisassistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -663,7 +617,7 @@ th {
     </tr>
     <tr>
         <td style="text-align: center;">2</td>
-        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat DPUPR</td>
+        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat Ke DPUPR</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->nosurat ?? '-' }}</td>
     </tr>

@@ -1,22 +1,18 @@
 <style>
-    /* Fix 1: Ganti overflow hidden & naikkan z-index */
-.app-sidebar {
+    .app-sidebar {
     position: relative;
-    overflow-y: auto;   /* ganti dari hidden ke auto */
-    overflow-x: hidden;
-    z-index: 1055;      /* harus lebih tinggi dari overlay AdminLTE */
-}
-
-/* Fix 2: Tambahkan pointer-events: none pada ::before */
-.app-sidebar::before {
-    content: '';
-    position: absolute;
-    pointer-events: none; /* ← TAMBAHKAN INI */
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    /* ... sisa style */
+    overflow: hidden;
+    background: linear-gradient(135deg, #020243, #020243, #020243); /* navy gelap sesuai gambar */
+    background-size: 300% 300%;
+    animation: sidebarGradientMove 20s ease infinite;
+    min-height: 100vh;
+    width: 280px;
+    z-index: 1;
+    box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6),
+                5px 0 20px rgba(0, 0, 0, 0.45);
+    padding: 25px 0;
+    color: white;
+    transition: left 0.3s ease;
 }
 
     /* Animasi background */
@@ -32,6 +28,22 @@
         }
     }
 
+    /* Efek shimmer */
+    .app-sidebar::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 25%,
+            rgba(255, 209, 0, 0.1) 50%,
+            transparent 75%
+        );
+        animation: shimmer 5s infinite linear;
+    }
 
     @keyframes shimmer {
         0% {
@@ -42,17 +54,22 @@
         }
     }
 
-/* Fix 3: Pastikan ::after juga tidak menghalangi */
-.app-sidebar::after {
-    pointer-events: none; /* ← TAMBAHKAN INI */
-}
-
-/* Fix 4: Tambahkan z-index pada nav agar di atas animasi */
-.sidebar-wrapper {
-    position: relative;
-    z-index: 10;
-}
-
+    /* Border aksen kuning */
+    .app-sidebar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            #ffd100,
+            transparent
+        );
+        animation: borderGlow 3s ease-in-out infinite;
+    }
 
     @keyframes borderGlow {
         0%, 100% {
@@ -2005,11 +2022,3 @@ Menu Sementara
           }
         });
       </script>
-
-<script>
-    /* Fix 5: Tambahkan pointer-events none pada container animasi */
-const container = document.createElement('div');
-container.className = 'floating-3d-container';
-container.style.pointerEvents = 'none'; // ← TAMBAHKAN INI
-
-</script>

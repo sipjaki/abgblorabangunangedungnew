@@ -1758,3 +1758,7 @@ public function bujkkontraktorshow($namalengkap)
 
 </td>
 </tr>
+
+
+<div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')

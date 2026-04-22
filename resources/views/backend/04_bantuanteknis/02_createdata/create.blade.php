@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -132,20 +86,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 
@@ -154,7 +96,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -200,14 +142,14 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
+                                    <div class="form-modern col-md-6">
 
                                         {{-- Input Hidden bantuanteknis_id --}}
                                         <input type="hidden" name="bantuanteknis_id" value="{{ $data->id }}">
 
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="kegiatan">
+                                            <label class="form-label-modern" for="kegiatan">
                                                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
                                             </label>
                                             <input type="text" id="kegiatan" name="kegiatan" class="form-control @error('kegiatan') is-invalid @enderror" value="{{ old('kegiatan') }}" />
@@ -216,7 +158,7 @@ th {
                                             @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="tanggalkegiatan">
+                                            <label class="form-label-modern" for="tanggalkegiatan">
                                                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
     </label>
     <input type="date" id="tanggalkegiatan" name="tanggalkegiatan" class="form-control @error('tanggalkegiatan') is-invalid @enderror" value="{{ old('tanggalkegiatan') }}" />
@@ -227,7 +169,7 @@ th {
 
 
                                 <div class="mb-3">
-                                    <label class="form-label" for="foto1">
+                                    <label class="form-label-modern" for="foto1">
                                         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 1
                                     </label>
                                     <input type="file" id="foto1" name="foto1" accept="image/*" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage(event, 'imagePreview1')" />
@@ -242,7 +184,7 @@ th {
                                 </div>
 
                                 <div class="mb-3">
-    <label class="form-label" for="foto2">
+    <label class="form-label-modern" for="foto2">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 2
     </label>
     <input type="file" id="foto2" name="foto2" accept="image/*" class="form-control @error('foto2') is-invalid @enderror" onchange="previewImage(event, 'imagePreview2')" />
@@ -257,7 +199,7 @@ th {
 </div>
 
 <div class="mb-3">
-    <label class="form-label" for="foto3">
+    <label class="form-label-modern" for="foto3">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 3
     </label>
     <input type="file" id="foto3" name="foto3" accept="image/*" class="form-control @error('foto3') is-invalid @enderror" onchange="previewImage(event, 'imagePreview3')" />
@@ -273,10 +215,10 @@ th {
 </div>
 
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 
 <div class="mb-3">
-    <label class="form-label" for="foto4">
+    <label class="form-label-modern" for="foto4">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 4
     </label>
     <input type="file" id="foto4" name="foto4" accept="image/*" class="form-control @error('foto4') is-invalid @enderror" onchange="previewImage(event, 'imagePreview4')" />
@@ -291,7 +233,7 @@ th {
 </div>
 
 <div class="mb-3">
-    <label class="form-label" for="foto5">
+    <label class="form-label-modern" for="foto5">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 5
     </label>
     <input type="file" id="foto5" name="foto5" accept="image/*" class="form-control @error('foto5') is-invalid @enderror" onchange="previewImage(event, 'imagePreview5')" />
@@ -307,7 +249,7 @@ th {
 
 
 <div class="mb-3">
-    <label class="form-label" for="foto6">
+    <label class="form-label-modern" for="foto6">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 6
     </label>
     <input type="file" id="foto6" name="foto6" accept="image/*" class="form-control @error('foto6') is-invalid @enderror" onchange="previewImage(event, 'imagePreview6')" />
@@ -352,7 +294,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-hijau" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>

@@ -214,7 +214,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
