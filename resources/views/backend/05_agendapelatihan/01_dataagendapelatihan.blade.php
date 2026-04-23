@@ -180,7 +180,6 @@
 <th><i class="bi bi-tags"></i> Informasi Pelatihan</th>
 <th><i class="bi bi-check-circle"></i> Status Penutupan</th>
 <th><i class="bi bi-people"></i> Informasi Kegiatan</th>
-<th><i class="bi bi-file-text"></i> Isi Agenda</th>
 <th style="width:300px;"><i class="bi bi-image"></i> Foto</th>
 <th><i class="bi bi-envelope-open"></i> Surat Undangan</th>
 <th><i class="bi bi-file-earmark-text"></i> Materi</th>
