@@ -203,7 +203,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
-<td><span style="font-weight:400;">Kategori :</span>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
+<td><span style="font-weight:400;">Kategori : </span>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
 <br>
 <span style="font-weight:400;">Kegiatan :</span>
  @if($item->namakegiatan)

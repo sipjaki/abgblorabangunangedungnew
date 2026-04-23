@@ -948,7 +948,7 @@ public function bebantuanteknisassistensi(Request $request)
 
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
 
-    return view('backend.04_bantuanteknis.01_berkaspemohon.05_berkaspemohonasistensi', [
+    return view('backend.04_bantuanteknis.01_berkaspemohon.05_newberkaspemohonasistensi', [
         'title' => 'Permohonan Asistensi Bantuan Teknis',
         'data'  => $berkasbantek,
         'user'  => $user,
