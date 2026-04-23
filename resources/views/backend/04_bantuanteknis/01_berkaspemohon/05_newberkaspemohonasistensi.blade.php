@@ -208,7 +208,7 @@
                                  <td>{{ $loop->iteration }}</td>
             {{-- <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td> --}}
             <td><span style="font-weight:400;">Dinas Pemohon: </span>{{ $item->dinas->name ?? '-' }} <br>
-                    <span style="font-weight:400;">Konsultan Asistensi : {{ $item->bujkkonsultan->user->name ?? '-' }}</span> <br>
+                    <span style="font-weight:400;">Konsultan Asistensi : </span>{{ $item->bujkkonsultan->user->name ?? '-' }} <br>
                         <span style="font-weight:400;">Nama Paket : </span>{{ $item->namapaket ?? '-' }}
             </td>
 
@@ -274,10 +274,7 @@
     type="submit"
     name="validasiberkas1"
     value="lolos"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
+    class="button-hijau">
     <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
 </button>
 
@@ -286,10 +283,7 @@
     type="submit"
     name="validasiberkas1"
     value="dikembalikan"
-    style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';"
->
+    class="button-merah">
     <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
 </button>
 
@@ -361,10 +355,7 @@
     type="submit"
     name="validasiberkas2"
     value="sudah"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
+    class="button-hijau">
     <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
 </button>
 
@@ -373,10 +364,7 @@
     type="submit"
     name="validasiberkas2"
     value="belum"
-    style="background-color: #ff0000; color: black; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
->
+    class="button-merah">
     <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
 </button>
 
@@ -388,9 +376,7 @@
 <button
     type="button"
     onclick="closeModal2()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
+    class="button-modern"
 >
     <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
 </button>
@@ -455,10 +441,7 @@
     type="submit"
     name="validasiberkas3"
     value="sudah"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
+    class="button-hijau">
     <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
 </button>
 
@@ -466,10 +449,7 @@
     type="submit"
     name="validasiberkas3"
     value="belum"
-    style="background-color: #ff0000; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
->
+    class="button-merah">
     <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
 </button>
 
@@ -482,10 +462,7 @@
 <button
     type="button"
     onclick="closeModal3()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
->
+        class="button-modern">
     <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
 </button>
 
@@ -515,8 +492,6 @@
         <button
             class="button-hijau"
             type="button"
-            style="background-color: #10B981; color: black;"
-            {{-- cursor: not-allowed; --}}
             disabled
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
@@ -547,9 +522,7 @@
                 type="submit"
                 name="validasiberkas4"
                 value="sudah"
-                style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
+                class="button-hijau"
             >
                 <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Terbitkan
             </button>
@@ -559,10 +532,7 @@
                 type="submit"
                 name="validasiberkas4"
                 value="belum"
-                style="background-color: #ff0000; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
-            >
+                class="button-merah">
                 <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Tidak
             </button>
         </form>
@@ -573,10 +543,8 @@
         <button
             type="button"
             onclick="closeModal4()"
-            style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
-        >
+            class="button-modern"
+            >
             <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
         </button>
     </div>
@@ -598,7 +566,7 @@
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
-                    class="button-modern">
+                    class="button-berkas">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
             </td>
