@@ -183,10 +183,11 @@
                             <thead>
                                   <tr>
       <th><i class="bi bi-list-ol"></i> No</th>
-<th><i class="bi bi-file-earmark-text"></i> Jenis Pengajuan</th>
+{{-- <th><i class="bi bi-file-earmark-text"></i> Jenis Pengajuan</th> --}}
 <th><i class="bi bi-person"></i> Pemohon</th>
-<th><i class="bi bi-person-badge"></i> Konsultan</th>
-<th><i class="bi bi-telephone"></i> Telepon</th>
+<th><i class="bi bi-person-badge"></i> Konsultan </th>
+<th><i class="bi bi-person-badge"></i> Nama Paket</th>
+{{-- <th><i class="bi bi-telephone"></i> Telepon</th> --}}
 <th><i class="bi bi-envelope-paper"></i> Permohonan</th>
 <th><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
 <th><i class="bi bi-cpu"></i> Cek Berkas Perencanaan</th>
@@ -205,10 +206,11 @@
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-            <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->dinas->username ?? '-' }}</td>
+            {{-- <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td> --}}
+            <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
-            <td>{{ $item->no_telepon ?? '-' }}</td>
+            <td>{{ $item->namapaket ?? '-' }}</td>
+            {{-- <td>{{ $item->no_telepon ?? '-' }}</td> --}}
             {{-- <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
