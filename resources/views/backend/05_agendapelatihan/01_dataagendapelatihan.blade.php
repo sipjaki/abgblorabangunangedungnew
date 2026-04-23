@@ -177,15 +177,9 @@
                             <thead>
                                   <tr>
 <th>No</th>
-<th><i class="bi bi-tags"></i> Kategori Pelatihan</th>
-<th><i class="bi bi-person"></i> User Input</th>
-<th><i class="bi bi-easel2"></i> Nama Kegiatan</th>
-<th><i class="bi bi-check-circle"></i> Status</th>
-<th><i class="bi bi-calendar-x"></i> Tanggal Penutupan</th>
-<th><i class="bi bi-calendar-check"></i> Waktu Pelaksanaan</th>
-<th><i class="bi bi-people"></i> Jumlah Peserta</th>
-<th><i class="bi bi-geo-alt"></i> Lokasi</th>
-<th><i class="bi bi-info-circle"></i> Keterangan</th>
+<th><i class="bi bi-tags"></i> Informasi Pelatihan</th>
+<th><i class="bi bi-check-circle"></i> Status Penutupan</th>
+<th><i class="bi bi-people"></i> Informasi Kegiatan</th>
 <th><i class="bi bi-file-text"></i> Isi Agenda</th>
 <th style="width:300px;"><i class="bi bi-image"></i> Foto</th>
 <th><i class="bi bi-envelope-open"></i> Surat Undangan</th>
@@ -199,11 +193,12 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
-<td>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</td>
-<td>{{ $item->user->name ?? '-' }}</td>
-
-<td style="text-align: justify">
-    @if($item->namakegiatan)
+<td style="text-align: left;"><span style="font-weight:500;">Kategori :</span> {{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
+<br>
+<span style="font-weight:500;">Admin DPUPR : </span>{{ $item->user->name ?? '-' }}>
+<br>
+<span style="font-weight:500;">Nama Kegiatan : </span>
+@if($item->namakegiatan)
         @foreach(array_chunk(explode(' ', $item->namakegiatan), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
         @endforeach
@@ -212,7 +207,8 @@
     @endif
 </td>
 
-<td>
+
+<td style="text-align: center;">
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
         <span class="button-merah py-2 px-3 fs-6">
             <i class="bi bi-lock-fill me-1"></i> Ditutup
@@ -222,32 +218,28 @@
             <i class="bi bi-unlock me-1"></i> Dibuka
         </span>
     @endif
+    <br>
+        <span style="font-weight:500;">Penutupan : </span>
+        {{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}
+        <br>
+        <span style="font-weight:500;">Pelaksanaan : </span>
+        {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}
 </td>
 
 
-<td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}</td>
 
-<td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}</td>
-<td>{{ $item->jumlahpeserta ?? '-' }}</td>
-<td style="text-align: left;">{{ $item->lokasi ?? '-' }}</td>
-<td style="text-align: justify">
-    @if($item->keterangan)
-        @foreach(array_chunk(explode(' ', $item->keterangan), 5) as $chunk)
-            {{ implode(' ', $chunk) }}<br>
-        @endforeach
-    @else
-        -
-    @endif
-</td>
-
-<td style="text-align: justify;">
-    @if($item->isiagenda)
-        @foreach(array_chunk(explode(' ', $item->isiagenda), 5) as $chunk)
-            {{ implode(' ', $chunk) }}<br>
-        @endforeach
-    @else
-        -
-    @endif
+<td style="text-align: left;">
+    <span style="font-weight:500;">Peserta : </span> {{ $item->jumlahpeserta ?? '-' }} Orang <br>
+       <span style="font-weight:500;">Lokasi  : </span>{{ $item->lokasi ?? '-' }} <br>
+            <span style="font-weight:500;">Keterangan  : </span>
+            @if($item->isiagenda)
+                @foreach(array_chunk(explode(' ', $item->isiagenda), 5) as $chunk)
+                    {{ implode(' ', $chunk) }}<br>
+                @endforeach
+            @else
+                -
+            @endif
+            <br>
 </td>
 
 <td>
