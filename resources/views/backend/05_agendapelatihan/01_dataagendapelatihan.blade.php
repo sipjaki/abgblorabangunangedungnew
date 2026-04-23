@@ -192,7 +192,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
-<td style="text-align: left;"><span style="font-weight:500;">Kategori :</span> {{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
+<td style="text-align: left;">Kategori : <strong>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</strong>
 <br>
 <span style="font-weight:500;">Admin DPUPR : </span>{{ $item->user->name ?? '-' }}>
 <br>

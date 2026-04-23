@@ -21,7 +21,7 @@ public function beagendapelatihanabg(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 3);
 
     $query = agendapelatihanabg::query();
 
