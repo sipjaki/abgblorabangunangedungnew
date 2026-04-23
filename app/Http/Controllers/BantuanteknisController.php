@@ -85,27 +85,27 @@ $validated = $request->validate([
 
     // 'nosurat' => 'nullable|string|max:255',
     'tanggalsurat' => 'nullable|date',
-    'nama_pemohon' => 'required|string|max:255',
-    'no_telepon' => 'required|string|max:20',
+    'nama_pemohon' => 'nullable|string|max:255',
+    'no_telepon' => 'nullable|string|max:20',
 
     'nosuratdinas' => 'nullable|string|max:255',
     'namapaket' => 'nullable|string|max:255',
-    'kategoribangunan' => 'required|string|max:255',
-    'luasbangunan' => 'required|numeric',
-    'luastanahtotal' => 'required|numeric',
-    'jumlahlantai' => 'required|integer',
-    'tinggibangunan' => 'required|numeric',
+    'kategoribangunan' => 'nullable|string|max:255',
+    'luasbangunan' => 'nullable|numeric',
+    'luastanahtotal' => 'nullable|numeric',
+    'jumlahlantai' => 'nullable|integer',
+    'tinggibangunan' => 'nullable|numeric',
     'bassement' => 'nullable|string',
     'kepemilikan' => 'nullable|string|max:255',
     'tahunpembangunan' => 'nullable|digits:4|integer',
     'tahunrenovasi' => 'nullable|digits:4|integer',
 
-    'pengelola' => 'required|string|max:255',
+    'pengelola' => 'nullable|string|max:255',
     'alamatlokasi' => 'nullable|string',
     'rt' => 'nullable|string|max:10',
     'rw' => 'nullable|string|max:10',
-    'kabupaten' => 'required|string|max:255',
-    'kecamatanblora_id' => 'required|string',
+    'kabupaten' => 'nullable|string|max:255',
+    'kecamatanblora_id' => 'nullable|string',
     'kelurahandesa_id' => 'nullable|string',
 
     'suratpermohonan' => 'nullable|file|mimes:pdf|max:20120',
@@ -259,11 +259,11 @@ $validated = $request->validate([
     $bantek->kecamatanblora_id = $validated['kecamatanblora_id'] ?? null;
     $bantek->kelurahandesa_id = $validated['kelurahandesa_id'] ?? null;
 
-    $bantek->suratpermohonan = $suratpermohonanPath;
-    $bantek->kic = $kicPath;
-    $bantek->fotokondisi = $fotokondisiPath;
-    $bantek->rab = $rabPath;
-    $bantek->asbuilt = $asbuiltPath;
+    $bantek->suratpermohonan = $suratpermohonanPath ?? null;
+    $bantek->kic = $kicPath ?? null;
+    $bantek->fotokondisi = $fotokondisiPath ?? null;
+    $bantek->rab = $rabPath ?? null;
+    $bantek->asbuilt = $asbuiltPath ?? null;
 
     $bantek->save();
 
