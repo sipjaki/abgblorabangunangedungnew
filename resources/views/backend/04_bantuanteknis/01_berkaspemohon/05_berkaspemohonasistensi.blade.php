@@ -206,7 +206,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->nama_pemohon ?? '-' }}</td>
+            <td>{{ $item->dinas->username ?? '-' }}</td>
             <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
             {{-- <td>{{ $item->dinas->name ?? '-' }}</td>
