@@ -898,7 +898,7 @@ public function bebantuanteknisassistensi(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 8);
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {

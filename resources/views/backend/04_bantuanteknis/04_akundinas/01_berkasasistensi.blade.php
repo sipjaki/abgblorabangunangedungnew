@@ -218,10 +218,10 @@
                             <thead>
                                   <tr>
         <th style="">No</th>
-        <th style=""><i class="bi bi-user"></i> Jenis Pengajuan</th>
-        <th style=""><i class="bi bi-user-tie"></i> Dinas</th>
+        <th style=""><i class="bi bi-user"></i> Informasi Permohonan </th>
+        {{-- <th style=""><i class="bi bi-user-tie"></i> Dinas</th>
         <th style=""><i class="bi bi-phone"></i> Telepon</th>
-        <th style=""><i class="bi bi-phone"></i> Kategori Bangunan</th>
+        <th style=""><i class="bi bi-phone"></i> Kategori Bangunan</th> --}}
         {{-- <th style=""><i class="bi bi-envelope"></i> No Surat</th>
         <th style=""><i class="bi bi-calendar"></i> Tanggal Surat</th> --}}
         <th style=""><i class="bi bi-toolbox"></i> Nama Paket</th>
@@ -259,10 +259,11 @@
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-            <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->dinas->name ?? '-' }}</td>
-            <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->kategoribangunan ?? '-' }}</td>
+            <td><span style="font-weight:400;">Permohonan : </span>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }} <br>
+                    <span style="font-weight:400;">Dinas : </span>{{ $item->dinas->name ?? '-' }} <br>
+                    <span style="font-weight:400;">Telepon PIC : </span>{{ $item->no_telepon ?? '-' }} <br>
+                    <span style="font-weight:400;">Kategori Bangunan : </span>{{ $item->kategoribangunan ?? '-' }} <br>
+            </td>
             {{-- <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td> --}}
             <td>{{ $item->namapaket ?? '-' }}</td>
