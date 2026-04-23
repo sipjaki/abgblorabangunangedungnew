@@ -178,9 +178,9 @@
      <th style="">No</th>
 
      {{-- <th style=""><i class="fas fa-book"></i> Materi Pelatihan</th> --}}
-<th style=""><i class="fas fa-tags"></i> Kategori Pelatihan</th>
+<th style=""><i class="fas fa-tags"></i> Informasi Pelatihan</th>
 {{-- <th style=""><i class="fas fa-user"></i> User Input</th> --}}
-<th style=""><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
+{{-- <th style=""><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th> --}}
 <th style=""><i class="fas fa-chalkboard-teacher"></i> Status</th>
 <th style=""><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
 {{-- <th style=""><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th> --}}
@@ -203,11 +203,10 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
-<td>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</td>
-{{-- <td>{{ $item->user->name ?? '-' }}</td> --}}
-
-<td style="text-align: justify">
-    @if($item->namakegiatan)
+<td><span style="font-weight:400;">Kategori :</span>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
+<br>
+<span style="font-weight:400;">Kegiatan :</span>
+ @if($item->namakegiatan)
         @foreach(array_chunk(explode(' ', $item->namakegiatan), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
         @endforeach
@@ -215,6 +214,7 @@
         -
     @endif
 </td>
+{{-- <td>{{ $item->user->name ?? '-' }}</td> --}}
 
 <td>
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())

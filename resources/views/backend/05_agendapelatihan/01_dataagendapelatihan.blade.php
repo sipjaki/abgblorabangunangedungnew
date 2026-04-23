@@ -192,11 +192,11 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
-<td style="text-align: left;">Kategori : <strong>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</strong>
+<td style="text-align: left;"><span style="font-weight:400;">Kategori :</span> {{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}
 <br>
-<span style="font-weight:500;">Admin DPUPR : </span>{{ $item->user->name ?? '-' }}>
+<span style="font-weight:400;">Admin DPUPR : </span>{{ $item->user->name ?? '-' }}>
 <br>
-<span style="font-weight:500;">Nama Kegiatan : </span>
+<span style="font-weight:400;">Nama Kegiatan : </span>
 @if($item->namakegiatan)
         @foreach(array_chunk(explode(' ', $item->namakegiatan), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
@@ -218,19 +218,19 @@
         </span>
     @endif
     <br>
-        <span style="font-weight:500;">Penutupan : </span>
+        <span style="font-weight:400;">Penutupan : </span>
         {{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}
         <br>
-        <span style="font-weight:500;">Pelaksanaan : </span>
+        <span style="font-weight:400;">Pelaksanaan : </span>
         {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}
 </td>
 
 
 
 <td style="text-align: left;">
-    <span style="font-weight:500;">Peserta : </span> {{ $item->jumlahpeserta ?? '-' }} Orang <br>
-       <span style="font-weight:500;">Lokasi  : </span>{{ $item->lokasi ?? '-' }} <br>
-            <span style="font-weight:500;">Keterangan  : </span>
+    <span style="font-weight:400;">Peserta : </span> {{ $item->jumlahpeserta ?? '-' }} Orang <br>
+       <span style="font-weight:400;">Lokasi  : </span>{{ $item->lokasi ?? '-' }} <br>
+            <span style="font-weight:400;">Keterangan  : </span>
             @if($item->isiagenda)
                 @foreach(array_chunk(explode(' ', $item->isiagenda), 5) as $chunk)
                     {{ implode(' ', $chunk) }}<br>
