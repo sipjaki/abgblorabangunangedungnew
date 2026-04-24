@@ -633,9 +633,9 @@ public function beasistensishow($id)
 
     // 🔒 OPTIONAL (tapi sangat disarankan)
     // Cegah user lain akses data orang lain
-    if ($data->user_id != $user->id) {
-        abort(403, 'Tidak punya akses');
-    }
+    // if ($data->user_id != $user->id) {
+    //     abort(403, 'Tidak punya akses');
+    // }
 
     // 📄 Return view
     return view('backend.04_bantuanteknis.01_berkaspemohon.06_berkasasistensishow', [
