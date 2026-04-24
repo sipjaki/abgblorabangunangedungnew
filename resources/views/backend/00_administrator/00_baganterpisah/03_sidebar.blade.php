@@ -420,7 +420,8 @@
 
             @endcan
 
-            @canany(['dinas', 'pemohon'])
+            {{-- @canany(['dinas', 'pemohon']) --}}
+            @canany(['dinas'])
 
             <li class="nav-header" style="color: white;">Dashboard Bantek</li>
 

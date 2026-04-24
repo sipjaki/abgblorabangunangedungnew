@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas PUPR Kabupaten Blora</title>
+
+<!-- SEO DESCRIPTION -->
+<meta name="description" content="Portal resmi Sistem Penyelenggaraan Bangunan Gedung Kabupaten Blora yang dikelola oleh Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora. Sistem ini menyediakan informasi pembangunan bangunan gedung, layanan PBG (Persetujuan Bangunan Gedung), SLF (Sertifikat Laik Fungsi), pemeliharaan bangunan, analisa kerusakan bangunan, serta berbagai layanan teknis bangunan gedung yang mendukung kebijakan Kementerian PUPR Republik Indonesia dan pembangunan di Jawa Tengah.">
+
+<!-- SEO KEYWORDS -->
+<meta name="keywords" content="
+bangunan gedung,
+penyelenggaraan bangunan gedung,
+bangunan gedung indonesia,
+bangunan gedung jawa tengah,
+pembangunan jawa tengah,
+pembangunan kabupaten blora,
+data bangunan gedung,
+sistem informasi bangunan gedung,
+konstruksi bangunan,
+konstruksi bangunan gedung,
+pbg persetujuan bangunan gedung,
+slf sertifikat laik fungsi,
+simbg bangunan gedung,
+penyelenggaraan bangunan gedung kabupaten blora,
+dinas pekerjaan umum dan penataan ruang kabupaten blora,
+dinas pupr blora,
+kementerian pekerjaan umum dan perumahan rakyat,
+kementerian pupr republik indonesia,
+pembongkaran bangunan gedung negara,
+peneliti kontrak bangunan gedung,
+penyusutan bangunan gedung,
+tingkat analisa kerusakan bangunan gedung,
+pemeliharaan bangunan gedung,
+konstruksi bangunan pemerintah,
+pendampingan serah terima pekerjaan,
+personil tim teknis bangunan gedung,
+pengawasan bangunan gedung,
+layanan teknis bangunan gedung,
+database bangunan gedung indonesia,
+statistik bangunan gedung nasional
+">
+
+<meta name="author" content="Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Indonesian">
+<meta name="revisit-after" content="7 days">
+
+<!-- CANONICAL -->
+<link rel="canonical" href="{{ url()->current() }}">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Sistem Penyelenggaraan Bangunan Gedung Kabupaten Blora">
+<meta property="og:description" content="Portal resmi data dan informasi bangunan gedung Kabupaten Blora yang dikelola oleh Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora serta mendukung kebijakan Kementerian PUPR Republik Indonesia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:image" content="/assets/abgblora/logo/logokabupatenblora.png">
+
+<!-- TWITTER SEO -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sistem Penyelenggaraan Bangunan Gedung Kabupaten Blora">
+<meta name="twitter:description" content="Portal resmi informasi bangunan gedung Kabupaten Blora yang dikelola oleh Dinas PUPR Kabupaten Blora.">
+<meta name="twitter:image" content="/assets/abgblora/logo/logokabupatenblora.png">
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link href="/assets/android/output.css" rel="stylesheet">
+
+<link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<title>{{$title}}</title>
+
+</head>
+
+
+<body class="font-poppins text-[#070625]">
+  <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
+  <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
+  <img
+  src="/assets/android/iconmenu/temabaru.png"
+  class="absolute top-0 left-0 w-full h-[20vh] object-cover rounded-bl-[38px] rounded-br-[38px]"
+  alt="backgrounds"
+  loading="lazy"
+/>
+
+      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
+<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
+  <!-- Logo Kiri -->
+  <a href="signup.html" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
+    </div>
+  </a>
+
+  <!-- Teks Tengah -->
+  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
+        ABG Blora Bangunan Gedung
+      </p> --}}
+      <div class="flex items-center justify-center sm:justify-start">
+        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
+          Dinas Pekerjaan Umum Dan
+          <br> Penataan Ruang <br> Kabupaten Blora
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo Kanan -->
+  <a href="" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
+    </div>
+  </a>
+</nav>
+      </div>
+    </header>
+
+    @include('frontend.android.00_fiturmenu.04_menunavigasi')
+<div id="Promo" class="promo-section">
+    <div class="promo-header">
+        <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
+        <a href="#" class="promo-link">Lihat Semua</a>
+    </div>
+
+    <div class="promo-carousel">
+    @forelse ($agendapelatihan as $item)
+        <div class="promo-card">
+            <div class="card-image-container">
+                <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
+                <div class="card-overlay"></div>
+                <div class="card-badge">
+                    {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
+                </div>
+            </div>
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 12px; text-align: center;">
+    <!-- Nama Kegiatan -->
+    <h3 class="card-title"
+        style="font-size: 16px; font-weight: 600; color: #222; margin-bottom: 12px; font-family: 'Poppins', sans-serif;">
+        {{ $item->namakegiatan }}
+    </h3>
+
+    <!-- Tombol -->
+    @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
+        <a href="{{ route('daftaragenda', $item->id) }}" style="text-decoration: none; width: 100%;">
+            <button class="button-modern"
+                style="display: flex; align-items: center; justify-content: center; gap: 6px;
+                       width: 100%; padding: 8px 16px; border-radius: 8px;
+                       background-color: navy; color: black; font-weight: bold;
+                       font-size: 14px; transition: 0.3s;">
+                <i class="bi bi-pencil-square" style="font-size: 16px;"></i> <span style="color:black;"></span> Daftar
+            </button>
+        </a>
+    @else
+        <button class="button-dikembalikan"
+            style="display: flex; align-items: center; justify-content: center; gap: 6px;
+                   width: 100%; padding: 8px 16px; border-radius: 8px;
+                   background-color: #dc3545; color: white; font-weight: bold;
+                   font-size: 14px;" disabled>
+            <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
+        </button>
+    @endif
+</div>
+
+        </div>
+    @empty
+        <div style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border: 2px dashed #ced4da;
+            border-radius: 12px;
+            font-size: 16px;
+            animation: fadeIn 0.5s ease-in-out;
+        ">
+            <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+            Belum Ada Agenda Sosialisasi !
+        </div>
+    @endforelse
+</div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</div>
+
+<style>
+
+.promo-section {
+  margin: 1.5rem 0;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  color: white;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: url("/assets/android/iconmenu/temabaru.png") no-repeat center center;
+  background-size: cover;
+}
+
+.promo-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 90, 170, 0.85) 0%,   /* Biru Persib utama */
+    rgba(0, 120, 215, 0.85) 50%, /* Biru cerah */
+    rgba(80, 170, 255, 0.85) 100% /* Biru muda */
+  );
+  z-index: 0;
+}
+
+
+.promo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.promo-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.promo-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.promo-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  scrollbar-width: none;
+}
+
+.promo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.promo-card {
+  min-width: 280px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-container {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.promo-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(24,40,72,0.8) 0%, rgba(24,40,72,0) 50%);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.9);
+  color: #182848;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 1rem;
+  background: white;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #182848;
+  margin: 0 0 0.25rem 0;
+}
+
+.card-description {
+  font-size: 0.8rem;
+  color: #5a6a8a;
+  margin: 0;
+  line-height: 1.4;
+}
+</style>
+
+{{-- <div id="NewsPromo" class="news-section">
+  <div class="news-header">
+    <h6 class="news-title" style="font-size: 16px;">Berita Bangunan Gedung</h6>
+    <a href="#" class="news-link">Lihat Semua</a>
+  </div>
+<div class="news-carousel">
+  @forelse ($data as $item)
+    <div class="news-card">
+      <div class="news-image-container">
+        @if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
+            <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+        @elseif ($item->foto)
+            <img src="{{ asset($item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+        @else
+            <img src="/assets/android/thumbnails/default.png" class="news-image" alt="Default Berita" loading="lazy" />
+        @endif
+
+        <div class="news-overlay"></div>
+      </div>
+
+      <div class="news-content">
+        <div class="news-meta">
+          <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
+        </div>
+        <h3 class="news-headline">{{ $item->judulberita }}</h3>
+        <p class="news-excerpt">{{ Str::limit($item->keterangan, 100, '...') }}</p>
+      </div>
+    </div>
+  @empty
+    <div style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        font-size: 16px;
+        animation: fadeIn 0.5s ease-in-out;
+    ">
+        <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+        Belum Ada Berita di Terbitkan !
+    </div>
+  @endforelse
+</div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+</div> --}}
+
+{{-- <div id="NewsPromo" class="news-section">
+  <div class="news-header">
+    <h6 class="news-title" style="font-size: 16px;">Artikel Bangunan Gedung </h6>
+    <a href="#" class="news-link">Lihat Semua</a>
+  </div>
+
+<div class="news-carousel">
+  @forelse ($dataartikel as $item)
+    <div class="news-card">
+      <div class="news-pdf-container" style="width: 100%; height: 200px; margin-bottom: 12px;">
+        @if ($item->berkas1 && file_exists(public_path($item->berkas1)))
+          <iframe src="{{ asset($item->berkas1) }}"
+                  style="width: 100%; height: 100%; border: none;"
+                  loading="lazy"></iframe>
+        @elseif ($item->berkas1)
+          <iframe src="{{ asset($item->berkas1) }}"
+                  style="width: 100%; height: 100%; border: none;"
+                  loading="lazy"></iframe>
+        @else
+          <div style="
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 500;
+              font-family: 'Poppins', sans-serif;
+              color: #6c757d;
+              background-color: #f8f9fa;
+              border: 1px dashed #ced4da;
+              border-radius: 8px;
+          ">
+              <i class="bi bi-file-earmark-pdf" style="margin-right: 6px; font-size: 18px; color: #dc3545;"></i>
+              Tidak ada berkas PDF
+          </div>
+        @endif
+      </div>
+
+      <div class="news-content">
+        <div class="news-meta">
+          <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
+        </div>
+        <h3 class="news-headline">{{ $item->judul }}</h3>
+      </div>
+    </div>
+  @empty
+    <div style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        font-size: 16px;
+        animation: fadeIn 0.5s ease-in-out;
+    ">
+        <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+        Belum Ada Artikel di Terbitkan !
+    </div>
+  @endforelse
+</div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</div> --}}
+
+
+<style>
+.news-section {
+  margin: 1.5rem 0;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  color: white;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: url("/assets/android/iconmenu/temabaru.png") no-repeat center center;
+  background-size: cover;
+}
+
+.news-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 90, 170, 0.85),
+    rgba(0, 120, 215, 0.85),
+    rgba(80, 170, 255, 0.85)
+  );
+  z-index: 0;
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.news-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.news-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.news-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.news-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  scrollbar-width: none;
+}
+
+.news-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.news-card {
+  min-width: 280px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image-container {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+.news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(24,40,72,0.8) 0%, rgba(24,40,72,0) 50%);
+}
+
+.news-content {
+  padding: 1rem;
+  background: white;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.news-category {
+  background: #4041DA;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.news-date {
+  color: #6b7280;
+  align-self: center;
+}
+
+.news-headline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #182848;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.news-excerpt {
+  font-size: 0.8rem;
+  color: #5a6a8a;
+  margin: 0;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+</style>
+
+
+    <br><br>
+
+
+  </section>
+
+
+
+<div id="Feature" class="px-[18px] relative z-10" style="margin-top: -125px;">
+    {{-- <div
+  class="relative p-[18px_16px] rounded-xl overflow-hidden grid grid-cols-4 gap-[27px]"
+  style="
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+      url('/assets/android/iconmenu/bgbaru.png') no-repeat center/cover;
+  "
+> --}}
+<div
+  class="relative p-[18px_16px] rounded-xl overflow-hidden grid grid-cols-4 gap-[27px]"
+  style="background: #ffffff;"
+>
+
+        <a href="/respbgslfindex">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            {{-- <img src="/assets/android/menunavigasi/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy"> --}}
+            <img src="/assets/android/menunavigasi/NEW01.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">PBG/SLF</p>
+        </div>
+      </a>
+      {{-- <a href="/resbgtracking">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/0002.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Tracking</p>
+        </div>
+      </a> --}}
+      <a href="/bependataanbangunangedung">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW02.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Pendataan</p>
+        </div>
+      </a>
+      <a href="/resbantekindex">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW03.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantek</p>
+        </div>
+      </a>
+      <a href="/resagendaabg">
+      {{-- <a href="/ressosialisasiabg"> --}}
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW04.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Sosialisasi</p>
+        </div>
+      </a>
+      <a href="/permohonankrkusaha">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW05.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
+        </div>
+      </a>
+      <a href="/rescarigsb">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">GSB</p>
+        </div>
+      </a>
+      <a href="/resmbrgambarindex">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">MBR</p>
+        </div>
+      </a>
+      <a href="/feformbantuangambar">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan <br> Gambar</p>
+        </div>
+      </a>
+
+      {{-- <a href="/404">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/10.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Hibah</p>
+        </div>
+      </a> --}}
+
+      {{-- <a href="/404">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/pelatihan.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Pelatihan</p>
+        </div>
+      </a> --}}
+
+      {{-- <a href="#">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/012.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">SPPD</p>
+        </div>
+      </a> --}}
+
+      <a href="/web">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Dekstop</p>
+        </div>
+      </a>
+
+      <a href="/404">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW010.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">QnA</p>
+        </div>
+      </a>
+
+      <a href="/404">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+            <img src="/assets/android/menunavigasi/NEW011.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+          </div>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Kontak Kami</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+
+
+<div id="popular-fundrising" class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
+
+    <div class="px-4 flex justify-center items-center" style="display: flex; justify-content: center; align-items: center;" style="margin-top:40px;">
+        <div class="w-10 h-10 flex justify-center items-center shrink-0">
+            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" width="1%" style="margin-right: 6px;">
+            <img src="/assets/abgblora/logo/pupr.png" alt="icon" width="1%">
+          </div>
+
+    </div>
+
+    <div class="flex justify-center items-center">
+
+    </div>
+
+    <div class="px-4 mt-[5px] text-center">
+        <h2 class="font-semibold text-sm text-stone-800 leading-snug">
+          Dinas Pekerjaan Umum Dan Penataan Ruang <br>
+          Kabupaten Blora Provinsi Jawa Tengah
+        </h2>
+      </div>
+
+      <a href="#" class="block text-center mt-2">
+        <h6 class="font-semibold text-sm text-stone-600">
+          dpuprblora @2026
+        </h6>
+      </a>
+
+</div>
+
+
+<div id="Menu-bar" style="position: fixed; bottom: 24px; left: 0; right: 0; z-index: 30; margin-bottom: -25px; max-width: 640px; width: 100%; margin-left: auto; margin-right: auto; padding: 0 16px; background-color: white; display: flex; justify-content: space-between; align-items: center; border-radius: 24px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; height: 72px;">
+
+  <!-- Dashboard -->
+  <a href="/dashboard" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Dashboard</small>
+  </a>
+
+  <!-- Tracking -->
+  {{-- <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Tracking</small>
+  </a> --}}
+
+  <!-- Home (Center Button) -->
+  <a href="/" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; transform: translateY(-24px); text-decoration: none;">
+    <div style="width: 56px; height: 56px; display: flex; justify-content: center; align-items: center; background-color: #1B3358; border-radius: 50%; box-shadow: 0 4px 12px rgba(27,51,88,0.3); color: white;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    {{-- <small style="font-size: 11px; margin-top: 4px; color: #1B3358;">Beranda</small> --}}
+  </a>
+
+  <!-- Informasi -->
+  {{-- <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Informasi</small>
+  </a> --}}
+
+  <!-- Settings -->
+  <a href="/404" id="settings-icon" class="nav-icon" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Pengaturan</small>
+  </a>
+
+  <!-- Login -->
+  <a href="/login" id="login-icon" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+        <polyline points="10 17 15 12 10 7"></polyline>
+        <line x1="15" y1="12" x2="3" y2="12"></line>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Login</small>
+  </a>
+
+</div>
+
+<script>
+  const poppinsFont = document.createElement('link');
+  poppinsFont.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+  poppinsFont.rel = 'stylesheet';
+  document.head.appendChild(poppinsFont);
+
+  window.onload = function () {
+    const isLoggedIn = false; // ubah sesuai status login
+    document.getElementById('settings-icon').style.display = isLoggedIn ? 'flex' : 'none';
+    document.getElementById('login-icon').style.display = isLoggedIn ? 'none' : 'flex';
+  };
+</script>
+
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+  <script src="/assets/android/js/carousel.js"></script>
+</body>
+</html>
