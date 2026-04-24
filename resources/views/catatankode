@@ -1766,3 +1766,13 @@ public function bujkkontraktorshow($namalengkap)
 
 
 @include('frontend.ui2026.00_fiturmenu.02_footer')
+
+
+try {
+        $id = decrypt($id);
+    } catch (\Exception $e) {
+        abort(404);
+    }
+
+
+    encrypt($item->id)

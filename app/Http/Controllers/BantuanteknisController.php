@@ -600,21 +600,52 @@ public function bebantuanteknisberkasshow($id)
     ]);
 }
 
+// public function beasistensishow($id)
+// {
+//     // Cari data berdasarkan ID
+//     $data = bantuanteknis::findOrFail($id);
+
+//     // Ambil data user yang sedang login
+//     $user = Auth::user();
+
+//     // Tampilkan ke view dengan key-value
+//     return view('backend.04_bantuanteknis.01_berkaspemohon.06_berkasasistensishow', [
+//         'title' => 'Berkas Permohonan Asistensi Penyelenggaraan Bangunan Gedung',
+//         'data' => $data,
+//         'user' => $user
+//     ]);
+// }
+
 public function beasistensishow($id)
 {
-    // Cari data berdasarkan ID
+    // 🔐 Decrypt ID
+    try {
+        $id = decrypt($id);
+    } catch (\Exception $e) {
+        abort(404);
+    }
+
+    // 🔎 Ambil data
     $data = bantuanteknis::findOrFail($id);
 
-    // Ambil data user yang sedang login
+    // 👤 User login
     $user = Auth::user();
 
-    // Tampilkan ke view dengan key-value
+    // 🔒 OPTIONAL (tapi sangat disarankan)
+    // Cegah user lain akses data orang lain
+    if ($data->user_id != $user->id) {
+        abort(403, 'Tidak punya akses');
+    }
+
+    // 📄 Return view
     return view('backend.04_bantuanteknis.01_berkaspemohon.06_berkasasistensishow', [
         'title' => 'Berkas Permohonan Asistensi Penyelenggaraan Bangunan Gedung',
         'data' => $data,
         'user' => $user
     ]);
 }
+
+
 
 
 

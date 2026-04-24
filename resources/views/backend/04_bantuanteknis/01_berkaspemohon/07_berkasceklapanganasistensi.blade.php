@@ -107,7 +107,7 @@
                         @canany(['konsultanbantek'])
 <button class="button-baru" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';">
-    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
+    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi Asistensi
 </button>
 
    <a href="{{ url('/beakunkonsultanasistensi') }}"
@@ -121,7 +121,7 @@
 <button class="button-baru" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
-    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
+    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi Asistensi
 </button>
 
 <a href="{{ url('/bebantuanteknisassistensi') }}" class="button-modern" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
