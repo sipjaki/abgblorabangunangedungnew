@@ -146,7 +146,8 @@
             flex-shrink: 0;
         }
 
-        .contact-item a, .contact-item span {
+        .contact-item a,
+        .contact-item span {
             color: rgba(255,255,255,0.9);
             text-decoration: none;
             line-height: 1.4;
@@ -237,110 +238,107 @@
             }
         }
     </style>
+</head>
+<body>
 
-<!-- ========== FOOTER UTAMA (BERSIH & RAPI) ========== -->
-<div class="footer-main-wrapper">
-    <div class="footer-container">
-        <div class="footer-grid">
+    <!-- ========== FOOTER UTAMA (BERSIH & RAPI) ========== -->
+    <div class="footer-main-wrapper">
+        <div class="footer-container">
+            <div class="footer-grid">
 
-            <!-- BAGIAN KIRI: Logo, Deskripsi, Layanan & Jenis Permohonan -->
-            <div class="footer-col">
-                <!-- Logo + ABG BLORA -->
-                <div>
-                    <div class="logo-wrapper">
-                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="logo-img" loading="lazy">
-                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="logo-img" loading="lazy">
+                <!-- BAGIAN KIRI: Logo, Deskripsi, Layanan & Jenis Permohonan -->
+                <div class="footer-col">
+                    <!-- Logo + ABG BLORA -->
+                    <div>
+                        <div class="logo-wrapper">
+                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="logo-img" loading="lazy">
+                            <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="logo-img" loading="lazy">
+                        </div>
+                        <div class="title-wrapper" style="margin-top: 14px;">
+                            <h3>
+                                <span style="color: white;">ABG</span>
+                                <span style="color: white;"> BLORA</span>
+                            </h3>
+                            <div class="subtitle-badge">BANGUNAN GEDUNG</div>
+                        </div>
+                        <p class="desc-text">
+                            Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah
+                        </p>
                     </div>
-                    <div class="title-wrapper" style="margin-top: 14px;">
-                        <h3>
-                            <span style="color: white;">ABG</span>
-                            <span style="color: white;"> BLORA</span>
-                        </h3>
-                        <div class="subtitle-badge">BANGUNAN GEDUNG</div>
+
+                    <!-- Layanan & Jenis Permohonan (dua kolom) -->
+                    <div class="services-row">
+                        <!-- Kolom Layanan Kami -->
+                        <div class="service-box">
+                            <div class="widget-title">
+                                <i class="bi bi-gear-fill"></i> Layanan Kami
+                            </div>
+                            <ul class="footer-links">
+                                <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
+                                <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
+                                <li><a href="#">Tracking PBG</a></li>
+                                <li><a href="#">Pendataan Bangunan Gedung</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Kolom Jenis Permohonan -->
+                        <div class="service-box">
+                            <div class="widget-title">
+                                <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
+                            </div>
+                            <ul class="footer-links">
+                                <li><a href="#">Bantuan Teknis</a></li>
+                                <li><a href="#">Sosialisasi & Pelatihan</a></li>
+                                <li><a href="#">Keterangan Rencana Kota (KRK)</a></li>
+                                <li><a href="#">Penilik Bangunan Gedung</a></li>
+                                <li><a href="#">SPPD</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <p class="desc-text">
-                        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah
-                    </p>
                 </div>
 
-                <!-- Layanan & Jenis Permohonan (dua kolom) -->
-                <div class="services-row">
-                    <!-- Kolom Layanan Kami -->
-                    <div class="service-box">
+                <!-- BAGIAN KANAN: Kontak & Peta -->
+                <div class="footer-col">
+                    <!-- Kontak -->
+                    <div>
                         <div class="widget-title">
-                            <i class="bi bi-gear-fill"></i> Layanan Kami
+                            <i class="bi bi-telephone-fill"></i> Kontak Kami
                         </div>
-                        <ul class="footer-links">
-                            <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
-                            <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
-                            <li><a href="#">Tracking PBG</a></li>
-                            <li><a href="#">Pendataan Bangunan Gedung</a></li>
-                        </ul>
+                        <div class="contact-block">
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <a href="mailto:bid.bangunan.gedung.blora@gmail.com">bid.bangunan.gedung.blora@gmail.com</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Kolom Jenis Permohonan -->
-                    <div class="service-box">
+                    <!-- Google Maps -->
+                    <div>
                         <div class="widget-title">
-                            <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
+                            <i class="bi bi-geo-alt-fill"></i> Lokasi Kami
                         </div>
-                        <ul class="footer-links">
-                            <li><a href="#">Bantuan Teknis</a></li>
-                            <li><a href="#">Sosialisasi & Pelatihan</a></li>
-                            <li><a href="#">Keterangan Rencana Kota (KRK)</a></li>
-                            <li><a href="#">Penilik Bangunan Gedung</a></li>
-                            <li><a href="#">SPPD</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BAGIAN KANAN: Kontak & Peta -->
-            <div class="footer-col">
-                <!-- Kontak -->
-                <div>
-                    <div class="widget-title">
-                        <i class="bi bi-telephone-fill"></i> Kontak Kami
-                    </div>
-                    <div class="contact-block">
-                        <div class="contact-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
+                        <div class="map-wrapper">
+                            <iframe class="map-iframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Peta Kantor Dinas PUPR Blora">
+                            </iframe>
                         </div>
-                        <div class="contact-item">
-                            <i class="bi bi-envelope-fill"></i>
-                            <a href="mailto:bid.bangunan.gedung.blora@gmail.com">bid.bangunan.gedung.blora@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Google Maps -->
-                <div>
-                    <div class="widget-title">
-                        <i class="bi bi-geo-alt-fill"></i> Lokasi Kami
-                    </div>
-                    <div class="map-wrapper">
-                        <iframe
-                            class="map-iframe"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Peta Kantor Dinas PUPR Blora">
-                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- COPYRIGHT AREA (KUNING) -->
-    <div class="copyright-bar">
-        <div class="copyright-text">
-            © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025
+        <!-- COPYRIGHT AREA (KUNING) -->
+        <div class="copyright-bar">
+            <div class="copyright-text">
+                © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2026
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Catatan: Tidak ada elemen menggangu, struktur rapi, semua tautan bersih & ikon menggunakan Bootstrap Icons CDN -->
-</body>
-
