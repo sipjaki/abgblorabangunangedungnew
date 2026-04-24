@@ -236,7 +236,7 @@
 
 
             <td style="text-align: center;">
-                <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
+                <a href="{{ route('beasistensishowberkas1.show', encrypt($item->id)) }}"
                     class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
