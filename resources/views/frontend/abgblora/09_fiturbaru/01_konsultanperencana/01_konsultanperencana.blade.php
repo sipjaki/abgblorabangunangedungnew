@@ -237,7 +237,7 @@
             @enderror
         </div>
     </div>
-
+    <br><br>
     <div class="form-modern col-md-12" style="margin-top: -10px;">
         <div>
             <label class="form-label-modern d-flex align-items-center" for="rw">
@@ -318,7 +318,7 @@
                 style="text-decoration:none;">
 
                 <i class="bi bi-file-earmark-arrow-down" style="margin-right:6px;"></i>
-                Download Contoh Surat Permohonan
+                <span style="color: red">Download Contoh Surat Permohonan</span>
             </a>
         </div>
     </label>
