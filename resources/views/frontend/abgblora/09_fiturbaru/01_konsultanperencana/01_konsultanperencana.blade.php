@@ -167,7 +167,7 @@
 
 
 
-<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
+<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:100px;">
 
 
   </section>
@@ -294,31 +294,59 @@
         @enderror
     </div>
 
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
 
-        <div class="flex flex-col w-1/3" style="margin-top: -40px;">
-        <!-- Label Upload -->
-        <label for="tandatangan" class="font-semibold text-[#030303] flex items-start gap-2 mb-2">
-            <!-- Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 mt-1" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+    <label for="cadangan6" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
 
-            <!-- Text Label dan Link Download -->
-        <div class="flex flex-col text-sm font-poppins">
-            <span>Upload Surat Permohonan | Max 20 MB</span>
-            <a href="/assets/abgblora/logo/Permohonan_Konsultan_Perencana_Teknis.docx"
-            download
-            class="button-berkas mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out"
-            style="color: red; text-decoration: none; display: inline-block; text-align: center;">
-            <i class="bi bi-file-earmark-arrow-down" style="margin-right: 6px;"></i>
-            Download Contoh Surat Permohonan
-            </a>
+        <span class="text-sm">
+            Company Profile Badan Usaha | File <br> .pdf | Max 20 MB
+        </span>
+    </label>
 
-        </div>
+    <!-- INPUT -->
+    <input
+        id="cadangan6"
+        name="cadangan6"
+        type="file"
+        accept="application/pdf,image/*"
+        value="{{ old('cadangan6') }}"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('cadangan6') border-red-500 @enderror"
+        onchange="previewFile(this, 'cadangan6Preview')"
+    />
+
+    <!-- PREVIEW -->
+    <div id="cadangan6Preview" class="mt-1">
+
+        @if(session('cadangan6_temp'))
+            <div class="mt-1 text-sm text-gray-700">
+                <a href="{{ Storage::url(session('cadangan6_temp')) }}" target="_blank" class="text-blue-500 underline">
+                    Lihat File
+                </a>
+            </div>
+
+        @elseif(old('cadangan6'))
+            <div class="mt-1 text-sm text-gray-700">
+                File sudah dipilih: {{ old('cadangan6') }}
+            </div>
+
+        @endif
 
     </div>
+
+    <!-- ERROR -->
+    @error('cadangan6')
+        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">
+            {{ $message }}
+        </div>
+    @enderror
+
+</div>
+
+
+
 
 </div>
 
