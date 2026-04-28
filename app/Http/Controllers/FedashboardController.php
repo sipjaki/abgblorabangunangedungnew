@@ -31,18 +31,14 @@ use Illuminate\Support\Facades\Auth;
 
 class FedashboardController extends Controller
 {
-    public function index()
+        public function index()
     {
-
         $user = Auth::user();
-        $databerita = beritaabg::all();
-        $dataartikel = artikelabg::all();
-        $agendapelatihan = agendapelatihanabg::all();
 
+        $databerita = beritaabg::latest()->get();
+        $dataartikel = artikelabg::latest()->get();
+        $agendapelatihan = agendapelatihanabg::latest()->get();
 
-        // return view('/404', [
-        // return view('frontend.00_full.index', [
-        // return view('frontend.abgblora.00_beranda.01_beranda', [
         return view('frontend.android.01_halamanutama.index', [
             'title' => 'Penyelenggaraan Bangunan Gedung Kabupaten Blora | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
             'user' => $user,
