@@ -813,8 +813,8 @@ public function perkonsultanperencana(Request $request)
             'cadangan3' => 'required|string|max:255',
             'cadangan4' => 'required|string|max:255',
 
-            'cadangan5' => 'nullable|file|mimes:pdf|max:20048',
-            'cadangan6' => 'nullable|file|mimes:pdf|max:20048',
+            'cadangan5' => 'required|file|mimes:pdf|max:20048',
+            'cadangan6' => 'required|file|mimes:pdf|max:20048',
 
             ], [
             // Custom error messages

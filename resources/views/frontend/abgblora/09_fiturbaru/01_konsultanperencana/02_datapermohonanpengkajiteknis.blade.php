@@ -191,134 +191,124 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 <td style="text-align: left;">
-    <span style="font-weight: 500px;">Nama Badan Usaha : </span>{{ $item->cadangan1 ?? '-' }} <br>
-    <span style="font-weight: 500px;">Nama Direktur Utama : </span>{{ $item->cadangan2 ?? '-' }} <br>
-    <span style="font-weight: 500px;">No Telp : </span>{{ $item->cadangan3 ?? '-' }} <br>
+    <span style="font-weight: 400px;">Nama Badan Usaha : </span>{{ $item->cadangan1 ?? '-' }} <br>
+    <span style="font-weight: 400px;">Nama Direktur Utama : </span>{{ $item->cadangan2 ?? '-' }} <br>
+    <span style="font-weight: 400px;">No Telp : </span>{{ $item->cadangan3 ?? '-' }} <br>
 </td>
 
 <td style="text-align: left;">
     {{ $item->cadangan4 ?? '-' }}
 </td>
-{{-- Subklasifikasi --}}
+
+
 <td style="text-align: center;">
+    <button type="button"
+        class="button-modern"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas{{ $item->id }}">
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+    </button>
+</td>
 
-    <style>
-        .modal-custom {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-}
+<!-- Modal -->
+<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
+<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
+        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+   <div style="margin-top: 10px;">
+    @php
+        $berkasPath = public_path('storage/' . $item->cadangan5);
+        $isFileExists = $item->cadangan5 && file_exists($berkasPath);
+    @endphp
 
-.modal-content-custom {
-    background: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    width: 400px;
-    border-radius: 12px;
-    position: relative;
-    animation: fadeIn 0.3s ease;
-}
-
-.card-berkas {
-    padding: 15px;
-    border-radius: 10px;
-    background: #f9fafb;
-}
-
-.close-btn {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-    </style>
-<div id="modalBerkas" class="modal-custom">
-    <div class="modal-content-custom">
-
-        <span class="close-btn" onclick="closeModalBerkas()">&times;</span>
-
-        <div class="card-berkas">
-            <h4>Company Profile Badan Usaha</h4>
-            <p id="isiBerkas"></p>
-        </div>
-
-    </div>
+    @if ($isFileExists)
+        <!-- Menampilkan PDF dari storage -->
+        <iframe
+            src="{{ asset('storage/' . $item->cadangan5) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @elseif ($item->cadangan5)
+        <!-- Menampilkan PDF dari path luar storage -->
+        <iframe
+            src="{{ asset($item->cadangan5) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 20px; color: red;">Belum Ada Company Profile Badan Usaha !</p>
+    @endif
 </div>
 
-<script>
-function openModalBerkas(data) {
-    document.getElementById('isiBerkas').innerText = data ?? '-';
-    document.getElementById('modalBerkas').style.display = 'block';
-}
-
-function closeModalBerkas() {
-    document.getElementById('modalBerkas').style.display = 'none';
-}
-
-// klik luar modal = close
-window.onclick = function(event) {
-    let modal = document.getElementById('modalBerkas');
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
-</td>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <td style="text-align: center;">
-
-    <!-- BUTTON -->
-    <button class="button-modern"
-        onclick="openModalBerkas6('{{ $item->cadangan6 }}')">
-        {{ $item->cadangan6 ?? '-' }}
+    <button type="button"
+        class="button-modern"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas1{{ $item->id }}">
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
     </button>
-
-    <!-- MODAL -->
-    <div id="modalBerkas6" class="modal-custom">
-        <div class="modal-content-custom">
-
-            <span class="close-btn" onclick="closeModalBerkas6()">&times;</span>
-
-            <div class="card-berkas">
-                <h4>Surat Permohonan Konsultan Perencana</h4>
-                <p id="isiBerkas6"></p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SCRIPT -->
-    <script>
-    function openModalBerkas6(data) {
-        document.getElementById('isiBerkas6').innerText = data ?? '-';
-        document.getElementById('modalBerkas6').style.display = 'block';
-    }
-
-    function closeModalBerkas6() {
-        document.getElementById('modalBerkas6').style.display = 'none';
-    }
-
-    // klik luar modal
-    window.addEventListener('click', function(event) {
-        let modal = document.getElementById('modalBerkas6');
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-    </script>
-
 </td>
+
+<!-- Modal -->
+<div class="modal fade" id="modalLihatBerkas1{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
+<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
+        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+   <div style="margin-top: 10px;">
+    @php
+        $berkasPath = public_path('storage/' . $item->cadangan6);
+        $isFileExists = $item->cadangan5 && file_exists($berkasPath);
+    @endphp
+
+    @if ($isFileExists)
+        <!-- Menampilkan PDF dari storage -->
+        <iframe
+            src="{{ asset('storage/' . $item->cadangan6) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @elseif ($item->cadangan6)
+        <!-- Menampilkan PDF dari path luar storage -->
+        <iframe
+            src="{{ asset($item->cadangan6) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
+    @endif
+</div>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             @can('superadmin')
 
