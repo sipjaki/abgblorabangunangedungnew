@@ -166,7 +166,7 @@
   </section>
 
 
- <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: 300px;">
+ <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: 100px;">
 
      <div class="flex flex-col gap-5 w-full" style="margin-top: -25px;">
 

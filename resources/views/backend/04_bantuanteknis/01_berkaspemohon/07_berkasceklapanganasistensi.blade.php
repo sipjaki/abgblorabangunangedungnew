@@ -168,9 +168,9 @@
 <th style=" width:400px;"><i class="bi bi-image"></i> Foto 1</th>
 <th style=" width:400px;"><i class="bi bi-image"></i> Foto 2</th>
 <th style=" width:400px;"><i class="bi bi-image"></i> Foto 3</th>
-<th style=" width:400px;"><i class="bi bi-image"></i> Foto 4</th>
+{{-- <th style=" width:400px;"><i class="bi bi-image"></i> Foto 4</th>
 <th style=" width:400px;"><i class="bi bi-image"></i> Foto 5</th>
-<th style=" width:400px;"><i class="bi bi-image"></i> Foto 6</th>
+<th style=" width:400px;"><i class="bi bi-image"></i> Foto 6</th> --}}
 @canany(['superadmin', 'admin'])
 <th style=" width:150px;"><i class="bi bi-tools"></i> Aksi</th>
 @endcanany
@@ -186,7 +186,7 @@
         <td>{{ $item->kegiatan }}</td>
 <td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 
-@foreach(range(1,6) as $i)
+@foreach(range(1,3) as $i)
     <td style="text-align:center; vertical-align:middle; width:120px;">
         @php
             $foto = $item->{'foto'.$i} ?? null;
