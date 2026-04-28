@@ -77,7 +77,7 @@ return new class extends Migration
             // $table->string('validasi3')->nullable();
             // $table->string('validasi4')->nullable();
 
-            $table->string('cadanganbantek1')->nullable();
+            $table->string('cadanganbantek1')->nullable(); // PERUBAHAN FITUR UNTUK MENAMBAHKAN TANGGAL SELESAI BERITA ACARA
             $table->string('cadanganbantek2')->nullable();
             $table->string('cadanganbantek3')->nullable();
             $table->string('cadanganbantek4')->nullable();

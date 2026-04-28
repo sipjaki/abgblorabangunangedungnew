@@ -1005,17 +1005,23 @@ public function bebantuanteknislapanganuploadnew($id)
 
 public function bebantuanteknislapanganberkas(Request $request, $id)
 {
-    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+    $bantek = bantuanteknis::findOrFail($id);
 
-    // Validasi
+    // VALIDASI
     $request->validate([
-        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+        'cadanganbantek1' => 'required|date',
+        'uploadsuratbantek' => 'required|mimes:pdf|max:20048',
     ], [
+        'cadanganbantek1.required' => 'Tanggal Selesai wajib diisi!',
         'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
         'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
-        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 20MB.',
     ]);
 
+    // SIMPAN TANGGAL DULU
+    $bantek->cadanganbantek1 = $request->cadanganbantek1 ?? null;
+
+    // HANDLE FILE
     if ($request->hasFile('uploadsuratbantek')) {
         $file = $request->file('uploadsuratbantek');
 
@@ -1029,15 +1035,15 @@ public function bebantuanteknislapanganberkas(Request $request, $id)
         $file->move($destinationPath, $filename);
         $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
 
-        // ❗ Update ke record lama, bukan bikin baru
         $bantek->uploadsuratbantek = $filePath;
-        $bantek->save();
     }
 
-    session()->flash('create', 'Berkas Bantek Berhasil di Terbitkan !');
+    // SAVE SEKALI
+    $bantek->save();
+
+    session()->flash('create', 'Berkas Bantek + Tanggal berhasil disimpan!');
     return redirect("/bebantuanteknislapanganupload/{$bantek->id}");
 }
-
 
 
 public function bebantuanteknislapanganuploadnews($id)

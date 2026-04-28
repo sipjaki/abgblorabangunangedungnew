@@ -141,9 +141,32 @@
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
+
+                                    <div class="col-md-12">
+                                            <div class="mb-12">
+
+                                                <label class="form-label" for="cadanganbantek1">
+                                                    <i class="bi bi-calendar-date" style="margin-right: 8px; color: darkred;"></i>
+                                                    Tanggal Selesai Berita Acara Berkas Asistensi
+                                                </label>
+
+                                                <input
+                                                    type="date"
+                                                    id="cadanganbantek1"
+                                                    name="cadanganbantek1"
+                                                    value="{{ old('cadanganbantek1', $data->cadanganbantek1 ?? '') }}"
+                                                    class="form-control @error('cadanganbantek1') is-invalid @enderror"
+                                                >
+
+                                                @error('cadanganbantek1')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+
+                                            </div>
+                                        </div>
                                     <!-- Left Column (6/12) -->
-<div class="col-md-6">
-    <div class="mb-3">
+<div class="col-md-12">
+    <div class="mb-12">
         <label class="form-label" for="uploadsuratbantek">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Berita Acara Berkas Asistensi (PDF)
         </label>
