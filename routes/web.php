@@ -1672,7 +1672,7 @@ Route::get('/perkonsultanperencana', [GambarbantuanController::class, 'perkonsul
 Route::post('/perkonsultanperencana/create', [GambarbantuanController::class, 'perkonsultanperencanacreate'])->name('perkonsultanperencanacreate');
 
 Route::get('/bedataperkonsultan', [GambarbantuanController::class, 'bedataperkonsultan'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultan');
-// Route::delete('/bepengkajiteknisdelete/{id}', [BantuanteknisController::class, 'bepengkajiteknisdelete'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknisdelete');
+Route::delete('/bedataperkonsultandelete/{id}', [GambarbantuanController::class, 'bedataperkonsultandelete'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultandelete');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

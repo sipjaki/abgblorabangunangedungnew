@@ -166,14 +166,7 @@
   </section>
 
 
-
-<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
-
-
-  </section>
-
-
- <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
+ <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: 300px;">
 
      <div class="flex flex-col gap-5 w-full" style="margin-top: -25px;">
 

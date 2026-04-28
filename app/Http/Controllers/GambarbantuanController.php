@@ -906,6 +906,28 @@ public function perkonsultanperencana(Request $request)
     ]);
 }
 
+public function bedataperkonsultandelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = cadangan1::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/bedataperkonsultan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
 
 }
 

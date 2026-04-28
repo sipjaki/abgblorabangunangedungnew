@@ -175,13 +175,13 @@
                             <thead>
                                   <tr>
      <th>No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th><i class="fas fa-building"></i> Informasi Badan Usaha</th>
-<th><i class="fas fa-map-marker-alt"></i> Alamat</th>
-<th><i class="fas fa-briefcase"></i> Company Profile</th>
-<th><i class="fas fa-briefcase"></i> Surat Permohonan</th>
-<th><i class="fas fa-tools"></i> Aksi</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Sub Kualifikasi</th> --}}
+{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-users"></i> Asosiasi Masjaki</th> --}}
+<th><i class="bi bi-building"></i> Informasi Badan Usaha</th>
+<th><i class="bi bi-map-marker-alt"></i> Alamat</th>
+<th><i class="bi bi-briefcase"></i> Company Profile</th>
+<th><i class="bi bi-briefcase"></i> Surat Permohonan</th>
+<th><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
@@ -401,7 +401,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bepengkajiteknisdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bedataperkonsultandelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
