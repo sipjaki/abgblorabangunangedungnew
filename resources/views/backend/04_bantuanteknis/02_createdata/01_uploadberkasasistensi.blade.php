@@ -145,7 +145,7 @@
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="uploadsuratbantek">
-            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Surat Bantek (PDF)
+            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Berita Acara Berkas Asistensi (PDF)
         </label>
         <input
             type="file"

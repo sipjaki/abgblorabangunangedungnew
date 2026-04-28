@@ -1503,17 +1503,17 @@
                         </div>
                     </div>
 
-                    @can('pemohonbantek')
-<div class="mb-3" style="margin-top: -50px;">
-    <label for="catatanvalidasi" class="form-label" style="color: navy">
-        <i class="bi bi-card-text me-1" style="color: navy;"></i>
-        <span style="color: navy;">Catatan Keterangan Berkas</span>
-    </label>
-    <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa; color: red;">
-        {{ $data->catatanvalidasi ?? '-' }}
-    </div>
-</div>
 
+                    @canany(['pemohonbantek', 'pemohon', 'konsultanbantek'])
+                    <div class="mb-3" style="margin-top: -50px;">
+                            <label for="catatanvalidasi" class="form-label" style="color: navy">
+                                <i class="bi bi-card-text me-1" style="color: navy;"></i>
+                                <span style="color: navy;">Catatan Keterangan Berkas</span>
+                            </label>
+                            <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa; color: red;">
+                                {{ $data->catatanvalidasi ?? '-' }}
+                            </div>
+                        </div>
                     @endcan
 
                     @canany(['superadmin', 'admin'])
