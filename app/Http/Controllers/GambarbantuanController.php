@@ -899,7 +899,7 @@ public function perkonsultanperencana(Request $request)
 
     $bujk = $query->latest()->paginate($perPage)->appends($request->all());
 
-    return view('backend.abgblora.09_fiturbaru.01_konsultanperencana.02_datapermohonanpengkajiteknis', [
+    return view('frontend.abgblora.09_fiturbaru.01_konsultanperencana.02_datapermohonanpengkajiteknis', [
         'title' => 'Daftar Permohonan Konsultan Pengkaji Teknis',
         'data'  => $bujk,
         'user'  => $user,

@@ -180,7 +180,7 @@
         <form id="signatureForm" action="{{ route('perkonsultanperencanacreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 @csrf
 
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -50px;">
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
     <i class="bi bi-info-circle me-2"></i>
     <div>
         <strong>Informasi Permohonan Konsultan Perencana Teknis </strong>
@@ -237,7 +237,6 @@
             @enderror
         </div>
     </div>
-    <br><br>
     <div class="form-modern col-md-12" style="margin-top: -10px;">
         <div>
             <label class="form-label-modern d-flex align-items-center" for="rw">
