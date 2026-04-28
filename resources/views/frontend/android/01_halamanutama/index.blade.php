@@ -58,6 +58,7 @@
     @forelse ($agendapelatihan as $item)
         <div class="promo-card">
             <div class="card-image-container">
+
                 <style>
 .modal-gambar-custom {
     display: none;
@@ -115,7 +116,13 @@
 }
 </style>
 
-<script>
+
+                <img src="{{ asset($item->foto) }}"
+                    class="card-image cursor-pointer"
+                    alt="{{ $item->namakegiatan }}"
+                    onclick="openModalGambarCustom('{{ asset($item->foto) }}')">
+
+                    <script>
 function openModalGambarCustom(src) {
     document.getElementById('isiGambarCustom').src = src;
     document.getElementById('modalGambarCustom').style.display = 'flex';
@@ -135,10 +142,6 @@ document.addEventListener('click', function(e) {
 </script>
 
 
-                <img src="{{ asset($item->foto) }}"
-                    class="card-image cursor-pointer"
-                    alt="{{ $item->namakegiatan }}"
-                    onclick="openModalGambarCustom('{{ asset($item->foto) }}')">
                 {{-- <img src="{{ asset($item->foto) }}" id gambarpelaihan class="card-image" alt="{{ $item->namakegiatan }}"> --}}
                 <div class="card-overlay"></div>
                 <div class="card-badge">
@@ -766,6 +769,17 @@ document.addEventListener('click', function(e) {
 
     </div>
 </div>
+
+<div id="modalGambarCustom" class="modal-gambar-custom">
+    <div class="modal-content-gambar-custom">
+
+        <span class="close-gambar-custom" onclick="closeModalGambarCustom()">&times;</span>
+
+        <img id="isiGambarCustom" src="" class="gambar-full-custom">
+
+    </div>
+</div>
+
 
 <div id="modalUndanganGlobal" class="modal-undangan-global">
     <div class="modal-content-undangan-global">
