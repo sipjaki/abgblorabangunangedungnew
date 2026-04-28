@@ -85,6 +85,13 @@
             <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
         </button>
     @endif
+
+
+    <button class="button-baru">
+        mengeluarkan berkas dengan keluaran $item->suratundangan
+
+    </button>
+
 </div>
 
         </div>

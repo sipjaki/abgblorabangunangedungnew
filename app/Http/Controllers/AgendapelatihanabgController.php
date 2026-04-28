@@ -209,13 +209,13 @@ public function beagendapelatihanabguploadnew(Request $request)
     $validated = $request->validate([
         'agendapelatihan_id' => 'required|string',
         'judulmateripelatihan' => 'required|string|max:255',
-        'materipelatihan1' => 'required|file|mimes:pdf|max:10240',
-        'materipelatihan2' => 'nullable|file|mimes:pdf|max:10240',
+        'materipelatihan1' => 'required|file|mimes:pdf,ppt,pptx,doc,docx|max:20240',
+        'materipelatihan2' => 'nullable|file|mimes:pdf,ppt,pptx,doc,docx|max:20240',
     ], [
         'judulmateripelatihan.required' => 'Judul materi wajib diisi.',
         'materipelatihan1.required' => 'Materi pelatihan 1 wajib diunggah.',
-        'materipelatihan1.mimes' => 'Materi 1 harus berupa file PDF.',
-        'materipelatihan2.mimes' => 'Materi 2 harus berupa file PDF.',
+        'materipelatihan1.mimes' => 'Materi 1 harus berupa file.',
+        'materipelatihan2.mimes' => 'Materi 2 harus berupa file.',
     ]);
 
     // Simpan file
