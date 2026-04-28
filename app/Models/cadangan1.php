@@ -13,6 +13,4 @@ class cadangan1 extends Model
 
     protected $guarded = ['id'];
 
-
-
 }
