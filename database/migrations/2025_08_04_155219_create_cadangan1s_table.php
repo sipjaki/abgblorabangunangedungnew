@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+//  INI DIGUNAKAN UNTUK PERMOHONAN KONSULTAN PERENCANA TEKNIS
+
         Schema::create('cadangan1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kuncibaru_id')->index()->nullable();
             $table->foreignId('kuncibaru1_id')->index()->nullable();
-            $table->string('cadangan1')->nullable(); // JUDUL
-            $table->string('cadangan2')->nullable(); // KETERANGAN
-            $table->string('cadangan3')->nullable(); // BERKAS
-            $table->string('cadangan4')->nullable(); // FOTO 1
-            $table->string('cadangan5')->nullable(); // FOTO 2
-            $table->string('cadangan6')->nullable(); // FOTO 3
+            $table->string('cadangan1')->nullable(); // DIRUBAH JADI NAMA BADAN USAHA
+            $table->string('cadangan2')->nullable(); //
+            $table->string('cadangan3')->nullable(); //
+            $table->string('cadangan4')->nullable(); //
+            $table->string('cadangan5')->nullable(); //
+            $table->string('cadangan6')->nullable(); //
             $table->string('cadangan7')->nullable();
             $table->string('cadangan8')->nullable();
             $table->string('cadangan9')->nullable();

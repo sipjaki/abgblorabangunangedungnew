@@ -254,6 +254,15 @@
                       Informasi PBG & SLF
                     </a>
                   </li>
+
+                  <li style="font-size: 14px;">
+                    <a href="/perkonsultanperencana" style="display: flex; align-items: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M3 2a1 1 0 0 0-1 1v11h12V3a1 1 0 0 0-1-1H3zm1 2h8v1H4V4zm0 2h8v1H4V6zm0 2h5v1H4V8z"/>
+                      </svg>
+                      Konsultan Perencana Teknis
+                    </a>
+                  </li>
 {{--
                   <li style="font-size: 14px;">
                     <a href="#" onclick="showLoginModal()" style="display: flex; align-items: center;">

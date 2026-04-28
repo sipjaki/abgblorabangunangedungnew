@@ -1665,6 +1665,15 @@ Route::get('/pbgfungsicampuran', [NewUiController::class, 'pbgfungsicampuran']);
 
 // BAGIAN 6
 Route::get('/informasimbr', [NewUiController::class, 'informasimbr']);
+
+
+// FITUR BARU UNTUK PERMOHONAN KONSULTAN PERENCANA TEKNIS
+Route::get('/perkonsultanperencana', [GambarbantuanController::class, 'perkonsultanperencana'])->middleware('auth')->name('perkonsultanperencana.index');
+Route::post('/perkonsultanperencana/create', [GambarbantuanController::class, 'perkonsultanperencanacreate'])->name('perkonsultanperencanacreate');
+
+Route::get('/bedataperkonsultan', [GambarbantuanController::class, 'bedataperkonsultan'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultan');
+// Route::delete('/bepengkajiteknisdelete/{id}', [BantuanteknisController::class, 'bepengkajiteknisdelete'])->middleware('auth', 'can:admindpupr')->name('bepengkajiteknisdelete');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

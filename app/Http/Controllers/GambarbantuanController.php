@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\bglapangan;
+use App\Models\cadangan1;
 use App\Models\fungsibangunangambar;
 use App\Models\gambarbantuan;
 use App\Models\jenispermohonangambar;
@@ -784,6 +785,124 @@ public function bebantuangambarpemohon(Request $request)
         'title' => 'Permohonan Bantuan Teknis Gambar Bangunan Gedung Saudara',
         'data' => $data,
         'user' => $user,
+    ]);
+}
+
+
+
+public function perkonsultanperencana(Request $request)
+    {
+
+        // Kalau request biasa (GET halaman utama)
+        $user = Auth::user();
+
+        return view('frontend.abgblora.09_fiturbaru.01_konsultanperencana.01_konsultanperencana', [
+            'user' => $user,
+            'title' => 'Permohonan Konsultan Perencana Teknis'
+        ]);
+    }
+
+
+    public function perkonsultanperencanacreate(Request $request)
+    {
+        // Validasi input
+        $validatedData = $request->validate([
+
+            'cadangan1' => 'required|string|max:255',
+            'cadangan2' => 'required|string|max:255',
+            'cadangan3' => 'required|string|max:255',
+            'cadangan4' => 'required|string|max:255',
+
+            'cadangan5' => 'nullable|file|mimes:pdf|max:20048',
+            'cadangan6' => 'nullable|file|mimes:pdf|max:20048',
+
+            ], [
+            // Custom error messages
+            'cadangan1.required' => 'Nama Badan Usaha Wajib Diisi !',
+            'cadangan2.required' => 'Nama Direktur Utama Wajib Diisi !',
+            'cadangan3.required' => 'No Telepon Wajib Diisi !',
+            'cadangan4.required' => 'Alamat Badan Usaha Wajib Diisi !',
+
+            'cadangan5.required' => 'Company Profile Wajib di Upload!',
+            'cadangan5.max' => 'Ukuran file Maksimal 20MB!',
+            'cadangan5.mimes' => 'File Harus PDF !',
+
+            'cadangan6.required' => 'Surat Permohonan Wajib di Upload!',
+            'cadangan6.max' => 'Ukuran file Maksimal 20MB!',
+            'cadangan6.mimes' => 'File Harus PDF !',
+
+            ]);
+
+        // Setup for file upload
+        $filePaths = [];
+
+        // Define the folder paths for each file field
+        $fileFields = [
+            'cadangan5' => '09_konsultanperencana/01_berkascp',
+            'cadangan6' => '09_konsultanperencana/02_suratpermohonankonsultan',
+
+            ];
+
+        // Loop through each file field and handle the upload
+        foreach ($fileFields as $field => $folder) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+                $path = public_path($folder);
+                // Create directory if it does not exist
+                if (!File::exists($path)) {
+                    File::makeDirectory($path, 0775, true);
+                }
+
+                // Move the file to the correct folder
+                $file->move($path, $filename);
+                $filePaths[$field] = $folder . '/' . $filename;
+            }
+        }
+
+        // Save all data to the database
+        cadangan1::create([
+
+            'cadangan1' => $validatedData['cadangan1'] ?? null,
+            'cadangan2' => $validatedData['cadangan2'] ?? null,
+            'cadangan3' => $validatedData['cadangan3'] ?? null,
+            'cadangan4' => $validatedData['cadangan4'] ?? null,
+
+            'cadangan5' => $filePaths['cadangan5'] ?? null,
+            'cadangan6' => $filePaths['cadangan6'] ?? null,
+
+            ]);
+
+        session()->flash('create', 'Permohonan Anda Berhasil Dibuat!');
+        return redirect('/');
+
+        }
+
+
+
+        public function bedataperkonsultan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = cadangan1::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('cadangan1', 'like', "%{$search}%")
+              ->orWhere('cadangan2', 'like', "%{$search}%")
+              ->orWhere('cadangan3', 'like', "%{$search}%")
+              ->orWhere('cadangan4', 'like', "%{$search}%");
+        });
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.abgblora.09_fiturbaru.01_konsultanperencana.02_datapermohonanpengkajiteknis', [
+        'title' => 'Daftar Permohonan Konsultan Pengkaji Teknis',
+        'data'  => $bujk,
+        'user'  => $user,
     ]);
 }
 
