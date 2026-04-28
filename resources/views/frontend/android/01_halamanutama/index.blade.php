@@ -166,24 +166,9 @@
 
     <button class="button-baru" style="margin-top: 5px;"
     onclick="openModalUndangan('{{ asset($item->suratundangan) }}')">
-    <i class="bi bi-eye"></i> Lihat Surat
+    <i class="bi bi-eye"></i> Surat Undangan
     </button>
 
-    <div id="modalUndanganGlobal" class="modal-undangan-global">
-    <div class="modal-content-undangan-global">
-
-        <span class="close-btn-global" onclick="closeModalUndangan()">&times;</span>
-
-        <h4 style="margin-bottom:10px;">Surat Undangan</h4>
-
-        <iframe id="isiUndanganGlobal"></iframe>
-
-        <a id="downloadUndanganGlobal" target="_blank" class="btn-download">
-            <i class="bi bi-download"></i> Download
-        </a>
-
-    </div>
-    </div>
 
 
 <script>
@@ -679,6 +664,22 @@ document.addEventListener('click', function(e) {
   flex-grow: 1;
 }
 </style>
+
+<div id="modalUndanganGlobal" class="modal-undangan-global">
+    <div class="modal-content-undangan-global">
+
+        <span class="close-btn-global" onclick="closeModalUndangan()">&times;</span>
+
+        <h4 style="margin-bottom:10px;">Surat Undangan</h4>
+
+        <iframe id="isiUndanganGlobal"></iframe>
+
+        <a id="downloadUndanganGlobal" target="_blank" class="btn-download">
+            <i class="bi bi-download"></i> Download
+        </a>
+
+    </div>
+    </div>
 
 
     <br><br>
