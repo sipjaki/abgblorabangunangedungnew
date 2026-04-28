@@ -86,11 +86,97 @@
         </button>
     @endif
 
+    <button class="button-baru"
+            onclick="openModalUndangan('{{ asset($item->suratundangan) }}')">
 
-    <button class="button-baru">
-        mengeluarkan berkas dengan keluaran $item->suratundangan
+            <i class="bi bi-eye" style="margin-right:5px;"></i>
+            Lihat Surat Undangan
 
     </button>
+
+    <div id="modalUndangan" class="modal-undangan">
+    <div class="modal-content-undangan">
+
+            <span class="close-btn" onclick="closeModalUndangan()">&times;</span>
+
+            <div class="card-berkas">
+                <h4>Surat Undangan</h4>
+
+                <iframe id="isiUndangan" width="100%" height="400px"
+                    style="border:1px solid #ddd; border-radius:6px;">
+                </iframe>
+
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+.modal-undangan {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content-undangan {
+    background: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 500px;
+    border-radius: 12px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.card-berkas {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9fafb;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+
+<script>
+function openModalUndangan(data) {
+    if (data) {
+        document.getElementById('isiUndangan').src = data;
+    } else {
+        document.getElementById('isiUndangan').src = '';
+    }
+
+    document.getElementById('modalUndangan').style.display = 'block';
+}
+
+function closeModalUndangan() {
+    document.getElementById('modalUndangan').style.display = 'none';
+}
+
+// klik luar modal = close
+window.onclick = function(event) {
+    let modal = document.getElementById('modalUndangan');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
 
 </div>
 

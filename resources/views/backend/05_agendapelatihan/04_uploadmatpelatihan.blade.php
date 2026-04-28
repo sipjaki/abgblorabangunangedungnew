@@ -162,9 +162,9 @@
     {{-- Materi Pelatihan 1 --}}
     <div class="form-modern col-md-6 mb-3">
         <label for="materipelatihan1" class="form-label-modern">
-            <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Upload Materi Pelatihan 1 (PDF)
+            <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Upload Materi Pelatihan 1
         </label>
-        <input type="file" name="materipelatihan1" id="materipelatihan1" accept=".pdf"
+        <input type="file" name="materipelatihan1" id="materipelatihan1" accept=".pdf,.ppt,.pptx,.doc,.docx"
             class="form-control @error('materipelatihan1') is-invalid @enderror"
             onchange="previewPDF(event, 'previewMateri1', 'msgMateri1')">
         @error('materipelatihan1')
@@ -185,9 +185,9 @@
     {{-- Materi Pelatihan 2 --}}
     <div class="form-modern col-md-6 mb-3">
         <label for="materipelatihan2" class="form-label-modern">
-            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Upload Materi Pelatihan 2 (PDF)
+            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Upload Materi Pelatihan 2
         </label>
-        <input type="file" name="materipelatihan2" id="materipelatihan2" accept=".pdf"
+        <input type="file" name="materipelatihan2" id="materipelatihan2" accept=".pdf,.ppt,.pptx,.doc,.docx"
             class="form-control @error('materipelatihan2') is-invalid @enderror"
             onchange="previewPDF(event, 'previewMateri2', 'msgMateri2')">
         @error('materipelatihan2')
