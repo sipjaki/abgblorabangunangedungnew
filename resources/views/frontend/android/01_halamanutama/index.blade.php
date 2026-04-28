@@ -58,7 +58,88 @@
     @forelse ($agendapelatihan as $item)
         <div class="promo-card">
             <div class="card-image-container">
-                <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
+                <style>
+.modal-gambar-custom {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+}
+
+.modal-content-gambar-custom {
+    position: relative;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.gambar-full-custom {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.close-gambar-custom {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* HP */
+@media (max-width: 768px) {
+    .modal-content-gambar-custom {
+        max-width: 100%;
+        max-height: 85%;
+    }
+
+    .gambar-full-custom {
+        max-height: 70vh;
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: scale(0.9);}
+    to {opacity:1; transform: scale(1);}
+}
+</style>
+
+<script>
+function openModalGambarCustom(src) {
+    document.getElementById('isiGambarCustom').src = src;
+    document.getElementById('modalGambarCustom').style.display = 'flex';
+}
+
+function closeModalGambarCustom() {
+    document.getElementById('modalGambarCustom').style.display = 'none';
+}
+
+/* klik luar modal */
+document.addEventListener('click', function(e) {
+    let modal = document.getElementById('modalGambarCustom');
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+</script>
+
+
+                <img src="{{ asset($item->foto) }}"
+                    class="card-image cursor-pointer"
+                    alt="{{ $item->namakegiatan }}"
+                    onclick="openModalGambarCustom('{{ asset($item->foto) }}')">
+                {{-- <img src="{{ asset($item->foto) }}" id gambarpelaihan class="card-image" alt="{{ $item->namakegiatan }}"> --}}
                 <div class="card-overlay"></div>
                 <div class="card-badge">
                     {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
@@ -70,6 +151,7 @@
         style="font-size: 16px; font-weight: 600; color: #222; margin-bottom: 12px; font-family: 'Poppins', sans-serif;">
         {{ $item->namakegiatan }}
     </h3>
+
 
     <!-- Tombol -->
     @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
@@ -665,6 +747,26 @@ document.addEventListener('click', function(e) {
 }
 </style>
 
+<div id="modalImageGlobal" class="modal-image-global">
+    <div class="modal-content-image-global">
+
+        <span class="close-btn-image" onclick="closeModalImage()">&times;</span>
+
+        <img id="previewImageGlobal" />
+
+    </div>
+</div>
+
+<div id="modalGambarCustom" class="modal-gambar-custom">
+    <div class="modal-content-gambar-custom">
+
+        <span class="close-gambar-custom" onclick="closeModalGambarCustom()">&times;</span>
+
+        <img id="isiGambarCustom" src="" class="gambar-full-custom">
+
+    </div>
+</div>
+
 <div id="modalUndanganGlobal" class="modal-undangan-global">
     <div class="modal-content-undangan-global">
 
@@ -674,7 +776,7 @@ document.addEventListener('click', function(e) {
 
         <iframe id="isiUndanganGlobal"></iframe>
 
-        <a id="downloadUndanganGlobal" target="_blank" class="btn-download">
+        <a id="downloadUndanganGlobal" target="_blank" class="button-modern">
             <i class="bi bi-download"></i> Download
         </a>
 
