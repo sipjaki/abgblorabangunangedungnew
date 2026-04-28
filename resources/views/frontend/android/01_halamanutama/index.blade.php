@@ -86,97 +86,129 @@
         </button>
     @endif
 
-    <button class="button-baru"
-            onclick="openModalUndangan('{{ asset($item->suratundangan) }}')">
-
-            <i class="bi bi-eye" style="margin-right:5px;"></i>
-            Lihat Surat Undangan
-
-    </button>
-
-    <div id="modalUndangan" class="modal-undangan">
-    <div class="modal-content-undangan">
-
-            <span class="close-btn" onclick="closeModalUndangan()">&times;</span>
-
-            <div class="card-berkas">
-                <h4>Surat Undangan</h4>
-
-                <iframe id="isiUndangan" width="100%" height="400px"
-                    style="border:1px solid #ddd; border-radius:6px;">
-                </iframe>
-
-            </div>
-
-        </div>
-    </div>
-
     <style>
-.modal-undangan {
+.modal-undangan-global {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
     left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
 }
 
-.modal-content-undangan {
+/* DESKTOP */
+.modal-content-undangan-global {
     background: #fff;
     margin: 5% auto;
     padding: 20px;
-    width: 500px;
-    border-radius: 12px;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 14px;
     position: relative;
-    animation: fadeIn 0.3s ease;
+    animation: fadeInGlobal 0.3s ease;
 }
 
-.card-berkas {
-    padding: 15px;
-    border-radius: 10px;
-    background: #f9fafb;
+/* IFRAME */
+#isiUndanganGlobal {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
-.close-btn {
+/* CLOSE */
+.close-btn-global {
     position: absolute;
     right: 15px;
     top: 10px;
+    font-size: 24px;
     cursor: pointer;
-    font-size: 20px;
 }
 
-@keyframes fadeIn {
+/* DOWNLOAD BUTTON */
+.btn-download {
+    display: inline-block;
+    margin-top: 10px;
+    background: #0ea5e9;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* 🔥 MOBILE MODE */
+@media (max-width: 768px) {
+    .modal-content-undangan-global {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    #isiUndanganGlobal {
+        height: 75vh;
+    }
+
+    .btn-download {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ANIMASI */
+@keyframes fadeInGlobal {
     from {opacity: 0; transform: translateY(-20px);}
     to {opacity: 1; transform: translateY(0);}
 }
 </style>
 
+    <button class="button-baru" style="margin-top: 5px;"
+    onclick="openModalUndangan('{{ asset($item->suratundangan) }}')">
+    <i class="bi bi-eye"></i> Lihat Surat
+    </button>
+
+    <div id="modalUndanganGlobal" class="modal-undangan-global">
+    <div class="modal-content-undangan-global">
+
+        <span class="close-btn-global" onclick="closeModalUndangan()">&times;</span>
+
+        <h4 style="margin-bottom:10px;">Surat Undangan</h4>
+
+        <iframe id="isiUndanganGlobal"></iframe>
+
+        <a id="downloadUndanganGlobal" target="_blank" class="btn-download">
+            <i class="bi bi-download"></i> Download
+        </a>
+
+    </div>
+    </div>
+
 
 <script>
-function openModalUndangan(data) {
-    if (data) {
-        document.getElementById('isiUndangan').src = data;
-    } else {
-        document.getElementById('isiUndangan').src = '';
-    }
+function openModalUndangan(url) {
+    const iframe = document.getElementById('isiUndanganGlobal');
+    const download = document.getElementById('downloadUndanganGlobal');
 
-    document.getElementById('modalUndangan').style.display = 'block';
+    iframe.src = url ?? '';
+    download.href = url ?? '#';
+
+    document.getElementById('modalUndanganGlobal').style.display = 'block';
 }
 
 function closeModalUndangan() {
-    document.getElementById('modalUndangan').style.display = 'none';
+    document.getElementById('modalUndanganGlobal').style.display = 'none';
 }
 
-// klik luar modal = close
-window.onclick = function(event) {
-    let modal = document.getElementById('modalUndangan');
-    if (event.target === modal) {
-        modal.style.display = "none";
+// klik luar
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('modalUndanganGlobal');
+    if (e.target === modal) {
+        closeModalUndangan();
     }
-}
+});
 </script>
-
-
 
 </div>
 

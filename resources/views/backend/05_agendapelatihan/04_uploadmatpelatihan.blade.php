@@ -178,7 +178,7 @@
         </div>
         <div id="msgMateri1" class="mt-2 text-muted fst-italic"
             style="{{ isset($data->materipelatihan1) ? 'display:none;' : '' }}">
-            Belum ada file PDF. Silakan upload materi pelatihan 1.
+            Belum ada materi. Silakan upload materi pelatihan 1.
         </div>
     </div>
 
@@ -201,7 +201,7 @@
         </div>
         <div id="msgMateri2" class="mt-2 text-muted fst-italic"
             style="{{ isset($data->materipelatihan2) ? 'display:none;' : '' }}">
-            Belum ada file PDF. Silakan upload materi pelatihan 2.
+            Belum ada materi. Silakan upload materi pelatihan 2.
         </div>
     </div>
 </div>

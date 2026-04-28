@@ -177,223 +177,131 @@
     <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
-<th style=" width: 40px; text-align: center;">
-    No
-</th>
+                                        <th style=" width: 40px; text-align: center;">
+                                            No
+                                        </th>
 
-<th style=" width: 250px;">
-    <i class="bi bi-book-half"></i> Judul Materi
-</th>
+                                        <th style=" width: 250px;">
+                                            <i class="bi bi-book-half"></i> Judul Materi
+                                        </th>
 
-<th style=" width: 300px;">
-    <i class="bi bi-file-earmark-pdf"></i> Berkas 1
-</th>
+                                        <th style=" width: 300px;">
+                                            <i class="bi bi-file-earmark-pdf"></i> Berkas 1
+                                        </th>
 
-<th style=" width: 300px;">
-    <i class="bi bi-file-earmark-pdf-fill"></i> Berkas 2
-</th>
+                                        <th style=" width: 300px;">
+                                            <i class="bi bi-file-earmark-pdf-fill"></i> Berkas 2
+                                        </th>
 
 
-@canany(['superadmin', 'admin'])
-<th style=" width:150px;"><i class="bi bi-tools"></i> Aksi</th>
-@endcanany
-
-    </tr>
-                            </thead>
+                                        @canany(['superadmin', 'admin'])
+                                        <th style=" width:150px;"><i class="bi bi-tools"></i> Aksi</th>
+                                        @endcanany
+                                    </tr>
+                                </thead>
 
                             <tbody id="tableBody">
                                 @forelse ($subdata as $item)
-    <tr>
-        <td>{{ $loop->iteration }}</td>
-     {{-- Judul Materi Pelatihan --}}
-<td style="text-align: justify">
-    @if($item->judulmateripelatihan)
-        @foreach(array_chunk(explode(' ', $item->judulmateripelatihan), 5) as $chunk)
-            {{ implode(' ', $chunk) }}<br>
-        @endforeach
-    @else
-        -
-    @endif
-</td>
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                        {{-- Judul Materi Pelatihan --}}
+                                    <td style="text-align: justify">
+                                        @if($item->judulmateripelatihan)
+                                            @foreach(array_chunk(explode(' ', $item->judulmateripelatihan), 5) as $chunk)
+                                                {{ implode(' ', $chunk) }}<br>
+                                            @endforeach
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
 
-{{-- Materi Pelatihan 1 (PDF Preview + Download) --}}
-<td>
-    @if($item->materipelatihan1)
-        <iframe src="{{ asset($item->materipelatihan1) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
-        <div class="mt-2 text-center">
-            <a href="{{ asset($item->materipelatihan1) }}" class="button-berkas" target="_blank" download>
-                <i class="bi bi-download"></i> Unduh Materi 1
-            </a>
-        </div>
-    @else
-        <span class="text-muted">Materi 1 belum diunggah.</span>
-    @endif
-</td>
+                                    {{-- Materi Pelatihan 1 (PDF Preview + Download) --}}
+                                    <td>
+                                        @if($item->materipelatihan1)
+                                            <iframe src="{{ asset($item->materipelatihan1) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+                                            <div class="mt-2 text-center">
+                                                <a href="{{ asset($item->materipelatihan1) }}" class="button-berkas" target="_blank" download>
+                                                    <i class="bi bi-download"></i> Unduh Materi 1
+                                                </a>
+                                            </div>
+                                        @else
+                                            <span class="text-muted">Materi 1 belum diunggah.</span>
+                                        @endif
+                                    </td>
 
-{{-- Materi Pelatihan 2 (PDF Preview + Download) --}}
-<td>
-    @if($item->materipelatihan2)
-        <iframe src="{{ asset($item->materipelatihan2) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
-        <div class="mt-2 text-center">
-            <a href="{{ asset($item->materipelatihan2) }}" class="btn btn-sm btn-success" target="_blank" download>
-                <i class="bi bi-download"></i> Unduh Materi 2
-            </a>
-        </div>
-    @else
-        <span class="text-muted">Materi 2 belum diunggah.</span>
-    @endif
-</td>
+                                    {{-- Materi Pelatihan 2 (PDF Preview + Download) --}}
+                                    <td>
+                                        @if($item->materipelatihan2)
+                                            <iframe src="{{ asset($item->materipelatihan2) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+                                            <div class="mt-2 text-center">
+                                                <a href="{{ asset($item->materipelatihan2) }}" class="btn btn-sm btn-success" target="_blank" download>
+                                                    <i class="bi bi-download"></i> Unduh Materi 2
+                                                </a>
+                                            </div>
+                                        @else
+                                            <span class="text-muted">Materi 2 belum diunggah.</span>
+                                        @endif
+                                    </td>
 
+                                @canany(['superadmin', 'admin'])
 
-{{-- <td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
-        </div>
-    @elseif ($item->berkas1)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 1</p>
-    @endif
-</td>
+                                <td class="text-center align-middle">
+                                    {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                            <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a> --}}
+                                            <a href="javascript:void(0)" class="button-merah" title="Hapus Data"
+                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            data-id="{{ $item->id }}"
+                                            onclick="setDeleteUrl(this)">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
 
-<td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas2 && file_exists(public_path('storage/' . $item->berkas2)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @elseif ($item->berkas2)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 2</p>
-    @endif
-</td> --}}
+                                        {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
+                                        data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                        data-id="{{ $item->id }}"
+                                        onclick="setDeleteUrl(this)">
+                                        <i class="bi bi-trash"></i>
+                                    </a> --}}
+                                </td>
+                                @endcanany
+                        </tr>
 
-{{--
-@for ($i = 1; $i <= 6; $i++)
-    <td>
-        <div style="margin-top: 10px;">
-            @php
-                $foto = 'foto' . $i;
-                $path = $item->$foto ?? null;
-                $isStorage = $path && file_exists(public_path('storage/' . $path));
-                $url = $isStorage ? asset('storage/' . $path) : ($path ? asset($path) : null);
-            @endphp
+                            @empty
+                        <tr>
+                            <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 30px;
+                                    font-weight: 600;
+                                    font-family: 'Poppins', sans-serif;
+                                    color: #6c757d;
+                                    background-color: #f8f9fa;
+                                    border: 2px dashed #ced4da;
+                                    border-radius: 12px;
+                                    font-size: 16px;
+                                    animation: fadeIn 0.5s ease-in-out;
+                                ">
+                                    <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                                    Data Tidak Ditemukan !!
+                                </div>
+                            </td>
+                        </tr>
+                    @endforelse
 
-            @if($url)
-                <img src="{{ $url }}" alt="Foto Dokumentasi {{ $i }}" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+                    <style>
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(10px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    </style>
 
-                <div class="text-center mt-2">
-                    <a href="{{ $url }}" class="btn btn-sm btn-outline-primary" download>
-                        <i class="bi bi-download" style="margin-right: 4px;"></i> Download Foto {{ $i }}
-                    </a>
-                </div>
-            @else
-                <p style="font-size: 11px; text-align: center;">Tidak Ada Foto {{ $i }}!</p>
-            @endif
-        </div>
-    </td>
-@endfor --}}
-
-@canany(['superadmin', 'admin'])
-
-<td class="text-center align-middle">
-    {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
-        <i class="bi bi-eye"></i>
-    </a>
-            <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
-                <i class="bi bi-pencil-square"></i>
-            </a> --}}
-            <a href="javascript:void(0)" class="button-merah" title="Hapus Data"
-            data-bs-toggle="modal" data-bs-target="#deleteModal"
-            data-id="{{ $item->id }}"
-            onclick="setDeleteUrl(this)">
-            <i class="bi bi-trash"></i>
-        </a>
-
-        {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
-        data-bs-toggle="modal" data-bs-target="#deleteModal"
-        data-id="{{ $item->id }}"
-        onclick="setDeleteUrl(this)">
-        <i class="bi bi-trash"></i>
-    </a> --}}
-</td>
-@endcanany
-</tr>
-
-        @empty
-    <tr>
-        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
-            <div style="
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 30px;
-                font-weight: 600;
-                font-family: 'Poppins', sans-serif;
-                color: #6c757d;
-                background-color: #f8f9fa;
-                border: 2px dashed #ced4da;
-                border-radius: 12px;
-                font-size: 16px;
-                animation: fadeIn 0.5s ease-in-out;
-            ">
-                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Tidak Ditemukan !!
-            </div>
-        </td>
-    </tr>
-@endforelse
-
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-</tbody>
+                    </tbody>
                         </table>
 
                      </div>
