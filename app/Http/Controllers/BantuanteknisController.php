@@ -1013,7 +1013,7 @@ public function bebantuanteknislapanganberkas(Request $request, $id)
         'uploadsuratbantek' => 'required|mimes:pdf|max:20048',
     ], [
         'cadanganbantek1.required' => 'Tanggal Selesai wajib diisi!',
-        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.required' => 'File Berita Acara wajib diunggah.',
         'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
         'uploadsuratbantek.max' => 'Ukuran file maksimal 20MB.',
     ]);

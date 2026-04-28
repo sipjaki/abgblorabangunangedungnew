@@ -162,6 +162,9 @@
     </a>
     @endcanany --}}
 
+                                <a href="/febantuanteknis" class="button-baru" style="color: black; text-decoration: none;">
+                                    <i class="bi bi-download" style="margin-right: 5px;"></i> Permohonan Baru
+                                </a>
 
                                 <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
                                     class="button-berkas" style="color: black;">
