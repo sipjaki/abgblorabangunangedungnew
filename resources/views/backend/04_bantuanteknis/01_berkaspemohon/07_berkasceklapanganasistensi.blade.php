@@ -117,7 +117,7 @@
 </a>
         @endcanany
 
-                        @canany(['superadmin', 'admin'])
+                        @canany(['superadmin', 'admin', 'konsultanbantek'])
 <button class="button-baru" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
