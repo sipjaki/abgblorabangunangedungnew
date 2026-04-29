@@ -263,7 +263,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Company Profile Badan Usaha | File  <br> .pdf | Max 20 MB</span>
+            <span class="text-sm">(NIB) Nomor Induk Berusaha | File  <br> .pdf | Max 20 MB</span>
         </label>
         <input id="cadangan5" name="cadangan5" type="file" accept="application/pdf,image/*"
             value="{{ old('cadangan5') }}"
@@ -285,6 +285,67 @@
             <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
         @enderror
     </div>
+
+
+
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+        <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span class="text-sm">(SBU) Sertifikat Badan Usaha | File  <br> .pdf | Max 20 MB</span>
+        </label>
+        <input id="cadangan7" name="cadangan7" type="file" accept="application/pdf,image/*"
+            value="{{ old('cadangan7') }}"
+            class="border border-[#ccc] rounded-md p-2 mb-2 @error('cadangan7') border-red-500 @enderror"
+            onchange="previewFile(this, 'sertifikatBerusaha')" />
+        <div id="sertifikatBerusaha" class="mt-1">
+            @if(session('cadangan7_temp'))
+                <div class="mt-1 text-sm text-gray-700">
+                    {{-- File sudah diunggah: --}}
+                    <a href="{{ Storage::url(session('cadangan7_temp')) }}" target="_blank" class="text-blue-500 underline"></a>
+                </div>
+            @elseif(old('cadangan7'))
+                <div class="mt-1 text-sm text-gray-700">
+                    File sudah dipilih: {{ old('cadangan7') }}
+                </div>
+            @endif
+        </div>
+        @error('cadangan7')
+            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+        <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span class="text-sm">Data Personil | File  <br> .pdf | Max 20 MB</span>
+        </label>
+        <input id="cadangan8" name="cadangan8" type="file" accept="application/pdf,image/*"
+            value="{{ old('cadangan8') }}"
+            class="border border-[#ccc] rounded-md p-2 mb-2 @error('cadangan8') border-red-500 @enderror"
+            onchange="previewFile(this, 'sertifikatDatapersonil')" />
+        <div id="sertifikatDatapersonil" class="mt-1">
+            @if(session('cadangan8_temp'))
+                <div class="mt-1 text-sm text-gray-700">
+                    {{-- File sudah diunggah: --}}
+                    <a href="{{ Storage::url(session('cadangan8_temp')) }}" target="_blank" class="text-blue-500 underline"></a>
+                </div>
+            @elseif(old('cadangan8'))
+                <div class="mt-1 text-sm text-gray-700">
+                    File sudah dipilih: {{ old('cadangan8') }}
+                </div>
+            @endif
+        </div>
+        @error('cadangan8')
+            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+        @enderror
+    </div>
+
+
+
 
     <div class="flex flex-col w-1/3" style="margin-top:-60px;">
 

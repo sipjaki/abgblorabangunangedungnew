@@ -78,6 +78,10 @@ public function febantuantekniscreatepermohonan(Request $request)
     // Inject nosurat ke dalam request
     $request->merge(['nosurat' => $nomorSurat]);
 
+    $request->merge([
+    'luasbangunan' => str_replace(',', '.', str_replace('.', '', $request->luasbangunan))
+    ]);
+
 $validated = $request->validate([
     'bujkkonsultan_id' => 'nullable|string',
     'dinas_id' => 'nullable|string',
@@ -94,8 +98,8 @@ $validated = $request->validate([
     'luasbangunan' => 'nullable|numeric',
     'luastanahtotal' => 'nullable|numeric',
     'jumlahlantai' => 'nullable|integer',
-    'tinggibangunan' => 'nullable|numeric',
-    'bassement' => 'nullable|string',
+        'tinggibangunan' => 'nullable|numeric',
+        'bassement' => 'nullable|string',
     'kepemilikan' => 'nullable|string|max:255',
     'tahunpembangunan' => 'nullable|digits:4|integer',
     'tahunrenovasi' => 'nullable|digits:4|integer',

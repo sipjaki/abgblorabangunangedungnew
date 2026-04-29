@@ -202,12 +202,37 @@
 
 
 <td style="text-align: center;">
+    <span style="font-weight: 400px"> Nomor Induk Berusaha : </span>
     <button type="button"
-        class="button-modern"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#modalLihatBerkas{{ $item->id }}">
+    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+    </button> <br>
+
+    <span style="font-weight: 400px"> Surat Permohonan : </span>
+    <button type="button"
+        class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#modalLihatBerkas{{ $item->id }}">
+        data-bs-target="#modalLihatBerkas1{{ $item->id }}">
         <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
-    </button>
+    </button> <br>
+
+    <span style="font-weight: 400px"> Sertifikat Badan Usaha : </span>
+    <button type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas2{{ $item->id }}">
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+    </button> <br>
+
+    <span style="font-weight: 400px"> Data Personil : </span>
+    <button type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas3{{ $item->id }}">
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+    </button> <br>
 </td>
 
 <!-- Modal -->
@@ -247,22 +272,6 @@
     @endif
 </div>
 
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<td style="text-align: center;">
-    <button type="button"
-        class="button-modern"
-        data-bs-toggle="modal"
-        data-bs-target="#modalLihatBerkas1{{ $item->id }}">
-        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
-    </button>
-</td>
 
 <!-- Modal -->
 <div class="modal fade" id="modalLihatBerkas1{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
@@ -278,7 +287,7 @@
    <div style="margin-top: 10px;">
     @php
         $berkasPath = public_path('storage/' . $item->cadangan6);
-        $isFileExists = $item->cadangan5 && file_exists($berkasPath);
+        $isFileExists = $item->cadangan6 && file_exists($berkasPath);
     @endphp
 
     @if ($isFileExists)
@@ -300,6 +309,96 @@
         <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
     @endif
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalLihatBerkas2{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
+<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
+        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+   <div style="margin-top: 10px;">
+    @php
+        $berkasPath = public_path('storage/' . $item->cadangan7);
+        $isFileExists = $item->cadangan7 && file_exists($berkasPath);
+    @endphp
+
+    @if ($isFileExists)
+        <!-- Menampilkan PDF dari storage -->
+        <iframe
+            src="{{ asset('storage/' . $item->cadangan7) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @elseif ($item->cadangan7)
+        <!-- Menampilkan PDF dari path luar storage -->
+        <iframe
+            src="{{ asset($item->cadangan7) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
+    @endif
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalLihatBerkas3{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
+<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
+        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+   <div style="margin-top: 10px;">
+    @php
+        $berkasPath = public_path('storage/' . $item->cadangan8);
+        $isFileExists = $item->cadangan8 && file_exists($berkasPath);
+    @endphp
+
+    @if ($isFileExists)
+        <!-- Menampilkan PDF dari storage -->
+        <iframe
+            src="{{ asset('storage/' . $item->cadangan8) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @elseif ($item->cadangan8)
+        <!-- Menampilkan PDF dari path luar storage -->
+        <iframe
+            src="{{ asset($item->cadangan8) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
+    @endif
+</div>
+
+
+
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<td style="text-align: center;">
+
+</td>
 
 </div>
       <div class="modal-footer">

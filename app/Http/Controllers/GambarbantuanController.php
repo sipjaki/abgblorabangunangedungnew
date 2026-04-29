@@ -815,6 +815,8 @@ public function perkonsultanperencana(Request $request)
 
             'cadangan5' => 'required|file|mimes:pdf|max:20048',
             'cadangan6' => 'required|file|mimes:pdf|max:20048',
+            'cadangan7' => 'required|file|mimes:pdf|max:20048',
+            'cadangan8' => 'required|file|mimes:pdf|max:20048',
 
             ], [
             // Custom error messages
@@ -823,13 +825,21 @@ public function perkonsultanperencana(Request $request)
             'cadangan3.required' => 'No Telepon Wajib Diisi !',
             'cadangan4.required' => 'Alamat Badan Usaha Wajib Diisi !',
 
-            'cadangan5.required' => 'Company Profile Wajib di Upload!',
+            'cadangan5.required' => 'NIB Wajib di Upload!',
             'cadangan5.max' => 'Ukuran file Maksimal 20MB!',
             'cadangan5.mimes' => 'File Harus PDF !',
 
             'cadangan6.required' => 'Surat Permohonan Wajib di Upload!',
             'cadangan6.max' => 'Ukuran file Maksimal 20MB!',
             'cadangan6.mimes' => 'File Harus PDF !',
+
+            'cadangan7.required' => 'SBU Wajib di Upload!',
+            'cadangan7.max' => 'Ukuran file Maksimal 20MB!',
+            'cadangan7.mimes' => 'File Harus PDF !',
+
+            'cadangan8.required' => 'Data Personil di Upload!',
+            'cadangan8.max' => 'Ukuran file Maksimal 20MB!',
+            'cadangan8.mimes' => 'File Harus PDF !',
 
             ]);
 
@@ -840,6 +850,8 @@ public function perkonsultanperencana(Request $request)
         $fileFields = [
             'cadangan5' => '09_konsultanperencana/01_berkascp',
             'cadangan6' => '09_konsultanperencana/02_suratpermohonankonsultan',
+            'cadangan7' => '09_konsultanperencana/03_nibperusahaan',
+            'cadangan8' => '09_konsultanperencana/04_datapersonil',
 
             ];
 
@@ -870,6 +882,8 @@ public function perkonsultanperencana(Request $request)
 
             'cadangan5' => $filePaths['cadangan5'] ?? null,
             'cadangan6' => $filePaths['cadangan6'] ?? null,
+            'cadangan7' => $filePaths['cadangan7'] ?? null,
+            'cadangan8' => $filePaths['cadangan8'] ?? null,
 
             ]);
 

@@ -904,8 +904,8 @@
         <li class="nav-item">
             <a href="/bedataperkonsultan" class="nav-link" style="display: flex; align-items: center;">
                 <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
-                <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan <br>
-                    Permohonan Konsultan</p>
+                <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Long List Baru <br>
+                </p>
             </a>
         </li>
 
