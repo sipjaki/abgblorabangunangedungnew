@@ -258,7 +258,7 @@
     <!-- KTP -->
 
                 <!-- Sertifikat Tanah -->
-    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/2" style="margin-top:-60px;">
         <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -288,12 +288,12 @@
 
 
 
-    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/2" style="margin-top:-60px;">
         <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">(SBU) Sertifikat Badan Usaha | File  <br> .pdf | Max 20 MB</span>
+            <span class="text-sm">SBU Jika (Badan Usaha)/ SKK Jika (Perseorangan) <br> File .pdf | Max 20 MB</span>
         </label>
         <input id="cadangan7" name="cadangan7" type="file" accept="application/pdf,image/*"
             value="{{ old('cadangan7') }}"
@@ -316,12 +316,16 @@
         @enderror
     </div>
 
-    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+</div>
+
+<div class="flex gap-4 w-full mt-4">
+
+    <div class="flex flex-col w-1/2" style="margin-top:-60px;">
         <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Data Personil | File  <br> .pdf | Max 20 MB</span>
+            <span class="text-sm">Riwayat Pekerjaan | File  <br> .pdf | Max 20 MB</span>
         </label>
         <input id="cadangan8" name="cadangan8" type="file" accept="application/pdf,image/*"
             value="{{ old('cadangan8') }}"
@@ -345,9 +349,7 @@
     </div>
 
 
-
-
-    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/2" style="margin-top:-60px;">
 
     <label for="cadangan6" class="font-semibold text-[#030303] flex items-start gap-2 mb-2">
 
@@ -361,11 +363,11 @@
         <!-- TEXT + BUTTON -->
         <div class="flex flex-col text-sm font-poppins">
             <span>
-                Company Profile Badan Usaha | File <br> .pdf | Max 20 MB
+                Surat Permohonan | File <br> .pdf | Max 20 MB
             </span>
 
             <!-- 🔥 BUTTON DOWNLOAD -->
-            <a href="/assets/abgblora/logo/Permohonan_Konsultan_Perencana_Teknis.docx"
+            <a href="/assets/abgblora/logo/NewPermohonan_Konsultan_Perencana_Teknis.docx"
                 download
                 class="mt-1 inline-block text-red-600 hover:text-black transition"
                 style="text-decoration:none;">

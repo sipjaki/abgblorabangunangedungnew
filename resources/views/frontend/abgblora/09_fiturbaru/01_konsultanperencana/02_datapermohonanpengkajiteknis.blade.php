@@ -200,192 +200,138 @@
     {{ $item->cadangan4 ?? '-' }}
 </td>
 
-
-<td style="text-align: center;">
-    <span style="font-weight: 400px"> Nomor Induk Berusaha : </span>
-    <button type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#modalLihatBerkas{{ $item->id }}">
-    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+<td style="text-align: left;">
+    <span style="font-weight: 400;"> Nomor Induk Berusaha : </span>
+    <button type="button" class="btn btn-primary" style="padding: 2px 4px;"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas{{ $item->id }}">
+        <i class="bi bi-eye"></i> Lihat Berkas
     </button> <br>
 
-    <span style="font-weight: 400px"> Surat Permohonan : </span>
-    <button type="button"
-        class="btn btn-primary"
+    <span style="font-weight: 400;"> Surat Permohonan : </span>
+    <button type="button" class="btn btn-primary" style="padding: 2px 4px;"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas1{{ $item->id }}">
-        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+        <i class="bi bi-eye"></i> Lihat Berkas
     </button> <br>
 
-    <span style="font-weight: 400px"> Sertifikat Badan Usaha : </span>
-    <button type="button"
-        class="btn btn-primary"
+    <span style="font-weight: 400;"> SBU/SKK : </span>
+    <button type="button" class="btn btn-primary" style="padding: 2px 4px;"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas2{{ $item->id }}">
-        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
+        <i class="bi bi-eye"></i> Lihat Berkas
     </button> <br>
 
-    <span style="font-weight: 400px"> Data Personil : </span>
-    <button type="button"
-        class="btn btn-primary"
+    <span style="font-weight: 400;"> Riwayat Pekerjaan : </span>
+    <button type="button" class="btn btn-primary" style="padding: 2px 4px;"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas3{{ $item->id }}">
-        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Berkas
-    </button> <br>
+        <i class="bi bi-eye"></i> Lihat Berkas
+    </button>
 </td>
-
-<!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <img src="assets/abgblora/logo/logokabupatenblora.png" style="height:20px;">
+        <img src="assets/abgblora/logo/pupr.png" style="height:20px;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->cadangan5);
-        $isFileExists = $item->cadangan5 && file_exists($berkasPath);
-    @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->cadangan5) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->cadangan5)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->cadangan5) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Belum Ada Company Profile Badan Usaha !</p>
-    @endif
+      <div class="modal-body">
+        @php
+            $path = public_path('storage/' . $item->cadangan5);
+        @endphp
+
+        @if ($item->cadangan5 && file_exists($path))
+            <iframe src="{{ asset('storage/' . $item->cadangan5) }}" style="width:100%; height:80vh;"></iframe>
+        @elseif ($item->cadangan5)
+            <iframe src="{{ asset($item->cadangan5) }}" style="width:100%; height:80vh;"></iframe>
+        @else
+            <p style="color:red;">Data Tidak Di Temukan !</p>
+        @endif
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas1{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+<div class="modal fade" id="modalLihatBerkas1{{ $item->id }}" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <img src="assets/abgblora/logo/logokabupatenblora.png" style="height:20px;">
+        <img src="assets/abgblora/logo/pupr.png" style="height:20px;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->cadangan6);
-        $isFileExists = $item->cadangan6 && file_exists($berkasPath);
-    @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->cadangan6) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->cadangan6)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->cadangan6) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
-    @endif
+      <div class="modal-body">
+        @php
+            $path = public_path('storage/' . $item->cadangan6);
+        @endphp
+
+        @if ($item->cadangan6 && file_exists($path))
+            <iframe src="{{ asset('storage/' . $item->cadangan6) }}" style="width:100%; height:80vh;"></iframe>
+        @elseif ($item->cadangan6)
+            <iframe src="{{ asset($item->cadangan6) }}" style="width:100%; height:80vh;"></iframe>
+        @else
+            <p style="color:red;">Data Tidak Di Temukan !</p>
+        @endif
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas2{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+<div class="modal fade" id="modalLihatBerkas2{{ $item->id }}" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <img src="assets/abgblora/logo/logokabupatenblora.png" style="height:20px;">
+        <img src="assets/abgblora/logo/pupr.png" style="height:20px;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->cadangan7);
-        $isFileExists = $item->cadangan7 && file_exists($berkasPath);
-    @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->cadangan7) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->cadangan7)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->cadangan7) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
-    @endif
+      <div class="modal-body">
+        @php
+            $path = public_path('storage/' . $item->cadangan7);
+        @endphp
+
+        @if ($item->cadangan7 && file_exists($path))
+            <iframe src="{{ asset('storage/' . $item->cadangan7) }}" style="width:100%; height:80vh;"></iframe>
+        @elseif ($item->cadangan7)
+            <iframe src="{{ asset($item->cadangan7) }}" style="width:100%; height:80vh;"></iframe>
+        @else
+            <p style="color:red;">Data Tidak Di Temukan !</p>
+        @endif
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas3{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+<div class="modal fade" id="modalLihatBerkas3{{ $item->id }}" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <img src="assets/abgblora/logo/logokabupatenblora.png" style="height:20px;">
+        <img src="assets/abgblora/logo/pupr.png" style="height:20px;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
+
       <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->cadangan8);
-        $isFileExists = $item->cadangan8 && file_exists($berkasPath);
-    @endphp
+        @php
+            $path = public_path('storage/' . $item->cadangan8);
+        @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->cadangan8) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->cadangan8)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->cadangan8) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Belum Ada Surat Permohonan !</p>
-    @endif
+        @if ($item->cadangan8 && file_exists($path))
+            <iframe src="{{ asset('storage/' . $item->cadangan8) }}" style="width:100%; height:80vh;"></iframe>
+        @elseif ($item->cadangan8)
+            <iframe src="{{ asset($item->cadangan8) }}" style="width:100%; height:80vh;"></iframe>
+        @else
+            <p style="color:red;">Data Tidak Di Temukan !</p>
+        @endif
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
 
 </div>
