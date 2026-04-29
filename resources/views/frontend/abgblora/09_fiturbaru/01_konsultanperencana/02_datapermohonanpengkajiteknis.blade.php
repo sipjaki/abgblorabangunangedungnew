@@ -179,8 +179,8 @@
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-users"></i> Asosiasi Masjaki</th> --}}
 <th><i class="bi bi-building"></i> Informasi Badan Usaha</th>
 <th><i class="bi bi-map-marker-alt"></i> Alamat</th>
-<th><i class="bi bi-briefcase"></i> Company Profile</th>
-<th><i class="bi bi-briefcase"></i> Surat Permohonan</th>
+<th><i class="bi bi-briefcase"></i> Informasi Berkas</th>
+{{-- <th><i class="bi bi-briefcase"></i> Surat Permohonan</th> --}}
 <th><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
@@ -202,7 +202,7 @@
 
 <td style="text-align: left;">
     <span style="font-weight: 400;"> Nomor Induk Berusaha : </span>
-    <button type="button" class="btn btn-primary" style="padding: 2px 4px;"
+    <button type="button" class="btn btn-primary" style="padding: 1px 10px;"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas{{ $item->id }}">
         <i class="bi bi-eye"></i> Lihat Berkas
@@ -342,9 +342,9 @@
   </div>
 </div>
 
-<td style="text-align: center;">
+{{-- <td style="text-align: center;">
 
-</td>
+</td> --}}
 
 </div>
       <div class="modal-footer">
