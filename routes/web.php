@@ -1674,6 +1674,14 @@ Route::post('/perkonsultanperencana/create', [GambarbantuanController::class, 'p
 Route::get('/bedataperkonsultan', [GambarbantuanController::class, 'bedataperkonsultan'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultan');
 Route::delete('/bedataperkonsultandelete/{id}', [GambarbantuanController::class, 'bedataperkonsultandelete'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultandelete');
 
+
+// PENILIK BANGUNAN GEDUNG UNTUK DATA PENILIK
+
+Route::get('/datanewpembongkaran', [PenilikbangunanController::class, 'datanewpembongkaran'])->middleware('auth', 'can:admindpupr')->name('datanewpembongkaran.index');
+// Route::post('/datanewpbgpeniliknew', [PenilikbangunanController::class, 'datanewpbgpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpbgpenilik.createnew');
+
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

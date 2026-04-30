@@ -1202,4 +1202,20 @@ public function datanewpbgpeniliknew(Request $request)
     return redirect()->route('datapbgpenilik.index');
 }
 
+
+// DATA BARU PEMBONGKARAN BANGUNAN GEDUNG
+
+public function datanewpembongkaran(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.07_penilikbangunan.03_datapembongkaran.02_createdatapembongkaran', [
+            'title' => 'Input Data Baru Pembongkaran',
+            'user' => $user,
+    ]);
+}
+
+
+
 }

@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+
+    // DIGUNAKAN UNTUK DATA PEMBONGKARAN BANGUNAN GEDUNG
+
         Schema::create('cadangan2s', function (Blueprint $table) {
             $table->id();
                $table->foreignId('kuncibaru_id')->index()->nullable();
