@@ -1668,7 +1668,7 @@ Route::get('/informasimbr', [NewUiController::class, 'informasimbr']);
 
 
 // FITUR BARU UNTUK PERMOHONAN KONSULTAN PERENCANA TEKNIS
-Route::get('/perkonsultanperencana', [GambarbantuanController::class, 'perkonsultanperencana'])->middleware('auth')->name('perkonsultanperencana.index');
+Route::get('/perkonsultanperencana', [GambarbantuanController::class, 'perkonsultanperencana'])->name('perkonsultanperencana.index');
 Route::post('/perkonsultanperencana/create', [GambarbantuanController::class, 'perkonsultanperencanacreate'])->name('perkonsultanperencanacreate');
 
 Route::get('/bedataperkonsultan', [GambarbantuanController::class, 'bedataperkonsultan'])->middleware('auth', 'can:admindpupr')->name('bedataperkonsultan');
