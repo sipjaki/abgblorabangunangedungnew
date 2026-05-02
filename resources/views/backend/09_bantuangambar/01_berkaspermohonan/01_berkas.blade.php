@@ -125,6 +125,11 @@
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+
+    <a href="/feformbantuangambar"
+   class="button-baru">
+   <i class="bi bi-download"></i> Permohonan Baru
+    </a>
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
       class="button-berkas">
       <i class="bi bi-download"></i> Download Excel

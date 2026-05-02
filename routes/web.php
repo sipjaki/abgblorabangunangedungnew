@@ -1678,7 +1678,7 @@ Route::delete('/bedataperkonsultandelete/{id}', [GambarbantuanController::class,
 // PENILIK BANGUNAN GEDUNG UNTUK DATA PENILIK
 
 Route::get('/datanewpembongkaran', [PenilikbangunanController::class, 'datanewpembongkaran'])->middleware('auth', 'can:admindpupr')->name('datanewpembongkaran.index');
-// Route::post('/datanewpbgpeniliknew', [PenilikbangunanController::class, 'datanewpbgpeniliknew'])->middleware('auth','can:admindpupr')->name('datanewpbgpenilik.createnew');
+Route::post('/datanewpembongkarannew', [PenilikbangunanController::class, 'datanewpembongkarannew'])->middleware('auth','can:admindpupr')->name('datanewpembongkarannew.create');
 
 
 

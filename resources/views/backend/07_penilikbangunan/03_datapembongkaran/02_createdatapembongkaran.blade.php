@@ -148,119 +148,160 @@
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
-  Input Data PBG Terbaru
+  Input Data Bangunan Pembongkaran
 </h5>
 
 <div class="row">
-
-    {{-- No Registrasi PBG --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="notanggalsk">
-                <i class="bi bi-card-text me-2 text-primary"></i> No Registrasi PBG
-            </label>
-            <input type="text" class="form-control @error('notanggalsk') is-invalid @enderror"
-                id="notanggalsk" name="notanggalsk"
-                value="{{ old('notanggalsk', $data->notanggalsk ?? '') }}">
-            @error('notanggalsk')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 1 - Nama Instansi --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Nama Instansi</label>
+        <input type="text" class="form-control @error('cadangan1') is-invalid @enderror"
+            name="cadangan1"
+            value="{{ old('cadangan1', $data->cadangan1 ?? '') }}">
+        @error('cadangan1')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Nama Pemohon --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="namapemohon">
-                <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
-            </label>
-            <input type="text" class="form-control @error('namapemohon') is-invalid @enderror"
-                id="namapemohon" name="namapemohon"
-                value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
-            @error('namapemohon')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 2 - Nama Pemilik --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Nama Pemilik</label>
+        <input type="text" class="form-control @error('cadangan2') is-invalid @enderror"
+            name="cadangan2"
+            value="{{ old('cadangan2', $data->cadangan2 ?? '') }}">
+        @error('cadangan2')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Alamat Pemohon --}}
-    <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="alamatpemohon">
-                <i class="bi bi-geo-alt-fill me-2 text-danger"></i> Alamat Pemohon
-            </label>
-            <textarea class="form-control @error('alamatpemohon') is-invalid @enderror"
-                id="alamatpemohon" name="alamatpemohon" rows="3">{{ old('alamatpemohon', $data->alamatpemohon ?? '') }}</textarea>
-            @error('alamatpemohon')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 3 - Nama Bangunan --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Nama Bangunan</label>
+        <input type="text" class="form-control @error('cadangan3') is-invalid @enderror"
+            name="cadangan3"
+            value="{{ old('cadangan3', $data->cadangan3 ?? '') }}">
+        @error('cadangan3')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Fungsi Bangunan --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="fungsibangunan">
-                <i class="bi bi-building me-2 text-warning"></i> Fungsi Bangunan
-            </label>
-            <select class="form-select @error('fungsibangunan') is-invalid @enderror"
-                id="fungsibangunan" name="fungsibangunan">
-                <option value="">-- Pilih Fungsi Bangunan --</option>
-                <option value="FUNGSI USAHA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI USAHA' ? 'selected' : '' }}>FUNGSI USAHA</option>
-                <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
-                <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
-                <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
-                <option value="FUNGSI CAMPURAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI CAMPURAN' ? 'selected' : '' }}>FUNGSI CAMPURAN</option>
-            </select>
-            @error('fungsibangunan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 4 - Lokasi Bangunan --}}
+<div class="col-md-12">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Lokasi Bangunan</label>
+        <textarea class="form-control @error('cadangan4') is-invalid @enderror"
+            name="cadangan4" rows="2">{{ old('cadangan4', $data->cadangan4 ?? '') }}</textarea>
+        @error('cadangan4')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Lokasi Bangunan --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="lokasibangunan">
-                <i class="bi bi-map-fill me-2 text-success"></i> Lokasi Bangunan
-            </label>
-            <input type="text" class="form-control @error('lokasibangunan') is-invalid @enderror"
-                id="lokasibangunan" name="lokasibangunan"
-                value="{{ old('lokasibangunan', $data->lokasibangunan ?? '') }}">
-            @error('lokasibangunan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 5 - Titik Koordinat --}}
+<div class="col-md-12">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Titik Koordinat</label>
+        <input type="text" class="form-control @error('cadangan5') is-invalid @enderror"
+            name="cadangan5"
+            placeholder="-6.200000, 106.816666"
+            value="{{ old('cadangan5', $data->cadangan5 ?? '') }}">
+        @error('cadangan5')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Keterangan --}}
-    <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="keterangan">
-                <i class="bi bi-journal-text me-2 text-secondary"></i> Keterangan
-            </label>
-            <textarea class="form-control @error('keterangan') is-invalid @enderror"
-                id="keterangan" name="keterangan" rows="3">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
-            @error('keterangan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 6 - Fungsi Bangunan --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Fungsi Bangunan</label>
+        <select class="form-control @error('cadangan6') is-invalid @enderror"
+            name="cadangan6">
+            <option value="">-- Pilih Fungsi --</option>
+            @foreach (['Hunian','Usaha','Campuran','Khusus','Sosial Budaya'] as $item)
+                <option value="{{ $item }}"
+                    {{ old('cadangan6', $data->cadangan6 ?? '') == $item ? 'selected' : '' }}>
+                    Fungsi {{ $item }}
+                </option>
+            @endforeach
+        </select>
+        @error('cadangan6')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
 
-    {{-- Tahun Terbit (cadangan1) --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="cadangan1">
-                <i class="bi bi-calendar-check-fill me-2 text-info"></i> Tahun Terbit
-            </label>
-            <input type="text" class="form-control @error('cadangan1') is-invalid @enderror"
-                id="cadangan1" name="cadangan1"
-                value="{{ old('cadangan1', $data->cadangan1 ?? '') }}">
-            @error('cadangan1')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Cadangan 7 - Jumlah Lantai --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Jumlah Lantai</label>
+        <select class="form-control @error('cadangan7') is-invalid @enderror"
+            name="cadangan7">
+            <option value="">-- Pilih Lantai --</option>
+            @for ($i = 1; $i <= 8; $i++)
+                <option value="{{ $i }}"
+                    {{ old('cadangan7', $data->cadangan7 ?? '') == $i ? 'selected' : '' }}>
+                    {{ $i }} Lantai
+                </option>
+            @endfor
+        </select>
+        @error('cadangan7')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
+
+{{-- Cadangan 8 - Luas Bangunan --}}
+<div class="col-md-4">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Luas Bangunan (m²)</label>
+        <input type="text" class="form-control @error('cadangan8') is-invalid @enderror"
+            name="cadangan8"
+            value="{{ old('cadangan8', $data->cadangan8 ?? '') }}">
+        @error('cadangan8')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+{{-- Cadangan 9 - Keterangan --}}
+<div class="col-md-12">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Keterangan</label>
+        <textarea class="form-control @error('cadangan9') is-invalid @enderror"
+            name="cadangan9" rows="3">{{ old('cadangan9', $data->cadangan9 ?? '') }}</textarea>
+        @error('cadangan9')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+{{-- Cadangan 10 - Upload Berkas --}}
+<div class="col-md-12">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">Upload Berkas (PDF/dll)</label>
+        <input type="file" class="form-control @error('cadangan10') is-invalid @enderror"
+            name="cadangan10">
+
+        @if (!empty($data->cadangan10))
+            <small class="text-success d-block mt-2">
+                File sebelumnya:
+                <a href="{{ asset($data->cadangan10) }}" target="_blank">Lihat Berkas</a>
+            </small>
+        @endif
+
+        @error('cadangan10')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
 
 </div>
 
@@ -282,7 +323,7 @@
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin input data PBG Bangunan ?
+                                        Apakah Anda ingin input data Pembongkaran Baru ?
                                     </p>
 
                                       <!-- Tombol -->

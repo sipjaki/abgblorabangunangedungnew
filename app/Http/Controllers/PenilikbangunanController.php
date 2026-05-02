@@ -8,6 +8,7 @@ use App\Models\banhibahberkas;
 use App\Models\banhibahlapangan;
 use App\Models\banhibahskbupati;
 use App\Models\bantuanhibahbg;
+use App\Models\cadangan2;
 use App\Models\dokpemohonpenilik;
 use App\Models\fotopascapenilik;
 use App\Models\fotoprapenilik;
@@ -1214,6 +1215,49 @@ public function datanewpembongkaran(Request $request)
             'title' => 'Input Data Baru Pembongkaran',
             'user' => $user,
     ]);
+}
+
+public function datanewpembongkarannew(Request $request)
+{
+    $validated = $request->validate([
+        'cadangan1' => 'required|string|max:255',
+        'cadangan2' => 'required|string|max:255',
+        'cadangan3' => 'required|string|max:255',
+        'cadangan4' => 'required|string|max:255',
+        'cadangan5' => 'required|string|max:255',
+        'cadangan6' => 'required|string|max:255',
+        'cadangan7' => 'required|string|max:255',
+        'cadangan8' => 'required|string|max:255',
+        'cadangan9' => 'required|string|max:255',
+        'cadangan10' => 'required|string|max:255',
+    ], [
+        'cadangan1.required' => 'Nama Instansi wajib diisi.',
+        'cadangan2.required' => 'Nama Pemilik wajib diisi.',
+        'cadangan2.required' => 'Nama Bangunan wajib diisi.',
+        'cadangan2.required' => 'Lokasi Bangunan wajib diisi.',
+        'cadangan2.required' => 'Titik Koordinat wajib diisi.',
+        'cadangan2.required' => 'Fungsi Bangunan wajib diisi.',
+        'cadangan2.required' => 'Jumlah Lantai wajib diisi.',
+        'cadangan2.required' => 'Jumlah Lantai wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    cadangan2::create([
+        'notanggalsk' => $validated['notanggalsk'] ?? null,
+        'namapemohon' => $validated['namapemohon'] ?? null,
+        'alamatpemohon' => $validated['alamatpemohon'] ?? null,
+
+        'fungsibangunan' => $validated['fungsibangunan'] ?? null,
+        'lokasibangunan' => $validated['lokasibangunan'] ?? null,
+
+        'keterangan' => $validated['keterangan'] ?? null,
+        'cadangan1' => $validated['cadangan1'] ?? null,
+
+        // 'user_id' => $validated['user_id'] ?? null,
+    ]);
+
+    session()->flash('create', 'Data PBG Berhasil di Inputkan!');
+    return redirect()->route('datapbgpenilik.index');
 }
 
 
