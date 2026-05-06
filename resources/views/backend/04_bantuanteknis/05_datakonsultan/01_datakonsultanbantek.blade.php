@@ -192,7 +192,7 @@ function searchTable() {
 <th><i class="bi bi-calendar3"></i> Tanggal</th>
 <th><i class="bi bi-person-vcard"></i> Nama Notaris</th>
 <th><i class="bi bi-patch-check"></i> No Pengesahan</th>
-<th><i class="bi bi-tools"></i> Aksi</th>
+{{-- <th><i class="bi bi-tools"></i> Aksi</th> --}}
 
     </tr>
                             </thead>
@@ -224,12 +224,12 @@ function searchTable() {
                                         {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
+                                        {{-- <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
                                         <i class="bi bi-trash"></i>
-                                    </a>
+                                    </a> --}}
                                 </td>
 
                                 @endcan
