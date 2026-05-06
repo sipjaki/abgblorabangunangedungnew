@@ -34,7 +34,7 @@ public function index()
     $datapilihanpengajuan = jenispengajuanbantek::all();
     // $datakonsultan = bujkkonsultan::all();
 
-    $datakonsultan = bujkkonsultan::orderBy('nama', 'asc')->get();
+    $datakonsultan = bujkkonsultan::orderBy('namalengkap', 'asc')->get();
 
     $user = Auth::user();
     $dinas_id = Auth::id(); // ambil hanya ID akun yang login
