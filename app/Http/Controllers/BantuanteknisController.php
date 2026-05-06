@@ -6208,9 +6208,10 @@ public function bebantekkonsultannewjasa(Request $request)
     // $data->asosiasimasjaki_id = $validated['asosiasimasjaki_id'] ?? null;
     // $data->user_id = $user->id;
     $data->user_id = $validated['user_id']; // ✅ Ambil dari input form, bukan dari yang login    $data->namalengkap = $validated['namalengkap'];
-    $data->alamat = $validated['alamat'];
-    $data->no_telepon = $validated['no_telepon'];
-    $data->email = $validated['email'];
+    $data->alamat = $validated['alamat'] ?? null ;
+    $data->namalengkap = $validated['namalengkap'] ?? null ;
+    $data->no_telepon = $validated['no_telepon'] ?? null ;
+    $data->email = $validated['email'] ?? null ;
     $data->nomorindukberusaha = $validated['nomorindukberusaha'] ?? null;
     $data->pju = $validated['pju'] ?? null;
     $data->no_akte = $validated['no_akte'] ?? null;
