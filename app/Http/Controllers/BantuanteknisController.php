@@ -32,7 +32,9 @@ public function index()
     $datakecamatan = kecamatanblora::all();
     $datakelurahan = kelurahandesa::all();
     $datapilihanpengajuan = jenispengajuanbantek::all();
-    $datakonsultan = bujkkonsultan::all();
+    // $datakonsultan = bujkkonsultan::all();
+
+    $datakonsultan = bujkkonsultan::orderBy('nama', 'asc')->get();
 
     $user = Auth::user();
     $dinas_id = Auth::id(); // ambil hanya ID akun yang login
