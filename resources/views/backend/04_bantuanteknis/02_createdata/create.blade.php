@@ -168,50 +168,91 @@
 </div>
 
 
-                                <div class="mb-3">
-                                    <label class="form-label-modern" for="foto1">
-                                        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 1
-                                    </label>
-                                    <input type="file" id="foto1" name="foto1" accept="image/*" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage(event, 'imagePreview1')" />
-                                    @error('foto1')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                               <div class="mb-3">
+                                                <label class="form-label-modern" for="foto1">
+                                                    <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+                                                    Foto/File/Berkas Atau Lainnya (1)
+                                                </label>
 
-                                    <!-- Tempat preview gambar -->
-                                    <div class="mt-3">
-                                        <img id="imagePreview1" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-                                    </div>
+                                                <input
+                                                    type="file"
+                                                    id="foto1"
+                                                    name="foto1"
+                                                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+                                                    class="form-control @error('foto1') is-invalid @enderror"
+                                                    onchange="previewFile(event, 'imagePreview1')"
+                                                />
+
+                                                @error('foto1')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+
+                                                <!-- Preview -->
+                                                <div class="mt-3">
+                                                    <img id="imagePreview1" src="#" alt="Preview Gambar"
+                                                        style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+                                                    <p id="fileName1" style="display:none; font-size:14px; color:#555;"></p>
+                                                </div>
                                 </div>
 
                                 <div class="mb-3">
     <label class="form-label-modern" for="foto2">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 2
+        <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+        Foto/File/Berkas Atau Lainnya (2)
     </label>
-    <input type="file" id="foto2" name="foto2" accept="image/*" class="form-control @error('foto2') is-invalid @enderror" onchange="previewImage(event, 'imagePreview2')" />
+
+    <input
+        type="file"
+        id="foto2"
+        name="foto2"
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+        class="form-control @error('foto2') is-invalid @enderror"
+        onchange="previewFile(event, 'imagePreview2')"
+    />
+
     @error('foto2')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    <!-- Tempat preview gambar -->
+    <!-- Preview -->
     <div class="mt-3">
-        <img id="imagePreview2" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+        <img id="imagePreview2" src="#" alt="Preview Gambar"
+            style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+        <p id="fileName2" style="display:none; font-size:14px; color:#555;"></p>
     </div>
 </div>
 
 <div class="mb-3">
     <label class="form-label-modern" for="foto3">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 3
+        <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+        Foto/File/Berkas Atau Lainnya (3)
     </label>
-    <input type="file" id="foto3" name="foto3" accept="image/*" class="form-control @error('foto3') is-invalid @enderror" onchange="previewImage(event, 'imagePreview3')" />
+
+    <input
+        type="file"
+        id="foto3"
+        name="foto3"
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+        class="form-control @error('foto3') is-invalid @enderror"
+        onchange="previewFile(event, 'imagePreview3')"
+    />
+
     @error('foto3')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    <!-- Tempat preview gambar -->
+    <!-- Preview -->
     <div class="mt-3">
-        <img id="imagePreview3" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+        <img id="imagePreview3" src="#" alt="Preview Gambar"
+            style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+        <p id="fileName3" style="display:none; font-size:14px; color:#555;"></p>
     </div>
 </div>
+
+
 </div>
 
 
@@ -219,50 +260,88 @@
 
 <div class="mb-3">
     <label class="form-label-modern" for="foto4">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 4
+        <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+        Foto/File/Berkas Atau Lainnya (4)
     </label>
-    <input type="file" id="foto4" name="foto4" accept="image/*" class="form-control @error('foto4') is-invalid @enderror" onchange="previewImage(event, 'imagePreview4')" />
+
+    <input
+        type="file"
+        id="foto4"
+        name="foto4"
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+        class="form-control @error('foto4') is-invalid @enderror"
+        onchange="previewFile(event, 'imagePreview4')"
+    />
+
     @error('foto4')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    <!-- Tempat preview gambar -->
+    <!-- Preview -->
     <div class="mt-3">
-        <img id="imagePreview4" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+        <img id="imagePreview4" src="#" alt="Preview Gambar"
+            style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+        <p id="fileName4" style="display:none; font-size:14px; color:#555;"></p>
     </div>
 </div>
 
+
 <div class="mb-3">
     <label class="form-label-modern" for="foto5">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 5
+        <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+        Foto/File/Berkas Atau Lainnya (5)
     </label>
-    <input type="file" id="foto5" name="foto5" accept="image/*" class="form-control @error('foto5') is-invalid @enderror" onchange="previewImage(event, 'imagePreview5')" />
+
+    <input
+        type="file"
+        id="foto5"
+        name="foto5"
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+        class="form-control @error('foto5') is-invalid @enderror"
+        onchange="previewFile(event, 'imagePreview5')"
+    />
+
     @error('foto5')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    <!-- Tempat preview gambar -->
+    <!-- Preview -->
     <div class="mt-3">
-        <img id="imagePreview5" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+        <img id="imagePreview5" src="#" alt="Preview Gambar"
+            style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+        <p id="fileName5" style="display:none; font-size:14px; color:#555;"></p>
     </div>
 </div>
 
-
 <div class="mb-3">
     <label class="form-label-modern" for="foto6">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 6
+        <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i>
+        Foto/File/Berkas Atau Lainnya (6)
     </label>
-    <input type="file" id="foto6" name="foto6" accept="image/*" class="form-control @error('foto6') is-invalid @enderror" onchange="previewImage(event, 'imagePreview6')" />
+
+    <input
+        type="file"
+        id="foto6"
+        name="foto6"
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+        class="form-control @error('foto6') is-invalid @enderror"
+        onchange="previewFile(event, 'imagePreview6')"
+    />
+
     @error('foto6')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    <!-- Tempat preview gambar -->
+    <!-- Preview -->
     <div class="mt-3">
-        <img id="imagePreview6" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+        <img id="imagePreview6" src="#" alt="Preview Gambar"
+            style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+
+        <p id="fileName6" style="display:none; font-size:14px; color:#555;"></p>
     </div>
 </div>
-
 
 <script>
   function previewImage(event, previewId) {

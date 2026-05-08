@@ -751,102 +751,55 @@ public function bebantuanteknislapangancreate($id)
 
 public function bebantuanteknislapangancreatenew(Request $request)
 {
-    // Validasi input
+    // ✅ VALIDASI (support semua file)
     $validated = $request->validate([
         'bantuanteknis_id' => 'required|string',
         'kegiatan' => 'required|string',
         'tanggalkegiatan' => 'required|date',
-        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
-    ], [
-        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
-        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
-        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
-        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
-        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
-        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
-        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
-        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
-        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
-        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
-        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
-        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
-        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
-        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
-        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
-        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
-        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+
+        'foto1' => 'required|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
+        'foto2' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
+        'foto3' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
+        'foto4' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
+        'foto5' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
+        'foto6' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:7048',
     ]);
 
     $data = new ceklapanganbantek();
 
-    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
-    $data->kegiatan = $validated['kegiatan'] ?? null;
-    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'];
+    $data->kegiatan = $validated['kegiatan'];
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'];
 
-    // Upload foto1 sampai foto6 jika ada
-    if ($request->hasFile('foto1')) {
-        $file = $request->file('foto1');
-        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
-        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
-        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
-    }
+    // 🔥 LOOP upload (biar gak ngulang kode)
+    for ($i = 1; $i <= 6; $i++) {
 
-    if ($request->hasFile('foto2')) {
-        $file = $request->file('foto2');
-        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
-        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
-        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
-    }
+        $field = 'foto' . $i;
 
-    if ($request->hasFile('foto3')) {
-        $file = $request->file('foto3');
-        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
-        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
-        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
-    }
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
 
-    if ($request->hasFile('foto4')) {
-        $file = $request->file('foto4');
-        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
-        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
-        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
-    }
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
 
-    if ($request->hasFile('foto5')) {
-        $file = $request->file('foto5');
-        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
-        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
-        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
-    }
+            // folder dinamis (01,02,03...)
+            $folder = '04_bantuanteknis/0' . $i . '_ceklapangan';
 
-    if ($request->hasFile('foto6')) {
-        $file = $request->file('foto6');
-        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
-        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
-        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+            $file->move(public_path($folder), $filename);
+
+            $data->$field = $folder . '/' . $filename;
+        }
     }
 
     $data->save();
 
     session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
 
-    // *** PENTING ***
-    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
-    // supaya redirect ke route berikut ini bisa benar
-    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
-
-    return redirect()->route('bebantuanasistensilap.show', ['id' => $id]);
+    return redirect()->route('bebantuanasistensilap.show', [
+        'id' => $validated['bantuanteknis_id']
+    ]);
 }
+
+
 
 // VERIFIKASI KE 2 BANTUAN TEKNIS PERMOHONAN
 
