@@ -211,6 +211,7 @@
 <th><i class="bi bi-telephone"></i> RT  </th>
 <th><i class="bi bi-telephone"></i> RW  </th>
 <th><i class="bi bi-telephone"></i> Kabupaten  </th>
+<th><i class="bi bi-telephone"></i> Kecamatan  </th>
 <th><i class="bi bi-telephone"></i> Kelurahan </th>
             @can('superadmin')
             <th><i class="bi bi-tools"></i> Aksi</th>
