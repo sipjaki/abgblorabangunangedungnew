@@ -193,13 +193,10 @@
 <th><i class="bi bi-person"></i> Dinas </th>
 <th><i class="bi bi-person"></i> Konsultan </th>
 <th><i class="bi bi-person"></i> Nama Paket </th>
-<th><i class="bi bi-person-badge"></i> Konsultan </th>
-<th><i class="bi bi-person-badge"></i> Nama Paket</th>
 <th><i class="bi bi-telephone"></i> Telepon</th>
 <th><i class="bi bi-telephone"></i> No Surat </th>
 <th><i class="bi bi-telephone"></i> No Surat Dinas</th>
 <th><i class="bi bi-telephone"></i> Tanggal Surat </th>
-<th><i class="bi bi-telephone"></i> Nama Pemohon </th>
 <th><i class="bi bi-telephone"></i> Kategori Bangunan  </th>
 <th><i class="bi bi-telephone"></i> Luas Bangunan  </th>
 <th><i class="bi bi-telephone"></i> Luas Tanah  </th>
@@ -235,7 +232,6 @@
             <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ $item->nosuratdinas ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
-            <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>
             <td>{{ $item->luasbangunan ?? '-' }} M²</td>
             <td>{{ $item->luastanahtotal ?? '-' }} M²</td>
