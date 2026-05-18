@@ -545,7 +545,7 @@ th {
                 'no' => $i,
                 'pengawas' => [
                     1 => 'ANEX FACHRIAN ST. MT.',
-                    2 => '.'
+                    2 => '-'
                 ][$i] ?? '',
                 'tpa' => $nama
             ];
