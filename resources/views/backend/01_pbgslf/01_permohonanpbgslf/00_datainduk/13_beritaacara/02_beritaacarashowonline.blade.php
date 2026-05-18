@@ -544,8 +544,8 @@ th {
             $listPengawas[] = [
                 'no' => $i,
                 'pengawas' => [
-                    1 => 'M. ARIF HIDAYAT, ST',
-                    2 => 'ANEX FACHRIAN ST. MT.'
+                    1 => 'ANEX FACHRIAN ST. MT.',
+                    2 => '.'
                 ][$i] ?? '',
                 'tpa' => $nama
             ];

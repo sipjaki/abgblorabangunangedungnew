@@ -1260,6 +1260,77 @@ public function datanewpembongkarannew(Request $request)
     return redirect()->route('datapbgpenilik.index');
 }
 
+public function datanewpembongkaranpenilik(Request $request)
+{
+    $validated = $request->validate([
+        'cadangan1' => 'nullable|string|max:255',
+        'cadangan2' => 'nullable|string|max:255',
+        'cadangan3' => 'nullable|string|max:255',
+        'cadangan4' => 'nullable|string|max:255',
+        'cadangan5' => 'nullable|string|max:255',
+        'cadangan6' => 'nullable|string|max:255',
+        'cadangan7' => 'nullable|string|max:255',
+        'cadangan8' => 'nullable|string|max:255',
+        'cadangan9' => 'nullable|string|max:255',
+
+        // file upload
+        'cadangan10' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:5120',
+    ]);
+
+    // upload file jika ada
+    $fileUrl = null;
+
+    if ($request->hasFile('cadangan10')) {
+        $file = $request->file('cadangan10');
+
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('uploads/pbg'), $fileName);
+
+        $fileUrl = 'uploads/pbg/' . $fileName;
+    }
+
+    cadangan2::create([
+        'cadangan1' => $validated['cadangan1'] ?? null,
+        'cadangan2' => $validated['cadangan2'] ?? null,
+        'cadangan3' => $validated['cadangan3'] ?? null,
+        'cadangan4' => $validated['cadangan4'] ?? null,
+        'cadangan5' => $validated['cadangan5'] ?? null,
+        'cadangan6' => $validated['cadangan6'] ?? null,
+        'cadangan7' => $validated['cadangan7'] ?? null,
+        'cadangan8' => $validated['cadangan8'] ?? null,
+        'cadangan9' => $validated['cadangan9'] ?? null,
+
+        // simpan URL file
+        'cadangan10' => $fileUrl ?? null,
+    ]);
+
+    return redirect()
+        ->route('databongkaranpenilik.index')
+        ->with('create', 'Data Bangunan Pembongkaran Berhasil di Inputkan!');
+}
+
+public function datapbgpembongkaranpenilik(Request $request)
+{
+    $user = Auth::user();
+
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = cadangan2::query(); // cukup query biasa dulu
+
+    // 🔥 SEARCH HANYA namapemohon
+    if (!empty($search)) {
+        $query->where('cadangan1', 'like', '%' . $search . '%');
+    }
+
+    $datapenilik = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.07_penilikbangunan.03_datapembongkaran.01_alldatabongkaran', [
+        'title' => 'Data Pembongkaran Penilik Bangunan Gedung ',
+        'data' => $datapenilik,
+        'user' => $user,
+    ]);
+}
 
 
 }

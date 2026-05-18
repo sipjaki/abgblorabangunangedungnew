@@ -7779,6 +7779,70 @@ public function bebantekfotosurveylapanganshow($id, $keterangan)
     );
 }
 
+// DATA LENGKAP BERKAS ASISTENSI DOWNLOAD
+
+
+public function bebantuanteknisassistensiall(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 8);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 1);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.05_newallberkaspemohonasistensi', [
+        'title' => 'Permohonan Asistensi Bantuan Teknis',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
 //   public function bebantekfotosurveylapanganshow($id, $keterangan)
 //     {
 //         // ==========================

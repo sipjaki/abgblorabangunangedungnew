@@ -1482,7 +1482,7 @@ Menu Sementara
 </li>
 
 <li class="nav-item">
-    <a href="/datapbgpenilik" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/datapbgpembongkaranpenilik" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Data Pembongkaran</p>
     </a>

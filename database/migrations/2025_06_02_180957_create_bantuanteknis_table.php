@@ -17,21 +17,21 @@ return new class extends Migration
             $table->foreignId('asistensibantek_id')->nullable()->index(); // user
             $table->foreignId('ceklapanganbantek_id')->nullable()->index(); // user
 
-            $table->foreignId('bujkkonsultan_id')->nullable()->index(); // user
+            $table->foreignId('bujkkonsultan_id')->nullable()->index(); // user 3
             // PENGAMBILAN DATA UNTUK KONSULTAN YANG AKAN MENGISI ASISTENSI
             $table->foreignId('pemohon_id')->nullable()->index(); // user
-            $table->foreignId('dinas_id')->nullable()->index(); // user
+            $table->foreignId('dinas_id')->nullable()->index(); // user 2
 
-            $table->foreignId('jenispengajuanbantek_id')->nullable()->index(); // sudah
+            $table->foreignId('jenispengajuanbantek_id')->nullable()->index(); // sudah 1
 
             $table->string('nosurat')->nullable(); // sudah
             $table->string('nosuratdinas')->nullable(); // sudah
             $table->date('tanggalsurat')->nullable(); // sudah
             $table->string('nama_pemohon')->nullable(); // sudah
-            $table->string('no_telepon')->nullable(); // sudah
+            $table->string('no_telepon')->nullable(); // sudah 5
 
             // NAMA PAKET PEKERJAAN
-            $table->string('namapaket')->nullable(); // sudah
+            $table->string('namapaket')->nullable(); // sudah 4
             $table->string('kategoribangunan')->nullable(); // sudah
             $table->float('luasbangunan')->nullable(); // sudah
             $table->float('luastanahtotal')->nullable(); // sudah
@@ -79,7 +79,7 @@ return new class extends Migration
 
             $table->string('cadanganbantek1')->nullable(); // PERUBAHAN FITUR UNTUK MENAMBAHKAN TANGGAL SELESAI BERITA ACARA
             $table->string('cadanganbantek2')->nullable();
-            $table->string('cadanganbantek3')->nullable();  
+            $table->string('cadanganbantek3')->nullable();
             $table->string('cadanganbantek4')->nullable();
             $table->string('cadanganbantek5')->nullable();
 

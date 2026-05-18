@@ -127,9 +127,9 @@
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <a href="/bebantuanteknisassistensiall">
+    <a href="/bebantuanteknisassistensi">
         <button class="button-baru" style="margin: 0 5px;">
-            <i class="bi bi-folder2-open"></i> Data Lengkap
+            <i class="bi bi-folder2-open"></i> Data Permohonan
         </button>
     </a>
 
@@ -189,18 +189,32 @@
                             <thead>
                                   <tr>
       <th><i class="bi bi-list-ol"></i> No</th>
-{{-- <th><i class="bi bi-file-earmark-text"></i> Jenis Pengajuan</th> --}}
-<th><i class="bi bi-person"></i> Informasi Permohonan </th>
-{{-- <th><i class="bi bi-person-badge"></i> Konsultan </th>
-<th><i class="bi bi-person-badge"></i> Nama Paket</th> --}}
-{{-- <th><i class="bi bi-telephone"></i> Telepon</th> --}}
-<th><i class="bi bi-envelope-paper"></i> Permohonan</th>
-<th><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
-<th><i class="bi bi-cpu"></i> Cek Berkas Perencanaan</th>
-<th><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-<th><i class="bi bi-eye"></i> Verifikasi Asistensi</th>
-<th><i class="bi bi-upload"></i> Upload Berkas Bantek</th>
-<th><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
+<th><i class="bi bi-file-earmark-text"></i> Jenis Pengajuan</th>
+<th><i class="bi bi-person"></i> Dinas </th>
+<th><i class="bi bi-person"></i> Konsultan </th>
+<th><i class="bi bi-person"></i> Nama Paket </th>
+<th><i class="bi bi-person-badge"></i> Konsultan </th>
+<th><i class="bi bi-person-badge"></i> Nama Paket</th>
+<th><i class="bi bi-telephone"></i> Telepon</th>
+<th><i class="bi bi-telephone"></i> No Surat </th>
+<th><i class="bi bi-telephone"></i> No Surat Dinas</th>
+<th><i class="bi bi-telephone"></i> Tanggal Surat </th>
+<th><i class="bi bi-telephone"></i> Nama Pemohon </th>
+<th><i class="bi bi-telephone"></i> Kategori Bangunan  </th>
+<th><i class="bi bi-telephone"></i> Luas Bangunan  </th>
+<th><i class="bi bi-telephone"></i> Luas Tanah  </th>
+<th><i class="bi bi-telephone"></i> Jumlah Lantai  </th>
+<th><i class="bi bi-telephone"></i> Tinggi Bangunan  </th>
+<th><i class="bi bi-telephone"></i> Bassement  </th>
+<th><i class="bi bi-telephone"></i> Kepemilikan  </th>
+<th><i class="bi bi-telephone"></i> Tahun Pembangunan   </th>
+<th><i class="bi bi-telephone"></i> Tahun Renovasi  </th>
+<th><i class="bi bi-telephone"></i> Pengelola  </th>
+<th><i class="bi bi-telephone"></i> Alamat Lokasi  </th>
+<th><i class="bi bi-telephone"></i> RT  </th>
+<th><i class="bi bi-telephone"></i> RW  </th>
+<th><i class="bi bi-telephone"></i> Kabupaten  </th>
+<th><i class="bi bi-telephone"></i> Kelurahan </th>
             @can('superadmin')
             <th><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -212,17 +226,16 @@
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-            {{-- <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td> --}}
-            <td><span style="font-weight:400;">Dinas Pemohon: </span>{{ $item->dinas->name ?? '-' }} <br>
-                    <span style="font-weight:400;">Konsultan Asistensi : </span>{{ $item->bujkkonsultan->user->name ?? '-' }} <br>
-                        <span style="font-weight:400;">Nama Paket : </span>{{ $item->namapaket ?? '-' }}
-            </td>
+            <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
+            <td>{{ $item->dinas->name ?? '-' }}</td>
 
-            {{-- <td>{{ $item->no_telepon ?? '-' }}</td> --}}
-            {{-- <td>{{ $item->dinas->name ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
-            <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
+            <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
+            <td>{{ $item->no_telepon ?? '-' }}</td>
+            <td>{{ $item->nosurat ?? '-' }}</td>
+            <td>{{ $item->nosuratdinas ?? '-' }}</td>
+            <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
+            <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>
             <td>{{ $item->luasbangunan ?? '-' }} M²</td>
             <td>{{ $item->luastanahtotal ?? '-' }} M²</td>
@@ -238,344 +251,7 @@
             <td>{{ $item->rw ?? '-' }}</td>
             <td>{{ $item->kabupaten ?? '-' }}</td>
             <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
-
-
-            <td style="text-align: center;">
-                <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
-                    class="button-modern">
-                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
-                </a>
-            </td>
-            <!-- Tombol KTP -->
-
-<!-- Tombol Validasi -->
-<td style="text-align: center; height: 60px;">
-    @if($item->validasiberkas1 == 'lolos')
-        <button type="button" class="button-hijau" disabled>
-            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
-        </button>
-    @elseif($item->validasiberkas1 == 'dikembalikan')
-        <button type="button" class="button-merah" onclick="openModal({{ $item->id }})">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
-        </button>
-    @else
-        <button type="button" class="button-modern" onclick="openModal({{ $item->id }})" style="color: black;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
-        </button>
-    @endif
-</td>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai?</p>
-
-        <form id="validasiForm" method="POST">
-            @csrf
-            @method('PUT')
-
-<!-- Tombol Lolos -->
-<button
-    type="submit"
-    name="validasiberkas1"
-    value="lolos"
-    class="button-hijau">
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
-</button>
-
-<!-- Tombol Dikembalikan -->
-<button
-    type="submit"
-    name="validasiberkas1"
-    value="dikembalikan"
-    class="button-merah">
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
-</button>
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-        <button
-    type="button"
-    onclick="closeModal()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-    </div>
-</div>
-
-<script>
-    function openModal(itemId) {
-        const form = document.getElementById("validasiForm");
-        form.action = `/validasiberkas1permohonan1/${itemId}`;
-        document.getElementById("confirmModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("confirmModal").style.display = "none";
-    }
-</script>
-
-
-
-<td>
-    <div style="display: flex; justify-content: center;">
-        @if($item->validasiberkas2 == 'sudah')
-            <button
-                class="button-hijau"
-                type="button"
-                style="background-color: #10B981; color: black; cursor: not-allowed;"
-                disabled
-            >
-                <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
-            </button>
-        @elseif($item->validasiberkas2 == 'belum')
-            <button class="button-merah" type="button" onclick="openModal2({{ $item->id }})">
-                <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-            </button>
-        @else
-            <button class="button-modern" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-                <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Perencanaan
-            </button>
-        @endif
-    </div>
-</td>
-
-<!-- Modal Konfirmasi validasiberkas2 -->
-<div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah sudah cek berkas perencanaan ?</p>
-
-        <form id="validasiForm2" method="POST">
-            @csrf
-            @method('PUT')
-<!-- Tombol Sudah -->
-<button
-    type="submit"
-    name="validasiberkas2"
-    value="sudah"
-    class="button-hijau">
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
-</button>
-
-<!-- Tombol Belum -->
-<button
-    type="submit"
-    name="validasiberkas2"
-    value="belum"
-    class="button-merah">
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
-</button>
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-<button
-    type="button"
-    onclick="closeModal2()"
-    class="button-modern"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-</div>
-</div>
-
-<script>
-    function openModal2(itemId) {
-        const form = document.getElementById("validasiForm2");
-        form.action = `/validasiberkas1permohonan2/${itemId}`;
-        document.getElementById("confirmModal2").style.display = "flex";
-    }
-
-    function closeModal2() {
-        document.getElementById("confirmModal2").style.display = "none";
-    }
-</script>
-
-
-
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-modern">
-                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
-                </a>
-            </td>
-
-<td style="text-align: center;">
-     <div style="display: flex; justify-content: center;">
-       @if($item->validasiberkas3 == 'sudah')
-    <button
-        class="button-hijau"
-        type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
-    </button>
-     @elseif($item->validasiberkas3 == 'belum')
-        <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-        </button>
-        @else
-        <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Asistensi
-        </button>
-        @endif
-    </div>
-</td>
-<!-- Modal Konfirmasi validasiberkas3 -->
-<div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah asistensi sudah selesai ?</p>
-
-        <form id="validasiForm3" method="POST">
-            @csrf
-            @method('PUT')
-
-            <!-- Tombol Sudah -->
-         <button
-    type="submit"
-    name="validasiberkas3"
-    value="sudah"
-    class="button-hijau">
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
-</button>
-
-<button
-    type="submit"
-    name="validasiberkas3"
-    value="belum"
-    class="button-merah">
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
-</button>
-
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-<button
-    type="button"
-    onclick="closeModal3()"
-        class="button-modern">
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-</div>
-</div>
-
-<script>
-    function openModal3(itemId) {
-        const form = document.getElementById("validasiForm3");
-        form.action = `/validasiberkas1permohonan3/${itemId}`;
-        document.getElementById("confirmModal3").style.display = "flex";
-    }
-
-    function closeModal3() {
-        document.getElementById("confirmModal3").style.display = "none";
-    }
-</script>
-
-
-
-
-
-<td style="text-align: center;">
-      <div style="display: flex; justify-content: center;">
-
-    @if($item->validasiberkas4 == 'sudah')
-        <button
-            class="button-hijau"
-            type="button"
-            disabled
-        >
-            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
-        </button>
-    @elseif($item->validasiberkas4 == 'belum')
-        <button class="button-merah" type="button" onclick="openModal4({{ $item->id }})">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
-        </button>
-    @else
-        <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
-        </button>
-    @endif
-    </div>
-</td>
-
-<!-- Modal Konfirmasi verifikasiberkas4 -->
-<div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Terbitkan berita acara ?</p>
-
-        <form id="validasiForm4" method="POST">
-            @csrf
-            @method('PUT')
-
-            <!-- Tombol Terbitkan -->
-            <button
-                type="submit"
-                name="validasiberkas4"
-                value="sudah"
-                class="button-hijau"
-            >
-                <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Terbitkan
-            </button>
-
-            <!-- Tombol Tidak -->
-            <button
-                type="submit"
-                name="validasiberkas4"
-                value="belum"
-                class="button-merah">
-                <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Tidak
-            </button>
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-        <button
-            type="button"
-            onclick="closeModal4()"
-            class="button-modern"
-            >
-            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-        </button>
-    </div>
-</div>
-
-<script>
-    function openModal4(itemId) {
-        const form = document.getElementById("validasiForm4");
-        form.action = `/validasiberkas1permohonan4/${itemId}`;
-        document.getElementById("confirmModal4").style.display = "flex";
-    }
-
-    function closeModal4() {
-        document.getElementById("confirmModal4").style.display = "none";
-    }
-</script>
-
-
-
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
-                    class="button-berkas">
-                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
-                </a>
-            </td>
+            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
 
 
 @can('superadmin')

@@ -609,6 +609,7 @@ Route::delete('/bebantuanteknisdelete/{id}', [BantuanteknisController::class, 'b
 
 // DAFTAR SURAT PERMOHONAN BERKAS 1
 Route::get('/bebantuanteknisassistensi', [BantuanteknisController::class, 'bebantuanteknisassistensi'])->middleware('auth', 'can:superadmin')->name('bebantuanteknisassistensiindex');
+Route::get('/bebantuanteknisassistensiall', [BantuanteknisController::class, 'bebantuanteknisassistensiall'])->middleware('auth', 'can:superadmin')->name('bebantuanteknisassistensiall');
 Route::get('/beasistensishow/{id}', [BantuanteknisController::class, 'beasistensishow'])->middleware('auth')->name('beasistensishowberkas1.show');
 Route::put('/validasidokumenbantek/{id}', [BantuanteknisController::class, 'validasidokumenberkasbantek'])->middleware('auth')->name('validasidokumenbantek');
 Route::get('/bebantekpemohondinasperbaikan/{id}', [BantuanteknisController::class, 'bebantekpemohondinasperbaikan'])->middleware('auth')->name('bebantekpemohondinasperbaikan.perbaikan');
@@ -1091,6 +1092,9 @@ Route::post('/datanewpbgpeniliknew', [PenilikbangunanController::class, 'datanew
 
 Route::delete('/datapbgpenilikdelete/{id}', [BantuanhibahbgController::class, 'datapbgpenilikdelete'])->middleware('auth')->name('datapbgpenilikdelete');
 
+// INPUT PENILIK PEMBONGKARAN BANGUNAN
+Route::get('/datapbgpembongkaranpenilik', [PenilikbangunanController::class, 'datapbgpembongkaranpenilik'])->middleware('auth', 'can:admindpupr')->name('databongkaranpenilik.index');
+Route::post('/datanewpembongkaranpenilik', [PenilikbangunanController::class, 'datanewpembongkaranpenilik'])->middleware('auth','can:admindpupr')->name('datanewpembongkaranpenilik.createnew');
 
 Route::get('/dataallpenilikbgall', [PenilikbangunanController::class, 'dataallpenilikbgall'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
 Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');

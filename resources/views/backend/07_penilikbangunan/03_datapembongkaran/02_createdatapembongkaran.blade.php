@@ -136,11 +136,11 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datanewpbgpenilik.createnew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('datanewpembongkaranpenilik.createnew') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
 
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            {{-- <input type="hidden" name="user_id" value="{{ $user->id }}"> --}}
 
                             <div class="card-body">
                                 <div class="row">
