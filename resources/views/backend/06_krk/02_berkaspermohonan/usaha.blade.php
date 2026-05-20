@@ -240,6 +240,7 @@
         <button
             type="button"
             class="button-hijau"
+            onclick="openModal({{ $item->id }})"
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 6px;"></i> Lolos
         </button>
@@ -330,7 +331,7 @@
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-modern">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok Lapangan
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
             </td>
