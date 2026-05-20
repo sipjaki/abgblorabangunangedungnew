@@ -330,7 +330,7 @@
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-modern">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok Lapangan
 
                 </a>
             </td>
