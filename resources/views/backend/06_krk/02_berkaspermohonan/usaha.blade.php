@@ -240,7 +240,6 @@
         <button
             type="button"
             class="button-hijau"
-            disabled
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 6px;"></i> Lolos
         </button>
