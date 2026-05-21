@@ -1639,7 +1639,7 @@ Menu Sementara
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: orange; margin: 0 0 0 8px; flex-grow: 1;">Bantek PBG </p>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Bantek MBR </p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1677,7 +1677,7 @@ Menu Sementara
     <li class="nav-item">
         <a href="/bebantuangambar" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas <br> Permohonan </p>
         </a>
     </li>
 

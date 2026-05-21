@@ -1165,7 +1165,7 @@ public function datanewpbgpeniliknew(Request $request)
     $validated = $request->validate([
         'notanggalsk' => 'required|string|max:255',
         'namapemohon' => 'required|string|max:255',
-        'alamatpemohon' => 'required|string',
+        'alamatpemohon' => 'nullable|string',
 
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',

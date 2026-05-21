@@ -137,7 +137,7 @@
 
 
     {{-- <a href="/datajenispermohonancreate" style="text-decoration: none;">
-      <button class="button-baru"
+      <button class="button-modern"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
         <i class="bi bi-plus-circle"></i> Create
       </button>
@@ -181,7 +181,7 @@
                                   <tr>
         <th style="">No</th>
         <th style=""><i class="bi bi-user"></i> Nama Pemohon</th>
-        <th style=""><i class="bi bi-user"></i> Email</th>
+        {{-- <th style=""><i class="bi bi-user"></i> Email</th> --}}
         {{-- <th style=""><i class="bi bi-user"></i> Alamat </th> --}}
         {{-- <th style=""><i class="bi bi-user"></i> No Telepon</th>
         <th style=""><i class="bi bi-user"></i> Username Pemohon</th>
@@ -209,7 +209,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ $item->namapemohon ?? '-' }}</td>
-            <td>{{ $item->user->name ?? '-' }}</td>
+            {{-- <td>{{ $item->user->name ?? '-' }}</td> --}}
             {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
             {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
             {{-- <td>{{ $item->nomortelepon ?? '-' }}</td>
@@ -220,7 +220,7 @@
 
             <td style="text-align: center;">
                 <a href="{{ route('bebantuangambar.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
@@ -230,7 +230,7 @@
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi1 == 'lolos')
     <button
-        class="button-create"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
         disabled
@@ -238,7 +238,7 @@
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
     @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-dikembalikan" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
+        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
@@ -315,13 +315,13 @@
 
 <td>
     <div style="display: flex; justify-content: center;">
-<a href="/bepbgsurattugasgambar/{{ $item->id }}" class="button-baru">
+<a href="/bepbgsurattugasgambar/{{ $item->id }}" class="button-modern">
     <i class="bi bi-file-earmark-text"></i> Surat Tugas
 </a>
 
         @if($item->verifikasi2 == 'sudah')
             <button
-                class="button-create"
+                class="button-hijau"
                 type="button"
                 style="background-color: #10B981; color: black; cursor: not-allowed;"
                 disabled
@@ -329,7 +329,7 @@
                 <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
             </button>
         @elseif($item->verifikasi2 == 'belum')
-            <button class="button-dikembalikan" type="button" onclick="openModal2({{ $item->id }})" style="background-color: #ff0000; color: black;">
+            <button class="button-merah" type="button" onclick="openModal2({{ $item->id }})" style="background-color: #ff0000; color: black;">
                 <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
             </button>
         @else
@@ -408,14 +408,14 @@
     <div style="display: flex; justify-content: center;">
 
     <a href="{{ route('bebantuangambarlap.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
 
                      <div style="display: flex; justify-content: center;">
        @if($item->verifikasi3 == 'sudah')
     <button
-        class="button-create"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
         disabled
@@ -423,7 +423,7 @@
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
      @elseif($item->verifikasi3 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #ff0000; color: black;">
+        <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #ff0000; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
@@ -510,12 +510,12 @@
 <td style="text-align: center;">
       <div style="display: flex; justify-content: center;">
      <a href="{{ route('bebantuangambarupload', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
     @if($item->verifikasi4 == 'sudah')
         <button
-            class="button-create"
+            class="button-hijau"
             type="button"
             style="background-color: #10B981; color: black;"
             {{-- cursor: not-allowed; --}}
@@ -524,7 +524,7 @@
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
         </button>
     @elseif($item->verifikasi4 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #ff0000; color: black;">
+        <button class="button-merah" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #ff0000; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
