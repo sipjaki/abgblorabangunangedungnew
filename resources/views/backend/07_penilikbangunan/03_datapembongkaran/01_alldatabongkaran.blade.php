@@ -136,7 +136,7 @@ function exportTableToExcel(tableID, filename = '') {
 }
 </script>
 
-                                        <a href="/datapbgpembongkaranpenilik">
+                                        <a href="/datanewpembongkaran">
                                             <button class="button-baru" style="margin: 0 5px;">
                                                 <i class="bi bi-folder2-open"></i> Data Baru
                                             </button>
@@ -202,25 +202,31 @@ function exportTableToExcel(tableID, filename = '') {
      <tr>
                 <th>No</th>
                 <th>
-                    <i class="bi bi-card-text text-primary me-1"></i> No Registrasi PBG
+                    <i class="bi bi-card-text text-primary me-1"></i> Nama Instansi
                 </th>
                 <th>
-                    <i class="bi bi-person-badge text-primary me-1"></i> Nama Pemohon
+                    <i class="bi bi-person-badge text-primary me-1"></i> Nama Pemilik
                 </th>
                 <th>
-                    <i class="bi bi-geo-alt text-danger me-1"></i> Alamat Pemohon
+                    <i class="bi bi-geo-alt text-danger me-1"></i> Nama Bangunan
                 </th>
                 <th>
-                    <i class="bi bi-building text-warning me-1"></i> Fungsi Bangunan
+                    <i class="bi bi-building text-warning me-1"></i> Lokasi Bangunan
                 </th>
                 <th>
-                    <i class="bi bi-map text-success me-1"></i> Lokasi Bangunan
+                    <i class="bi bi-map text-success me-1"></i> Titik Koordinat
                 </th>
                 <th>
-                    <i class="bi bi-journal-text text-secondary me-1"></i> Keterangan
+                    <i class="bi bi-journal-text text-secondary me-1"></i> Fungsi Bangunan
                 </th>
                 <th>
-                    <i class="bi bi-calendar text-info me-1"></i> Tahun Terbit
+                    <i class="bi bi-calendar text-info me-1"></i> Jumlah Lantai
+                </th>
+                <th>
+                    <i class="bi bi-calendar text-info me-1"></i> Luas Bangunan
+                </th>
+                <th>
+                    <i class="bi bi-calendar text-info me-1"></i> Keterangan
                 </th>
                 <th class="text-center">Aksi</th>
             </tr>
@@ -230,38 +236,16 @@ function exportTableToExcel(tableID, filename = '') {
                                 @forelse ($data as $item)
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
-                    <td>
-                        <span class="fw-semibold text-primary">
-                            {{ $item->notanggalsk }}
-                        </span>
-                    </td>
 
-                    <td>{{ $item->namapemohon }}</td>
-
-                    <td style="max-width:200px;">
-                        <small>{{ $item->alamatpemohon }}</small>
-                    </td>
-
-                    <td>
-                        <span class="badge bg-warning text-dark">
-                            {{ $item->fungsibangunan }}
-                        </span>
-                    </td>
-
-                    <td>{{ $item->lokasibangunan }}</td>
-
-                    <td>
-                        <small class="text-muted">
-                            {{ $item->keterangan ?? '-' }}
-                        </small>
-                    </td>
-
-                    <td>
-                        <span class="badge bg-info text-dark">
-                            {{ $item->cadangan1 }}
-                        </span>
-                    </td>
-
+                    <td>{{ $item->cadangan1 }}</td>
+                    <td>{{ $item->cadangan2 }}</td>
+                    <td>{{ $item->cadangan3 }}</td>
+                    <td>{{ $item->cadangan4 }}</td>
+                    <td>{{ $item->cadangan5 }}</td>
+                    <td>{{ $item->cadangan6 }}</td>
+                    <td>{{ $item->cadangan7 }}</td>
+                    <td>{{ $item->cadangan8 }}</td>
+                    <td>{{ $item->cadangan9 }}</td>
 
                                     <td style="text-align: center;">
                                         {{-- <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
@@ -348,7 +332,7 @@ function exportTableToExcel(tableID, filename = '') {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/datapbgpenilikdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/databongkarandelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

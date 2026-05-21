@@ -1095,6 +1095,7 @@ Route::delete('/datapbgpenilikdelete/{id}', [BantuanhibahbgController::class, 'd
 // INPUT PENILIK PEMBONGKARAN BANGUNAN
 Route::get('/datapbgpembongkaranpenilik', [PenilikbangunanController::class, 'datapbgpembongkaranpenilik'])->middleware('auth', 'can:admindpupr')->name('databongkaranpenilik.index');
 Route::post('/datanewpembongkaranpenilik', [PenilikbangunanController::class, 'datanewpembongkaranpenilik'])->middleware('auth','can:admindpupr')->name('datanewpembongkaranpenilik.createnew');
+Route::delete('/databongkarandelete/{id}', [PenilikbangunanController::class, 'databongkarandelete'])->middleware('auth')->name('databongkarandelete');
 
 Route::get('/dataallpenilikbgall', [PenilikbangunanController::class, 'dataallpenilikbgall'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');
 Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->middleware('auth', 'can:admindpupr')->name('dataallpenilikbg.index');

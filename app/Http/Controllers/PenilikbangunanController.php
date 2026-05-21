@@ -1332,5 +1332,27 @@ public function datapbgpembongkaranpenilik(Request $request)
     ]);
 }
 
+public function databongkarandelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = cadangan2::find($id);
+
+    if ($entry) {
+        // Hapus file jika ada (jika menyimpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman index krkusaha
+        return redirect()->route('databongkaranpenilik.index')->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
 
 }
