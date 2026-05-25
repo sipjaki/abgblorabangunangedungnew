@@ -266,10 +266,14 @@
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
-
 <td style="text-align:center; vertical-align:middle;">
 
-    @if($data->cadangan7 || $data->cadangan8 || $data->cadangan9 || $data->cadangan10)
+    @if(
+        $item->cadangan7 ||
+        $item->cadangan8 ||
+        $item->cadangan9 ||
+        $item->cadangan10
+    )
 
         <div style="
             display:flex;
@@ -280,9 +284,11 @@
         ">
 
             {{-- FOTO 1 --}}
-            @if($data->cadangan7)
-                <a href="{{ asset($data->cadangan7) }}" target="_blank">
-                    <img src="{{ asset($data->cadangan7) }}"
+            @if($item->cadangan7)
+                <a href="{{ asset($item->cadangan7) }}" target="_blank">
+
+                    <img src="{{ asset($item->cadangan7) }}"
+                        alt="Foto 1"
                         style="
                             width:90px;
                             height:90px;
@@ -292,15 +298,20 @@
                             box-shadow:0 2px 6px rgba(0,0,0,0.12);
                             transition:0.3s;
                         "
+
                         onmouseover="this.style.transform='scale(1.05)'"
-                        onmouseout="this.style.transform='scale(1)'">
+                        onmouseout="this.style.transform='scale(1)'"
+                    >
+
                 </a>
             @endif
 
             {{-- FOTO 2 --}}
-            @if($data->cadangan8)
-                <a href="{{ asset($data->cadangan8) }}" target="_blank">
-                    <img src="{{ asset($data->cadangan8) }}"
+            @if($item->cadangan8)
+                <a href="{{ asset($item->cadangan8) }}" target="_blank">
+
+                    <img src="{{ asset($item->cadangan8) }}"
+                        alt="Foto 2"
                         style="
                             width:90px;
                             height:90px;
@@ -310,15 +321,20 @@
                             box-shadow:0 2px 6px rgba(0,0,0,0.12);
                             transition:0.3s;
                         "
+
                         onmouseover="this.style.transform='scale(1.05)'"
-                        onmouseout="this.style.transform='scale(1)'">
+                        onmouseout="this.style.transform='scale(1)'"
+                    >
+
                 </a>
             @endif
 
             {{-- FOTO 3 --}}
-            @if($data->cadangan9)
-                <a href="{{ asset($data->cadangan9) }}" target="_blank">
-                    <img src="{{ asset($data->cadangan9) }}"
+            @if($item->cadangan9)
+                <a href="{{ asset($item->cadangan9) }}" target="_blank">
+
+                    <img src="{{ asset($item->cadangan9) }}"
+                        alt="Foto 3"
                         style="
                             width:90px;
                             height:90px;
@@ -328,15 +344,20 @@
                             box-shadow:0 2px 6px rgba(0,0,0,0.12);
                             transition:0.3s;
                         "
+
                         onmouseover="this.style.transform='scale(1.05)'"
-                        onmouseout="this.style.transform='scale(1)'">
+                        onmouseout="this.style.transform='scale(1)'"
+                    >
+
                 </a>
             @endif
 
             {{-- FOTO 4 --}}
-            @if($data->cadangan10)
-                <a href="{{ asset($data->cadangan10) }}" target="_blank">
-                    <img src="{{ asset($data->cadangan10) }}"
+            @if($item->cadangan10)
+                <a href="{{ asset($item->cadangan10) }}" target="_blank">
+
+                    <img src="{{ asset($item->cadangan10) }}"
+                        alt="Foto 4"
                         style="
                             width:90px;
                             height:90px;
@@ -346,8 +367,11 @@
                             box-shadow:0 2px 6px rgba(0,0,0,0.12);
                             transition:0.3s;
                         "
+
                         onmouseover="this.style.transform='scale(1.05)'"
-                        onmouseout="this.style.transform='scale(1)'">
+                        onmouseout="this.style.transform='scale(1)'"
+                    >
+
                 </a>
             @endif
 
@@ -356,13 +380,13 @@
     @else
 
         <div style="
-            padding:12px 18px;
+            padding:10px 15px;
             background:#f8f9fa;
+            border:1px dashed #ced4da;
             border-radius:10px;
             color:#6c757d;
+            font-size:13px;
             font-weight:600;
-            font-size:14px;
-            border:1px dashed #ced4da;
             display:inline-block;
         ">
             <i class="bi bi-image me-2"></i>
@@ -372,6 +396,7 @@
     @endif
 
 </td>
+
 
 <td style="text-align: center;">
     <a href="{{ route('bebantekanalisashow', [
