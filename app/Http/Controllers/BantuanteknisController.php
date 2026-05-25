@@ -24,6 +24,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Crypt;
 
 class BantuanteknisController extends Controller
 {
@@ -8076,6 +8077,32 @@ public function bebantekanalisakerusakancreatenew(Request $request)
 
     return redirect('/bebantekanalisakerusakan')
         ->with('create', 'Data berhasil disimpan');
+}
+
+
+public function bebantekanalisashowanalisa($id)
+{
+    // Decode ID hasil encrypt
+    $id = Crypt::decryptString($id);
+
+    // Ambil data
+    $data = cadangan3::with(
+        'cadangan4',
+    )
+    ->where('id', $id)
+    ->firstOrFail();
+
+    // User login
+    $user = Auth::user();
+
+    return view(
+        'backend.04_bantuanteknis.01_berkaspemohon.09_analisakerusakan.03_hitunganalisakerusakan',
+        [
+            'title' => 'Hitung Analisa Kerusakan Bangunan Gedung',
+            'data'  => $data,
+            'user'  => $user
+        ]
+    );
 }
 
 }

@@ -1696,6 +1696,8 @@ Route::post(
 )->middleware('auth', 'can:admindinas')
  ->name('bebantekanalisakerusakannew');
 
+Route::get('/bebantekanalisashow/show/{id}',[BantuanteknisController::class, 'bebantekanalisashowanalisa'])->middleware('auth', 'can:admindinas')->name('bebantekanalisashow');
+
 Route::delete('/bebantekanalisakerusakandelete/{id}', [BantuanteknisController::class, 'bebantekanalisakerusakandelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisakerusakandelete');
 
 

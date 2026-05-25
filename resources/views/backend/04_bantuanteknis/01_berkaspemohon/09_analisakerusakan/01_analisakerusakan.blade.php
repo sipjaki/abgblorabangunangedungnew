@@ -263,13 +263,14 @@
 
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
 <td style="text-align: center;">
-    <a href="{{ route('bebantekpembongkaranshow', [
-            'namapemilik' => urlencode($item->namapemilik),
-            'id' => $item->id
+    <a href="{{ route('bebantekanalisashow', [
+            'id' => Crypt::encryptString($item->id)
         ]) }}"
        class="button-modern">
+
         <i class="bi bi-eye me-1"></i>
         Hitung Analisa
+
     </a>
 </td>
 
