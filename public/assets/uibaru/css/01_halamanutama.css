@@ -26,3 +26,119 @@
     position: relative;
     z-index: 2;
 }
+
+
+
+/* ============== */
+
+       /* --- STYLING DASAR GRID & CARD (Sesuai Struktur Kamu) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #eef2f5;
+        }
+
+        /* Efek mengangkat card saat di-hover */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            margin-bottom: 15px;
+            color: #4a5568; /* Warna default icon */
+        }
+
+        /* Ukuran Icon Lucide */
+        .service-icon i {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        /* Mengubah warna icon saat card di-hover */
+        .service-card:hover .service-icon i {
+            color: #3b82f6; /* Warna biru modern saat aktif */
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin: 10px 0 5px 0;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: #718096;
+            margin: 0;
+        }
+
+
+        /* ========================================================
+           --- CSS ANIMASI BERGERAK (TRIGGERS SAAT CARD DI-HOVER) ---
+           ======================================================== */
+
+        /* 1. Efek Denyut / Pulse (PBG, SLF, Rekomendasi, Sertifikasi) */
+        .service-card:nth-child(1):hover .service-icon i,
+        .service-card:nth-child(2):hover .service-icon i,
+        .service-card:nth-child(3):hover .service-icon i,
+        .service-card:nth-child(4):hover .service-icon i {
+            animation: animPulse 0.8s infinite alternate ease-in-out;
+        }
+
+        /* 2. Efek Goyang / Wobble (Konsultasi, Verifikasi, Monitoring) */
+        .service-card:nth-child(5):hover .service-icon i,
+        .service-card:nth-child(6):hover .service-icon i,
+        .service-card:nth-child(8):hover .service-icon i {
+            animation: animWobble 0.3s infinite alternate ease-in-out;
+        }
+
+        /* 3. Efek Lompat / Bounce (Pelaporan, Cek Status) */
+        .service-card:nth-child(7):hover .service-icon i,
+        .service-card:nth-child(12):hover .service-icon i {
+            animation: animBounce 0.5s infinite alternate ease-in-out;
+        }
+
+        /* 4. Efek Berputar / Rotate (Perpanjangan, Perubahan, Pembatalan) */
+        .service-card:nth-child(9):hover .service-icon i,
+        .service-card:nth-child(10):hover .service-icon i,
+        .service-card:nth-child(11):hover .service-icon i {
+            animation: animRotate 2s linear infinite;
+        }
+
+        /* --- KEYFRAMES LOGIK ANIMASI --- */
+        @keyframes animPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.25); }
+        }
+
+        @keyframes animWobble {
+            0% { transform: rotate(-12deg); }
+            100% { transform: rotate(12deg); }
+        }
+
+        @keyframes animBounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        @keyframes animRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+

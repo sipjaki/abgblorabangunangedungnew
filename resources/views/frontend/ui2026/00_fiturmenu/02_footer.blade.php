@@ -108,5 +108,8 @@
 <script src="{{ asset('assets/uibaru/js/table.js') }}"></script>
 <script src="{{ asset('assets/uibaru/js/scroll.js') }}"></script>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
 </body>
 </html>
