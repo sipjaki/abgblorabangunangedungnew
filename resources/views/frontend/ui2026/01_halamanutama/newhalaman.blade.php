@@ -18,16 +18,16 @@
         padding: 20px 40px;
     }
 
-    /* Card styling */
+    /* Card styling - dikurangi opacity biar background keliatan */
     .service-card {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.85); /* dari 0.95 jadi 0.85 biar tembus pandang */
         border-radius: 20px;
         padding: 28px 20px;
         text-align: center;
         transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         cursor: pointer;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(0px); /* HILANGKAN BLUR biar background jelas */
         animation: fadeUp 0.6s ease forwards;
         opacity: 0;
     }
@@ -35,7 +35,7 @@
     .service-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
     }
 
     /* Icon wrapper */
@@ -188,11 +188,11 @@
 <!-- ==================== SERVICES SECTION ==================== -->
 <section class="section services-section" id="services" style="position: relative; overflow: hidden; min-height: 100%;">
 
-    <!-- Layer Background dengan transparansi -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset('assets/abgblora/logo/newversi2abg.png') }}'); background-repeat: no-repeat; background-position: center center; background-size: cover; opacity: 0.1; pointer-events: none; z-index: 0;"></div>
+    <!-- Layer Background dengan transparansi - OPACITY DIPERBESAR biar keliatan -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset('assets/abgblora/logo/newversi2abg.png') }}'); background-repeat: no-repeat; background-position: center center; background-size: cover; opacity: 0.35; pointer-events: none; z-index: 0;"></div>
 
-    <!-- Layer gradasi untuk efek halus -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(248,250,252,0.1) 100%); pointer-events: none; z-index: 0;"></div>
+    <!-- Layer gradasi untuk efek halus - DIKECILKAN OPACITY-nya biar ga nutupin gambar -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(248,250,252,0.05) 100%); pointer-events: none; z-index: 0;"></div>
 
     <!-- Konten Utama -->
     <div class="container-fluid px-0" style="position: relative; z-index: 1;">
@@ -311,8 +311,6 @@
         }
     });
 </script>
-
-
     </main>
 
 @include('frontend.ui2026.00_fiturmenu.02_footer')
