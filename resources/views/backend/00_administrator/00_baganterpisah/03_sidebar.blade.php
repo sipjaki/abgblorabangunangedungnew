@@ -1183,10 +1183,6 @@
     </p>
 </div>
 
-<hr>
-Menu Sementara
-<hr>
-
 <li class="nav-item">
     <a href="/bebantuanteknisindex" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
@@ -1210,51 +1206,53 @@ Menu Sementara
     </a>
 </li>
 
+
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Analisa <br> Kerusakan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Peneliti Kontrak</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Penyusutan</p>
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tingkat Kerusakan</p>
-    </a>
-</li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pemeliharaan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konstruksi</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pendampingan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tim Teknis</p>
     </a>
 </li>
