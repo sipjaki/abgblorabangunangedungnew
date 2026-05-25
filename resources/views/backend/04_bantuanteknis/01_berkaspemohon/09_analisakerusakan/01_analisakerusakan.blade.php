@@ -229,11 +229,11 @@
 
 {{-- <th>
     <i class="bi bi-buildings-fill"></i> Bangunan Gedung
-</th>
+</th> --}}
 
 <th>
-    <i class="bi bi-house-fill"></i> Kode Barang
-</th> --}}
+    <i class="bi bi-house-fill"></i> Lihat Analisa
+</th>
 
 {{-- <th>
     <i class="bi bi-geo-alt-fill"></i> Alamat
@@ -252,7 +252,6 @@
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->namapemilik ?? '-' }}</td>
                                 <td><span style="font-weight:400;">Dinas : </span>{{ $item->catatan1 ?? 'Data Tidak Di Temukan !' }} <br>
                                     <span style="font-weight:400;">Bangunan Gedung : </span>{{ $item->cadangan1 ?? 'Data Tidak Di Temukan !' }} <br>
                                     <span style="font-weight:400;">Kode Barang : </span>{{ $item->cadangan2 ?? 'Data Tidak Di Temukan !' }} <br>
