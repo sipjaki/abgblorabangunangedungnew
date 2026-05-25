@@ -386,7 +386,7 @@ th {
                                     <p class="force-times">
                                         <strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Catatan:</strong>
                                     </p>
-                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 100 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 120 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                     </div>
                                     <br>
 

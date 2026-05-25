@@ -1217,14 +1217,14 @@
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Peneliti Kontrak</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Peneliti Kontrak</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Penyusutan</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Penyusutan</p>
     </a>
 </li>
 
@@ -1232,28 +1232,28 @@
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pemeliharaan</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pemeliharaan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konstruksi</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konstruksi</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pendampingan</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pendampingan</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: red; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tim Teknis</p>
+        <p style="color: red; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Tim Teknis</p>
     </a>
 </li>
 
