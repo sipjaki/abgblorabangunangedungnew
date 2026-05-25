@@ -8,14 +8,23 @@
     <main>
         {{-- <section class="section services-section" id="services"> --}}
         <section class="section services-section" id="services"
-            style="
-                position: relative;
-                overflow: hidden;
-                background-image: url('{{ asset('assets/abgblora/logo/versi2abg.png') }}');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-            ">
+                style="
+                    position: relative;
+                    overflow: hidden;
+
+                    background-image: url('{{ asset('assets/abgblora/logo/versi2abg.png') }}');
+
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    /* Menyesuaikan luas section */
+                    background-size: contain;
+
+                    /* Supaya background mengikuti tinggi section */
+                    min-height: 100%;
+
+                    background-attachment: scroll;
+                ">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Layanan Utama</h2>
