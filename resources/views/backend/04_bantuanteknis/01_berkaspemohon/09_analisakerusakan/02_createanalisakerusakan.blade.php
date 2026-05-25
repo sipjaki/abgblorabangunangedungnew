@@ -150,27 +150,111 @@
                                         Data Informasi Gedung
                                     </h5>
 
-                                    {{-- NAMA DINAS --}}
-                                    <div class="col-md-12">
+                                   <div class="col-md-12">
                                         <div class="form-modern mb-3">
+
                                             <label class="form-label-modern" for="catatan1">
                                                 <i class="bi bi-bank2 me-2 text-primary"></i>
                                                 Nama Dinas
                                             </label>
 
-                                            <textarea
-                                                class="form-control @error('catatan1') is-invalid @enderror"
+                                            <select
+                                                class="form-select @error('catatan1') is-invalid @enderror"
                                                 id="catatan1"
-                                                name="catatan1"
-                                                rows="2"
-                                                placeholder="Masukkan nama dinas">{{ old('catatan1') }}</textarea>
+                                                name="catatan1">
+
+                                                <option value="">-- Pilih Nama Dinas --</option>
+
+                                                <option value="BADAN KEPEGAWAIAN DAERAH"
+                                                    {{ old('catatan1') == 'BADAN KEPEGAWAIAN DAERAH' ? 'selected' : '' }}>
+                                                    BADAN KEPEGAWAIAN DAERAH
+                                                </option>
+
+                                                <option value="BADAN PERENCANAAN PEMBANGUNAN DAERAH"
+                                                    {{ old('catatan1') == 'BADAN PERENCANAAN PEMBANGUNAN DAERAH' ? 'selected' : '' }}>
+                                                    BADAN PERENCANAAN PEMBANGUNAN DAERAH
+                                                </option>
+
+                                                <option value="DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA"
+                                                    {{ old('catatan1') == 'DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA' ? 'selected' : '' }}>
+                                                    DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA
+                                                </option>
+
+                                                <option value="DINAS KESEHATAN"
+                                                    {{ old('catatan1') == 'DINAS KESEHATAN' ? 'selected' : '' }}>
+                                                    DINAS KESEHATAN
+                                                </option>
+
+                                                <option value="DINAS KOMUNIKASI DAN INFORMATIKA"
+                                                    {{ old('catatan1') == 'DINAS KOMUNIKASI DAN INFORMATIKA' ? 'selected' : '' }}>
+                                                    DINAS KOMUNIKASI DAN INFORMATIKA
+                                                </option>
+
+                                                <option value="DINAS LINGKUNGAN HIDUP"
+                                                    {{ old('catatan1') == 'DINAS LINGKUNGAN HIDUP' ? 'selected' : '' }}>
+                                                    DINAS LINGKUNGAN HIDUP
+                                                </option>
+
+                                                <option value="DINAS PANGAN, PERTANIAN, PETERNAKAN, DAN PERIKANAN"
+                                                    {{ old('catatan1') == 'DINAS PANGAN, PERTANIAN, PETERNAKAN, DAN PERIKANAN' ? 'selected' : '' }}>
+                                                    DINAS PANGAN, PERTANIAN, PETERNAKAN, DAN PERIKANAN
+                                                </option>
+
+                                                <option value="DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA"
+                                                    {{ old('catatan1') == 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA' ? 'selected' : '' }}>
+                                                    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA
+                                                </option>
+
+                                                <option value="DINAS PENDIDIKAN"
+                                                    {{ old('catatan1') == 'DINAS PENDIDIKAN' ? 'selected' : '' }}>
+                                                    DINAS PENDIDIKAN
+                                                </option>
+
+                                                <option value="DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA"
+                                                    {{ old('catatan1') == 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA' ? 'selected' : '' }}>
+                                                    DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA
+                                                </option>
+
+                                                <option value="DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH"
+                                                    {{ old('catatan1') == 'DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH' ? 'selected' : '' }}>
+                                                    DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH
+                                                </option>
+
+                                                <option value="DINAS PERINDUSTRIAN DAN TENAGA KERJA"
+                                                    {{ old('catatan1') == 'DINAS PERINDUSTRIAN DAN TENAGA KERJA' ? 'selected' : '' }}>
+                                                    DINAS PERINDUSTRIAN DAN TENAGA KERJA
+                                                </option>
+
+                                                <option value="DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN"
+                                                    {{ old('catatan1') == 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN' ? 'selected' : '' }}>
+                                                    DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN
+                                                </option>
+
+                                                <option value="DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK"
+                                                    {{ old('catatan1') == 'DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK' ? 'selected' : '' }}>
+                                                    DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK
+                                                </option>
+
+                                                <option value="SEKRETARIAT DAERAH"
+                                                    {{ old('catatan1') == 'SEKRETARIAT DAERAH' ? 'selected' : '' }}>
+                                                    SEKRETARIAT DAERAH
+                                                </option>
+
+                                                <option value="SEKRETARIAT DEWAN"
+                                                    {{ old('catatan1') == 'SEKRETARIAT DEWAN' ? 'selected' : '' }}>
+                                                    SEKRETARIAT DEWAN
+                                                </option>
+
+                                            </select>
 
                                             @error('catatan1')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
+
                                         </div>
                                     </div>
-
                                     {{-- NAMA GEDUNG --}}
                                     <div class="col-md-6">
                                         <div class="form-modern mb-3">
@@ -233,7 +317,7 @@
                                     </div>
 
                                     {{-- KABUPATEN / KOTA --}}
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-modern mb-3">
                                             <label class="form-label-modern" for="cadangan4">
                                                 <i class="bi bi-map-fill me-2 text-warning"></i>
@@ -253,7 +337,7 @@
                                     </div>
 
                                     {{-- KOORDINAT --}}
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-modern mb-3">
                                             <label class="form-label-modern" for="cadangan5">
                                                 <i class="bi bi-crosshair2 me-2 text-info"></i>
@@ -274,7 +358,7 @@
                                     </div>
 
                                     {{-- LUAS BANGUNAN --}}
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-modern mb-3">
                                             <label class="form-label-modern" for="cadangan6">
                                                 <i class="bi bi-arrows-fullscreen me-2 text-secondary"></i>
@@ -293,6 +377,13 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+                                        style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+                                        <i class="bi bi-building-fill me-3" style="font-size: 18px;"></i>
+                                        Foto Dokumentasi Bangunan Gedung
+                                    </h5>
+
 
                                     {{-- FOTO 1 --}}
                                     <div class="col-md-6">
