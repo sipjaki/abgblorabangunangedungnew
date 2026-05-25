@@ -1700,8 +1700,6 @@ Route::get('/bebantekanalisashow/show/{id}',[BantuanteknisController::class, 'be
 
 Route::delete('/bebantekanalisakerusakandelete/{id}', [BantuanteknisController::class, 'bebantekanalisakerusakandelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisakerusakandelete');
 
-
-
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
