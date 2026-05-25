@@ -189,7 +189,7 @@
 <section class="section services-section" id="services" style="position: relative; overflow: hidden; min-height: 100%;">
 
     <!-- Layer Background dengan transparansi - OPACITY DIPERBESAR biar keliatan -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset('assets/abgblora/logo/newversi2abg.png') }}'); background-repeat: no-repeat; background-position: center center; background-size: cover; opacity: 0.35; pointer-events: none; z-index: 0;"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset('assets/abgblora/logo/newversi2abg.png') }}'); background-repeat: no-repeat; background-position: center center; background-size: cover; opacity: 0.75; pointer-events: none; z-index: 0;"></div>
 
     <!-- Layer gradasi untuk efek halus - DIKECILKAN OPACITY-nya biar ga nutupin gambar -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(248,250,252,0.05) 100%); pointer-events: none; z-index: 0;"></div>
