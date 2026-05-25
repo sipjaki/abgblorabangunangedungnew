@@ -42,7 +42,6 @@
     style="
         position: relative;
         overflow: hidden;
-        background-color: #f8fafc;
         min-height: 100%;
     ">
 
@@ -57,9 +56,9 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        opacity: 0.1;
         pointer-events: none;
         z-index: 0;
+        margin-bottom:100px;
     "></div>
 
     <!-- Layer tambahan untuk efek gradasi biar background lebih halus (opsional) -->
