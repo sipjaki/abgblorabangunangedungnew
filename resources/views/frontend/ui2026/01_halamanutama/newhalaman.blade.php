@@ -6,10 +6,13 @@
     @include('frontend.ui2026.00_fiturmenu.03_headermenu')
 
     <main>
-    <section class="section services-section" id="services">
-            <div class="bg-illustration bg-illustration--skyline">
-                <img src="assets/2026/assets/illustrations/skyline.png" alt="" aria-hidden="true">
-            </div>
+    <section class="section services-section" id="services"
+            style="
+                background-image: url('{{ asset('assets/abgblora/logo/versi2abg.png') }}');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 450px;
+            ">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Layanan Utama</h2>
