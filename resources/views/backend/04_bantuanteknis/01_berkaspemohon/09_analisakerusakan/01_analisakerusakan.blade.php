@@ -153,7 +153,7 @@
     </a>
     @endcanany --}}
 
-                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_bantuanteknispembongkaran')"
+                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_bantuanteknisanalisakerusakanbangunan')"
                                     class="button-berkas" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
@@ -223,6 +223,10 @@
     <i class="bi bi-buildings-fill"></i> Informasi Bangunan Gedung
 </th>
 
+<th>
+    <i class="bi bi-buildings-fill"></i> Foto Dokumentasi
+</th>
+
 {{-- <th>
     <i class="bi bi-buildings-fill"></i> Bangunan Gedung
 </th>
@@ -240,7 +244,7 @@
 </th> --}}
 
 
-        <th><i class="bi bi-eye"></i> Hitung Kerusakan </th>
+        {{-- <th><i class="bi bi-eye"></i> Hitung Kerusakan </th> --}}
             <th ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
                             </thead>
@@ -251,7 +255,7 @@
                                 <td>{{ $item->namapemilik ?? '-' }}</td>
                                 <td><span style="font-weight:400;">Dinas : </span>{{ $item->catatan1 ?? 'Data Tidak Di Temukan !' }} <br>
                                     <span style="font-weight:400;">Bangunan Gedung : </span>{{ $item->cadangan1 ?? 'Data Tidak Di Temukan !' }} <br>
-                                    <span style="font-weight:400;">Kode Barang : </span>{{ $item->cadangan2 ?? 'Data Tidak Di Temukan !' }}
+                                    <span style="font-weight:400;">Kode Barang : </span>{{ $item->cadangan2 ?? 'Data Tidak Di Temukan !' }} <br>
                                     <span style="font-weight:400;">Alamat : </span>{{ $item->cadangan3 ?? 'Data Tidak Di Temukan !' }}
                                 </td>
 
@@ -262,6 +266,113 @@
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
+
+<td style="text-align:center; vertical-align:middle;">
+
+    @if($data->cadangan7 || $data->cadangan8 || $data->cadangan9 || $data->cadangan10)
+
+        <div style="
+            display:flex;
+            gap:10px;
+            justify-content:center;
+            align-items:center;
+            flex-wrap:nowrap;
+        ">
+
+            {{-- FOTO 1 --}}
+            @if($data->cadangan7)
+                <a href="{{ asset($data->cadangan7) }}" target="_blank">
+                    <img src="{{ asset($data->cadangan7) }}"
+                        style="
+                            width:90px;
+                            height:90px;
+                            object-fit:cover;
+                            border-radius:12px;
+                            border:2px solid #e5e7eb;
+                            box-shadow:0 2px 6px rgba(0,0,0,0.12);
+                            transition:0.3s;
+                        "
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </a>
+            @endif
+
+            {{-- FOTO 2 --}}
+            @if($data->cadangan8)
+                <a href="{{ asset($data->cadangan8) }}" target="_blank">
+                    <img src="{{ asset($data->cadangan8) }}"
+                        style="
+                            width:90px;
+                            height:90px;
+                            object-fit:cover;
+                            border-radius:12px;
+                            border:2px solid #e5e7eb;
+                            box-shadow:0 2px 6px rgba(0,0,0,0.12);
+                            transition:0.3s;
+                        "
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </a>
+            @endif
+
+            {{-- FOTO 3 --}}
+            @if($data->cadangan9)
+                <a href="{{ asset($data->cadangan9) }}" target="_blank">
+                    <img src="{{ asset($data->cadangan9) }}"
+                        style="
+                            width:90px;
+                            height:90px;
+                            object-fit:cover;
+                            border-radius:12px;
+                            border:2px solid #e5e7eb;
+                            box-shadow:0 2px 6px rgba(0,0,0,0.12);
+                            transition:0.3s;
+                        "
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </a>
+            @endif
+
+            {{-- FOTO 4 --}}
+            @if($data->cadangan10)
+                <a href="{{ asset($data->cadangan10) }}" target="_blank">
+                    <img src="{{ asset($data->cadangan10) }}"
+                        style="
+                            width:90px;
+                            height:90px;
+                            object-fit:cover;
+                            border-radius:12px;
+                            border:2px solid #e5e7eb;
+                            box-shadow:0 2px 6px rgba(0,0,0,0.12);
+                            transition:0.3s;
+                        "
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </a>
+            @endif
+
+        </div>
+
+    @else
+
+        <div style="
+            padding:12px 18px;
+            background:#f8f9fa;
+            border-radius:10px;
+            color:#6c757d;
+            font-weight:600;
+            font-size:14px;
+            border:1px dashed #ced4da;
+            display:inline-block;
+        ">
+            <i class="bi bi-image me-2"></i>
+            Belum Ada Foto Dokumentasi
+        </div>
+
+    @endif
+
+</td>
+
 <td style="text-align: center;">
     <a href="{{ route('bebantekanalisashow', [
             'id' => Crypt::encryptString($item->id)
@@ -350,8 +461,7 @@
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                              </div>
 <p>
-    Apakah Anda yakin ingin menghapus data <strong><span id="itemName"></span></strong>?<br>
-    Seluruh berkas dan data pendukung yang terkait dengan data ini akan ikut terhapus secara permanen.
+    Apakah Anda yakin ingin menghapus data ini <strong><span id="itemName"></span></strong>?<br>
 </p>
 
                              <div class="modal-footer">
