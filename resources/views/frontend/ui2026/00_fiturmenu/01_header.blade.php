@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/assets/uibaru/css/animations.css">
     <link rel="stylesheet" href="/assets/uibaru/css/responsive.css">
     <link rel="stylesheet" href="/assets/uibaru/css/tambahan.css">
+    <link rel="stylesheet" href="/assets/uibaru/css/01_halamanutama.css">
 
 <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
 
