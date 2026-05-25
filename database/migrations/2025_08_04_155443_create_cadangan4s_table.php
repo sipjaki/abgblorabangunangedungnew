@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cadangan4s', function (Blueprint $table) {
             $table->id();
-               $table->foreignId('kuncibaru_id')->index()->nullable();
+               $table->foreignId('kuncibaru_id')->index()->nullable(); // FOREIGN KEY YANG DI PAKAI INI SAJA
             $table->foreignId('kuncibaru1_id')->index()->nullable();
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->text('catatan2')->nullable();
 
             $table->softDeletes();
-         
+
             $table->timestamps();
         });
     }

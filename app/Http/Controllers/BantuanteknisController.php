@@ -8,6 +8,7 @@ use App\Models\bantekpembongkarannew2;
 use App\Models\bantuanteknis;
 use App\Models\bglapangan;
 use App\Models\bujkkonsultan;
+use App\Models\cadangan3;
 use App\Models\ceklapanganbantek;
 use App\Models\fotobongkarlap;
 use App\Models\gambarbantuan;
@@ -7865,5 +7866,72 @@ public function bebantuanteknisassistensiall(Request $request)
 //             'induk' => $data->dataindukfoto,        // bantekpembongkaraninduk
 //         ]);
 //     }
+
+// MENU CONTROLLER ANALISA KERUSAKAN BANGUNAN GEDUNG
+
+public function bebantekanalisakerusakan(Request $request)
+{
+    $user    = Auth::user();
+    $search  = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = cadangan3::query();
+
+    /**
+     * 🔐 FILTER AKSES DATA
+     * - Super Admin (statusadmin_id = 1) → semua data
+     * - User biasa → hanya data milik sendiri
+     */
+    if ($user->statusadmin_id != 1) {
+        $query->where('user_id', $user->id);
+    }
+
+    /**
+     * 🔍 SEARCH
+     */
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('cadangan1', 'like', "%{$search}%")
+              ->orWhere('cadangan2', 'like', "%{$search}%")
+              ->orWhere('cadangan3', 'like', "%{$search}%")
+              ;
+        });
+    }
+
+    $data = $query
+        ->latest()
+        ->paginate($perPage)
+        ->appends($request->query());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.09_analisakerusakan.01_analisakerusakan', [
+        'title' => 'Bantuan Teknis Analisa Tingkat Kerusakan Bangunan Gedung',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+
+public function bebantekanalisakerusakandelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = cadangan3::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/bebantekanalisakerusakan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
 }
 

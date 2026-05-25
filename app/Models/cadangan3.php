@@ -13,4 +13,9 @@ class cadangan3 extends Model
 
     protected $guarded = ['id'];
 
+    public function user()
+    {
+        return $this->hasMany(cadangan4::class);
+    }
+
 }
