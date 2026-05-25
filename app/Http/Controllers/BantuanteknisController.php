@@ -7933,5 +7933,150 @@ public function bebantekanalisakerusakandelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+
+
+    public function bebantekanalisakerusakancreate(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.04_bantuanteknis.01_berkaspemohon.09_analisakerusakan.02_createanalisakerusakan', [
+            'title' => 'Bangunan Baru Bantuan Teknis Analisa Tingkat Kerusakan Bangunan Gedung',
+            'user' => $user,
+    ]);
+}
+
+
+public function bebantekanalisakerusakancreatenew(Request $request)
+{
+    $request->validate(
+        [
+            'catatan1'   => 'required|string|max:255', // NAMA DINAS
+            'cadangan1'  => 'required|string|max:255', // NAMA GEDUNG
+            'cadangan2'  => 'nullable|string|max:255', // KODE BARANG
+            'cadangan3'  => 'required|string|max:255', // ALAMAT
+            'cadangan4'  => 'required|string|max:255', // KABUPATEN/KOTA
+            'cadangan5'  => 'required|string|max:255', // KOORDINAT
+            'cadangan6'  => 'required|string|max:255', // LUAS BANGUNAN
+
+            // FOTO
+            'cadangan7'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480',
+            'cadangan8'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480',
+            'cadangan9'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480',
+            'cadangan10' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480',
+        ],
+        [
+            'catatan1.required' => 'Nama dinas wajib diisi.',
+
+            'cadangan1.required' => 'Nama gedung wajib diisi.',
+
+            'cadangan3.required' => 'Alamat wajib diisi.',
+
+            'cadangan4.required' => 'Kabupaten/Kota wajib diisi.',
+
+            'cadangan5.required' => 'Koordinat wajib diisi.',
+
+            'cadangan6.required' => 'Luas bangunan wajib diisi.',
+
+            // FOTO VALIDATION
+            'cadangan7.image' => 'Foto 1 harus berupa gambar.',
+            'cadangan7.mimes' => 'Foto 1 harus format JPG, JPEG, PNG, atau WEBP.',
+            'cadangan7.max'   => 'Ukuran Foto 1 maksimal 20MB.',
+
+            'cadangan8.image' => 'Foto 2 harus berupa gambar.',
+            'cadangan8.mimes' => 'Foto 2 harus format JPG, JPEG, PNG, atau WEBP.',
+            'cadangan8.max'   => 'Ukuran Foto 2 maksimal 20MB.',
+
+            'cadangan9.image' => 'Foto 3 harus berupa gambar.',
+            'cadangan9.mimes' => 'Foto 3 harus format JPG, JPEG, PNG, atau WEBP.',
+            'cadangan9.max'   => 'Ukuran Foto 3 maksimal 20MB.',
+
+            'cadangan10.image' => 'Foto 4 harus berupa gambar.',
+            'cadangan10.mimes' => 'Foto 4 harus format JPG, JPEG, PNG, atau WEBP.',
+            'cadangan10.max'   => 'Ukuran Foto 4 maksimal 20MB.',
+        ]
+    );
+
+    // =====================================================
+    // UPLOAD FOTO KE PUBLIC
+    // =====================================================
+
+    $foto1 = null;
+    $foto2 = null;
+    $foto3 = null;
+    $foto4 = null;
+
+    if ($request->hasFile('cadangan7')) {
+
+        $file = $request->file('cadangan7');
+
+        $namaFile = time() . '_foto1.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('upload/bantekpembongkaran'), $namaFile);
+
+        $foto1 = 'upload/bantekpembongkaran/' . $namaFile;
+    }
+
+    if ($request->hasFile('cadangan8')) {
+
+        $file = $request->file('cadangan8');
+
+        $namaFile = time() . '_foto2.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('upload/bantekpembongkaran'), $namaFile);
+
+        $foto2 = 'upload/bantekpembongkaran/' . $namaFile;
+    }
+
+    if ($request->hasFile('cadangan9')) {
+
+        $file = $request->file('cadangan9');
+
+        $namaFile = time() . '_foto3.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('upload/bantekpembongkaran'), $namaFile);
+
+        $foto3 = 'upload/bantekpembongkaran/' . $namaFile;
+    }
+
+    if ($request->hasFile('cadangan10')) {
+
+        $file = $request->file('cadangan10');
+
+        $namaFile = time() . '_foto4.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('upload/bantekpembongkaran'), $namaFile);
+
+        $foto4 = 'upload/bantekpembongkaran/' . $namaFile;
+    }
+
+    // =====================================================
+    // SIMPAN DATABASE
+    // =====================================================
+
+    cadangan3::create([
+
+        // DATA GEDUNG
+        'catatan1'  => $request->catatan1,
+        'cadangan1' => $request->cadangan1,
+        'cadangan2' => $request->cadangan2,
+        'cadangan3' => $request->cadangan3,
+        'cadangan4' => $request->cadangan4,
+        'cadangan5' => $request->cadangan5,
+        'cadangan6' => $request->cadangan6,
+
+        // FOTO
+        'cadangan7'  => $foto1,
+        'cadangan8'  => $foto2,
+        'cadangan9'  => $foto3,
+        'cadangan10' => $foto4,
+    ]);
+
+    return redirect('/bebantekanalisakerusakan')
+        ->with('create', 'Data berhasil disimpan');
+}
+
 }
 

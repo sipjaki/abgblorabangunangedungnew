@@ -13,7 +13,7 @@ class cadangan4 extends Model
 
     protected $guarded = ['id'];
 
-    public function user()
+    public function cadangan3()
     {
         return $this->belongsTo(cadangan3::class, 'kuncibaru_id');
     }

@@ -1689,12 +1689,12 @@ Route::post('/datanewpembongkarannew', [PenilikbangunanController::class, 'datan
 
 Route::get('/bebantekanalisakerusakan', [BantuanteknisController::class, 'bebantekanalisakerusakan'])->middleware('auth', 'can:admindinas')->name('bebantekanalisakerusakan'); // AKSES SEMUA SUPER ADMIN DINAS DAN PEMOHON
 // Route::get('/bebantekpembongkaranall', [BantuanteknisController::class, 'bebantekpembongkaranall'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
-// Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');
-// Route::post(
-//     '/bebantekpembongkaran/createnewbaru',
-//     [BantuanteknisController::class, 'bebantekpembongkarancreatenew']
-// )->middleware('auth', 'can:admindinas')
-//  ->name('bantekpembongkarannew');
+Route::get('/bebantekanalisakerusakan/create', [BantuanteknisController::class, 'bebantekanalisakerusakancreate'])->middleware('auth', 'can:admindinas')->name('bebantekanalisakerusakancreate');
+Route::post(
+    '/bebantekanalisakerusakan/createbaru',
+    [BantuanteknisController::class, 'bebantekanalisakerusakancreatenew']
+)->middleware('auth', 'can:admindinas')
+ ->name('bebantekanalisakerusakannew');
 
 Route::delete('/bebantekanalisakerusakandelete/{id}', [BantuanteknisController::class, 'bebantekanalisakerusakandelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisakerusakandelete');
 

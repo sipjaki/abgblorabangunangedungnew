@@ -13,7 +13,7 @@ class cadangan3 extends Model
 
     protected $guarded = ['id'];
 
-    public function user()
+    public function cadangan4()
     {
         return $this->hasMany(cadangan4::class);
     }
