@@ -1,31 +1,27 @@
 .services-section {
     position: relative;
     overflow: hidden;
-    background-color: #ffffff;
+
+    background-image: url('/assets/abgblora/logo/versi2abg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* FULL */
+
+    z-index: 1;
 }
 
-/* Background Logo */
+/* Overlay putih transparan */
 .services-section::before {
     content: "";
     position: absolute;
+    inset: 0;
 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    background: rgba(255, 255, 255, 0.90);
 
-    background: url('/assets/abgblora/logo/versi2abg.png') center center no-repeat;
-
-    background-size: 450px;
-
-    opacity: 0.07;
-
-    pointer-events: none;
-
-    z-index: 0;
+    z-index: 1;
 }
 
-/* Isi Section */
+/* Isi konten tetap di atas */
 .services-section .container {
     position: relative;
     z-index: 2;

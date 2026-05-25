@@ -6,14 +6,8 @@
     @include('frontend.ui2026.00_fiturmenu.03_headermenu')
 
     <main>
-    <section class="section services-section" id="services"
-            style="
-                background-image: url('{{ asset('assets/abgblora/logo/versi2abg.png') }}');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 450px;
-            ">
-            <div class="container">
+        <section class="section services-section" id="services">
+                <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Layanan Utama</h2>
                     {{-- <p class="section-subtitle">Akses layanan administrasi bangunan gedung dengan mudah dan cepat</p> --}}
