@@ -76,6 +76,9 @@
 
     {{-- SELECT FILTER TAHUN --}}
 <form method="GET" action="{{ url()->current() }}" id="formFilterTahun">
+
+<label style="font-weight:600;">Filter Tahun Retribusi :</label>
+
     {{-- Pertahankan parameter lain yang sudah ada --}}
     @if(request('search'))
         <input type="hidden" name="search" value="{{ request('search') }}">
