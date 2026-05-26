@@ -2899,122 +2899,122 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
 }
 
 
- public function bepbgslfretribusi(Request $request)
-{
-    $user = Auth::user();
-    $perPage = $request->input('perPage', 10);
-    $search = $request->search;
+//  public function bepbgslfretribusi(Request $request)
+// {
+//     $user = Auth::user();
+//     $perPage = $request->input('perPage', 10);
+//     $search = $request->search;
 
-    // ================================
-    // HITUNG BERDASARKAN JENIS PENGAJUAN
-    // ================================
-    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 1);
-    })->count();
+//     // ================================
+//     // HITUNG BERDASARKAN JENIS PENGAJUAN
+//     // ================================
+//     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+//         $q->where('id', 1);
+//     })->count();
 
-    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 2);
-    })->count();
+//     $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+//         $q->where('id', 2);
+//     })->count();
 
-    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 3);
-    })->count();
+//     $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+//         $q->where('id', 3);
+//     })->count();
 
-    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 4);
-    })->count();
+//     $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+//         $q->where('id', 4);
+//     })->count();
 
-    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 5);
-    })->count();
+//     $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+//         $q->where('id', 5);
+//     })->count();
 
-    // ================================
-    // FILTER BULAN + TAHUN
-    // ================================
-    $bulanTahun = $request->input('bulan_tahun');
+//     // ================================
+//     // FILTER BULAN + TAHUN
+//     // ================================
+//     $bulanTahun = $request->input('bulan_tahun');
 
-    $query = pbgslfbangunan::with(['user','jenispengajuanpbgslfper'])
-        ->where('validasiberkas5','sudah')
-        ->when($search, function ($query, $search) {
-            return $query->where('namapemohon', 'like', "%{$search}%");
-        });
+//     $query = pbgslfbangunan::with(['user','jenispengajuanpbgslfper'])
+//         ->where('validasiberkas5','sudah')
+//         ->when($search, function ($query, $search) {
+//             return $query->where('namapemohon', 'like', "%{$search}%");
+//         });
 
-    if ($bulanTahun) {
-        $tanggal = Carbon::createFromFormat('Y-m', $bulanTahun);
+//     if ($bulanTahun) {
+//         $tanggal = Carbon::createFromFormat('Y-m', $bulanTahun);
 
-        $query->whereYear('updated_at', $tanggal->year)
-              ->whereMonth('updated_at', $tanggal->month);
-    }
+//         $query->whereYear('updated_at', $tanggal->year)
+//               ->whereMonth('updated_at', $tanggal->month);
+//     }
 
-    // ================================
-    // TOTAL DATA SETELAH FILTER
-    // ================================
-    $totalFiltered = $query->count();
+//     // ================================
+//     // TOTAL DATA SETELAH FILTER
+//     // ================================
+//     $totalFiltered = $query->count();
 
-    $data = $query->latest()->paginate($perPage);
-    $data->appends($request->all());
+//     $data = $query->latest()->paginate($perPage);
+//     $data->appends($request->all());
 
-    // ================================
-    // DATA SIDANG BULANAN (GRAFIK)
-    // ================================
-    $jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5','sudah')
-        ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
-        ->groupBy('bulan')
-        ->orderBy('bulan')
-        ->pluck('jumlah','bulan')
-        ->toArray();
+//     // ================================
+//     // DATA SIDANG BULANAN (GRAFIK)
+//     // ================================
+//     $jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5','sudah')
+//         ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+//         ->groupBy('bulan')
+//         ->orderBy('bulan')
+//         ->pluck('jumlah','bulan')
+//         ->toArray();
 
-    $jumlahsidangbulanan = [];
-    for ($i = 1; $i <= 12; $i++) {
-        $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
-    }
+//     $jumlahsidangbulanan = [];
+//     for ($i = 1; $i <= 12; $i++) {
+//         $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+//     }
 
-    // ================================
-    // DAFTAR BULAN + TAHUN DARI DATABASE
-    // ================================
-    $daftarBulanTahun = pbgslfbangunan::where('validasiberkas5','sudah')
-        ->selectRaw("DATE_FORMAT(updated_at,'%Y-%m') as bulan_tahun")
-        ->distinct()
-        ->orderBy('bulan_tahun','asc')
-        ->pluck('bulan_tahun');
+//     // ================================
+//     // DAFTAR BULAN + TAHUN DARI DATABASE
+//     // ================================
+//     $daftarBulanTahun = pbgslfbangunan::where('validasiberkas5','sudah')
+//         ->selectRaw("DATE_FORMAT(updated_at,'%Y-%m') as bulan_tahun")
+//         ->distinct()
+//         ->orderBy('bulan_tahun','asc')
+//         ->pluck('bulan_tahun');
 
-    // ================================
-    // NOMINAL RETRIBUSI
-    // ================================
-    $nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
+//     // ================================
+//     // NOMINAL RETRIBUSI
+//     // ================================
+//     $nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
 
-    $nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas9','sudah')
-        ->whereNotNull('rupiah')
-        ->sum('rupiah');
+//     $nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas9','sudah')
+//         ->whereNotNull('rupiah')
+//         ->sum('rupiah');
 
-    $nominalPenerimaan = $nominalSudahTerbayar;
+//     $nominalPenerimaan = $nominalSudahTerbayar;
 
-    // ================================
-    // RETURN VIEW
-    // ================================
-    return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
-        'title' => 'Potensi Retribusi PBG/SLF Bangunan Gedung',
-        'user' => $user,
+//     // ================================
+//     // RETURN VIEW
+//     // ================================
+//     return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
+//         'title' => 'Potensi Retribusi PBG/SLF Bangunan Gedung',
+//         'user' => $user,
 
-        'jumlahDataIdSatu' => $jumlahDataIdSatu,
-        'jumlahDataIdDua' => $jumlahDataIdDua,
-        'jumlahDataIdTiga' => $jumlahDataIdTiga,
-        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
-        'jumlahDataIdLima' => $jumlahDataIdLima,
+//         'jumlahDataIdSatu' => $jumlahDataIdSatu,
+//         'jumlahDataIdDua' => $jumlahDataIdDua,
+//         'jumlahDataIdTiga' => $jumlahDataIdTiga,
+//         'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
+//         'jumlahDataIdLima' => $jumlahDataIdLima,
 
-        'jumlahsidangbulanan' => $jumlahsidangbulanan,
+//         'jumlahsidangbulanan' => $jumlahsidangbulanan,
 
-        'data' => $data,
-        'totalFiltered' => $totalFiltered,
+//         'data' => $data,
+//         'totalFiltered' => $totalFiltered,
 
-        'bulanTahun' => $bulanTahun,
-        'daftarBulanTahun' => $daftarBulanTahun,
+//         'bulanTahun' => $bulanTahun,
+//         'daftarBulanTahun' => $daftarBulanTahun,
 
-        'nominalRetribusiTotal' => $nominalRetribusiTotal,
-        'nominalSudahTerbayar' => $nominalSudahTerbayar,
-        'nominalPenerimaan' => $nominalPenerimaan,
-    ]);
-}
+//         'nominalRetribusiTotal' => $nominalRetribusiTotal,
+//         'nominalSudahTerbayar' => $nominalSudahTerbayar,
+//         'nominalPenerimaan' => $nominalPenerimaan,
+//     ]);
+// }
 
 
 
@@ -5136,4 +5136,149 @@ public function betpatptupdatestore(Request $request, $id)
         ->back()
         ->with('update', 'Data Petugas TPA/TPT berhasil diperbarui');
 }
+
+
+
+public function bepbgslfretribusi(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 10);
+    $search = $request->search;
+
+    // ================================
+    // HITUNG BERDASARKAN JENIS PENGAJUAN
+    // ================================
+    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+    // ================================
+    // FILTER BULAN + TAHUN & TAHUN SAJA
+    // ================================
+    $bulanTahun = $request->input('bulan_tahun');
+    $filterTahun = $request->input('filter_tahun'); // ← TAMBAHAN BARU
+
+    $query = pbgslfbangunan::with(['user','jenispengajuanpbgslfper'])
+        ->where('validasiberkas5','sudah')
+        ->when($search, function ($query, $search) {
+            return $query->where('namapemohon', 'like', "%{$search}%");
+        });
+
+    // Filter bulan+tahun (prioritas utama jika keduanya diisi)
+    if ($bulanTahun) {
+        $tanggal = Carbon::createFromFormat('Y-m', $bulanTahun);
+        $query->whereYear('updated_at', $tanggal->year)
+              ->whereMonth('updated_at', $tanggal->month);
+    } elseif ($filterTahun) {
+        // Filter tahun saja
+        $query->whereYear('updated_at', $filterTahun);
+    }
+
+    // ================================
+    // TOTAL DATA SETELAH FILTER
+    // ================================
+    $totalFiltered = $query->count();
+
+    $data = $query->latest()->paginate($perPage);
+    $data->appends($request->all());
+
+    // ================================
+    // DATA SIDANG BULANAN (GRAFIK) — ikut filter tahun
+    // ================================
+    $grafik = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->when($filterTahun, function ($q) use ($filterTahun) {
+            $q->whereYear('updated_at', $filterTahun);
+        })
+        ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+        ->groupBy('bulan')
+        ->orderBy('bulan')
+        ->pluck('jumlah','bulan')
+        ->toArray();
+
+    $jumlahsidangbulanan = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $jumlahsidangbulanan[$i - 1] = $grafik[$i] ?? 0;
+    }
+
+    // ================================
+    // DAFTAR BULAN + TAHUN DARI DATABASE
+    // ================================
+    $daftarBulanTahun = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw("DATE_FORMAT(updated_at,'%Y-%m') as bulan_tahun")
+        ->distinct()
+        ->orderBy('bulan_tahun','asc')
+        ->pluck('bulan_tahun');
+
+    // ================================
+    // DAFTAR TAHUN DARI DATABASE (untuk select tahun)
+    // ================================
+    $daftarTahun = pbgslfbangunan::where('validasiberkas5','sudah')
+        ->selectRaw('YEAR(updated_at) as tahun')
+        ->distinct()
+        ->orderBy('tahun', 'asc')
+        ->pluck('tahun');
+
+    // ================================
+    // NOMINAL RETRIBUSI — ikut filter tahun
+    // ================================
+    $queryRetribusi = pbgslfbangunan::whereNotNull('rupiah')
+        ->when($filterTahun, function ($q) use ($filterTahun) {
+            $q->whereYear('updated_at', $filterTahun);
+        });
+
+    $nominalRetribusiTotal = (clone $queryRetribusi)->sum('rupiah');
+
+    $nominalSudahTerbayar = (clone $queryRetribusi)
+        ->where('validasiberkas9','sudah')
+        ->sum('rupiah');
+
+    $nominalPenerimaan = $nominalSudahTerbayar;
+
+    // ================================
+    // RETURN VIEW
+    // ================================
+    return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
+        'title'              => 'Potensi Retribusi PBG/SLF Bangunan Gedung',
+        'user'               => $user,
+
+        'jumlahDataIdSatu'   => $jumlahDataIdSatu,
+        'jumlahDataIdDua'    => $jumlahDataIdDua,
+        'jumlahDataIdTiga'   => $jumlahDataIdTiga,
+        'jumlahDataIdEmpat'  => $jumlahDataIdEmpat,
+        'jumlahDataIdLima'   => $jumlahDataIdLima,
+
+        'jumlahsidangbulanan'=> $jumlahsidangbulanan,
+
+        'data'               => $data,
+        'totalFiltered'      => $totalFiltered,
+
+        'bulanTahun'         => $bulanTahun,
+        'daftarBulanTahun'   => $daftarBulanTahun,
+
+        'filterTahun'        => $filterTahun,      // ← TAMBAHAN
+        'daftarTahun'        => $daftarTahun,      // ← TAMBAHAN
+
+        'nominalRetribusiTotal'  => $nominalRetribusiTotal,
+        'nominalSudahTerbayar'   => $nominalSudahTerbayar,
+        'nominalPenerimaan'      => $nominalPenerimaan,
+    ]);
+}
+
+
 }

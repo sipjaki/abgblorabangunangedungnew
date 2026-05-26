@@ -74,6 +74,31 @@
       </select>
     </div>
 
+    {{-- SELECT FILTER TAHUN --}}
+<form method="GET" action="{{ url()->current() }}" id="formFilterTahun">
+    {{-- Pertahankan parameter lain yang sudah ada --}}
+    @if(request('search'))
+        <input type="hidden" name="search" value="{{ request('search') }}">
+    @endif
+    @if(request('perPage'))
+        <input type="hidden" name="perPage" value="{{ request('perPage') }}">
+    @endif
+
+    <select name="filter_tahun"
+            class="form-select form-select-sm"
+            onchange="document.getElementById('formFilterTahun').submit()">
+
+        <option value="">-- Semua Tahun --</option>
+
+        @foreach($daftarTahun as $tahun)
+            <option value="{{ $tahun }}" {{ $filterTahun == $tahun ? 'selected' : '' }}>
+                {{ $tahun }}
+            </option>
+        @endforeach
+
+    </select>
+</form>
+
   <!-- Form Filter Bulan -->
 <form method="GET" action="{{ url()->current() }}" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
 
