@@ -648,6 +648,14 @@ public function bekrkhunian(Request $request)
         });
     }
 
+    $permohonanBaru = krkhunian::whereNull('verifikasi1')->count();
+
+    $dikembalikan = krkhunian::where('verifikasi1', 'dikembalikan')->count();
+
+    $lolos = krkhunian::where('verifikasi1', 'lolos')->count();
+
+
+
     // Ambil data utama paginasi
     $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
 
@@ -662,6 +670,10 @@ public function bekrkhunian(Request $request)
         'data' => $berkasusaha,
         'subdata' => $subdata,
         'user' => $user,
+        'permohonanBaru' => $permohonanBaru,
+        'dikembalikan' => $dikembalikan,
+        'lolos' => $lolos,
+
     ]);
 }
 
@@ -1737,11 +1749,21 @@ public function bekrkkeagamaan(Request $request)
     // Ambil data sub dari relasi krkusahasurat
     $subdata = krkusahasurat::whereIn('krkkeagamaan_id', $krkusahaIds)->get();
 
+    $permohonanBaru = krkkeagamaan::whereNull('verifikasi1')->count();
+
+    $dikembalikan = krkkeagamaan::where('verifikasi1', 'dikembalikan')->count();
+
+    $lolos = krkkeagamaan::where('verifikasi1', 'lolos')->count();
+
     return view('backend.06_krk.02_berkaspermohonan.keagamaan', [
         'title' => 'Permohonan KRK Fungsi Keagamaan Bangunan Gedung',
         'data' => $berkasusaha,
         'subdata' => $subdata,
         'user' => $user,
+        'permohonanBaru' => $permohonanBaru,
+        'dikembalikan' => $dikembalikan,
+        'lolos' => $lolos,
+
     ]);
 }
 
@@ -2307,11 +2329,21 @@ public function bekrksosbud(Request $request)
     // Ambil data sub dari relasi krkusahasurat
     $subdata = krkusahasurat::whereIn('krksosbud_id', $krkusahaIds)->get();
 
+    $permohonanBaru = krksosbud::whereNull('verifikasi1')->count();
+
+    $dikembalikan = krksosbud::where('verifikasi1', 'dikembalikan')->count();
+
+    $lolos = krksosbud::where('verifikasi1', 'lolos')->count();
+
+
     return view('backend.06_krk.02_berkaspermohonan.sosbud', [
         'title' => 'Permohonan KRK Fungsi Sosial Budaya Bangunan Gedung',
         'data' => $berkasusaha,
         'subdata' => $subdata,
         'user' => $user,
+        'permohonanBaru' => $permohonanBaru,
+        'dikembalikan' => $dikembalikan,
+        'lolos' => $lolos,
     ]);
 }
 
@@ -4698,11 +4730,21 @@ public function bekrkmenaratelkom(Request $request)
     // Ambil data sub dari relasi krkusahasurat
     $subdata = krkusahasurat::whereIn('krkusaha_id', $krkusahaIds)->get();
 
+    $permohonanBaru = krkmenara::whereNull('verifikasi1')->count();
+
+    $dikembalikan = krkmenara::where('verifikasi1', 'dikembalikan')->count();
+
+    $lolos = krkmenara::where('verifikasi1', 'lolos')->count();
+
     return view('backend.06_krk.02_berkaspermohonan.menaratelkom', [
         'title' => 'Permohonan KRK Menara Telekomunikasi',
         'data' => $berkasusaha,
         'subdata' => $subdata,
         'user' => $user,
+        'permohonanBaru' => $permohonanBaru,
+        'dikembalikan' => $dikembalikan,
+        'lolos' => $lolos,
+
     ]);
 }
 

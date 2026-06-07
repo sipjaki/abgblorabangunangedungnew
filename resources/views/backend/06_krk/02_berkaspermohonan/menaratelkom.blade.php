@@ -91,7 +91,21 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <span class="button-modern">
+                                <i class="bi bi-file-earmark-plus"></i>
+                                Permohonan Baru ({{ $permohonanBaru }})
+                            </span>
+
+                            <span class="button-modern">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                                Dikembalikan ({{ $dikembalikan }})
+                            </span>
+
+                            <span class="button-modern">
+                                <i class="bi bi-check-circle"></i>
+                                Lolos ({{ $lolos }})
+                            </span>
+                       <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
             <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
                 {{-- <option value="10">10</option> --}}
@@ -192,7 +206,30 @@
                                 @forelse ($data as $item )
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                    <td style="text-align: left;">{{$item->perorangan}}</td>
+
+                                    @php
+                                        $warna = 'black';
+                                        $bold  = 'normal';
+
+                                        if (is_null($item->verifikasi1)) {
+                                            $warna = '#ff8c00';
+                                            $bold  = 'bold';
+                                        }
+
+                                        if ($item->verifikasi1 == 'dikembalikan') {
+                                            $warna = '#dc3545';
+                                            $bold  = 'bold';
+                                        }
+                                    @endphp
+
+                                    <td style="
+                                        text-align: left;
+                                        color: {{ $warna }};
+                                        font-weight: {{ $bold }};
+                                    ">
+                                        {{ $item->perorangan }}
+                                    </td>
+                                    {{-- <td style="text-align: left;">{{$item->perorangan}}</td> --}}
                                     <td style="text-align: left;">{{$item->perusahaan}}</td>
                                     {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
