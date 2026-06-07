@@ -196,6 +196,8 @@
                     });
                 </script>
 
+{{-- ================================================================= --}}
+
                 <!-- Kepadatan -->
                 <div class="form-group row mb-4">
                     <label for="kepadatan" class="col-md-4 col-form-label">
@@ -214,78 +216,103 @@
                     @enderror
                 </div>
 
-<!-- Jumlah Lantai Maksimal -->
-<div class="form-group row mb-4">
-    <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
-        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
-    </label>
-    <div class="col-md-8">
-        <select
-            class="form-control @error('luaslantaimaksimal') is-invalid @enderror"
-            id="luaslantaimaksimal"
-            name="luaslantaimaksimal"
-        >
-            <option value="">-- Pilih Jumlah Lantai --</option>
 
-            <option value="2 Lantai"
-                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 Lantai' ? 'selected' : '' }}>
-                2 Lantai
-            </option>
-
-            <option value="4 Lantai"
-                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '4 Lantai' ? 'selected' : '' }}>
-                4 Lantai
-            </option>
-
-            <option value="2 - 8 Lantai"
-                {{ old('luaslantaimaksimal', $data->luaslantaimaksimal ?? '') == '2 - 8 Lantai' ? 'selected' : '' }}>
-                2 - 8 Lantai
-            </option>
-        </select>
-
-        @error('luaslantaimaksimal')
-            <div class="invalid-feedback" style="color: red;">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-</div>
-
+                <!-- Jumlah Lantai Maksimal -->
+                <div class="form-group row mb-4">
+                    <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
+                        <i class="fas fa-building"></i> Jumlah Lantai Maksimal
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal">
+                    </div>
+                    @error('luaslantaimaksimal')
+                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
 
                 <!-- Luas Bangunan Maksimal -->
+                <div class="form-group row mb-4">
+                    <label for="luasbangunan" class="col-md-4 col-form-label">
+                        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal || Luas Lahan Pemohon {{$data->luastanah}} M<sup>2</sup>
+                    </label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly>
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-danger text-white">M²</span>
+                            </div>
+                        </div>
+                        @error('luasbangunan')
+                        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
 
-<div class="form-group row mb-4">
-    <label for="luasbangunan" class="col-md-4 col-form-label">
-        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
-    </label>
 
-    <div class="col-md-8">
-        <div class="input-group">
-            <input type="text"
-                   class="form-control @error('luasbangunan') is-invalid @enderror"
-                   id="luasbangunan"
-                   name="luasbangunan"
-                   value="{{ old('luasbangunan', isset($data->luasbangunan) ? number_format($data->luasbangunan / 100, 2, '.', '') : '') }}"
-                   placeholder="Contoh: 65.45"
-                   oninput="this.value = this.value.replace(',', '.')">
 
-            <div class="input-group-append">
-                <span class="input-group-text bg-danger text-white">M²</span>
-            </div>
-        </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const luastanah = {{ $data->luastanah ?? 0 }};
+        const kepadatanSelect = document.getElementById('kepadatan');
+        const luasbangunanInput = document.getElementById('luasbangunan');
+        // const klbInput = document.getElementById('klb');
+        const kdbInput = document.getElementById('kdb'); // hasil akhir
 
-        <small class="text-muted">
-            Gunakan tanda koma (,) atau titik (.) untuk desimal
-        </small>
+        function hitungLuasDanKDB() {
+            const kepadatan = kepadatanSelect.value;
+            let persen = 0;
+            let labelPersen = '';
 
-        @error('luasbangunan')
-            <div class="invalid-feedback" style="color: red;">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-</div>
+            if (kepadatan === 'RENDAH') {
+                persen = 0.45;
+                labelPersen = '45%';
+            } else if (kepadatan === 'SEDANG') {
+                persen = 0.60;
+                labelPersen = '60%';
+            } else if (kepadatan === 'TINGGI') {
+                persen = 0.75;
+                labelPersen = '75%';
+            }
 
+            const luasbangunan = Math.round(luastanah * persen);
+            const kdb = persen;
+
+            // Set nilai Luas & KLB
+            luasbangunanInput.value = luasbangunan;
+            klbInput.value = labelPersen;
+
+            // Hitung KLB (hasil dari luas bangunan * KDB numerik)
+            const hasilKLB = Math.round(luasbangunan * kdb);
+            kdbInput.value = hasilKLB;
+        }
+
+        // Trigger on load dan saat kepadatan berubah
+        kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
+        hitungLuasDanKDB();
+    });
+
+        document.getElementById('kepadatan').addEventListener('change', function() {
+                        const kepadatan = this.value;
+                        const jmlLantai = document.getElementById('luaslantaimaksimal');
+                        const klb = document.getElementById('klb');
+
+                        if (kepadatan === 'RENDAH') {
+                            jmlLantai.value = '2 Lantai';
+                            klb.value = '45%';
+                        } else if (kepadatan === 'SEDANG') {
+                            jmlLantai.value = '4 Lantai';
+                            klb.value = '60%';
+                        } else if (kepadatan === 'TINGGI') {
+                            jmlLantai.value = '2 - 8 Lantai';
+                            klb.value = '75%';
+                        }
+                    });
+
+</script>
+
+
+
+{{-- ================================================================= --}}
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
                     <label for="fungsibangunan" class="col-md-4 col-form-label">
