@@ -336,10 +336,10 @@ th {
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
-  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">PEMERINTAH KABUPATEN BLORA</strong></h3>
-  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
-  <p><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
-  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">BLORA 58214</strong></h3>
+  <h3><strong style="font-size: 18px; font-family: 'Arial', sans-serif !important; margin: 0;">PEMERINTAH KABUPATEN BLORA</strong></h3>
+  <h3><strong style="font-size: 18px; font-family: 'Arial', sans-serif !important; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
+  <p><strong style="font-size: 18px; font-family: 'Arial', sans-serif !important; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
+  <h3><strong style="font-size: 18px; font-family: 'Arial', sans-serif !important; margin: 0;">BLORA 58214</strong></h3>
 </div>
 
       <div style="clear: both;"></div>
@@ -347,17 +347,17 @@ th {
 <div style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
 
     {{-- 1. Judul --}}
-    <div style="text-align: center; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
+    <div style="text-align: center; font-weight: bold; font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top: -15px;">
   BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
   Nomor: 050/TPA-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2026
 </div>
 
     {{-- 2. Paragraf Pembuka --}}
     <br>
-<p style="margin-top: -15px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+<p style="margin-top: -15px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
   Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
   {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
-  <span id="tanggal-terbilang" style="font-size: 14px; font-family: 'Times New Roman', serif !important;"></span>
+  <span id="tanggal-terbilang" style="font-size: 14px; font-family: 'Arial', sans-serif !important;"></span>
   bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
   tahun Dua Ribu Dua Puluh Lima untuk :
 </p>
@@ -383,68 +383,68 @@ th {
 </script>
 
     {{-- 3. Tabel Data Informasi Umum --}}
-<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top:5px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top:5px;">
   <tr>
-    <td style="width: 35%; border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="width: 35%; border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       No. Registrasi
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Nama Pemohon
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->datapemilik->namapemilik ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Alamat Pemohon
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->datapemilik->alamatpemilik ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Jenis Permohonan
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Nama Bangunan
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->databangunanpbg->namabangunan ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Fungsi Bangunan
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Luas Bangunan
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->databangunanpbg->luasbangunan ?? '-' }} m&sup2;
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       Lokasi Bangunan
     </td>
-    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       {{ $surat->databangunanpbg->lokasibangunan ?? '-' }}
     </td>
   </tr>
@@ -452,81 +452,81 @@ th {
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
-<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -10px;">
+<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top: -10px;">
   <thead>
     <tr>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         No
       </th>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         URAIAN DOKUMEN TEKNIS
       </th>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         ADA
       </th>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         TIDAK ADA
       </th>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         SESUAI
       </th>
-      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Arial', sans-serif !important;">
         TIDAK SESUAI
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">1</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan Arsitektur</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">1</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Pemeriksaan Arsitektur</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">2</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan Struktur</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">2</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Pemeriksaan Struktur</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">3</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan M E P</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">3</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Pemeriksaan M E P</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">4</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Data Teknis Gedung Eksisting</td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
-      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">4</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Data Teknis Gedung Eksisting</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Arial', sans-serif !important;"></td>
     </tr>
   </tbody>
 </table>
 
     <br>
-<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-  <p><strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">Rekomendasi:</strong></p>
-  <table style="border-collapse: collapse; width: 100%; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -20px;">
+<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
+  <p><strong style="margin-top: 5px; font-family: 'Arial', sans-serif !important; font-size: 14px;">Rekomendasi:</strong></p>
+  <table style="border-collapse: collapse; width: 100%; font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top: -20px;">
     <tbody>
       <tr style="border: 1px solid #444;">
-        <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
-        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Tanpa Perbaikan</td>
+        <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px; font-family: 'Arial', sans-serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Tanpa Perbaikan</td>
       </tr>
       <tr style="border: 1px solid #444; background-color: #f9f9f9;">
-        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
-        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Dengan Perbaikan</td>
+        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Arial', sans-serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Dengan Perbaikan</td>
       </tr>
       <tr style="border: 1px solid #444;">
-        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
-        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Permohonan Ditolak/Dikembalikan</td>
+        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Arial', sans-serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Arial', sans-serif !important;">Permohonan Ditolak/Dikembalikan</td>
       </tr>
     </tbody>
   </table>
@@ -555,29 +555,29 @@ th {
 @endphp
 
 <p >
-  <strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">Catatan:</strong>
+  <strong style="margin-top: 5px; font-family: 'Arial', sans-serif !important; font-size: 14px;">Catatan:</strong>
 </p>
-<div style="border: 1px solid #000; min-height: {{ 50 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<div style="border: 1px solid #000; min-height: {{ 50 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
 </div>
 <br>
 
-<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top: -15px;">
     <thead>
         <tr>
 
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
               Pengawas
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
               TTD
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
               Nama TPA/TPT
             </th>
-            {{-- <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            {{-- <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
               TTD
             </th> --}}
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
               TTD
             </th>
         </tr>
@@ -586,22 +586,22 @@ th {
         @foreach ($listPengawas as $index => $row)
             <tr>
 
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:180px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 12px; width:180px;">
                   {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:40px;"></td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:240px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 12px; width:40px;"></td>
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 12px; width:240px;">
                   {{ $row['no'] }}. {{ $row['tpa'] }}
                 </td>
-                {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
+                {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Arial', sans-serif !important; font-size: 14px;"></td> --}}
             @if ($index === 0)
     <td rowspan="{{ $jumlahBaris }}" style="border: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle; width:200px;">
-        <div style="font-family: 'Times New Roman', serif !important; font-size: 12px; line-height: 1.5;">
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Koordinator TPA</div>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Kabupaten Blora</div>
+        <div style="font-family: 'Arial', sans-serif !important; font-size: 12px; line-height: 1.5;">
+            <div style="font-family: 'Arial', sans-serif !important; font-size: 12px;">Koordinator TPA</div>
+            <div style="font-family: 'Arial', sans-serif !important; font-size: 12px;">Kabupaten Blora</div>
             <br><br><br><br>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">HARTONO GUNTUR R, ST, MT</strong></div>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Ketua</strong></div>
+            <div style="font-family: 'Arial', sans-serif !important; font-size: 12px;"><strong style="font-family: 'Arial', sans-serif !important; font-size: 12px;">HARTONO GUNTUR R, ST, MT</strong></div>
+            <div style="font-family: 'Arial', sans-serif !important; font-size: 12px;"><strong style="font-family: 'Arial', sans-serif !important; font-size: 12px;">Ketua</strong></div>
         </div>
     </td>
 @endif

@@ -1,12 +1,12 @@
 <style>
   body {
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .zebra-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
     font-size: 14px;
     border: 1px solid #e5e7eb;
   }
@@ -49,7 +49,7 @@
   }
 
   body {
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
     margin: 0;
     background: #f2f2f2;
     font-size: 12px;
@@ -64,7 +64,7 @@
   box-sizing: border-box;
   border: 1px solid black;
   margin-bottom: 20px;
-  font-family: 'Times New Roman', serif !important;
+  font-family: 'Arial', sans-serif !important;
 }
 
 /* Hilangkan border saat print */
@@ -80,19 +80,19 @@
     border-bottom: 2px solid black;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .kop h3 {
     margin: 2px 0;
     font-size: 16px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .kop p {
     margin: 4px 0;
     font-size: 13px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .logo {
@@ -105,14 +105,14 @@
     text-decoration: underline;
     margin-bottom: 20px;
     font-size: 14px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .isi-surat p {
     text-align: justify;
     line-height: 1.6;
     margin-bottom: 10px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .tabel-info {
@@ -120,18 +120,18 @@
     margin-top: 20px;
     border-collapse: collapse;
     font-size: 12px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .tabel-info td {
     padding: 4px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .ttd {
     text-align: right;
     margin-top: 40px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .tabel-penerima {
@@ -139,14 +139,14 @@
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 12px;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .tabel-penerima th, .tabel-penerima td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   }
 
   .tabel-penerima th {
@@ -160,9 +160,9 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary" style="font-family: 'Times New Roman', serif !important;">
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary" style="font-family: 'Arial', sans-serif !important;">
  <!--begin::App Wrapper-->
- <div class="app-wrapper" style="font-family: 'Times New Roman', serif !important;">
+ <div class="app-wrapper" style="font-family: 'Arial', sans-serif !important;">
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
@@ -180,14 +180,14 @@
     padding: 0;
     position: relative;
     left: 0;
-    font-family: 'Times New Roman', serif !important;
+    font-family: 'Arial', sans-serif !important;
   ">
      <!--begin::App Content Header-->
-     <div class="app-content-header" style="font-family: 'Times New Roman', serif !important;">
+     <div class="app-content-header" style="font-family: 'Arial', sans-serif !important;">
        <!--begin::Container-->
-       <div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
+       <div class="container-fluid" style="font-family: 'Arial', sans-serif !important;">
          <!--begin::Row-->
-         <div class="row" style="font-family: 'Times New Roman', serif !important;">
+         <div class="row" style="font-family: 'Arial', sans-serif !important;">
 
 @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
@@ -197,21 +197,21 @@
        <!--end::Container-->
      </div>
 
-     <div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
+     <div class="container-fluid" style="font-family: 'Arial', sans-serif !important;">
          <!--begin::Row-->
-         <div class="putih row" style="margin-right: 10px; margin-left:10px; font-family: 'Times New Roman', serif !important;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px; font-family: 'Arial', sans-serif !important;">
              <!-- /.card -->
-             <div class="card mb-4" style="font-family: 'Times New Roman', serif !important;">
+             <div class="card mb-4" style="font-family: 'Arial', sans-serif !important;">
 
 </div>
 <!-- /.card-header -->
-<div class="card-header" style="font-family: 'Times New Roman', serif !important;">
+<div class="card-header" style="font-family: 'Arial', sans-serif !important;">
 
     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
 </div>
 
 @canany(['dinas'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Arial', sans-serif !important;">
         <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';">
@@ -221,7 +221,7 @@
 @endcanany
 
 @canany(['pemohonbantek'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Arial', sans-serif !important;">
         <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
@@ -232,7 +232,7 @@
 @endcanany
 
 @canany(['superadmin', 'admin'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:5px; font-family: 'Times New Roman', serif !important;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom:5px; font-family: 'Arial', sans-serif !important;">
        <a href="{{ url()->previous() }}">
     <button class="button-modern" type="button">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -245,13 +245,13 @@
 <br>
 <hr>
 
-<div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
+<div class="container-fluid" style="font-family: 'Arial', sans-serif !important;">
     <!--begin::Row-->
-    <div class="row" style="margin-right: 10px; margin-left:10px; font-family: 'Times New Roman', serif !important;">
+    <div class="row" style="margin-right: 10px; margin-left:10px; font-family: 'Arial', sans-serif !important;">
         <!-- /.card -->
-        <div class="card mb-4" style="font-family: 'Times New Roman', serif !important;">
-            <div class="card-header" style="font-family: 'Times New Roman', serif !important;">
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; font-family: 'Times New Roman', serif !important;">
+        <div class="card mb-4" style="font-family: 'Arial', sans-serif !important;">
+            <div class="card-header" style="font-family: 'Arial', sans-serif !important;">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; font-family: 'Arial', sans-serif !important;">
                     @can('pemohon')
                     <a href="/bekrkusahapemohon">
                         <button
@@ -269,7 +269,7 @@
                             align-items: center;
                             gap: 8px;
                             margin-right:10px;
-                            font-family: 'Times New Roman', serif !important;
+                            font-family: 'Arial', sans-serif !important;
                         "
                         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
                         onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
@@ -289,7 +289,7 @@
                         onclick="history.back();"
                         onmouseover="this.style.background = 'white'; this.style.color = 'black';"
                         onmouseout="this.style.background = 'linear-gradient(to right, black, white)'; this.style.color = 'white';"
-                        style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; font-family: 'Times New Roman', serif !important;">
+                        style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; font-family: 'Arial', sans-serif !important;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" style="margin-right: 8px;">
                             <path fill-rule="evenodd"
@@ -308,79 +308,79 @@
 
 
 <!-- HALAMAN PERTAMA -->
-<div class="halaman" id="halaman-pertama" style="font-family: 'Times New Roman', serif !important;">
-    <div class="kop" style="font-family: 'Times New Roman', serif !important;">
+<div class="halaman" id="halaman-pertama" style="font-family: 'Arial', sans-serif !important;">
+    <div class="kop" style="font-family: 'Arial', sans-serif !important;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      <div style="display: inline-block; font-family: 'Times New Roman', serif !important;">
-        <h3><strong  style="font-family: 'Times New Roman', serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</strong></h3>
-        <h3><strong style="font-family: 'Times New Roman', serif !important; font-size:18px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
-        <p style="font-family: 'Times New Roman', serif !important; font-size:18px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3><strong  style="font-family: 'Times New Roman', serif !important;">BLORA 58214</strong></h3>
+      <div style="display: inline-block; font-family: 'Arial', sans-serif !important;">
+        <h3><strong  style="font-family: 'Arial', sans-serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</strong></h3>
+        <h3><strong style="font-family: 'Arial', sans-serif !important; font-size:18px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
+        <p style="font-family: 'Arial', sans-serif !important; font-size:18px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+        <h3><strong  style="font-family: 'Arial', sans-serif !important;">BLORA 58214</strong></h3>
       </div>
       <div style="clear: both;"></div>
     </div>
 
-    <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Times New Roman', serif !important; font-size:14px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
+    <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Arial', sans-serif !important; font-size:14px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
 
-    <div style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
+    <div style="font-size: 12px; font-family: 'Arial', sans-serif !important;">
     <table style="line-height: 1;">
   <tr>
-    <td style="width: 100px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
-      <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Nomor</strong>
+    <td style="width: 100px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
+      <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Nomor</strong>
     </td>
-    <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <td style="width: 10px; font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
       050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2026
     </td>
   </tr>
   <tr>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-      <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Lampiran</strong>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
+      <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Lampiran</strong>
     </td>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">-</td>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">-</td>
   </tr>
   <tr>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-      <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Perihal</strong>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
+      <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Perihal</strong>
     </td>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-    <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Undangan Konsultasi</td>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+    <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Undangan Konsultasi</td>
   </tr>
 </table>
 <br>
 
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin: 0;">
+<p style="font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5; margin: 0;">
   Kepada Yth:<br>
-  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+  <span style="font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
     Tim Profesi Ahli {{ $surat->tpatpt->timpenilai ?? '-' }}
   </span><br>
-  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+  <span style="font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
     Di
   </span><br>
-  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+  <span style="font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
     Tempat
   </span>
 </p>
 
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin: 0;">
+<p style="font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5; margin: 0;">
   Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada :
 </p>
 
-<table style="font-size: 14px; width: 100%; font-family: 'Times New Roman', serif !important; line-height: 1.5; border-collapse: collapse; margin-top: 6px;">
+<table style="font-size: 14px; width: 100%; font-family: 'Arial', sans-serif !important; line-height: 1.5; border-collapse: collapse; margin-top: 6px;">
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       Hari / Tanggal
     </td>
-    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       Waktu
     </td>
-    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       @if($surat->jamundangan == 'lainnya')
         : {{ $surat->catatan ?? '-' }}
       @else
@@ -389,38 +389,38 @@
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       Tempat
     </td>
-    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       : {{ $surat->tempatkonsultasi->tempat ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       Acara
     </td>
-    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
       : Konsultasi Teknis PBG/SLF
     </td>
   </tr>
 </table>
 
-<p style="margin-top: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin-bottom: 0;">
+<p style="margin-top: 10px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5; margin-bottom: 0;">
   Mengingat pentingnya acara tersebut mohon Bapak/Ibu/Saudara hadir tepat waktu. Demikian atas perhatian dan kehadirannya disampaikan terima kasih.
 </p>
   </div>
   <br>
-     <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Times New Roman', serif !important;">
-<div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+     <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Arial', sans-serif !important;">
+<div style="text-align: left; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
   Plt. KEPALA DINAS PEKERJAAN UMUM DAN<br>
   PENATAAN RUANG KABUPATEN BLORA<br><br><br><br><br><br><br>
 
   <div style="display: inline-flex; flex-direction: column; gap: 0;">
-    <strong style="margin-top: 0; text-decoration: underline; line-height: 1.5; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    <strong style="margin-top: 0; text-decoration: underline; line-height: 1.5; font-family: 'Arial', sans-serif !important; font-size: 14px;">
       NIDZAMUDIN AL HUDDA, ST
     </strong>
-    <span style="line-height: 1.5; margin-top: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    <span style="line-height: 1.5; margin-top: 0; font-family: 'Arial', sans-serif !important; font-size: 14px;">
       NIP. 19720326 200604 1 005
     </span>
   </div>
@@ -429,12 +429,12 @@
   </div>
 
   <!-- HALAMAN KEDUA -->
-  <div class="halaman" id="halaman-kedua" style="font-family: 'Times New Roman', serif !important;">
+  <div class="halaman" id="halaman-kedua" style="font-family: 'Arial', sans-serif !important;">
 
-      <div style="width: 100%; display: flex; justify-content: flex-end; font-family: 'Times New Roman', serif !important;">
-                                      <div style="text-align: left; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+      <div style="width: 100%; display: flex; justify-content: flex-end; font-family: 'Arial', sans-serif !important;">
+                                      <div style="text-align: left; font-size: 12px; font-family: 'Arial', sans-serif !important;">
 
-    <p style="text-align: left; font-weight: bold; margin-top: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+    <p style="text-align: left; font-weight: bold; margin-top: 20px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
       LAMPIRAN SURAT UNDANGAN<br>
       Nomor: 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2026<br>
       Tanggal: {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}
@@ -442,16 +442,16 @@
 
     </div>
     </div>
-    <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important; border-collapse: collapse; width: 100%; background-color: white;">
+    <table class="tabel-penerima" style="font-family: 'Arial', sans-serif !important; border-collapse: collapse; width: 100%; background-color: white;">
   <thead>
     <tr>
-      {{-- <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;"> --}}
-       <p style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Kepada Yth. </p>
+      {{-- <td colspan="2" style="padding-bottom: 10px; font-family: 'Arial', sans-serif !important;"> --}}
+       <p style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Kepada Yth. </p>
       {{-- </td> --}}
     </tr>
     {{-- <tr>
-      <th style="width:50px; text-align: left; font-family: 'Times New Roman', serif !important; border: none;">No</th>
-      <th style="text-align: left; font-family: 'Times New Roman', serif !important; border: none;">Nama</th>
+      <th style="width:50px; text-align: left; font-family: 'Arial', sans-serif !important; border: none;">No</th>
+      <th style="text-align: left; font-family: 'Arial', sans-serif !important; border: none;">Nama</th>
     </tr> --}}
   </thead>
   <tbody>
@@ -461,10 +461,10 @@
     @endphp
     @if ($pengawas && $pengawas->namalengkap)
         <tr>
-            <td style="border: none; width: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+            <td style="border: none; width: 20px; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
                 {{ $i }}.
             </td>
-            <td style="border: none; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+            <td style="border: none; font-size: 14px; font-family: 'Arial', sans-serif !important; line-height: 1.5;">
                 {{ $pengawas->namalengkap }}
             </td>
         </tr>
@@ -474,8 +474,8 @@
 </tbody>
 </table>
 
-    {{-- <div style="margin-top: 30px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
-      <p style="font-family: 'Times New Roman', serif !important;">Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
+    {{-- <div style="margin-top: 30px; font-size: 12px; font-family: 'Arial', sans-serif !important;">
+      <p style="font-family: 'Arial', sans-serif !important;">Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
     </div> --}}
   </div>
 

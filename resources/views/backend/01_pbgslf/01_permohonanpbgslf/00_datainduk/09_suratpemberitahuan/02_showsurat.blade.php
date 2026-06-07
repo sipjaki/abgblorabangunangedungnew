@@ -334,7 +334,7 @@ th {
       margin: 0;
     }
     body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: 'Arial', Times, sans-serif;
       margin: 0;
       background: #f2f2f2;
       font-size: 12px;
@@ -446,149 +446,149 @@ th {
     <tr>
       <td style="width: 80px;"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="logo" /></td>
       <td class="header-text">
-        <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</h3>
-        <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;" >DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p><strong style="font-family: 'Times New Roman', serif !important; font-size:18px;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
-        <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;">BLORA 58214 </h3>
+        <h3 style="font-family: 'Arial', sans-serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</h3>
+        <h3 style="font-family: 'Arial', sans-serif !important; font-size:18px;" >DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+        <p><strong style="font-family: 'Arial', sans-serif !important; font-size:18px;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
+        <h3 style="font-family: 'Arial', sans-serif !important; font-size:18px;">BLORA 58214 </h3>
       </td>
       {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
     </tr>
   </table>
 
-<p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important; font-size:14px; margin-top:-2px;">
+<p style="text-align: right; margin-top: 20px; font-family: 'Arial', sans-serif !important; font-size:14px; margin-top:-2px;">
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
 
-<div style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top:-10px;" >
+<div style="font-size: 14px; font-family: 'Arial', sans-serif !important; margin-top:-10px;" >
   <table style="line-height: 1.3; width: 100%;">
     <!-- Baris Nomor -->
     <tr>
-      <td style="width: 120px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Nomor</strong>
+      <td style="width: 120px; font-size: 14px; font-family: 'Arial', sans-serif !important;">
+        <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Nomor</strong>
       </td>
-      <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <td style="width: 10px; font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
         640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}
       </td>
     </tr>
 
     <!-- Baris Lampiran -->
     <tr>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Lampiran</strong>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
+        <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Lampiran</strong>
       </td>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
         1 Bandel
       </td>
     </tr>
 
     <!-- Baris Perihal -->
     <tr>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Perihal</strong>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
+        <strong style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Perihal</strong>
       </td>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
-      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <u style="text-decoration: none;"><span style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span></u>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Arial', sans-serif !important;">
+        <u style="text-decoration: none;"><span style="font-size: 14px; font-family: 'Arial', sans-serif !important;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span></u>
       </td>
     </tr>
   </table>
 </div>
 <!-- Paragraf Tujuan -->
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px; margin-top:10px;">
+<p style="font-family: 'Arial', sans-serif !important; font-size: 14px; margin-top:10px;">
   Kepada Yth:<br />
   Pemohon<br />
   Di Tempat
 </p>
 
 <!-- Paragraf Pembuka -->
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
   Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :
 </p>
 
 <!-- Tabel Data Pemohon -->
 <table class="isian" style="border-collapse: collapse; width: 100%;">
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">No. Registrasi</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">No. Registrasi</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Nama Lengkap Pemilik</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Nama Lengkap Pemilik</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->datapemilik->namapemilik ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Jenis Konsultasi</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Jenis Konsultasi</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Lokasi Bangunan</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Lokasi Bangunan</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->databangunanpbg->lokasibangunan ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Fungsi Bangunan</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Fungsi Bangunan</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Sub Fungsi Bangunan</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Sub Fungsi Bangunan</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->databangunanpbg->cadangan1 ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">No. Telepon</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">No. Telepon</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->datapemilik->nomortelepon ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Email</td>
-    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">Email</td>
+    <td style="font-family: 'Arial', sans-serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->datapemilik->email ?? '-' }}
     </td>
   </tr>
 </table>
 <!-- Paragraf Penutup -->
-<p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="margin-top: 10px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
   Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
   <strong>{{ $surat->pilihancatatan ?? '-' }}</strong>
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
   Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.
 </p>
 
-<p style="text-align: justify; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="text-align: justify; font-family: 'Arial', sans-serif !important; font-size: 14px;">
   Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 8 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram
   <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon. Kontak Kami 088987209343
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
   Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.
 </p>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-    <p style="margin: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <div style="text-align: left; font-family: 'Arial', sans-serif !important; font-size: 14px;">
+    <p style="margin: 0; font-family: 'Arial', sans-serif !important; font-size: 14px;">
       KESEKRETARIATAN SIMBG KAB. BLORA<br />
       DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
       KABUPATEN BLORA
     </p>
-    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
-    <p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    <img src="/assets/abgblora/logo/newbarcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
+    <p style="margin-top: 5px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
       OPERATOR SIMBG
     </p>
   </div>
@@ -599,26 +599,26 @@ th {
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
  <p style="margin-left: 250px; margin-top:-30px;">
-  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <strong style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     Nomor
   </strong> :
-  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <span style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2026
   </span>
   <br />
 
-  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <strong style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     Lampiran
   </strong> :
-  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <span style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     1 Bandel
   </span>
   <br />
 
-  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <strong style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     Perihal
   </strong> :
-  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <span style="font-family: 'Arial', sans-serif !important; font-size: 14px;">
     Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}
   </span>
 </p>
@@ -628,7 +628,7 @@ th {
   margin-bottom: 5px;
   font-weight: bold;
   text-decoration: underline;
-  font-family: 'Times New Roman', serif !important;
+  font-family: 'Arial', sans-serif !important;
   font-size: 12px !important;
   text-align: left; /* atau right */
 ">
@@ -1142,16 +1142,16 @@ th {
   </table>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-  <p style="margin: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <div style="text-align: left; font-family: 'Arial', sans-serif !important; font-size: 14px;">
+  <p style="margin: 0; font-family: 'Arial', sans-serif !important; font-size: 14px;">
     KESEKRETARIATAN SIMBG KAB. BLORA<br />
     DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
     KABUPATEN BLORA
   </p>
 
-  <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
+  <img src="/assets/abgblora/logo/newbarcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
 
-  <p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <p style="margin-top: 5px; font-family: 'Arial', sans-serif !important; font-size: 14px;">
     OPERATOR SIMBG
   </p>
 </div>
