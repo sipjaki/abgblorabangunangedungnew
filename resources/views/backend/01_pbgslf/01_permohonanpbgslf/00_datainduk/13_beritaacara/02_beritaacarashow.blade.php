@@ -1,24 +1,10 @@
 <style>
-    @font-face {
-        font-family: 'TimesNR';
-        src: url('/fonts/TimesNewRoman.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'TimesNR';
-        src: url('/fonts/TimesNewRomanBold.ttf') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-    }
-
     .force-times {
-        font-family: 'TimesNR' !important;
+        font-family: Arial, sans-serif !important;
     }
 
     .force-times * {
-        font-family: 'TimesNR' !important;
+        font-family: Arial, sans-serif !important;
     }
 </style>
 

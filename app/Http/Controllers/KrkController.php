@@ -441,6 +441,12 @@ $datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
         });
     }
 
+    $permohonanBaru = krkusaha::whereNull('verifikasi1')->count();
+
+    $dikembalikan = krkusaha::where('verifikasi1', 'dikembalikan')->count();
+
+    $lolos = krkusaha::where('verifikasi1', 'lolos')->count();
+
     // Ambil data utama paginasi
     $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
 
@@ -454,7 +460,10 @@ $datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
         'title' => 'Permohonan KRK Fungsi Usaha Bangunan Gedung',
         'data' => $berkasusaha,
         'subdata' => $subdata,
-        'user' => $user,
+        'permohonanBaru' => $permohonanBaru,
+        'dikembalikan' => $dikembalikan,
+        'lolos' => $lolos,
+
     ]);
 }
 
