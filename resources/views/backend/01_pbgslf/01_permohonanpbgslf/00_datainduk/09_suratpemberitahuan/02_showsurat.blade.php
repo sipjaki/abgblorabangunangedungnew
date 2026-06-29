@@ -462,7 +462,7 @@ th {
     <h3 style="font-family: Arial !important; font-size:14px; font-weight:normal;">
         Laman dpupr.blorakab.go.id, Pos-el dpukabblora@gmail.com
     </h3>
-
+<br>
 </td>
 
 
