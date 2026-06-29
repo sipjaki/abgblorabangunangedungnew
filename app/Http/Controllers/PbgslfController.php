@@ -3047,7 +3047,7 @@ public function validasipbgslfbukti(Request $request, $id)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 10);
 
     // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
     $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
