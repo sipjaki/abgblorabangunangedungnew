@@ -227,7 +227,7 @@
                         <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal">
+                        <input type="text" class="form-control" name="luaslantaimaksimal">
                     </div>
                     @error('luaslantaimaksimal')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
