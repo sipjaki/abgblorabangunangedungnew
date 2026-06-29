@@ -466,9 +466,6 @@ document.addEventListener('DOMContentLoaded', function () {
         @error('klb')
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
         @enderror
-        <small class="text-muted">
-                        Masukan Hanya Angka Contoh 80
-        </small>
     </div>
 </div>
 
