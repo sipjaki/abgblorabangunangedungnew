@@ -456,12 +456,10 @@ th {
     </h3>
 
     <p style="font-family: Arial !important;">
-        <strong style="font-family: Arial !important; font-size:18px;">
-            Jalan Nusantara No. 62 Blora 58214, Telepon (0296) 531004
-        </strong>
+        Jalan Nusantara No. 62 Blora 58214, Telepon (0296) 531004
     </p>
 
-    <h3 style="font-family: Arial !important; font-size:18px; font-weight:normal;">
+    <h3 style="font-family: Arial !important; font-size:12px; font-weight:normal;">
         Laman dpupr.blorakab.go.id, Pos-el dpukabblora@gmail.com
     </h3>
 
