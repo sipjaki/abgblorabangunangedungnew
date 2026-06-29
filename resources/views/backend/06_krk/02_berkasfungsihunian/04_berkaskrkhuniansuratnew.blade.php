@@ -230,8 +230,39 @@
                     @enderror
                 </div>
 
-                <!-- Luas Bangunan Maksimal -->
+                {{-- PERBAIKAN BARU LAGI ===================================================== --}}
                 <div class="form-group row mb-4">
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i>
+        Luas Bangunan Maksimal ||
+        Luas Lahan Pemohon {{ $data->luastanah }} M<sup>2</sup>
+    </label>
+
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="number"
+                   class="form-control"
+                   id="luasbangunan"
+                   name="luasbangunan"
+                   readonly>
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+
+        @error('luasbangunan')
+        <div class="invalid-feedback" style="color:red;">
+            {{ $message }}
+        </div>
+        @enderror
+    </div>
+</div>
+
+{{-- ===================================================== --}}
+
+
+                <!-- Luas Bangunan Maksimal -->
+                {{-- <div class="form-group row mb-4">
                     <label for="luasbangunan" class="col-md-4 col-form-label">
                         <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal || Luas Lahan Pemohon {{$data->luastanah}} M<sup>2</sup>
                     </label>
@@ -309,7 +340,7 @@
                     });
 
 </script>
-
+ --}}
 
 {{-- ---------------------------------------------------------- --}}
 

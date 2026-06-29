@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <!-- KLB -->
              <div class="form-group row mb-4">
     <label for="klb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
+        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan) Masukan Angka Saja Tanpa %
     </label>
     <div class="col-md-8">
         <div class="input-group">
@@ -466,6 +466,9 @@ document.addEventListener('DOMContentLoaded', function () {
         @error('klb')
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
         @enderror
+        <small class="text-muted">
+                        Masukan Hanya Angka Contoh 80
+        </small>
     </div>
 </div>
 
