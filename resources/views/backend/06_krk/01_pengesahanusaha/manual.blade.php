@@ -247,7 +247,7 @@
         <div class="input-group">
             <input type="number"
                    class="form-control"
-                   id="luasbangunan"
+                   {{-- id="luasbangunan" --}}
                    name="luasbangunan"
                    readonly>
             <div class="input-group-append">
