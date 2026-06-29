@@ -342,19 +342,19 @@ th {
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
 <div style="display: inline-block; font-family: Arial, sans-serif !important;">
 
-    <h3 style="font-family: Arial, sans-serif !important; font-size:18px; font-weight:normal; margin:0;">
+    <h3 style="font-family: Arial, sans-serif !important; font-size:20px; font-weight:normal; margin:0;">
         PEMERINTAH KABUPATEN BLORA
     </h3>
 
-    <h3 style="font-family: Arial, sans-serif !important; font-size:18px; font-weight:bold; color:#000; margin:0;">
+    <h3 style="font-family: Arial, sans-serif !important; font-size:20px; font-weight:bold; color:#000; margin:0;">
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG
     </h3>
 
-    <p style="font-family: Arial, sans-serif !important; font-size:12px; font-weight:normal; margin:0;">
+    <p style="font-family: Arial, sans-serif !important; font-size:14px; font-weight:normal; margin:0;">
         Jalan Nusantara No. 62 Blora 58214, Telepon (0296) 531004
     </p>
 
-    <h3 style="font-family: Arial, sans-serif !important; font-size:12px; font-weight:normal; margin:0;">
+    <h3 style="font-family: Arial, sans-serif !important; font-size:14px; font-weight:normal; margin:0;">
             Laman dpupr.blorakab.go.id, Pos-el dpukabblora@gmail.com
     </h3>
 
