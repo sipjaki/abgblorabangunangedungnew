@@ -230,7 +230,8 @@
                     @enderror
                 </div>
 
-                {{-- PERBAIKAN BARU LAGI ===================================================== --}}
+
+{{-- PERBAIKAN BARU LAGI ===================================================== --}}
                 <div class="form-group row mb-4">
     <label for="luasbangunan" class="col-md-4 col-form-label">
         <i class="fas fa-ruler-combined"></i>
@@ -258,8 +259,34 @@
     </div>
 </div>
 
-{{-- ===================================================== --}}
+       <script>
+document.addEventListener('DOMContentLoaded', function () {
 
+    const klb = document.getElementById('klb');
+    const luasBangunan = document.getElementById('luasbangunan');
+
+    const luasTanah = {{ $data->luastanah }};
+
+    function hitungLuasBangunan() {
+        let nilaiKdb = parseFloat(klb.value) || 0;
+
+        // KDB (%) x Luas Tanah
+        let hasil = (nilaiKdb / 100) * luasTanah;
+
+        luasBangunan.value = hasil.toFixed(2);
+    }
+
+    // Hitung saat halaman dibuka
+    hitungLuasBangunan();
+
+    // Hitung otomatis saat KDB diubah
+    klb.addEventListener('input', hitungLuasBangunan);
+
+});
+</script>
+
+
+{{-- ===================================================== --}}
 
                 <!-- Luas Bangunan Maksimal -->
                 {{-- <div class="form-group row mb-4">
@@ -277,11 +304,11 @@
                         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
-                </div>
+                </div> --}}
 
 
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const luastanah = {{ $data->luastanah ?? 0 }};
         const kepadatanSelect = document.getElementById('kepadatan');
@@ -339,11 +366,9 @@
                         }
                     });
 
-</script>
- --}}
+</script> --}}
 
-{{-- ---------------------------------------------------------- --}}
-
+{{-- ================================================================== --}}
 
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
@@ -351,7 +376,7 @@
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Hunian" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -417,8 +442,6 @@
                 </div>
 
                 <!-- KLB -->
-
-                <!-- KLB -->
              <div class="form-group row mb-4">
     <label for="klb" class="col-md-4 col-form-label">
         <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan) Masukan Angka Saja Tanpa %
@@ -441,6 +464,10 @@
         @enderror
     </div>
 </div>
+
+
+
+
 
 <div class="form-group row mb-4">
     <label for="kdb" class="col-md-4 col-form-label">
