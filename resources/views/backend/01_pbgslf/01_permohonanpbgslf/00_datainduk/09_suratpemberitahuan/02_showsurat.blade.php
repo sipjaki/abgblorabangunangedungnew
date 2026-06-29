@@ -465,8 +465,9 @@ th {
 
 </td>
 
-      {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
-    </tr>
+
+<br></tr>
+{{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
   </table>
 
 <p style="text-align: right; margin-top: 20px; font-family: 'Arial', sans-serif !important; font-size:14px; margin-top:-2px;">
