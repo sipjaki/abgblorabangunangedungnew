@@ -184,7 +184,7 @@
                         id="kabupaten"
                         name="kabupaten"
                         placeholder="Masukkan nama kabupaten"
-                        value="{{ old('kabupaten', $data->kabupaten ?? 'Blora') }}">
+                        value="{{ old('kabupaten', $data->kabupaten ?? 'Kabupaten Blora') }} readonly">
                     @error('kabupaten')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -198,11 +198,11 @@
                         <i class="bi bi-rulers me-2 text-warning"></i>
                         Luas Bangunan (m²)
                     </label>
-                    <input type="text"
+                    <input type="number"
                         class="form-control @error('luasbangunan') is-invalid @enderror"
                         id="luasbangunan"
                         name="luasbangunan"
-                        placeholder="Contoh: 120 m²"
+                        placeholder="Contoh: 120, Masukan hanya angka"
                         value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
                     @error('luasbangunan')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -268,22 +268,36 @@
                 Berkas Permohonan
             </h5>
 
-            <!-- Kode Barang -->
+            <!-- Kode Barang - UPLOAD FILE -->
             <div class="col-md-6">
                 <div class="form-modern mb-3">
                     <label class="form-label-modern" for="kodebarang">
-                        <i class="bi bi-barcode me-2 text-primary"></i>
-                        Kode Barang / Nomor Berkas
+                        <i class="bi bi-file-earmark-richtext-fill me-2 text-primary"></i>
+                        Kode Barang / Berkas Pendukung (Pdf/Word) Max 20Mb
                     </label>
-                    <input type="text"
+                    <input type="file"
                         class="form-control @error('kodebarang') is-invalid @enderror"
                         id="kodebarang"
                         name="kodebarang"
-                        placeholder="Masukkan kode barang / nomor berkas"
-                        value="{{ old('kodebarang', $data->kodebarang ?? '') }}">
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.zip,.rar"
+                        onchange="previewFile(event, 'previewKodeBarang', 'filenameKodeBarang')">
                     @error('kodebarang')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+                    <div class="mt-2">
+                        <!-- Preview untuk file -->
+                        <div id="previewKodeBarang" style="display: none; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid #dee2e6;">
+                            <i class="bi bi-file-earmark-fill me-2" style="font-size: 20px; color: #0d6efd;"></i>
+                            <span id="filenameKodeBarang" style="font-weight: 500;"></span>
+                        </div>
+                        <!-- Tampilkan file lama jika ada -->
+                        @if(!empty($data->kodebarang))
+                            <div style="padding: 10px; background: #e7f3ff; border-radius: 8px; border: 1px solid #b6d4fe; margin-top: 5px;">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #0d6efd;"></i>
+                                <small>File saat ini: <strong>{{ $data->kodebarang }}</strong></small>
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
 
@@ -292,24 +306,35 @@
                 <div class="form-modern mb-3">
                     <label class="form-label-modern" for="suratpermohonan">
                         <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>
-                        Surat Permohonan (PDF/Word)
+                        Surat Permohonan (Pdf/Word) Max 20Mb
+
                     </label>
                     <input type="file"
                         class="form-control @error('suratpermohonan') is-invalid @enderror"
                         id="suratpermohonan"
                         name="suratpermohonan"
-                        accept=".pdf,.doc,.docx">
+                        accept=".pdf,.doc,.docx"
+                        onchange="previewFile(event, 'previewSurat', 'filenameSurat')">
                     @error('suratpermohonan')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                    @if(!empty($data->suratpermohonan))
-                        <small class="text-muted">File saat ini: {{ $data->suratpermohonan }}</small>
-                    @endif
+                    <div class="mt-2">
+                        <div id="previewSurat" style="display: none; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid #dee2e6;">
+                            <i class="bi bi-file-earmark-fill me-2" style="font-size: 20px; color: #dc3545;"></i>
+                            <span id="filenameSurat" style="font-weight: 500;"></span>
+                        </div>
+                        @if(!empty($data->suratpermohonan))
+                            <div style="padding: 10px; background: #e7f3ff; border-radius: 8px; border: 1px solid #b6d4fe; margin-top: 5px;">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #0d6efd;"></i>
+                                <small>File saat ini: <strong>{{ $data->suratpermohonan }}</strong></small>
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
 
             <!-- ========================================================= -->
-            <!-- SECTION 4: FOTO BANGUNAN -->
+            <!-- SECTION 4: FOTO BANGUNAN DENGAN PREVIEW -->
             <!-- ========================================================= -->
             <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
                 style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
@@ -329,13 +354,18 @@
                             class="form-control @error('fotocadangan1') is-invalid @enderror"
                             id="fotocadangan1"
                             name="fotocadangan1"
-                            accept="image/*">
+                            accept="image/*"
+                            onchange="previewImage(event, 'preview1')">
                         @error('fotocadangan1')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                        @if(!empty($data->fotocadangan1))
-                            <small class="text-muted">File saat ini: {{ $data->fotocadangan1 }}</small>
-                        @endif
+                        <div class="mt-2" style="position: relative;">
+                            <img id="preview1"
+                                 src="{{ !empty($data->fotocadangan1) ? asset('storage/' . $data->fotocadangan1) : '' }}"
+                                 alt="Preview Foto 1"
+                                 style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #dee2e6; display: {{ !empty($data->fotocadangan1) ? 'block' : 'none' }};">
+                            <small id="filename1" class="text-muted" style="display: none;"></small>
+                        </div>
                     </div>
                 </div>
 
@@ -350,13 +380,18 @@
                             class="form-control @error('fotocadangan2') is-invalid @enderror"
                             id="fotocadangan2"
                             name="fotocadangan2"
-                            accept="image/*">
+                            accept="image/*"
+                            onchange="previewImage(event, 'preview2')">
                         @error('fotocadangan2')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                        @if(!empty($data->fotocadangan2))
-                            <small class="text-muted">File saat ini: {{ $data->fotocadangan2 }}</small>
-                        @endif
+                        <div class="mt-2" style="position: relative;">
+                            <img id="preview2"
+                                 src="{{ !empty($data->fotocadangan2) ? asset('storage/' . $data->fotocadangan2) : '' }}"
+                                 alt="Preview Foto 2"
+                                 style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #dee2e6; display: {{ !empty($data->fotocadangan2) ? 'block' : 'none' }};">
+                            <small id="filename2" class="text-muted" style="display: none;"></small>
+                        </div>
                     </div>
                 </div>
 
@@ -371,13 +406,18 @@
                             class="form-control @error('fotocadangan3') is-invalid @enderror"
                             id="fotocadangan3"
                             name="fotocadangan3"
-                            accept="image/*">
+                            accept="image/*"
+                            onchange="previewImage(event, 'preview3')">
                         @error('fotocadangan3')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                        @if(!empty($data->fotocadangan3))
-                            <small class="text-muted">File saat ini: {{ $data->fotocadangan3 }}</small>
-                        @endif
+                        <div class="mt-2" style="position: relative;">
+                            <img id="preview3"
+                                 src="{{ !empty($data->fotocadangan3) ? asset('storage/' . $data->fotocadangan3) : '' }}"
+                                 alt="Preview Foto 3"
+                                 style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #dee2e6; display: {{ !empty($data->fotocadangan3) ? 'block' : 'none' }};">
+                            <small id="filename3" class="text-muted" style="display: none;"></small>
+                        </div>
                     </div>
                 </div>
 
@@ -392,13 +432,18 @@
                             class="form-control @error('fotocadangan4') is-invalid @enderror"
                             id="fotocadangan4"
                             name="fotocadangan4"
-                            accept="image/*">
+                            accept="image/*"
+                            onchange="previewImage(event, 'preview4')">
                         @error('fotocadangan4')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                        @if(!empty($data->fotocadangan4))
-                            <small class="text-muted">File saat ini: {{ $data->fotocadangan4 }}</small>
-                        @endif
+                        <div class="mt-2" style="position: relative;">
+                            <img id="preview4"
+                                 src="{{ !empty($data->fotocadangan4) ? asset('storage/' . $data->fotocadangan4) : '' }}"
+                                 alt="Preview Foto 4"
+                                 style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #dee2e6; display: {{ !empty($data->fotocadangan4) ? 'block' : 'none' }};">
+                            <small id="filename4" class="text-muted" style="display: none;"></small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -412,11 +457,11 @@
     <!-- BUTTONS -->
     <!-- ========================================================= -->
     <div class="flex justify-end" style="display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 20px;">
-        <button class="button-berkas" type="button" onclick="openModal()" style="background: #0d6efd; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 600;">
+        <button class="button-modern" type="button" onclick="openModal()">
             <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
         </button>
 
-        <a href="{{ route('bebantekpembongkaran') }}" class="button-modern" style="background: #e2e8f0; color: #1e293b; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
+        <a href="{{ route('bebantekanalisabgn') }}" class="button-kembali">
             <i class="bi bi-arrow-left-circle me-1"></i>
             Kembali
         </a>
@@ -457,6 +502,73 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+        // ===== PREVIEW FILE (untuk Kode Barang & Surat Permohonan) =====
+        function previewFile(event, previewId, filenameId) {
+            var file = event.target.files[0];
+            var preview = document.getElementById(previewId);
+            var filename = document.getElementById(filenameId);
+
+            if (file) {
+                // Tampilkan nama file dan icon sesuai tipe
+                var fileType = file.type;
+                var icon = 'bi bi-file-earmark-fill';
+
+                if (fileType.includes('pdf')) {
+                    icon = 'bi bi-file-earmark-pdf-fill';
+                } else if (fileType.includes('word') || fileType.includes('document')) {
+                    icon = 'bi bi-file-earmark-word-fill';
+                } else if (fileType.includes('excel') || fileType.includes('sheet')) {
+                    icon = 'bi bi-file-earmark-excel-fill';
+                } else if (fileType.includes('powerpoint') || fileType.includes('presentation')) {
+                    icon = 'bi bi-file-earmark-ppt-fill';
+                } else if (fileType.includes('zip') || fileType.includes('rar')) {
+                    icon = 'bi bi-file-earmark-zip-fill';
+                } else if (fileType.includes('text')) {
+                    icon = 'bi bi-file-earmark-text-fill';
+                }
+
+                // Tampilkan preview dengan icon dan nama file
+                preview.style.display = 'block';
+                preview.innerHTML = `
+                    <i class="${icon} me-2" style="font-size: 20px; color: #0d6efd;"></i>
+                    <span style="font-weight: 500;">${file.name}</span>
+                    <span class="badge bg-secondary ms-2">${(file.size / 1024).toFixed(1)} KB</span>
+                `;
+
+            } else {
+                // Jika file dihapus
+                preview.style.display = 'none';
+                preview.innerHTML = '';
+            }
+        }
+
+        // ===== PREVIEW IMAGE =====
+        function previewImage(event, previewId) {
+            var reader = new FileReader();
+            var file = event.target.files[0];
+            var preview = document.getElementById(previewId);
+            var filename = document.getElementById(previewId.replace('preview', 'filename'));
+
+            if (file) {
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+
+                    if (filename) {
+                        filename.textContent = '📄 ' + file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+                        filename.style.display = 'block';
+                    }
+                }
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+                if (filename) {
+                    filename.style.display = 'none';
+                }
+            }
+        }
+
         // ===== MAP =====
         var map = L.map('map').setView([-7.0421, 111.4046], 11);
 
@@ -497,17 +609,24 @@
             document.getElementById("confirmModal").style.display = "none";
         }
 
-        // Close modal when clicking outside
         document.getElementById("confirmModal").addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
+
+        // ===== VALIDASI =====
+        document.querySelector('form').addEventListener('submit', function(e) {
+            var koordinat = document.getElementById('koordinat').value;
+            if (!koordinat) {
+                e.preventDefault();
+                alert('Silakan pilih lokasi di peta terlebih dahulu!');
+                return false;
+            }
+        });
     </script>
 
 </form>
-
-
                     </div>
                  </div>
 

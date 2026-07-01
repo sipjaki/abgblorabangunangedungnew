@@ -8190,6 +8190,153 @@ public function bebantekanalisabgncreate(Request $request)
     ]);
 }
 
+public function bebantekanalisabgncreatenew(Request $request)
+    {
+        // ============================================================
+        // VALIDASI
+        // ============================================================
+        $request->validate([
+            // Data Bangunan
+            'namagedung'      => 'required|string|max:255',
+            'kabupaten'       => 'nullable|string|max:255',
+            'alamat'          => 'required|string',
+            'luasbangunan'    => 'required|string|max:255',
+            'koordinat'       => 'required|string|max:255',
+
+            // Berkas Permohonan
+            'kodebarang'      => 'nullable|file|mimes:pdf,doc,docx|max:20240', // Max 10MB
+            'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:20240', // Max 5MB
+
+            // Foto Bangunan (4 foto)
+            'fotocadangan1'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
+            'fotocadangan2'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
+            'fotocadangan3'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
+            'fotocadangan4'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
+        ], [
+            // Custom Message
+            'namagedung.required'     => 'Nama gedung/bangunan wajib diisi.',
+            // 'kabupaten.required'      => 'Kabupaten wajib diisi.',
+            'alamat.required'         => 'Alamat lengkap wajib diisi.',
+            'koordinat.required'      => 'Koordinat lokasi wajib diisi (klik peta).',
+
+            'kodebarang.file'         => 'Kode barang harus berupa file.',
+            'kodebarang.mimes'        => 'Kode barang harus berformat: pdf, doc, docx, xls, xlsx, ppt, pptx, txt, zip, rar.',
+            'kodebarang.max'          => 'Ukuran file kode barang maksimal 20MB.',
+
+            'suratpermohonan.file'    => 'Surat permohonan harus berupa file.',
+            'suratpermohonan.mimes'   => 'Surat permohonan harus berformat: pdf, doc, docx.',
+            'suratpermohonan.max'     => 'Ukuran file surat permohonan maksimal 20MB.',
+
+            // 'fotocadangan1.image'     => 'Foto 1 harus berupa gambar.',
+            // 'fotocadangan1.mimes'     => 'Foto 1 harus berformat: jpeg, png, jpg, gif, svg.',
+            // 'fotocadangan1.max'       => 'Ukuran foto 1 maksimal 5MB.',
+
+            // 'fotocadangan2.image'     => 'Foto 2 harus berupa gambar.',
+            // 'fotocadangan2.mimes'     => 'Foto 2 harus berformat: jpeg, png, jpg, gif, svg.',
+            // 'fotocadangan2.max'       => 'Ukuran foto 2 maksimal 5MB.',
+
+            // 'fotocadangan3.image'     => 'Foto 3 harus berupa gambar.',
+            // 'fotocadangan3.mimes'     => 'Foto 3 harus berformat: jpeg, png, jpg, gif, svg.',
+            // 'fotocadangan3.max'       => 'Ukuran foto 3 maksimal 5MB.',
+
+            // 'fotocadangan4.image'     => 'Foto 4 harus berupa gambar.',
+            // 'fotocadangan4.mimes'     => 'Foto 4 harus berformat: jpeg, png, jpg, gif, svg.',
+            // 'fotocadangan4.max'       => 'Ukuran foto 4 maksimal 5MB.',
+        ]);
+
+        // ============================================================
+        // PROSES UPLOAD FILE
+        // ============================================================
+
+        // Folder penyimpanan di public/analisakerusakan/
+        $uploadPath = public_path('analisakerusakan');
+
+        // Buat folder jika belum ada
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0777, true);
+        }
+
+        // --- 1. Upload Kode Barang ---
+        $kodebarangPath = null;
+        if ($request->hasFile('kodebarang')) {
+            $file = $request->file('kodebarang');
+            $filename = 'kodebarang_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $kodebarangPath = 'analisakerusakan/' . $filename;
+        }
+
+        // --- 2. Upload Surat Permohonan ---
+        $suratpermohonanPath = null;
+        if ($request->hasFile('suratpermohonan')) {
+            $file = $request->file('suratpermohonan');
+            $filename = 'suratpermohonan_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $suratpermohonanPath = 'analisakerusakan/' . $filename;
+        }
+
+        // --- 3. Upload Foto 1 ---
+        $foto1Path = null;
+        if ($request->hasFile('fotocadangan1')) {
+            $file = $request->file('fotocadangan1');
+            $filename = 'foto1_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $foto1Path = 'analisakerusakan/' . $filename;
+        }
+
+        // --- 4. Upload Foto 2 ---
+        $foto2Path = null;
+        if ($request->hasFile('fotocadangan2')) {
+            $file = $request->file('fotocadangan2');
+            $filename = 'foto2_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $foto2Path = 'analisakerusakan/' . $filename;
+        }
+
+        // --- 5. Upload Foto 3 ---
+        $foto3Path = null;
+        if ($request->hasFile('fotocadangan3')) {
+            $file = $request->file('fotocadangan3');
+            $filename = 'foto3_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $foto3Path = 'analisakerusakan/' . $filename;
+        }
+
+        // --- 6. Upload Foto 4 ---
+        $foto4Path = null;
+        if ($request->hasFile('fotocadangan4')) {
+            $file = $request->file('fotocadangan4');
+            $filename = 'foto4_' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $foto4Path = 'analisakerusakan/' . $filename;
+        }
+
+        // ============================================================
+        // SIMPAN KE DATABASE
+        // ============================================================
+        bantekanalisainduk::create([
+            'user_id'           => Auth::id(),
+            'namagedung'        => $request->namagedung,
+            'kabupaten'         => $request->kabupaten,
+            'koordinat'         => $request->koordinat,
+            'alamat'            => $request->alamat,
+            'luasbangunan'      => $request->luasbangunan,
+
+            // Berkas
+            'kodebarang'        => $kodebarangPath,
+            'suratpermohonan'   => $suratpermohonanPath,
+
+            // Foto
+            'fotocadangan1'     => $foto1Path,
+            'fotocadangan2'     => $foto2Path,
+            'fotocadangan3'     => $foto3Path,
+            'fotocadangan4'     => $foto4Path,
+        ]);
+
+        // ============================================================
+        // REDIRECT
+        // ============================================================
+        return redirect('/bebantekanalisabgn')->with('create', 'Permohonan Anda Berhasil di Ajukan !');
+    }
 
 }
 
