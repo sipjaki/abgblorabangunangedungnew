@@ -1560,6 +1560,13 @@ Route::post('/daftar', [LoginController::class, 'register']);
 // MENU ANALISA PEMBONGKARAN BANGUNAN GEDUNG
 Route::get('/bebantekanalisabgn', [BantuanteknisController::class, 'bebantekanalisabgn'])->middleware('auth', 'can:admindinas')->name('bebantekanalisabgn');
 Route::get('/bebantekanalisabgnall', [BantuanteknisController::class, 'bebantekanalisabgnall'])->middleware('auth', 'can:admindinas')->name('bebantekanalisabgnall');
+Route::get('/bebantekanalisabgn/create', [BantuanteknisController::class, 'bebantekanalisabgncreate'])->middleware('auth', 'can:admindinas')->name('bebantekanalisabgncreate');
+Route::post(
+    '/bebantekanalisabgn/createnewbaru',
+    [BantuanteknisController::class, 'bebantekanalisabgncreatenew']
+)->middleware('auth', 'can:admindinas')
+ ->name('bebantekanalisabgnnew');
+
 
 /// PEMBAHARUAN BARU LAGI
 Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpembongkaranbgn'])->middleware('auth', 'can:admindinas')->name('bepbgslfindexslfindex');

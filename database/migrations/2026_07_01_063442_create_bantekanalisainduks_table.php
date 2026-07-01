@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bantekanalisainduks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable(); // ATAS NAMA INSTANSI
+            $table->foreignId('user_id')->nullable(); // ATAS NAMA AKUN YANG MASUK
             $table->string('namagedung')->nullable();
             $table->string('kabupaten')->nullable();
             $table->text('koordinat')->nullable();
@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('luasbangunan')->nullable();
 
             // BERKAS PERMOHONAN
-            $table->string('kodebarang')->nullable();
-            $table->string('suratpermohonan')->nullable();
+            $table->string('kodebarang')->nullable(); // BERKAS BISA PDF WORD DLL
+            $table->string('suratpermohonan')->nullable(); // BERKAS BISA PDF WORD DLL
 
             // FOTO CADANGAN
             $table->string('fotocadangan1')->nullable();

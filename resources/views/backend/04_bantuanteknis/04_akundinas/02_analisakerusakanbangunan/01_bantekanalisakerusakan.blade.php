@@ -299,43 +299,37 @@
                                     </td>
 
                                 </tr>
-
-                       @empty
-  <tr>
-    <td colspan="100" class="text-center p-0" style="border: none;">
-        <div style="
-            background: linear-gradient(-45deg, #ff4d4d, #ffffff, #ff4d4d);
-            background-size: 400% 400%;
-            animation: gradientMove 5s ease infinite;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px;
-            color: #a80000;
-            font-weight: bold;
-        ">
-            <div style="font-size: 1.2rem; margin-bottom: 10px;">
-                Belum Ada Permohonan
-                !
+@empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
             </div>
-
-        </div>
-    </td>
-</tr>
+        </td>
+    </tr>
+@endforelse
 
 <style>
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
-                                @endforelse
 
                             </tbody>
                         </table>

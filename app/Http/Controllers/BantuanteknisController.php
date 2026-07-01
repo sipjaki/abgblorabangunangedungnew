@@ -8181,5 +8181,15 @@ public function bebantekanalisabgnall(Request $request)
 }
 
 
+public function bebantekanalisabgncreate(Request $request)
+{
+    $user = Auth::user();
+        return view('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.02_permohonananalisa', [
+            'title' => 'Permohonan Baru Analisa Kerusakan Bangunan Gedung Negara',
+            'user' => $user,
+    ]);
+}
+
+
 }
 
