@@ -184,7 +184,7 @@
                         id="kabupaten"
                         name="kabupaten"
                         placeholder="Masukkan nama kabupaten"
-                        value="{{ old('kabupaten', $data->kabupaten ?? 'Kabupaten Blora') }} readonly">
+                        value="{{ old('kabupaten', $data->kabupaten ?? 'Kabupaten Blora') }}">
                     @error('kabupaten')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -461,7 +461,7 @@
             <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
         </button>
 
-        <a href="{{ route('bebantekanalisabgn') }}" class="button-kembali">
+        <a href="{{ route('bebantekanalisabgn') }}" class="button-modern">
             <i class="bi bi-arrow-left-circle me-1"></i>
             Kembali
         </a>

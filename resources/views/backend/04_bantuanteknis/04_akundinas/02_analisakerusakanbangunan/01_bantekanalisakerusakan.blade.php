@@ -229,16 +229,16 @@
    <th>No</th>
 
 <th>
-    <i class="bi bi-person-fill"></i> Nama Pemilik
+    <i class="bi bi-person-fill"></i> Informasi Permohonan
 </th>
 
-<th>
+{{-- <th>
     <i class="bi bi-buildings-fill"></i> Instansi / Dinas
 </th>
 
 <th>
     <i class="bi bi-house-fill"></i> Nama Bangunan
-</th>
+</th> --}}
 
 {{-- <th>
     <i class="bi bi-geo-alt-fill"></i> Alamat
@@ -257,18 +257,14 @@
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-    <td>{{ $item->namapemilik ?? '-' }}</td>
+    <td><span style="color: black;">Nama Gedung</span>{{ $item->namagedung ?? '-' }} <br>
+        <span style="color: black;">Akun Pemohon</span>{{ $item->user->name ?? '-' }} <br>
+        <span style="color: black;">Luas Bangunan</span>{{ $item->luasbangunan ?? '-' }}
+    </td>
 
-<td>{{ $item->user->name ?? '-' }}</td>
-
-<td>{{ $item->namabangunan ?? '-' }}</td>
-
-{{-- <td>{{ $item->alamat ?? '-' }}</td>
-
-<td>{{ $item->keterangan ?? '-' }}</td> --}}
 <td style="text-align: center;">
-    <a href="{{ route('bebantekpembongkaranshow', [
-            'namapemilik' => urlencode($item->namapemilik),
+    <a href="{{ route('bebantekanalisarusakshow', [
+            'namagedung' => urlencode($item->namagedung),
             'id' => $item->id
         ]) }}"
        class="button-baru">

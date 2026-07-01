@@ -8200,7 +8200,7 @@ public function bebantekanalisabgncreatenew(Request $request)
             'namagedung'      => 'required|string|max:255',
             'kabupaten'       => 'nullable|string|max:255',
             'alamat'          => 'required|string',
-            'luasbangunan'    => 'required|string|max:255',
+            'luasbangunan'    => 'required|string|max:255|regex:/^[0-9,.\s]+$/',
             'koordinat'       => 'required|string|max:255',
 
             // Berkas Permohonan
@@ -8337,6 +8337,35 @@ public function bebantekanalisabgncreatenew(Request $request)
         // ============================================================
         return redirect('/bebantekanalisabgn')->with('create', 'Permohonan Anda Berhasil di Ajukan !');
     }
+
+
+
+
+/// SHOW DATA AWAL
+public function bebantekanalisarusakdata($namagedung, $id)
+{
+    // Decode nama dari URL
+    $namagedung = urldecode($namagedung);
+
+    // Cari data HARUS cocok ID & nama + bawa relasi bantekbongkar1
+    $data = bantekanalisainduk::with('bantekanalisanew1')
+        ->where('id', $id)
+        ->where('namagedung', $namagedung)
+        ->firstOrFail();
+
+    // User login
+    $user = Auth::user();
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.03_informasianalisakerusakan',
+        [
+            'title' => 'Informasi Permohonan Analisa Kerusakan Bangunan Gedung Negara',
+            'data'  => $data,          // data induk
+            'user'  => $user
+            // relasi otomatis ikut: $data->bantekbongkar1
+        ]
+    );
+}
 
 }
 
