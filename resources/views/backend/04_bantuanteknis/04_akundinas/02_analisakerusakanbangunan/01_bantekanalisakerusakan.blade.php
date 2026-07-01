@@ -257,9 +257,9 @@
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-    <td><span style="color: black;">Nama Gedung</span>{{ $item->namagedung ?? '-' }} <br>
-        <span style="color: black;">Akun Pemohon</span>{{ $item->user->name ?? '-' }} <br>
-        <span style="color: black;">Luas Bangunan</span>{{ $item->luasbangunan ?? '-' }}
+    <td><span style="color: black;">Nama Gedung</span> : {{ $item->namagedung ?? '-' }} <br>
+        <span style="color: black;">Akun Pemohon</span> : {{ $item->user->name ?? '-' }} <br>
+        <span style="color: black;">Luas Bangunan</span> : {{ $item->luasbangunan ?? '-' }} M<sup>2</sup>
     </td>
 
 <td style="text-align: center;">

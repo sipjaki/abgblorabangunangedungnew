@@ -193,23 +193,59 @@
 
             <!-- Luas Bangunan -->
             <div class="col-md-6">
-                <div class="form-modern mb-3">
-                    <label class="form-label-modern" for="luasbangunan">
-                        <i class="bi bi-rulers me-2 text-warning"></i>
-                        Luas Bangunan (m²)
-                    </label>
-                    <input type="number"
-                        class="form-control @error('luasbangunan') is-invalid @enderror"
-                        id="luasbangunan"
-                        name="luasbangunan"
-                        placeholder="Contoh: 120, Masukan hanya angka"
-                        value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
-                    @error('luasbangunan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="luasbangunan">
+            <i class="bi bi-rulers me-2 text-warning"></i>
+            Luas Bangunan (m²)
+        </label>
+        <input type="text"
+            class="form-control @error('luasbangunan') is-invalid @enderror"
+            id="luasbangunan"
+            name="luasbangunan"
+            placeholder="Contoh: 120,5"
+            value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
+            onkeypress="return hanyaAngkaDanKoma(event)"
+            oninput="bersihkanInput(this)">
+        @error('luasbangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+        <small class="text-muted">
+            <i class="bi bi-info-circle me-1"></i>
+            Hanya angka dan koma (,) untuk desimal
+        </small>
+    </div>
+</div>
 
+<script>
+    // Hanya izinkan angka, koma, backspace, delete, panah
+    function hanyaAngkaDanKoma(event) {
+        var key = event.key;
+        var allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Home', 'End'];
+
+        if (allowedKeys.includes(key)) {
+            return true;
+        }
+
+        // Cek apakah karakter adalah angka atau koma
+        if (/^[0-9,]$/.test(key)) {
+            return true;
+        }
+
+        event.preventDefault();
+        return false;
+    }
+
+    // Bersihkan input dari karakter aneh
+    function bersihkanInput(input) {
+        input.value = input.value.replace(/[^0-9,]/g, '');
+
+        // Cegah lebih dari satu koma
+        var parts = input.value.split(',');
+        if (parts.length > 2) {
+            input.value = parts[0] + ',' + parts.slice(1).join('');
+        }
+    }
+</script>
             <!-- Alamat -->
             <div class="col-md-6">
                 <div class="form-modern mb-3">
