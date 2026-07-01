@@ -1557,7 +1557,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/daftar', [LoginController::class, 'showRegisterForm']);
 Route::post('/daftar', [LoginController::class, 'register']);
 
-
+// MENU ANALISA PEMBONGKARAN BANGUNAN GEDUNG
+Route::get('/bebantekanalisabgn', [BantuanteknisController::class, 'bebantekanalisabgn'])->middleware('auth', 'can:admindinas')->name('bebantekanalisabgn');
 
 /// PEMBAHARUAN BARU LAGI
 Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpembongkaranbgn'])->middleware('auth', 'can:admindinas')->name('bepbgslfindexslfindex');
@@ -1621,10 +1622,10 @@ Route::put('/bapersetujuanbupatibongkar/upload/{id}', [BantuanteknisController::
 // BUAT BARU INFORMASI BANGUNAN GEDUNG
     Route::get('/bebantekpembongkaran/bangunancreate/{namapemilik}/{id}',[BantuanteknisController::class, 'bebantekbongkarbangunancreate'])->middleware('auth', 'can:admindinas')->name('infobanguanandetails');
 
-    // MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
+// MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
     Route::post('/bebantekbangunanbongkar/createnew', [BantuanteknisController::class, 'bebantekbangunanbongkarcrnew'])->middleware('auth', 'can:admindinas')->name('informasidetailsbangunan.create');
 
-    // BUAT INFORMASI DATA DETAIL BANGUNAN GEDUNG
+// BUAT INFORMASI DATA DETAIL BANGUNAN GEDUNG
 Route::get('/bebantekpembongkaran/bangunan/{id}',[BantuanteknisController::class, 'bebantekpembongkaranbangunan'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranbangunandetail');
 
 // PERBAIKAN INFORMASI BANGUNAN

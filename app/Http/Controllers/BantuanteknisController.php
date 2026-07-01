@@ -8105,5 +8105,49 @@ public function bebantekanalisashowanalisa($id)
     );
 }
 
+
+// MENU ANALISA KERUSAKAN BANGUNAN GEDUNG
+
+public function bebantekanalisabgn(Request $request)
+{
+    $user    = Auth::user();
+    $search  = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = bantekpembongkaraninduk::query();
+
+    /**
+     * 🔐 FILTER AKSES DATA
+     * - Super Admin (statusadmin_id = 1) → semua data
+     * - User biasa → hanya data milik sendiri
+     */
+    if ($user->statusadmin_id != 1) {
+        $query->where('user_id', $user->id);
+    }
+
+    /**
+     * 🔍 SEARCH
+     */
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namapemilik', 'like', "%{$search}%")
+              ->orWhere('namabangunan', 'like', "%{$search}%")
+              ->orWhere('alamat', 'like', "%{$search}%")
+              ->orWhere('keterangan', 'like', "%{$search}%");
+        });
+    }
+
+    $data = $query
+        ->latest()
+        ->paginate($perPage)
+        ->appends($request->query());
+
+    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_bantekpembongkaran', [
+        'title' => 'Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
 }
 

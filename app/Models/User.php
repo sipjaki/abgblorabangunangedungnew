@@ -11,9 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
-    use HasFactory, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     protected $guarded = ['id'];
     /**
@@ -135,6 +133,12 @@ class User extends Authenticatable
     public function BantekPembongkaranInduk()
     {
         return $this->hasMany(BantekPembongkaranInduk::class);
+    }
+
+    // ANALISA KERUSAKAN BANGUNAN GEDUNG
+    public function bantekanalisainduk()
+    {
+        return $this->hasMany(bantekanalisainduk::class);
     }
 
 
