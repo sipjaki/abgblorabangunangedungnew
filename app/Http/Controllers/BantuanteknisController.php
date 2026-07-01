@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\bantekanalisainduk;
 use App\Models\bantekpembongkaraninduk;
 use App\Models\bantekpembongkarannew1;
 use App\Models\bantekpembongkarannew2;
@@ -8114,40 +8115,71 @@ public function bebantekanalisabgn(Request $request)
     $search  = $request->input('search');
     $perPage = $request->input('perPage', 10);
 
-    $query = bantekpembongkaraninduk::query();
+    $query = bantekanalisainduk::query();
 
-    /**
-     * 🔐 FILTER AKSES DATA
-     * - Super Admin (statusadmin_id = 1) → semua data
-     * - User biasa → hanya data milik sendiri
-     */
     if ($user->statusadmin_id != 1) {
         $query->where('user_id', $user->id);
     }
 
-    /**
-     * 🔍 SEARCH
-     */
+
     if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('namapemilik', 'like', "%{$search}%")
-              ->orWhere('namabangunan', 'like', "%{$search}%")
-              ->orWhere('alamat', 'like', "%{$search}%")
-              ->orWhere('keterangan', 'like', "%{$search}%");
-        });
-    }
+    $query->where(function ($q) use ($search) {
+        $q->where('namagedung', 'like', "%{$search}%")
+          ->orWhereHas('user', function ($userQuery) use ($search) {
+              $userQuery->where('username', 'like', "%{$search}%");
+          });
+    });
+}
 
     $data = $query
         ->latest()
         ->paginate($perPage)
         ->appends($request->query());
 
-    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_bantekpembongkaran', [
-        'title' => 'Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
+    return view('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.01_bantekanalisakerusakan', [
+        'title' => 'Bantuan Teknis Analisa Kerusakan Bangunan Gedung Negara',
         'data'  => $data,
         'user'  => $user,
     ]);
 }
+
+
+
+public function bebantekanalisabgnall(Request $request)
+{
+    $user    = Auth::user();
+    $search  = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    $query = bantekanalisainduk::query();
+
+    if ($user->statusadmin_id != 1) {
+        $query->where('user_id', $user->id);
+    }
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('namagedung', 'like', "%{$search}%")
+                ->orWhereHas('user', function ($userQuery) use ($search) {
+                    $userQuery->where('username', 'like', "%{$search}%");
+                });
+            });
+        }
+
+        // $data = $query->with(['bantekpembongkarannew1', 'bantekpembongkarannew2'])
+        $data = $query->with(['bantekanalisanew1'])
+        ->latest()
+        ->paginate($perPage)
+        ->appends($request->query());
+
+
+    return view('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.01_bantekallkerusakan', [
+        'title' => 'Bantuan Teknis Analisa Kerusakan Bangunan Gedung Negara',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
 
 }
 
