@@ -35,7 +35,7 @@
                             <i class="bi bi-patch-check-fill me-1"></i> Lolos
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal2({{ $data->id }})" style=" ">
+                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dikembalikan
                         </button>
                     @else
@@ -50,7 +50,7 @@
                             <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal3({{ $data->id }})" style=" ">
+                        <button class="button-merah" type="button" onclick="openModal3({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
@@ -65,7 +65,7 @@
                             <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal4({{ $data->id }})" style=" ">
+                        <button class="button-merah" type="button" onclick="openModal4({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
@@ -80,7 +80,7 @@
                             <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal5({{ $data->id }})" style=" ">
+                        <button class="button-merah" type="button" onclick="openModal5({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
@@ -95,7 +95,7 @@
                             <i class="bi bi-patch-check-fill me-1"></i> Terbit
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal6({{ $data->id }})" style=" ">
+                        <button class="button-merah" type="button" onclick="openModal6({{ $data->id }})" style=" ">
                             <i class="bi bi-x-circle me-1"></i> Tidak Terbit
                         </button>
                     @else
