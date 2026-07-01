@@ -23,7 +23,7 @@ class bantekanalisainduk extends Model
     {
         return $this->hasMany(
             bantekanalisanew1::class,
-            'bantekanalisaninduk_id',
+            'bantekanalisainduk_id',
             'id'
         );
     }
