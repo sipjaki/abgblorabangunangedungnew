@@ -167,7 +167,7 @@
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
-                                <a href="/bebantekpembongkaranall"
+                                <a href="/bebantekanalisabgnall"
                                     class="button-baru"
                                     style="color: black; text-decoration: none;">
 
@@ -175,7 +175,7 @@
                                         Data Lengkap
                                     </a>
 
-                                <a href="{{ route('bebantekpembongkarancreate') }}"
+                                <a href="{{ route('bebantekanalisabgncreate') }}"
                                     class="button-modern"
                                     style="color: black; text-decoration: none;">
 
