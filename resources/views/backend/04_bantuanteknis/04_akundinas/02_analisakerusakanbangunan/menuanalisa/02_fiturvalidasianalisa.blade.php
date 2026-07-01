@@ -135,16 +135,14 @@
 <div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai?</p>
-        <form id="validasiForm2" method="POST" action="/validasipembongkaran2/{{ $data->id }}">
+        <form id="validasiForm2" method="POST" action="/validasianalisa2/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="2">
             <button type="submit" name="validasiberkas2" value="sudah" class="button-hijau">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas2" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+            <button type="submit" name="validasiberkas2" value="belum" class="button-merah">
                 <i class="bi bi-x-circle me-1"></i> Belum
             </button>
         </form>
@@ -160,7 +158,7 @@
 <div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah pengolahan data sudah selesai ?</p>
-        <form id="validasiForm3" method="POST" action="/validasipembongkaran3/{{ $data->id }}">
+        <form id="validasiForm3" method="POST" action="/validasianalisa3/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="3">
@@ -184,7 +182,7 @@
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah Permohonan sudah selesai ?</p>
-        <form id="validasiForm4" method="POST" action="/validasipembongkaran4/{{ $data->id }}">
+        <form id="validasiForm4" method="POST" action="/validasianalisa4/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="4">
@@ -208,7 +206,7 @@
 {{-- <div id="confirmModal5" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah Rekom Teknis Mau Diterbitkan ?</p>
-        <form id="validasiForm5" method="POST" action="/validasipembongkaran5/{{ $data->id }}">
+        <form id="validasiForm5" method="POST" action="/validasianalisa5/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="5">
@@ -236,7 +234,7 @@
 <div id="confirmModal6" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah Keputusan Bupati Sudah Terbit?</p>
-        <form id="validasiForm6" method="POST" action="/validasipembongkaran6/{{ $data->id }}">
+        <form id="validasiForm6" method="POST" action="/validasianalisa6/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="6">
@@ -267,7 +265,7 @@
 function openModal1(itemId) {
     const modal = document.getElementById('confirmModal1');
     const form = document.getElementById('validasiForm1');
-    form.action = `/validasipembongkaran1/${itemId}`; // <- HARUS SAMA DENGAN ROUTE
+    form.action = `/validasianalisa1/${itemId}`; // <- HARUS SAMA DENGAN ROUTE
     modal.style.display = "flex";
     document.body.style.overflow = 'hidden';
 }
@@ -282,7 +280,7 @@ function closeModal1() {
     function openModal2(itemId) {
         const modal = document.getElementById('confirmModal2');
         const form = document.getElementById('validasiForm2');
-        form.action = `/validasipembongkaran2/${itemId}`;
+        form.action = `/validasianalisa2/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -297,7 +295,7 @@ function closeModal1() {
     function openModal3(itemId) {
         const modal = document.getElementById('confirmModal3');
         const form = document.getElementById('validasiForm3');
-        form.action = `/validasipembongkaran3/${itemId}`;
+        form.action = `/validasianalisa3/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -312,7 +310,7 @@ function closeModal1() {
     function openModal4(itemId) {
         const modal = document.getElementById('confirmModal4');
         const form = document.getElementById('validasiForm4');
-        form.action = `/validasipembongkaran4/${itemId}`;
+        form.action = `/validasianalisa4/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -327,7 +325,7 @@ function closeModal1() {
     function openModal5(itemId) {
         const modal = document.getElementById('confirmModal5');
         const form = document.getElementById('validasiForm5');
-        form.action = `/validasipembongkaran5/${itemId}`;
+        form.action = `/validasianalisa5/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -342,7 +340,7 @@ function closeModal1() {
     function openModal6(itemId) {
         const modal = document.getElementById('confirmModal6');
         const form = document.getElementById('validasiForm6');
-        form.action = `/validasipembongkaran6/${itemId}`;
+        form.action = `/validasianalisa6/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
