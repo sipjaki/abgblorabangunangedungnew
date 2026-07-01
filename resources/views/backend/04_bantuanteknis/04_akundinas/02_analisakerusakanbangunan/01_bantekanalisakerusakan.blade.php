@@ -167,10 +167,12 @@
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
-                                <a href="/bebantekpembongkaran"
+                                <a href="/bebantekpembongkaranall"
                                     class="button-baru"
                                     style="color: black; text-decoration: none;">
-                                    <i class="bi bi-database me-1"></i> Data Dasar
+
+                                        <i class="bi bi-database me-1"></i>
+                                        Data Lengkap
                                     </a>
 
                                 <a href="{{ route('bebantekpembongkarancreate') }}"
@@ -238,51 +240,14 @@
     <i class="bi bi-house-fill"></i> Nama Bangunan
 </th>
 
-<th>
-    <i class="bi bi-geo-alt-fill me-1"></i> Alamat
+{{-- <th>
+    <i class="bi bi-geo-alt-fill"></i> Alamat
 </th>
 
-<th><i class="bi bi-file-earmark-text me-1"></i> No Surat</th>
-<th><i class="bi bi-calendar-date me-1"></i> Tanggal Surat</th>
-{{-- <th><i class="bi bi-envelope-paper me-1"></i> Surat Permohonan</th> --}}
-<th><i class="bi bi-journal-text me-1"></i> Catatan</th>
-{{-- <th><i class="bi bi-building me-1"></i> Nama Bangunan</th>
-<th><i class="bi bi-list-check me-1"></i> Pilihan Bangunan</th>
-<th><i class="bi bi-check-circle me-1"></i> Pilihan Sanggup</th> --}}
-<th><i class="bi bi-person me-1"></i> Nama Lengkap</th>
-<th><i class="bi bi-briefcase me-1"></i> Jabatan</th>
-<th><i class="bi bi-geo-alt me-1"></i> Alamat Pemilik</th>
-<th><i class="bi bi-telephone me-1"></i> No Telepon</th>
-<th><i class="bi bi-bounding-box me-1"></i> Luas Tanah</th>
-<th><i class="bi bi-file-earmark-check me-1"></i> Status Tanah</th>
-<th><i class="bi bi-person-badge me-1"></i> Nama Pemegang Hak</th>
-<th><i class="bi bi-shield-check me-1"></i> Legalitas Bangunan</th>
-<th><i class="bi bi-hash me-1"></i> Nomor PBG</th>
-<th><i class="bi bi-person-workspace me-1"></i> Pemilik Bangunan</th>
-<th><i class="bi bi-upc-scan me-1"></i> Kode Barang</th>
-<th><i class="bi bi-geo me-1"></i> Alamat Bangunan</th>
-<th><i class="bi bi-pin-map me-1"></i> Koordinat</th>
-<th><i class="bi bi-house-door me-1"></i> Fungsi Bangunan</th>
-<th><i class="bi bi-layers me-1"></i> Jumlah Lantai</th>
-<th><i class="bi bi-arrows-vertical me-1"></i> Ketinggian Bangunan</th>
-<th><i class="bi bi-aspect-ratio me-1"></i> Luas Bangunan</th>
-<th><i class="bi bi-diagram-3 me-1"></i> Kompleksitas</th>
-<th><i class="bi bi-building-check me-1"></i> Tingkat Permanensi</th>
-<th><i class="bi bi-grid-3x3-gap me-1"></i> Kepadatan</th>
-<th><i class="bi bi-calendar-event me-1"></i> Tanggal Dibangun</th>
-<th><i class="bi bi-calendar2-check me-1"></i> Tanggal Renovasi</th>
-<th><i class="bi bi-cash-stack me-1"></i> Nilai Bangunan Baru</th>
-<th><i class="bi bi-cash me-1"></i> Nilai Bangunan Lama</th>
+<th>
+    <i class="bi bi-info-circle-fill"></i> Keterangan
+</th> --}}
 
-{{--  BANTEK NEW 2 --}}
-
-<th><i class="bi bi-percent me-1"></i> Tingkat Kerusakan</th>
-<th><i class="bi bi-exclamation-triangle me-1"></i> Status Kerusakan</th>
-<th><i class="bi bi-file-earmark-text me-1"></i> No Surat</th>
-<th><i class="bi bi-calendar-date me-1"></i> Tanggal Surat</th>
-<th><i class="bi bi-person-workspace me-1"></i> Pelaksana</th>
-<th><i class="bi bi-person-check me-1"></i> Penanggung Jawab</th>
-<th><i class="bi bi-telephone me-1"></i> No Telepon</th>
 
         <th><i class="bi bi-eye"></i> Lihat Permohonan</th>
             <th ><i class="bi bi-tools"></i> Aksi</th>
@@ -298,55 +263,9 @@
 
 <td>{{ $item->namabangunan ?? '-' }}</td>
 
-<td>{{ $item->alamat ?? '-' }}</td>
-
-<td>{{ optional($item->bantekpembongkarannew1->first())->nosurat ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->tanggalsurat ?? '-' }}</td>
-{{-- <td>{{ optional($item->bantekpembongkarannew1->first())->suratpermohonan ?? '-' }}</td> --}}
-<td>{{ optional($item->bantekpembongkarannew1->first())->catatan1 ?? '-' }}</td>
-{{-- <td>{{ optional($item->bantekpembongkarannew1->first())->namabangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->pilihanbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->pilihansanggup ?? '-' }}</td> --}}
-<td>{{ optional($item->bantekpembongkarannew1->first())->namalengkap ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->jabatan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->alamatpemilik ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->notelepon ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->luastanah ?? '-' }} m²</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->statustanah ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->namapemeganghak ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->legalitasbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->nomorpbg ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->pemilikbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->kodebarang ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->alamatbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->koordinatbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->fungsibangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->jumlahlantai ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->ketinggianbangunan ?? '-' }} m</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->luasbangunan ?? '-' }} m²</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->kompleksitasbangunan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->tingkatpermanensi ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->kepadatan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->tanggaldibangun ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew1->first())->tanggalrevovasi ?? '-' }}</td>
-<td>Rp {{ number_format(optional($item->bantekpembongkarannew1->first())->nilaibangunanbaru ?? 0, 0, ',', '.') }}</td>
-<td>Rp {{ number_format(optional($item->bantekpembongkarannew1->first())->nilaibangunanlama ?? 0, 0, ',', '.') }}</td>
-
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 
-// BANTEK PEMBONGKARAN 2
-
-
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
-
-<td>{{ optional($item->bantekpembongkarannew2->first())->tingkat_kerusakan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->status_kerusakan ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->nosurat ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->tanggalsurat ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->pelaksana ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->namapenanggungjawab ?? '-' }}</td>
-<td>{{ optional($item->bantekpembongkarannew2->first())->notelepon ?? '-' }}</td>
-
 <td style="text-align: center;">
     <a href="{{ route('bebantekpembongkaranshow', [
             'namapemilik' => urlencode($item->namapemilik),
