@@ -11,7 +11,7 @@ class bantekanalisainduk extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'bantekanalisainduk';
+    protected $table = 'bantekanalisainduks';
     protected $guarded = ['id'];
 
     public function user()
