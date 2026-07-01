@@ -146,7 +146,7 @@
     </div>
 </div>
 
-@include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.01_fiturstatus')
+@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menutambahan.01_fiturstatus')
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
@@ -154,28 +154,28 @@
 @php
     $infoItems = [
         [
-            'icon'  => 'bi-person-fill',
-            'title' => 'Nama Pemilik Bangunan',
-            'value' => $data->namapemilik ?? '-',
-        ],
-        [
             'icon'  => 'bi-building',
-            'title' => 'Instansi / Dinas',
-            'value' => $data->user->name ?? '-',
+            'title' => 'Nama Gedung',
+            'value' => $data->namagedung ?? '-',
         ],
         [
-            'icon'  => 'bi-house-fill',
-            'title' => 'Nama Bangunan',
-            'value' => $data->namabangunan ?? '-',
+            'icon'  => 'bi-person-fill',
+            'title' => 'Username Pengguna',
+            'value' => $data->user->username ?? '-',
         ],
         [
             'icon'  => 'bi-geo-alt-fill',
             'title' => 'Alamat Bangunan',
             'value' => $data->alamat ?? '-',
         ],
-
+        [
+            'icon'  => 'bi-arrows-angle-expand',
+            'title' => 'Luas Bangunan',
+            'value' => $data->luasbangunan ?? '-',
+        ],
     ];
 @endphp
+
 
 @foreach ($infoItems as $item)
     <div class="col-md-6">
@@ -205,13 +205,13 @@
 
     {{-- Keterangan --}}
     <div class="col-md-12">
-        <div class="form-modern mb-3">
+        {{-- <div class="form-modern mb-3">
             <label class="form-label-modern d-flex align-items-center" for="keterangan">
                 <i class="bi bi-info-circle-fill me-2 text-primary" style="font-size: 1.2rem;"></i> Keterangan
             </label>
             <input type="text" class="form-control" id="keterangan" name="keterangan"
                 value="{{ $data->keterangan ?? '-' }}" readonly>
-        </div>
+        </div> --}}
 
         {{-- Koordinat (hidden) --}}
         <input type="hidden" id="koordinat" name="koordinat" value="{{ $data->koordinat ?? '' }}">
@@ -258,7 +258,7 @@
 
 <br><hr>
 
-@include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi')
+{{-- @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi') --}}
 </div>
 
 
