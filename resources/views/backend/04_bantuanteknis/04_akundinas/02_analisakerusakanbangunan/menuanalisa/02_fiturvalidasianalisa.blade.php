@@ -119,17 +119,11 @@
     @csrf
     @method('PUT')
 
-    <button type="submit" name="validasiberkas1" value="sudah"
-        style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+    <button type="submit" name="validasiberkas1" value="sudah" class="button-hijau">
         <i class="bi bi-check2-circle me-1"></i> Sudah
     </button>
 
-    <button type="submit" name="validasiberkas1" value="belum"
-        style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-        onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+    <button type="submit" name="validasiberkas1" value="belum" class="button-merah">
         <i class="bi bi-x-circle me-1"></i> Belum
     </button>
 </form>
@@ -145,9 +139,7 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="2">
-            <button type="submit" name="validasiberkas2" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+            <button type="submit" name="validasiberkas2" value="sudah" class="button-hijau">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
             <button type="submit" name="validasiberkas2" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
@@ -157,9 +149,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal2()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
+        <button type="button" onclick="closeModal2()" class="button-merah">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
@@ -174,14 +164,10 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="3">
-            <button type="submit" name="validasiberkas3" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+            <button type="submit" name="validasiberkas3" value="sudah" class="button-hijau">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas3" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+            <button type="submit" name="validasiberkas3" value="belum" class="button-merah">
                 <i class="bi bi-x-circle me-1"></i> Belum
             </button>
         </form>
@@ -197,19 +183,15 @@
 <!-- Modal Validasi Berkas 4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah status sudah selesai  ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah Permohonan sudah selesai ?</p>
         <form id="validasiForm4" method="POST" action="/validasipembongkaran4/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="4">
-            <button type="submit" name="validasiberkas4" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+            <button type="submit" name="validasiberkas4" value="sudah" class="button-hijau">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas4" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+            <button type="submit" name="validasiberkas4" value="belum" class="button-merah">
                 <i class="bi bi-x-circle me-1"></i> Belum
             </button>
         </form>

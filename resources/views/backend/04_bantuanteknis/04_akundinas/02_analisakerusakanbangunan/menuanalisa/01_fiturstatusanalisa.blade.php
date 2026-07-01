@@ -44,10 +44,10 @@
         },
         {
             id: 4,
-            name: 'Konsultasi',
+            name: 'Analisa Terbit',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-            message: 'Pengolahan Data'
+            message: 'Dalam Proses'
         },
         // {
         //     id: 5,
