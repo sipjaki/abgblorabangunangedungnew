@@ -146,11 +146,10 @@
     </div>
 </div>
 
-@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menutambahan.01_fiturstatus')
+@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.01_fiturstatusanalisa')
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
-
 @php
     $infoItems = [
         [
@@ -171,11 +170,12 @@
         [
             'icon'  => 'bi-arrows-angle-expand',
             'title' => 'Luas Bangunan',
-            'value' => $data->luasbangunan ?? '-',
+            'value' => $data->luasbangunan
+                ? $data->luasbangunan . ' M²'
+                : '-',
         ],
     ];
 @endphp
-
 
 @foreach ($infoItems as $item)
     <div class="col-md-6">
@@ -263,7 +263,7 @@
 
 
 </div>
-    <a href="/bebantekpembongkaran" class="button-berkas">
+    <a href="/bebantekanalisabgn" class="button-berkas">
     <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
     Kembali Ke Data Awal</strong>
 </a>

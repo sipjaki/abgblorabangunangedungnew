@@ -37,10 +37,10 @@
         },
         {
             id: 3,
-            name: 'Survey Lapangan',
+            name: 'Pengolahan Data',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            message: 'Belum Survey'
+            message: 'Dalam Proses'
         },
         {
             id: 4,
@@ -49,20 +49,20 @@
             time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
             message: 'Pengolahan Data'
         },
-        {
-            id: 5,
-            name: 'Rekomandasi Teknis',
-            status: 'pending',
-            time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
-            message: 'Menunggu Terbit'
-        },
-        {
-            id: 6,
-            name: 'Persetujuan Bupati',
-            status: 'pending',
-            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
-            message: 'Surat Belum Terbit'
-        },
+        // {
+        //     id: 5,
+        //     name: 'Rekomandasi Teknis',
+        //     status: 'pending',
+        //     time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
+        //     message: 'Menunggu Terbit'
+        // },
+        // {
+        //     id: 6,
+        //     name: 'Persetujuan Bupati',
+        //     status: 'pending',
+        //     time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
+        //     message: 'Surat Belum Terbit'
+        // },
 
         // {
         //     id: 7,
@@ -425,7 +425,7 @@ if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' 
 <div id="checkpoint-container"></div>
 <div id="current-status" style="margin-top: 20px; padding: 10px; background: #f5f5f5; border-radius: 5px;"></div>
 
-@include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.02_fiturvalidasi')
+@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.02_fiturvalidasianalisa')
 
 {{-- @include('backend.00_administrator.00_baganterpisah.01_header') --}}
 {{--

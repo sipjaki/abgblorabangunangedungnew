@@ -1571,6 +1571,12 @@ Route::post(
  // MENU ANALISA KERUSAKAN BANGUNAN GEDUNG BAGIAN 2
 Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekanalisarusakdata'])->middleware('auth', 'can:admindinas')->name('bebantekanalisarusakshow');
 
+ Route::put('/validasianalisa1/{id}', [BantuanteknisController::class, 'validasianalisa1'])->middleware('auth', 'can:admindinas')->name('validasianalisa1.update');
+ Route::put('/validasianalisa2/{id}', [BantuanteknisController::class, 'validasianalisa2'])->middleware('auth', 'can:admindinas')->name('validasianalisa2.update');
+ Route::put('/validasianalisa3/{id}', [BantuanteknisController::class, 'validasianalisa3'])->middleware('auth', 'can:admindinas')->name('validasianalisa3.update');
+ Route::put('/validasianalisa4/{id}', [BantuanteknisController::class, 'validasianalisa4'])->middleware('auth', 'can:admindinas')->name('validasianalisa4.update');
+
+
 
 
 

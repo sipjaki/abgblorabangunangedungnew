@@ -8367,5 +8367,113 @@ public function bebantekanalisarusakdata($namagedung, $id)
     );
 }
 
+
+
+
+public function validasianalisa1(Request $request, $id)
+{
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas1' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas1 = $request->validasiberkas1;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas1 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
+public function validasianalisa2(Request $request, $id)
+{
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
+// public function validasipembongkaranpemohon(Request $request, $id)
+// {
+//     $data = bantekpembongkaraninduk::findOrFail($id);
+//     $request->validate(['validasiberkas2' => 'nullable']);
+//     $data->validasiberkas2 = null; // Ini yang akan di-set
+//     $data->save();
+
+//     session()->flash('update', '✅ Permohonan Sudah Diajukan Kembali, Silahkan Menunggu Verifikasi DPUPR Kab Blora');
+//     return redirect()->back();
+// }
+
+
+public function validasianalisa3(Request $request, $id)
+{
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan data sudah selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan data dibatalkan !');
+    }
+
+    return redirect()->back();
+}
+
+public function validasianalisa4(Request $request, $id)
+{
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Status Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Permohonan di Batalkan !');
+    }
+
+    return redirect()->back();
+}
+
+
 }
 
