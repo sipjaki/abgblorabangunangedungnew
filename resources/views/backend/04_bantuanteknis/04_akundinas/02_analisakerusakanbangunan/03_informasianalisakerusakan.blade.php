@@ -258,7 +258,8 @@
 
 <br><hr>
 
-{{-- @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi') --}}
+@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.03_navigasianalisa')
+
 </div>
 
 
