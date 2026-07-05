@@ -140,13 +140,15 @@
 
 
                     {{-- Form --}}
+
                     <form action="{{ route('bebantekkerusakanupdateproses', ['namagedung' => Str::slug($data->namagedung ?? 'tanpa-nama'), 'id' => $data->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
                         <div class="card-body">
                             <div class="row">
-                                {{-- Kolom Kiri --}}
+
+                                {{-- Kolom Kiri (6/12) --}}
                                 <div class="col-md-6">
                                     <div class="form-modern mb-3">
                                         <label class="form-label-modern" for="namagedung">
@@ -201,7 +203,7 @@
                                     </div>
                                 </div>
 
-                                {{-- Kolom Kanan --}}
+                                {{-- Kolom Kanan (6/12) --}}
                                 <div class="col-md-6">
                                     <div class="form-modern mb-3">
                                         <label class="form-label-modern" for="alamat">
@@ -215,31 +217,23 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-modern mb-3">
-                                        <label class="form-label-modern" for="kodebarang">
-                                            <i class="bi bi-upc-scan" style="margin-right: 8px; color: navy;"></i> Kode Barang
-                                        </label>
-                                        <input type="text" id="kodebarang" name="kodebarang"
-                                            value="{{ old('kodebarang', $data->kodebarang) }}"
-                                            class="form-control @error('kodebarang') is-invalid @enderror"
-                                            placeholder="Masukkan kode barang" />
-                                        @error('kodebarang')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                    {{-- user_id HIDDEN --}}
+                                    <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
+                                    {{-- Nama User (Readonly) --}}
                                     <div class="form-modern mb-3">
                                         <label class="form-label-modern" for="namauser">
                                             <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pengunduh / Pemohon
                                         </label>
                                         <input type="text" id="namauser"
-                                            value="{{ $user->name }}"
+                                            value="{{ $user->name ?? '-' }}"
                                             class="form-control" readonly />
-                                        <input type="hidden" name="user_id" value="{{ $user->id }}">
                                     </div>
                                 </div>
 
-                                {{-- Upload Surat Permohonan (Full Width) --}}
+                                {{-- ============================================================
+                                     UPLOAD BERKAS (Full Width)
+                                     ============================================================ --}}
                                 <div class="col-12">
                                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
                                     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px; text-align:center;">
@@ -249,6 +243,33 @@
                                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
                                 </div>
 
+                                {{-- Kode Barang (PDF/DOC) --}}
+                                <div class="col-md-6">
+                                    <div class="form-modern mb-3">
+                                        <label class="form-label-modern" for="kodebarang">
+                                            <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Kode Barang (PDF/DOC)
+                                        </label>
+                                        <input type="file" id="kodebarang" name="kodebarang"
+                                            accept=".pdf,.doc,.docx"
+                                            class="form-control @error('kodebarang') is-invalid @enderror"
+                                            onchange="previewPDF(event, 'previewContainerKode', 'iframeKode', 'msgKode')" />
+                                        @error('kodebarang')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+
+                                        <div class="mt-3" id="previewContainerKode" style="{{ $data->kodebarang ? '' : 'display: none;' }}">
+                                            <label class="fw-bold">Kode Barang Saat Ini</label>
+                                            <iframe id="iframeKode" src="{{ $data->kodebarang ? asset($data->kodebarang) : '' }}"
+                                                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                                        </div>
+                                        <div id="msgKode" class="mt-3"
+                                            style="color: grey; font-style: italic; {{ $data->kodebarang ? 'display:none;' : '' }}">
+                                            Belum ada file kode barang. Silahkan upload file.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Surat Permohonan (PDF/DOC) --}}
                                 <div class="col-md-6">
                                     <div class="form-modern mb-3">
                                         <label class="form-label-modern" for="suratpermohonan">
@@ -274,19 +295,21 @@
                                     </div>
                                 </div>
 
-                                {{-- 5 Foto Cadangan --}}
+                                {{-- ============================================================
+                                     4 FOTO CADANGAN
+                                     ============================================================ --}}
                                 <div class="col-12">
                                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
                                     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px; text-align:center;">
                                         <i class="bi bi-images" style="margin-right: 6px;"></i>
-                                        Foto Cadangan (5 Gambar)
+                                        Foto Cadangan (4 Gambar)
                                     </h5>
                                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
                                 </div>
 
-                                @for ($i = 1; $i <= 5; $i++)
+                                @for ($i = 1; $i <= 4; $i++)
                                     @php $field = 'fotocadangan' . $i; @endphp
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-modern mb-3" style="background: #f8fafc; border-radius: 12px; padding: 12px; border: 1px solid #e8ecf1;">
                                             <label class="form-label-modern" for="{{ $field }}">
                                                 <i class="bi bi-camera" style="color: navy; margin-right: 8px;"></i> Foto {{ $i }}
@@ -294,7 +317,7 @@
                                             @if($data->$field && file_exists(public_path($data->$field)))
                                                 <div style="margin-bottom: 8px;">
                                                     <img src="{{ asset($data->$field) }}" alt="Foto {{ $i }}" style="width: 100%; max-height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #f0f2f5;">
-                                                    <p style="font-size: 11px; color: #7a8a9e; margin: 4px 0 0;">Foto saat ini (kosongkan jika tidak diganti)</p>
+                                                    <p style="font-size: 11px; color: #7a8a9e; margin: 4px 0 0;">Foto saat ini</p>
                                                 </div>
                                             @else
                                                 <p style="font-size: 12px; color: #b0b8c4; margin-bottom: 8px;">Belum ada foto</p>
@@ -314,14 +337,12 @@
                             </div>
                         </div>
 
-                        {{-- Tombol Simpan dengan Modal Konfirmasi --}}
+                        {{-- Tombol Simpan --}}
                         <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                            <div class="flex justify-end">
-                                <button class="button-baru" type="button" onclick="openModal()" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; border-radius: 8px; border: none; background: #0d6efd; color: #fff; font-weight: 500;">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Perubahan</span>
-                                </button>
-                            </div>
+                            <button class="button-baru" type="button" onclick="openModal()" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; border-radius: 8px; border: none; background: #0d6efd; color: #fff; font-weight: 500;">
+                                <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                <span style="font-family: 'Poppins', sans-serif;">Simpan Perubahan</span>
+                            </button>
                         </div>
 
                         {{-- Modal Konfirmasi --}}
@@ -353,7 +374,13 @@
 
                     </form>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+{{-- Script --}}
 <script>
     // Preview PDF
     function previewPDF(event, containerId, iframeId, messageId) {
@@ -362,22 +389,21 @@
         const iframe = document.getElementById(iframeId);
         const message = document.getElementById(messageId);
 
-        if (file && file.type === "application/pdf") {
+        if (file && (file.type === "application/pdf" || file.type === "application/msword" || file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
             const fileURL = URL.createObjectURL(file);
             iframe.src = fileURL;
             container.style.display = 'block';
             message.style.display = 'none';
         } else if (file) {
-            // Jika bukan PDF, tampilkan pesan
             iframe.src = '';
             container.style.display = 'none';
             message.style.display = 'block';
-            message.textContent = 'File harus berupa PDF.';
+            message.textContent = 'File harus berupa PDF, DOC, atau DOCX.';
         } else {
             iframe.src = '';
             container.style.display = 'none';
             message.style.display = 'block';
-            message.textContent = 'Belum ada surat permohonan. Silahkan upload file.';
+            message.textContent = 'Belum ada file. Silahkan upload file.';
         }
     }
 
@@ -393,11 +419,9 @@
     }
 
     function submitForm() {
-        // Submit form
         document.querySelector('form').submit();
     }
 
-    // Tutup modal jika klik di luar konten
     window.onclick = function(event) {
         const modal = document.getElementById('confirmModal');
         if (event.target === modal) {
@@ -406,7 +430,8 @@
     }
 </script>
 
-                    </div>
+
+</div>
                  </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
