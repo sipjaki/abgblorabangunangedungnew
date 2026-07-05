@@ -8683,5 +8683,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         'id' => $data->id
     ])->with('update', 'Data berhasil diperbarui.');
 }
+
+
 }
 
