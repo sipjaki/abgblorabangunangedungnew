@@ -278,15 +278,12 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-
-@if($data->count() > 0)
-    @php
-        $firstData = $data->first();
-        // Jika namagedung kosong, gunakan default 'tanpa-nama'
-        $slugName = !empty($firstData->namagedung) ? Str::slug($firstData->namagedung) : 'tanpa-nama';
-    @endphp
-    <a href="{{ route('bebantekkerusakanshow', ['namagedung' => $slugName, 'id' => $firstData->id]) }}"
-       class="button-berkas">
+@if($data)
+    @php $item = $data; @endphp
+    <a href="{{ route('bebantekkerusakanshow', [
+        'namagedung' => Str::slug($item->namagedung ?? 'tanpa-nama'),
+        'id' => $item->id
+    ]) }}" class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
 @endif

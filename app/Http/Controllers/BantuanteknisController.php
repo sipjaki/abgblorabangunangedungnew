@@ -8501,33 +8501,19 @@ public function bebantekanalisadelete($id)
 
  public function bebantekkerusakandokumen($namagedung, $id)
 {
-    // Decode URL jika ada karakter khusus
+    // Decode URL
     $namagedung = urldecode($namagedung);
 
-    // Ambil data berdasarkan ID
-    $data = bantekanalisainduk::where('id', $id)->first();
+    // Ambil data berdasarkan ID (bukan first)
+    $data = bantekanalisainduk::where('id', $id)->firstOrFail();
 
-    // Jika data tidak ditemukan, tampilkan 404
-    if (!$data) {
-        abort(404, 'Data tidak ditemukan.');
-    }
-
-    // 🔥 PERBAIKAN: Jika namagedung di database kosong, lewati validasi slug
+    // Validasi slug hanya jika namagedung tidak kosong
     if (!empty($data->namagedung)) {
-        // Validasi: pastikan slug dari namagedung di database sama dengan di URL
         if (Str::slug($data->namagedung) !== $namagedung) {
             abort(404, 'URL tidak valid.');
         }
-    } else {
-        // Jika namagedung kosong, redirect ke halaman dengan parameter yang benar
-        // (opsional: tetapkan default "tidak-ada-nama" atau biarkan saja)
-        // return redirect()->route('bebantekkerusakanshow', [
-        //     'namagedung' => 'tidak-ada-nama',
-        //     'id' => $id
-        // ]);
     }
 
-    // Kembalikan view dengan data
     return view(
         'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.04_showberkasanalisa',
         [
@@ -8537,6 +8523,7 @@ public function bebantekanalisadelete($id)
         ]
     );
 }
+
 
 
 public function validasianalisadokumen(Request $request, $id)
