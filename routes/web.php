@@ -1724,7 +1724,7 @@ Route::delete('/bebantekanalisakerusakandelete/{id}', [BantuanteknisController::
 
 Route::get('/bebantekkerusakan/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakanshow');
 Route::get('/bebantekkerusakanupdate/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakanupdate'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakanshowupdate');
-Route::put('/bebantekrusakancreate/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakanupdatecreate'])->middleware('auth', 'can:admindinas')->name('bebantekrusakancreateupdate');
+Route::put('/bebantekrusakancreate/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakanupdateproses'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakanupdateproses');
 
 Route::put('/validasianalisadokumen/{id}', [BantuanteknisController::class, 'validasianalisadokumen'])->middleware('auth')->name('validasianalisadokumen');
 

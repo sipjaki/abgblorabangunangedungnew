@@ -8607,7 +8607,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         'alamat'        => 'nullable|string',
         'luasbangunan'  => 'nullable|string|max:100',
         'kodebarang'    => 'nullable|string|max:255',
-        'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:10240', // 10MB
+        'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:20240', // 10MB
         'fotocadangan1' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan2' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan3' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
