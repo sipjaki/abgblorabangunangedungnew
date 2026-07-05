@@ -1724,6 +1724,8 @@ Route::delete('/bebantekanalisakerusakandelete/{id}', [BantuanteknisController::
 
 Route::get('/bebantekkerusakan/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakandokumen'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakanshow');
 
+Route::put('/validasianalisadokumen/{id}', [BantuanteknisController::class, 'validasianalisadokumen'])->middleware('auth')->name('validasianalisadokumen');
+
 
 
 // Route::get('/dashboard', function () {

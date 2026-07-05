@@ -39,8 +39,8 @@ return new class extends Migration
             $table->string('validasiberkas6')->nullable();
 
             $table->string('cadangan1')->nullable(); //
-            $table->string('cadangan2')->nullable(); //
-            $table->string('cadangan3')->nullable(); //
+            $table->string('cadangan2')->nullable(); // VALIDASI BERKAS UNTUK BERKAS KODE BARANG
+            $table->string('cadangan3')->nullable(); // VALIDASI BERKAS UNTUK SURAT PERMOHONAN
             $table->string('cadangan4')->nullable(); //
             $table->string('cadangan5')->nullable(); //
 

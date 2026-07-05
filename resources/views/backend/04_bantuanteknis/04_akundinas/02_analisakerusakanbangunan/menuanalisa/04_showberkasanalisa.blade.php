@@ -569,7 +569,7 @@
 
 <hr>
 
-<form action="{{ route('validasiinformasipemilikbangunan', $data->id) }}" method="POST">
+<form action="{{ route('validasianalisadokumen', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
                     <!-- /.card-header -->
@@ -713,7 +713,7 @@
         </style>
 
         @php
-            $status = $data->validasiberkas1;
+            $status = $data->cadangan2;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -812,15 +812,15 @@
             </style>
 
             <label class="custom-radio">
-                <input type="radio" name="validasiberkas1" value="sesuai"
-                    {{ $data->validasiberkas1 == 'sesuai' ? 'checked' : '' }}>
+                <input type="radio" name="cadangan2" value="sesuai"
+                    {{ $data->cadangan2 == 'sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Sesuai
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="validasiberkas1" value="tidak_sesuai"
-                    {{ $data->validasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
+                <input type="radio" name="cadangan2" value="tidak_sesuai"
+                    {{ $data->cadangan2 == 'tidak_sesuai' ? 'checked' : '' }}>
                 <span class="custom-box"></span>
                 Tidak Sesuai
             </label>
@@ -1135,7 +1135,7 @@
         </style>
 
         @php
-            $status = $data->validasiberkas3;
+            $status = $data->cadangan3;
         @endphp
 
         <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
@@ -1156,15 +1156,15 @@
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas3" value="sesuai"
-                                                                {{ $data->validasiberkas3 == 'sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="cadangan3" value="sesuai"
+                                                                {{ $data->cadangan3 == 'sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Sesuai
                                                         </label>
 
                                                         <label class="custom-radio">
-                                                            <input type="radio" name="validasiberkas3" value="tidak_sesuai"
-                                                                {{ $data->validasiberkas3 == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                            <input type="radio" name="cadangan3" value="tidak_sesuai"
+                                                                {{ $data->cadangan3 == 'tidak_sesuai' ? 'checked' : '' }}>
                                                             <span class="custom-box"></span>
                                                             Tidak Sesuai
                                                         </label>

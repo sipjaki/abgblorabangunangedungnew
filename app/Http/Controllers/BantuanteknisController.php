@@ -8524,5 +8524,42 @@ public function bebantekanalisadelete($id)
     );
 }
 
+public function validasianalisadokumen(Request $request, $id)
+{
+    // ===============================
+    // VALIDASI INPUT
+    // ===============================
+    $request->validate([
+        'cadangan2' => 'required|in:sesuai,tidak_sesuai',
+        // 'validasiberkas2' => 'required|in:sesuai,tidak_sesuai',
+        'cadangan3' => 'required|in:sesuai,tidak_sesuai',
+        'cadangan1' => 'nullable|string',
+    ]);
+
+    // ===============================
+    // AMBIL DATA (LANGSUNG, TANPA RELASI INDUK)
+    // ===============================
+    $item = bantekanalisainduk::findOrFail($id);
+
+    // ===============================
+    // UPDATE DATA VALIDASI
+    // ===============================
+    $item->update([
+        'cadangan2' => $request->cadangan2,
+        // 'validasiberkas2' => $request->validasiberkas2,
+        'cadangan3' => $request->cadangan3,
+        'cadangan1' => $request->cadangan1,
+    ]);
+
+    // ===============================
+    // REDIRECT KE HALAMAN SHOW
+    // ===============================
+    return redirect()->route('bebantekkerusakanshow', [
+        'namagedung' => $item->namagedung,
+        'id'         => $item->id
+    ])->with('update', 'Data verifikasi berhasil disimpan');
+}
+
+
 }
 
