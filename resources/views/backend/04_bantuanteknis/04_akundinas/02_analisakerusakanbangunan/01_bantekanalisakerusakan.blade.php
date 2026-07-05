@@ -368,7 +368,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebantekpembongkarandelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bebantekanalisadelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

@@ -105,7 +105,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bebantekanalisabgn?search=${input}`)
+                            fetch(`/bebantekanalisabgnall?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -232,8 +232,8 @@
 
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
 <td style="text-align: center;">
-    <a href="{{ route('bebantekpembongkaranshow', [
-            'namapemilik' => urlencode($item->namapemilik),
+    <a href="{{ route('bebantekanalisarusakshow', [
+            'namagedung' => urlencode($item->namagedung),
             'id' => $item->id
         ]) }}"
        class="button-baru">
