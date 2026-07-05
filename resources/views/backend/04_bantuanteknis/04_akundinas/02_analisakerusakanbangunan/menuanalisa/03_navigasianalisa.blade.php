@@ -271,34 +271,31 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                         <i class="bi bi-person-vcard-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI PERMOHONAN IZIN PEMBONGKARAN</h4>
-                        <p>Data lengkap pemilik bangunan gedung</p>
+                        <h4>BERKAS PERMOHONAN ANALISA KERUSAKAN</h4>
+                        {{-- <p>Data lengkap pemilik bangunan gedung</p> --}}
                     </div>
 
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-@if($data->bantekpembongkarannew1->count() > 0)
+
+@if($data->count() > 0)
     <a href="{{ route(
-            'bebantekpembongkarandokumen',
+            'bebantekkerusakanshow',
             [
-                'namabangunan' => Str::slug($data->namabangunan),
-                'id' => $data->bantekpembongkarannew1->first()->id
+                'namagedung' => Str::slug($data->namagedung),
+                'id' => $data->first()->id
             ]
         ) }}"
        class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
-@else
-    <a href="{{ route('informasipemilikbangunan', [$data->namapemilik, $data->id]) }}"
-       class="button-baru">
-        <i class="bi bi-upload"></i> Input Permohonan
-    </a>
 @endif
 
 
+
 <!-- Perbaikan Dokumen -->
-@if($data->bantekpembongkarannew1->count() > 0)
+{{-- @if($data->bantekpembongkarannew1->count() > 0)
     <!-- DATA ADA → BISA DIKLIK -->
     <a href="{{ route(
             'perbaikan.pemilik',
@@ -322,7 +319,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
     <small class="text-muted d-block mt-1">
         Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
     </small>
-@endif
+@endif --}}
 
                     </div>
                 </div>
