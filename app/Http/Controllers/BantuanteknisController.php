@@ -8499,30 +8499,45 @@ public function bebantekanalisadelete($id)
     }
 
 
-   public function bebantekkerusakandokumen($namagedung, $id)
+ public function bebantekkerusakandokumen($namagedung, $id)
 {
-    // Decode URL jika ada karakter khusus (spasi, dll)
+    // Decode URL jika ada karakter khusus
     $namagedung = urldecode($namagedung);
 
-    // Ambil data berdasarkan ID (tanpa trashed karena tidak ada soft delete)
-    $data = bantekanalisainduk::where('id', $id)->firstOrFail();
+    // Ambil data berdasarkan ID
+    $data = bantekanalisainduk::where('id', $id)->first();
 
-    // Validasi: pastikan slug dari namagedung di database sama dengan di URL
-    // Jika tidak sama, tampilkan 404 (mencegah manipulasi URL)
-    if (Str::slug($data->namagedung) !== $namagedung) {
-        abort(404, 'Data tidak ditemukan atau URL tidak valid.');
+    // Jika data tidak ditemukan, tampilkan 404
+    if (!$data) {
+        abort(404, 'Data tidak ditemukan.');
+    }
+
+    // 🔥 PERBAIKAN: Jika namagedung di database kosong, lewati validasi slug
+    if (!empty($data->namagedung)) {
+        // Validasi: pastikan slug dari namagedung di database sama dengan di URL
+        if (Str::slug($data->namagedung) !== $namagedung) {
+            abort(404, 'URL tidak valid.');
+        }
+    } else {
+        // Jika namagedung kosong, redirect ke halaman dengan parameter yang benar
+        // (opsional: tetapkan default "tidak-ada-nama" atau biarkan saja)
+        // return redirect()->route('bebantekkerusakanshow', [
+        //     'namagedung' => 'tidak-ada-nama',
+        //     'id' => $id
+        // ]);
     }
 
     // Kembalikan view dengan data
     return view(
         'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.04_showberkasanalisa',
         [
-            'title'        => 'Details Informasi Permohonan Analisa Kerusakan',
-            'data'         => $data,
-            'namagedung'   => $namagedung,
+            'title'      => 'Detail Informasi Permohonan Analisa Kerusakan',
+            'data'       => $data,
+            'namagedung' => $namagedung,
         ]
     );
 }
+
 
 public function validasianalisadokumen(Request $request, $id)
 {

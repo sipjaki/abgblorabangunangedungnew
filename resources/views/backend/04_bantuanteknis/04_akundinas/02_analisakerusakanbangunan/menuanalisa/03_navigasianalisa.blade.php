@@ -98,8 +98,8 @@
                     <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 2rem;"></i>
                 </div>
                 <div>
-                    <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">Dokumen Persyaratan Pembongkaran</h4>
-                    <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p>
+                    <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">Berkas Permohonan Analisa Kerusakan</h4>
+                    {{-- <p class="text-muted mb-0" style="font-size: 0.95rem;">Manajemen Dokumen Pemilik dan Bangunan Gedung</p> --}}
                 </div>
             </div>
 
@@ -280,18 +280,16 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                         <!-- Input Permohonan -->
 
 @if($data->count() > 0)
-    <a href="{{ route(
-            'bebantekkerusakanshow',
-            [
-                'namagedung' => Str::slug($data->namagedung),
-                'id' => $data->first()->id
-            ]
-        ) }}"
+    @php
+        $firstData = $data->first();
+        // Jika namagedung kosong, gunakan default 'tanpa-nama'
+        $slugName = !empty($firstData->namagedung) ? Str::slug($firstData->namagedung) : 'tanpa-nama';
+    @endphp
+    <a href="{{ route('bebantekkerusakanshow', ['namagedung' => $slugName, 'id' => $firstData->id]) }}"
        class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
 @endif
-
 
 
 <!-- Perbaikan Dokumen -->
