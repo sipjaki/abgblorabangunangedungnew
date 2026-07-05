@@ -8682,8 +8682,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         'namagedung' => Str::slug($data->namagedung ?? 'tanpa-nama'),
         'id' => $data->id
     ])->with('update', 'Data berhasil diperbarui.');
-}
 
-
+    }
 }
 
