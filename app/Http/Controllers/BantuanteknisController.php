@@ -8524,6 +8524,8 @@ public function bebantekanalisadelete($id)
     );
 }
 
+use Illuminate\Support\Str; // Pastikan di-import di bagian atas controller
+
 public function validasianalisadokumen(Request $request, $id)
 {
     // ===============================
@@ -8537,7 +8539,7 @@ public function validasianalisadokumen(Request $request, $id)
     ]);
 
     // ===============================
-    // AMBIL DATA (LANGSUNG, TANPA RELASI INDUK)
+    // AMBIL DATA (TANPA RELASI INDUK)
     // ===============================
     $item = bantekanalisainduk::findOrFail($id);
 
@@ -8552,14 +8554,13 @@ public function validasianalisadokumen(Request $request, $id)
     ]);
 
     // ===============================
-    // REDIRECT KE HALAMAN SHOW
+    // REDIRECT KE ROUTE SHOW DENGAN SLUG
     // ===============================
     return redirect()->route('bebantekkerusakanshow', [
-        'namagedung' => $item->namagedung,
+        'namagedung' => Str::slug($item->namagedung), // <-- di-slug agar sesuai dengan validasi di show
         'id'         => $item->id
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
-
 
 }
 
