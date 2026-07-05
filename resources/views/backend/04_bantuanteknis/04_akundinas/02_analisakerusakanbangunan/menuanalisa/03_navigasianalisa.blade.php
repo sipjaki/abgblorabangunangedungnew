@@ -339,7 +339,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-                @if($data->bantekpembongkarannew2->count() > 0)
+                {{-- @if($data->bantekpembongkarannew2->count() > 0)
                     @php
                         $item = $data->bantekpembongkarannew2->first(); // ambil item pertama
                     @endphp
@@ -383,7 +383,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
     <small class="text-muted d-block mt-1">
         Perbaikan hanya dapat dilakukan setelah data permohonan tersedia.
     </small>
-@endif
+@endif --}}
 
                     </div>
                 </div>
