@@ -8562,5 +8562,109 @@ public function validasianalisadokumen(Request $request, $id)
     ])->with('update', 'Data verifikasi berhasil disimpan');
 }
 
+
+public function bebantekkerusakanupdate($namagedung, $id)
+{
+    // Decode URL
+    $namagedung = urldecode($namagedung);
+
+    // Ambil data berdasarkan ID
+    $data = bantekanalisainduk::where('id', $id)->firstOrFail();
+
+    // Validasi slug
+    if (!empty($data->namagedung)) {
+        if (Str::slug($data->namagedung) !== $namagedung) {
+            abort(404, 'URL tidak valid.');
+        }
+    }
+
+    // Ambil user login
+    $user = Auth::user();
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.04_perbaikanpermohonananalisa',
+        [
+            'title' => 'Perbaikan Permohonan Analisa Kerusakan',
+            'data'  => $data,
+            'user'  => $user,
+            'namagedung' => $namagedung,
+        ]
+    );
+}
+
+// ============================================================
+// PROSES UPDATE DATA (PUT)
+// ============================================================
+public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id)
+{
+    $namagedung = urldecode($namagedung);
+
+    // Validasi input
+    $request->validate([
+        'namagedung'    => 'nullable|string|max:255',
+        'kabupaten'     => 'nullable|string|max:255',
+        'koordinat'     => 'nullable|string|max:255',
+        'alamat'        => 'nullable|string',
+        'luasbangunan'  => 'nullable|string|max:100',
+        'kodebarang'    => 'nullable|string|max:255',
+        'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:10240', // 10MB
+        'fotocadangan1' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        'fotocadangan2' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        'fotocadangan3' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        'fotocadangan4' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        'fotocadangan5' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+    ]);
+
+    $data = bantekanalisainduk::where('id', $id)->firstOrFail();
+
+    // Update field teks
+    $data->namagedung   = $request->namagedung ?? $data->namagedung;
+    $data->kabupaten    = $request->kabupaten ?? $data->kabupaten;
+    $data->koordinat    = $request->koordinat ?? $data->koordinat;
+    $data->alamat       = $request->alamat ?? $data->alamat;
+    $data->luasbangunan = $request->luasbangunan ?? $data->luasbangunan;
+    $data->kodebarang   = $request->kodebarang ?? $data->kodebarang;
+
+    // Upload surat permohonan (PDF/DOC)
+    if ($request->hasFile('suratpermohonan')) {
+        // Hapus file lama jika ada
+        if ($data->suratpermohonan && file_exists(public_path($data->suratpermohonan))) {
+            unlink(public_path($data->suratpermohonan));
+        }
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $file->move(public_path('uploads/analisa_kerusakan'), $filename);
+        $data->suratpermohonan = 'uploads/analisa_kerusakan/' . $filename;
+    }
+
+    // Upload foto cadangan (1-5)
+    $fotoFields = ['fotocadangan1', 'fotocadangan2', 'fotocadangan3', 'fotocadangan4', 'fotocadangan5'];
+    $uploadDir = public_path('uploads/analisa_kerusakan');
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0775, true);
+    }
+
+    foreach ($fotoFields as $field) {
+        if ($request->hasFile($field)) {
+            // Hapus foto lama jika ada
+            if ($data->$field && file_exists(public_path($data->$field))) {
+                unlink(public_path($data->$field));
+            }
+            $file = $request->file($field);
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadDir, $filename);
+            $data->$field = 'uploads/analisa_kerusakan/' . $filename;
+        }
+    }
+
+    $data->save();
+
+    // Redirect ke halaman show dengan slug
+    return redirect()->route('bebantekkerusakanshow', [
+        'namagedung' => Str::slug($data->namagedung ?? 'tanpa-nama'),
+        'id' => $data->id
+    ])->with('update', 'Data berhasil diperbarui.');
+}
+
 }
 
