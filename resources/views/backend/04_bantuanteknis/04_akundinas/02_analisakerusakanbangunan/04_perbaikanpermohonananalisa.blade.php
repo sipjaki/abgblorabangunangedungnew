@@ -339,7 +339,7 @@
 
                         {{-- Tombol Simpan --}}
                         <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                            <button class="button-baru" type="button" onclick="openModal()" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; border-radius: 8px; border: none; background: #0d6efd; color: #fff; font-weight: 500;">
+                            <button class="button-baru" type="button" onclick="openModal()">
                                 <i class="bi bi-save" style="margin-right: 5px;"></i>
                                 <span style="font-family: 'Poppins', sans-serif;">Simpan Perubahan</span>
                             </button>

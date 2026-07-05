@@ -8599,20 +8599,20 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
 {
     $namagedung = urldecode($namagedung);
 
-    // Validasi input
+    // Validasi input (HAPUS fotocadangan5 karena hanya ada 4)
     $request->validate([
         'namagedung'    => 'nullable|string|max:255',
         'kabupaten'     => 'nullable|string|max:255',
         'koordinat'     => 'nullable|string|max:255',
         'alamat'        => 'nullable|string',
         'luasbangunan'  => 'nullable|string|max:100',
-        'kodebarang'    => 'nullable|string|max:255',
-        'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:20240', // 10MB
+        'kodebarang'    => 'nullable|file|mimes:pdf,doc,docx|max:20240',
+        'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:20240',
         'fotocadangan1' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan2' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan3' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan4' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
-        'fotocadangan5' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        // fotocadangan5 DIHAPUS karena hanya ada 4 di database
     ]);
 
     $data = bantekanalisainduk::where('id', $id)->firstOrFail();
@@ -8623,11 +8623,25 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     $data->koordinat    = $request->koordinat ?? $data->koordinat;
     $data->alamat       = $request->alamat ?? $data->alamat;
     $data->luasbangunan = $request->luasbangunan ?? $data->luasbangunan;
-    $data->kodebarang   = $request->kodebarang ?? $data->kodebarang;
 
-    // Upload surat permohonan (PDF/DOC)
-    if ($request->hasFile('suratpermohonan')) {
+    // ============================================================
+    // UPLOAD KODE BARANG (PDF/DOC)
+    // ============================================================
+    if ($request->hasFile('kodebarang')) {
         // Hapus file lama jika ada
+        if ($data->kodebarang && file_exists(public_path($data->kodebarang))) {
+            unlink(public_path($data->kodebarang));
+        }
+        $file = $request->file('kodebarang');
+        $filename = time() . '_kodebarang.' . $file->getClientOriginalExtension();
+        $file->move(public_path('uploads/analisa_kerusakan'), $filename);
+        $data->kodebarang = 'uploads/analisa_kerusakan/' . $filename;
+    }
+
+    // ============================================================
+    // UPLOAD SURAT PERMOHONAN (PDF/DOC)
+    // ============================================================
+    if ($request->hasFile('suratpermohonan')) {
         if ($data->suratpermohonan && file_exists(public_path($data->suratpermohonan))) {
             unlink(public_path($data->suratpermohonan));
         }
@@ -8637,8 +8651,10 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         $data->suratpermohonan = 'uploads/analisa_kerusakan/' . $filename;
     }
 
-    // Upload foto cadangan (1-5)
-    $fotoFields = ['fotocadangan1', 'fotocadangan2', 'fotocadangan3', 'fotocadangan4', 'fotocadangan5'];
+    // ============================================================
+    // UPLOAD 4 FOTO CADANGAN
+    // ============================================================
+    $fotoFields = ['fotocadangan1', 'fotocadangan2', 'fotocadangan3', 'fotocadangan4'];
     $uploadDir = public_path('uploads/analisa_kerusakan');
     if (!file_exists($uploadDir)) {
         mkdir($uploadDir, 0775, true);
@@ -8657,14 +8673,15 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         }
     }
 
+    // Update user_id
+    $data->user_id = Auth::id();
+
     $data->save();
 
-    // Redirect ke halaman show dengan slug
     return redirect()->route('bebantekkerusakanshow', [
         'namagedung' => Str::slug($data->namagedung ?? 'tanpa-nama'),
         'id' => $data->id
     ])->with('update', 'Data berhasil diperbarui.');
 }
-
 }
 
