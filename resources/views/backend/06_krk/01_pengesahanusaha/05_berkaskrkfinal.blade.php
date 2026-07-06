@@ -131,25 +131,49 @@ th {
                                             <!-- Letterhead -->
                                             <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px; margin-top: -30px;">
                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
-         <div style="
+<div style="
     display: inline-block;
     text-align: center;
     font-family: Arial !important;
-    font-weight: normal;
-        ">
-    <h3 style="font-family: Arial !important; font-size:20px; font-weight:normal;">
+    line-height: 1;
+">
+    <h3 style="
+        font-family: Arial !important;
+        font-size:20px;
+        font-weight:normal;
+        margin:0;
+        line-height:1;
+    ">
         PEMERINTAH KABUPATEN BLORA
     </h3>
 
-    <h3 style="font-family: Arial !important; font-size:20px; font-weight:bold; color:#000;">
+    <h3 style="
+        font-family: Arial !important;
+        font-size:20px;
+        font-weight:bold;
+        color:#000;
+        margin:0;
+        line-height:1;
+    ">
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG
     </h3>
 
-    <p style="font-family: Arial !important; font-size:14px">
+    <p style="
+        font-family: Arial !important;
+        font-size:14px;
+        margin:0;
+        line-height:1;
+    ">
         Jalan Nusantara No. 62 Blora 58214, Telepon (0296) 531004
     </p>
 
-    <h3 style="font-family: Arial !important; font-size:14px; font-weight:normal;">
+    <h3 style="
+        font-family: Arial !important;
+        font-size:14px;
+        font-weight:normal;
+        margin:0;
+        line-height:1;
+    ">
         Laman dpupr.blorakab.go.id, Pos-el dpukabblora@gmail.com
     </h3>
 </div>
