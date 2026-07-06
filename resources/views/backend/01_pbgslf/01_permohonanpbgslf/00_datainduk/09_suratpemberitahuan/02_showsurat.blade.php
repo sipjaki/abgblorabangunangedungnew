@@ -462,11 +462,11 @@ th {
     <h3 style="font-family: Arial !important; font-size:14px; font-weight:normal;">
         Laman dpupr.blorakab.go.id, Pos-el dpukabblora@gmail.com
     </h3>
-<br>
+    <br>
 </td>
 
-
-<br></tr>
+<br>
+</tr>
 {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
   </table>
 
