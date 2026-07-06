@@ -222,17 +222,34 @@
 
 
                 <!-- Jumlah Lantai Maksimal -->
-                <div class="form-group row mb-4">
+               <div class="form-group row mb-4">
                     <label for="luaslantaimaksimal" class="col-md-4 col-form-label">
                         <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
+
                     <div class="col-md-8">
-                        {{-- <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal"> --}}
-                        <input type="text" class="form-control"  name="luaslantaimaksimal">
+                        <select class="form-control @error('luaslantaimaksimal') is-invalid @enderror"
+                                id="luaslantaimaksimal"
+                                name="luaslantaimaksimal">
+                            <option value="">-- Pilih Jumlah Lantai --</option>
+                            <option value="1 Lantai" {{ old('luaslantaimaksimal') == '1 Lantai' ? 'selected' : '' }}>1 Lantai</option>
+                            <option value="2 Lantai" {{ old('luaslantaimaksimal') == '2 Lantai' ? 'selected' : '' }}>2 Lantai</option>
+                            <option value="3 Lantai" {{ old('luaslantaimaksimal') == '3 Lantai' ? 'selected' : '' }}>3 Lantai</option>
+                            <option value="4 Lantai" {{ old('luaslantaimaksimal') == '4 Lantai' ? 'selected' : '' }}>4 Lantai</option>
+                            <option value="5 Lantai" {{ old('luaslantaimaksimal') == '5 Lantai' ? 'selected' : '' }}>5 Lantai</option>
+                            <option value="6 Lantai" {{ old('luaslantaimaksimal') == '6 Lantai' ? 'selected' : '' }}>6 Lantai</option>
+                            <option value="7 Lantai" {{ old('luaslantaimaksimal') == '7 Lantai' ? 'selected' : '' }}>7 Lantai</option>
+                            <option value="8 Lantai" {{ old('luaslantaimaksimal') == '8 Lantai' ? 'selected' : '' }}>8 Lantai</option>
+                            <option value="9 Lantai" {{ old('luaslantaimaksimal') == '9 Lantai' ? 'selected' : '' }}>9 Lantai</option>
+                            <option value="10 Lantai" {{ old('luaslantaimaksimal') == '10 Lantai' ? 'selected' : '' }}>10 Lantai</option>
+                        </select>
+
+                        @error('luaslantaimaksimal')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                    @error('luaslantaimaksimal')
-                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                    @enderror
                 </div>
 
 {{-- PERBAIKAN BARU LAGI ===================================================== --}}

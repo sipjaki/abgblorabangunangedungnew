@@ -341,9 +341,16 @@ th {
         $lantaiText = $item->luaslantaimaksimal ?? null;
 
         $lantai = match($lantaiText) {
+            '1 Lantai' => 1,
             '2 Lantai' => 2,
+            '3 Lantai' => 3,
             '4 Lantai' => 4,
-            '2 - 8 Lantai' => 8,
+            '5 Lantai' => 5,
+            '6 Lantai' => 6,
+            '7 Lantai' => 7,
+            '8 Lantai' => 8,
+            '9 Lantai' => 9,
+            '10 Lantai' => 10,
             default => null
         };
 
