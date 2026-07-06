@@ -8724,7 +8724,7 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
         $user = Auth::user();
 
         return view(
-            'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.06_hitunganalisarusak',
+            'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.06_hitunganalisarusak',
             [
                 'title' => 'Perhitungan Tingkat Kerusakan Bangunan Gedung',
                 'data'  => $data,
