@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\bantekanalisainduk;
+use App\Models\bantekanalisanew1;
 use App\Models\bantekpembongkaraninduk;
 use App\Models\bantekpembongkarannew1;
 use App\Models\bantekpembongkarannew2;
@@ -8684,5 +8685,53 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     ])->with('update', 'Data berhasil diperbarui.');
 
     }
+
+
+    public function bebantekanalisahitung($id)
+{
+    // Ambil data new2 beserta relasi induk2
+    $data = bantekanalisanew1::withTrashed()
+        ->with('induk')
+        ->where('id', $id)
+        ->firstOrFail();
+
+    // Kalau relasi induk2 null, tetap lanjut tapi kasih info di view
+    // $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.05_lihatperhitungananalisa',
+        [
+            'title'     => 'Details Perhitungan Analisa Tingkat Kerusakan Bangunan Gedung',
+            'data'      => $data,
+            // 'pelaksana' => $pelaksana_slug
+        ]
+    );
+}
+
+
+public function bebantekkerusakaninfohitung($namagedung, $id)
+    {
+        // Decode nama pemilik dari URL
+        $namagedung = urldecode($namagedung);
+
+        // Ambil data induk + relasi
+        $data = bantekanalisainduk::with('bantekanalisanew1')
+            ->where('id', $id)                     // kunci utama
+            ->where('namagedung', $namagedung)   // coinroh / pengaman
+            ->firstOrFail();
+
+        // User login
+        $user = Auth::user();
+
+        return view(
+            'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.06_hitunganalisarusak',
+            [
+                'title' => 'Perhitungan Tingkat Kerusakan Bangunan Gedung',
+                'data'  => $data,
+                'user'  => $user
+            ]
+        );
+    }
+
 }
 

@@ -1576,9 +1576,10 @@ Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisControll
  Route::put('/validasianalisa3/{id}', [BantuanteknisController::class, 'validasianalisa3'])->middleware('auth', 'can:admindinas')->name('validasianalisa3.update');
  Route::put('/validasianalisa4/{id}', [BantuanteknisController::class, 'validasianalisa4'])->middleware('auth', 'can:admindinas')->name('validasianalisa4.update');
 
- Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
+Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
 
 
+Route::get('/bebantekanalisahitung/hitung/{id}',[BantuanteknisController::class, 'bebantekanalisahitung'])->middleware('auth', 'can:admindinas')->name('bebantekanalisahitungdetails');
 
 
 /// PEMBAHARUAN BARU LAGI
@@ -1728,6 +1729,7 @@ Route::put('/bebantekrusakancreate/dokumen/{namagedung}/{id}',[BantuanteknisCont
 
 Route::put('/validasianalisadokumen/{id}', [BantuanteknisController::class, 'validasianalisadokumen'])->middleware('auth')->name('validasianalisadokumen');
 
+Route::get('/bebantekkerusakan/infohitung/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakaninfohitung'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakaninfohitung');
 
 
 // Route::get('/dashboard', function () {

@@ -357,36 +357,36 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                         <i class="bi bi-building-fill"></i>
                     </div>
                     <div class="doc-title">
-                        <h4>INFORMASI PERMOHONAN KAJIAN BANGUNAN GEDUNG</h4>
-                        <p>Detail dan spesifikasi bangunan yang akan dibongkar</p>
+                        <h4>PERHITUNGAN TINGKAT KERUSAKAN BANGUNAN GEDUNG</h4>
+                        {{-- <p>Detail dan spesifikasi bangunan yang akan dibongkar</p> --}}
                     </div>
 
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Input Permohonan -->
-                {{-- @if($data->bantekpembongkarannew2->count() > 0)
+                @if($data->bantekanalisanew1->count() > 0)
                     @php
-                        $item = $data->bantekpembongkarannew2->first(); // ambil item pertama
+                        $item = $data->bantekanalisanew1->first(); // ambil item pertama
                     @endphp
 
                     <a href="{{ route(
-                            'bebantekpembongkaranbangunandetail',
+                            'bebantekanalisahitungdetails',
                             [
                             //   'pelaksana' => urlencode($item->pelaksana),
                          'id' => $item->id
                             ]
                         ) }}"
                     class="button-berkas">
-                        <i class="bi bi-eye"></i> Lihat Dokumen
+                        <i class="bi bi-eye"></i> Lihat Perhitungan
                     </a>
                 @else
-                    <a href="{{ route('informasibangunangedung', [$data->namapemilik, $data->id]) }}"
+                    <a href="{{ route('bebantekkerusakaninfohitung', [$data->namagedung, $data->id]) }}"
                     class="button-baru">
-                        <i class="bi bi-upload"></i> Input Permohonan
+                        <i class="bi bi-upload"></i> Hitung Analisa Kerusakan
                     </a>
                 @endif
 
-@php
+{{-- @php
     $item = $data->bantekpembongkarannew2->first();
     $induk = $item;
 @endphp
