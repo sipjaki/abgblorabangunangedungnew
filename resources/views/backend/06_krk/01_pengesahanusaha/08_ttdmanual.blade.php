@@ -378,6 +378,7 @@ th {
             '8 Lantai' => 8,
             '9 Lantai' => 9,
             '10 Lantai' => 10,
+            '2 - 8 Lantai' => 8,
             default => null
         };
 
