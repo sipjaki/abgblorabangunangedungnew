@@ -136,7 +136,6 @@ th {
     text-align: center;
     font-family: Arial !important;
     font-weight: normal;
-    line-height: 1;
         ">
     <h3 style="font-family: Arial !important; font-size:20px; font-weight:normal;">
         PEMERINTAH KABUPATEN BLORA
