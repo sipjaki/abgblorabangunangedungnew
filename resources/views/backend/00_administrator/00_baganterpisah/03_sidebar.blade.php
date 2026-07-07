@@ -1325,7 +1325,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/ttdkepaladinasblora" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/kabidbangunangedung" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Kabid <br> Bangunan Gedung</p>
     </a>
