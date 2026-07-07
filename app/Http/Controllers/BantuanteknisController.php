@@ -18,6 +18,8 @@ use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\pengkajiteknis;
+use App\Models\petugasdinas;
+use App\Models\ttdkepaladinas;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -8721,12 +8723,17 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
         // User login
         $user = Auth::user();
 
+        $kepaladinas = ttdkepaladinas::all();
+        $petugasdinas = petugasdinas::all();
+
         return view(
             'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.06_hitunganalisarusak',
             [
                 'title' => 'Perhitungan Tingkat Kerusakan Bangunan Gedung',
                 'data'  => $data,
-                'user'  => $user
+                'user'  => $user,
+                'kepaladinas'  => $kepaladinas,
+                'petugasdinas'  => $petugasdinas,
             ]
         );
     }

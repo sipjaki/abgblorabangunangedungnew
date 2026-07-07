@@ -45,141 +45,6 @@
 
                             <div class="col-md-12">
                                 <!-- CSS Modern (digabung) -->
-                                <style>
-                                    .doc-grid {
-                                        background: #ffffff;
-                                        border-radius: 15px;
-                                        padding: 25px;
-                                        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-                                        border: 1px solid #e3e6f0;
-                                    }
-
-                                    .doc-card {
-                                        background: #fff;
-                                        border-radius: 12px;
-                                        padding: 25px;
-                                        height: 100%;
-                                        transition: all 0.3s ease;
-                                        border: 2px solid #eef2ff;
-                                        position: relative;
-                                        overflow: hidden;
-                                        margin-bottom: 20px;
-                                    }
-
-                                    .doc-card:hover {
-                                        transform: translateY(-5px);
-                                        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
-                                        border-color: #3b82f6;
-                                    }
-
-                                    .doc-icon {
-                                        width: 70px;
-                                        height: 70px;
-                                        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-                                        border-radius: 12px;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        margin-bottom: 20px;
-                                        color: white;
-                                        font-size: 1.8rem;
-                                        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-                                    }
-
-                                    .doc-title {
-                                        margin-bottom: 25px;
-                                    }
-
-                                    .doc-title h4 {
-                                        font-weight: 600;
-                                        color: #1f2937;
-                                        font-size: 1.3rem;
-                                        line-height: 1.4;
-                                        margin-bottom: 5px;
-                                    }
-
-                                    .doc-title p {
-                                        color: #6b7280;
-                                        font-size: 0.9rem;
-                                        margin: 0;
-                                    }
-
-                                    .button-container {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 12px;
-                                        margin-top: 20px;
-                                    }
-
-                                    .form-modern {
-                                        margin-bottom: 1.5rem;
-                                    }
-
-                                    .form-label-modern {
-                                        display: flex;
-                                        align-items: center;
-                                        font-weight: 500;
-                                        color: #374151;
-                                        margin-bottom: 0.5rem;
-                                        font-size: 0.9rem;
-                                    }
-
-                                    .form-label-modern i {
-                                        margin-right: 0.5rem;
-                                        font-size: 1.1rem;
-                                    }
-
-                                    .form-control {
-                                        border: 1px solid #d1d5db;
-                                        border-radius: 8px;
-                                        padding: 0.75rem 1rem;
-                                        transition: all 0.3s;
-                                    }
-
-                                    .form-control:focus {
-                                        border-color: #3b82f6;
-                                        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-                                    }
-
-                                    .form-select {
-                                        border: 1px solid #d1d5db;
-                                        border-radius: 8px;
-                                        padding: 0.75rem 1rem;
-                                        transition: all 0.3s;
-                                    }
-
-                                    .form-select:focus {
-                                        border-color: #3b82f6;
-                                        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-                                    }
-
-                                    .section-header {
-                                        font-weight: 600;
-                                        color: #1f2937;
-                                        margin: 2rem 0 1.5rem 0;
-                                        padding-bottom: 0.75rem;
-                                        border-bottom: 2px solid #e5e7eb;
-                                        font-size: 1.1rem;
-                                    }
-
-                                    @media (max-width: 768px) {
-                                        .doc-card {
-                                            padding: 20px;
-                                        }
-                                        .doc-icon {
-                                            width: 60px;
-                                            height: 60px;
-                                            font-size: 1.5rem;
-                                        }
-                                        .doc-title h4 {
-                                            font-size: 1.1rem;
-                                        }
-                                        .button-container {
-                                            flex-direction: column;
-                                        }
-                                    }
-                                </style>
-
                                 <div class="col-md-12">
                                     <div class="doc-grid mb-5">
                                         <!-- Header Section -->
@@ -192,7 +57,7 @@
                                                 </div>
                                                 <div>
                                                     <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">
-                                                        Dokumen Informasi Details Data Bangunan Gedung
+                                                        Hitung Analisa Tingkat Kerusakan Bangunan Gedung
                                                     </h4>
                                                 </div>
                                             </div>
@@ -214,8 +79,122 @@
 
                         </div> <!-- /.card-body -->
 
-                        <br><br>
+{{-- ======================================================================================= --}}
 
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white text-center py-3">
+            <h4>FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h4>
+        </div>
+        <div class="card-body">
+            <form action="{{ route('penilaian.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label font-weight-bold">Tanggal Terbit</label>
+                            <input type="date" name="tanggalterbit" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead class="table-light">
+                            <tr>
+                                <th rowspan="2" style="width: 5%;">NO</th>
+                                <th rowspan="2" style="width: 15%;">KOMPONEN STANDAR</th>
+                                <th rowspan="2" style="width: 8%;">BOBOT</th>
+                                <th colspan="4">KLASIFIKASI KERUSAKAN (PILIH SALAH SATU)</th>
+                                <th rowspan="2" style="width: 25%;">BUKTI FOTO KONDISI</th>
+                            </tr>
+                            <tr>
+                                <th>Tidak Rusak (0.00)</th>
+                                <th>Ringan (0.20)</th>
+                                <th>Sedang (0.35)</th>
+                                <th>Berat (0.70)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $komponents = [
+                                    ['name' => 'PONDASI', 'field' => 'pondasi', 'bobot' => '10.00%'],
+                                    ['name' => 'STRUKTUR', 'field' => 'struktur', 'bobot' => '33.00%'],
+                                    ['name' => 'ATAP', 'field' => 'atap', 'bobot' => '10.00%'],
+                                    ['name' => 'LANTAI', 'field' => 'lantai', 'bobot' => '7.00%'],
+                                    ['name' => 'DINDING', 'field' => 'dinding', 'bobot' => '10.00%'],
+                                    ['name' => 'PLAFON', 'field' => 'plafon', 'bobot' => '7.00%'],
+                                    ['name' => 'UTILITAS', 'field' => 'utilitas', 'bobot' => '8.00%'],
+                                    ['name' => 'FINISHING', 'field' => 'finishing', 'bobot' => '15.00%'],
+                                ];
+                            @endphp
+
+                            @foreach($komponents as $index => $comp)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td class="text-start font-weight-bold">{{ $comp['name'] }}</td>
+                                <td>{{ $comp['bobot'] }}</td>
+
+                                <td><input type="radio" name="nilai{{ $comp['field'] }}" value="0.00" checked></td>
+                                <td><input type="radio" name="nilai{{ $comp['field'] }}" value="0.20"></td>
+                                <td><input type="radio" name="nilai{{ $comp['field'] }}" value="0.35"></td>
+                                <td><input type="radio" name="nilai{{ $comp['field'] }}" value="0.70"></td>
+
+                                <td>
+                                    <div class="input-group input-group-sm mb-1">
+                                        <span class="input-group-text">Foto 1</span>
+                                        <input type="file" name="fotofor_{{ $comp['field'] }}1" class="form-control">
+                                    </div>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text">Foto 2</span>
+                                        <input type="file" name="fotofor_{{ $comp['field'] }}2" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row mt-4 pt-3 border-top">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label font-weight-bold">Kepala Dinas Pekerjaan Umum</label>
+                        <select name="kepaladinas_id" class="form-select" required>
+                            <option value="">-- Pilih Kepala Dinas --</option>
+                            @foreach($kepalaDinas as $kadin)
+                                <option value="{{ $kadin->id }}">{{ $kadin->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label font-weight-bold">Tim Survey (Petugas Dinas)</label>
+                        <div class="row g-2">
+                            @for($i = 1; $i <= 4; $i++)
+                            <div class="col-6 mb-2">
+                                <select name="timsurvey{{ $i }_id}" class="form-select form-select-sm">
+                                    <option value="">-- Petugas {{ $i }} --</option>
+                                    @foreach($petugasDinas as $petugas)
+                                        <option value="{{ $petugas->id }}">{{ $petugas->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-end mt-4">
+                    <button type="reset" class="btn btn-secondary me-2">Reset Formulir</button>
+                    <button type="submit" class="btn btn-primary px-4">Simpan & Hitung Analisa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{-- ======================================================================================= --}}
                         <!-- Modal Konfirmasi Hapus -->
                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
