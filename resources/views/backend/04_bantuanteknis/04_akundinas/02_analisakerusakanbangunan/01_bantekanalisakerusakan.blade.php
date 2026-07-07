@@ -249,7 +249,8 @@
 </th> --}}
 
 
-        <th><i class="bi bi-eye"></i> Lihat Permohonan</th>
+        <th style="text-align: center;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
+        <th style="text-align: center;"><i class="bi bi-eye"></i> Status Berkas</th>
             <th ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
                             </thead>
@@ -271,6 +272,28 @@
         <i class="bi bi-eye me-1"></i>
         Lihat Permohonan
     </a>
+</td>
+<td>
+    @php
+        // Status berdasarkan urutan validasi
+        if ($item->validasiberkas2 == 'belum') {
+            $status = 'Dikembalikan';
+            $badgeClass = 'bg-danger';
+        } elseif ($item->validasiberkas3 == 'belum') {
+            $status = 'Data Tidak Valid';
+            $badgeClass = 'bg-warning text-dark';
+        } elseif ($item->validasiberkas4 == 'belum') {
+            $status = 'Permohonan Dibatalkan';
+            $badgeClass = 'bg-danger';
+        } else {
+            $status = 'Analisa Terbit';
+            $badgeClass = 'bg-success';
+        }
+    @endphp
+    <span class="badge {{ $badgeClass }}" style="font-size: 14px; padding: 8px 14px; border-radius: 20px;">
+        <i class="bi bi-circle-fill me-1" style="font-size: 10px;"></i>
+        {{ $status }}
+    </span>
 </td>
 
             <!-- Tombol KTP -->

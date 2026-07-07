@@ -1578,7 +1578,6 @@ Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisControll
 
 Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
 
-
 Route::get('/bebantekanalisahitung/hitung/{id}',[BantuanteknisController::class, 'bebantekanalisahitung'])->middleware('auth', 'can:admindinas')->name('bebantekanalisahitungdetails');
 
 
