@@ -115,15 +115,15 @@
       .catch(error => console.error("Error fetching search results:", error));
   }
 </script>
-
+{{--
 <a href="{{ route('kabidbangunangedungcreate') }}" class="btn btn-success">
     <i class="bi bi-plus-circle-fill me-1"></i>
     Tambah Kabid Bangunan Gedung
-</a>                 <!-- /.card-header -->
+</a> --}}
+                 <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
->
+                        <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                             <thead>
                                   <tr>
     <th>No</th>
@@ -132,7 +132,7 @@
     <th><i class="bi bi-credit-card-2-front"></i> NIP</th>
     <th style="text-align:center;"><i class="bi bi-pencil"></i> Tanda Tangan</th>
     <th style="text-align:center;"><i class="bi bi-patch-check"></i> Cap Blora</th>
-    <th style="text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
+    {{-- <th style="text-align:center;"><i class="bi bi-tools"></i> Aksi</th> --}}
 </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -170,22 +170,22 @@
 
             @can('superadmin')
 
-            <td style="text-align: center; vertical-align: middle;">
+            {{-- <td style="text-align: center; vertical-align: middle;"> --}}
 
                 {{-- BUAT DATA AWAL DULU --}}
                 {{-- <a href="/ttdkepaladinasbloracreate" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
                 </a> --}}
-                                        <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                        {{-- <a href="/ttdkepaladinasbloraupdate/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a>
+                                        </a> --}}
                                         {{-- <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
                                         <i class="bi bi-trash"></i>
                                     </a> --}}
-                                </td>
+                                {{-- </td> --}}
 
                                 @endcan
 

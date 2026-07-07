@@ -8741,5 +8741,122 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
         );
     }
 
+    public function bebantekkerusakancreatehitung(Request $request)
+    {
+        $request->validate([
+            'bantekanalisainduk_id' => 'required|string',
+            'tanggalterbit'         => 'required|date',
+            'cadangan1'             => 'nullable|string',
+
+            'nilaipondasi'    => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaistruktur'   => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaiatap'       => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilailantai'     => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaidinding'    => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaiplafon'     => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaiutilitas'   => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+            'nilaifinishing'  => 'required|in:0.00,0.20,0.35,0.50,0.70,0.85,1.00',
+
+            'fotopondasi1'    => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotopondasi2'    => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotostruktur1'   => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotostruktur2'   => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoatap1'       => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoatap2'       => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotolantai1'     => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotolantai2'     => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotodinding1'    => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotodinding2'    => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoplafon1'     => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoplafon2'     => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoutilitas1'   => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotoutilitas2'   => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotofinishing1'  => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+            'fotofinishing2'  => 'nullable|image|mimes:jpeg,png,jpg|max:20120',
+
+            'kepaladinas_id'         => 'required|string',
+            'kabidbangunangedung_id' => 'required|string',
+            'timsurvey1_id'          => 'nullable|string',
+            'timsurvey2_id'          => 'nullable|string',
+            'timsurvey3_id'          => 'nullable|string',
+            'timsurvey4_id'          => 'nullable|string',
+        ]);
+
+        $induk = bantekanalisainduk::findOrFail($request->bantekanalisainduk_id);
+
+        $analisa = bantekanalisanew1::firstOrNew([
+            'bantekanalisainduk_id' => $request->bantekanalisainduk_id
+        ]);
+
+        // Simpan nilai-nilai skala
+        $analisa->nilaipondasi   = $request->nilaipondasi;
+        $analisa->nilaistruktur  = $request->nilaistruktur;
+        $analisa->nilaiatap      = $request->nilaiatap;
+        $analisa->nilailantai    = $request->nilailantai;
+        $analisa->nilaidinding   = $request->nilaidinding;
+        $analisa->nilaiplafon    = $request->nilaiplafon;
+        $analisa->nilaiutilitas  = $request->nilaiutilitas;
+        $analisa->nilaifinishing = $request->nilaifinishing;
+
+        // ============================================================
+        // Upload foto ke public/uploads/analisa_kerusakan/foto/
+        // ============================================================
+        $uploadDir = public_path('uploads/analisa_kerusakan/foto');
+        if (!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0775, true);
+        }
+
+        // Mapping field input dan database
+        $fields = [
+            'pondasi'   => ['fotopondasi1', 'fotopondasi2'],
+            'struktur'  => ['fotostruktur1', 'fotostruktur2'],
+            'atap'      => ['fotoatap1', 'fotoatap2'],
+            'lantai'    => ['fotolantai1', 'fotolantai2'],
+            'dinding'   => ['fotodinding1', 'fotodinding2'],
+            'plafon'    => ['fotoplafon1', 'fotoplafon2'],
+            'utilitas'  => ['fotoutilitas1', 'fotoutilitas2'],
+            'finishing' => ['fotofinishing1', 'fotofinishing2'],
+        ];
+
+        foreach ($fields as $key => $fieldNames) {
+            for ($i = 0; $i < 2; $i++) {
+                $inputName = "foto{$key}" . ($i + 1);
+                $dbField = $fieldNames[$i];
+
+                if ($request->hasFile($inputName)) {
+                    // Hapus file lama jika ada
+                    if ($analisa->$dbField && file_exists(public_path($analisa->$dbField))) {
+                        unlink(public_path($analisa->$dbField));
+                    }
+
+                    $file = $request->file($inputName);
+                    $filename = time() . '_' . $key . '_' . ($i + 1) . '.' . $file->getClientOriginalExtension();
+                    $file->move($uploadDir, $filename);
+                    // Simpan path relatif dari public
+                    $analisa->$dbField = 'uploads/analisa_kerusakan/foto/' . $filename;
+                }
+            }
+        }
+
+        // Simpan field lainnya
+        $analisa->kepaladinas_id         = $request->kepaladinas_id;
+        $analisa->kabidbangunangedung_id = $request->kabidbangunangedung_id;
+        $analisa->timsurvey1_id          = $request->timsurvey1_id;
+        $analisa->timsurvey2_id          = $request->timsurvey2_id;
+        $analisa->timsurvey3_id          = $request->timsurvey3_id;
+        $analisa->timsurvey4_id          = $request->timsurvey4_id;
+        $analisa->tanggalterbit          = $request->tanggalterbit;
+        $analisa->cadangan1              = $request->cadangan1;
+
+        $analisa->save();
+
+        // ============================================================
+        return redirect()->route('bebantekanalisarusakshow', [
+            'namagedung' => $induk->namagedung,
+            'id' => $induk->id
+        ])->with('success', 'Data analisa kerusakan berhasil disimpan!');
+
+        }
+
 }
 

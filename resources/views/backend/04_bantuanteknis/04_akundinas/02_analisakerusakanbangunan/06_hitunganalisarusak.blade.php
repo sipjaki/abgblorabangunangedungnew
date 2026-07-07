@@ -67,7 +67,7 @@
                                                 <a href="{{ route('bebantekpembongkaranshow', [urlencode($data->namapemilik), $data->id]) }}" class="button-modern">
                                                     <i class="bi bi-arrow-left me-1"></i> Kembali
                                                 </a>
-                                                <a href="{{ route('bebantekpembongkaran') }}" class="button-berkas">
+                                                <a href="{{ route('bebantekanalisabgn') }}" class="button-berkas">
                                                     <i class="bi bi-folder2-open me-1"></i> Data Dasar
                                                 </a>
                                             </div>
