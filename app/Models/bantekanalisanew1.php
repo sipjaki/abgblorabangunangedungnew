@@ -20,4 +20,13 @@ class bantekanalisanew1 extends Model
             'id'
         );
     }
+
+    public function kabidabangunangedung()
+    {
+        return $this->belongsTo(
+            kabidbangunangedung::class,
+            'bantekanalisainduk_id',
+            'id'
+        );
+    }
 }

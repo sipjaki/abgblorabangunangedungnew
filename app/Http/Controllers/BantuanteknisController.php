@@ -15,6 +15,7 @@ use App\Models\ceklapanganbantek;
 use App\Models\fotobongkarlap;
 use App\Models\gambarbantuan;
 use App\Models\jenispengajuanbantek;
+use App\Models\kabidbangunangedung;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\pengkajiteknis;
@@ -8725,6 +8726,7 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
 
         $kepaladinas = ttdkepaladinas::all();
         $petugasdinas = petugasdinas::all();
+        $kabidbangunangedung = kabidbangunangedung::all();
 
         return view(
             'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.06_hitunganalisarusak',
@@ -8733,7 +8735,9 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
                 'data'  => $data,
                 'user'  => $user,
                 'kepalaDinas'  => $kepaladinas,
-                'petugasDinas' => $petugasdinas,            ]
+                'petugasDinas' => $petugasdinas,
+                'kabidbangunangedung' => $kabidbangunangedung,
+                ]
         );
     }
 

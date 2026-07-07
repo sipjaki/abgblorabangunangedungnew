@@ -131,7 +131,7 @@
 
                     <div class="col-md-4 mb-3">
                         <label class="form-label font-weight-bold">Kepala Bidang Bangunan Gedung</label>
-                        <select name="kabid_id" class="form-select" required>
+                        <select name="kabidbangunangedung_id" class="form-select" required>
                             <option value="">-- Pilih Kepala Bidang --</option>
                             @foreach($kabidbangunangedung as $kabid)
                                 <option value="{{ $kabid->id }}">{{ $kabid->namalengkap }}</option>
@@ -168,7 +168,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="imagePreviewModalLabel">Pratinjau Bukti Foto Kerusakan</h5>
+                <h5 class="modal-title" id="imagePreviewModalLabel">Bukti Foto Kerusakan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center bg-dark rounded-bottom p-2">

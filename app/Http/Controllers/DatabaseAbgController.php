@@ -12,6 +12,7 @@ use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
 use App\Models\jenispermohonangambar;
+use App\Models\kabidbangunangedung;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\mbrgambar;
@@ -1064,6 +1065,20 @@ public function ttdkepaladinasbloraupdatenew(Request $request, $id)
 
     session()->flash('update', 'Data Kepala Dinas berhasil diperbarui!');
     return redirect()->route('ttdkepaladinasblora');
+}
+
+
+public function kabidbangunangedung()
+{
+    $user = Auth::user();
+
+    $data = kabidbangunangedung::orderBy('id', 'desc')->get();
+
+    return view('backend.99_databaseabg.05_kabidbangunangedung.01_datakabidbangunangedung', [
+        'title' => 'Kepala Bidang Bangunan Gedung ',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
 }
 
 }

@@ -1314,6 +1314,34 @@
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> Bantek Dinas
     </p>
 
+
+
+
+<li class="nav-item">
+    <a href="/ttdkepaladinasblora" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Kepala Dinas</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/ttdkepaladinasblora" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Kabid <br> Bangunan Gedung</p>
+    </a>
+</li>
+
+<li class="nav-item">
+  <a href="/bepetugasdinas" class="nav-link" style="display: flex; align-items: center;">
+    <i class="bi bi-person-bounding-box nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px;">Staff <br> Bangunan Gedung</p>
+  </a>
+</li>
+
+
+
+
+
     <li class="nav-item">
     <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
