@@ -23,11 +23,12 @@
                         <thead class="table-light text-center">
                             <tr>
                                 <th style="width: 5%;">NO</th>
-                                <th style="width: 20%;">KOMPONEN STANDAR</th>
-                                <th style="width: 10%;">BOBOT</th>
-                                <th style="width: 30%;">TINGKAT KERUSAKAN (1 INPUT AUTOMATIC)</th>
-                                <th style="width: 10%;">HASIL HITUNG</th>
-                                <th style="width: 25%;">LAMPIRAN BUKTI FOTO & PREVIEW</th>
+                                <th style="width: 15%;">KOMPONEN STANDAR</th>
+                                <th style="width: 8%;">BOBOT</th>
+                                <th style="width: 25%;">TINGKAT KERUSAKAN (1 INPUT)</th>
+                                <th style="width: 12%;">SKALA PILIHAN (%)</th>
+                                <th style="width: 12%;">NILAI X BOBOT (%)</th>
+                                <th style="width: 23%;">LAMPIRAN BUKTI FOTO & PREVIEW</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,7 +54,7 @@
                                 </td>
 
                                 <td>
-                                    <select name="pilihan_{{ $item['key'] }}" class="form-select skala-select" data-bobot="{{ $item['bobot_val'] }}" data-target="hasil_{{ $item['key'] }}" required>
+                                    <select name="pilihan_{{ $item['key'] }}" class="form-select skala-select" data-bobot="{{ $item['bobot_val'] }}" data-skala="skala_{{ $item['key'] }}" data-target="hasil_{{ $item['key'] }}" required>
                                         <option value="0.00">0,00 - Tidak Rusak</option>
                                         <option value="0.20">0,20 - Ringan</option>
                                         <option value="0.35">0,35 - Ringan</option>
@@ -64,33 +65,52 @@
                                     </select>
                                 </td>
 
+                                <td class="text-center text-secondary bg-light font-weight-bold">
+                                    <span id="skala_{{ $item['key'] }}">0.00</span> %
+                                </td>
+
                                 <td class="text-center font-weight-bold text-primary bg-light">
-                                    <span id="hasil_{{ $item['key'] }}">0.000</span>
+                                    <span id="hasil_{{ $item['key'] }}">0.000</span> %
                                 </td>
 
                                 <td>
                                     <div class="row g-2">
                                         <div class="col-6 text-center">
                                             <input type="file" name="foto_{{ $item['key'] }}_1" class="form-control form-control-sm preview-input" data-preview="pv_{{ $item['key'] }}_1">
-                                            <div class="mt-2 border rounded p-1 bg-light" style="min-height: 75px; display: flex; align-items: center; justify-content: center;">
-                                                <img id="pv_{{ $item['key'] }}_1" src="" alt="Preview 1" class="img-fluid rounded d-none" style="max-height: 70px;">
-                                                <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_1">Belum ada foto</small>
+                                            <div class="mt-2 border rounded p-1 bg-light" style="min-height: 65px; display: flex; align-items: center; justify-content: center;">
+                                                <img id="pv_{{ $item['key'] }}_1" src="" alt="Preview 1" class="img-fluid rounded d-none" style="max-height: 60px;">
+                                                <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_1">No Photo</small>
                                             </div>
                                         </div>
                                         <div class="col-6 text-center">
                                             <input type="file" name="foto_{{ $item['key'] }}_2" class="form-control form-control-sm preview-input" data-preview="pv_{{ $item['key'] }}_2">
-                                            <div class="mt-2 border rounded p-1 bg-light" style="min-height: 75px; display: flex; align-items: center; justify-content: center;">
-                                                <img id="pv_{{ $item['key'] }}_2" src="" alt="Preview 2" class="img-fluid rounded d-none" style="max-height: 70px;">
-                                                <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_2">Belum ada foto</small>
+                                            <div class="mt-2 border rounded p-1 bg-light" style="min-height: 65px; display: flex; align-items: center; justify-content: center;">
+                                                <img id="pv_{{ $item['key'] }}_2" src="" alt="Preview 2" class="img-fluid rounded d-none" style="max-height: 60px;">
+                                                <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_2">No Photo</small>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             @endforeach
+
                             <tr class="table-warning font-weight-bold">
                                 <td colspan="4" class="text-end">TOTAL TINGKAT KERUSAKAN BANGUNAN :</td>
-                                <td class="text-center text-danger" id="total_skor_akhir">0.000 %</td>
+                                <td colspan="2" class="text-center text-danger fs-5" id="total_skor_akhir">0.000 %</td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-light">
+                                <td colspan="4" class="small text-muted">
+                                    <strong>Ketentuan Klasifikasi Kerusakan:</strong><br>
+                                    - Rusak Ringan: Maksimal 30%<br>
+                                    - Rusak Sedang: Maksimal 45%<br>
+                                    - Rusak Berat: Maksimal 65%<br>
+                                    - Rusak Sangat Berat: Lebih dari 65%
+                                </td>
+                                <td colspan="2" class="text-center align-middle bg-white">
+                                    <div class="text-muted small font-weight-bold mb-1">STATUS AKHIR:</div>
+                                    <span id="status_kerusakan_text" class="badge bg-secondary p-2 fs-6">-</span>
+                                </td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -135,29 +155,53 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    // --- 1. LOGIKA HITUNG OTOMATIS (REAL-TIME CALCULATION) ---
     const selects = document.querySelectorAll('.skala-select');
 
     function hitungTotal() {
-        let totalSkor = 0;
+        let totalSkorPersen = 0;
 
         selects.forEach(select => {
             const skala = parseFloat(select.value) || 0;
             const bobot = parseFloat(select.getAttribute('data-bobot')) || 0;
+            const skalaId = select.getAttribute('data-skala');
             const targetId = select.getAttribute('data-target');
 
-            // Rumus: Skala Input x Bobot Komponen
-            const hasilKomponen = skala * bobot;
-            totalSkor += hasilKomponen;
+            // 1. Hitung skala input murni dikali 100%
+            const skalaPersen = skala * 100;
+            document.getElementById(skalaId).innerText = skalaPersen.toFixed(2);
 
-            // Tampilkan hasil komponen dengan format 3 angka desimal
-            document.getElementById(targetId).innerText = hasilKomponen.toFixed(3);
+            // 2. Hitung Skala x Bobot dikali 100%
+            const hasilKomponenPersen = (skala * bobot) * 100;
+            totalSkorPersen += hasilKomponenPersen;
+
+            document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(3);
         });
 
-        // Tampilkan total skor akhir dalam bentuk persentase (%)
-        const totalPersen = totalSkor * 100;
-        document.getElementById('total_skor_akhir').innerText = totalPersen.toFixed(3) + ' %';
+        // Tampilkan Total Skor Akhir (%)
+        document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(3) + ' %';
+
+        // 3. Menentukan Status Klasifikasi Otomatis secara Real-time
+        const statusBadge = document.getElementById('status_kerusakan_text');
+
+        // Reset warna class badge bootstrap
+        statusBadge.className = "badge p-2 fs-6";
+
+        if (totalSkorPersen === 0) {
+            statusBadge.innerText = "Tidak Ada Kerusakan";
+            statusBadge.classList.add('bg-success');
+        } else if (totalSkorPersen <= 30) {
+            statusBadge.innerText = "Rusak Ringan";
+            statusBadge.classList.add('bg-info', 'text-dark');
+        } else if (totalSkorPersen <= 45) {
+            statusBadge.innerText = "Rusak Sedang";
+            statusBadge.classList.add('bg-warning', 'text-dark');
+        } else if (totalSkorPersen <= 65) {
+            statusBadge.innerText = "Rusak Berat";
+            statusBadge.classList.add('bg-danger');
+        } else {
+            statusBadge.innerText = "Rusak Sangat Berat";
+            statusBadge.classList.add('bg-dark');
+        }
     }
 
     // Jalankan kalkulasi setiap dropdown diubah nilai skalanya
@@ -165,13 +209,11 @@ document.addEventListener("DOMContentLoaded", function () {
         select.addEventListener('change', hitungTotal);
     });
 
-    // Jalankan kalkulasi pertama kali saat halaman dimuat
+    // Jalankan kalkulasi pertama kali saat halaman di-load
     hitungTotal();
 
-
-    // --- 2. LOGIKA INSTANT IMAGE PREVIEW ---
+    // --- LOGIKA INSTANT IMAGE PREVIEW ---
     const imageInputs = document.querySelectorAll('.preview-input');
-
     imageInputs.forEach(input => {
         input.addEventListener('change', function () {
             const previewId = this.getAttribute('data-preview');
