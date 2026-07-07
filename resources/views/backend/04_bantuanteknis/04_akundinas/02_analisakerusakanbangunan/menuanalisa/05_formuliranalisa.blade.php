@@ -161,27 +161,36 @@ document.addEventListener("DOMContentLoaded", function () {
         let totalSkorPersen = 0;
 
         selects.forEach(select => {
+            // Memastikan data dibaca sebagai angka desimal murni (float)
             const skala = parseFloat(select.value) || 0;
             const bobot = parseFloat(select.getAttribute('data-bobot')) || 0;
             const skalaId = select.getAttribute('data-skala');
             const targetId = select.getAttribute('data-target');
 
-            // 1. Skala Pilihan dikali 100% (Contoh: 0.20 -> 20.00%)
+            // 1. Tampilkan Skala Pilihan Murni dalam persen (Contoh: 0.20 -> 20.00%)
             const skalaPersen = skala * 100;
             document.getElementById(skalaId).innerText = skalaPersen.toFixed(2);
 
-            // 2. MODIFIKASI: Hasil kali rumus dibagi dengan 1000 sesuai instruksimu bro
-            const hasilKomponenPersen = (skala * (bobot * 100)) / 1000;
+            // 2. Perhitungan Komponen: (Skala Murni x Bobot Murni) * 100
+            //    Contoh Struktur: (1.00 * 0.33) * 100 = 33.00%
+            const hasilKomponenPersen = (skala * bobot) * 100;
             totalSkorPersen += hasilKomponenPersen;
 
             document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(2);
         });
 
-        // Tampilkan Total Keseluruhan
+        // Pengaman (Cap) agar total akumulasi tidak melebihi 100.00% akibat floating-point javascript
+        if (totalSkorPersen > 100) {
+            totalSkorPersen = 100;
+        }
+
+        // Tampilkan Total Skor Akhir (%)
         document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(2) + ' %';
 
-        // 3. Klasifikasi Status Akhir
+        // 3. Menentukan Status Klasifikasi Otomatis secara Real-time
         const statusBadge = document.getElementById('status_kerusakan_text');
+
+        // Reset class badge bootstrap
         statusBadge.className = "badge p-2 fs-6";
 
         if (totalSkorPersen === 0) {
@@ -202,13 +211,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Jalankan kalkulasi setiap dropdown diubah nilaiskalanya
     selects.forEach(select => {
         select.addEventListener('change', hitungTotal);
     });
 
+    // Jalankan kalkulasi pertama kali saat halaman di-load
     hitungTotal();
 
-    // --- LOGIKA IMAGE PREVIEW ---
+    // --- LOGIKA INSTANT IMAGE PREVIEW ---
     const imageInputs = document.querySelectorAll('.preview-input');
     imageInputs.forEach(input => {
         input.addEventListener('change', function () {
