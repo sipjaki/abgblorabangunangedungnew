@@ -166,24 +166,22 @@ document.addEventListener("DOMContentLoaded", function () {
             const skalaId = select.getAttribute('data-skala');
             const targetId = select.getAttribute('data-target');
 
-            // 1. Hitung Skala Pilihan Murni dikali 100% (0.20 -> 20.00%)
+            // 1. Skala Pilihan dikali 100% (Contoh: 0.20 -> 20.00%)
             const skalaPersen = skala * 100;
             document.getElementById(skalaId).innerText = skalaPersen.toFixed(2);
 
-            // 2. Perbaikan Rumus: Skala x (Bobot x 100) -> Contoh: 0.20 * 10 = 2.00%
-            const hasilKomponenPersen = skala * (bobot * 100);
+            // 2. MODIFIKASI: Hasil kali rumus dibagi dengan 1000 sesuai instruksimu bro
+            const hasilKomponenPersen = (skala * (bobot * 100)) / 1000;
             totalSkorPersen += hasilKomponenPersen;
 
             document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(2);
         });
 
-        // Tampilkan Total Skor Akhir (%) bertipe desimal wajar
+        // Tampilkan Total Keseluruhan
         document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(2) + ' %';
 
-        // 3. Menentukan Status Klasifikasi Otomatis secara Real-time
+        // 3. Klasifikasi Status Akhir
         const statusBadge = document.getElementById('status_kerusakan_text');
-
-        // Reset class badge bootstrap
         statusBadge.className = "badge p-2 fs-6";
 
         if (totalSkorPersen === 0) {
@@ -204,15 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Jalankan kalkulasi setiap dropdown diubah nilaiskalanya
     selects.forEach(select => {
         select.addEventListener('change', hitungTotal);
     });
 
-    // Jalankan kalkulasi pertama kali saat halaman di-load
     hitungTotal();
 
-    // --- LOGIKA INSTANT IMAGE PREVIEW ---
+    // --- LOGIKA IMAGE PREVIEW ---
     const imageInputs = document.querySelectorAll('.preview-input');
     imageInputs.forEach(input => {
         input.addEventListener('change', function () {
