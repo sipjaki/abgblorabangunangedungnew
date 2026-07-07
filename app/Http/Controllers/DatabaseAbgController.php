@@ -1081,5 +1081,21 @@ public function kabidbangunangedung()
     ]);
 }
 
+
+public function kabidbangunangedungcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.05_kabidbangunangedung.02_masukdatabg', [
+        'title' => 'Tambah Kepala Bidang Bangunan Gedung',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
 }
 

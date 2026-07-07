@@ -1036,8 +1036,8 @@ Route::get('/kabidbangunangedung', [DatabaseAbgController::class, 'kabidbangunan
 // Route::get('/ttdkepaladinasbloraupdate/{id}', [DatabaseAbgController::class, 'ttdkepaladinasbloraupdate'])->middleware(['auth', 'can:admindpupr'])->name('ttdkepaladinasbloraupdate.update');
 // Route::post('/ttdkepaladinasbloraupdatenew/{id}', [DatabaseAbgController::class, 'ttdkepaladinasbloraupdatenew'])->middleware('auth')->name('ttdkepaladinasbloraupdatenew.update');
 
-// Route::get('/ttdkepaladinasbloracreate', [DatabaseAbgController::class, 'ttdkepaladinasbloracreate'])->middleware('auth')->name('ttdkepaladinasbloracreate');
-// Route::post('/ttdkepaladinasbloracreatenew', [DatabaseAbgController::class, 'ttdkepaladinasbloracreatenew'])->middleware('auth')->name('ttdkepaladinasbloracreatenew');
+Route::get('/kabidbangunangedungcreate', [DatabaseAbgController::class, 'kabidbangunangedungcreate'])->middleware('auth')->name('kabidbangunangedungcreate');
+Route::post('/kabidbangunangedungcreatenew', [DatabaseAbgController::class, 'ttdkepaladinasbloracreatenew'])->middleware('auth')->name('kabidbangunangedungcreatenew');
 
 
 // DATABASE ABG BLORA ---------------------------------------------

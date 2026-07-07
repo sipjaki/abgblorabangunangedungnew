@@ -116,7 +116,10 @@
   }
 </script>
 
-                 <!-- /.card-header -->
+<a href="{{ route('kabidbangunangedungcreate') }}" class="btn btn-success">
+    <i class="bi bi-plus-circle-fill me-1"></i>
+    Tambah Kabid Bangunan Gedung
+</a>                 <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
