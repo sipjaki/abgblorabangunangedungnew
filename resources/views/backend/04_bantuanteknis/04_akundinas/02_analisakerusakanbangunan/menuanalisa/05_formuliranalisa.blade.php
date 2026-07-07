@@ -70,7 +70,7 @@
                                 </td>
 
                                 <td class="text-center font-weight-bold text-primary bg-light">
-                                    <span id="hasil_{{ $item['key'] }}">0.000</span> %
+                                    <span id="hasil_{{ $item['key'] }}">0.00</span> %
                                 </td>
 
                                 <td>
@@ -96,7 +96,7 @@
 
                             <tr class="table-warning font-weight-bold">
                                 <td colspan="4" class="text-end">TOTAL TINGKAT KERUSAKAN BANGUNAN :</td>
-                                <td colspan="2" class="text-center text-danger fs-5" id="total_skor_akhir">0.000 %</td>
+                                <td colspan="2" class="text-center text-danger fs-5" id="total_skor_akhir">0.00 %</td>
                                 <td></td>
                             </tr>
                             <tr class="table-light">
@@ -166,24 +166,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const skalaId = select.getAttribute('data-skala');
             const targetId = select.getAttribute('data-target');
 
-            // 1. Hitung skala input murni dikali 100%
+            // 1. Hitung Skala Pilihan Murni dikali 100% (0.20 -> 20.00%)
             const skalaPersen = skala * 100;
             document.getElementById(skalaId).innerText = skalaPersen.toFixed(2);
 
-            // 2. Hitung Skala x Bobot dikali 100%
-            const hasilKomponenPersen = (skala * bobot) * 100;
+            // 2. Perbaikan Rumus: Skala x (Bobot x 100) -> Contoh: 0.20 * 10 = 2.00%
+            const hasilKomponenPersen = skala * (bobot * 100);
             totalSkorPersen += hasilKomponenPersen;
 
-            document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(3);
+            document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(2);
         });
 
-        // Tampilkan Total Skor Akhir (%)
-        document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(3) + ' %';
+        // Tampilkan Total Skor Akhir (%) bertipe desimal wajar
+        document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(2) + ' %';
 
         // 3. Menentukan Status Klasifikasi Otomatis secara Real-time
         const statusBadge = document.getElementById('status_kerusakan_text');
 
-        // Reset warna class badge bootstrap
+        // Reset class badge bootstrap
         statusBadge.className = "badge p-2 fs-6";
 
         if (totalSkorPersen === 0) {
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Jalankan kalkulasi setiap dropdown diubah nilai skalanya
+    // Jalankan kalkulasi setiap dropdown diubah nilaiskalanya
     selects.forEach(select => {
         select.addEventListener('change', hitungTotal);
     });

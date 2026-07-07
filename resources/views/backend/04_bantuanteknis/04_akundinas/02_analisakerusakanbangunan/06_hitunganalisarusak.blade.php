@@ -77,11 +77,11 @@
                                 </div>
                             </div>
 
+                            @include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.05_formuliranalisa')
                         </div> <!-- /.card-body -->
 
 {{-- ======================================================================================= --}}
 
-@include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.05_formuliranalisa')
 
 {{-- ======================================================================================= --}}
                         <!-- Modal Konfirmasi Hapus -->
