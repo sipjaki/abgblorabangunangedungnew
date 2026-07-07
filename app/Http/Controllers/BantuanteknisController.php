@@ -8732,7 +8732,7 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
                 'title' => 'Perhitungan Tingkat Kerusakan Bangunan Gedung',
                 'data'  => $data,
                 'user'  => $user,
-                'kepaladinas'  => $kepaladinas,
+                'KepalaDinas'  => $kepaladinas,
                 'petugasdinas'  => $petugasdinas,
             ]
         );

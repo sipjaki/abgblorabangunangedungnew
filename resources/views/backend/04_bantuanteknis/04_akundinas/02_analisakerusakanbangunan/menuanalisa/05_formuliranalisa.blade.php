@@ -78,7 +78,7 @@
                         <select name="kepaladinas_id" class="form-select" required>
                             <option value="">-- Pilih Kepala Dinas --</option>
                             @foreach($kepalaDinas as $kadin)
-                                <option value="{{ $kadin->id }}">{{ $kadin->nama }}</option>
+                                <option value="{{ $kadin->id }}">{{ $kadin->namalengkap }}</option>
                             @endforeach
                         </select>
                     </div>
