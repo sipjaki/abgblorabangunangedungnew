@@ -87,10 +87,10 @@
                         <div class="row g-2">
                             @for($i = 1; $i <= 4; $i++)
                             <div class="col-6 mb-2">
-                                <select name="timsurvey{{ $i }_id}" class="form-select form-select-sm">
+                                <select name="timsurvey{{ $i }}_id" class="form-select form-select-sm">
                                     <option value="">-- Pilih Petugas Dinas {{ $i }} --</option>
                                     @foreach($petugasDinas as $petugas)
-                                        <option value="{{ $petugas->id }}">{{ $petugas->nama }}</option>
+                                        <option value="{{ $petugas->id }}">{{ $petugas->namalengkap }}</option>
                                     @endforeach
                                 </select>
                             </div>
