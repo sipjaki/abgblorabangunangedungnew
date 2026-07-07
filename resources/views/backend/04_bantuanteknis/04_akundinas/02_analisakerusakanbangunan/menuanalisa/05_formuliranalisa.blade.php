@@ -1,20 +1,21 @@
 <div class="container-fluid mt-4 px-4">
     <div class="card shadow-sm">
         <div class="card-header bg-white text-center py-3">
-            <h5 class="mb-0">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
+            <h5 class="mb-1">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
+            <p class="text-muted mb-0 font-weight-bold">Nama Gedung: {{ $data->namagedung }}</p>
         </div>
         <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row mb-4">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-12 mb-3">
                         <label class="form-label font-weight-bold">Tanggal Terbit</label>
-                        <input type="date" name="tanggalterbit" class="form-control" required>
+                        <input type="date" name="tanggalterbit" class="form-control" style="max-width: 300px;" required>
                     </div>
-                    <div class="col-md-8 mb-3">
+                    <div class="col-12 mb-2">
                         <label class="form-label font-weight-bold">Keterangan (Cadangan)</label>
-                        <input type="text" name="cadangan1" class="form-control" placeholder="Masukkan keterangan tambahan atau catatan lapangan...">
+                        <textarea name="cadangan1" class="form-control" rows="4" placeholder="Masukkan keterangan tambahan, catatan detail kerusakan, atau rekomendasi teknis lapangan di sini..."></textarea>
                     </div>
                 </div>
 
@@ -118,7 +119,7 @@
                 </div>
 
                 <div class="row mt-4 pt-3 border-top">
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-4 mb-3">
                         <label class="form-label font-weight-bold">Kepala Dinas Pekerjaan Umum</label>
                         <select name="kepaladinas_id" class="form-select" required>
                             <option value="">-- Pilih Kepala Dinas --</option>
@@ -128,13 +129,23 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label font-weight-bold">Kepala Bidang Bangunan Gedung</label>
+                        <select name="kabid_id" class="form-select" required>
+                            <option value="">-- Pilih Kepala Bidang --</option>
+                            @foreach($kabidbangunangedung as $kabid)
+                                <option value="{{ $kabid->id }}">{{ $kabid->namalengkap }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
                         <label class="form-label font-weight-bold">Tim Survey (Petugas Dinas)</label>
                         <div class="row g-2">
                             @for($i = 1; $i <= 4; $i++)
                             <div class="col-6 mb-2">
                                 <select name="timsurvey{{ $i }}_id" class="form-select form-select-sm">
-                                    <option value="">-- Pilih Petugas Dinas {{ $i }} --</option>
+                                    <option value="">-- Petugas {{ $i }} --</option>
                                     @foreach($petugasDinas as $petugas)
                                         <option value="{{ $petugas->id }}">{{ $petugas->namalengkap }}</option>
                                     @endforeach
@@ -248,10 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // --- LOGIKA KLIK FOTO UNTUK MEMBUKA MODAL BESAR ---
-    // Pastikan Anda sudah meload library JavaScript bootstrap (bootstrap.bundle.min.js) di file master layout Anda
     const imageModalElement = document.getElementById('imagePreviewModal');
 
-    // Inisialisasi modal Bootstrap jika library tersedia
     if (typeof bootstrap !== 'undefined') {
         const imageModal = new bootstrap.Modal(imageModalElement);
         const modalLargeImage = document.getElementById('modalLargeImage');
@@ -266,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     } else {
-        // Fallback cadangan jika bootstrap.js lupa di-load, dia akan membuka gambar di tab baru
         document.addEventListener('click', function (e) {
             if (e.target && e.target.classList.contains('img-trigger-modal')) {
                 const srcGambar = e.target.getAttribute('src');
