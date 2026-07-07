@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container-fluid mt-4 px-4">
     <div class="card shadow-sm">
         <div class="card-header bg-white text-center py-3">
             <h5 class="mb-0">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
@@ -19,16 +19,16 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered align-middle">
+                    <table class="table table-bordered align-middle w-100">
                         <thead class="table-light text-center">
                             <tr>
-                                <th style="width: 5%;">NO</th>
-                                <th style="width: 15%;">KOMPONEN STANDAR</th>
+                                <th style="width: 4%;">NO</th>
+                                <th style="width: 16%;">KOMPONEN STANDAR</th>
                                 <th style="width: 8%;">BOBOT</th>
                                 <th style="width: 25%;">TINGKAT KERUSAKAN (1 INPUT)</th>
-                                <th style="width: 12%;">SKALA PILIHAN (%)</th>
-                                <th style="width: 12%;">NILAI X BOBOT (%)</th>
-                                <th style="width: 23%;">LAMPIRAN BUKTI FOTO & PREVIEW</th>
+                                <th style="width: 11%;">SKALA PILIHAN (%)</th>
+                                <th style="width: 11%;">NILAI X BOBOT (%)</th>
+                                <th style="width: 25%;">LAMPIRAN BUKTI FOTO & PREVIEW (KLIK FOTO UNTUK MEMPERBESAR)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,14 +78,14 @@
                                         <div class="col-6 text-center">
                                             <input type="file" name="foto_{{ $item['key'] }}_1" class="form-control form-control-sm preview-input" data-preview="pv_{{ $item['key'] }}_1">
                                             <div class="mt-2 border rounded p-1 bg-light" style="min-height: 65px; display: flex; align-items: center; justify-content: center;">
-                                                <img id="pv_{{ $item['key'] }}_1" src="" alt="Preview 1" class="img-fluid rounded d-none" style="max-height: 60px;">
+                                                <img id="pv_{{ $item['key'] }}_1" src="" alt="Preview 1" class="img-fluid rounded d-none img-trigger-modal" style="max-height: 60px; cursor: pointer;">
                                                 <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_1">No Photo</small>
                                             </div>
                                         </div>
                                         <div class="col-6 text-center">
                                             <input type="file" name="foto_{{ $item['key'] }}_2" class="form-control form-control-sm preview-input" data-preview="pv_{{ $item['key'] }}_2">
                                             <div class="mt-2 border rounded p-1 bg-light" style="min-height: 65px; display: flex; align-items: center; justify-content: center;">
-                                                <img id="pv_{{ $item['key'] }}_2" src="" alt="Preview 2" class="img-fluid rounded d-none" style="max-height: 60px;">
+                                                <img id="pv_{{ $item['key'] }}_2" src="" alt="Preview 2" class="img-fluid rounded d-none img-trigger-modal" style="max-height: 60px; cursor: pointer;">
                                                 <small class="text-muted placeholder-text" id="text_pv_{{ $item['key'] }}_2">No Photo</small>
                                             </div>
                                         </div>
@@ -153,6 +153,20 @@
     </div>
 </div>
 
+<div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imagePreviewModalLabel">Pratinjau Bukti Foto Kerusakan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center bg-dark rounded-bottom p-2">
+                <img id="modalLargeImage" src="" class="img-fluid rounded" alt="Bukti Foto Besar" style="max-height: 80vh;">
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const selects = document.querySelectorAll('.skala-select');
@@ -161,36 +175,27 @@ document.addEventListener("DOMContentLoaded", function () {
         let totalSkorPersen = 0;
 
         selects.forEach(select => {
-            // Memastikan data dibaca sebagai angka desimal murni (float)
             const skala = parseFloat(select.value) || 0;
             const bobot = parseFloat(select.getAttribute('data-bobot')) || 0;
             const skalaId = select.getAttribute('data-skala');
             const targetId = select.getAttribute('data-target');
 
-            // 1. Tampilkan Skala Pilihan Murni dalam persen (Contoh: 0.20 -> 20.00%)
             const skalaPersen = skala * 100;
             document.getElementById(skalaId).innerText = skalaPersen.toFixed(2);
 
-            // 2. Perhitungan Komponen: (Skala Murni x Bobot Murni) * 100
-            //    Contoh Struktur: (1.00 * 0.33) * 100 = 33.00%
             const hasilKomponenPersen = (skala * bobot) * 100;
             totalSkorPersen += hasilKomponenPersen;
 
             document.getElementById(targetId).innerText = hasilKomponenPersen.toFixed(2);
         });
 
-        // Pengaman (Cap) agar total akumulasi tidak melebihi 100.00% akibat floating-point javascript
         if (totalSkorPersen > 100) {
             totalSkorPersen = 100;
         }
 
-        // Tampilkan Total Skor Akhir (%)
         document.getElementById('total_skor_akhir').innerText = totalSkorPersen.toFixed(2) + ' %';
 
-        // 3. Menentukan Status Klasifikasi Otomatis secara Real-time
         const statusBadge = document.getElementById('status_kerusakan_text');
-
-        // Reset class badge bootstrap
         statusBadge.className = "badge p-2 fs-6";
 
         if (totalSkorPersen === 0) {
@@ -211,12 +216,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Jalankan kalkulasi setiap dropdown diubah nilaiskalanya
     selects.forEach(select => {
         select.addEventListener('change', hitungTotal);
     });
 
-    // Jalankan kalkulasi pertama kali saat halaman di-load
     hitungTotal();
 
     // --- LOGIKA INSTANT IMAGE PREVIEW ---
@@ -243,5 +246,35 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // --- LOGIKA KLIK FOTO UNTUK MEMBUKA MODAL BESAR ---
+    // Pastikan Anda sudah meload library JavaScript bootstrap (bootstrap.bundle.min.js) di file master layout Anda
+    const imageModalElement = document.getElementById('imagePreviewModal');
+
+    // Inisialisasi modal Bootstrap jika library tersedia
+    if (typeof bootstrap !== 'undefined') {
+        const imageModal = new bootstrap.Modal(imageModalElement);
+        const modalLargeImage = document.getElementById('modalLargeImage');
+
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('img-trigger-modal')) {
+                const srcGambar = e.target.getAttribute('src');
+                if (srcGambar && srcGambar !== "") {
+                    modalLargeImage.src = srcGambar;
+                    imageModal.show();
+                }
+            }
+        });
+    } else {
+        // Fallback cadangan jika bootstrap.js lupa di-load, dia akan membuka gambar di tab baru
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('img-trigger-modal')) {
+                const srcGambar = e.target.getAttribute('src');
+                if (srcGambar && srcGambar !== "") {
+                    window.open(srcGambar, '_blank');
+                }
+            }
+        });
+    }
 });
 </script>
