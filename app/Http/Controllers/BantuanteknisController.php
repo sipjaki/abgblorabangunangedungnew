@@ -8733,8 +8733,7 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
                 'data'  => $data,
                 'user'  => $user,
                 'kepalaDinas'  => $kepaladinas,
-                'petugasdinas'  => $petugasdinas,
-            ]
+                'petugasDinas' => $petugasdinas,            ]
         );
     }
 

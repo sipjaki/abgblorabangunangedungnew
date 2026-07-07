@@ -83,22 +83,21 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label font-weight-bold">Tim Survey (Petugas Dinas)</label>
-                        <div class="row g-2">
-                            @for($i = 1; $i <= 4; $i++)
-                            <div class="col-6 mb-2">
-                                <select name="timsurvey{{ $i }}_id" class="form-select form-select-sm">
-                                    <option value="">-- Pilih Petugas Dinas {{ $i }} --</option>
-                                    @foreach($petugasDinas as $petugas)
-                                        <option value="{{ $petugas->id }}">{{ $petugas->namalengkap }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            @endfor
-                        </div>
-                    </div>
-                </div>
+                            <div class="col-md-6">
+                                <label class="form-label font-weight-bold">Tim Survey (Petugas Dinas)</label>
+                                <div class="row g-2">
+                                    @for($i = 1; $i <= 4; $i++)
+                                    <div class="col-6 mb-2">
+                                        <select name="timsurvey{{ $i }}_id" class="form-select form-select-sm">
+                                            <option value="">-- Pilih Petugas Dinas {{ $i }} --</option>
+                                            @foreach($petugasDinas as $petugas)  <!-- ← pakai $petugasDinas -->
+                                                <option value="{{ $petugas->id }}">{{ $petugas->namalengkap }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @endfor
+                                </div>
+                            </div>                </div>
 
                 <div class="text-end mt-4">
                     <button type="submit" class="btn btn-primary px-4">Simpan Analisa</button>
