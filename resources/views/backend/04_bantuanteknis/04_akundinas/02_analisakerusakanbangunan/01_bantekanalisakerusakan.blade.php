@@ -251,7 +251,7 @@
 
         <th style="text-align: center;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
         <th style="text-align: center;"><i class="bi bi-eye"></i> Status Berkas</th>
-            <th ><i class="bi bi-tools"></i> Aksi</th>
+            <th style="text-align: center;" ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
                             </thead>
                               <tbody id="tableBody">
