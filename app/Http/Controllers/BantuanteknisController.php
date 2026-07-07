@@ -8600,7 +8600,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
 {
     $namagedung = urldecode($namagedung);
 
-    // Validasi input (HAPUS fotocadangan5 karena hanya ada 4)
+    // Validasi input
     $request->validate([
         'namagedung'    => 'nullable|string|max:255',
         'kabupaten'     => 'nullable|string|max:255',
@@ -8613,7 +8613,6 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         'fotocadangan2' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan3' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan4' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
-        // fotocadangan5 DIHAPUS karena hanya ada 4 di database
     ]);
 
     $data = bantekanalisainduk::where('id', $id)->firstOrFail();
@@ -8626,10 +8625,9 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     $data->luasbangunan = $request->luasbangunan ?? $data->luasbangunan;
 
     // ============================================================
-    // UPLOAD KODE BARANG (PDF/DOC)
+    // UPLOAD KODE BARANG
     // ============================================================
     if ($request->hasFile('kodebarang')) {
-        // Hapus file lama jika ada
         if ($data->kodebarang && file_exists(public_path($data->kodebarang))) {
             unlink(public_path($data->kodebarang));
         }
@@ -8640,7 +8638,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     }
 
     // ============================================================
-    // UPLOAD SURAT PERMOHONAN (PDF/DOC)
+    // UPLOAD SURAT PERMOHONAN
     // ============================================================
     if ($request->hasFile('suratpermohonan')) {
         if ($data->suratpermohonan && file_exists(public_path($data->suratpermohonan))) {
@@ -8653,7 +8651,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     }
 
     // ============================================================
-    // UPLOAD 4 FOTO CADANGAN
+    // UPLOAD 4 FOTO
     // ============================================================
     $fotoFields = ['fotocadangan1', 'fotocadangan2', 'fotocadangan3', 'fotocadangan4'];
     $uploadDir = public_path('uploads/analisa_kerusakan');
@@ -8663,7 +8661,6 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
 
     foreach ($fotoFields as $field) {
         if ($request->hasFile($field)) {
-            // Hapus foto lama jika ada
             if ($data->$field && file_exists(public_path($data->$field))) {
                 unlink(public_path($data->$field));
             }
@@ -8674,17 +8671,18 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         }
     }
 
-    // Update user_id
     $data->user_id = Auth::id();
-
     $data->save();
 
-    return redirect()->route('bebantekkerusakanshow', [
-        'namagedung' => Str::slug($data->namagedung ?? 'tanpa-nama'),
+    // ============================================================
+    // REDIRECT KE ROUTE SHOW DENGAN PARAMETER YANG BENAR
+    // ============================================================
+    return redirect()->route('bebantekanalisarusakshow', [
+        'namagedung' => urlencode($data->namagedung ?? 'tanpa-nama'),
         'id' => $data->id
     ])->with('update', 'Data berhasil diperbarui.');
+}
 
-    }
 
 
     public function bebantekanalisahitung($id)

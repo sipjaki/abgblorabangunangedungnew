@@ -273,7 +273,7 @@
         Lihat Permohonan
     </a>
 </td>
-<td>
+<td style="text-align: center">
     @php
         // Status berdasarkan urutan validasi
         if ($item->validasiberkas2 == 'belum') {
