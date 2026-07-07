@@ -1578,6 +1578,7 @@ Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisControll
 
 Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
 
+
 Route::get('/bebantekanalisahitung/hitung/{id}',[BantuanteknisController::class, 'bebantekanalisahitung'])->middleware('auth', 'can:admindinas')->name('bebantekanalisahitungdetails');
 
 
@@ -1730,7 +1731,6 @@ Route::put('/validasianalisadokumen/{id}', [BantuanteknisController::class, 'val
 
 Route::get('/bebantekkerusakan/infohitung/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakaninfohitung'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakaninfohitung');
 
-Route::get('/bebantekkerusakan/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakandokumen'])->middleware('auth', 'can:admindinas')->name('penilaian.store');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

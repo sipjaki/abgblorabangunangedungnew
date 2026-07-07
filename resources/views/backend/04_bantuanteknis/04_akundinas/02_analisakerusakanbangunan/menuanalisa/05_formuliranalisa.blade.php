@@ -4,7 +4,8 @@
             <h5 class="mb-0">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
         </div>
         <div class="card-body">
-            <form action="{{ route('penilaian.store') }}" method="POST" enctype="multipart/form-data">
+            {{-- <form action="{{ route('penilaian.store') }}" method="POST" enctype="multipart/form-data"> --}}
+                <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row mb-4">
