@@ -1037,7 +1037,7 @@ Route::get('/kabidbangunangedung', [DatabaseAbgController::class, 'kabidbangunan
 // Route::post('/ttdkepaladinasbloraupdatenew/{id}', [DatabaseAbgController::class, 'ttdkepaladinasbloraupdatenew'])->middleware('auth')->name('ttdkepaladinasbloraupdatenew.update');
 
 Route::get('/kabidbangunangedungcreate', [DatabaseAbgController::class, 'kabidbangunangedungcreate'])->middleware('auth')->name('kabidbangunangedungcreate');
-Route::post('/kabidbangunangedungcreatenew', [DatabaseAbgController::class, 'ttdkepaladinasbloracreatenew'])->middleware('auth')->name('kabidbangunangedungcreatenew');
+Route::post('/kabidbangunangedungcreatenew', [DatabaseAbgController::class, 'kabidbangunangedungcreatenew'])->middleware('auth')->name('kabidbangunangedungcreatenew');
 
 
 // DATABASE ABG BLORA ---------------------------------------------
