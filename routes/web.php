@@ -1730,6 +1730,7 @@ Route::put('/validasianalisadokumen/{id}', [BantuanteknisController::class, 'val
 
 Route::get('/bebantekkerusakan/infohitung/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakaninfohitung'])->middleware('auth', 'can:admindinas')->name('bebantekkerusakaninfohitung');
 
+Route::get('/bebantekkerusakan/dokumen/{namagedung}/{id}',[BantuanteknisController::class, 'bebantekkerusakandokumen'])->middleware('auth', 'can:admindinas')->name('penilaian.store');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
