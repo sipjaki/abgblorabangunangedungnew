@@ -12,4 +12,10 @@ class ttdkepaladinas extends Model
     protected $table = 'ttdkepaladinas';
 
     protected $guarded = ['id'];
-}
+
+  public function bantekanalisanew1()
+    {
+        return $this->hasMany(bantekanalisanew1::class);
+    }
+
+    }

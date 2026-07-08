@@ -1,33 +1,20 @@
-<!-- =========================================================== -->
-<!-- VIEW: 05_lihatperhitungananalisa.blade.php                   -->
-<!-- Menampilkan data hasil penilaian kerusakan bangunan          -->
-<!-- Output: Download PDF A4 Landscape Sekali Klik (2 Halaman)   -->
-<!-- =========================================================== -->
-
 <div class="container-fluid mt-4 px-4">
-    <!-- Tombol Navigasi & Download (Disembunyikan dari area cetak PDF) -->
     <div class="d-flex justify-content-end gap-2 mb-4">
-        <a href="{{ route('bebantekanalisarusakshow', ['namagedung' => $data->induk->namagedung ?? 'tanpa-nama', 'id' => $data->induk->id ?? 0]) }}" class="btn btn-secondary shadow-sm">
-            <i class="bi bi-arrow-left me-1"></i> Kembali ke Detail
-        </a>
-        <button onclick="downloadPDF()" class="btn btn-primary shadow-sm fw-bold">
-            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download PDF (A4 Landscape)
+        {{-- <a href="{{ route('bebantekanalisarusakshow', ['namagedung' => $data->induk->namagedung ?? 'tanpa-nama', 'id' => $data->induk->id ?? 0]) }}" class="btn btn-secondary shadow-sm">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a> --}}
+        <button onclick="downloadFormulirPDF()" class="btn btn-primary shadow-sm fw-bold">
+            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download PDF Sekarang
         </button>
     </div>
 
-    <!-- AREA UTAMA YANG AKAN DI-DOWNLOAD -->
-    <div id="dokumen-download" class="pdf-container">
+    <div id="area-dokumen-pdf" class="pdf-wrapper-cetak">
 
-        <!-- ======================================================= -->
-        <!-- HALAMAN 1: FORMULIR UTAMA                               -->
-        <!-- ======================================================= -->
         <div class="halaman-pdf-page">
-            <!-- HEADER FORMULIR -->
             <div class="text-center mb-3">
-                <h5 class="fw-bold text-uppercase m-0 style-judul">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
+                <h5 class="fw-bold text-uppercase m-0 style-judul-utama">FORMULIR PENILAIAN KERUSAKAN BANGUNAN</h5>
             </div>
 
-            <!-- METADATA GEDUNG -->
             <table class="table-info-gedung w-100 mb-2">
                 <tr>
                     <td style="width: 14%;">Nama Gedung</td>
@@ -71,8 +58,7 @@
                 </tr>
             </table>
 
-            <!-- DASAR HUKUM -->
-            <div class="dasar-hukum mb-3">
+            <div class="dasar-hukum mb-2">
                 <table class="w-100">
                     <tr class="align-top">
                         <td style="width: 6%;">Dasar</td>
@@ -88,12 +74,11 @@
                 </table>
             </div>
 
-            <!-- TABEL FORM UTAMA (STRUKTUR SAMA PERSIS DENGAN GAMBAR) -->
             <table class="table-form-utama w-100 mb-3">
                 <thead>
                     <tr>
                         <th rowspan="3" style="width: 3%;">NO</th>
-                        <th rowspan="3" style="width: 13%;">KOMPONEN STANDAR</th>
+                        <th rowspan="3" style="width: 13%;">KOMKOMEN STANDAR</th>
                         <th rowspan="3" style="width: 6%;">Bobot</th>
                         <th rowspan="2" style="width: 15%;">TAHAP 1 - PENGAMATAN VISUAL ADA/TIDAKNYA KERUSAKAN DAN INDIKASI DAMPAK KESELAMATAN PEMANFAATAN RUANGAN/BANGUNAN</th>
                         <th colspan="5" style="width: 23%;">TAHAP 2 - KLASIFIKASI KERUSAKAN BERDASARKAN KLASIFIKASI KERUSAKAN</th>
@@ -165,7 +150,6 @@
                             $hasilPersen = ($nilai * $bobot) * 100;
                             $total += $hasilPersen;
 
-                            // Teks deskripsi visual otomatis berdasarkan nilai/kondisi komponen
                             $visualDesc = 'ADA KERUSAKAN DAN INDIKASI MEMBAHAYAKAN';
                             if($nilai == 0.00 || $nilai == 0.20 || $nilai == 0.50) {
                                 $visualDesc = 'TIDAK ADA KERUSAKAN DAN TIDAK ADA INDIKASI MEMBAHAYAKAN';
@@ -177,14 +161,12 @@
                             <td class="text-center">{{ number_format($bobot * 100, 2) }}%</td>
                             <td class="visual-text">{{ $visualDesc }}</td>
 
-                            <!-- Checkbox Klasifikasi -->
                             <td class="text-center cell-check">{{ $nilai == 0.00 ? '✓' : '-' }}</td>
                             <td class="text-center cell-check">{{ ($nilai == 0.20 || $nilai == 0.35) ? '✓' : '-' }}</td>
                             <td class="text-center cell-check">{{ ($nilai == 0.50 || $nilai == 0.70) ? '✓' : '-' }}</td>
                             <td class="text-center cell-check">{{ $nilai == 0.85 ? '✓' : '-' }}</td>
                             <td class="text-center cell-check">{{ $nilai == 1.00 ? '✓' : '-' }}</td>
 
-                            <!-- Perhitungan Skala Nilai -->
                             <td class="text-center text-calc">{{ $nilai == 0.00 ? number_format($hasilPersen, 2).'%' : '' }}</td>
                             <td class="text-center text-calc">{{ $nilai == 0.20 ? number_format($hasilPersen, 2).'%' : '' }}</td>
                             <td class="text-center text-calc">{{ $nilai == 0.35 ? number_format($hasilPersen, 2).'%' : '' }}</td>
@@ -193,25 +175,21 @@
                             <td class="text-center text-calc">{{ $nilai == 0.85 ? number_format($hasilPersen, 2).'%' : '' }}</td>
                             <td class="text-center text-calc">{{ $nilai == 1.00 ? number_format($hasilPersen, 2).'%' : '' }}</td>
 
-                            <!-- Nilai Akhir Komponen -->
-                            <td class="text-center fw-bold text-primary">{{ number_format($hasilPersen, 2) }}%</td>
+                            <td class="text-center fw-bold">{{ number_format($hasilPersen, 2) }}%</td>
                         </tr>
                     @endforeach
 
-                    <!-- TOTAL VALUE -->
                     @php $totalFinal = min($total, 100); @endphp
                     <tr class="fw-bold row-total">
                         <td colspan="2" class="text-center">TOTAL</td>
                         <td class="text-center">100%</td>
-                        <td colspan="12" class="text-end text-uppercase header-total-label">TOTAL NILAI KERUSAKAN BANGUNAN</td>
-                        <td class="text-center bg-pink-total text-danger fs-6">{{ number_format($totalFinal, 2) }}%</td>
+                        <td colspan="12" class="text-end header-total-label">TOTAL NILAI KERUSAKAN BANGUNAN</td>
+                        <td class="text-center bg-pink-total text-danger fs-6" style="border: 1.5px solid red !important;">{{ number_format($totalFinal, 2) }}%</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- BAGIAN DATA BAWAH (TANDA TANGAN & PARAMETER) -->
             <div class="row-footer-container">
-                <!-- Sisi Kiri: Struktur TTD Pejabat Dinas -->
                 <div class="footer-sign-left">
                     <div class="sign-block">
                         <p class="mb-0 fw-bold">Plt. Kepala Dinas Pekerjaan Umum dan Penataan Ruang<br>Kabupaten Blora</p>
@@ -225,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- Sisi Tengah: Tim Survey -->
                 <div class="footer-survey-center">
                     <p class="fw-bold mb-1 text-decoration-underline">Tim Survey:</p>
                     <table class="w-100 table-surveyors">
@@ -241,13 +218,12 @@
                         @foreach($surveys as $i => $petugas)
                             <tr>
                                 <td style="width: 8%;">{{ $i }}.</td>
-                                <td style="width: 92%; border-bottom: 1px dotted #000;">{{ $petugas->namalengkap ?? '' }}</td>
+                                <td style="width: 92%; border-bottom: 1px dotted #000; height: 16px;">{{ $petugas->namalengkap ?? '' }}</td>
                             </tr>
                         @endforeach
                     </table>
                 </div>
 
-                <!-- Sisi Kanan: Kotak Parameter Klasifikasi -->
                 <div class="footer-param-right">
                     <table class="table-box-parameter w-100">
                         <thead>
@@ -261,8 +237,8 @@
                             <tr><td>Berat</td><td>: maksimal 65%</td></tr>
                             <tr><td>Sangat Berat</td><td>: lebih dari 65%</td></tr>
                             <tr class="row-status-final text-white fw-bold">
-                                <td>STATUS:</td>
-                                <td class="text-center text-uppercase">
+                                <td style="background-color: #000 !important; color:#fff !important;">STATUS:</td>
+                                <td class="text-center text-uppercase" style="background-color: #000 !important; color:#fff !important;">
                                     @if ($totalFinal == 0) TIDAK ADA
                                     @elseif ($totalFinal <= 30) RINGAN
                                     @elseif ($totalFinal <= 45) SEDANG
@@ -276,25 +252,18 @@
                 </div>
             </div>
 
-            <!-- CATATAN KAKI (NOTE) -->
             <div class="catatan-kaki mt-2">
                 <p class="m-0 fw-bold">Note :</p>
                 <p class="m-0">* Dinas PU/Dinas yang menangani Bangunan Gedung</p>
             </div>
         </div>
 
-        <!-- ======================================================= -->
-        <!-- HALAMAN 2: LAMPIRAN FOTO BUKTI                          -->
-        <!-- ======================================================= -->
         <div class="halaman-pdf-page page-break-element">
-            <!-- HEADER LAMPIRAN -->
             <div class="text-center mb-3">
-                <h5 class="fw-bold text-uppercase m-0 style-judul">LAMPIRAN BUKTI FOTO VISUAL KERUSAKAN</h5>
-                <p class="m-0 small text-muted" style="font-size: 11px;">Gedung: {{ $data->induk->namagedung ?? '-' }}</p>
-                <div style="border-bottom: 2px solid #000; width: 100%; margin-top: 5px;"></div>
+                <h5 class="fw-bold text-uppercase m-0 style-judul-utama">LAMPIRAN BUKTI FOTO VISUAL KERUSAKAN</h5>
+                <p class="m-0 small text-muted" style="font-size: 11px;">Nama Gedung: {{ $data->induk->namagedung ?? '-' }}</p>
             </div>
 
-            <!-- GRID FOTO LAMPIRAN -->
             @php
                 $komponenFoto = [
                     'PONDASI'   => ['f1' => $data->fotopondasi1, 'f2' => $data->fotopondasi2, 'v' => $data->nilaipondasi],
@@ -311,8 +280,8 @@
             <div class="row g-2">
                 @foreach($komponenFoto as $lbl => $f)
                     <div class="col-3">
-                        <div class="card border-dark h-100" style="font-size: 10px; border-radius: 0;">
-                            <div class="card-header bg-light py-1 fw-bold text-center border-dark border-bottom small rounded-0">
+                        <div class="card border-dark h-100 rounded-0">
+                            <div class="card-header bg-light py-1 fw-bold text-center border-dark border-bottom small rounded-0" style="font-size: 10px;">
                                 {{ $lbl }} (Skala: {{ number_format(floatval($f['v'] ?? 0), 2) }})
                             </div>
                             <div class="card-body p-1 d-flex justify-content-center align-items-center gap-1 bg-white" style="min-height: 100px;">
@@ -320,14 +289,14 @@
                                     @if(!empty($f['f1']))
                                         <img src="{{ asset($f['f1']) }}" class="img-fluid border" style="height: 85px; width: 100%; object-fit: cover;">
                                     @else
-                                        <div class="text-muted border border-dashed p-2 small" style="height: 85px; font-size: 9px; line-height: 70px;">Kosong</div>
+                                        <div class="text-muted border border-dashed rounded-0" style="height: 85px; font-size: 9px; line-height: 85px; background: #fafafa;">Kosong</div>
                                     @endif
                                 </div>
                                 <div class="w-50 text-center">
                                     @if(!empty($f['f2']))
                                         <img src="{{ asset($f['f2']) }}" class="img-fluid border" style="height: 85px; width: 100%; object-fit: cover;">
                                     @else
-                                        <div class="text-muted border border-dashed p-2 small" style="height: 85px; font-size: 9px; line-height: 70px;">Kosong</div>
+                                        <div class="text-muted border border-dashed rounded-0" style="height: 85px; font-size: 9px; line-height: 85px; background: #fafafa;">Kosong</div>
                                     @endif
                                 </div>
                             </div>
@@ -344,172 +313,172 @@
     </div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SCRIPT & CSS REKAYASA STRUKTUR A4 LANDSCAPE                 -->
-<!-- =========================================================== -->
-<!-- Library HTML2PDF CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-function downloadPDF() {
-    const element = document.getElementById('dokumen-download');
+function downloadFormulirPDF() {
+    const element = document.getElementById('area-dokumen-pdf');
 
-    // Konfigurasi konversi HTML ke PDF
+    // Konfigurasi anti-kosong dan presisi landscape
     const opt = {
-        margin:       [8, 8, 8, 8], // margin atas, kiri, bawah, kanan (mm)
-        filename:     'Formulir_Penilaian_Kerusakan_{{ $data->induk->namagedung ?? "Bangunan" }}.pdf',
+        margin:       [8, 10, 8, 10], // Atas, Kiri, Bawah, Kanan
+        filename:     'Formulir_Penilaian_Kerusakan_Gedung.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        html2canvas:  {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#ffffff', // Mengunci background agar tidak transparan/putih kosong
+            logging: false
+        },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
         pagebreak:    { mode: ['avoid-all'], before: '.page-break-element' }
     };
 
-    // Eksekusi Download
+    // Eksekusi generator PDF terstruktur
     html2pdf().set(opt).from(element).save();
 }
 </script>
 
 <style>
-    /* Reset & Dasar Dokumen agar Presisi */
-    .pdf-container {
-        background: #fff;
-        color: #000;
-        font-family: 'Arial', 'Helvetica', sans-serif !important;
-        padding: 5px;
+    /* Mengunci Kontainer Utama Agar Data Selalu Muncul Saat Ditangkap html2pdf */
+    .pdf-wrapper-cetak {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-family: 'Arial', sans-serif !important;
+        padding: 10px;
     }
     .halaman-pdf-page {
-        background: #fff;
-        box-sizing: border-box;
+        background-color: #ffffff !important;
         width: 100%;
-        margin: 0 auto;
+        box-sizing: border-box;
     }
-    .style-judul {
-        font-family: 'Arial Black', Gadget, sans-serif;
-        font-size: 15px;
+    .style-judul-utama {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
         letter-spacing: 0.5px;
-        border-bottom: 2px solid #000;
-        padding-bottom: 5px;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 4px;
         display: inline-block;
         width: 100%;
     }
 
-    /* Tabel Metadata Atas */
+    /* Tabel Informasi Gedung */
     .table-info-gedung td {
-        font-size: 10.5px;
-        padding: 1px 2px;
+        font-size: 10px;
+        padding: 2px 2px;
         vertical-align: top;
+        color: #000000 !important;
     }
 
-    /* Dasar Hukum */
+    /* Dasar Hukum Peraturan */
     .dasar-hukum td {
-        font-size: 9.5px;
+        font-size: 9px;
         line-height: 1.2;
-        padding: 0;
+        color: #000000 !important;
     }
 
-    /* Tabel Form Utama Penilaian */
+    /* Tabel Formulir Induk Penilaian */
     .table-form-utama {
         border-collapse: collapse;
         width: 100%;
+        border: 1px solid #000000 !important;
     }
     .table-form-utama th, .table-form-utama td {
-        border: 1px solid #000 !important;
+        border: 1px solid #000000 !important;
         padding: 3px 4px !important;
+        color: #000000 !important;
         vertical-align: middle;
     }
     .table-form-utama th {
-        font-size: 9px;
+        font-size: 8.5px;
         text-align: center;
         background-color: #f2f2f2 !important;
         font-weight: bold;
     }
     .table-form-utama .sub-numbers th, .table-form-utama .sub-numbers-header td {
-        font-size: 8px;
+        font-size: 7.5px;
         padding: 1px !important;
-        background-color: #fff !important;
-        color: #000;
+        background-color: #ffffff !important;
         font-weight: normal;
         text-align: center;
     }
+     Taris Konten */
     .table-form-utama tbody td {
-        font-size: 10px;
+        font-size: 9.5px;
     }
     .table-form-utama .visual-text {
-        font-size: 8.5px;
+        font-size: 8px;
         line-height: 1.1;
     }
     .table-form-utama .cell-check {
         font-size: 11px;
+        font-weight: bold;
     }
     .table-form-utama .text-calc {
         font-size: 8px;
-        color: #555;
     }
     .table-form-utama .row-total td {
-        font-size: 10px;
-        background-color: #fff !important;
-    }
-    .table-form-utama .header-total-label {
         font-size: 9.5px;
+        background-color: #ffffff !important;
     }
     .table-form-utama .bg-pink-total {
         background-color: #ffe6e6 !important;
     }
 
-    /* Row Layout Bawah (Signatures, Survey, Parameter) */
+    /* Penyusunan Bagian Tanda Tangan & Sisi Bawah */
     .row-footer-container {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: 10px;
+        margin-top: 15px;
         width: 100%;
     }
     .footer-sign-left {
-        width: 48%;
+        width: 46%;
         display: flex;
         justify-content: space-between;
-        text-center: center;
     }
     .footer-sign-left .sign-block {
         width: 48%;
         text-align: center;
-        font-size: 10px;
+        font-size: 9.5px;
         line-height: 1.2;
     }
     .footer-sign-left .space-ttd {
-        height: 55px;
+        height: 50px;
     }
     .footer-survey-center {
         width: 24%;
-        font-size: 9.5px;
-        padding-left: 10px;
+        font-size: 9px;
     }
     .table-surveyors td {
         padding: 1px 2px;
-        font-size: 9.5px;
+        font-size: 9px;
+        color: #000000 !important;
     }
     .footer-param-right {
-        width: 25%;
+        width: 26%;
     }
     .table-box-parameter {
         border-collapse: collapse;
-        border: 1px solid #000;
+        border: 1px solid #000000;
     }
     .table-box-parameter th, .table-box-parameter td {
-        border: 1px solid #000;
+        border: 1px solid #000000;
         padding: 2px 4px;
-        font-size: 9.5px;
+        font-size: 9px;
+        color: #000000 !important;
     }
     .table-box-parameter th {
         background-color: #f2f2f2;
         text-align: center;
     }
-    .table-box-parameter .row-status-final td {
-        background-color: #212529 !important;
-    }
 
     /* Catatan Kaki */
     .catatan-kaki p {
-        font-size: 9px;
+        font-size: 8.5px;
+        color: #000000 !important;
     }
 </style>

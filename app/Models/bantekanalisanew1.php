@@ -29,4 +29,10 @@ class bantekanalisanew1 extends Model
             'id'
         );
     }
+
+  public function kepaladinas()
+    {
+        return $this->belongsTo(ttdkepaladinas::class);
+    }
+
 }
