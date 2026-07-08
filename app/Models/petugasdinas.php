@@ -18,6 +18,11 @@ class petugasdinas extends Model
         return $this->hasMany(perjalanandinas::class);
     }
 
+    public function bantekanalisanew1()
+    {
+        return $this->hasMany(bantekanalisanew1::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

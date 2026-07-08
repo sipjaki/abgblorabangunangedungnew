@@ -1,14 +1,15 @@
 <div class="container-fluid mt-4 px-4">
-    <div class="d-flex justify-content-end gap-2 mb-4">
+
+    <div class="d-flex justify-content-end gap-2 mb-4 d-print-none">
         {{-- <a href="{{ route('bebantekanalisarusakshow', ['namagedung' => $data->induk->namagedung ?? 'tanpa-nama', 'id' => $data->induk->id ?? 0]) }}" class="btn btn-secondary shadow-sm">
             <i class="bi bi-arrow-left me-1"></i> Kembali
         </a> --}}
-        <button onclick="downloadFormulirPDF()" class="btn btn-primary shadow-sm fw-bold">
-            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download PDF Sekarang
+        <button onclick="eksekusiDownloadPDF()" class="btn btn-primary shadow-sm fw-bold">
+            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download PDF (A4 Landscape)
         </button>
     </div>
 
-    <div id="area-dokumen-pdf" class="pdf-wrapper-cetak">
+    <div id="area-cetak-pdf" class="pdf-container-eksklusif">
 
         <div class="halaman-pdf-page">
             <div class="text-center mb-3">
@@ -316,37 +317,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-function downloadFormulirPDF() {
-    const element = document.getElementById('area-dokumen-pdf');
+function eksekusiDownloadPDF() {
+    // Membidik element div pembungkus eksklusif
+    const element = document.getElementById('area-cetak-pdf');
 
-    // Konfigurasi anti-kosong dan presisi landscape
+    // Setting parameter PDF A4 Landscape presisi
     const opt = {
-        margin:       [8, 10, 8, 10], // Atas, Kiri, Bawah, Kanan
-        filename:     'Formulir_Penilaian_Kerusakan_Gedung.pdf',
+        margin:       [8, 10, 8, 10],
+        filename:     'Formulir_Penilaian_Kerusakan_Gedung_{{ $data->induk->namagedung ?? "Bangunan" }}.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  {
             scale: 2,
             useCORS: true,
             allowTaint: true,
-            backgroundColor: '#ffffff', // Mengunci background agar tidak transparan/putih kosong
+            backgroundColor: '#ffffff', // Menjamin data tidak putih hampa / blank
             logging: false
         },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
         pagebreak:    { mode: ['avoid-all'], before: '.page-break-element' }
     };
 
-    // Eksekusi generator PDF terstruktur
-    html2pdf().set(opt).from(element).save();
+    // Ditambahkan Jeda Waktu (Delay 300ms) agar asinkronus rendering HTML ter-load sempurna
+    setTimeout(function() {
+        html2pdf().set(opt).from(element).save();
+    }, 300);
 }
 </script>
 
 <style>
-    /* Mengunci Kontainer Utama Agar Data Selalu Muncul Saat Ditangkap html2pdf */
-    .pdf-wrapper-cetak {
+    /* STYLING UNTUK MENJAMIN KETEPATAN DATA */
+    .pdf-container-eksklusif {
         background-color: #ffffff !important;
         color: #000000 !important;
         font-family: 'Arial', sans-serif !important;
-        padding: 10px;
+        padding: 12px;
     }
     .halaman-pdf-page {
         background-color: #ffffff !important;
@@ -363,23 +367,17 @@ function downloadFormulirPDF() {
         display: inline-block;
         width: 100%;
     }
-
-    /* Tabel Informasi Gedung */
     .table-info-gedung td {
         font-size: 10px;
         padding: 2px 2px;
         vertical-align: top;
         color: #000000 !important;
     }
-
-    /* Dasar Hukum Peraturan */
     .dasar-hukum td {
         font-size: 9px;
         line-height: 1.2;
         color: #000000 !important;
     }
-
-    /* Tabel Formulir Induk Penilaian */
     .table-form-utama {
         border-collapse: collapse;
         width: 100%;
@@ -404,7 +402,6 @@ function downloadFormulirPDF() {
         font-weight: normal;
         text-align: center;
     }
-     Taris Konten */
     .table-form-utama tbody td {
         font-size: 9.5px;
     }
@@ -426,8 +423,6 @@ function downloadFormulirPDF() {
     .table-form-utama .bg-pink-total {
         background-color: #ffe6e6 !important;
     }
-
-    /* Penyusunan Bagian Tanda Tangan & Sisi Bawah */
     .row-footer-container {
         display: flex;
         justify-content: space-between;
@@ -475,8 +470,6 @@ function downloadFormulirPDF() {
         background-color: #f2f2f2;
         text-align: center;
     }
-
-    /* Catatan Kaki */
     .catatan-kaki p {
         font-size: 8.5px;
         color: #000000 !important;
