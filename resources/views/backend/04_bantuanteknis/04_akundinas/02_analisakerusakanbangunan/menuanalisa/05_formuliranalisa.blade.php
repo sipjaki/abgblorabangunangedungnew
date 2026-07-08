@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="text-end mt-4">
-                    <button type="submit" class="button-baru">Simpan Analisa</button>
+                    <button type="submit" class="button-baru"><i class="bi bi-save"></i>Simpan Analisa</button>
                 </div>
             </form>
         </div>

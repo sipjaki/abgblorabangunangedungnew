@@ -493,7 +493,7 @@
     <!-- BUTTONS -->
     <!-- ========================================================= -->
     <div class="flex justify-end" style="display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 20px;">
-        <button class="button-modern" type="button" onclick="openModal()">
+        <button class="button-baru" type="button" onclick="openModal()">
             <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
         </button>
 

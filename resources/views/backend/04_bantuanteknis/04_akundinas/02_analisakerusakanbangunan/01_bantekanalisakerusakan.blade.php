@@ -276,7 +276,10 @@
 <td style="text-align: center">
     @php
         // Status berdasarkan urutan validasi
-        if ($item->validasiberkas2 == 'belum') {
+        if (is_null($item->validasiberkas1) || $item->validasiberkas1 == 'belum') {
+            $status = 'Berkas Masuk';
+            $badgeClass = 'bg-primary';
+        } elseif ($item->validasiberkas2 == 'belum') {
             $status = 'Dikembalikan';
             $badgeClass = 'bg-danger';
         } elseif ($item->validasiberkas3 == 'belum') {
@@ -295,7 +298,6 @@
         {{ $status }}
     </span>
 </td>
-
             <!-- Tombol KTP -->
 
 

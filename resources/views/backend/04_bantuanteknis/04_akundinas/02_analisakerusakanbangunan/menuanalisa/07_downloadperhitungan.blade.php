@@ -271,11 +271,11 @@
 {{-- TOMBOL AKSI (HANYA DI WEB) --}}
 {{-- ========================================================= --}}
 <div class="d-print-none text-end mb-3">
-    <button class="btn btn-secondary btn-sm me-2" onclick="window.history.back();">
+    {{-- <button class="button-modern" onclick="window.history.back();">
         <i class="bi bi-arrow-left"></i> Kembali
-    </button>
-    <button class="btn btn-primary btn-sm" onclick="unduhPDF2Halaman()">
-        <i class="bi bi-file-earmark-pdf"></i> Download PDF (2 Halaman)
+    </button> --}}
+    <button class="button-berkas" onclick="unduhPDF2Halaman()">
+        <i class="bi bi-file-earmark-pdf"></i> Download Berkas
     </button>
 </div>
 
@@ -335,8 +335,8 @@
 
         {{-- DASAR HUKUM --}}
         <table class="pdf-dasar-hukum">
-            <tr><td style="width:6%;">Dasar</td><td style="width:2%;">:</td><td style="width:3%;">1.</td><td>Permen PUPR No. 22/PRT/M/2018</td></tr>
-            <tr><td colspan="2"></td><td>2.</td><td>Kepmen PUPR No. 943/KPTS/M/2024</td></tr>
+            <tr><td style="width:6%;">Dasar</td><td style="width:2%;">:</td><td style="width:3%;">1.</td><td>Peraturan Menteri Pekerjaan Umum Dan Perumahan Rakyat Republik Indonesia Nomor 22/Prt/M/2018 Tentang Pembangunan Bangunan Gedung Negara</td></tr>
+            <tr><td colspan="2"></td><td>2.</td><td>Keputusan Menteri Pekerjaan Umum Dan Perumahan Rakyat Nomor : 943/KptsM/2024 Tentang Pedoman Perhitungan Standar Harga Satuan Tertinggi Dari Tabel Daftar Komponen Biaya Pembangunan Bangunan Gedung Negara </td></tr>
         </table>
 
         {{-- TABEL UTAMA --}}
@@ -345,19 +345,22 @@
                 <tr>
                     <th rowspan="3" style="width:3%;">NO</th>
                     <th rowspan="3" style="width:10%;">KOMPONEN</th>
-                    <th rowspan="3" style="width:4%;">Bobot</th>
-                    <th rowspan="2" style="width:14%;">TAHAP 1<br><span style="font-weight:400;font-size:7px;">Visual & Indikasi</span></th>
-                    <th colspan="5" style="width:15%;">TAHAP 2 – KLASIFIKASI</th>
-                    <th colspan="7" style="width:18%;">PERHITUNGAN</th>
-                    <th rowspan="3" style="width:8%;">Tkt<br>Rusak</th>
+                    <th rowspan="3" style="width:4%;">BOBOT</th>
+                    <th rowspan="2" style="width:14%;">TAHAP 1- PENGAMATAN VISUAL <br><span style="font-weight:400;font-size:7px;">ADA TIDAKNYA KERUSAKAN DAN </span>
+                        <br><span style="font-weight:400;font-size:7px;">INDIKASI DAMPAK KESELAMATAN</span>
+                        <br><span style="font-weight:400;font-size:7px;">PEMANFAATAN RUANGAN/BANGUNAN </span>
+                    </th>
+                    <th colspan="5" style="width:15%;">TAHAP 2 – KLASIFIKASI KERUSAKAN BERDASARKAN</th>
+                    <th colspan="7" style="width:18%;">KLASIFIKASI KERUSAKAN</th>
+                    <th rowspan="3" style="width:8%;">Tidak<br>Rusak</th>
                 </tr>
                 <tr>
                     <th>Tdk Rusak</th><th>Ringan</th><th>Sedang</th><th>Berat</th><th>Tdk Sesuai</th>
                     <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
                 </tr>
                 <tr class="sub-header">
-                    <th>(1)</th><th>(2)</th><th>(3)</th><th>-</th><th>-</th><th>-</th><th>-</th><th>-</th>
-                    <th>0,00</th><th>0,20</th><th>0,35</th><th>0,50</th><th>0,70</th><th>0,85</th><th>1,00</th>
+                    <th>(1)</th><th>(2)</th><th>(3)</th><th>(4)</th><th>(5)</th><th>(6)</th><th>(7)</th><th>(8)</th>
+                    <th>0,00</th><th>0,20</th><th>0,35</th><th>0,50</th><th>0,70</th>
                 </tr>
                 <tr class="sub-header2">
                     <td colspan="4"></td>
