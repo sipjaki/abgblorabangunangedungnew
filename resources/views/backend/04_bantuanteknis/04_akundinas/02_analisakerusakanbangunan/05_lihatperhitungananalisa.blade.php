@@ -64,7 +64,7 @@
 
                                             <!-- BUTTON AKSI -->
                                             <div class="d-flex gap-2">
-                                                <a href="{{ route('bebantekanalisarusakshow', [$data->namagedung, $data->id]) }}" class="button-modern">
+                                                <a href="{{ route('bebantekanalisarusakshow', [$data->induk->namagedung, $data->id]) }}" class="button-modern">
                                                         <i class="bi bi-arrow-left me-1"></i> Kembali
                                                     </a>
 
