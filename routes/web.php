@@ -1585,15 +1585,11 @@ Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisControll
  Route::put('/validasianalisa4/{id}', [BantuanteknisController::class, 'validasianalisa4'])->middleware('auth', 'can:admindinas')->name('validasianalisa4.update');
 
 Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
-
-
 Route::get('/bebantekanalisahitung/hitung/{id}',[BantuanteknisController::class, 'bebantekanalisahitung'])->middleware('auth', 'can:admindinas')->name('bebantekanalisahitungdetails');
 
 
 /// PEMBAHARUAN BARU LAGI
 Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpembongkaranbgn'])->middleware('auth', 'can:admindinas')->name('bepbgslfindexslfindex');
-
-
 Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaranall', [BantuanteknisController::class, 'bebantekpembongkaranall'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');

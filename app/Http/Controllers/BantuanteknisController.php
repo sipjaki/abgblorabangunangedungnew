@@ -8700,7 +8700,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
     // $pelaksana_slug = $data->induk2->pelaksana ?? 'Belum tersedia';
 
     return view(
-        'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.05_lihatperhitungananalisa',
+        'backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.05_lihatperhitungananalisa',
         [
             'title'     => 'Details Perhitungan Analisa Tingkat Kerusakan Bangunan Gedung',
             'data'      => $data,

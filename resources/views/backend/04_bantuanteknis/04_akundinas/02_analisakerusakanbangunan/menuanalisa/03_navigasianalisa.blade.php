@@ -377,7 +377,7 @@ console.log('Script Surat Pemberitahuan (2) loaded');
                             ]
                         ) }}"
                     class="button-berkas">
-                        <i class="bi bi-eye"></i> Lihat Perhitungan
+                        <i class="bi bi-eye"></i> Lihat Perhitungan Analisa Kerusakan
                     </a>
                 @else
                     <a href="{{ route('bebantekkerusakaninfohitung', [$data->namagedung, $data->id]) }}"
