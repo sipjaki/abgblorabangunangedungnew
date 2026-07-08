@@ -75,6 +75,8 @@
                                         </div>
 
                                         @include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.06_hasilperhitunganrusak')
+                                        <hr>
+                                        @include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.07_downloadperhitungan')
 
 
                                     </div>
