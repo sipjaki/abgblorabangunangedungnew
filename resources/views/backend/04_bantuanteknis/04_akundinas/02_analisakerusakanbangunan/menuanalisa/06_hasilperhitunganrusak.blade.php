@@ -213,12 +213,12 @@
             </div>
 
             {{-- Tombol Kembali --}}
-            <div class="text-end mt-4">
+            {{-- <div class="text-end mt-4">
                 <a href="{{ route('bebantekanalisarusakshow', ['namagedung' => $data->induk->namagedung ?? 'tanpa-nama', 'id' => $data->induk->id ?? 0]) }}"
                    class="button-baru">
                     <i class="bi bi-arrow-left me-1"></i> Kembali ke Detail
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

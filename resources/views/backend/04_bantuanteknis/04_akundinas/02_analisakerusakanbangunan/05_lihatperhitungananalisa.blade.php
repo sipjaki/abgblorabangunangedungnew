@@ -57,7 +57,7 @@
                                                 </div>
                                                 <div>
                                                     <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">
-                                                        Hitung Analisa Tingkat Kerusakan Bangunan Gedung
+                                                        Hasil Perhitungan Analisa Tingkat Kerusakan Bangunan Gedung
                                                     </h4>
                                                 </div>
                                             </div>
