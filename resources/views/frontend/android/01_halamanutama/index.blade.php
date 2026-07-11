@@ -47,12 +47,15 @@
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 
 <div id="Promo" class="promo-section relative w-full overflow-hidden rounded-b-[38px] leading-0">
+
+    <div class="promo-carousel">
     <img
         src="/assets/android/iconmenu/informasilayanan.jpg"
         class="w-full h-auto object-contain block"
         alt="Informasi Layanan"
         loading="lazy"
     />
+</div>
 </div>
 
 <div id="Promo" class="promo-section">
