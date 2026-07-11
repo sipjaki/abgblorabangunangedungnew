@@ -7,14 +7,14 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
  <img
-  src="/assets/android/iconmenu/informasilayanan.jpg"
+  src="/assets/android/iconmenu/dpuprkabblora.jpg"
   class="absolute top-0 left-0 w-full h-full object-fill rounded-bl-[38px] rounded-br-[38px]"
   alt="backgrounds"
   loading="lazy"
 />
 
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
-{{-- <nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
+<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
   <a href="signup.html" class="shrink-0">
     <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
@@ -40,11 +40,21 @@
       <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
     </div>
   </a>
-</nav> --}}
+</nav>
       </div>
     </header>
 
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
+
+<div id="Promo" class="promo-section relative w-full h-80 overflow-hidden rounded-b-[38px]">
+    <img
+        src="/assets/android/iconmenu/informasilayanan.jpg"
+        class="absolute top-0 left-0 w-full h-full object-fill"
+        alt="Informasi Layanan"
+        loading="lazy"
+    />
+</div>
+
 <div id="Promo" class="promo-section">
     <div class="promo-header">
         <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
