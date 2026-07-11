@@ -6,15 +6,15 @@
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
-  <img
+ <img
   src="/assets/android/iconmenu/informasilayanan.jpg"
-  class="absolute top-0 left-0 w-full h-[20vh] object-cover rounded-bl-[38px] rounded-br-[38px]"
+  class="absolute top-0 left-0 w-full h-full object-fill rounded-bl-[38px] rounded-br-[38px]"
   alt="backgrounds"
   loading="lazy"
 />
 
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
-<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
+{{-- <nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
   <a href="signup.html" class="shrink-0">
     <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
@@ -25,9 +25,6 @@
   <!-- Teks Tengah -->
   <div class="flex-1 mx-2 sm:mx-4 min-w-0">
     <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
-      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
-        ABG Blora Bangunan Gedung
-      </p> --}}
       <div class="flex items-center justify-center sm:justify-start">
         <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
           Dinas Pekerjaan Umum Dan
@@ -43,7 +40,7 @@
       <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
     </div>
   </a>
-</nav>
+</nav> --}}
       </div>
     </header>
 
