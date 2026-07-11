@@ -1,6 +1,7 @@
 
 
-<div id="Feature" class="px-[18px] relative z-10" style="margin-top: -125px;">
+{{-- <div id="Feature" class="px-[18px] relative z-10" style="margin-top: -125px;"> --}}
+<div id="Feature" class="px-[18px] relative z-10">
     {{-- <div
   class="relative p-[18px_16px] rounded-xl overflow-hidden grid grid-cols-4 gap-[27px]"
   style="
@@ -18,7 +19,7 @@
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             {{-- <img src="/assets/android/menunavigasi/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy"> --}}
-            <img src="/assets/android/menunavigasi/NEW01.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">PBG/SLF</p>
         </div>
@@ -34,7 +35,7 @@
       <a href="/bependataanbangunangedung">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW02.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/02.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Pendataan</p>
         </div>
@@ -42,7 +43,7 @@
       <a href="/resbantekindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW03.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/03.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantek</p>
         </div>
@@ -51,7 +52,7 @@
       {{-- <a href="/ressosialisasiabg"> --}}
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW04.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/04.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Sosialisasi</p>
         </div>
@@ -59,7 +60,7 @@
       <a href="/permohonankrkusaha">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW05.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/05.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
         </div>
@@ -67,7 +68,7 @@
       <a href="/rescarigsb">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">GSB</p>
         </div>
@@ -75,7 +76,7 @@
       <a href="/resmbrgambarindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">MBR</p>
         </div>
@@ -83,7 +84,7 @@
       <a href="/feformbantuangambar">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan <br> Gambar</p>
         </div>
@@ -119,7 +120,7 @@
       <a href="/web">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Dekstop</p>
         </div>
@@ -128,7 +129,7 @@
       <a href="/404">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW010.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/10.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">QnA</p>
         </div>
@@ -137,7 +138,7 @@
       <a href="https://wa.me/6288987209343" target="_blank" rel="noopener noreferrer">
         <div class="flex flex-col items-center gap-2">
             <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW011.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/versi2/11.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
             </div>
             <p class="font-medium text-sm text-[#757C98] leading-[21px]">Kontak Kami</p>
         </div>
