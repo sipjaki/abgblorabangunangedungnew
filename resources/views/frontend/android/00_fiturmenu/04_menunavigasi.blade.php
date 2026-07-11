@@ -59,7 +59,7 @@
       <a href="/permohonankrkusaha">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/versi2/08.png" class="w-full h-full object-cover" alt="icon" loading="lazy" style="width: 85%">
+            <img src="/assets/android/versi2/07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
         </div>
@@ -83,7 +83,7 @@
       <a href="/feformbantuangambar">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/versi2/08.png" class="w-full h-full object-cover" alt="icon" loading="lazy" style="width: 85%">
+            <img src="/assets/android/versi2/07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantek Gambar</p>
         </div>
