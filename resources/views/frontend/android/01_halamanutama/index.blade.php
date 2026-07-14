@@ -7,7 +7,7 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
  <img
-  src="/assets/android/iconmenu/dpuprkabblora.jpg"
+  src="/assets/android/iconmenu/abgblorabangunangedung.jpg"
   class="absolute top-0 left-0 w-full h-full object-fill rounded-bl-[38px] rounded-br-[38px]"
   alt="backgrounds"
   loading="lazy"
@@ -50,7 +50,7 @@
 
     <div class="promo-carousel">
     <img
-        src="/assets/android/iconmenu/informasilayanan.jpg"
+        src="/assets/android/iconmenu/newlayananinformasibaru.jpg"
         class="w-full h-auto object-contain block"
         alt="Informasi Layanan"
         loading="lazy"
