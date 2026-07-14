@@ -6,11 +6,11 @@
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
- <img
-  src="/assets/android/iconmenu/abgblorabangunangedung.jpg"
-  class="absolute top-0 left-0 w-full h-full object-fill rounded-bl-[38px] rounded-br-[38px]"
-  alt="backgrounds"
-  loading="lazy"
+<img
+    src="/assets/android/iconmenu/abgblorabangunangedung.jpg"
+    class="absolute inset-0 w-full h-full object-cover rounded-bl-[38px] rounded-br-[38px]"
+    alt="background"
+    loading="lazy"
 />
 
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
