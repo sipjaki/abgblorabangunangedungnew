@@ -306,7 +306,7 @@ th {
             checkpointData[4].message = 'Sudah Terbit';
         } else if ('<?php echo isset($data->verifikasi4) ? $data->verifikasi4 : "" ?>' === 'belum') {
             checkpointData[4].status = 'rejected';
-            checkpointData[4].message = 'Surat KRK Usaha Tidak di Terbitkan!';
+            checkpointData[4].message = 'Surat KRK Hunian Tidak di Terbitkan!';
         }
     }
 
@@ -595,7 +595,7 @@ th {
 <hr>
     <br>
 
-    <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI PERMOHONAN KETERANGAN RENCANA KOTA (KRK) FUNGSI USAHA</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI PERMOHONAN KETERANGAN RENCANA KOTA (KRK) FUNGSI HUNIAN</h4>
 
 
 <div class="table-responsive">
@@ -690,6 +690,12 @@ th {
     <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Kabupaten</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->kabupaten ?? '-' }}</td>
+</tr>
+<tr>
+    <td style="text-align: center;">15</td>
+    <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Alamat Pemohon</td>
+    <td style="text-align: center;">:</td>
+    <td style="text-align: left;">{{ $data->alamatpemohon ?? '-' }}</td>
 </tr>
 
 

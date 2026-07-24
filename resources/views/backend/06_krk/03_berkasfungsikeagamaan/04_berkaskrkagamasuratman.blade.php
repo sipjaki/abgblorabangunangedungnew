@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Keagamaan" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
