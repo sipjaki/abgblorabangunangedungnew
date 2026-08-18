@@ -3771,7 +3771,7 @@ public function permohonankrkhuniancreate(Request $request)
             // 'npwp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
             'sertifikattanah' => 'nullable|file|mimes:pdf|max:15048',
             // 'lampiranoss' => 'nullable|file|mimes:pdf|max:10048',
-            'buktipbb' => 'nullable|file|mimes:pdf|max:15048',
+            'buktipbb' => 'nullable|file|max:15048',
             'dokvalidasi' => 'nullable|file|mimes:pdf|max:15048',
             // 'siteplan' => 'nullable|file|mimes:pdf|max:10048',
             'tandatangan' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:15048',
