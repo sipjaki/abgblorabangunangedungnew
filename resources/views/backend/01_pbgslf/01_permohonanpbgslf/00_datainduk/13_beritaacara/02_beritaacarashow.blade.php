@@ -366,70 +366,228 @@ th {
                                     </div>
 
                                     <!-- Catatan & Tabel Pengawas -->
+                                    
+
+
                                     @php
-                                        $listPengawas = [];
-                                        for ($i = 1; $i <= 12; $i++) {
-                                            $nama = $surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null;
-                                            if (!empty($nama)) {
-                                                $listPengawas[] = [
-                                                    'no' => $i,
-                                                    'pengawas' => [
-                                                        1 => 'ANEX FACHRIAN ST. MT.',
-                                                        2 => '.'
-                                                    ][$i] ?? '',
-                                                    'tpa' => $nama
-                                                ];
-                                            }
-                                        }
-                                        $jumlahBaris = count($listPengawas);
-                                    @endphp
+    // ============================
+    // DATA PENGAWAS / TIM PENILAI
+    // ============================
 
-                                    <p class="force-times">
-                                        <strong style="margin-top: 5px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">Catatan:</strong>
-                                    </p>
-                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 120 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                    </div>
-                                    <br>
+    $listPengawas = [];
 
-                                    <!-- Tabel Tanda Tangan -->
-                                    <table class="force-times" style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: -15px;">
-                                        <thead>
-                                            <tr>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                    Pemohon
-                                                </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                    Pengawas
-                                                </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                    TTD
-                                                </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                    Nama TPA/TPT
-                                                </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                    TTD
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($listPengawas as $index => $row)
-                                                <tr>
-                                                    @if ($index === 0)
-                                                        <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;" rowspan="{{ $jumlahBaris }}"></td>
-                                                    @endif
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                        {{ $row['no'] }}. {{ $row['pengawas'] }}
-                                                    </td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;"></td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                                                        {{ $row['no'] }}. {{ $row['tpa'] }}
-                                                    </td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;"></td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+    // Baris 1: ANEX FACHRIAN
+    $listPengawas[] = [
+        'no' => 1,
+        'pengawas' => 'ANEX FACHRIAN ST. MT.',
+        'tpa' => $surat->tpatpt->{'pengawas1'}->namalengkap ?? null,
+    ];
+
+    // Baris 2: Dikosongkan
+    $listPengawas[] = [
+        'no' => 2,
+        'pengawas' => '',
+        'tpa' => $surat->tpatpt->{'pengawas2'}->namalengkap ?? null,
+    ];
+
+    // Baris 3: Data dari TPATPT2 -> timpenilai
+    $timPenilai = $surat->tpatpt2->timpenilai ?? null;
+
+    $listPengawas[] = [
+        'no' => 3,
+        'pengawas' => $timPenilai,
+        'tpa' => $surat->tpatpt->{'pengawas3'}->namalengkap ?? null,
+    ];
+
+    // Baris 4 - 12:
+    // Kolom Pengawas dikosongkan
+    // Kolom TPA/TPT tetap mengambil data TPATPT
+    for ($i = 4; $i <= 12; $i++) {
+        $namaTpa = $surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null;
+
+        $listPengawas[] = [
+            'no' => $i,
+            'pengawas' => '',
+            'tpa' => $namaTpa,
+        ];
+    }
+
+    $jumlahBaris = count($listPengawas);
+@endphp
+
+<p class="force-times">
+    <strong style="margin-top: 5px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+        Catatan:
+    </strong>
+</p>
+
+<div
+    class="force-times"
+    style="
+        border: 1px solid #000;
+        min-height: {{ 120 + (12 - $jumlahBaris) * 20 }}px;
+        padding: 8px;
+        margin-top: -15px;
+        font-size: 14px;
+        font-family: 'Arial', Times, sans-serif;
+    "
+>
+</div>
+
+<br>
+
+<!-- Tabel Tanda Tangan -->
+<table
+    class="force-times"
+    style="
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin-top: -15px;
+    "
+>
+    <thead>
+        <tr>
+            <th
+                style="
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 3px;
+                    width: 125px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                "
+            >
+                Pemohon
+            </th>
+
+            <th
+                style="
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                "
+            >
+                Pengawas
+            </th>
+
+            <th
+                style="
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                "
+            >
+                TTD
+            </th>
+
+            <th
+                style="
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                "
+            >
+                Nama TPA/TPT
+            </th>
+
+            <th
+                style="
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                "
+            >
+                TTD
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach ($listPengawas as $index => $row)
+            <tr>
+                {{-- Kolom Pemohon --}}
+                @if ($index === 0)
+                    <td
+                        rowspan="{{ $jumlahBaris }}"
+                        style="
+                            border: 1px solid #000;
+                            padding: 3px;
+                            font-size: 14px;
+                            font-family: 'Arial', Times, sans-serif;
+                        "
+                    >
+                    </td>
+                @endif
+
+                {{-- Kolom Pengawas --}}
+                <td
+                    style="
+                        border: 1px solid #000;
+                        padding: 3px;
+                        font-size: 14px;
+                        font-family: 'Arial', Times, sans-serif;
+                    "
+                >
+                    @if (!empty($row['pengawas']))
+                        {{ $row['no'] }}. {{ $row['pengawas'] }}
+                    @else
+                        {{ $row['no'] }}.
+                    @endif
+                </td>
+
+                {{-- TTD Pengawas --}}
+                <td
+                    style="
+                        border: 1px solid #000;
+                        padding: 3px;
+                        font-size: 14px;
+                        font-family: 'Arial', Times, sans-serif;
+                    "
+                >
+                </td>
+
+                {{-- Kolom Nama TPA/TPT --}}
+                <td
+                    style="
+                        border: 1px solid #000;
+                        padding: 3px;
+                        font-size: 14px;
+                        font-family: 'Arial', Times, sans-serif;
+                    "
+                >
+                    @if (!empty($row['tpa']))
+                        {{ $row['no'] }}. {{ $row['tpa'] }}
+                    @else
+                        {{ $row['no'] }}.
+                    @endif
+                </td>
+
+                {{-- TTD TPA/TPT --}}
+                <td
+                    style="
+                        border: 1px solid #000;
+                        padding: 3px;
+                        font-size: 14px;
+                        font-family: 'Arial', Times, sans-serif;
+                    "
+                >
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+
+
                                 </div>
                             </div>
                         </div>
