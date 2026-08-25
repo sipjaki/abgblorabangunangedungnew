@@ -353,11 +353,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
                             </div>
                             <!-- end::Body -->
 
-
-                        </form>
-
-
-penugasan tpa baru dan tpt
         <div class="col-12">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
@@ -366,6 +361,9 @@ penugasan tpa baru dan tpt
                 </div>
             </div>
         </div>
+
+                        </form>
+
 
 
                     </div>

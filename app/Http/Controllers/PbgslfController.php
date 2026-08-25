@@ -1937,7 +1937,9 @@ public function bepbgtpatpt($id)
         // 'datafasi' => $data,
         'subdatapemilik' => $subdatapemilik,
     ]);
-}
+
+
+    }
 
 
 public function bepbgtpatptcreate($id)

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class cadangan5 extends Model
+class tpatpt2 extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
@@ -18,9 +18,8 @@ class cadangan5 extends Model
 
     public function pbgslfbangunan()
 {
-    return $this->hasOne(pbgslfbangunan::class, 'kuncibaru_id', 'id')->latest('id');
+    return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id', 'id')->latest('id');
 }
-
 
     public function timpenilai()
     {

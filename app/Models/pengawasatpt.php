@@ -18,4 +18,9 @@ class pengawasatpt extends Model
         return $this->hasMany(tpatpt::class, 'tpatpt_id');
     }
 
+    public function tpatpt2()
+    {
+        return $this->hasMany(tpatpt2::class, 'tpatpt2_id');
+    }
+
 }
