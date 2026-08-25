@@ -359,6 +359,17 @@ function previewPDF(event, containerId, iframeId, messageId) {
                     </div>
                  </div>
 
+
+penugasan tpa baru dan tpt
+        <div class="col-12">
+            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+                <div class="card-header bg-primary text-white d-flex align-items-center">
+                    <i class="bi bi-folder-check me-2 fs-5"></i>
+                    <h5 class="mb-0" style="font-size: 16px;">Penugasan TPA/TPT</h5>
+                </div>
+            </div>
+        </div>
+
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
                  <br><br>
