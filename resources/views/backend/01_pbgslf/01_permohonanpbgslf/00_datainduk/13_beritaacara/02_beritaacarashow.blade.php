@@ -372,29 +372,45 @@ th {
                                     @php
     /*
     |--------------------------------------------------------------------------
-    | DATA SEBELAH KIRI - TPATPT2
+    | DATA SEBELAH KIRI
     |--------------------------------------------------------------------------
     */
 
     $listPengawasKiri = [];
 
-    // Baris 1 selalu ANEX
+    // 1. ANEX FACHRIAN
     $listPengawasKiri[] = [
+        'type' => 'anex',
         'no' => 1,
         'nama' => 'ANEX FACHRIAN ST. MT.'
     ];
 
-    // Baris 2 sengaja dikosongkan
+    // 2. BARIS KOSONG
     $listPengawasKiri[] = [
+        'type' => 'kosong',
         'no' => 2,
         'nama' => ''
     ];
 
+    // 3. TIM PENILAI
+    $timPenilai = $surat->tpatpt2->timpenilai ?? null;
+
+    if (!empty($timPenilai)) {
+        $listPengawasKiri[] = [
+            'type' => 'timpenilai',
+            'no' => null,
+            'nama' => $timPenilai
+        ];
+    }
+
     /*
     |--------------------------------------------------------------------------
-    | Ambil pengawas dari TPATPT2
+    | PENGAWAS TPATPT2
+    | Nomor dimulai lagi dari 1
     |--------------------------------------------------------------------------
     */
+
+    $nomorPengawas = 1;
 
     for ($i = 1; $i <= 12; $i++) {
 
@@ -403,10 +419,14 @@ th {
         $nama = $pengawas->namalengkap ?? null;
 
         if (!empty($nama)) {
+
             $listPengawasKiri[] = [
-                'no' => count($listPengawasKiri) + 1,
+                'type' => 'pengawas',
+                'no' => $nomorPengawas,
                 'nama' => $nama
             ];
+
+            $nomorPengawas++;
         }
     }
 
@@ -419,6 +439,8 @@ th {
 
     $listTPA = [];
 
+    $nomorTPA = 1;
+
     for ($i = 1; $i <= 12; $i++) {
 
         $pengawas = $surat->tpatpt->{'pengawas'.$i} ?? null;
@@ -426,10 +448,13 @@ th {
         $nama = $pengawas->namalengkap ?? null;
 
         if (!empty($nama)) {
+
             $listTPA[] = [
-                'no' => count($listTPA) + 1,
+                'no' => $nomorTPA,
                 'nama' => $nama
             ];
+
+            $nomorTPA++;
         }
     }
 
@@ -448,10 +473,15 @@ th {
 
 
 <p class="force-times">
-    <strong style="margin-top: 5px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+    <strong style="
+        margin-top: 5px;
+        font-size: 14px;
+        font-family: 'Arial', Times, sans-serif;
+    ">
         Catatan:
     </strong>
 </p>
+
 
 <div
     class="force-times"
@@ -479,7 +509,9 @@ th {
         margin-top: -15px;
     "
 >
+
     <thead>
+
         <tr>
 
             <th style="
@@ -493,6 +525,7 @@ th {
                 Pemohon
             </th>
 
+
             <th style="
                 border: 1px solid #000;
                 text-align: center;
@@ -502,6 +535,7 @@ th {
             ">
                 Pengawas
             </th>
+
 
             <th style="
                 border: 1px solid #000;
@@ -513,6 +547,7 @@ th {
                 TTD
             </th>
 
+
             <th style="
                 border: 1px solid #000;
                 text-align: center;
@@ -522,6 +557,7 @@ th {
             ">
                 Nama TPA/TPT
             </th>
+
 
             <th style="
                 border: 1px solid #000;
@@ -534,6 +570,7 @@ th {
             </th>
 
         </tr>
+
     </thead>
 
 
@@ -560,7 +597,10 @@ th {
                 @endif
 
 
-                {{-- PENGAWAS TPATPT2 --}}
+                {{-- =====================================================
+                    PENGAWAS SEBELAH KIRI
+                ====================================================== --}}
+
                 <td style="
                     border: 1px solid #000;
                     padding: 3px;
@@ -570,8 +610,35 @@ th {
 
                     @if (isset($listPengawasKiri[$i]))
 
-                        {{ $listPengawasKiri[$i]['no'] }}.
-                        {{ $listPengawasKiri[$i]['nama'] }}
+                        @php
+                            $item = $listPengawasKiri[$i];
+                        @endphp
+
+
+                        {{-- ANEX --}}
+                        @if ($item['type'] === 'anex')
+
+                            {{ $item['no'] }}. {{ $item['nama'] }}
+
+
+                        {{-- BARIS KOSONG --}}
+                        @elseif ($item['type'] === 'kosong')
+
+                            {{ $item['no'] }}.
+
+
+                        {{-- TIM PENILAI TANPA NOMOR --}}
+                        @elseif ($item['type'] === 'timpenilai')
+
+                            {{ $item['nama'] }}
+
+
+                        {{-- PENGAWAS TPATPT2 --}}
+                        @elseif ($item['type'] === 'pengawas')
+
+                            {{ $item['no'] }}. {{ $item['nama'] }}
+
+                        @endif
 
                     @endif
 
@@ -588,7 +655,10 @@ th {
                 </td>
 
 
-                {{-- TPA/TPT --}}
+                {{-- =====================================================
+                    NAMA TPA/TPT SEBELAH KANAN
+                ====================================================== --}}
+
                 <td style="
                     border: 1px solid #000;
                     padding: 3px;
@@ -623,8 +693,7 @@ th {
 
 </table>
 
-{{-- ----------------------------------------------------- --}}
-
+{{-- --------------------------------------------- --}}
                                 </div>
                             </div>
                         </div>
