@@ -389,7 +389,7 @@
             ];
         @endphp
 
-        @foreach($pengawasFields as $i => $label)
+        {{-- @foreach($pengawasFields as $i => $label)
             @if($loop->odd)
                 <div class="row g-3">
             @endif
@@ -418,7 +418,44 @@
             @if($loop->even || $loop->last)
                 </div>
             @endif
-        @endforeach
+        @endforeach --}}
+
+        @foreach($pengawasFields as $i => $label)
+    @if($loop->odd)
+        <div class="row g-3">
+    @endif
+
+    <div class="col-md-6">
+        <label class="form-label-modern fw-semibold text-dark">
+            <i class="bi bi-person-check-fill text-primary me-1"></i> {{ $label }}
+        </label>
+
+        <select name="pengawas{{ $i }}_id"
+                class="form-select @error('pengawas' . $i . '_id') is-invalid @enderror">
+
+            <option value="">
+                - Tidak Ada / Kosong -
+            </option>
+
+            @foreach($pengawasList as $pengawas)
+                <option value="{{ $pengawas->id }}"
+                    {{ old('pengawas' . $i . '_id', $data->{'pengawas'.$i.'_id'} ?? '') == $pengawas->id ? 'selected' : '' }}>
+                    {{ $pengawas->namalengkap }}
+                </option>
+            @endforeach
+
+        </select>
+
+        @error('pengawas' . $i . '_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    @if($loop->even || $loop->last)
+        </div>
+    @endif
+@endforeach
+
 
 
     </div>
