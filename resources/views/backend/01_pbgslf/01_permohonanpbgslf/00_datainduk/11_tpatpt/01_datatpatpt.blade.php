@@ -414,6 +414,9 @@ function previewPDF(event, containerId, iframeId, messageId) {
             </div>
         </div>
     @empty
+    <hr>
+    <p>Pemilihan TPA Baru
+    <hr>
         <div class="col-12 mt-4">
             <div class="alert alert-warning text-center fw-semibold">
                 <i class="bi bi-folder-x me-2 text-danger"></i>
@@ -422,7 +425,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
             <div class="text-center mt-4">
                 <a href="{{ route('bepbgtpatptcreate2', $data->id) }}" class="button-baru">
-                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA
+                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA Bagian 2 
                 </a>
             </div>
         </div>
