@@ -37,6 +37,11 @@ class suratudanganpbg extends Model
     {
         return $this->belongsTo(tpatpt::class, 'tpatpt_id');
     }
+ 
+    public function tpatpt2()
+    {
+        return $this->belongsTo(tpatpt2::class, 'tpatpt_id');
+    }
 
 
 }
