@@ -1493,6 +1493,9 @@ Route::delete('/bepbgsurattugasnewdelete/{id}', [PbgslfController::class, 'bepbg
 Route::get('/bepbgtpatpt/{id}', [PbgslfController::class, 'bepbgtpatpt'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatpt');
 Route::get('/bepbgtpatptcreate/{id}', [PbgslfController::class, 'bepbgtpatptcreate'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreate');
 Route::post('/bepbgtpatptcreatenew', [PbgslfController::class, 'bepbgtpatptcreatenew'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreatenew');
+// TAMBAHAN TPA TPT 2
+Route::get('/bepbgtpatptcreate2/{id}', [PbgslfController::class, 'bepbgtpatptcreate2'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreate2');
+Route::post('/bepbgtpatptcreatenew2', [PbgslfController::class, 'bepbgtpatptcreatenew2'])->middleware('auth', 'can:admindpupr')->name('bepbgtpatptcreatenew2');
 
 Route::delete('/bepbgtpatptdelete/{id}', [PbgslfController::class, 'bepbgtpatptdelete'])->middleware('auth')->name('bepbgtpatptdelete');
 

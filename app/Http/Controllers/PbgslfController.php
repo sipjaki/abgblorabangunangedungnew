@@ -37,6 +37,7 @@ use App\Models\surattugaspbg;
 use App\Models\suratudanganpbg;
 use App\Models\tempatkonsultasi;
 use App\Models\tpatpt;
+use App\Models\tpatpt2;
 // use App\Models\pbgslfbangunan;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -1927,6 +1928,7 @@ public function bepbgtpatpt($id)
 
     // Ambil semua data surat pemberitahuan berdasarkan pbgslfbangunan_id tanpa pagination
     $subdatapemilik = tpatpt::where('pbgslfbangunan_id', $data->id)->get();
+    $subdatapemilik2 = tpatpt2::where('pbgslfbangunan_id', $data->id)->get();
 
     // Kirim data ke view
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.11_tpatpt.01_datatpatpt', [
@@ -1936,6 +1938,7 @@ public function bepbgtpatpt($id)
         'data' => $data,
         // 'datafasi' => $data,
         'subdatapemilik' => $subdatapemilik,
+        'subdatapemilik2' => $subdatapemilik2,
     ]);
 
 
@@ -5279,6 +5282,26 @@ public function bepbgslfretribusi(Request $request)
         'nominalRetribusiTotal'  => $nominalRetribusiTotal,
         'nominalSudahTerbayar'   => $nominalSudahTerbayar,
         'nominalPenerimaan'      => $nominalPenerimaan,
+    ]);
+}
+
+
+public function bepbgtpatptcreate2($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = pbgslfbangunan::find($id);
+    $pengawasList = pengawasatpt::all();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.11_tpatpt.04_tambahfasilitatorbaru2', [
+        'title' => 'Pilih Petugas TPT/TPA',
+        'data' => $databantuanteknis,
+        'pengawasList' => $pengawasList,
+        'user' => Auth::user()
     ]);
 }
 

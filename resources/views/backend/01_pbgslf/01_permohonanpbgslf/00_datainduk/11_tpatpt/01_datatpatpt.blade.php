@@ -347,11 +347,28 @@ function previewPDF(event, containerId, iframeId, messageId) {
     </div>
 </div> --}}
 
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
+{{-- PENUGASAN TPA TPT BARU  --}}
+
+<div class="row g-4 mt-4">
+    @forelse ($subdatapemilik2 as $item)
+   @php
+    $pengawasItems = [
+        ['label' => 'Tim Penilai', 'value' => $item->timpenilai ?? '-', 'icon' => 'bi-people'],
+        ['label' => 'No SK', 'value' => $item->nosk ?? '-', 'icon' => 'bi-file-earmark-text'],
+        ['label' => 'Pengawas 1', 'value' => $item->pengawas1->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 2', 'value' => $item->pengawas2->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 3', 'value' => $item->pengawas3->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 4', 'value' => $item->pengawas4->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 5', 'value' => $item->pengawas5->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 6', 'value' => $item->pengawas6->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 7', 'value' => $item->pengawas7->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 8', 'value' => $item->pengawas8->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 9', 'value' => $item->pengawas9->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 10', 'value' => $item->pengawas10->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 11', 'value' => $item->pengawas11->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 12', 'value' => $item->pengawas12->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+    ];
+@endphp
 
         <div class="col-12">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
@@ -359,8 +376,100 @@ function previewPDF(event, containerId, iframeId, messageId) {
                     <i class="bi bi-folder-check me-2 fs-5"></i>
                     <h5 class="mb-0" style="font-size: 16px;">Penugasan TPA/TPT</h5>
                 </div>
+
+                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                    <div class="row g-3">
+                        @foreach ($pengawasItems as $info)
+                            <div class="form-modern col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3">
+                                        <i class="bi {{ $info['icon'] }} text-primary fs-3"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1">{{ $info['label'] }}</h6>
+                                        <p class="mb-0 text-muted">{{ $info['value'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+
+
+                                                                                  <a href="/updatedatatpatpt/{{ $item->id }}">
+                                                                                    <p class="button-berkas">
+                                                                                        <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                                                                        Perbaikan Penugasan TPA/TPT
+                                                                                    </p>
+                                                                                </a>
+                        {{-- <div class="col-12 text-end mt-2">
+                            <a href="javascript:void(0)" title="Delete"
+                               data-bs-toggle="modal" data-bs-target="#deleteModal"
+                               data-id="{{ $item->id }}"
+                               onclick="setDeleteUrl(this)"
+                               class="btn btn-outline-danger btn-sm">
+                               <i class="bi bi-trash me-1"></i> Hapus Data
+                            </a>
+                        </div> --}}
+                    </div>
+                </div>
             </div>
         </div>
+    @empty
+        <div class="col-12 mt-4">
+            <div class="alert alert-warning text-center fw-semibold">
+                <i class="bi bi-folder-x me-2 text-danger"></i>
+                Belum Ada Pemilihan TPA TPT!
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{{ route('bepbgtpatptcreate2', $data->id) }}" class="button-baru">
+                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA
+                </a>
+            </div>
+        </div>
+    @endforelse
+</div>
+
+
+<!-- Pagination links -->
+{{-- <div class="d-flex justify-content-center mt-4">
+    {{ $subdatapemilik->links() }}
+</div> --}}
+
+
+</div>
+    <script>
+function previewPDF(event, containerId, iframeId, messageId) {
+    const file = event.target.files[0];
+    const container = document.getElementById(containerId);
+    const iframe = document.getElementById(iframeId);
+    const message = document.getElementById(messageId);
+
+    if (file && file.type === "application/pdf") {
+        const fileURL = URL.createObjectURL(file);
+        iframe.src = fileURL;
+        container.style.display = 'block';
+        message.style.display = 'none';
+    } else {
+        iframe.src = '';
+        container.style.display = 'none';
+        message.style.display = 'block';
+        message.textContent = 'File harus berupa format PDF.';
+    }
+}
+</script>
+
+{{-- <div class="card shadow-sm border-0 mt-5">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Informasi Permohonan Pengajuan</h5>
+    </div>
+</div> --}}
+
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end::Body -->
+
 
                         </form>
 
