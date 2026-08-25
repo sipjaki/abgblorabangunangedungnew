@@ -414,21 +414,28 @@ function previewPDF(event, containerId, iframeId, messageId) {
             </div>
         </div>
     @empty
-    <hr>
-    <p>Pemilihan TPA Baru
-    <hr>
-        <div class="col-12 mt-4">
-            <div class="alert alert-warning text-center fw-semibold">
-                <i class="bi bi-folder-x me-2 text-danger"></i>
-                Belum Ada Pemilihan TPA TPT!
-            </div>
+   <hr>
 
-            <div class="text-center mt-4">
-                <a href="{{ route('bepbgtpatptcreate2', $data->id) }}" class="button-baru">
-                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA Bagian 2 
-                </a>
-            </div>
-        </div>
+<div class="text-center mt-4">
+    <h6 class="fw-bold mb-3">
+        Pemilihan TPA Baru
+    </h6>
+
+    <div class="alert alert-warning d-inline-flex align-items-center justify-content-center fw-semibold px-4 py-3">
+        <i class="bi bi-folder-x me-2 text-danger"></i>
+        Belum Ada Pemilihan TPA/TPT!
+    </div>
+
+    <div class="mt-3">
+        <a href="{{ route('bepbgtpatptcreate2', $data->id) }}" class="button-baru">
+            <i class="bi bi-plus-circle me-1"></i>
+            Buat TPT/TPA Bagian 2
+        </a>
+    </div>
+</div>
+
+<hr>
+
     @endforelse
 </div>
 
