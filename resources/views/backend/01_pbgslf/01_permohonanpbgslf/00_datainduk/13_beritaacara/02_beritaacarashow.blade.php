@@ -370,41 +370,66 @@ th {
 
 
                                     @php
-    $listTPA = [];
-    $listPengawasKiri = [];
-
     /*
     |--------------------------------------------------------------------------
-    | DATA SEBELAH KIRI
+    | DATA SEBELAH KIRI - TPATPT2
     |--------------------------------------------------------------------------
     */
 
-    // Baris 1
-    $listPengawasKiri[] = 'ANEX FACHRIAN ST. MT.';
+    $listPengawasKiri = [];
+
+    // Baris 1 selalu ANEX
+    $listPengawasKiri[] = [
+        'no' => 1,
+        'nama' => 'ANEX FACHRIAN ST. MT.'
+    ];
 
     // Baris 2 sengaja dikosongkan
-    $listPengawasKiri[] = '';
+    $listPengawasKiri[] = [
+        'no' => 2,
+        'nama' => ''
+    ];
 
-    // Baris selanjutnya: data dari TPATPT2
-    $timPenilai = $surat->tpatpt2->timpenilai ?? null;
+    /*
+    |--------------------------------------------------------------------------
+    | Ambil pengawas dari TPATPT2
+    |--------------------------------------------------------------------------
+    */
 
-    if (!empty($timPenilai)) {
-        $listPengawasKiri[] = $timPenilai;
+    for ($i = 1; $i <= 12; $i++) {
+
+        $pengawas = $surat->tpatpt2->{'pengawas'.$i} ?? null;
+
+        $nama = $pengawas->namalengkap ?? null;
+
+        if (!empty($nama)) {
+            $listPengawasKiri[] = [
+                'no' => count($listPengawasKiri) + 1,
+                'nama' => $nama
+            ];
+        }
     }
 
 
     /*
     |--------------------------------------------------------------------------
-    | DATA SEBELAH KANAN
-    | Ambil hanya data TPATPT yang benar-benar ada
+    | DATA SEBELAH KANAN - TPATPT
     |--------------------------------------------------------------------------
     */
 
+    $listTPA = [];
+
     for ($i = 1; $i <= 12; $i++) {
-        $nama = $surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null;
+
+        $pengawas = $surat->tpatpt->{'pengawas'.$i} ?? null;
+
+        $nama = $pengawas->namalengkap ?? null;
 
         if (!empty($nama)) {
-            $listTPA[] = $nama;
+            $listTPA[] = [
+                'no' => count($listTPA) + 1,
+                'nama' => $nama
+            ];
         }
     }
 
@@ -413,7 +438,6 @@ th {
     |--------------------------------------------------------------------------
     | JUMLAH BARIS
     |--------------------------------------------------------------------------
-    | Mengikuti jumlah data terbanyak antara kiri dan kanan
     */
 
     $jumlahBaris = max(
@@ -422,13 +446,15 @@ th {
     );
 @endphp
 
+
 <p class="force-times">
     <strong style="margin-top: 5px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
         Catatan:
     </strong>
 </p>
 
-<div class="force-times"
+<div
+    class="force-times"
     style="
         border: 1px solid #000;
         min-height: {{ 120 + max(0, 12 - $jumlahBaris) * 20 }}px;
@@ -436,95 +462,168 @@ th {
         margin-top: -15px;
         font-size: 14px;
         font-family: 'Arial', Times, sans-serif;
-    ">
+    "
+>
 </div>
 
 <br>
 
+
 <!-- Tabel Tanda Tangan -->
-<table class="force-times"
+<table
+    class="force-times"
     style="
         width: 100%;
         border-collapse: collapse;
         font-size: 14px;
         margin-top: -15px;
-    ">
-
+    "
+>
     <thead>
         <tr>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+
+            <th style="
+                border: 1px solid #000;
+                text-align: center;
+                padding: 3px;
+                width: 125px;
+                font-size: 14px;
+                font-family: 'Arial', Times, sans-serif;
+            ">
                 Pemohon
             </th>
 
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+            <th style="
+                border: 1px solid #000;
+                text-align: center;
+                padding: 3px;
+                font-size: 14px;
+                font-family: 'Arial', Times, sans-serif;
+            ">
                 Pengawas
             </th>
 
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+            <th style="
+                border: 1px solid #000;
+                text-align: center;
+                padding: 3px;
+                font-size: 14px;
+                font-family: 'Arial', Times, sans-serif;
+            ">
                 TTD
             </th>
 
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+            <th style="
+                border: 1px solid #000;
+                text-align: center;
+                padding: 3px;
+                font-size: 14px;
+                font-family: 'Arial', Times, sans-serif;
+            ">
                 Nama TPA/TPT
             </th>
 
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+            <th style="
+                border: 1px solid #000;
+                text-align: center;
+                padding: 3px;
+                font-size: 14px;
+                font-family: 'Arial', Times, sans-serif;
+            ">
                 TTD
             </th>
+
         </tr>
     </thead>
 
+
     <tbody>
+
         @for ($i = 0; $i < $jumlahBaris; $i++)
+
             <tr>
 
                 {{-- PEMOHON --}}
                 @if ($i === 0)
+
                     <td
                         rowspan="{{ $jumlahBaris }}"
-                        style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;"
+                        style="
+                            border: 1px solid #000;
+                            padding: 3px;
+                            font-size: 14px;
+                            font-family: 'Arial', Times, sans-serif;
+                        "
                     >
                     </td>
+
                 @endif
 
 
-                {{-- PENGAWAS SEBELAH KIRI --}}
-                <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
-                    @if ($i === 0)
-                        1. {{ $listPengawasKiri[0] }}
+                {{-- PENGAWAS TPATPT2 --}}
+                <td style="
+                    border: 1px solid #000;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                ">
 
-                    @elseif ($i === 1)
-                        2.
+                    @if (isset($listPengawasKiri[$i]))
 
-                    @elseif (isset($listPengawasKiri[$i]))
-                        {{ $i + 1 }}. {{ $listPengawasKiri[$i] }}
+                        {{ $listPengawasKiri[$i]['no'] }}.
+                        {{ $listPengawasKiri[$i]['nama'] }}
+
                     @endif
+
                 </td>
 
 
                 {{-- TTD PENGAWAS --}}
-                <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+                <td style="
+                    border: 1px solid #000;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                ">
                 </td>
 
 
-                {{-- DATA TPA/TPT SEBELAH KANAN --}}
-                <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+                {{-- TPA/TPT --}}
+                <td style="
+                    border: 1px solid #000;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                ">
+
                     @if (isset($listTPA[$i]))
-                        {{ $i + 1 }}. {{ $listTPA[$i] }}
+
+                        {{ $listTPA[$i]['no'] }}.
+                        {{ $listTPA[$i]['nama'] }}
+
                     @endif
+
                 </td>
 
 
                 {{-- TTD TPA/TPT --}}
-                <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Arial', Times, sans-serif;">
+                <td style="
+                    border: 1px solid #000;
+                    padding: 3px;
+                    font-size: 14px;
+                    font-family: 'Arial', Times, sans-serif;
+                ">
                 </td>
 
             </tr>
+
         @endfor
+
     </tbody>
+
 </table>
 
-
+{{-- ----------------------------------------------------- --}}
 
                                 </div>
                             </div>
