@@ -1327,11 +1327,16 @@ Route::post('/updatedatamepnew/{id}', [PbgslfController::class, 'updatedatamepne
 
 // PERBAIKAN TPA TPT
 Route::get('/updatedatatpatpt/{id}', [PbgslfController::class, 'updatedatatpatpt'])->middleware('auth')->name('updatedatatpatpt');
+Route::get('/updatedatatpatpt2/{id}', [PbgslfController::class, 'updatedatatpatpt2'])->middleware('auth')->name('updatedatatpatpt2');
 // Route::post('/bepbgtpatptupdatenew/{id}', [PbgslfController::class, 'bepbgtpatptupdatenew'])->middleware('auth')->name('bepbgtpatptupdatenew');
 
 Route::put('/bepbgtpatptupdatenew/{id}', [PbgslfController::class, 'bepbgtpatptupdatenew'])
     ->middleware('auth')
     ->name('bepbgtpatptupdatenew');
+
+Route::put('/bepbgtpatptupdatenew2/{id}', [PbgslfController::class, 'bepbgtpatptupdatenew2'])
+    ->middleware('auth')
+    ->name('bepbgtpatptupdatenew2');
 
 // Route::post('/updatedatatpatptnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
 

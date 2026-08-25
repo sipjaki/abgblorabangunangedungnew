@@ -4947,6 +4947,26 @@ public function updatedatatpatpt($id)
     ]);
 }
 
+public function updatedatatpatpt2($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = tpatpt2::find($id);
+        $pengawasList = pengawasatpt::all();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.11_tpatpt.05_updatetpatpt', [
+        'title' => 'Perbaikan Data Penugasan TPA TPT',
+        'data' => $databantuanteknis,
+        'pengawasList' => $pengawasList,
+
+        'user' => Auth::user()
+    ]);
+}
+
 public function bepbgtpatptupdatenew(Request $request)
 {
     $validated = $request->validate([
@@ -5000,6 +5020,62 @@ public function bepbgtpatptupdatenew(Request $request)
     ]);
 
     session()->flash('update', 'Perbaikan Penugasan TPA/TPT berhasil diperbarui.');
+    return redirect()->route('bepbgtpatpt', ['id' => $validated['pbgslfbangunan_id']]);
+}
+
+public function bepbgtpatptupdatenew2(Request $request)
+{
+    $validated = $request->validate([
+        'id' => 'required|string',
+        'pbgslfbangunan_id' => 'required|string',
+        'timpenilai' => 'nullable|string',
+        'nosk' => 'nullable|string',
+        'pengawas1_id' => 'nullable|string',
+        'pengawas2_id' => 'nullable|string',
+        'pengawas3_id' => 'nullable|string',
+        'pengawas4_id' => 'nullable|string',
+        'pengawas5_id' => 'nullable|string',
+        'pengawas6_id' => 'nullable|string',
+        'pengawas7_id' => 'nullable|string',
+        'pengawas8_id' => 'nullable|string',
+        'pengawas9_id' => 'nullable|string',
+        'pengawas10_id' => 'nullable|string',
+        'pengawas11_id' => 'nullable|string',
+        'pengawas12_id' => 'nullable|string',
+    ], [
+        'pbgslfbangunan_id.required' => 'ID Bangunan wajib diisi.',
+        'pbgslfbangunan_id.exists' => 'ID Bangunan tidak ditemukan.',
+
+        'timpenilai.required' => 'Tim Penilai wajib dipilih.',
+        'nosk.required' => 'Nomor SK wajib diisi.',
+        'nosk.max' => 'Nomor SK maksimal 255 karakter.',
+
+        'pengawas1_id.required' => 'Wajib dipilih.',
+    ]);
+
+    // cari data berdasarkan id
+    $tpatpt = tpatpt2::findOrFail($validated['id']);
+
+    // update data
+    $tpatpt->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        'timpenilai' => $validated['timpenilai'],
+        'nosk' => $validated['nosk'],
+        'pengawas1_id' => $validated['pengawas1_id'] ?? null,
+        'pengawas2_id' => $validated['pengawas2_id'] ?? null,
+        'pengawas3_id' => $validated['pengawas3_id'] ?? null,
+        'pengawas4_id' => $validated['pengawas4_id'] ?? null,
+        'pengawas5_id' => $validated['pengawas5_id'] ?? null,
+        'pengawas6_id' => $validated['pengawas6_id'] ?? null,
+        'pengawas7_id' => $validated['pengawas7_id'] ?? null,
+        'pengawas8_id' => $validated['pengawas8_id'] ?? null,
+        'pengawas9_id' => $validated['pengawas9_id'] ?? null,
+        'pengawas10_id' => $validated['pengawas10_id'] ?? null,
+        'pengawas11_id' => $validated['pengawas11_id'] ?? null,
+        'pengawas12_id' => $validated['pengawas12_id'] ?? null,
+    ]);
+
+    session()->flash('update', 'Perbaikan Penugasan TPA/TPT berhasil diperbarui kolom kiri');
     return redirect()->route('bepbgtpatpt', ['id' => $validated['pbgslfbangunan_id']]);
 }
 

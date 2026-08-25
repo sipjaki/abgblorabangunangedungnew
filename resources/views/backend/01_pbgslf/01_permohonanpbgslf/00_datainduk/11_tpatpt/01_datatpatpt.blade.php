@@ -280,7 +280,7 @@
                                                                                   <a href="/updatedatatpatpt/{{ $item->id }}">
                                                                                     <p class="button-berkas">
                                                                                         <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                                                                        Perbaikan Penugasan TPA/TPT
+                                                                                        Perbaikan Penugasan TPA/TPT Kolom Kanan ?
                                                                                     </p>
                                                                                 </a>
                         {{-- <div class="col-12 text-end mt-2">
@@ -300,12 +300,12 @@
         <div class="col-12 mt-4">
             <div class="alert alert-warning text-center fw-semibold">
                 <i class="bi bi-folder-x me-2 text-danger"></i>
-                Belum Ada Pemilihan TPA TPT!
+                Belum Ada Pemilihan TPA TPT Kolom Kanan !
             </div>
 
             <div class="text-center mt-4">
                 <a href="{{ route('bepbgtpatptcreate', $data->id) }}" class="button-baru">
-                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA
+                    <i class="bi bi-plus-circle me-1"></i> Buat TPT/TPA Bagian I Kolom Kanan
                 </a>
             </div>
         </div>
@@ -394,10 +394,10 @@ function previewPDF(event, containerId, iframeId, messageId) {
                             @endforeach
 
 
-                                                                                  <a href="/updatedatatpatpt/{{ $item->id }}">
+                                                                                  <a href="/updatedatatpatpt2/{{ $item->id }}">
                                                                                     <p class="button-berkas">
                                                                                         <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                                                                        Perbaikan Penugasan TPA/TPT
+                                                                                        Perbaikan Penugasan TPA/TPT Kolom Kiri ? 
                                                                                     </p>
                                                                                 </a>
                         {{-- <div class="col-12 text-end mt-2">
@@ -423,13 +423,13 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
     <div class="alert alert-warning d-inline-flex align-items-center justify-content-center fw-semibold px-4 py-3">
         <i class="bi bi-folder-x me-2 text-danger"></i>
-        Belum Ada Pemilihan TPA/TPT!
+        Belum Ada Pemilihan TPA TPT Kolom Kiri !
     </div>
 
     <div class="mt-3">
         <a href="{{ route('bepbgtpatptcreate2', $data->id) }}" class="button-baru">
             <i class="bi bi-plus-circle me-1"></i>
-            Buat TPT/TPA Bagian 2
+            Buat TPT/TPA Bagian II Kolom Kiri
         </a>
     </div>
 </div>
