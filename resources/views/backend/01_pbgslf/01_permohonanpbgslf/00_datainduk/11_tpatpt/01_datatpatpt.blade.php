@@ -356,9 +356,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                         </form>
 
-                    </div>
-                 </div>
-
 
 penugasan tpa baru dan tpt
         <div class="col-12">
@@ -369,6 +366,10 @@ penugasan tpa baru dan tpt
                 </div>
             </div>
         </div>
+
+
+                    </div>
+                 </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
