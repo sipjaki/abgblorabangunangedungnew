@@ -377,7 +377,7 @@ Route::post('/permohonankrkagama/create', [KrkController::class, 'permohonankrka
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN
 Route::get('/permohonankrksosbud', [KrkController::class, 'permohonankrksosbud'])->middleware('auth')->name('permohonan.krksosbud');
-Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrksosbudcreate'])->name('permohonan.krksosbudcreate');
+Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrksosbudcreate'])->middleware('auth')->name('permohonan.krksosbudcreate');
 
 
 // =================================================================================================================================
