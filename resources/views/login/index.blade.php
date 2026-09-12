@@ -19,30 +19,27 @@
            RESET & VARIABEL
         ============================================================ */
         :root {
-            /* Primary SIPD Blue */
-            --primary: #0D6EFD;
-            --primary-dark: #0B5ED7;
+            /* --primary: #0D6EFD;
+            --primary-dark: #0B5ED7; */
+            --primary: #0B1F3A;
+            --primary-dark: #061426;
             --primary-light: #E6F0FF;
             --primary-soft: #F0F5FF;
 
-            /* Neutral */
             --white: #FFFFFF;
             --bg-page: #F8FAFC;
             --bg-soft: #F8FAFC;
             --border: #E9EDF4;
             --border-hover: #D0D8E3;
 
-            /* Text */
             --text-dark: #1A2B4A;
             --text-medium: #4A5A72;
             --text-muted: #6B7A93;
 
-            /* Status */
             --error: #DC3545;
             --error-bg: #FEF2F2;
             --success: #198754;
 
-            /* Shadow */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.04);
             --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
@@ -73,7 +70,7 @@
         }
 
         /* ============================================================
-           BACKGROUND DECORATION (SUBTLE)
+           BACKGROUND DECORATION – LENGKAP & ELEGAN
         ============================================================ */
         .bg-decoration {
             position: fixed;
@@ -81,35 +78,221 @@
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
-            background: linear-gradient(135deg, #FAFBFD 0%, #F1F5FB 100%);
+            background:
+                linear-gradient(135deg, #F8FAFC 0%, #EEF4FB 50%, #E8F0FE 100%);
         }
 
-        .bg-decoration .circle {
+        /* --- Pola Grid Halus --- */
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(13, 110, 253, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 110, 253, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+
+        /* --- Pola Titik-Titik --- */
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(13, 110, 253, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.6;
+        }
+
+        /* --- Blob / Lingkaran Besar --- */
+        .blob {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(13, 110, 253, 0.06) 0%, transparent 70%);
+            filter: blur(2px);
         }
 
-        .bg-decoration .circle-1 {
-            width: 500px;
-            height: 500px;
-            top: -200px;
-            right: -150px;
+        .blob-1 {
+            width: 520px;
+            height: 520px;
+            top: -220px;
+            right: -180px;
+            background: radial-gradient(circle, rgba(13, 110, 253, 0.12) 0%, rgba(13, 110, 253, 0.02) 60%, transparent 80%);
+            animation: floatSlow 20s ease-in-out infinite;
         }
 
-        .bg-decoration .circle-2 {
-            width: 400px;
-            height: 400px;
-            bottom: -150px;
-            left: -100px;
+        .blob-2 {
+            width: 420px;
+            height: 420px;
+            bottom: -180px;
+            left: -140px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.10) 0%, rgba(59, 130, 246, 0.02) 60%, transparent 80%);
+            animation: floatSlow 25s ease-in-out infinite reverse;
         }
 
-        .bg-decoration .circle-3 {
-            width: 250px;
-            height: 250px;
-            top: 40%;
-            left: 15%;
-            background: radial-gradient(circle, rgba(13, 110, 253, 0.04) 0%, transparent 70%);
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            top: 45%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(13, 110, 253, 0.08) 0%, transparent 70%);
+            animation: floatSlow 18s ease-in-out infinite;
+        }
+
+        .blob-4 {
+            width: 260px;
+            height: 260px;
+            bottom: 15%;
+            right: 12%;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.10) 0%, transparent 70%);
+            animation: floatSlow 22s ease-in-out infinite reverse;
+        }
+
+        /* --- Shape Geometris --- */
+        .shape {
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .shape-circle {
+            border: 2px solid rgba(13, 110, 253, 0.12);
+            border-radius: 50%;
+        }
+
+        .shape-square {
+            border: 2px solid rgba(13, 110, 253, 0.10);
+            border-radius: 12px;
+            transform: rotate(45deg);
+        }
+
+        .shape-ring {
+            border: 3px dashed rgba(13, 110, 253, 0.10);
+            border-radius: 50%;
+            animation: spinSlow 40s linear infinite;
+        }
+
+        .shape-ring-1 {
+            width: 180px;
+            height: 180px;
+            top: 15%;
+            left: 8%;
+        }
+
+        .shape-ring-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 10%;
+            animation-direction: reverse;
+        }
+
+        .shape-circle-1 {
+            width: 24px;
+            height: 24px;
+            top: 25%;
+            right: 20%;
+            background: rgba(13, 110, 253, 0.15);
+            border: none;
+        }
+
+        .shape-circle-2 {
+            width: 16px;
+            height: 16px;
+            bottom: 30%;
+            left: 20%;
+            background: rgba(96, 165, 250, 0.2);
+            border: none;
+        }
+
+        .shape-circle-3 {
+            width: 10px;
+            height: 10px;
+            top: 60%;
+            right: 8%;
+            background: rgba(13, 110, 253, 0.2);
+            border: none;
+        }
+
+        .shape-square-1 {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            left: 5%;
+        }
+
+        .shape-square-2 {
+            width: 40px;
+            height: 40px;
+            top: 10%;
+            right: 30%;
+        }
+
+        /* --- Garis Diagonal Dekoratif --- */
+        .bg-line {
+            position: absolute;
+            width: 200%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.08), transparent);
+            transform: rotate(-30deg);
+        }
+
+        .bg-line-1 {
+            top: 20%;
+            left: -50%;
+        }
+
+        .bg-line-2 {
+            bottom: 25%;
+            right: -50%;
+            transform: rotate(-30deg);
+        }
+
+        /* --- Ikon Dekoratif Transparan --- */
+        .bg-icon {
+            position: absolute;
+            color: rgba(13, 110, 253, 0.06);
+            font-size: 8rem;
+            pointer-events: none;
+        }
+
+        .bg-icon-1 {
+            top: 8%;
+            left: -20px;
+            transform: rotate(-15deg);
+        }
+
+        .bg-icon-2 {
+            bottom: 5%;
+            right: -10px;
+            transform: rotate(15deg);
+            font-size: 10rem;
+        }
+
+        .bg-icon-3 {
+            top: 45%;
+            right: 5%;
+            font-size: 5rem;
+            opacity: 0.5;
+        }
+
+        .bg-icon-4 {
+            bottom: 40%;
+            left: 2%;
+            font-size: 4rem;
+            opacity: 0.5;
+        }
+
+        /* --- Animasi --- */
+        @keyframes floatSlow {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(20px, -30px) scale(1.05);
+            }
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* ============================================================
@@ -123,7 +306,9 @@
         }
 
         .login-card {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border);
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
@@ -394,54 +579,82 @@
         /* ============================================================
            RESPONSIVE
         ============================================================ */
+        @media (max-width: 768px) {
+            .bg-icon { font-size: 5rem; }
+            .bg-icon-2 { font-size: 6rem; }
+            .blob-1 { width: 350px; height: 350px; }
+            .blob-2 { width: 300px; height: 300px; }
+            .shape-ring-1 { width: 120px; height: 120px; }
+            .shape-ring-2 { width: 80px; height: 80px; }
+        }
+
         @media (max-width: 576px) {
-            body {
-                padding: 12px;
-            }
+            body { padding: 12px; }
+            .bg-icon { display: none; }
+            .bg-line { display: none; }
+            .blob { filter: blur(1px); }
+            .blob-1 { width: 280px; height: 280px; top: -120px; right: -100px; }
+            .blob-2 { width: 240px; height: 240px; bottom: -100px; left: -80px; }
+            .blob-3, .blob-4 { display: none; }
 
-            .login-card {
-                border-radius: 16px;
-            }
-
-            .login-header {
-                padding: 24px 20px 20px;
-            }
-
-            .logo-wrapper img {
-                height: 52px;
-            }
-
-            .login-title {
-                font-size: 1rem;
-            }
-
-            .login-body {
-                padding: 24px 20px;
-            }
-
-            .form-title {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-
-            .login-footer .logo-img {
-                width: 80px;
-                height: 80px;
-            }
+            .login-card { border-radius: 16px; }
+            .login-header { padding: 24px 20px 20px; }
+            .logo-wrapper img { height: 52px; }
+            .login-title { font-size: 1rem; }
+            .login-body { padding: 24px 20px; }
+            .form-title { font-size: 0.9rem; margin-bottom: 20px; }
+            .login-footer .logo-img { width: 80px; height: 80px; }
         }
     </style>
 </head>
 
 <body>
 
-    {{-- Background Decoration --}}
+    {{-- ============================================================
+         BACKGROUND DECORATION
+    ============================================================ --}}
     <div class="bg-decoration">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-3"></div>
+
+        {{-- Pola Grid --}}
+        <div class="bg-grid"></div>
+
+        {{-- Pola Titik --}}
+        <div class="bg-dots"></div>
+
+        {{-- Blob / Lingkaran Besar --}}
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+
+        {{-- Ring Berputar --}}
+        <div class="shape shape-ring shape-ring-1"></div>
+        <div class="shape shape-ring shape-ring-2"></div>
+
+        {{-- Kotak Geometris --}}
+        <div class="shape shape-square shape-square-1"></div>
+        <div class="shape shape-square shape-square-2"></div>
+
+        {{-- Titik Kecil --}}
+        <div class="shape shape-circle shape-circle-1"></div>
+        <div class="shape shape-circle shape-circle-2"></div>
+        <div class="shape shape-circle shape-circle-3"></div>
+
+        {{-- Garis Diagonal --}}
+        <div class="bg-line bg-line-1"></div>
+        <div class="bg-line bg-line-2"></div>
+
+        {{-- Ikon Dekoratif Transparan --}}
+        <i class="fas fa-building bg-icon bg-icon-1"></i>
+        <i class="fas fa-city bg-icon bg-icon-2"></i>
+        <i class="fas fa-compass-drafting bg-icon bg-icon-3"></i>
+        <i class="fas fa-ruler-combined bg-icon bg-icon-4"></i>
+
     </div>
 
-    {{-- Login Card --}}
+    {{-- ============================================================
+         LOGIN CARD
+    ============================================================ --}}
     <div class="login-wrapper">
         <div class="login-card">
 
@@ -450,14 +663,14 @@
                 <div class="logo-wrapper">
                     <img src="/assets/abgblora/logo/logokabblora.png" alt="Logo Kabupaten Blora">
                 </div>
-                <h3 class="login-title">Bangunan Gedung</h3>
-                <p class="login-subtitle">Dinas Pekerjaan Umum dan Penataan Ruang</p>
+                <h3 class="login-title">ABG Blora Bangunan Gedung</h3>
+                {{-- <p class="login-subtitle">Dinas Pekerjaan Umum dan Penataan Ruang</p> --}}
             </div>
 
             {{-- BODY --}}
             <div class="login-body">
 
-                <h2 class="form-title">Halaman Login</h2>
+                <h2 class="form-title">Halaman Login !</h2>
 
                 <form action="/login" method="POST" id="loginForm">
                     @csrf
@@ -583,14 +796,12 @@
                     const email = document.getElementById('email').value.trim();
                     const password = document.getElementById('password').value.trim();
 
-                    // Cek kosong
                     if (!email || !password) {
                         e.preventDefault();
                         alert('Harap isi email dan kata sandi!');
                         return false;
                     }
 
-                    // Cek format email
                     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailPattern.test(email)) {
                         e.preventDefault();
