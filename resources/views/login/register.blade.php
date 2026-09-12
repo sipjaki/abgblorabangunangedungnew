@@ -19,8 +19,8 @@
            RESET & VARIABEL
         ============================================================ */
         :root {
-            --primary: #0D6EFD;
-            --primary-dark: #0B5ED7;
+            --primary: #1A3A6B;
+            --primary-dark: #0F2747;
             --primary-light: #E6F0FF;
             --primary-soft: #F0F5FF;
 
@@ -568,12 +568,13 @@
         <div class="registration-card">
 
             {{-- HEADER --}}
+
             <div class="registration-header">
                 <div class="logo-wrapper">
-                    <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora">
+                    <img src="/assets/abgblora/logo/logokabblora.png" alt="Logo Kabupaten Blora">
                 </div>
-                <h3 class="registration-title">Bangunan Gedung</h3>
-                <p class="registration-subtitle">Dinas Pekerjaan Umum dan Penataan Ruang</p>
+                <h3 class="login-title">ABG Blora Bangunan Gedung</h3>
+                {{-- <p class="registration-subtitle">Dinas Pekerjaan Umum dan Penataan Ruang</p> --}}
             </div>
 
             {{-- BODY --}}
@@ -734,8 +735,23 @@
 
                 </form>
 
+                     <div class="login-footer">
+                    <img
+                        src="{{ asset('/assets/abgblora/logo/dpuprblora.png') }}"
+                        alt="Logo DPUPR Blora"
+                        class="logo-img"
+                    >
+                    <p>
+                        Dinas Pekerjaan Umum dan Penataan Ruang<br>
+                        Kabupaten Blora, Provinsi Jawa Tengah
+                    </p>
+                    <p class="copyright">
+                        &copy; {{ date('Y') }} ABG Blora Bangunan Gedung
+                    </p>
+                </div>
+
                 {{-- FOOTER --}}
-                <div class="registration-footer">
+                {{-- <div class="registration-footer">
                     <div class="footer-logos">
                         <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
                         <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
@@ -748,7 +764,7 @@
                     <p class="copyright">
                         &copy; {{ date('Y') }} ABG Blora Bangunan Gedung
                     </p>
-                </div>
+                </div> --}}
 
             </div> {{-- /registration-body --}}
         </div> {{-- /registration-card --}}
