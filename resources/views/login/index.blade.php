@@ -544,8 +544,6 @@
                     <a href="/daftar">Daftar sekarang</a>
                 </div>
             </form>
-        </div>
-
 
             <div class="login-footer" style="margin-top: -30px;">
                 <div class="logo-wrapper">
@@ -564,7 +562,7 @@
                     &copy; {{ date('Y') }} ABG Blora Bangunan Gedung
                 </p>
             </div>
-
+        </div>
     </div>
 
     <!-- Footer -->
