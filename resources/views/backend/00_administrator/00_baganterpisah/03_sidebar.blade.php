@@ -1002,15 +1002,14 @@
             <!-- Tracking PBG -->
             <li class="nav-item">
              <a href="#" class="nav-link">
-    <i class="bi bi-search nav-icon" style="color: white;"></i>
-    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        Tracking Berkas
-        <i class="nav-arrow bi bi-chevron-right" style="color: white;"></i>
-    </p>
-</a>
+                <i class="bi bi-search nav-icon" style="color: white;"></i>
+                <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                    Tracking Berkas
+                    <i class="nav-arrow bi bi-chevron-right" style="color: white;"></i>
+                </p>
+                </a>
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-
 
     <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
@@ -2082,6 +2081,30 @@
 @endcan
 
 {{-- ====================================================================================================================================== --}}
+
+@canany(['akunlainnya'])
+
+       <li class="nav-item">
+             <a href="#" class="nav-link">
+                <i class="bi bi-search nav-icon" style="color: white;"></i>
+                <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                    GSB & GSP
+                    <i class="nav-arrow bi bi-chevron-right" style="color: white;"></i>
+                </p>
+                </a>
+
+                <ul class="nav nav-treeview" style="margin-left: 15px;">
+                <li class="nav-item">
+                        <a href="/datagsbblora" class="nav-link">
+                            <i class="bi bi-file-earmark-text nav-icon" style="color: white;"></i>
+                            <p style="color: white; margin-left: 8px;">GSB & GSP </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+@endcanany
 
 
             <li class="nav-header" style="color: white;">Logout</li>

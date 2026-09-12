@@ -130,23 +130,11 @@ th {
                      </div> --}}
                  </div>
                  <!-- /.card-header -->
-                 <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+                  <div class="card-header">
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
 
+                </div>
 
 
 
@@ -223,7 +211,7 @@ th {
 
 <div class="col-md-6 mb-4">
     <label class="form-label">
-        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Dokumen Gambar Permohonan (PDF)
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Dokumen Gambar Permohonan (PDF) | Max 25 MB
     </label>
     <input type="file" name="dokumengambar" accept="application/pdf"
            class="form-control @error('dokumengambar') is-invalid @enderror"
@@ -241,7 +229,7 @@ th {
 {{-- BERITA ACARA SIDANG --}}
 <div class="col-md-6 mb-4">
     <label class="form-label">
-        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Berita Acara Sidang (PDF)
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Berita Acara Sidang (PDF) | Max 25 MB
     </label>
     <input type="file" name="beritaacarasidang" accept="application/pdf"
            class="form-control @error('beritaacarasidang') is-invalid @enderror"
@@ -259,7 +247,7 @@ th {
 {{-- FOTO 1 --}}
 <div class="col-md-6 mb-4">
     <label class="form-label">
-        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 1
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 1 | Max 25 MB
     </label>
     <input type="file" name="foto1" accept="image/*"
            class="form-control @error('foto1') is-invalid @enderror"
@@ -279,7 +267,7 @@ th {
 {{-- FOTO 2 --}}
 <div class="col-md-6 mb-4">
     <label class="form-label">
-        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 2
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 2 | Max 25 MB
     </label>
     <input type="file" name="foto2" accept="image/*"
            class="form-control @error('foto2') is-invalid @enderror"

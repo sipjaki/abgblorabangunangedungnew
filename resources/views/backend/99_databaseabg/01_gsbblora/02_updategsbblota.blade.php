@@ -193,6 +193,24 @@
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
+
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="gsb">
+            <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i> Garis Sempadan Pagar (m)
+        </label>
+        <input
+            type="number"
+            step="0.01"
+            id="gsb"
+            name="gsb"
+            value="{{ old('gsp', $data->gsp ?? '') }}"
+            class="form-control @error('gsp') is-invalid @enderror"
+            placeholder="Masukkan GSB dalam meter"
+        />
+        @error('gsb')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 </div>
 </div>
 

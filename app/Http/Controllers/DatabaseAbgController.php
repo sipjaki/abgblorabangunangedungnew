@@ -110,17 +110,21 @@ public function datagsbbloraupdatenew(Request $request, $id)
         'ruasjalan' => 'required|string|max:255',
         'jenisjalan' => 'required|string|max:255',
         'gsb' => 'required|numeric',
-    ], [
-        'ruasjalan.required' => 'Ruas Jalan wajib diisi!',
-        'jenisjalan.required' => 'Jenis Jalan wajib diisi!',
-        'gsb.required' => 'Garis Sempadan Bangunan wajib diisi!',
-        'gsb.numeric' => 'GSB harus berupa angka.',
+        'gsp' => 'required|string',
+        ], [
+        // 'ruasjalan.required' => 'Ruas Jalan wajib diisi!',
+        // 'jenisjalan.required' => 'Jenis Jalan wajib diisi!',
+        // 'gsb.required' => 'Garis Sempadan Bangunan wajib diisi!',
+        // 'gsb.numeric' => 'GSB harus berupa angka.',
+        // 'gsp.required' => 'Garis Sempadan Pagar wajib diisi!',
+        // 'gsp.numeric' => 'GSB harus berupa angka.',
     ]);
 
     // Update data input
     $bantuan->ruasjalan = $request->ruasjalan;
     $bantuan->jenisjalan = $request->jenisjalan;
     $bantuan->gsb = $request->gsb;
+    $bantuan->gsp = $request->gsp;
 
     // Simpan perubahan
     $bantuan->save();

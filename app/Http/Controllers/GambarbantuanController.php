@@ -515,22 +515,22 @@ public function bebantuangambaruploadnew(Request $request, $id)
 
     // Validasi semua berkas (boleh salah satu saja yang dikirim)
     $request->validate([
-        'dokumengambar' => 'nullable|mimes:pdf|max:7048',
-        'beritaacarasidang' => 'nullable|mimes:pdf|max:7048',
-        'foto1' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
-        'foto2' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
+        'dokumengambar' => 'nullable|mimes:pdf|max:25048',
+        'beritaacarasidang' => 'nullable|mimes:pdf|max:25048',
+        'foto1' => 'nullable|image|mimes:jpg,jpeg,png|max:25048',
+        'foto2' => 'nullable|image|mimes:jpg,jpeg,png|max:25048',
     ], [
         'dokumengambar.mimes' => 'Dokumen Gambar harus berupa file PDF.',
-        'dokumengambar.max' => 'Ukuran maksimum untuk Dokumen Gambar adalah 7MB.',
+        'dokumengambar.max' => 'Ukuran maksimum untuk Dokumen Gambar adalah 25MB.',
 
         'beritaacarasidang.mimes' => 'Berita Acara Sidang harus berupa file PDF.',
-        'beritaacarasidang.max' => 'Ukuran maksimum untuk Berita Acara Sidang adalah 7MB.',
+        'beritaacarasidang.max' => 'Ukuran maksimum untuk Berita Acara Sidang adalah 25MB.',
 
         'foto1.mimes' => 'Foto 1 harus berupa file JPG, JPEG, atau PNG.',
-        'foto1.max' => 'Ukuran maksimum untuk Foto 1 adalah 5MB.',
+        'foto1.max' => 'Ukuran maksimum untuk Foto 1 adalah 25MB.',
 
         'foto2.mimes' => 'Foto 2 harus berupa file JPG, JPEG, atau PNG.',
-        'foto2.max' => 'Ukuran maksimum untuk Foto 2 adalah 5MB.',
+        'foto2.max' => 'Ukuran maksimum untuk Foto 2 adalah 25MB.',
     ]);
 
     // Upload dokumengambar

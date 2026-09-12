@@ -72,6 +72,10 @@ class AuthServiceProvider extends ServiceProvider
             return in_array($user->statusadmin->status, ['admin', 'super_admin', 'dinas', 'pemohon']);
         });
 
+        Gate::define('akunlainnya', function (User $user) {
+            return in_array($user->statusadmin->status, ['akunlainnya']);
+        });
+
 
     }
 }

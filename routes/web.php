@@ -379,7 +379,6 @@ Route::post('/permohonankrkagama/create', [KrkController::class, 'permohonankrka
 Route::get('/permohonankrksosbud', [KrkController::class, 'permohonankrksosbud'])->middleware('auth')->name('permohonan.krksosbud');
 Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrksosbudcreate'])->middleware('auth')->name('permohonan.krksosbudcreate');
 
-
 // =================================================================================================================================
 // MENU BACKEND ABG BLORA BANGUNAN GEDUNG KABUPATEN BLORA
 // MENU 06 KRK BANGUNAN GEDUNG

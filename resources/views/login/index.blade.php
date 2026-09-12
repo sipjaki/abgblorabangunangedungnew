@@ -467,14 +467,14 @@
         <!-- Header -->
         <div class="login-header">
             <div class="logo-container">
-                <img src="/assets/abgblora/logo/bangunangedungpng.png" alt="ABG Blora" class="logo" style="height: 100px;">
+                <img src="/assets/abgblora/logo/logokabblora.png" alt="ABG Blora" class="logo" style="height: 80px;">
             </div>
-            <h1 class="title">Bangunan Gedung</h1>
+            <h3 class="title">Bangunan Gedung</h3>
         </div>
 
         <!-- Form -->
         <div class="form-container">
-            <h2 class="form-title">Silahkan Login !</h2>
+            <h2 class="form-title">Halaman Login !</h2>
 
             <form action="/login" method="POST">
                 @csrf
@@ -545,10 +545,30 @@
                 </div>
             </form>
         </div>
+
+
+            <div class="login-footer" style="margin-top: -30px;">
+                <div class="logo-wrapper">
+                    <img
+                        src="{{ asset('/assets/abgblora/logo/dpuprblora.png') }}"
+                        alt="Logo Kabupaten Blora"
+                        class="logo-img"
+                        style="width: 140px; height: 140px; object-fit: contain;"
+                    >
+                </div>
+                <p style="margin-top:-20px;">
+                    Dinas Pekerjaan Umum dan Penataan Ruang<br>
+                    Kabupaten Blora, Provinsi Jawa Tengah
+                </p>
+                <p class="login-copyright">
+                    &copy; {{ date('Y') }} ABG Blora Bangunan Gedung
+                </p>
+            </div>
+
     </div>
 
     <!-- Footer -->
-    <div class="footer">
+    {{-- <div class="footer">
         <div class="footer-logos">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
             <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
@@ -558,7 +578,7 @@
             Dinas Pekerjaan Umum dan Penataan Ruang<br>
             Kabupaten Blora, Provinsi Jawa Tengah
         </div>
-    </div>
+    </div> --}}
 
     <script>
         // Toggle Password Visibility

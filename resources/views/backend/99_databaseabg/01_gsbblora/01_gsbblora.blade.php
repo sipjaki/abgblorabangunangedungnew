@@ -180,6 +180,7 @@
 <th ><i class="bi bi-signpost-split"></i> Ruas Jalan</th>
 <th ><i class="bi bi-diagram-3"></i> Jenis Jalan</th>
 <th ><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th>
+<th ><i class="bi bi-bounding-box"></i> Garis Sempadan Pagar </th>
 <th style="text-align: center;" ><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
@@ -192,6 +193,7 @@
 <td style="text-align: left;">{{ $item->ruasjalan ?? '-' }}</td>
 <td>{{ $item->jenisjalan ?? '-' }}</td>
 <td>{{ $item->gsb ?? '-' }} Meter </td>
+<td>{{ $item->gsp ?? '-' }} Meter </td>
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
