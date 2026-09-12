@@ -18,9 +18,8 @@
         /* ============================================================
            RESET & VARIABEL
         ============================================================ */
-        :root {
-            --primary: #1A3A6B;
-            --primary-dark: #0F2747;
+        :root {--primary: #2563B8;
+            --primary-dark: #1E40AF;
             --primary-light: #E6F0FF;
             --primary-soft: #F0F5FF;
 
@@ -422,6 +421,40 @@
             transform: translateY(0);
             box-shadow: 0 2px 8px rgba(13, 110, 253, 0.2);
         }
+
+           /* --- Login Footer --- */
+        .login-footer {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .login-footer .logo-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-footer .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .login-footer p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+
+        .login-footer .copyright {
+            font-size: 0.7rem;
+            color: #94A3B8;
+            margin-top: 8px;
+        }
+
 
         /* --- Login Link --- */
         .login-link {

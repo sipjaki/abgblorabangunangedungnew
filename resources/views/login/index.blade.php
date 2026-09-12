@@ -23,8 +23,8 @@
             --primary-dark: #0B5ED7; */
             /* --primary: #0B1F3A;
             --primary-dark: #061426; */
-            --primary: #1A3A6B;
-            --primary-dark: #0F2747;
+            --primary: #2563B8;
+            --primary-dark: #1E40AF;
             --primary-light: #E6F0FF;
             --primary-soft: #F0F5FF;
 
