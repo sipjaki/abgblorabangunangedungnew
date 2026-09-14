@@ -8858,5 +8858,54 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
 
         }
 
+
+       public function uploadBalasanAnalisa(Request $request, $id)
+{
+    // 1. Validasi file
+    $request->validate([
+        'file_pdf' => 'required|mimes:pdf|max:25600', // 25 MB = 25600 KB
+    ], [
+        'file_pdf.required' => 'File PDF wajib diupload.',
+        'file_pdf.mimes'    => 'File harus berformat PDF.',
+        'file_pdf.max'      => 'Ukuran file maksimal 25 MB.',
+    ]);
+
+    // 2. Cari data
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // 3. Tentukan folder di public/
+    $folder = public_path('balasan_analisa');
+
+    // Buat folder kalau belum ada
+    if (!file_exists($folder)) {
+        mkdir($folder, 0755, true);
+    }
+
+    // 4. Hapus file lama jika ada
+    if ($data->cadangan5) {
+        $oldFile = public_path($data->cadangan5); // misal: public/balasan_analisa/abc.pdf
+        if (file_exists($oldFile)) {
+            unlink($oldFile);
+        }
+    }
+
+    // 5. Upload file baru
+    $file    = $request->file('file_pdf');
+    $namaFile = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+    $file->move($folder, $namaFile);
+
+    // 6. Simpan path relatif ke database (relatif ke public/)
+    $data->cadangan5 = 'balasan_analisa/' . $namaFile;
+    $data->save();
+
+    // 7. Redirect balik
+    return redirect()
+        ->back()
+        ->with('success', 'Balasan Analisa berhasil diupload.');
+}
+
+
+
+
 }
 

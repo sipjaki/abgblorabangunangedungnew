@@ -103,6 +103,183 @@
                 </div>
             </div>
 
+            <div class="d-block">
+    @if($data->cadangan5)
+        <button type="button" class="button-berkas" onclick="showModalPreview()">
+            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Balasan Analisa
+        </button>
+    @else
+        <button type="button" class="button-baru" onclick="showModalBalasan()">
+            <i class="bi bi-upload me-1"></i> Balasan Analisa
+        </button>
+    @endif
+</div>
+
+{{-- ============================================ --}}
+{{-- MODAL 1: UPLOAD BALASAN ANALISA              --}}
+{{-- ============================================ --}}
+<div id="modalBalasan" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:90%; max-width:500px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); overflow:hidden;">
+
+        {{-- HEADER --}}
+        <div style="background:#f8f9fa; padding:20px; border-bottom:1px solid #e9ecef;">
+            <h5 style="margin:0; font-weight:600; color:#333; display:flex; align-items:center;">
+                <i class="bi bi-file-earmark-pdf-fill me-2" style="color:#dc3545;"></i>
+                Balasan Analisa
+            </h5>
+        </div>
+
+        {{-- FORM --}}
+        <form id="formBalasan"
+              action="{{ route('bebantekanalisarusak.uploadbalasan', $data->id) }}"
+              method="POST"
+              enctype="multipart/form-data">
+            @csrf
+
+            <div style="padding:25px;">
+                <label style="font-weight:500; color:#333; margin-bottom:8px; display:block;">
+                    Upload File PDF <span style="color:#dc3545;">*</span>
+                </label>
+                <input type="file"
+                       name="file_pdf"
+                       accept="application/pdf"
+                       required
+                       onchange="validatePdf(this)"
+                       style="width:100%; padding:10px; border:1px solid #ced4da; border-radius:6px;">
+
+                <small style="color:#6c757d; display:block; margin-top:6px;">
+                    Format: PDF • Maksimal 25 MB
+                </small>
+
+                <div id="pdfError" style="display:none; color:#dc3545; font-size:0.875rem; margin-top:8px;"></div>
+            </div>
+
+            {{-- FOOTER --}}
+            <div style="padding:20px; background:#f8f9fa; border-top:1px solid #e9ecef; display:flex; justify-content:flex-end; gap:10px;">
+                <button type="button"
+                        onclick="closeModalBalasan()"
+                        style="background:#6c757d; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500;">
+                    <i class="bi bi-x-circle me-1"></i> Batal
+                </button>
+                <button type="submit"
+                        style="background:#0d6efd; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500;">
+                    <i class="bi bi-cloud-upload me-1"></i> Upload
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{-- ============================================ --}}
+{{-- MODAL 2: PREVIEW BALASAN ANALISA (PDF)       --}}
+{{-- ============================================ --}}
+<div id="modalPreview" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:10000; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:90%; max-width:900px; height:90vh; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; display:flex; flex-direction:column;">
+
+        {{-- HEADER --}}
+        <div style="background:#f8f9fa; padding:18px 20px; border-bottom:1px solid #e9ecef; display:flex; justify-content:space-between; align-items:center;">
+            <h5 style="margin:0; font-weight:600; color:#333; display:flex; align-items:center;">
+                <i class="bi bi-file-earmark-pdf-fill me-2" style="color:#dc3545;"></i>
+                Balasan Analisa
+            </h5>
+            <div style="display:flex; gap:8px;">
+                <a href="{{ asset($data->cadangan5) }}"
+                   download
+                   style="background:#0d6efd; color:white; padding:8px 14px; border-radius:6px; text-decoration:none; font-size:0.875rem; font-weight:500; display:inline-flex; align-items:center; gap:6px;">
+                    <i class="bi bi-download"></i> Download
+                </a>
+                <button type="button"
+                        onclick="closeModalPreview(); showModalBalasan();"
+                        style="background:#ffc107; color:#000; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-size:0.875rem; font-weight:500;">
+                    <i class="bi bi-arrow-repeat"></i> Ganti
+                </button>
+                <button type="button"
+                        onclick="closeModalPreview()"
+                        style="background:#6c757d; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-size:0.875rem; font-weight:500;">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        {{-- BODY: IFRAME PDF --}}
+        <div style="flex:1; background:#525659;">
+            <iframe src="{{ asset($data->cadangan5) }}#toolbar=1&view=FitH"
+                    style="width:100%; height:100%; border:none;"
+                    title="Preview Balasan Analisa">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+{{-- ============================================ --}}
+{{-- SCRIPT UNTUK SEMUA MODAL                      --}}
+{{-- ============================================ --}}
+<script>
+// ===== MODAL UPLOAD =====
+function showModalBalasan() {
+    document.getElementById('modalBalasan').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalBalasan() {
+    document.getElementById('modalBalasan').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.getElementById('formBalasan').reset();
+    document.getElementById('pdfError').style.display = 'none';
+}
+
+// Validasi PDF (25 MB)
+function validatePdf(input) {
+    const errEl = document.getElementById('pdfError');
+    errEl.style.display = 'none';
+
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const maxSize = 25 * 1024 * 1024;
+
+        if (file.type !== 'application/pdf') {
+            errEl.textContent = 'File harus berformat PDF.';
+            errEl.style.display = 'block';
+            input.value = '';
+            return;
+        }
+
+        if (file.size > maxSize) {
+            errEl.textContent = 'Ukuran file melebihi 25 MB.';
+            errEl.style.display = 'block';
+            input.value = '';
+            return;
+        }
+    }
+}
+
+// ===== MODAL PREVIEW =====
+function showModalPreview() {
+    document.getElementById('modalPreview').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalPreview() {
+    document.getElementById('modalPreview').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// ===== KLIK LUAR & ESC =====
+document.getElementById('modalBalasan').addEventListener('click', function(e) {
+    if (e.target === this) closeModalBalasan();
+});
+
+document.getElementById('modalPreview').addEventListener('click', function(e) {
+    if (e.target === this) closeModalPreview();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModalBalasan();
+        closeModalPreview();
+    }
+});
+</script>
 
 
 <!-- Surat Pemberitahuan (2) -->

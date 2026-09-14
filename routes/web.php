@@ -1594,6 +1594,11 @@ Route::get('/bebantekanalisarusak/show/{namagedung}/{id}',[BantuanteknisControll
 Route::delete('/bebantekanalisadelete/{id}', [BantuanteknisController::class, 'bebantekanalisadelete'])->middleware('auth', 'can:admindinas')->name('bebantekanalisadelete');
 Route::get('/bebantekanalisahitung/hitung/{id}',[BantuanteknisController::class, 'bebantekanalisahitung'])->middleware('auth', 'can:admindinas')->name('bebantekanalisahitungdetails');
 
+Route::post('/bebantekanalisarusak/upload-balasan/{id}',
+    [BantuanteknisController::class, 'uploadBalasanAnalisa'])
+    ->middleware('auth', 'can:admindinas')
+    ->name('bebantekanalisarusak.uploadbalasan');
+
 
 /// PEMBAHARUAN BARU LAGI
 Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpembongkaranbgn'])->middleware('auth', 'can:admindinas')->name('bepbgslfindexslfindex');
