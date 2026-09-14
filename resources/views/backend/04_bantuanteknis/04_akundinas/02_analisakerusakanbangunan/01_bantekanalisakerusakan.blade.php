@@ -252,7 +252,7 @@
 
 
         <th style="text-align: center;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
-        <th style="text-align: center;"><i class="bi bi-eye"></i> Status Berkas</th>
+        {{-- <th style="text-align: center;"><i class="bi bi-eye"></i> Status Berkas</th> --}}
             <th style="text-align: center;" ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
                             </thead>
@@ -275,7 +275,7 @@
         Lihat Permohonan
     </a>
 </td>
-<td style="text-align: center">
+{{-- <td style="text-align: center">
     @php
         // Status berdasarkan urutan validasi
         if (is_null($item->validasiberkas1) || $item->validasiberkas1 == 'belum') {
@@ -299,7 +299,7 @@
         <i class="bi bi-circle-fill me-1" style="font-size: 10px;"></i>
         {{ $status }}
     </span>
-</td>
+</td> --}}
             <!-- Tombol KTP -->
 
 

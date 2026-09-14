@@ -109,7 +109,7 @@
             <i class="bi bi-file-earmark-pdf-fill me-1"></i> Balasan Analisa
         </button>
     @else
-        <button type="button" class="button-baru" onclick="showModalBalasan()">
+        <button type="button" class="button-modern" onclick="showModalBalasan()">
             <i class="bi bi-upload me-1"></i> Balasan Analisa
         </button>
     @endif
@@ -162,7 +162,7 @@
                     <i class="bi bi-x-circle me-1"></i> Batal
                 </button>
                 <button type="submit"
-                class="button-baru"
+                class="button-modern"
                 >
                         <i class="bi bi-cloud-upload me-1"></i> Upload
                 </button>
