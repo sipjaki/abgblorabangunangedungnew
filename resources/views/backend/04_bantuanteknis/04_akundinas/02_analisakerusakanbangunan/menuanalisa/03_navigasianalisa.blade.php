@@ -113,7 +113,6 @@
             <i class="bi bi-upload me-1"></i> Balasan Analisa
         </button>
     @endif
-</div>
 
 {{-- ============================================ --}}
 {{-- MODAL 1: UPLOAD BALASAN ANALISA              --}}
@@ -122,7 +121,7 @@
     <div style="background:#fff; width:90%; max-width:500px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); overflow:hidden;">
 
         {{-- HEADER --}}
-        <div style="background:#f8f9fa; padding:20px; border-bottom:1px solid #e9ecef;">
+        <div style="background:#f8f9fa; padding:20px; border-bottom:1px solid #e9ecef;">    
             <h5 style="margin:0; font-weight:600; color:#333; display:flex; align-items:center;">
                 <i class="bi bi-file-earmark-pdf-fill me-2" style="color:#dc3545;"></i>
                 Balasan Analisa
@@ -283,7 +282,7 @@ document.addEventListener('keydown', function(e) {
 
 
 <!-- Surat Pemberitahuan (2) -->
-<div class="d-block">
+
     @if($data->validasiberkas2 === 'sudah')
         <!-- 1. SUDAH LOLOS (TIDAK BISA DIKLIK) -->
         <button class="button-hijau" type="button" disabled>
