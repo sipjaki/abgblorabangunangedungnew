@@ -157,12 +157,14 @@
             <div style="padding:20px; background:#f8f9fa; border-top:1px solid #e9ecef; display:flex; justify-content:flex-end; gap:10px;">
                 <button type="button"
                         onclick="closeModalBalasan()"
-                        style="background:#6c757d; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500;">
+                       class="button-merah"     
+                        >
                     <i class="bi bi-x-circle me-1"></i> Batal
                 </button>
                 <button type="submit"
-                        style="background:#0d6efd; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:500;">
-                    <i class="bi bi-cloud-upload me-1"></i> Upload
+                class="button-baru"
+                >
+                        <i class="bi bi-cloud-upload me-1"></i> Upload
                 </button>
             </div>
         </form>
