@@ -295,6 +295,54 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-md-6">
+                                    <div class="form-modern mb-3">
+                                    <label class="form-label-modern" for="cadangan4">
+                                        <i class="bi bi-file-earmark-pdf"
+                                            style="color: darkred; margin-right: 8px;"></i>
+                                        Upload Dokumentasi Foto (PDF)
+                                    </label>
+
+                                    <input type="file"
+                                        id="cadangan4"
+                                        name="cadangan4"
+                                        accept=".pdf"
+                                        class="form-control @error('cadangan4') is-invalid @enderror"
+                                        onchange="previewPDF(event, 'previewContainerCadangan4', 'iframeCadangan4', 'msgCadangan4')" />
+
+                                    @error('cadangan4')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+
+                                    <div class="mt-3"
+                                        id="previewContainerCadangan4"
+                                        style="{{ $data->cadangan4 ? '' : 'display: none;' }}">
+
+                                        <label class="fw-bold">
+                                            Dokumentasi Foto Saat Ini
+                                        </label>
+
+                                        <iframe id="iframeCadangan4"
+                                            src="{{ $data->cadangan4 ? asset($data->cadangan4) : '' }}"
+                                            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;">
+                                        </iframe>
+
+                                    </div>
+
+                                    <div id="msgCadangan4"
+                                        class="mt-3"
+                                        style="color: grey; font-style: italic; {{ $data->cadangan4 ? 'display:none;' : '' }}">
+
+                                        Belum ada dokumentasi foto PDF. Silahkan upload file.
+
+                                    </div>
+
+                                </div>
+
+                                </div>
+
+
                                 {{-- ============================================================
                                      4 FOTO CADANGAN
                                      ============================================================ --}}

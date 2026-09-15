@@ -8627,6 +8627,7 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         'fotocadangan2' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan3' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
         'fotocadangan4' => 'nullable|image|mimes:jpeg,png,jpg|max:20480',
+        'cadangan4' => 'nullable|file|mimes:pdf,doc,docx|max:20240',
     ]);
 
     $data = bantekanalisainduk::where('id', $id)->firstOrFail();
@@ -8660,6 +8661,19 @@ public function bebantekkerusakanupdateproses(Request $request, $namagedung, $id
         }
         $file = $request->file('suratpermohonan');
         $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $file->move(public_path('uploads/analisa_kerusakan'), $filename);
+        $data->suratpermohonan = 'uploads/analisa_kerusakan/' . $filename;
+    }
+
+        // ============================================================
+    // UPLOAD SURAT PERMOHONAN
+    // ============================================================
+    if ($request->hasFile('cadangan4')) {
+        if ($data->cadangan4 && file_exists(public_path($data->cadangan4))) {
+            unlink(public_path($data->cadangan4));
+        }
+        $file = $request->file('cadangan4');
+        $filename = time() . '_cadangan4.' . $file->getClientOriginalExtension();
         $file->move(public_path('uploads/analisa_kerusakan'), $filename);
         $data->suratpermohonan = 'uploads/analisa_kerusakan/' . $filename;
     }

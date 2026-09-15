@@ -230,8 +230,8 @@ th {
             id: 1,
             name: 'Berkas Dokumen Masuk',
             status: 'completed',
-            time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
-            message: ''
+            // time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
+            // message: ''
         },
         {
             id: 2,
@@ -603,32 +603,33 @@ th {
     <td><i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan</td>
 </tr>
 <!-- 🔹 DATA PEMOHON -->
-<tr>
+{{-- <tr>
     <td style="text-align: center;">1</td>
     <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Nama Akun Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->user->name ?? '-' }}</td>
-</tr>
+</tr> --}}
 <tr>
-    <td style="text-align: center;">2</td>
+    <td style="text-align: center;">1</td>
+    {{-- <td style="text-align: center;">2</td> --}}
     <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Nama Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->namapemohon ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">3</td>
+    <td style="text-align: center;">2</td>
     <td style="text-align: left;"><i class="bi bi-envelope" style="margin-right:6px;"></i> Email</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->email ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">4</td>
+    <td style="text-align: center;">3</td>
     <td style="text-align: left;"><i class="bi bi-phone" style="margin-right:6px;"></i> No. Telepon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->nomortelepon ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">5</td>
+    <td style="text-align: center;">4</td>
     <td style="text-align: left;"><i class="bi bi-card-text" style="margin-right:6px;"></i> NIK / KTP</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->nikktp ?? '-' }}</td>
@@ -636,25 +637,25 @@ th {
 
 <!-- 🔹 LOKASI BANGUNAN -->
 <tr>
-    <td style="text-align: center;">6</td>
+    <td style="text-align: center;">5</td>
     <td style="text-align: left;"><i class="bi bi-house" style="margin-right:6px;"></i> Lokasi Bangunan</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->lokasibangunan ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">7</td>
+    <td style="text-align: center;">6</td>
     <td style="text-align: left;"><i class="bi bi-geo-alt" style="margin-right:6px;"></i> Koordinat</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->koordinat ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">8</td>
+    <td style="text-align: center;">7</td>
     <td style="text-align: left;"><i class="bi bi-geo-fill" style="margin-right:6px;"></i> Kecamatan</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->kecamatanblora->kecamatanblora ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">9</td>
+    <td style="text-align: center;">8</td>
     <td style="text-align: left;"><i class="bi bi-pin-map" style="margin-right:6px;"></i> Kelurahan/Desa</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->kelurahandesa->desa ?? '-' }}</td>
@@ -662,31 +663,31 @@ th {
 
 <!-- 🔹 SPESIFIKASI BANGUNAN -->
 <tr>
-    <td style="text-align: center;">10</td>
+    <td style="text-align: center;">9</td>
     <td style="text-align: left;"><i class="bi bi-box" style="margin-right:6px;"></i> Klasifikasi Bangunan</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->klasifikasibangunan ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">11</td>
+    <td style="text-align: center;">10</td>
     <td style="text-align: left;"><i class="bi bi-aspect-ratio" style="margin-right:6px;"></i> Luas Bangunan</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->luasbangunan ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">12</td>
+    <td style="text-align: center;">11</td>
     <td style="text-align: left;"><i class="bi bi-bar-chart" style="margin-right:6px;"></i> Tinggi Bangunan</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->tinggibangunan ?? '-' }}</td>
 </tr>
 <tr>
-    <td style="text-align: center;">13</td>
+    <td style="text-align: center;">12</td>
     <td style="text-align: left;"><i class="bi bi-layers" style="margin-right:6px;"></i> Jumlah Lantai</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->jumlahlantai ?? '-' }} Lantai</td>
 </tr>
 <tr>
-    <td style="text-align: center;">14</td>
+    <td style="text-align: center;">13</td>
     <td style="text-align: left;"><i class="bi bi-gear" style="margin-right:6px;"></i> Peruntukan Untuk</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->peruntukanuntuk ?? '-' }}</td>

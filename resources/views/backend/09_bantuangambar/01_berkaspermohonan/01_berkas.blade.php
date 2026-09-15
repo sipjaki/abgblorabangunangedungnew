@@ -233,7 +233,7 @@
         class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
+        {{-- {{-- disabled --}} --}}
     >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
@@ -324,7 +324,7 @@
                 class="button-hijau"
                 type="button"
                 style="background-color: #10B981; color: black; cursor: not-allowed;"
-                disabled
+                {{-- disabled --}}
             >
                 <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
             </button>
@@ -418,7 +418,7 @@
         class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
+        {{-- disabled --}}
     >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
@@ -519,7 +519,7 @@
             type="button"
             style="background-color: #10B981; color: black;"
             {{-- cursor: not-allowed; --}}
-            disabled
+            {{-- disabled --}}
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
         </button>
