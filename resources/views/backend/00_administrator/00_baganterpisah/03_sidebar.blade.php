@@ -1241,7 +1241,7 @@
 <li class="nav-item">
     <a href="/bebantuanteknisassistensi" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Berkas Asistensi</p>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Asistensi <br> Perencanaan </p>
     </a>
 </li>
 

@@ -130,7 +130,6 @@ th {
         <p style="margin: 0;">
             Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
         </p>
-
         <a href="/bebantuangambarperbaikan/{{$data->id}}" style="text-decoration: none;">
             <button class="button-modern">
                 <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
