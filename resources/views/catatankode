@@ -2410,7 +2410,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// TERUSAN TPA TPTP 
+// TERUSAN TPA TPTP
 
 
 @php
@@ -2477,3 +2477,15 @@ document.addEventListener('DOMContentLoaded', function () {
                                             @endforeach
                                         </tbody>
                                     </table>
+
+
+
+
+
+                                    LUPA PASSWORD
+
+
+                                    php -r "echo password_hash('Admin123!', PASSWORD_BCRYPT), PHP_EOL;"
+
+
+password baru                                    $2y$10$.v4gnElHUejj/hzR62/avOUbyir01aZbP3dWM2oMNYe0aoMxYUhT6

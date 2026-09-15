@@ -41,8 +41,8 @@ return new class extends Migration
             $table->string('cadangan1')->nullable(); //
             $table->string('cadangan2')->nullable(); // VALIDASI BERKAS UNTUK BERKAS KODE BARANG
             $table->string('cadangan3')->nullable(); // VALIDASI BERKAS UNTUK SURAT PERMOHONAN
-            $table->string('cadangan4')->nullable(); //
-            $table->string('cadangan5')->nullable(); //
+            $table->string('cadangan4')->nullable(); // DIGUNAKAN UNTUK UPLOAD FOTO PDF 
+            $table->string('cadangan5')->nullable(); // SUDAH DI PAKAI UNTUK ANALISA 
 
             $table->softDeletes();
             $table->timestamps();

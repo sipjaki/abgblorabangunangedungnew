@@ -369,6 +369,59 @@
                 </div>
             </div>
 
+            
+            <div class="col-md-6">
+                    <div class="form-modern mb-3">
+                        <label class="form-label-modern" for="cadangan4">
+                            <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>
+                            Dokumentasi Foto (PDF) Max 20MB
+                        </label>
+                    <input type="file"
+                        class="form-control @error('cadangan4') is-invalid @enderror"
+                        id="cadangan4"
+                        name="cadangan4"
+                        accept=".pdf"
+                        onchange="previewFile(event, 'previewCadangan4', 'filenameCadangan4')">
+
+                    @error('cadangan4')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
+                    <div class="mt-2">
+
+                        <!-- Preview file baru -->
+                        <div id="previewCadangan4"
+                            style="display: none; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid #dee2e6;">
+
+                            <i class="bi bi-file-earmark-pdf-fill me-2"
+                                style="font-size: 20px; color: #dc3545;"></i>
+
+                            <span id="filenameCadangan4" style="font-weight: 500;"></span>
+                        </div>
+
+                        <!-- File yang sudah tersimpan -->
+                        @if(!empty($data->cadangan4))
+                            <div style="padding: 10px; background: #e7f3ff; border-radius: 8px; border: 1px solid #b6d4fe; margin-top: 5px;">
+
+                                <i class="bi bi-check-circle-fill me-2"
+                                    style="color: #0d6efd;"></i>
+
+                                <small>
+                                    File saat ini:
+                                    <strong>{{ $data->cadangan4 }}</strong>
+                                </small>
+
+                            </div>
+                        @endif
+
+                    </div>
+                </div>
+
+                </div>
+
+
+            
+
             <!-- ========================================================= -->
             <!-- SECTION 4: FOTO BANGUNAN DENGAN PREVIEW -->
             <!-- ========================================================= -->

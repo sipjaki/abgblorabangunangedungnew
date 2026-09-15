@@ -8210,12 +8210,13 @@ public function bebantekanalisabgncreatenew(Request $request)
             // Berkas Permohonan
             'kodebarang'      => 'nullable|file|mimes:pdf,doc,docx|max:20240', // Max 10MB
             'suratpermohonan' => 'nullable|file|mimes:pdf,doc,docx|max:20240', // Max 5MB
+            'cadangan4' => 'nullable|file|mimes:pdf,doc,docx|max:20240', // Max 5MB
 
             // Foto Bangunan (4 foto)
-            'fotocadangan1'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
-            'fotocadangan2'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
-            'fotocadangan3'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
-            'fotocadangan4'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10120',
+            'fotocadangan1'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20120',
+            'fotocadangan2'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20120',
+            'fotocadangan3'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20120',
+            'fotocadangan4'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20120',
         ], [
             // Custom Message
             'namagedung.required'     => 'Nama gedung/bangunan wajib diisi.',
@@ -8314,6 +8315,15 @@ public function bebantekanalisabgncreatenew(Request $request)
             $foto4Path = 'analisakerusakan/' . $filename;
         }
 
+        $fotodokPath = null;
+        if ($request->hasFile('cadangan4')) {
+            $file = $request->file('cadangan4');
+            $filename = 'cadangan4' . time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
+            $suratpermohonanPath = 'analisakerusakan/' . $filename;
+        }
+
+
         // ============================================================
         // SIMPAN KE DATABASE
         // ============================================================
@@ -8328,6 +8338,7 @@ public function bebantekanalisabgncreatenew(Request $request)
             // Berkas
             'kodebarang'        => $kodebarangPath,
             'suratpermohonan'   => $suratpermohonanPath,
+            'cadangan4'         => $fotodokPath,
 
             // Foto
             'fotocadangan1'     => $foto1Path,
