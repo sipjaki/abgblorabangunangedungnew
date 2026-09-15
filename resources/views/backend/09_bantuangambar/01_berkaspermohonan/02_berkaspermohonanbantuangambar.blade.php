@@ -121,6 +121,28 @@ th {
     </div>
 @endcanany
 
+
+@canany(['superadmin', 'admin'])
+
+@if ($data->verifikasi1)
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <p style="margin: 0;">
+            Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+        </p>
+
+        <a href="/bebantuangambarperbaikan/{{$data->id}}" style="text-decoration: none;">
+            <button class="button-abgblora">
+                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
+            </button>
+        </a>
+    </div>
+</div>
+@endif
+
+@endcanany
+
+
 <br>
 <br>
       <hr>
