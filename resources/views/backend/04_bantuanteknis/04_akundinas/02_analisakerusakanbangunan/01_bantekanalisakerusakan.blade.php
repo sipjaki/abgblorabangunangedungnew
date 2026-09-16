@@ -278,12 +278,13 @@
 </td>
 <td>
     @if (!empty($item->cadangan5))
-        <button
-            type="button"
-            class="button-berkas"
-            onclick="lihatAnalisa('{{ asset($item->cadangan5) }}')">
-            Lihat Analisa
-        </button>
+            <button
+                type="button"
+                class="button-berkas"
+                onclick="lihatAnalisa('{{ asset($item->cadangan5) }}')">
+                <i class="bi bi-file-earmark-text"></i>
+                Lihat Analisa
+            </button>
     @else
         <button
             type="button"
