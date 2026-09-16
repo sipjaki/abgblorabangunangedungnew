@@ -139,12 +139,12 @@
 
            {{-- @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.00_fiturtambahannav') --}}
 
-<div class="card shadow-sm border-0">
+{{-- <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Berkas Administrasi Pembongkaran Bangunan Gedung Negara </h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Berkas Administrasi Kerusakan Bangunan Gedung Negara </h5>
     </div>
-</div>
+</div> --}}
 
 @include('backend.04_bantuanteknis.04_akundinas.02_analisakerusakanbangunan.menuanalisa.01_fiturstatusanalisa')
 
