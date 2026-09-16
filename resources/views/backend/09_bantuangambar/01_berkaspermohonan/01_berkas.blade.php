@@ -522,7 +522,6 @@
         !empty($item->foto2);
 @endphp
 
-<td style="text-align: center;">
 
     {{-- =========================================
          JIKA BELUM ADA BERKAS
@@ -812,7 +811,6 @@
 
     @endif
 
-</td>
 
 
                 
