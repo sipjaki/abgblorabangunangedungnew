@@ -258,29 +258,29 @@ th {
             id: 2,
             name: 'Verifikasi Berkas',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
-            message: 'Menunggu Verifikasi DPUPR'
+            // time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
+            // message: 'Menunggu Verifikasi DPUPR'
         },
         {
             id: 3,
             name: 'Surat Tugas',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
-            message: 'Menunggu Penjadwalan '
+            // time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
+            // message: 'Menunggu Penjadwalan '
         },
         {
             id: 4,
             name: 'Cek Lapangan',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            message: 'Verifikasi Cek Lapangan'
+            // time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            // message: 'Verifikasi Cek Lapangan'
         },
         {
             id: 5,
             name: 'Gambar Terbit',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-            message: 'Menunggu Terbit'
+            // time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            // message: 'Menunggu Terbit'
         }
     ];
 

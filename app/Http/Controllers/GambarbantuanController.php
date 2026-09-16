@@ -54,7 +54,7 @@ public function bebantuangambar(Request $request)
     $data = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.09_bantuangambar.01_berkaspermohonan.01_berkas', [
-        'title' => 'Permohonan Bantuan Gambar Bangunan Gedung',
+        'title' => 'Permohonan Bantuan Gambar Gratis',
         'data' => $data,
         'user' => $user,
     ]);
@@ -71,7 +71,7 @@ public function bebantuangambar(Request $request)
 
     // Tampilkan ke view dengan key-value
     return view('backend.09_bantuangambar.01_berkaspermohonan.02_berkaspermohonanbantuangambar', [
-        'title' => 'Berkas Permohonan Bantuan Gambar Pemohon',
+        'title' => 'Berkas Permohonan Bantuan Gambar Gratis',
         'data' => $data,
         'user' => $user
     ]);

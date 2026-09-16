@@ -237,36 +237,36 @@
             id: 1,
             name: 'Berkas Dokumen Masuk',
             status: 'completed',
-            time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
-            message: ''
+            // time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
+            // message: ''
         },
         {
             id: 2,
             name: 'Verifikasi Berkas',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
-            message: 'Menunggu Verifikasi DPUPR'
+            // time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
+            // message: 'Menunggu Verifikasi DPUPR'
         },
         {
             id: 3,
             name: 'Verifikasi Perencanaan',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
-            message: 'Validasi Berkas Perencanaan'
+            // time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
+            // message: 'Validasi Berkas Perencanaan'
         },
         {
             id: 4,
             name: 'Validasi Asistensi',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            message: 'Pengecekan'
+            // time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            // message: 'Pengecekan'
         },
         {
             id: 5,
             name: 'Berita Acara',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-            message: 'Terbit'
+            // time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            // message: 'Terbit'
         }
     ];
 
@@ -595,7 +595,28 @@
 <div id="checkpoint-container"></div>
 <div id="current-status" style="margin-top: 20px; padding: 10px; background: #f5f5f5; border-radius: 5px;"></div>
 
+@canany(['superadmin', 'admin'])
+
 <hr>
+
+@if ($data->validasiberkas1)
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <p style="margin: 0;">
+            Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+        </p>
+
+        <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
+            <button class="button-baru">
+                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
+            </button>
+        </a>
+    </div>
+</div>
+@endif
+
+@endcanany
+
     <br>
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI PERMOHONAN BERKAS</h4>

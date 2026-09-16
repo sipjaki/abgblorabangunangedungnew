@@ -509,10 +509,313 @@
 
 <td style="text-align: center;">
       <div style="display: flex; justify-content: center;">
-     <a href="{{ route('bebantuangambarupload', $item->id) }}"
+     {{-- <a href="{{ route('bebantuangambarupload', $item->id) }}"
                     class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
-                </a>
+                </a> --}}
+
+@php
+    $adaBerkas =
+        !empty($item->dokumengambar) ||
+        !empty($item->beritaacarasidang) ||
+        !empty($item->foto1) ||
+        !empty($item->foto2);
+@endphp
+
+<td style="text-align: center;">
+
+    {{-- =========================================
+         JIKA BELUM ADA BERKAS
+    ========================================== --}}
+    @if (!$adaBerkas)
+
+        <a href="{{ route('bebantuangambarupload', $item->id) }}"
+            class="button-modern">
+            <i class="bi bi-upload" style="margin-right: 5px;"></i>
+            Upload Berkas
+        </a>
+
+    {{-- =========================================
+         JIKA SUDAH ADA BERKAS
+    ========================================== --}}
+    @else
+
+        <button type="button"
+            class="button-berkas"
+            data-bs-toggle="modal"
+            data-bs-target="#modalBerkas{{ $item->id }}">
+
+            <i class="bi bi-eye" style="margin-right: 5px;"></i>
+            Lihat Berkas
+
+        </button>
+
+
+        {{-- =========================================
+             MODAL
+        ========================================== --}}
+        <div class="modal fade"
+            id="modalBerkas{{ $item->id }}"
+            tabindex="-1"
+            aria-labelledby="modalBerkasLabel{{ $item->id }}"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+                <div class="modal-content">
+
+                    {{-- HEADER --}}
+                    <div class="modal-header">
+
+                        <h5 class="modal-title"
+                            id="modalBerkasLabel{{ $item->id }}">
+
+                            <i class="bi bi-folder2-open me-2"></i>
+                            Berkas Dokumentasi
+
+                        </h5>
+
+                        <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+
+                    </div>
+
+
+                    {{-- BODY --}}
+                    <div class="modal-body">
+
+                        <div class="row">
+
+
+                            {{-- =====================================
+                                 DOKUMEN GAMBAR PERMOHONAN
+                            ====================================== --}}
+                            @if (!empty($item->dokumengambar))
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="card shadow-sm h-100">
+
+                                        <div class="card-header fw-bold">
+
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i>
+
+                                            Dokumen Gambar Permohonan
+
+                                        </div>
+
+                                        <div class="card-body p-2">
+
+                                            <iframe
+                                                src="{{ asset($item->dokumengambar) }}"
+                                                width="100%"
+                                                height="400"
+                                                style="border: none;">
+                                            </iframe>
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <a href="{{ asset($item->dokumengambar) }}"
+                                                target="_blank"
+                                                class="button-berkas">
+
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>
+
+                                                Buka PDF
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            @endif
+
+
+
+                            {{-- =====================================
+                                 BERITA ACARA SIDANG
+                            ====================================== --}}
+                            @if (!empty($item->beritaacarasidang))
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="card shadow-sm h-100">
+
+                                        <div class="card-header fw-bold">
+
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i>
+
+                                            Berita Acara Sidang
+
+                                        </div>
+
+                                        <div class="card-body p-2">
+
+                                            <iframe
+                                                src="{{ asset($item->beritaacarasidang) }}"
+                                                width="100%"
+                                                height="400"
+                                                style="border: none;">
+                                            </iframe>
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <a href="{{ asset($item->beritaacarasidang) }}"
+                                                target="_blank"
+                                                class="button-berkas">
+
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>
+
+                                                Buka PDF
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            @endif
+
+
+
+                            {{-- =====================================
+                                 FOTO 1
+                            ====================================== --}}
+                            @if (!empty($item->foto1))
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="card shadow-sm h-100">
+
+                                        <div class="card-header fw-bold">
+
+                                            <i class="bi bi-image text-primary me-1"></i>
+
+                                            Foto Dokumentasi 1
+
+                                        </div>
+
+                                        <div class="card-body text-center">
+
+                                            <img
+                                                src="{{ asset($item->foto1) }}"
+                                                alt="Foto Dokumentasi 1"
+                                                class="img-fluid rounded"
+                                                style="max-height: 400px;">
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <a href="{{ asset($item->foto1) }}"
+                                                target="_blank"
+                                                class="button-berkas">
+
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>
+
+                                                Lihat Foto
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            @endif
+
+
+
+                            {{-- =====================================
+                                 FOTO 2
+                            ====================================== --}}
+                            @if (!empty($item->foto2))
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="card shadow-sm h-100">
+
+                                        <div class="card-header fw-bold">
+
+                                            <i class="bi bi-image text-primary me-1"></i>
+
+                                            Foto Dokumentasi 2
+
+                                        </div>
+
+                                        <div class="card-body text-center">
+
+                                            <img
+                                                src="{{ asset($item->foto2) }}"
+                                                alt="Foto Dokumentasi 2"
+                                                class="img-fluid rounded"
+                                                style="max-height: 400px;">
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <a href="{{ asset($item->foto2) }}"
+                                                target="_blank"
+                                                class="button-berkas">
+
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>
+
+                                                Lihat Foto
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            @endif
+
+                        </div>
+
+                    </div>
+
+
+                    {{-- FOOTER --}}
+                    <div class="modal-footer">
+
+                        <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+
+                            Tutup
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    @endif
+
+</td>
+
+
+                
     @if($item->verifikasi4 == 'sudah')
         <button
             class="button-hijau"

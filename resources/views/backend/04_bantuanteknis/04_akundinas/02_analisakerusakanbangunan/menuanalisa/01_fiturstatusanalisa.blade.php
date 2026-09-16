@@ -23,39 +23,39 @@
     const checkpointData = [
         {
             id: 1,
-            name: 'Berkas Permohonan',
+            name: 'Dokumen Terverifikasi',
             status: 'completed',
-            time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
-            message: ''
+            // time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
+            // message: ''
         },
         {
             id: 2,
             name: 'Dokumen Pemohon',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
-            message: 'Menunggu Verifikasi DPUPR'
+            // time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
+            // message: 'Menunggu Verifikasi DPUPR'
         },
         {
             id: 3,
-            name: 'Pengolahan Data',
+            name: 'Survey Lapangan',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            message: 'Dalam Proses'
+            // time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            // message: 'Dalam Proses'
         },
         {
             id: 4,
+            name: 'Pengolahan Data',
+            status: 'pending',
+            // time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            // message: 'Dalam Proses'
+        },
+        {
+            id: 5,
             name: 'Analisa Terbit',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-            message: 'Dalam Proses'
+            // time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
+            // message: 'Menunggu Terbit'
         },
-        // {
-        //     id: 5,
-        //     name: 'Rekomandasi Teknis',
-        //     status: 'pending',
-        //     time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
-        //     message: 'Menunggu Terbit'
-        // },
         // {
         //     id: 6,
         //     name: 'Persetujuan Bupati',

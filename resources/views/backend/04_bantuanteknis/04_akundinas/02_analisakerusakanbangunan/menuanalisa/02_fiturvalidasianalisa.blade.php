@@ -23,7 +23,7 @@
     </button>
 @else
     <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})">
-        <i class="bi bi-patch-check me-1"></i> Berkas Masuk
+        <i class="bi bi-patch-check me-1"></i> Dokumen Terverifikasi
     </button>
 @endif
 
@@ -75,7 +75,7 @@
                     @endif
 
                     <!-- Berita Acara (5) -->
-                    {{-- @if($data->validasiberkas5 == 'sudah')
+                    @if($data->validasiberkas5 == 'sudah')
                         <button class="button-hijau" type="button" onclick="openModal5({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
@@ -90,7 +90,7 @@
                     @endif
 
                     <!-- SKRD (6) -->
-                    @if($data->validasiberkas6 == 'sudah')
+                    {{-- @if($data->validasiberkas6 == 'sudah')
                         <button class="button-hijau" type="button" onclick="openModal6({{ $data->id }})" style=" " >
                             <i class="bi bi-patch-check-fill me-1"></i> Terbit
                         </button>
@@ -157,7 +157,7 @@
 <!-- Modal Validasi Berkas 3 -->
 <div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah pengolahan data sudah selesai ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah survey lapangan sudah selesai ?</p>
         <form id="validasiForm3" method="POST" action="/validasianalisa3/{{ $data->id }}">
             @csrf
             @method('PUT')
@@ -181,7 +181,7 @@
 <!-- Modal Validasi Berkas 4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah Permohonan sudah selesai ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah pengolahan data sudah selesai ?</p>
         <form id="validasiForm4" method="POST" action="/validasianalisa4/{{ $data->id }}">
             @csrf
             @method('PUT')
@@ -203,9 +203,9 @@
 </div>
 
 <!-- Modal Validasi Berkas 5 -->
-{{-- <div id="confirmModal5" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+<div id="confirmModal5" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah Rekom Teknis Mau Diterbitkan ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah Permohonan Sudah Selesai ?</p>
         <form id="validasiForm5" method="POST" action="/validasianalisa5/{{ $data->id }}">
             @csrf
             @method('PUT')
@@ -231,7 +231,7 @@
 </div>
 
 <!-- Modal Validasi Berkas 6 -->
-<div id="confirmModal6" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+{{-- <div id="confirmModal6" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah Keputusan Bupati Sudah Terbit?</p>
         <form id="validasiForm6" method="POST" action="/validasianalisa6/{{ $data->id }}">

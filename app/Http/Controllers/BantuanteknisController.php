@@ -895,7 +895,7 @@ public function bebantuanteknisassistensi(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 8);
+    $perPage = $request->input('perPage', 5);
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
@@ -8117,7 +8117,7 @@ public function bebantekanalisabgn(Request $request)
 {
     $user    = Auth::user();
     $search  = $request->input('search');
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 5);
 
     $query = bantekanalisainduk::query();
 
@@ -8458,9 +8458,9 @@ public function validasianalisa3(Request $request, $id)
 
     // Flash message
     if ($request->validasiberkas3 === 'sudah') {
-        session()->flash('create', '✅ Pengolahan data sudah selesai !');
+        session()->flash('create', '✅ Survey lapangan selesai !');
     } else {
-        session()->flash('gagal', '❌ Pengolahan data dibatalkan !');
+        session()->flash('gagal', '❌ survey lapangan dibatalkan !');
     }
 
     return redirect()->back();
@@ -8481,6 +8481,29 @@ public function validasianalisa4(Request $request, $id)
 
     // Flash message
     if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data !');
+    } else {
+        session()->flash('gagal', '❌ Permohonan di Batalkan !');
+    }
+
+    return redirect()->back();
+}
+
+public function validasianalisa5(Request $request, $id)
+{
+    $data = bantekanalisainduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas5' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas5 = $request->validasiberkas5;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas5 === 'sudah') {
         session()->flash('create', '✅ Status Selesai !');
     } else {
         session()->flash('gagal', '❌ Permohonan di Batalkan !');

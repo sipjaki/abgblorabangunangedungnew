@@ -252,7 +252,7 @@
 <!-- Tombol Validasi -->
 <td style="text-align: center; height: 60px;">
     @if($item->validasiberkas1 == 'lolos')
-        <button type="button" class="button-hijau" disabled>
+        <button type="button" class="button-hijau" onclick="openModal({{ $item->id }})">
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
         </button>
     @elseif($item->validasiberkas1 == 'dikembalikan')
@@ -260,7 +260,7 @@
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button type="button" class="button-modern" onclick="openModal({{ $item->id }})" style="color: black;">
+        <button type="button" class="button-modern" onclick="openModal({{ $item->id }})">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -331,8 +331,7 @@
             <button
                 class="button-hijau"
                 type="button"
-                style="background-color: #10B981; color: black; cursor: not-allowed;"
-                disabled
+                onclick="openModal2({{ $item->id }})"
             >
                 <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
             </button>
@@ -341,7 +340,7 @@
                 <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
             </button>
         @else
-            <button class="button-modern" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+            <button class="button-modern" type="button" onclick="openModal2({{ $item->id }})">
                 <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Perencanaan
             </button>
         @endif
@@ -417,9 +416,8 @@
     <button
         class="button-hijau"
         type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
-    >
+        onclick="openModal3({{ $item->id }})"
+        >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
      @elseif($item->validasiberkas3 == 'belum')
@@ -427,7 +425,7 @@
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
-        <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Asistensi
         </button>
         @endif
@@ -498,8 +496,8 @@
         <button
             class="button-hijau"
             type="button"
-            disabled
-        >
+            onclick="openModal4({{ $item->id }})"
+            >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
         </button>
     @elseif($item->validasiberkas4 == 'belum')
@@ -507,7 +505,7 @@
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
-        <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
     @endif
@@ -569,13 +567,89 @@
 </script>
 
 
-
+{{--
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
-                    class="button-berkas">
+                    class="button-modern">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
-            </td>
+            </td> --}}
+
+            {{-- PERUBAHAN PADA NOTIFIKASI BERKAS ANALISA  --}}
+
+            ```blade
+<td style="text-align: center;">
+    @if (empty($item->uploadsuratbantek))
+        {{-- Belum ada berkas --}}
+        <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
+            class="button-modern">
+            <i class="bi bi-upload" style="margin-right: 5px;"></i>
+            Upload Berkas
+        </a>
+    @else
+        {{-- Sudah ada berkas --}}
+        <button type="button"
+            class="button-berkas"
+            data-bs-toggle="modal"
+            data-bs-target="#modalBerkas{{ $item->id }}">
+            <i class="bi bi-eye" style="margin-right: 5px;"></i>
+            Lihat Berkas
+        </button>
+
+        {{-- Modal --}}
+        <div class="modal fade"
+            id="modalBerkas{{ $item->id }}"
+            tabindex="-1"
+            aria-labelledby="modalBerkasLabel{{ $item->id }}"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title"
+                            id="modalBerkasLabel{{ $item->id }}">
+                            Berkas Bantuan Teknis Asistensi
+                        </h5>
+
+                        <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                    </div>
+
+                    <div class="modal-body p-0">
+                        <iframe
+                            src="{{ asset($item->uploadsuratbantek) }}"
+                            width="100%"
+                            height="700px"
+                            style="border: none;">
+                        </iframe>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="{{ asset($item->uploadsuratbantek) }}"
+                            target="_blank"
+                            class="button-berkas">
+                            <i class="bi bi-box-arrow-up-right"
+                                style="margin-right: 5px;"></i>
+                            Buka Berkas
+                        </a>
+
+                        <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Tutup
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    @endif
+</td>
+
 
 
 @can('superadmin')

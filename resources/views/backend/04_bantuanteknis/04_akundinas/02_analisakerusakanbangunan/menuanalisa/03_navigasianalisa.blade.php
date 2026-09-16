@@ -186,13 +186,15 @@
             <div style="display:flex; gap:8px;">
                 <a href="{{ asset($data->cadangan5) }}"
                    download
-                   style="background:#0d6efd; color:white; padding:8px 14px; border-radius:6px; text-decoration:none; font-size:0.875rem; font-weight:500; display:inline-flex; align-items:center; gap:6px;">
+                   class="button-berkas"
+                   >
                     <i class="bi bi-download"></i> Download
                 </a>
                 <button type="button"
                         onclick="closeModalPreview(); showModalBalasan();"
-                        style="background:#ffc107; color:#000; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-size:0.875rem; font-weight:500;">
-                    <i class="bi bi-arrow-repeat"></i> Ganti
+                        class="button-modern"
+                        >
+                    <i class="bi bi-arrow-repeat"></i> Perbarui
                 </button>
                 <button type="button"
                         onclick="closeModalPreview()"
