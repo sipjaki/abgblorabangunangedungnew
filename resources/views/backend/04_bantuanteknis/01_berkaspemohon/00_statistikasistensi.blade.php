@@ -86,7 +86,7 @@
                 @php
                     $cards = [
                         ['Total Permohonan', $totalPermohonan, 'bi-file-earmark-text', '#2563eb'],
-                        ['Total Pemohon',    $totalPemohon,    'bi-people',            '#16a34a'],
+                        // ['Total Pemohon',    $totalPemohon,    'bi-people',            '#16a34a'],
                         ['Kecamatan',        $totalKecamatan,  'bi-geo-alt',           '#ea580c'],
                         ['Desa/Kelurahan',   $totalDesa,       'bi-house-door',        '#9333ea'],
                     ];
@@ -113,8 +113,8 @@
             <div class="row g-2 mb-2">
                 @php
                     $luasCards = [
-                        ['Total Luas (m²)',     number_format($luasStats->total ?? 0, 2, ',', '.'), 'bi-rulers',     '#0891b2'],
-                        ['Rata-rata (m²)',      number_format($luasStats->rata ?? 0, 2, ',', '.'),  'bi-bar-chart',  '#7c3aed'],
+                        ['Total Luas Aset / (m²) ',     number_format($luasStats->total ?? 0, 2, ',', '.'), 'bi-rulers',     '#0891b2'],
+                        // ['Rata-rata (m²)',      number_format($luasStats->rata ?? 0, 2, ',', '.'),  'bi-bar-chart',  '#7c3aed'],
                         ['Terkecil (m²)',       number_format($luasStats->min ?? 0, 2, ',', '.'),   'bi-arrow-down', '#dc2626'],
                         ['Terbesar (m²)',       number_format($luasStats->max ?? 0, 2, ',', '.'),   'bi-arrow-up',   '#16a34a'],
                     ];
@@ -179,22 +179,6 @@
                     <div class="chart-card h-100">
                         <h6>🏘️ Top 10 Desa/Kelurahan</h6>
                         <div class="chart-box tall"><canvas id="chartDesa"></canvas></div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- ============ ROW CHART 4 ============ --}}
-            <div class="row g-2 mb-2">
-                <div class="col-lg-7">
-                    <div class="chart-card h-100">
-                        <h6>🏢 Distribusi Jumlah Lantai</h6>
-                        <div class="chart-box short"><canvas id="chartLantai"></canvas></div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="chart-card h-100">
-                        <h6>⬇️ Ketersediaan Basement</h6>
-                        <div class="chart-box short"><canvas id="chartBasement"></canvas></div>
                     </div>
                 </div>
             </div>
