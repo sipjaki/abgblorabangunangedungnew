@@ -147,7 +147,7 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal2()" class="button-merah">
+        <button type="button" onclick="closeModal2()" class="button-modern">
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
@@ -170,9 +170,9 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal3()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
+        <button type="button" onclick="closeModal3()"
+        class="button-modern"
+            >
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
@@ -194,9 +194,9 @@
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal4()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
+        <button type="button" onclick="closeModal4()"
+        class="button-modern"
+            >
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
@@ -210,21 +210,21 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="5">
-            <button type="submit" name="validasiberkas5" value="sudah" style=" color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+            <button type="submit" name="validasiberkas5" value="sudah"
+            class="button-hijau"
+            >
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas5" value="belum" style=" color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+            <button type="submit" name="validasiberkas5" value="belum"
+            class="button-merah"
+            >
                 <i class="bi bi-x-circle me-1"></i> Belum
             </button>
         </form>
         <br><br>
-        <button type="button" onclick="closeModal5()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;  cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
+        <button type="button" onclick="closeModal5()"
+        class="button-modern"
+        >
             <i class="bi bi-x-circle me-1"></i> Batal
         </button>
     </div>
@@ -354,7 +354,7 @@ function closeModal1() {
     // Close modals when clicking outside
     window.addEventListener('click', function(event) {
         if (event.target === document.getElementById('confirmModal1')) {
-            closeModal1();
+            close   Modal1();
         }
         if (event.target === document.getElementById('confirmModal2')) {
             closeModal2();

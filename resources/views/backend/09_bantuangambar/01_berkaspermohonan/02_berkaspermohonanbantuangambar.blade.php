@@ -293,37 +293,37 @@ th {
         // Step 2: Verifikasi Berkas berdasarkan validasiberkas1
         if ('<?php echo isset($data->verifikasi1) ? $data->verifikasi1 : "" ?>' === 'lolos') {
             checkpointData[1].status = 'completed';
-            checkpointData[1].message = 'Berkas Lolos Verifikasi DPUPR';
+            checkpointData[1].message = 'Berkas Lolos';
         } else if ('<?php echo isset($data->verifikasi1) ? $data->verifikasi1 : "" ?>' === 'dikembalikan') {
             checkpointData[1].status = 'rejected';
-            checkpointData[1].message = 'Dikembalikan Kepada Pemohon';
+            checkpointData[1].message = 'Dikembalikan !';
         }
 
         // Step 3: Cek Lapangan berdasarkan validasiberkas2
         if ('<?php echo isset($data->verifikasi2) ? $data->verifikasi2 : "" ?>' === 'sudah') {
             checkpointData[2].status = 'completed';
-            checkpointData[2].message = 'Surat Tugas Terbit';
+            checkpointData[2].message = 'Terbit';
         } else if ('<?php echo isset($data->verifikasi2) ? $data->verifikasi2 : "" ?>' === 'belum') {
             checkpointData[2].status = 'rejected';
-            checkpointData[2].message = 'Penjadwalan Surat Tugas di batalkan !';
+            checkpointData[2].message = 'Di Batalkan !';
         }
 
         // Step 4: Verifikasi Data berdasarkan validasiberkas3
         if ('<?php echo isset($data->verifikasi3) ? $data->verifikasi3 : "" ?>' === 'sudah') {
             checkpointData[3].status = 'completed';
-            checkpointData[3].message = 'Cek lapangan Selesai';
+            checkpointData[3].message = 'Selesai';
         } else if ('<?php echo isset($data->verifikasi3) ? $data->verifikasi3 : "" ?>' === 'belum') {
             checkpointData[3].status = 'rejected';
-            checkpointData[3].message = 'Data Tidak Di Olah !';
+            checkpointData[3].message = 'Di Hentikan !';
         }
 
         // Step 5: Penerbitan Berkas berdasarkan validasiberkas4
         if ('<?php echo isset($data->verifikasi4) ? $data->verifikasi4 : "" ?>' === 'sudah') {
             checkpointData[4].status = 'completed';
-            checkpointData[4].message = 'Gambar Terbit';
+            checkpointData[4].message = 'Selesai';
         } else if ('<?php echo isset($data->verifikasi4) ? $data->verifikasi4 : "" ?>' === 'belum') {
             checkpointData[4].status = 'rejected';
-            checkpointData[4].message = 'Bantuan Gambar Terbitkan!';
+            checkpointData[4].message = 'Di Batalkan !';
         }
     }
 
