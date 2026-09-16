@@ -39,22 +39,22 @@
             id: 3,
             name: 'Survey Lapangan',
             status: 'pending',
-            // time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            // message: 'Dalam Proses'
+            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            message: 'Dalam Proses'
         },
         {
             id: 4,
             name: 'Pengolahan Data',
             status: 'pending',
-            // time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-            // message: 'Dalam Proses'
+            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            message: 'Dalam Proses'
         },
         {
             id: 5,
             name: 'Analisa Terbit',
             status: 'pending',
-            // time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
-            // message: 'Menunggu Terbit'
+            time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
+            message: 'Menunggu Terbit'
         },
         // {
         //     id: 6,
@@ -90,7 +90,7 @@
         // Dokumen Pemohon → validasiberkas2
 if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'sudah') {
     checkpointData[1].status = 'completed'; // index 1 = id 2
-    checkpointData[1].message = 'Dokumen Terverifikasi';
+    checkpointData[1].message = 'Lolos';
 } else if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'belum') {
     checkpointData[1].status = 'rejected';
     checkpointData[1].message = 'Berkas Di Kembalikan!';
@@ -108,16 +108,16 @@ if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' 
         // Step 3: Cek Lapangan (validasiberkas2)
         if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'sudah') {
             checkpointData[2].status = 'completed';
-            checkpointData[2].message = 'Lolos';
+            checkpointData[2].message = '(Jika Di Perlukan)';
         } else if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'belum') {
             checkpointData[2].status = 'rejected';
-            checkpointData[2].message = 'Berkas Di Kembalikan!';
+            checkpointData[2].message = 'Di Batalkan!';
         }
 
         // Step 4: Verifikasi Data (validasiberkas3)
         if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'sudah') {
             checkpointData[3].status = 'completed';
-            checkpointData[3].message = '(Jika Di Perlukan)';
+            checkpointData[3].message = 'Selesai';
         } else if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'belum') {
             checkpointData[3].status = 'rejected';
             checkpointData[3].message = 'Dibatalkan !';
@@ -133,13 +133,13 @@ if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' 
         }
 
         // Step 6: Distribusi Surat (distribusisurat)
-        if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
-            checkpointData[5].status = 'completed';
-            checkpointData[5].message = 'Terbit';
-        } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
-            checkpointData[5].status = 'pending';
-            checkpointData[5].message = 'Tidak Terbit';
-        }
+        // if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
+        //     checkpointData[5].status = 'completed';
+        //     checkpointData[5].message = 'Terbit';
+        // } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
+        //     checkpointData[5].status = 'pending';
+        //     checkpointData[5].message = 'Tidak Terbit';
+        // }
 
 
         // // Step 7: Selesai (selesai)

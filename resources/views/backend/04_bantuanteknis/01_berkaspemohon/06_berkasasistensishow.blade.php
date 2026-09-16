@@ -279,7 +279,7 @@
         // Step 2: Verifikasi Berkas berdasarkan validasiberkas1
         if ('<?php echo isset($data->validasiberkas1) ? $data->validasiberkas1 : "" ?>' === 'lolos') {
             checkpointData[1].status = 'completed';
-            checkpointData[1].message = 'Berkas Lolos Verifikasi DPUPR';
+            checkpointData[1].message = 'Berkas Lolos';
         } else if ('<?php echo isset($data->validasiberkas1) ? $data->validasiberkas1 : "" ?>' === 'dikembalikan') {
             checkpointData[1].status = 'rejected';
             checkpointData[1].message = 'Dikembalikan Kepada Pemohon';
