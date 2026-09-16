@@ -127,6 +127,11 @@
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <a href="/bebantekanalisastatistik">
+        <button class="button-modern" style="margin: 0 5px;">
+            <i class="bi bi-folder2-open"></i> Data Statistik
+        </button>
+    </a>
     <a href="/bebantuanteknisassistensiall">
         <button class="button-baru" style="margin: 0 5px;">
             <i class="bi bi-folder2-open"></i> Data Lengkap

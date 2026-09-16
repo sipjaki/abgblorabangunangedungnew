@@ -8953,7 +8953,298 @@ public function bebantekkerusakaninfohitung($namagedung, $id)
 }
 
 
+// public function bebantekanalisastatistik(Request $request)
+// {
+//     $user = Auth::user();
+//     $search = $request->input('search');
+//     $perPage = $request->input('perPage', 5);
+
+//     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+//     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+//         $q->where('id', 1);
+//     });
+
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             $q->where(function ($sub) use ($search) {
+//                 $sub->where('nama_pemohon', 'like', "%{$search}%")
+//                     ->orWhere('no_telepon', 'like', "%{$search}%")
+//                     ->orWhere('namapaket', 'like', "%{$search}%")
+//                     ->orWhere('kategoribangunan', 'like', "%{$search}%")
+//                     ->orWhere('kepemilikan', 'like', "%{$search}%")
+//                     ->orWhere('pengelola', 'like', "%{$search}%")
+//                     ->orWhere('alamatlokasi', 'like', "%{$search}%")
+//                     ->orWhere('rt', 'like', "%{$search}%")
+//                     ->orWhere('rw', 'like', "%{$search}%")
+//                     ->orWhere('kabupaten', 'like', "%{$search}%")
+//                     ->orWhere('nosurat', 'like', "%{$search}%")
+//                     ->orWhereYear('tahunpembangunan', $search)
+//                     ->orWhereYear('tahunrenovasi', $search);
+//             });
+
+//             $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+//                 $sub->where('namalengkap', 'like', "%{$search}%");
+//             });
+
+//             $q->orWhereHas('dinas', function ($sub) use ($search) {
+//                 $sub->where('name', 'like', "%{$search}%");
+//             });
+
+//             $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+//                 $sub->where('jenispengajuan', 'like', "%{$search}%")
+//                      ->where('id', 1); // Tetap pastikan ID = 1
+//             });
+
+//             $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+//                 $sub->where('kecamatanblora', 'like', "%{$search}%");
+//             });
+
+//             $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+//                 $sub->where('desa', 'like', "%{$search}%");
+//             });
+//         });
+//     }
+
+//     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+//     return view('backend.04_bantuanteknis.01_berkaspemohon.00_statistikasistensi', [
+//         'title' => 'Statistik Permohonan Asistensi Bantuan Teknis Bangunan Gedung',
+//         'data'  => $berkasbantek,
+//         'user'  => $user,
+//     ]);
+// }
 
 
+
+
+    public function bebantekanalisastatistik(Request $request)
+    {
+        $user    = Auth::user();
+        $search  = $request->input('search');
+        $perPage = $request->input('perPage', 5);
+
+        // ======================
+        // QUERY DASAR (ID = 1)
+        // ======================
+        $baseQuery = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+            $q->where('id', 1);
+        });
+
+        // ======================
+        // FILTER SEARCH
+        // ======================
+        if ($search) {
+            $baseQuery->where(function ($q) use ($search) {
+                $q->where('nama_pemohon', 'like', "%{$search}%")
+                  ->orWhere('no_telepon', 'like', "%{$search}%")
+                  ->orWhere('namapaket', 'like', "%{$search}%")
+                  ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                  ->orWhere('kepemilikan', 'like', "%{$search}%")
+                  ->orWhere('nosurat', 'like', "%{$search}%")
+                  ->orWhereYear('tahunpembangunan', $search)
+                  ->orWhereYear('tahunrenovasi', $search);
+
+                $q->orWhereHas('bujkkonsultan', fn($s) => $s->where('namalengkap', 'like', "%{$search}%"));
+                $q->orWhereHas('dinas', fn($s) => $s->where('name', 'like', "%{$search}%"));
+                $q->orWhereHas('jenispengajuanbantek', fn($s) => $s->where('jenispengajuan', 'like', "%{$search}%")->where('id', 1));
+                $q->orWhereHas('kecamatanblora', fn($s) => $s->where('kecamatanblora', 'like', "%{$search}%"));
+                $q->orWhereHas('kelurahandesa', fn($s) => $s->where('desa', 'like', "%{$search}%"));
+            });
+        }
+
+        // ======================
+        // DATA PAGINATE (LIST)
+        // ======================
+        $berkasbantek = (clone $baseQuery)->latest()->paginate($perPage)->appends($request->all());
+
+        // ======================
+        // STATISTIK UTAMA
+        // ======================
+        $totalPermohonan = (clone $baseQuery)->count();
+
+        $totalPemohon = (clone $baseQuery)
+            ->whereNotNull('nama_pemohon')
+            ->distinct('nama_pemohon')
+            ->count('nama_pemohon');
+
+        // Karena tidak ada kolom kecamatan_id → pakai whereHas + distinct relasi
+        $totalKecamatan = (clone $baseQuery)
+            ->whereHas('kecamatanblora')
+            ->with('kecamatanblora:id,kecamatanblora')
+            ->get()
+            ->pluck('kecamatanblora.kecamatanblora')
+            ->filter()
+            ->unique()
+            ->count();
+
+        $totalDesa = (clone $baseQuery)
+            ->whereHas('kelurahandesa')
+            ->with('kelurahandesa:id,desa')
+            ->get()
+            ->pluck('kelurahandesa.desa')
+            ->filter()
+            ->unique()
+            ->count();
+
+        // ======================
+        // STATISTIK PER KATEGORI
+        // ======================
+        $perKategori = (clone $baseQuery)
+            ->select('kategoribangunan', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('kategoribangunan')
+            ->groupBy('kategoribangunan')
+            ->orderByDesc('total')
+            ->get();
+
+        // ======================
+        // STATISTIK PER KEPEMILIKAN
+        // ======================
+        $perKepemilikan = (clone $baseQuery)
+            ->select('kepemilikan', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('kepemilikan')
+            ->groupBy('kepemilikan')
+            ->orderByDesc('total')
+            ->get();
+
+        // ======================
+        // STATISTIK PER TAHUN PEMBANGUNAN
+        // ======================
+        $perTahun = (clone $baseQuery)
+            ->select('tahunpembangunan as tahun', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('tahunpembangunan')
+            ->groupBy('tahunpembangunan')
+            ->orderBy('tahunpembangunan')
+            ->get();
+
+        // ======================
+        // STATISTIK PER TAHUN RENOVASI
+        // ======================
+        $perTahunRenovasi = (clone $baseQuery)
+            ->select('tahunrenovasi as tahun', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('tahunrenovasi')
+            ->groupBy('tahunrenovasi')
+            ->orderBy('tahunrenovasi')
+            ->get();
+
+        // ======================
+        // STATISTIK PER JENIS BANGUNAN (kategoribangunan)
+        // ======================
+        $perJenis = $perKategori; // alias, sama
+
+        // ======================
+        // TOP 10 KECAMATAN (via relasi)
+        // ======================
+        $perKecamatan = (clone $baseQuery)
+            ->whereHas('kecamatanblora')
+            ->with('kecamatanblora:id,kecamatanblora')
+            ->get()
+            ->groupBy(fn($item) => optional($item->kecamatanblora)->kecamatanblora)
+            ->map(fn($group, $key) => (object)['nama' => $key, 'total' => $group->count()])
+            ->filter(fn($i) => !empty($i->nama))
+            ->sortByDesc('total')
+            ->take(10)
+            ->values();
+
+        // ======================
+        // TOP 10 DESA / KELURAHAN (via relasi)
+        // ======================
+        $perDesa = (clone $baseQuery)
+            ->whereHas('kelurahandesa')
+            ->with('kelurahandesa:id,desa')
+            ->get()
+            ->groupBy(fn($item) => optional($item->kelurahandesa)->desa)
+            ->map(fn($group, $key) => (object)['nama' => $key, 'total' => $group->count()])
+            ->filter(fn($i) => !empty($i->nama))
+            ->sortByDesc('total')
+            ->take(10)
+            ->values();
+
+        // ======================
+        // STATISTIK PER DINAS
+        // ======================
+        $perDinas = (clone $baseQuery)
+            ->whereHas('dinas')
+            ->with('dinas:id,name')
+            ->get()
+            ->groupBy(fn($item) => optional($item->dinas)->name)
+            ->map(fn($group, $key) => (object)['nama' => $key, 'total' => $group->count()])
+            ->filter(fn($i) => !empty($i->nama))
+            ->sortByDesc('total')
+            ->values();
+
+        // ======================
+        // STATISTIK PER KONSULTAN (Bujk Konsultan)
+        // ======================
+        $perKonsultan = (clone $baseQuery)
+            ->whereHas('bujkkonsultan')
+            ->with('bujkkonsultan:id,namalengkap')
+            ->get()
+            ->groupBy(fn($item) => optional($item->bujkkonsultan)->namalengkap)
+            ->map(fn($group, $key) => (object)['nama' => $key, 'total' => $group->count()])
+            ->filter(fn($i) => !empty($i->nama))
+            ->sortByDesc('total')
+            ->values();
+
+        // ======================
+        // STATISTIK LUAS BANGUNAN
+        // ======================
+        $luasStats = (clone $baseQuery)
+            ->whereNotNull('luasbangunan')
+            ->selectRaw('
+                COUNT(*) as jumlah,
+                AVG(luasbangunan) as rata,
+                MIN(luasbangunan) as min,
+                MAX(luasbangunan) as max,
+                SUM(luasbangunan) as total
+            ')
+            ->first();
+
+        // ======================
+        // STATISTIK JUMLAH LANTAI
+        // ======================
+        $perLantai = (clone $baseQuery)
+            ->select('jumlahlantai', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('jumlahlantai')
+            ->groupBy('jumlahlantai')
+            ->orderBy('jumlahlantai')
+            ->get();
+
+        // ======================
+        // STATISTIK BASEMENT
+        // ======================
+        $perBasement = (clone $baseQuery)
+            ->select('bassement', DB::raw('COUNT(*) as total'))
+            ->whereNotNull('bassement')
+            ->groupBy('bassement')
+            ->get();
+
+        return view('backend.04_bantuanteknis.01_berkaspemohon.00_statistikasistensi', [
+            'title'             => 'Statistik Permohonan Asistensi Bantuan Teknis Bangunan Gedung',
+            'data'              => $berkasbantek,
+            'user'              => $user,
+
+            // Kartu ringkasan
+            'totalPermohonan'   => $totalPermohonan,
+            'totalPemohon'      => $totalPemohon,
+            'totalKecamatan'    => $totalKecamatan,
+            'totalDesa'         => $totalDesa,
+
+            // Data chart
+            'perKategori'       => $perKategori,
+            'perKepemilikan'    => $perKepemilikan,
+            'perTahun'          => $perTahun,
+            'perTahunRenovasi'  => $perTahunRenovasi,
+            'perKecamatan'      => $perKecamatan,
+            'perDesa'           => $perDesa,
+            'perDinas'          => $perDinas,
+            'perKonsultan'      => $perKonsultan,
+            'perLantai'         => $perLantai,
+            'perBasement'       => $perBasement,
+
+            // Statistik luas
+            'luasStats'         => $luasStats,
+        ]);
+    }
+    
 }
 

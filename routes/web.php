@@ -614,6 +614,7 @@ Route::put('/validasidokumenbantek/{id}', [BantuanteknisController::class, 'vali
 Route::get('/bebantekpemohondinasperbaikan/{id}', [BantuanteknisController::class, 'bebantekpemohondinasperbaikan'])->middleware('auth')->name('bebantekpemohondinasperbaikan.perbaikan');
 Route::post('/bebantekpemohondinasperbaikans/{id}', [BantuanteknisController::class, 'bebantuanteknislapanganberkasbaru'])->middleware('auth')->name('bebantekpemohondinasperbaikan.uploads');
 
+Route::get('/bebantekanalisastatistik', [BantuanteknisController::class, 'bebantekanalisastatistik'])->middleware('auth', 'can:superadmin')->name('bebantuanteknisassistensiall');
 
 // DAFTAR SURAT PERMOHONAN BERKAS 2
 Route::get('/bepenelitikontrak', [BantuanteknisController::class, 'bepenelitikontrak'])->middleware('auth')->name('bepenelitikontrakindex');
