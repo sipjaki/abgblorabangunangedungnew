@@ -252,6 +252,7 @@
 
 
         <th style="text-align: center;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
+        <th style="text-align: center;"><i class="bi bi-eye"></i> Lihat Analisa</th>
         {{-- <th style="text-align: center;"><i class="bi bi-eye"></i> Status Berkas</th> --}}
             <th style="text-align: center;" ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
@@ -275,6 +276,121 @@
         Lihat Permohonan
     </a>
 </td>
+<td>
+    @if (!empty($item->cadangan5))
+        <button
+            type="button"
+            class="button-berkas"
+            onclick="lihatAnalisa('{{ asset($item->cadangan5) }}')">
+            Lihat Analisa
+        </button>
+    @else
+        <button
+            type="button"
+            class="button-modern"
+            disabled>
+            Belum Analisa
+        </button>
+    @endif
+</td>
+
+
+<!-- Modal Analisa -->
+<div id="modalAnalisa" class="modal-analisa">
+    <div class="modal-content-analisa">
+
+        <span class="close-modal" onclick="tutupAnalisa()">&times;</span>
+
+        <h3>Lihat Analisa</h3>
+
+        <iframe
+            id="iframeAnalisa"
+            src=""
+            frameborder="0">
+        </iframe>
+
+    </div>
+</div>
+
+
+<style>
+
+    /* Modal */
+    .modal-analisa {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content-analisa {
+        position: relative;
+        background: white;
+        width: 90%;
+        max-width: 1100px;
+        height: 85vh;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .modal-content-analisa h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #555;
+        z-index: 10;
+    }
+
+    .close-modal:hover {
+        color: red;
+    }
+
+    #iframeAnalisa {
+        width: 100%;
+        height: calc(100% - 55px);
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+</style>
+
+
+<script>
+    function lihatAnalisa(url) {
+        document.getElementById('iframeAnalisa').src = url;
+        document.getElementById('modalAnalisa').style.display = 'flex';
+    }
+
+    function tutupAnalisa() {
+        document.getElementById('modalAnalisa').style.display = 'none';
+
+        // Kosongkan iframe supaya file berhenti dimuat
+        document.getElementById('iframeAnalisa').src = '';
+    }
+
+    // Tutup modal ketika klik area luar modal
+    window.onclick = function(event) {
+        const modal = document.getElementById('modalAnalisa');
+
+        if (event.target === modal) {
+            tutupAnalisa();
+        }
+    }
+</script>
+
 {{-- <td style="text-align: center">
     @php
         // Status berdasarkan urutan validasi

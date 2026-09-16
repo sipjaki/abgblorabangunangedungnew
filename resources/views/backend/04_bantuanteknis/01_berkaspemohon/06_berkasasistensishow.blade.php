@@ -287,29 +287,29 @@
 
         // Step 3: Cek Lapangan berdasarkan validasiberkas2
         if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'sudah') {
-            checkpointData[2].status = 'completed';
-            checkpointData[2].message = 'Validasi Berkas';
+            // checkpointData[2].status = 'completed';
+            // checkpointData[2].message = 'Validasi Berkas';
         } else if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'belum') {
-            checkpointData[2].status = 'rejected';
-            checkpointData[2].message = 'Belum Cek Berkas Perencanaan';
+            // checkpointData[2].status = 'rejected';
+            // checkpointData[2].message = 'Belum Cek Berkas Perencanaan';
         }
 
         // Step 4: Verifikasi Data berdasarkan validasiberkas3
         if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'sudah') {
-            checkpointData[3].status = 'completed';
-            checkpointData[3].message = 'Validasi Asistensi';
+            // checkpointData[3].status = 'completed';
+            // checkpointData[3].message = 'Validasi Asistensi';
         } else if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'belum') {
-            checkpointData[3].status = 'rejected';
-            checkpointData[3].message = 'Validasi Masih Berlangsung !';
+            // checkpointData[3].status = 'rejected';
+            // checkpointData[3].message = 'Validasi Masih Berlangsung !';
         }
 
         // Step 5: Penerbitan Berkas berdasarkan validasiberkas4
         if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'sudah') {
-            checkpointData[4].status = 'completed';
-            checkpointData[4].message = 'Berita Acara Terbit';
+            // checkpointData[4].status = 'completed';
+            // checkpointData[4].message = 'Berita Acara Terbit';
         } else if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'belum') {
-            checkpointData[4].status = 'rejected';
-            checkpointData[4].message = 'Berita Acara Tidak Di terbitkan';
+            // checkpointData[4].status = 'rejected';
+            // checkpointData[4].message = 'Berita Acara Tidak Di terbitkan';
         }
     }
 
@@ -607,7 +607,7 @@
         </p>
 
         <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
-            <button class="button-baru">
+            <button class="button-berkas">
                 <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
             </button>
         </a>

@@ -577,7 +577,6 @@
 
             {{-- PERUBAHAN PADA NOTIFIKASI BERKAS ANALISA  --}}
 
-            ```blade
 <td style="text-align: center;">
     @if (empty($item->uploadsuratbantek))
         {{-- Belum ada berkas --}}

@@ -132,7 +132,7 @@
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
-                                <a href="/bebantekpembongkaranall"
+                                <a href="/bebantekanalisabgn"
                                     class="button-baru"
                                     style="color: black; text-decoration: none;">
 
@@ -193,9 +193,9 @@
                                   <tr>
    <th>No</th>
 
-<th>
+{{-- <th>
     <i class="bi bi-person-fill"></i> Nama Pemilik
-</th>
+</th> --}}
 
 <th>
     <i class="bi bi-buildings-fill"></i> Instansi / Dinas
@@ -222,11 +222,11 @@
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-    <td>{{ $item->namapemilik ?? '-' }}</td>
+    {{-- <td>{{ $item->namapemilik ?? '-' }}</td> --}}
 
 <td>{{ $item->user->name ?? '-' }}</td>
 
-<td>{{ $item->namabangunan ?? '-' }}</td>
+<td>{{ $item->namagedung ?? '-' }}</td>
 
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 

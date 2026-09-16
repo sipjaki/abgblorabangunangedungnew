@@ -90,10 +90,10 @@
         // Dokumen Pemohon → validasiberkas2
 if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'sudah') {
     checkpointData[1].status = 'completed'; // index 1 = id 2
-    checkpointData[1].message = 'Lolos';
+    // checkpointData[1].message = 'Lolos';
 } else if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'belum') {
     checkpointData[1].status = 'rejected';
-    checkpointData[1].message = 'Berkas Di Kembalikan!';
+    // checkpointData[1].message = 'Berkas Di Kembalikan!';
 }
 
         // Step 2: Verifikasi Berkas (validasiberkas1)
@@ -117,9 +117,9 @@ if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' 
         // Step 4: Verifikasi Data (validasiberkas3)
         if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'sudah') {
             checkpointData[3].status = 'completed';
-            checkpointData[3].message = 'Survey Lapangan';
+            // checkpointData[3].message = 'Survey Lapangan';
         } else if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'belum') {
-            checkpointData[3].status = 'rejected';
+            // checkpointData[3].status = 'rejected';
             checkpointData[3].message = 'Dibatalkan !';
         }
 
