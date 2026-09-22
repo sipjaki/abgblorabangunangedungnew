@@ -176,7 +176,7 @@
                                   <tr>
         <th style="">No</th>
         <th style=""><i class="bi bi-user"></i> Nama Pemohon</th>
-        <th style=""><i class="bi bi-user"></i> Email</th>
+        {{-- <th style=""><i class="bi bi-user"></i> Email</th> --}}
         {{-- <th style=""><i class="bi bi-user"></i> Alamat </th> --}}
         {{-- <th style=""><i class="bi bi-user"></i> No Telepon</th>
         <th style=""><i class="bi bi-user"></i> Username Pemohon</th>
@@ -204,7 +204,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ $item->namapemohon ?? '-' }}</td>
-            <td>{{ $item->user->name ?? '-' }}</td>
+            {{-- <td>{{ $item->user->name ?? '-' }}</td> --}}
             {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
             {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
             {{-- <td>{{ $item->nomortelepon ?? '-' }}</td>
@@ -213,7 +213,7 @@
             <td style="text-align: left; text-transform:uppercase; ">{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
 
 
-            <td style="text-align: center;">
+            <td style="text-align: left;">
                 <a href="{{ route('bebantuangambar.show', $item->id) }}"
                     class="button-baru">
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
@@ -499,7 +499,7 @@
 </script>
 
 
-<td style="text-align: center;">
+<td style="text-align: left;">
       <div style="display: flex; justify-content: center;">
      <a href="{{ route('bebantuangambarupload', $item->id) }}"
                     class="button-berkas">

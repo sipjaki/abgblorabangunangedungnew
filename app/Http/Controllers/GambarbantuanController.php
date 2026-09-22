@@ -95,6 +95,7 @@ public function bebantuangambar(Request $request)
     }
            return redirect('/bebantuangambar');
 
+
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
 
