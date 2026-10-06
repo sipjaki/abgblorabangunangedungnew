@@ -125,14 +125,14 @@
         </div>
       </a>
 
-      <a href="/404">
+      {{-- <a href="/404">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/versi2/10.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">QnA</p>
         </div>
-      </a>
+      </a> --}}
 
       <a href="https://wa.me/6288987209343" target="_blank" rel="noopener noreferrer">
         <div class="flex flex-col items-center gap-2">
